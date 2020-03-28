@@ -4,10 +4,10 @@ import { HashRouter as Router } from 'react-router-dom';
 import defaultSettings from 'config/default-settings';
 import { SettingsProvider } from 'contexts/SettingsContext';
 import logger from 'services/logger';
-// import AppMain from 'components/App/AppMain';
-// import AppHeader from 'components/App/AppHeader';
-// import AppFooter from 'components/App/AppFooter';
-// import './App.scss';
+import AppMain from 'components/App/AppMain';
+import AppHeader from 'components/App/AppHeader';
+import AppFooter from 'components/App/AppFooter';
+import './App.scss';
 
 // Initialize Clap2020 icon library
 // faConfig.buildLibrary();
@@ -18,11 +18,10 @@ const App = () => {
   return (
     <SettingsProvider value={defaultSettings}>
       <Router>
-        <div className="app">
-          Hello World
-          {/* <AppHeader />
+        <div styleName="app">
+          <AppHeader />
           <AppMain />
-          <AppFooter /> */}
+          <AppFooter />
         </div>
       </Router>
     </SettingsProvider>
