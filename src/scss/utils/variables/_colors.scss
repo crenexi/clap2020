@@ -7,21 +7,40 @@
 $color-content-base: rgba(255, 255, 255, .95);
 $color-content-subtle: rgba(255, 255, 255, .65);
 
-$theme-sunset-base: #E75136;
-$theme-sunset-light: #EB735E;
-$theme-sunset-dark: #B8402B;
-$theme-storm-base: #2C3E50;
-$theme-storm-light: #566472;
-$theme-storm-dark: #233140;
-$theme-reef-base: #70A199;
-$theme-reef-light: #8CB3AD;
-$theme-reef-dark: #59807A;
-$theme-sand-base: #F9F0D8;
-$theme-sand-light: #FAF3DF;
-$theme-sand-dark: #C7C0AC;
-$theme-road-base: #514E4C;
-$theme-road-light: #73716F;
-$theme-road-dark: #403E3C;
+// Theme: cloud
+$theme-cloud-dark2: #d3d7e9;
+$theme-cloud-dark1: #e4e7f2;
+$theme-cloud-base: #f5f6fa;
+$theme-cloud-light1: #fff;
+$theme-cloud-light2: #fff;
+
+// Theme: red-rose
+$theme-red-rose-dark2: #a01025;
+$theme-red-rose-dark1: #ca142f;
+$theme-red-rose-base: #e9223f;
+$theme-red-rose-light1: #ed4b62;
+$theme-red-rose-light2: #f17486;
+
+// Theme: blue-rose
+$theme-blue-rose-dark2: #153b78;
+$theme-blue-rose-dark1: #1c4f9d;
+$theme-blue-rose-base: #2362c4;
+$theme-blue-rose-light1: #3978dc;
+$theme-blue-rose-light2: #5f93e2;
+
+// Theme: ocean
+$theme-ocean-dark2: #051434;
+$theme-ocean-dark1: #08245e;
+$theme-ocean-base: #0c3487;
+$theme-ocean-light1: #1044b0;
+$theme-ocean-light2: #1354da;
+
+// Theme: marine
+$theme-marine-dark2: #3eb8ae;
+$theme-marine-dark1: #5bc8bf;
+$theme-marine-base: #7dd3cc;
+$theme-marine-light1: #9fded9;
+$theme-marine-light2: #c0eae6;
 
 // Combined color map
 $colors: (
@@ -33,30 +52,40 @@ $colors: (
 
 // Combined theme map
 $theme: (
-  sunset: (
-    base: $theme-sunset-base,
-    light: $theme-sunset-light,
-    dark: $theme-sunset-dark,
+  cloud: (
+    dark2: $theme-cloud-dark2,
+    dark1: $theme-cloud-dark1,
+    base: $theme-cloud-base,
+    light1: $theme-cloud-light1,
+    light2: $theme-cloud-light2,
   ),
-  storm: (
-    base: $theme-storm-base,
-    light: $theme-storm-light,
-    dark: $theme-storm-dark,
+  redRose: (
+    dark2: $theme-red-rose-dark2,
+    dark1: $theme-red-rose-dark1,
+    base: $theme-red-rose-base,
+    light1: $theme-red-rose-light1,
+    light2: $theme-red-rose-light2,
   ),
-  reef: (
-    base: $theme-reef-base,
-    light: $theme-reef-light,
-    dark: $theme-reef-dark,
+  blueRose: (
+    dark2: $theme-blue-rose-dark2,
+    dark1: $theme-blue-rose-dark1,
+    base: $theme-blue-rose-base,
+    light1: $theme-blue-rose-light1,
+    light2: $theme-blue-rose-light2,
   ),
-  sand: (
-    base: $theme-sand-base,
-    light: $theme-sand-light,
-    dark: $theme-sand-dark,
+  ocean: (
+    dark2: $theme-ocean-dark2,
+    dark1: $theme-ocean-dark1,
+    base: $theme-ocean-base,
+    light1: $theme-ocean-light1,
+    light2: $theme-ocean-light2,
   ),
-  road: (
-    base: $theme-road-base,
-    light: $theme-road-light,
-    dark: $theme-road-dark,
+  marine: (
+    dark2: $theme-marine-dark2,
+    dark1: $theme-marine-dark1,
+    base: $theme-marine-base,
+    light1: $theme-marine-light1,
+    light2: $theme-marine-light2,
   ),
 );
 
@@ -65,19 +94,34 @@ $theme: (
 :export {
   colorContentBase: $color-content-base;
   colorContentSubtle: $color-content-subtle;
-  themeSunsetBase: $theme-sunset-base;
-  themeSunsetLight: $theme-sunset-light;
-  themeSunsetDark: $theme-sunset-dark;
-  themeStormBase: $theme-storm-base;
-  themeStormLight: $theme-storm-light;
-  themeStormDark: $theme-storm-dark;
-  themeReefBase: $theme-reef-base;
-  themeReefLight: $theme-reef-light;
-  themeReefDark: $theme-reef-dark;
-  themeSandBase: $theme-sand-base;
-  themeSandLight: $theme-sand-light;
-  themeSandDark: $theme-sand-dark;
-  themeRoadBase: $theme-road-base;
-  themeRoadLight: $theme-road-light;
-  themeRoadDark: $theme-road-dark;
+  // Theme: cloud
+  themeCloudDark2: $theme-cloud-dark2;
+  themeCloudDark1: $theme-cloud-dark1;
+  themeCloudBase: $theme-cloud-base;
+  themeCloudLight1: $theme-cloud-light1;
+  themeCloudLight2: $theme-cloud-light2;
+  // Theme: redRose
+  themeRedRoseDark2: $theme-red-rose-dark2;
+  themeRedRoseDark1: $theme-red-rose-dark1;
+  themeRedRoseBase: $theme-red-rose-base;
+  themeRedRoseLight1: $theme-red-rose-light1;
+  themeRedRoseLight2: $theme-red-rose-light2;
+  // Theme: blueRose
+  themeBlueRoseDark2: $theme-blue-rose-dark2;
+  themeBlueRoseDark1: $theme-blue-rose-dark1;
+  themeBlueRoseBase: $theme-blue-rose-base;
+  themeBlueRoseLight1: $theme-blue-rose-light1;
+  themeBlueRoseLight2: $theme-blue-rose-light2;
+  // Theme: ocean
+  themeOceanDark2: $theme-ocean-dark2;
+  themeOceanDark1: $theme-ocean-dark1;
+  themeOceanBase: $theme-ocean-base;
+  themeOceanLight1: $theme-ocean-light1;
+  themeOceanLight2: $theme-ocean-light2;
+  // Theme: marine
+  themeMarineDark2: $theme-marine-dark2;
+  themeMarineDark1: $theme-marine-dark1;
+  themeMarineBase: $theme-marine-base;
+  themeMarineLight1: $theme-marine-light1;
+  themeMarineLight2: $theme-marine-light2;
 }
