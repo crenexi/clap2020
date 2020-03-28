@@ -15,3 +15,44 @@ $layout-md: 3rem;
 $layout-lg: 4rem;
 $layout-xl: 6rem;
 $layout-2xl: 10rem;
+
+$spacing: (
+  3xs: $spacing-3xs,
+  2xs: $spacing-2xs,
+  xs: $spacing-xs,
+  sm: $spacing-sm,
+  md: $spacing-md,
+  lg: $spacing-lg,
+  xl: $spacing-xl,
+  2xl: $spacing-2xl,
+  3xl: $spacing-3xl,
+);
+
+$layout: (
+  2xs: $layout-2xs,
+  xs: $layout-xs,
+  sm: $layout-sm,
+  md: $layout-md,
+  lg: $layout-lg,
+  xl: $layout-xl,
+  2xl: $layout-2xl,
+);
+
+:export {
+  spacing3xs: $spacing-3xs;
+  spacing2xs: $spacing-2xs;
+  spacingXs: $spacing-xs;
+  spacingSm: $spacing-sm;
+  spacingMd: $spacing-md;
+  spacingLg: $spacing-lg;
+  spacingXl: $spacing-xl;
+  spacing2xl: $spacing-2xl;
+  spacing3xl: $spacing-3xl;
+  layout2xs: $layout-2xs;
+  layoutXs: $layout-xs;
+  layoutSm: $layout-sm;
+  layoutMd: $layout-md;
+  layoutLg: $layout-lg;
+  layoutXl: $layout-xl;
+  layout2xl: $layout-2xl ;
+}

@@ -1,5 +1,15 @@
+$border-radius-sharp: .6rem;
+$border-radius-normal: .8rem;
+$border-radius-round: 1rem;
+
 $border-radii: (
-  sharp: .6rem,
-  main: .8rem,
-  round: 1rem,
+  sharp: $border-radius-sharp,
+  normal: $border-radius-normal,
+  round: $border-radius-round,
 );
+
+:export {
+  sharp: $border-radius-sharp;
+  normal: $border-radius-normal;
+  round: $border-radius-round;
+}

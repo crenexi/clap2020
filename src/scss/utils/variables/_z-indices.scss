@@ -1,3 +1,9 @@
+$z-index-header: 500;
+
 $z-indices: (
-  header: 500,
+  header: $z-index-header,
 );
+
+:export {
+  header: $z-index-header;
+}
