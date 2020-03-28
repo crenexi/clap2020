@@ -1,9 +1,12 @@
-$font-family-base: '"Barlow Condensed", "Roboto Condensed", "Roboto", "Arial", sans-serif';
-
-:export {
-  base: unquote($font-family-base);
-}
+$font-family-primary: '"Barlow Condensed", "Roboto Condensed", "Roboto", "Arial", sans-serif';
+$font-family-base: '"Open Sans", "Roboto", "Arial", sans-serif';
 
 $font-families: (
+  primary: $font-family-primary,
   base: $font-family-base,
 );
+
+:export {
+  primary: unquote($font-family-primary);
+  base: unquote($font-family-base);
+}
