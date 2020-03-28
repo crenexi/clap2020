@@ -1,0 +1,45 @@
+@function color($key, $subkey: '') {
+  @if $subkey == '' {
+    @if map-has-key($colors, $key) {
+      @return map-get($colors, $key);
+    }
+
+    @warn 'Unknown `#{$key}` in $colors.';
+    @return null;
+  } @else {
+    @if map-has-key($colors, $key) {
+      @if map-has-key(map-get($colors, $key), $subkey) {
+        @return map-get(map-get($colors, $key), $subkey);
+      }
+
+      @warn 'Unknown `#{$subkey}` in $colors.`#{$key}`';
+      @return null;
+    }
+
+    @warn 'Unknown `#{$key}` in $colors.';
+    @return null;
+  }
+}
+
+@function theme($key, $subkey: '') {
+  @if $subkey == '' {
+    @if map-has-key($theme, $key) {
+      @return map-get($theme, $key);
+    }
+
+    @warn 'Unknown `#{$key}` in $theme.';
+    @return null;
+  } @else {
+    @if map-has-key($theme, $key) {
+      @if map-has-key(map-get($theme, $key), $subkey) {
+        @return map-get(map-get($theme, $key), $subkey);
+      }
+
+      @warn 'Unknown `#{$subkey}` in $theme.`#{$key}`';
+      @return null;
+    }
+
+    @warn 'Unknown `#{$key}` in $theme.';
+    @return null;
+  }
+}

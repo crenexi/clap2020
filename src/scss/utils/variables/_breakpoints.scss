@@ -1,0 +1,21 @@
+// Breakpoint values
+$breakpoint-sm: 600;
+$breakpoint-md: 960;
+$breakpoint-lg: 1280;
+$breakpoint-xl: 1920;
+
+// Breakpoint map
+$breakpoints: (
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+);
+
+// Breakpoint export
+:export {
+  sm: $breakpoint-sm;
+  md: $breakpoint-md;
+  lg: $breakpoint-lg;
+  xl: $breakpoint-xl;
+}

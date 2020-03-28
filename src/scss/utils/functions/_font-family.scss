@@ -1,0 +1,8 @@
+@function font-family($key) {
+  @if map-has-key($font-families, $key) {
+    @return unquote(map-get($font-families, $key));
+  }
+
+  @warn 'Unknown `#{$key}` in $font-families.';
+  @return null;
+}

@@ -1,0 +1,18 @@
+$default-size: 1rem;
+$default-height: inherit;
+$default-weight: 400;
+
+@mixin font(
+  $size: $default-size,
+  $height: $default-line-height,
+  $weight: $default-weight,
+  $color: null
+) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+
+  @if $color != null {
+    color: $color;
+  }
+}

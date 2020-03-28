@@ -1,0 +1,7 @@
+$header-height-sm: 4rem;
+$header-height-gt-sm: 6rem;
+
+:export {
+  headerHeightXs: $header-height-sm;
+  headerHeightGtXs: $header-height-gt-sm;
+}

@@ -1,0 +1,83 @@
+// To manage colors, follow this pattern:
+// ## 1. Create variable for color
+// ## 2. Add to the appropriate map
+// ## 3. Add variable to export
+
+// Color variables
+$color-content-base: rgba(255, 255, 255, .95);
+$color-content-subtle: rgba(255, 255, 255, .65);
+
+$theme-sunset-base: #E75136;
+$theme-sunset-light: #EB735E;
+$theme-sunset-dark: #B8402B;
+$theme-storm-base: #2C3E50;
+$theme-storm-light: #566472;
+$theme-storm-dark: #233140;
+$theme-reef-base: #70A199;
+$theme-reef-light: #8CB3AD;
+$theme-reef-dark: #59807A;
+$theme-sand-base: #F9F0D8;
+$theme-sand-light: #FAF3DF;
+$theme-sand-dark: #C7C0AC;
+$theme-road-base: #514E4C;
+$theme-road-light: #73716F;
+$theme-road-dark: #403E3C;
+
+// Combined color map
+$colors: (
+  content: (
+    base: $color-content-base,
+    subtle: $color-content-subtle,
+  ),
+);
+
+// Combined theme map
+$theme: (
+  sunset: (
+    base: $theme-sunset-base,
+    light: $theme-sunset-light,
+    dark: $theme-sunset-dark,
+  ),
+  storm: (
+    base: $theme-storm-base,
+    light: $theme-storm-light,
+    dark: $theme-storm-dark,
+  ),
+  reef: (
+    base: $theme-reef-base,
+    light: $theme-reef-light,
+    dark: $theme-reef-dark,
+  ),
+  sand: (
+    base: $theme-sand-base,
+    light: $theme-sand-light,
+    dark: $theme-sand-dark,
+  ),
+  road: (
+    base: $theme-road-base,
+    light: $theme-road-light,
+    dark: $theme-road-dark,
+  ),
+);
+
+// Export all color variables
+// Note: should correspond to all variables above
+:export {
+  colorContentBase: $color-content-base;
+  colorContentSubtle: $color-content-subtle;
+  themeSunsetBase: $theme-sunset-base;
+  themeSunsetLight: $theme-sunset-light;
+  themeSunsetDark: $theme-sunset-dark;
+  themeStormBase: $theme-storm-base;
+  themeStormLight: $theme-storm-light;
+  themeStormDark: $theme-storm-dark;
+  themeReefBase: $theme-reef-base;
+  themeReefLight: $theme-reef-light;
+  themeReefDark: $theme-reef-dark;
+  themeSandBase: $theme-sand-base;
+  themeSandLight: $theme-sand-light;
+  themeSandDark: $theme-sand-dark;
+  themeRoadBase: $theme-road-base;
+  themeRoadLight: $theme-road-light;
+  themeRoadDark: $theme-road-dark;
+}
