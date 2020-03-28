@@ -1,0 +1,25 @@
+// Universal properties
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+// Top-level elements
+
+html,
+html body {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: theme(cloud, base);
+}
