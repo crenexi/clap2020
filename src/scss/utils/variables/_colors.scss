@@ -1,0 +1,46 @@
+// Combined color map
+$colors: (
+  content: (
+    base: rgba(0, 0, 0, .9),
+    subtle: rgba(0, 0, 0, .65),
+  ),
+);
+
+// Combined theme map
+$theme: (
+  cloud: (
+    dark2: #d3d7e9,
+    dark1: #e4e7f2,
+    base: #f5f6fa,
+    light1: #fff,
+    light2: #fff,
+  ),
+  redRose: (
+    dark2: #a01025,
+    dark1: #ca142f,
+    base: #e9223f,
+    light1: #ed4b62,
+    light2: #f17486,
+  ),
+  blueRose: (
+    dark2: #153b78,
+    dark1: #1c4f9d,
+    base: #2362c4,
+    light1: #3978dc,
+    light2: #5f93e2,
+  ),
+  ocean: (
+    dark2: #051434,
+    dark1: #08245e,
+    base: #0c3487,
+    light1: #1044b0,
+    light2: #1354da,
+  ),
+  marine: (
+    dark2: #3eb8ae,
+    dark1: #5bc8bf,
+    base: #7dd3cc,
+    light1: #9fded9,
+    light2: #c0eae6,
+  ),
+);

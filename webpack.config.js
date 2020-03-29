@@ -94,7 +94,7 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.scss'],
     alias: Object.entries(aliasRelativePaths).reduce((obj, [key, val]) => {
       return { ...obj, [key]: path.resolve(__dirname, val) };
     }, {}),

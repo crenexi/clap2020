@@ -1,0 +1,17 @@
+@function spacing($key) {
+  @if map-has-key($spacing, $key) {
+    @return map-get($spacing, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in $spacing.';
+  @return null;
+}
+
+@function layout($key) {
+  @if map-has-key($layout, $key) {
+    @return map-get($layout, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in $layout.';
+  @return null;
+}

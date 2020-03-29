@@ -1,0 +1,8 @@
+@function border-radius($key) {
+  @if map-has-key($border-radii, $key) {
+    @return map-get($border-radii, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in $border-radii.';
+  @return null;
+}
