@@ -10,16 +10,12 @@
 
 // Utility to add group name to key
 @function prepend-key($pre, $key) {
-  @return $pre + capitalize(($key));
+  @return $pre + capitalize((quote($key)));
 }
 
 // Utility to add group name to subkey
 @function prepend-sub-key($pre, $key, $subkey) {
-  @if $subkey == 'base' {
-    @return prepend-key($pre, $key);
-  } @else {
-    @return prepend-key($pre, $key) + capitalize($subkey);
-  }
+  @return prepend-key($pre, $key) + capitalize(quote($subkey));
 }
 
 // Utility to check if variable is a map
@@ -32,6 +28,7 @@
   @each $key, $value in $z-indices {
     #{prepend-key('zIndex', $key)}: $value;
   }
+
   // Export breakpoints
   @each $key, $value in $breakpoints {
     #{prepend-key('breakpoint', $key)}: $value;
@@ -59,12 +56,23 @@
 
   // Export colors
   @each $key, $value in $colors {
-    @if is-map($v) {
+    @if is-map($value) {
       @each $subkey, $sub-v in $value {
         #{prepend-sub-key('color', $key, $subkey)}: $sub-v;
       }
     } @else {
       #{prepend-key('color', $key)}: $value;
+    }
+  }
+
+  // Export theme colors
+  @each $key, $value in $theme {
+    @if is-map($value) {
+      @each $subkey, $sub-v in $value {
+        #{prepend-sub-key('theme', $key, $subkey)}: $sub-v;
+      }
+    } @else {
+      #{prepend-key('theme', $key)}: $value;
     }
   }
 
