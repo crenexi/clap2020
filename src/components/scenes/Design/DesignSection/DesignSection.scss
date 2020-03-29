@@ -2,7 +2,6 @@
 
 .section {
   padding: 2rem 1rem 7rem;
-  // @include gradient(color(dark3), color(dark1));
 }
 
 .section__title {
@@ -12,5 +11,13 @@
   font-family: font-family(primary);
   font-size: 1.2rem;
   letter-spacing: 4px;
-  // color: theme(sunset, base);
+  color: theme(ocean, base);
+}
+
+.section:first-of-type {
+  padding-top: 1rem;
+
+  .section__title {
+    padding-top: 0;
+  }
 }
