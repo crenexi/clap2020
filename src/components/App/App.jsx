@@ -16,10 +16,13 @@ fontAwesomeConfig.buildLibrary();
 
 const App = () => {
   logger.info('\nMain Engine Start.\nT-Zero. SRB Ignition.\nLiftoff.');
-  logger.info(muiConfig.createTheme());
+  const theme = muiConfig.createTheme();
+
+  // Logs the MUI theme values
+  // logger.info(theme);
 
   return (
-    <ThemeProvider theme={muiConfig.createTheme()}>
+    <ThemeProvider theme={theme}>
       <SettingsProvider value={defaultSettings}>
         <Router>
           <div styleName="app">
