@@ -1,10 +1,14 @@
 import React, { Fragment } from 'react';
 import DesignSection from 'components/scenes/Design/DesignSection';
+import Typography from './Typography';
 import Logos from './Logos';
 import Palette from './Palette';
 
 const DesignGuide = () => (
   <Fragment>
+    <DesignSection title="Typography">
+      <Typography />
+    </DesignSection>
     <DesignSection title="Logos">
       <Logos />
     </DesignSection>

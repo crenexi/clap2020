@@ -12,8 +12,13 @@
 
 .palette__colors {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   grid-gap: 1rem;
+
+  @include breakpoint('gt-xs') {
+    flex-direction: row;
+  }
 }
 
 .palette__color {
