@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import theme from 'config/theme-config';
+import DesignHeading from '../../DesignHeading';
 import './Palette.scss';
 
 const Palette = () => {
@@ -8,8 +9,8 @@ const Palette = () => {
   return (
     <div styleName="palette">
       {paletteRows.map(({ title, colors }) => (
-        <div styleName="palette__row" key={title}>
-          <h4 styleName="palette__title">{title}</h4>
+        <Fragment key={title}>
+          <DesignHeading title={title} />
           <div styleName="palette__colors">
             {colors.map(color => (
               <div styleName="palette__color" key={color}>
@@ -21,7 +22,7 @@ const Palette = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Fragment>
       ))}
     </div>
   );

@@ -4,26 +4,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
 }
 
 .palette__row {
-  &:not(:first-child) {
-    margin-top: 2em;
-  }
-}
-
-.palette__title {
   width: 100%;
-  margin-bottom: .6rem;
-  padding-bottom: .4rem;
-  border-bottom: 1px solid theme(cloud, dark1);
-  color: #222;
 }
 
 .palette__colors {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   grid-gap: 1rem;
+
+  @include breakpoint('gt-xs') {
+    flex-direction: row;
+  }
 }
 
 .palette__color {

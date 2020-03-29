@@ -1,11 +1,17 @@
 @import '~scss/utils';
 
 .section {
-  padding: 2rem 1rem 7rem;
+  width: 100%;
+  max-width: 60rem;
+  padding: 2rem 1rem 5rem;
+
+  &:first-of-type {
+    padding-top: 1rem;
+  }
 }
 
 .section__title {
-  padding: 3.5rem 1rem 4.5rem;
+  padding: 0 1rem 3.5rem;
   text-align: center;
   text-transform: uppercase;
   font-family: font-family(primary);
@@ -14,10 +20,7 @@
   color: theme(ocean, base);
 }
 
-.section:first-of-type {
-  padding-top: 1rem;
-
-  .section__title {
-    padding-top: 0;
-  }
+.section__main {
+  padding: 0 15px;
+  border-left: 1px solid rgba(0, 0, 0, .1);
 }

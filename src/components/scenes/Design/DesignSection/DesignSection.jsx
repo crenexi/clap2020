@@ -5,7 +5,7 @@ import './DesignSection.scss';
 const DesignSection = ({ title = '', children }) => (
   <section styleName="section">
     <h3 styleName="section__title">{title}</h3>
-    {children}
+    <div styleName="section__main">{children}</div>
   </section>
 );
 
