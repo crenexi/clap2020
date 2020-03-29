@@ -1,0 +1,52 @@
+@import '~scss/utils';
+
+.palette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.palette__row {
+  &:not(:first-child) {
+    margin-top: 2em;
+  }
+}
+
+.palette__title {
+  width: 100%;
+  margin-bottom: .6rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid theme(cloud, dark1);
+  color: #222;
+}
+
+.palette__colors {
+  display: flex;
+  grid-gap: 1rem;
+}
+
+.palette__color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-left: 1.2rem;
+  }
+}
+
+.palette__color-label {
+  margin-bottom: .3rem;
+  text-align: center;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.palette__color-box {
+  width: 7rem;
+  height: 3.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .2), 0 0 10px rgba(0, 0, 0, .1);
+}

@@ -2,4 +2,9 @@
 
 .header {
   width: 100%;
+  height: ui-layout(headerHeightSm);
+
+  @include breakpoint('gt-sm') {
+    height: ui-layout(headerHeightGtSm);
+  }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
+import './AppHeader.scss';
 
 const AppHeader = () => (
-  <header>
+  <header styleName="header">
     Header
   </header>
 );

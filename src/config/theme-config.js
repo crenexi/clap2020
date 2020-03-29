@@ -1,66 +1,59 @@
-import colors from '../scss/utils/variables/_colors.scss';
+import scssVars from 'scss/utils/exports';
 
 const paletteRows = [
   {
-    title: 'Dark',
+    title: 'Cloud',
     colors: [
-      colors.colorDark1,
-      colors.colorDark2,
-      colors.colorDark3,
+      scssVars.themeCloudDark2,
+      scssVars.themeCloudDark1,
+      scssVars.themeCloudBase,
+      scssVars.themeCloudLight1,
+      scssVars.themeCloudLight2,
     ],
   },
   {
-    title: 'Light',
+    title: 'Red Rose',
     colors: [
-      colors.colorLight1,
-      colors.colorLight2,
-      colors.colorLight3,
+      scssVars.themeRedRoseDark2,
+      scssVars.themeRedRoseDark1,
+      scssVars.themeRedRoseBase,
+      scssVars.themeRedRoseLight1,
+      scssVars.themeRedRoseLight2,
     ],
   },
   {
-    title: 'Sunset',
+    title: 'Blue Rose',
     colors: [
-      colors.themeSunsetLight,
-      colors.themeSunsetBase,
-      colors.themeSunsetDark,
+      scssVars.themeBlueRoseDark2,
+      scssVars.themeBlueRoseDark1,
+      scssVars.themeBlueRoseBase,
+      scssVars.themeBlueRoseLight1,
+      scssVars.themeBlueRoseLight2,
     ],
   },
   {
-    title: 'Storm',
+    title: 'Ocean',
     colors: [
-      colors.themeStormLight,
-      colors.themeStormBase,
-      colors.themeStormDark,
+      scssVars.themeOceanDark2,
+      scssVars.themeOceanDark1,
+      scssVars.themeOceanBase,
+      scssVars.themeOceanLight1,
+      scssVars.themeOceanLight2,
     ],
   },
   {
-    title: 'Reef',
+    title: 'Marine',
     colors: [
-      colors.themeReefLight,
-      colors.themeReefBase,
-      colors.themeReefDark,
-    ],
-  },
-  {
-    title: 'Sand',
-    colors: [
-      colors.themeSandLight,
-      colors.themeSandBase,
-      colors.themeSandDark,
-    ],
-  },
-  {
-    title: 'Road',
-    colors: [
-      colors.themeRoadLight,
-      colors.themeRoadBase,
-      colors.themeRoadDark,
+      scssVars.themeMarineDark2,
+      scssVars.themeMarineDark1,
+      scssVars.themeMarineBase,
+      scssVars.themeMarineLight1,
+      scssVars.themeMarineLight2,
     ],
   },
 ];
 
 const theme = {
-  palette: colors,
   paletteRows,
 };
 
