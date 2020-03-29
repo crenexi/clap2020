@@ -8,7 +8,8 @@
     "start": "webpack-dev-server --config webpack.config.js --mode development --hot",
     "lint": "./node_modules/.bin/eslint --ext js,jsx src",
     "lint:fix": "./node_modules/.bin/eslint --fix --ext js,jsx src",
-    "build": "webpack --config webpack.config.js --mode development"
+    "build": "webpack --config webpack.config.js --mode development",
+    "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",
@@ -21,6 +22,7 @@
     "babel-plugin-react-css-modules": "^5.2.6",
     "bourbon": "^6.0.0",
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.2",
     "debug": "^4.1.1",
     "moment": "^2.24.0",
     "path": "^0.12.7",
