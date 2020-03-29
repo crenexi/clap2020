@@ -1,0 +1,8 @@
+@function ui-layout($key) {
+  @if map-has-key($ui-layout, $key) {
+    @return map-get($ui-layout, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in $ui-layout.';
+  @return null;
+}

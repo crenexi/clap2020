@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-// import Design from 'components/scenes/Design';
+import Design from 'components/scenes/Design';
 
 const Home = () => <h1>Hello World</h1>;
 
 const AppMain = () => {
   const routes = [
-    // { path: '/design', component: Design },
+    { path: '/design', component: Design },
   ];
 
   return (

@@ -1,66 +1,19 @@
-import colors from '../scss/utils/variables/_colors.scss';
+import scssVars from 'scss/utils/exports';
 
 const paletteRows = [
   {
-    title: 'Dark',
+    title: 'Cloud',
     colors: [
-      colors.colorDark1,
-      colors.colorDark2,
-      colors.colorDark3,
-    ],
-  },
-  {
-    title: 'Light',
-    colors: [
-      colors.colorLight1,
-      colors.colorLight2,
-      colors.colorLight3,
-    ],
-  },
-  {
-    title: 'Sunset',
-    colors: [
-      colors.themeSunsetLight,
-      colors.themeSunsetBase,
-      colors.themeSunsetDark,
-    ],
-  },
-  {
-    title: 'Storm',
-    colors: [
-      colors.themeStormLight,
-      colors.themeStormBase,
-      colors.themeStormDark,
-    ],
-  },
-  {
-    title: 'Reef',
-    colors: [
-      colors.themeReefLight,
-      colors.themeReefBase,
-      colors.themeReefDark,
-    ],
-  },
-  {
-    title: 'Sand',
-    colors: [
-      colors.themeSandLight,
-      colors.themeSandBase,
-      colors.themeSandDark,
-    ],
-  },
-  {
-    title: 'Road',
-    colors: [
-      colors.themeRoadLight,
-      colors.themeRoadBase,
-      colors.themeRoadDark,
+      scssVars.themeCloudDark2,
+      scssVars.themeCloudDark1,
+      scssVars.themeCloudBase,
+      scssVars.themeCloudLight1,
+      scssVars.themeCloudLight2,
     ],
   },
 ];
 
 const theme = {
-  palette: colors,
   paletteRows,
 };
 

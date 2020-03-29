@@ -1,0 +1,34 @@
+@import '~scss/utils';
+
+.design {
+  background-color: #fff;
+  min-height: calc(100vh - #{ui-layout(headerHeightSm)});
+
+  @include breakpoint('gt-sm') {
+    min-height: calc(100vh - #{ui-layout(headerHeightGtSm)});
+  }
+}
+
+.design__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.design__back-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .5rem;
+
+  > svg {
+    margin-right: 7px;
+    font-size: 1.35rem;
+  }
+}
+
+.design__title {
+  margin-bottom: 10px;
+}
