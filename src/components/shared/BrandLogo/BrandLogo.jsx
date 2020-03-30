@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes, { oneOf } from 'prop-types';
-import useSettings from 'hooks/use-settings';
 import { capitalize } from 'utils/helpers';
 import './BrandLogo.scss';
 
 const BrandLogo = ({ className, variant, ext, width }) => {
-  const { s3PublicPath } = useSettings();
-  const src = `${s3PublicPath}/brand/Logo_${capitalize(variant)}.${ext}`;
+  const src = `/assets/brand/Logo_${capitalize(variant)}.${ext}`;
 
   return (
     <div className={className} styleName="logo" style={{ width }}>
