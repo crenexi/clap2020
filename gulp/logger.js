@@ -10,9 +10,9 @@ const chalkMsg = (msg, str) => {
 };
 
 /** Generic log with optional color */
-const message = (msg, c1 = 'white') => log(chalkMsg(msg, c1));
+const info = (msg, c1 = 'white') => log(chalkMsg(msg, c1));
 
 /** Error log, with red error output */
 const error = err => log(chalk.red.bold(err));
 
-module.exports = { message, error };
+module.exports = { info, error };
