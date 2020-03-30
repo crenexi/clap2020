@@ -1,5 +1,5 @@
 module.exports = {
-  dist: './dist',
+  dist: './dist/**',
   awsS3: {
     region: 'us-west-1',
     buckets: {

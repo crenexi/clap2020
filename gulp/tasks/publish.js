@@ -6,12 +6,12 @@ const logger = require('../logger');
 
 /** Verifies a bucket name is provided */
 const verifyBucketName = (bucketName) => {
-  const isValid = typeof bucketName !== 'string' || !bucketName;
+  const isValid = typeof bucketName === 'string' && bucketName;
 
   if (!isValid) {
     logger.error('Attempted to publish without specifying bucket name!');
   } else {
-    logger.message(`Publishing build to ${bucketName} S3 bucket`, 'blue.bold');
+    logger.info(`Publishing build to ${bucketName} S3 bucket`, 'blue.bold');
   }
 
   return isValid;
@@ -67,6 +67,6 @@ const publishClient = (targetEnv, done) => {
 };
 
 /** Publish build to production bucket */
-const publishProd = () => publishClient('prod');
+const publishProd = () => publishClient('production');
 
 exports.publishProd = publishProd;
