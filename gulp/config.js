@@ -1,8 +1,9 @@
 module.exports = {
+  dist: './dist',
   awsS3: {
     region: 'us-west-1',
     buckets: {
-      prod: 'clap2020.com',
+      production: 'clap2020.com',
     },
     profile: 's3-deploy',
     headers: {
