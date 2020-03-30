@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
 import fontAwesomeConfig from 'config/font-awesome-config';
 import muiConfig from 'config/material-ui-config';
