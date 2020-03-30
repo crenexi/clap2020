@@ -8,8 +8,8 @@
     "start": "webpack-dev-server --config webpack.config.js --mode development --hot",
     "lint": "./node_modules/.bin/eslint --ext js,jsx src",
     "lint:fix": "./node_modules/.bin/eslint --fix --ext js,jsx src",
-    "build": "webpack --config webpack.config.js --mode development",
-    "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js --mode production",
+    "build": "webpack --config webpack.config.js",
+    "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js",
     "publish:prod": "gulp publish:prod"
   },
   "dependencies": {
@@ -31,7 +31,8 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-ga": "^2.7.0",
-    "react-router-dom": "^5.1.0"
+    "react-router-dom": "^5.1.0",
+    "terser-webpack-plugin": "^2.3.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",

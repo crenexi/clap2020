@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 // const APP_PATH = path.resolve(__dirname, '/src/app');
 const DIST_PATH = path.join(__dirname, '/dist');
@@ -87,7 +88,8 @@ const aliasRelativePaths = {
 #### Config ########
 ################# */
 
-module.exports = {
+const config = {
+  mode: getEnv(),
   entry: './src/main.jsx',
   output: {
     path: DIST_PATH,
@@ -122,3 +124,49 @@ module.exports = {
     maxAssetSize: 512000,
   },
 };
+
+/* #################
+#### Optimization ##
+################# */
+
+// Optimize only if production build
+if (getEnv() === 'production') {
+  config.optimization = {
+    minimize: true,
+    minimizer: [new TerserPlugin({
+      terserOptions: {
+        parse: {
+          ecma: 8,
+        },
+        compress: {
+          ecma: 5,
+          warnings: false,
+          inline: 2,
+        },
+        mangle: {
+          safari10: true,
+        },
+        output: {
+          ecma: 5,
+          comments: false,
+        },
+      },
+      parallel: true,
+      cache: true,
+    })],
+    runtimeChunk: false,
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor_app',
+          chunks: 'all',
+          minChunks: 2,
+        },
+      },
+    },
+  };
+}
+
+module.exports = config;
