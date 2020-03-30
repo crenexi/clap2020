@@ -7,4 +7,8 @@
   @include breakpoint('gt-sm') {
     height: ui-layout(headerHeightGtSm);
   }
+
+  &--hidden {
+    opacity: 0;
+  }
 }
