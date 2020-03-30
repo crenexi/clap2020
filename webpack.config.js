@@ -116,4 +116,9 @@ module.exports = {
     inline: true,
     hot: true,
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
 };
