@@ -7,7 +7,7 @@ module.exports = {
     },
     profile: 's3-deploy',
     headers: {
-      'Cache-Control': 'max-age=0, no-transform, public',
+      'Cache-Control': 'max-age=86400, no-transform, public',
     },
   },
 };
