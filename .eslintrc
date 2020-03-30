@@ -65,6 +65,7 @@
     }],
     "no-shadow": 0,
     "prefer-destructuring": 0,
+    "import/no-extraneous-dependencies": [2, {"devDependencies": true}],
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-props-no-spreading": 0,
     "react/jsx-uses-react": 2,
