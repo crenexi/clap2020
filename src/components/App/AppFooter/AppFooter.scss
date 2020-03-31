@@ -1,5 +1,29 @@
 @import '~scss/utils';
 
 .footer {
+  @include flex-column();
   width: 100%;
+  padding: 5rem 1rem;
+  @include gradient(theme(ocean, dark1), theme(blueRose, dark1));
+  color: #fff;
+}
+
+.footer__main {
+  @include flex-column(center, center);
+  height: 100%;
+}
+
+.footer__brand {
+  width: 60%;
+  max-width: 15rem;
+}
+
+.footer__clap-time {
+  margin-top: layout(sm);
+  padding-top: layout(sm);
+  text-align: center;
+  font-family: font-family(primary);
+  font-weight: 700;
+  font-size: 1.7rem;
+  @include divider-top(theme(blueRose, light2));
 }
