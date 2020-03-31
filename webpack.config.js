@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const DotenvWebpack = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -55,6 +56,11 @@ const scssLoaderRule = () => {
 /* #################
 #### Plugins #######
 ################# */
+
+// Loads environment variables
+const dotenvWebpack = () => new DotenvWebpack({
+  safe: true,
+});
 
 const environmentPlugin = () => new webpack.EnvironmentPlugin({
   ASSETS_PATH: '/assets',
@@ -132,6 +138,7 @@ const config = {
     ],
   },
   plugins: [
+    dotenvWebpack(),
     environmentPlugin(),
     htmlWebpackPlugin(),
     copyWebpackPlugin(),
