@@ -55,18 +55,36 @@ const scssLoaderRule = () => {
 #### Plugins #######
 ################# */
 
-const htmlWebpack = () => (
-  new HtmlWebpackPlugin({
-    template: './public/index.html',
-    filename: 'index.html',
-  })
-);
+const htmlWebpack = () => new HtmlWebpackPlugin({
+  template: './public/index.html',
+  filename: 'index.html',
+});
 
-const copyWebpack = () => (
-  new CopyWebpackPlugin([
-    { from: './public' },
-  ])
-);
+const copyWebpack = () => new CopyWebpackPlugin([
+  { from: './public' },
+]);
+
+const terser = () => new TerserPlugin({
+  terserOptions: {
+    parse: {
+      ecma: 8,
+    },
+    compress: {
+      ecma: 5,
+      warnings: false,
+      inline: 2,
+    },
+    mangle: {
+      safari10: true,
+    },
+    output: {
+      ecma: 5,
+      comments: false,
+    },
+  },
+  parallel: true,
+  cache: true,
+});
 
 /* #################
 #### Aliases #######
@@ -133,27 +151,7 @@ const config = {
 if (getEnv() === 'production') {
   config.optimization = {
     minimize: true,
-    minimizer: [new TerserPlugin({
-      terserOptions: {
-        parse: {
-          ecma: 8,
-        },
-        compress: {
-          ecma: 5,
-          warnings: false,
-          inline: 2,
-        },
-        mangle: {
-          safari10: true,
-        },
-        output: {
-          ecma: 5,
-          comments: false,
-        },
-      },
-      parallel: true,
-      cache: true,
-    })],
+    minimizer: [terser],
     runtimeChunk: false,
     splitChunks: {
       cacheGroups: {
