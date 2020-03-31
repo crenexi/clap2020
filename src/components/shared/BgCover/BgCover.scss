@@ -1,24 +1,31 @@
 @import '~scss/utils';
 
-.cover {
+.frame {
   @include position(absolute, 0 0 0 0);
 }
 
-.cover__inner,
-.cover__image,
-.cover__blanket {
+.frame__cover,
+.frame__cover-image,
+.frame__cover-blanket {
   @include size(100%);
 }
 
-.cover__inner {
+.frame__cover {
   position: relative;
 }
 
-.cover__image,
-.cover__blanket {
+.frame__cover-image,
+.frame__cover-blanket {
   @include position(absolute, 0 0 0 0);
 }
 
-.cover__image {
+.frame__cover-image {
   @include bg-image(cover);
+}
+
+// Main content over cover
+
+.frame-content {
+  position: relative;
+  @include flex-column();
 }

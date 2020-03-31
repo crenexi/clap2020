@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './BgCover.scss';
 
-const BgCover = ({ url, imagePosition, blanketColor }) => {
+const BgCover = (props) => {
+  const { url, imagePosition, blanketColor, children } = props;
+
   const imageStyle = {
     backgroundPosition: imagePosition,
     backgroundImage: `url('${url}')`,
@@ -13,16 +15,20 @@ const BgCover = ({ url, imagePosition, blanketColor }) => {
   };
 
   return (
-    <div styleName="cover">
-      <div styleName="cover__inner">
-        <div styleName="cover__image" style={imageStyle} />
-        <div styleName="cover__blanket" style={blanketStyle} />
+    <Fragment>
+      <div styleName="frame">
+        <div styleName="frame__cover">
+          <div styleName="frame__cover-image" style={imageStyle} />
+          <div styleName="frame__cover-blanket" style={blanketStyle} />
+        </div>
       </div>
-    </div>
+      <div styleName="frame-content">{children}</div>
+    </Fragment>
   );
 };
 
 BgCover.propTypes = {
+  children: PropTypes.node.isRequired,
   url: PropTypes.string.isRequired,
   imagePosition: PropTypes.string,
   blanketColor: PropTypes.string,
