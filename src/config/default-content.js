@@ -7,7 +7,7 @@ const defaultContent = {
   joinInvite: {
     preTitle: 'They fight. We applaud.',
     title: 'Join the Clap',
-    subtitle: 'The hour is grave. The war is raging. Across the globe, healthcare workers challenge the menace of COVID-19. Join us to raise a thundering applause for doctors, nurses, first responders, essential workers, and society.*',
+    subtitle: 'The hour is grave. The war is raging. Across the globe, healthcare workers challenge the menace of COVID-19. Join us to raise a thundering applause for doctors, nurses, first responders, essential workers, and society.',
     dateText: {
       day: 'Thursday',
       date: 'April 23',

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import BgCover from 'components/shared/BgCover';
 import MaskIcon from './MaskIcon';
 import JoinInvite from './JoinInvite';
+import Countdown from './Countdown';
 import './FullHeaderView.scss';
 
 const FullHeaderView = ({ coverUrl }) => {
@@ -16,6 +17,7 @@ const FullHeaderView = ({ coverUrl }) => {
       >
         <JoinInvite />
         <MaskIcon />
+        <Countdown />
       </BgCover>
     </div>
   );
