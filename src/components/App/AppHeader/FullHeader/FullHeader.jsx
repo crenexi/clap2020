@@ -1,23 +1,12 @@
 import React from 'react';
-import BgCover from 'components/shared/BgCover';
-import './FullHeader.scss';
+import useContent from 'hooks/use-content';
+import FullHeaderView from './FullHeaderView';
 
 const FullHeader = () => {
-  const assetsPath = process.env.ASSETS_PATH;
-  const coverUrl = `${assetsPath}/covers/nurse.jpg`;
+  const { fullHeader: content } = useContent();
+  const { coverUrl } = content;
 
-  return (
-    <div styleName="header">
-      <BgCover
-        url={coverUrl}
-        imagePosition="75% top"
-        blanketColor="rgba(19,54,109, .75)"
-        animate
-      >
-        Test
-      </BgCover>
-    </div>
-  );
+  return <FullHeaderView coverUrl={coverUrl} />;
 };
 
 export default FullHeader;
