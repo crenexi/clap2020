@@ -1,0 +1,11 @@
+@mixin divider-top($color: rgba(0, 0, 0, .7)) {
+  position: relative;
+
+  &::before {
+    content: '';
+    @include position(absolute, -3px null null 50%);
+    transform: translateX(-50%);
+    @include size(4.5rem, 6px);
+    background-color: $color;
+  }
+}
