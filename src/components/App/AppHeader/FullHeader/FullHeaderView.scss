@@ -1,0 +1,10 @@
+@import '~scss/utils';
+
+.header {
+  position: relative;
+  @include flex-column(center, center);
+  padding: 5rem 1rem;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+}

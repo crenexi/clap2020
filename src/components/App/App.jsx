@@ -4,7 +4,9 @@ import { ThemeProvider } from '@material-ui/styles';
 import fontAwesomeConfig from 'config/font-awesome-config';
 import muiConfig from 'config/material-ui-config';
 import defaultSettings from 'config/default-settings';
+import defaultContent from 'config/default-content';
 import { SettingsProvider } from 'contexts/SettingsContext';
+import { ContentProvider } from 'contexts/ContentContext';
 import logger from 'services/logger';
 import AppMain from 'components/App/AppMain';
 import AppHeader from 'components/App/AppHeader';
@@ -26,9 +28,11 @@ const App = () => {
       <SettingsProvider value={defaultSettings}>
         <Router>
           <div styleName="app">
-            <AppHeader />
-            <AppMain />
-            <AppFooter />
+            <ContentProvider value={defaultContent}>
+              <AppHeader />
+              <AppMain />
+              <AppFooter />
+            </ContentProvider>
           </div>
         </Router>
       </SettingsProvider>

@@ -1,0 +1,63 @@
+@import '~scss/utils';
+
+// Parade animation
+
+@keyframes moveSection {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+// Parade layout & animation
+
+.parade {
+  $border: 2px solid theme(cloud, dark2);
+
+  @include position(absolute, null 10px 10px 10px);
+  display: none;
+  width: calc(100% - 20px);
+  height: 3.1rem;
+  background-color: theme(cloud, base);
+  border-top: $border;
+  border-bottom: $border;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .1);
+
+  @include breakpoint('gt-sm') {
+    display: block;
+  }
+}
+
+.parade__sections {
+  position: relative;
+  @include flex-row();
+  @include size(100%);
+  transform: translate3d(0, 0, 0);
+  overflow: hidden;
+}
+
+.parade__section {
+  position: absolute;
+  bottom: 0;
+  animation: moveSection 35s linear infinite;
+
+  &:first-child { left: 50%; }
+  &:last-child { right: 50%; }
+}
+
+// Icons list
+
+.parade__icons {
+  @include flex-row(start, flex-end);
+  color: rgba(255, 255, 255, .35);
+}
+
+.parade__icon {
+  @include flex-column(center, flex-end);
+  padding: 0 5px 2px;
+  font-size: 2.5rem;
+  line-height: 1em;
+}

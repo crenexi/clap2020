@@ -1,0 +1,14 @@
+@mixin flex-column (
+  $justify-content: start,
+  $align-items: start,
+  $flex-wrap: null,
+) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify-content;
+  align-items: $align-items;
+
+  @if $flex-wrap {
+    flex-wrap: $flex-wrap;
+  }
+}

@@ -23,7 +23,10 @@ const AppHeader = ({ location }) => {
       <header styleName={headerStyleName}>
         Normal header
       </header>
-      {isFullHeader && <FullHeader />}
+      {(isFullHeader
+        ? <FullHeader />
+        : <div styleName="header__spacer" />
+      )}
     </Fragment>
   );
 };

@@ -1,0 +1,37 @@
+@import '~scss/utils';
+@import '~scss/shared/animations/zoom-pace';
+
+.frame {
+  @include position(absolute, 0 0 0 0);
+}
+
+.frame__cover,
+.frame__cover-image,
+.frame__cover-blanket {
+  @include size(100%);
+}
+
+.frame__cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.frame__cover-image,
+.frame__cover-blanket {
+  @include position(absolute, 0 0 0 0);
+}
+
+.frame__cover-image {
+  @include bg-image(cover);
+
+  &--animate {
+    animation: zoom-pace 25s cubic-bezier(.2, 0, .8, 1) infinite;
+  }
+}
+
+// Main content over cover
+
+.frame-content {
+  position: relative;
+  @include flex-column();
+}
