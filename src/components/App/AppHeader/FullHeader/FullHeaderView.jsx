@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BgCover from 'components/shared/BgCover';
+import MaskIcon from './MaskIcon';
 import JoinInvite from './JoinInvite';
 import './FullHeaderView.scss';
 
@@ -14,6 +15,7 @@ const FullHeaderView = ({ coverUrl }) => {
         animate
       >
         <JoinInvite />
+        <MaskIcon />
       </BgCover>
     </div>
   );
