@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './BgCover.scss';
 
 const BgCover = (props) => {
-  const { url, imagePosition, blanketColor, children } = props;
+  const { url, imagePosition, blanketColor, animate, children } = props;
+
+  const imageClass = classNames('frame__cover-image', {
+    'frame__cover-image--animate': animate,
+  });
 
   const imageStyle = {
     backgroundPosition: imagePosition,
@@ -18,7 +23,10 @@ const BgCover = (props) => {
     <Fragment>
       <div styleName="frame">
         <div styleName="frame__cover">
-          <div styleName="frame__cover-image" style={imageStyle} />
+          <div
+            styleName={imageClass}
+            style={imageStyle}
+          />
           <div styleName="frame__cover-blanket" style={blanketStyle} />
         </div>
       </div>
@@ -32,11 +40,13 @@ BgCover.propTypes = {
   url: PropTypes.string.isRequired,
   imagePosition: PropTypes.string,
   blanketColor: PropTypes.string,
+  animate: PropTypes.bool,
 };
 
 BgCover.defaultProps = {
   imagePosition: 'center center',
   blanketColor: 'rgba(0, 0, 0, .2)',
+  animate: false,
 };
 
 export default BgCover;

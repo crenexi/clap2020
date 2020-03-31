@@ -1,4 +1,5 @@
 @import '~scss/utils';
+@import '~scss/shared/animations/zoom-pace';
 
 .frame {
   @include position(absolute, 0 0 0 0);
@@ -12,6 +13,7 @@
 
 .frame__cover {
   position: relative;
+  overflow: hidden;
 }
 
 .frame__cover-image,
@@ -21,6 +23,10 @@
 
 .frame__cover-image {
   @include bg-image(cover);
+
+  &--animate {
+    animation: zoom-pace 20s ease-in-out infinite;
+  }
 }
 
 // Main content over cover
