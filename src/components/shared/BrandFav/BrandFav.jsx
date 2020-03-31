@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes, { oneOf } from 'prop-types';
-import useSettings from 'hooks/use-settings';
 import { capitalize } from 'utils/helpers';
 import './BrandFav.scss';
 
