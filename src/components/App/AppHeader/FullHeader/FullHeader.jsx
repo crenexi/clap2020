@@ -8,7 +8,14 @@ const FullHeader = () => {
 
   return (
     <div styleName="header">
-      <BgCover url={coverUrl} imagePosition="75% top" />
+      <BgCover
+        url={coverUrl}
+        imagePosition="75% top"
+        blanketColor="rgba(19,54,109, .75)"
+        animate
+      >
+        Test
+      </BgCover>
     </div>
   );
 };
