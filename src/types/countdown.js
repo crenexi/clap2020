@@ -4,10 +4,10 @@ const countdown = shape({
   fromNow: PropTypes.string.isRequired,
   timeZone: PropTypes.string.isRequired,
   ticker: shape({
-    days: PropTypes.string.isRequired,
-    hours: PropTypes.string.isRequired,
-    minutes: PropTypes.string.isRequired,
-    seconds: PropTypes.string.isRequired,
+    days: PropTypes.number.isRequired,
+    hours: PropTypes.number.isRequired,
+    minutes: PropTypes.number.isRequired,
+    seconds: PropTypes.number.isRequired,
   }),
 });
 
