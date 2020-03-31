@@ -8,7 +8,7 @@ const JoinInviteView = ({ content }) => {
   return (
     <div>
       <div>{preTitle}</div>
-      <div>{title}</div>
+      <h1>{title}</h1>
       <div>{subtitle}</div>
       <div>{day}</div>
       <div>{date}</div>

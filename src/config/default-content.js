@@ -5,8 +5,8 @@ const defaultContent = {
     coverUrl: `${assetsPath}/covers/nurse.jpg`,
   },
   joinInvite: {
-    preTitle: 'They fight. We applaud.',
-    title: 'Join the Clap',
+    preTitle: '#Clap2020 #ClapBecauseWeCare',
+    title: 'They fight. We applaud.',
     subtitle: 'The hour is grave. The war is raging. Across the globe, healthcare workers challenge the menace of COVID-19. Join us to raise a thundering applause for doctors, nurses, first responders, essential workers, and society.',
     dateText: {
       day: 'Thursday',
