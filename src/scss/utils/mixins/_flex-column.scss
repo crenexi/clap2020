@@ -1,6 +1,6 @@
 @mixin flex-column (
-  $justify-content: start,
-  $align-items: start,
+  $justify-content: stretch,
+  $align-items: stretch,
   $flex-wrap: null,
 ) {
   display: flex;
