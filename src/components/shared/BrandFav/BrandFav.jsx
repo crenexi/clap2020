@@ -4,7 +4,8 @@ import { capitalize } from 'utils/helpers';
 import './BrandFav.scss';
 
 const BrandFav = ({ className, variant, ext, width }) => {
-  const src = `/assets/brand/Fav_${capitalize(variant)}.${ext}`;
+  const assetsPath = process.env.ASSETS_PATH;
+  const src = `${assetsPath}/brand/Fav_${capitalize(variant)}.${ext}`;
 
   return (
     <div className={className} styleName="fav" style={{ width }}>

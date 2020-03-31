@@ -1,0 +1,24 @@
+@import '~scss/utils';
+
+.cover {
+  @include position(absolute, 0 0 0 0);
+}
+
+.cover__inner,
+.cover__image,
+.cover__blanket {
+  @include size(100%);
+}
+
+.cover__inner {
+  position: relative;
+}
+
+.cover__image,
+.cover__blanket {
+  @include position(absolute, 0 0 0 0);
+}
+
+.cover__image {
+  @include bg-image(cover);
+}

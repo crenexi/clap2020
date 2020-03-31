@@ -4,7 +4,8 @@ import { capitalize } from 'utils/helpers';
 import './BrandLogo.scss';
 
 const BrandLogo = ({ className, variant, ext, width }) => {
-  const src = `/assets/brand/Logo_${capitalize(variant)}.${ext}`;
+  const assetsPath = process.env.ASSETS_PATH;
+  const src = `${assetsPath}/brand/Logo_${capitalize(variant)}.${ext}`;
 
   return (
     <div className={className} styleName="logo" style={{ width }}>
