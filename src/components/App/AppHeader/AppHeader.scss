@@ -1,12 +1,21 @@
 @import '~scss/utils';
 
-.header {
+.header,
+.header__spacer {
   width: 100%;
   height: ui-layout(headerHeightSm);
 
   @include breakpoint('gt-sm') {
     height: ui-layout(headerHeightGtSm);
   }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: z-index(header);
+  background-color: theme(blueRose, base);
+  color: #fff;
 
   &--hidden {
     opacity: 0;

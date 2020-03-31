@@ -1,0 +1,6 @@
+@import '~scss/utils';
+
+.header {
+  position: relative;
+  @include size(100%, 100vh);
+}
