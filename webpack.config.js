@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -55,12 +56,17 @@ const scssLoaderRule = () => {
 #### Plugins #######
 ################# */
 
-const htmlWebpack = () => new HtmlWebpackPlugin({
+const environmentPlugin = () => new webpack.EnvironmentPlugin({
+  ASSETS_PATH: '/assets',
+  DEBUG: false,
+});
+
+const htmlWebpackPlugin = () => new HtmlWebpackPlugin({
   template: './public/index.html',
   filename: 'index.html',
 });
 
-const copyWebpack = () => new CopyWebpackPlugin([
+const copyWebpackPlugin = () => new CopyWebpackPlugin([
   { from: './public' },
 ]);
 
@@ -126,8 +132,9 @@ const config = {
     ],
   },
   plugins: [
-    htmlWebpack(),
-    copyWebpack(),
+    environmentPlugin(),
+    htmlWebpackPlugin(),
+    copyWebpackPlugin(),
   ],
   devServer: {
     port: 4200,
