@@ -1,5 +1,63 @@
 @import '~scss/utils';
 
 .conditions {
+  @include flex-column(flex-start, center);
+  padding: layout(md);
+  @include gradient(theme(redRose, dark2), theme(redRose, light1));
+
+  @include breakpoint('gt-xs') {
+    padding: layout(lg);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(xl);
+  }
+}
+
+.conditions__grid {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-column-gap: spacing(lg);
+  grid-row-gap: layout(sm);
+  width: 100%;
+  max-width: 80rem;
+
+  @include breakpoint('gt-xs') {
+    grid-column-gap: spacing(xl);
+    grid-row-gap: layout(md);
+  }
+
+  @include breakpoint('gt-sm') {
+    grid-column-gap: spacing(2xl);
+    grid-row-gap: layout(lg);
+  }
+}
+
+.condition {
+  @include flex-column(start, center);
+}
+
+.condition__icon {
+  @include flex-column(center, center);
+  @include size(6rem);
+  padding-bottom: 3px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 2.3rem;
+}
+
+.condition__title {
+  margin-top: spacing(md);
+  text-align: center;
+  font-family: font-family(primary);
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
+
+.condition__subtitle {
+  max-width: 28rem;
+  margin-top: spacing(md);
+  text-align: left;
 }

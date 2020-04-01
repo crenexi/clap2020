@@ -26,28 +26,33 @@ const defaultContent = {
     warConditions: [
       {
         icon: 'coffin-cross',
-        title: 'Fallen as Heroes',
-        subtitle: '',
-      },
-      {
-        icon: 'head-side-cough',
-        title: 'Working in Danger',
-        subtitle: '',
+        title: 'Resting in Peace',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ',
       },
       {
         icon: 'stretcher',
         title: 'Fighting the Front',
-        subtitle: '',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ',
+      },
+      {
+        icon: 'head-side-cough',
+        title: 'Working in Danger',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ',
+      },
+      {
+        icon: 'head-side-mask',
+        title: 'Facing Short Supplies',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ',
       },
       {
         icon: 'lungs-virus',
         title: 'Forced to Triage',
-        subtitle: '',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ',
       },
       {
         icon: 'door-open',
         title: 'Fired for Truth',
-        subtitle: '',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ',
       },
     ],
   },
