@@ -31,11 +31,7 @@ const FullHeaderView = ({ coverUrl }) => {
         <Countdown />
       </BgCover>
       <div styleName="header__down-invite">
-        <IconButton
-          variant="primary"
-          icon="arrow-alt-down"
-          label="Three Steps"
-        />
+        <IconButton icon="arrow-alt-down" label="Three Steps" />
       </div>
       <IconParade />
     </div>

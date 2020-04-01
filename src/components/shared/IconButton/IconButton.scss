@@ -41,6 +41,7 @@
 
   // Ghost button
   .MuiIconButton-root.c2-icon-button--ghost {
+    background-color: transparent;
     border: 1px solid transparent;
 
     &:hover {
@@ -50,16 +51,54 @@
 
   // Primary button
   .MuiIconButton-root.c2-icon-button--primary {
-    border: 2px solid transparent;
     @include gradient(theme(blueRose, dark1), theme(ocean, base));
+    border: 2px solid transparent;
 
     .c2-icon-button__label {
       color: #fff;
     }
 
     &:hover {
-      border-color: theme(blueRose, dark1);
       background: transparent;
+      border-color: theme(blueRose, dark1);
+
+      .c2-icon-button__label {
+        color: theme(blueRose, dark1);
+      }
+    }
+  }
+
+  // Secondary button
+  .MuiIconButton-root.c2-icon-button--secondary {
+    background-color: transparent;
+    border: 2px solid theme(blueRose, dark1);
+
+    .c2-icon-button__label {
+      color: theme(blueRose, dark1);
+    }
+
+    &:hover {
+      background: theme(blueRose, dark1);
+      border-color: transparent;
+
+      .c2-icon-button__label {
+        color: #fff;
+      }
+    }
+  }
+
+  // White button
+  .MuiIconButton-root.c2-icon-button--white {
+    background-color: transparent;
+    border: 2px solid #fff;
+
+    .c2-icon-button__label {
+      color: #fff;
+    }
+
+    &:hover {
+      background: #fff;
+      border-color: transparent;
 
       .c2-icon-button__label {
         color: theme(blueRose, dark1);
