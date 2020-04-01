@@ -14,9 +14,9 @@ const JoinInviteView = ({ content }) => {
       <h2 styleName="join__title">{title}</h2>
       <div styleName="join__subtitle">{subtitle}</div>
       <div styleName="join__when">
-        <div>{day}</div>
-        <div>{date}</div>
-        <div>{time}</div>
+        <div styleName="join__when-row join__day">{day}</div>
+        <div styleName="join__when-row join__date">{date}</div>
+        <div styleName="join__when-row join__time">{time}</div>
       </div>
     </div>
   );
