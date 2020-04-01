@@ -16,7 +16,14 @@ const defaultContent = {
   },
   thisIsWar: {
     coverUrl: `${assetsPath}/covers/mask.jpg`,
-    conditions: [
+    featuredQuote: {
+      text: 'Our health care systems are at war with a pandemic virus.',
+      author: {
+        name: 'Craig R. Smith',
+        title: 'Surgeon-In-Chief, NewYork-Presbyterian Hospital',
+      },
+    },
+    warConditions: [
       {
         icon: 'coffin-cross',
         title: 'Fallen as Heroes',
@@ -41,15 +48,6 @@ const defaultContent = {
         icon: 'door-open',
         title: 'Fired for Truth',
         subtitle: '',
-      },
-    ],
-    quotes: [
-      {
-        text: 'Our health care systems are at war with a pandemic virus.',
-        author: {
-          name: 'Craig R. Smith',
-          title: 'Surgeon-In-Chief, NewYork-Presbyterian Hospital',
-        },
       },
     ],
   },

@@ -1,19 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { arrayOf } from 'prop-types';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import quoteType from 'types/quote';
+import warConditionType from 'types/war-condition';
 import BgCover from 'components/shared/BgCover';
+import BigQuote from 'components/shared/BigQuote';
 import './ThisIsWarView.scss';
 
-const ThisIsWarView = ({ coverUrl, warConditions, quotes }) => {
+const ThisIsWarView = (props) => {
+  const { coverUrl, featuredQuote, warConditions } = props;
+
   const theme = useTheme();
   const isGtSm = useMediaQuery(theme.breakpoints.up('md'));
 
-  const warConditions = [];
-
   const warContentSecondary = (
     <div styleName="war__bottom">
-      Bottom content
+      <div styleName="war__featured-quote">
+        <BigQuote quote={featuredQuote} extraLarge />
+      </div>
     </div>
   );
 
@@ -41,6 +46,8 @@ const ThisIsWarView = ({ coverUrl, warConditions, quotes }) => {
 
 ThisIsWarView.propTypes = {
   coverUrl: PropTypes.string.isRequired,
+  featuredQuote: quoteType.isRequired,
+  warConditions: arrayOf(warConditionType).isRequired,
 };
 
 export default ThisIsWarView;

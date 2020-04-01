@@ -13,8 +13,11 @@
 
 .war__cover-frame {
   position: relative;
-  height: 60vw;
-  max-height: 90vh;
+  max-height: 60vw;
+  height: 90vh;
+
+  @include breakpoint('gt-sm') {
+  }
 }
 
 .war__cover-content {
@@ -74,6 +77,28 @@
 // Bottom content
 
 .war__bottom {
-  @include flex-column(center, flex-start);
+  @include flex-column(start, center);
+  padding: spacing(md) spacing(sm) spacing(lg);
   background-color: theme(ocean, dark2);
+
+  @include breakpoint('gt-xs') {
+    padding: spacing(lg) spacing(lg) spacing(xl);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: spacing(lg) 0 0 spacing(md);
+    background-color: transparent;
+  }
+}
+
+.war__featured-quote {
+  max-width: 24rem;
+
+  @include breakpoint('gt-xs') {
+    max-width: 30rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    max-width: 32rem;
+  }
 }

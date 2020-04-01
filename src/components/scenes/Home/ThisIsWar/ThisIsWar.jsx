@@ -4,13 +4,13 @@ import ThisIsWarView from './ThisIsWarView';
 
 const ThisIsWar = () => {
   const { thisIsWar: content } = useContent();
-  const { coverUrl, warConditions, quotes } = content;
+  const { coverUrl, featuredQuote, warConditions } = content;
 
   return (
     <ThisIsWarView
       coverUrl={coverUrl}
       warConditions={warConditions}
-      quotes={quotes}
+      featuredQuote={featuredQuote}
     />
   );
 };
