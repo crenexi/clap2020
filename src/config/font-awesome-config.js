@@ -2,6 +2,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
   faAmbulance,
+  faArrowAltDown,
   faBrain,
   faCalendarPlus,
   faCoffee,
@@ -42,6 +43,7 @@ import {
 const buildLibrary = () => {
   library.add(
     faAmbulance,
+    faArrowAltDown,
     faBrain,
     faCalendarPlus,
     faCoffee,
