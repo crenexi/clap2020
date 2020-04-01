@@ -1,0 +1,17 @@
+@function shadow($key) {
+  @if map-has-key($shadows, $key) {
+    @return map-get($shadows, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in $shadows.';
+  @return null;
+}
+
+@function shadow-hover($key) {
+  @if map-has-key($shadows-hover, $key) {
+    @return map-get($shadows-hover, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in $shadows-hover.';
+  @return null;
+}
