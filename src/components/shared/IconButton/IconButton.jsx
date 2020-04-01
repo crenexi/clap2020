@@ -44,7 +44,7 @@ IconButton.propTypes = {
   icon: PropTypes.string.isRequired,
   size: oneOf(['small', 'medium']),
   disabled: PropTypes.bool,
-  click: oneOfType([null, PropTypes.func]),
+  click: oneOfType([() => null, PropTypes.func]),
   label: PropTypes.string,
 };
 
