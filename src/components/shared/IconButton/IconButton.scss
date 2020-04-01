@@ -1,0 +1,69 @@
+@import '~scss/utils';
+
+.wrapper {
+  @include flex-column(center, center);
+}
+
+.wrapper__label {
+  margin-top: 3px;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1em;
+  word-wrap: nowrap;
+  color: color(content, subtle);
+
+  &--small {
+    font-size: .55rem;
+  }
+}
+
+:global {
+  .c2-icon-button__label {
+    color: color(content, base);
+    font-size: 1.7rem;
+  }
+
+  .c2-icon-button {
+    @include size(3.5rem);
+
+    &--small {
+      @include size(2rem);
+
+      .c2-icon-button__label {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // Ghost button
+  .MuiIconButton-root.c2-icon-button--ghost {
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: theme(cloud, dark2);
+    }
+  }
+
+  // Primary button
+  .MuiIconButton-root.c2-icon-button--primary {
+    border: 2px solid transparent;
+    @include gradient(theme(blueRose, dark1), theme(ocean, base));
+
+    .c2-icon-button__label {
+      color: #fff;
+    }
+
+    &:hover {
+      border-color: theme(blueRose, dark1);
+      background: transparent;
+
+      .c2-icon-button__label {
+        color: theme(blueRose, dark1);
+      }
+    }
+  }
+}
