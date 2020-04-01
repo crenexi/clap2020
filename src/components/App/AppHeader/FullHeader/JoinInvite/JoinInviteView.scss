@@ -1,0 +1,27 @@
+@import '~scss/utils';
+
+.join {
+  @include flex-column(center, center);
+  text-align: center;
+}
+
+.join__pre-title {
+  margin-top: spacing(xs);
+  color: theme(redRose, light1);
+  font-family: font-family(primary);
+  font-size: 1.5rem;
+  letter-spacing: -.5px;
+}
+
+.join__title {
+  margin-top: spacing(md);
+}
+
+.join__subtitle {
+  margin-top: spacing(md);
+  text-align: left;
+}
+
+.join__when {
+  margin-top: spacing(lg);
+}
