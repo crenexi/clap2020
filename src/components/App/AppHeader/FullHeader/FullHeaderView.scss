@@ -3,8 +3,56 @@
 .header {
   position: relative;
   @include flex-column(center, center);
-  padding: 5rem 1rem;
   width: 100%;
   min-height: 100vh;
+  padding: 5rem 1rem;
   text-align: center;
+
+  @include breakpoint('gt-xs') {
+    padding: 6rem 3rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: 6rem 5rem;
+  }
+
+  @include breakpoint('gt-md') {
+    padding: 7rem;
+  }
+}
+
+.header__logo-aside {
+  @include position(absolute, 0 0 null 0);
+  z-index: 2;
+  @include flex-row(center, center);
+  background-color: theme(blueRose, base);
+  box-shadow: shadow(2);
+
+  @include breakpoint('gt-sm') {
+    @include position(absolute, 0 null null 0);
+    @include flex-row(flex-start, flex-start);
+    background-color: unset;
+    box-shadow: unset;
+  }
+}
+
+.header__logo {
+  display: flex;
+  width: 15vh;
+  padding: 9px 0 8px;
+
+  @include breakpoint('gt-sm') {
+    transform: unset;
+    width: 15rem;
+    padding: 2rem 2.25rem;
+  }
+}
+
+.header__down-invite {
+  @include position(absolute, null null 10px 50%);
+  transform: translateX(-50%);
+
+  @include breakpoint('gt-sm') {
+    bottom: calc(3.1rem + 20px);
+  }
 }

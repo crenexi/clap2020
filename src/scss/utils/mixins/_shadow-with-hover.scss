@@ -1,0 +1,7 @@
+@mixin shadow-with-hover($key: 2) {
+  box-shadow: shadow($key);
+
+  &:hover {
+    box-shadow: shadow-hover($key);
+  }
+}

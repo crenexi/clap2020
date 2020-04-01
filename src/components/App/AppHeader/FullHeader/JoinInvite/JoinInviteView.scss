@@ -1,0 +1,64 @@
+@import '~scss/utils';
+
+.join {
+  @include flex-column(center, center);
+  text-align: center;
+}
+
+.join__pre-title {
+  margin-top: spacing(xs);
+  color: theme(redRose, light1);
+  font-family: font-family(primary);
+  font-size: 1.5rem;
+  letter-spacing: -.5px;
+}
+
+.join__title {
+  margin-top: spacing(md);
+}
+
+.join__subtitle {
+  max-width: 55rem;
+  margin-top: spacing(md);
+  text-align: left;
+}
+
+.join__when {
+  $border: 1px solid theme(cloud, dark2);
+
+  margin-top: layout(sm);
+  display: flex;
+  flex-direction: column;
+  border: $border;
+  border-radius: border-radius(round);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: font-family(primary);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.1em;
+
+  &-row {
+    padding: 5px 2rem;
+
+    &:not(:first-child) {
+      border-top: $border;
+    }
+  }
+
+  @include breakpoint('gt-sm') {
+    font-size: 2rem;
+  }
+}
+
+.join__day {
+  color: theme(blueRose, dark2);
+}
+
+.join__date {
+  color: theme(blueRose, dark1);
+}
+
+.join__time {
+  color: theme(blueRose, base);
+}

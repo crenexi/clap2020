@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Design from 'components/scenes/Design';
 import withAnalyticsTracker from 'utils/with-analytics-tracker';
 
-const Home = () => <h1>Hello World</h1>;
+const Home = () => <div />;
 
 const AppMain = () => {
   const routesData = [
