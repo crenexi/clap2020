@@ -5,11 +5,11 @@
   @include flex-column(center, center);
   width: 100%;
   min-height: 100vh;
-  padding: 5rem 1rem 2rem;
+  padding: 5rem 1rem;
   text-align: center;
 
   @include breakpoint('gt-xs') {
-    padding: 6rem 3rem 5rem;
+    padding: 6rem 3rem;
   }
 
   @include breakpoint('gt-sm') {
@@ -45,5 +45,14 @@
     transform: unset;
     width: 15rem;
     padding: 2rem 2.25rem;
+  }
+}
+
+.header__down-invite {
+  @include position(absolute, null null 10px 50%);
+  transform: translateX(-50%);
+
+  @include breakpoint('gt-sm') {
+    bottom: calc(3.1rem + 20px);
   }
 }
