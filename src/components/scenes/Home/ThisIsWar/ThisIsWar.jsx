@@ -1,9 +1,12 @@
 import React from 'react';
+import useContent from 'hooks/use-content';
+import ThisIsWarView from './ThisIsWarView';
 
 const ThisIsWar = () => {
-  return (
-    <h2>This is war</h2>
-  );
+  const { thisIsWar: content } = useContent();
+  const { coverUrl } = content;
+
+  return <ThisIsWarView coverUrl={coverUrl} />;
 };
 
 export default ThisIsWar;
