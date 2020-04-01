@@ -4,9 +4,15 @@ import ThisIsWarView from './ThisIsWarView';
 
 const ThisIsWar = () => {
   const { thisIsWar: content } = useContent();
-  const { coverUrl } = content;
+  const { coverUrl, warConditions, quotes } = content;
 
-  return <ThisIsWarView coverUrl={coverUrl} />;
+  return (
+    <ThisIsWarView
+      coverUrl={coverUrl}
+      warConditions={warConditions}
+      quotes={quotes}
+    />
+  );
 };
 
 export default ThisIsWar;

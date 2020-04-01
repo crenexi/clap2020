@@ -34,4 +34,5 @@
 .frame-content {
   position: relative;
   @include flex-column();
+  height: 100%;
 }
