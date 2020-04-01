@@ -6,6 +6,7 @@ import quoteType from 'types/quote';
 import warConditionType from 'types/war-condition';
 import BgCover from 'components/shared/BgCover';
 import BigQuote from 'components/shared/BigQuote';
+import WarConditions from './WarConditions';
 import './ThisIsWarView.scss';
 
 const ThisIsWarView = (props) => {
@@ -40,6 +41,7 @@ const ThisIsWarView = (props) => {
         </BgCover>
       </div>
       {!isGtSm && warContentSecondary}
+      <WarConditions conditions={warConditions} />
     </div>
   );
 };
