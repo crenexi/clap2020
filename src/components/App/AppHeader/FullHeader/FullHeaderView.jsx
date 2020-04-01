@@ -10,7 +10,7 @@ import Countdown from './Countdown';
 import IconParade from './IconParade';
 import './FullHeaderView.scss';
 
-const FullHeaderView = ({ coverUrl }) => {
+const FullHeaderView = ({ coverUrl, downClick }) => {
   const theme = useTheme();
   const isGtSm = useMediaQuery(theme.breakpoints.up('md'));
   const logoVariant = !isGtSm ? 'white' : 'main';
@@ -31,7 +31,11 @@ const FullHeaderView = ({ coverUrl }) => {
         <Countdown />
       </BgCover>
       <div styleName="header__down-invite">
-        <IconButton icon="arrow-alt-down" label="Three Steps" />
+        <IconButton
+          icon="arrow-alt-down"
+          label="Three Steps"
+          click={downClick}
+        />
       </div>
       <IconParade />
     </div>
@@ -40,6 +44,7 @@ const FullHeaderView = ({ coverUrl }) => {
 
 FullHeaderView.propTypes = {
   coverUrl: PropTypes.string.isRequired,
+  downClick: PropTypes.func.isRequired,
 };
 
 export default FullHeaderView;

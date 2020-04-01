@@ -1,0 +1,104 @@
+@import '~scss/utils';
+
+.war {
+  width: 100%;
+  color: #fff;
+  text-align: left;
+}
+
+.war__cover-frame,
+.war__cover-content {
+  height: 100%;
+}
+
+.war__cover-frame {
+  position: relative;
+  max-height: 60vw;
+  height: 90vh;
+
+  @include breakpoint('gt-sm') {
+  }
+}
+
+.war__cover-content {
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 1rem 1rem 1rem 50%;
+
+  @include breakpoint('gt-xs') {
+    padding: 2rem 2rem 2rem 50%;
+  }
+
+  @include breakpoint('gt-sm') {
+    grid-template-rows: 1fr 1fr;
+    padding: 3rem 3rem 3rem 50%;
+  }
+}
+
+// Top content
+
+.war__top {
+  @include flex-column(center, center);
+  text-transform: uppercase;
+}
+
+.war__heading {
+  font-family: font-family(primary);
+  font-size: 2rem;
+  line-height: .8em;
+
+  @include breakpoint('gt-xs') {
+    font-size: 3.25rem;
+    letter-spacing: -1px;
+  }
+
+  @include breakpoint('gt-sm') {
+    font-size: 4.5rem;
+    letter-spacing: -2px;
+  }
+}
+
+.war__heading--bold {
+  font-size: 5rem;
+  letter-spacing: -3px;
+  color: theme(redRose, light1);
+
+  @include breakpoint('gt-xs') {
+    font-size: 7.5rem;
+    letter-spacing: -4px;
+  }
+
+  @include breakpoint('gt-sm') {
+    font-size: 10rem;
+    letter-spacing: -5px;
+  }
+}
+
+// Bottom content
+
+.war__bottom {
+  @include flex-column(start, center);
+  padding: spacing(md) spacing(sm) spacing(lg);
+  background-color: theme(ocean, dark2);
+
+  @include breakpoint('gt-xs') {
+    padding: spacing(lg) spacing(lg) spacing(xl);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: spacing(lg) 0 0 spacing(md);
+    background-color: transparent;
+  }
+}
+
+.war__featured-quote {
+  max-width: 24rem;
+
+  @include breakpoint('gt-xs') {
+    max-width: 30rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    max-width: 32rem;
+  }
+}

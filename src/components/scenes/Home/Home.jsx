@@ -1,9 +1,10 @@
 import React from 'react';
+import ThisIsWar from './ThisIsWar';
 import './Home.scss';
 
 const Home = () => (
   <article styleName="home">
-    <h1>Home</h1>
+    <ThisIsWar />
   </article>
 );
 

@@ -1,12 +1,22 @@
 import React from 'react';
 import useContent from 'hooks/use-content';
+import scrollService from 'services/scroll-service';
 import FullHeaderView from './FullHeaderView';
 
 const FullHeader = () => {
   const { fullHeader: content } = useContent();
   const { coverUrl } = content;
 
-  return <FullHeaderView coverUrl={coverUrl} />;
+  const handleDownClick = () => {
+    scrollService.scrollToElement('thisIsWar');
+  };
+
+  return (
+    <FullHeaderView
+      coverUrl={coverUrl}
+      downClick={handleDownClick}
+    />
+  );
 };
 
 export default FullHeader;
