@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import * as Scroll from 'react-scroll';
 import quoteType from 'types/quote';
 import warConditionType from 'types/war-condition';
 import BgCover from 'components/shared/BgCover';
@@ -11,6 +12,7 @@ import './ThisIsWarView.scss';
 
 const ThisIsWarView = (props) => {
   const { coverUrl, featuredQuote, warConditions } = props;
+  const ScrollElement = Scroll.Element;
 
   const theme = useTheme();
   const isGtSm = useMediaQuery(theme.breakpoints.up('md'));
@@ -24,7 +26,7 @@ const ThisIsWarView = (props) => {
   );
 
   return (
-    <div styleName="war">
+    <ScrollElement styleName="war" name="thisIsWar">
       <div styleName="war__cover-frame">
         <BgCover
           url={coverUrl}
@@ -42,7 +44,7 @@ const ThisIsWarView = (props) => {
       </div>
       {!isGtSm && warContentSecondary}
       <WarConditions conditions={warConditions} />
-    </div>
+    </ScrollElement>
   );
 };
 

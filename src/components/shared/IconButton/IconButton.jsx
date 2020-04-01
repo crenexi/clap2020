@@ -30,7 +30,7 @@ const IconButton = (props) => {
         classes={muiClasses}
         size={size}
         disabled={disabled}
-        click={click}
+        onClick={click}
       >
         <FaIcon icon={icon} />
       </MuiIconButton>
