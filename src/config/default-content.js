@@ -18,28 +18,28 @@ const defaultContent = {
     coverUrl: `${assetsPath}/covers/mask.jpg`,
     conditions: [
       {
-        icon: 'Fallen as Heroes',
-        title: '',
+        icon: 'coffin-cross',
+        title: 'Fallen as Heroes',
         subtitle: '',
       },
       {
-        icon: 'Working in Danger',
-        title: '',
+        icon: 'head-side-cough',
+        title: 'Working in Danger',
         subtitle: '',
       },
       {
-        icon: 'Fighting the Front',
-        title: '',
+        icon: 'stretcher',
+        title: 'Fighting the Front',
         subtitle: '',
       },
       {
-        icon: '',
-        title: 'Fired for Truth',
-        subtitle: '',
-      },
-      {
-        icon: '',
+        icon: 'lungs-virus',
         title: 'Forced to Triage',
+        subtitle: '',
+      },
+      {
+        icon: 'door-open',
+        title: 'Fired for Truth',
         subtitle: '',
       },
     ],
