@@ -48,9 +48,22 @@
   }
 }
 
+// Arrow down invitation
+
+@keyframes invite-down {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 100%; }
+  0% { transform: translate(-50%, -1rem); }
+  100% { transform: translate(-50%, 0); }
+}
+
 .header__down-invite {
   @include position(absolute, null null 10px 50%);
   transform: translateX(-50%);
+
+  &:not(:hover) {
+    animation: invite-down 2s linear infinite both;
+  }
 
   @include breakpoint('gt-sm') {
     bottom: calc(3.1rem + 20px);
