@@ -1,0 +1,13 @@
+@import '~scss/utils';
+
+.header {
+  @include position(fixed, 0 null null 0);
+  @include size(100%);
+  background-color: blue;
+  // background-color: theme(blueRose, base);
+
+  &--hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+}

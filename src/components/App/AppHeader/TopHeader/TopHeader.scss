@@ -1,0 +1,6 @@
+@import '~scss/utils';
+
+.header {
+  @include size(100%);
+  background-color: green;
+}

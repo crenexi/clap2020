@@ -1,17 +1,12 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes, { shape } from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import classNames from 'classnames';
+import GlobalHeader from './GlobalHeader';
+import TopHeader from './TopHeader';
 import FullHeader from './FullHeader';
-import './AppHeader.scss';
 
 const AppHeader = ({ location }) => {
   const [isFullHeader, setIsFullHeader] = useState(false);
-
-  // Header class; hidden if full header
-  const headerStyleName = classNames('header', {
-    'header--hidden': isFullHeader,
-  });
 
   // On path change, set header type
   useEffect(() => {
@@ -20,13 +15,8 @@ const AppHeader = ({ location }) => {
 
   return (
     <Fragment>
-      <header styleName={headerStyleName}>
-        Normal header
-      </header>
-      {(isFullHeader
-        ? <FullHeader />
-        : <div styleName="header__spacer" />
-      )}
+      <GlobalHeader />
+      {/* {isFullHeader ? <FullHeader /> : <TopHeader />} */}
     </Fragment>
   );
 };

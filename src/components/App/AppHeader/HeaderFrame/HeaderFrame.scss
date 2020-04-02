@@ -1,0 +1,13 @@
+@import '~scss/utils';
+
+.frame {
+  position: relative;
+  z-index: z-index(header);
+  width: 100%;
+  height: ui-layout(headerHeightSm);
+  color: #fff;
+
+  @include breakpoint('gt-sm') {
+    height: ui-layout(headerHeightGtSm);
+  }
+}
