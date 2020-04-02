@@ -18,7 +18,7 @@
 }
 
 .app:not(.app--loading) {
-  animation: fade-in-app 500ms linear both;
+  animation: fade-in-app 350ms linear both 250ms;
 }
 
 // Loading view
