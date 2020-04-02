@@ -1,10 +1,13 @@
 @import '~scss/utils';
 @import '~scss/core';
 
+@keyframes fade-in-app {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .app {
   min-height: 100vh;
-  transition-duration: 1s;
-  opacity: 1;
 }
 
 .app--loading {
@@ -12,6 +15,10 @@
   pointer-events: none;
   overflow: hidden;
   opacity: 0;
+}
+
+.app:not(.app--loading) {
+  animation: fade-in-app 500ms linear both;
 }
 
 // Loading view

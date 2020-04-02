@@ -16,7 +16,7 @@ const AppHeader = ({ location }) => {
   return (
     <Fragment>
       <GlobalHeader />
-      {/* {isFullHeader ? <FullHeader /> : <TopHeader />} */}
+      {isFullHeader ? <FullHeader /> : <TopHeader />}
     </Fragment>
   );
 };
