@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes, { oneOf } from 'prop-types';
+import { Link } from 'react-router-dom';
 import { capitalize } from 'utils/helpers';
 import './BrandFav.scss';
 
@@ -8,9 +9,9 @@ const BrandFav = ({ className, variant, ext, width }) => {
   const src = `${assetsPath}/brand/Fav_${capitalize(variant)}.${ext}`;
 
   return (
-    <div className={className} styleName="fav" style={{ width }}>
+    <Link to="/" className={className} styleName="fav" style={{ width }}>
       <img style={{ maxWidth: '100%' }} src={src} alt="Clap2020 Fav" />
-    </div>
+    </Link>
   );
 };
 
