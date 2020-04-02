@@ -15,20 +15,21 @@ fontAwesomeConfig.buildLibrary();
 
 const App = () => {
   logger.info('\nMain Engine Start.\nT-Zero. SRB Ignition.\nLiftoff.');
-  const theme = muiConfig.createTheme();
+  const isDevEnv = process.env.NODE_ENV === 'development';
+  const isIndexRoute = document.location.pathname === '/';
 
-  // Logs the MUI theme values
+  // Create Material UI theme
+  const theme = muiConfig.createTheme();
   // logger.info(theme);
 
-  // Application loading indication
-  const loadingDuration = 1500;
-  const [isLoading, setIsLoading] = useState(true);
+  // Application loading indication on home page only
+  const [isLoading, setIsLoading] = useState(isIndexRoute && !isDevEnv);
 
   // Loading for minimum duration
   useEffect(() => {
     const timeOutId = setTimeout(() => {
       setIsLoading(false);
-    }, loadingDuration);
+    }, 1500);
 
     return () => clearTimeout(timeOutId);
   }, []);
