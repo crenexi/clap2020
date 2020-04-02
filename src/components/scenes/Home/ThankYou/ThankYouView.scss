@@ -39,6 +39,7 @@
   font-family: font-family(primary);
   font-size: 4rem;
   font-weight: 700;
+  line-height: 1.25em;
   text-shadow: 3px 3px 0 theme(marine, light2);
 
   @include text-gradient(

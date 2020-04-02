@@ -11,10 +11,18 @@
   font-family: font-family(primary);
   font-size: 1.5rem;
   letter-spacing: -.5px;
+
+  @include breakpoint('gt-md') {
+    font-size: 2rem;
+  }
 }
 
 .join__title {
   margin-top: spacing(md);
+
+  @include breakpoint('gt-md') {
+    font-size: 4.5rem;
+  }
 }
 
 .join__subtitle {
