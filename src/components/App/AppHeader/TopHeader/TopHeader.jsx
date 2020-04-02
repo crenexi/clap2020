@@ -1,13 +1,16 @@
 import React from 'react';
+import BrandLogo from 'components/shared/BrandLogo';
 import HeaderFrame from '../HeaderFrame';
 import './TopHeader.scss';
 
 const TopHeader = () => (
-  <div styleName="header">
-    <HeaderFrame>
-      TOP HEADER...
-    </HeaderFrame>
-  </div>
+  <HeaderFrame>
+    <div styleName="header">
+      <div styleName="header__logo">
+        <BrandLogo variant="white" />
+      </div>
+    </div>
+  </HeaderFrame>
 );
 
 export default TopHeader;
