@@ -7,7 +7,7 @@ const TopHeader = () => (
   <HeaderFrame>
     <div styleName="header">
       <div styleName="header__logo">
-        <BrandLogo variant="white" />
+        <BrandLogo variant="main" />
       </div>
     </div>
   </HeaderFrame>

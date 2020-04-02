@@ -1,13 +1,16 @@
 @import '~scss/utils';
 
-.header {
-  @include position(fixed, 0 null null 0);
-  @include size(100%);
-  background-color: blue;
-  // background-color: theme(blueRose, base);
+.header-frame {
+  @include position(fixed, 0 0 null 0);
+  z-index: z-index(header);
+  width: 100%;
 
   &--hidden {
     pointer-events: none;
     opacity: 0;
   }
+}
+
+.header {
+  width: 100%;
 }

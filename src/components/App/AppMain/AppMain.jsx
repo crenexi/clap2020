@@ -6,6 +6,7 @@ import Latest from 'components/scenes/Latest';
 import Countdown from 'components/scenes/Countdown';
 import Design from 'components/scenes/Design';
 import withAnalyticsTracker from 'utils/with-analytics-tracker';
+import './AppMain.scss';
 
 const AppMain = () => {
   const routesData = [
@@ -21,7 +22,7 @@ const AppMain = () => {
   });
 
   return (
-    <main>
+    <main styleName="main">
       <Switch>
         <Route exact path="/" component={withAnalyticsTracker(Home)} />
         {routes}

@@ -5,16 +5,18 @@ import HeaderFrame from '../HeaderFrame';
 import './GlobalHeaderView.scss';
 
 const GlobalHeaderView = ({ hidden }) => {
-  const className = classNames('header', {
-    'header--hidden': hidden,
+  const className = classNames('header-frame', {
+    'header-frame--hidden': hidden,
   });
 
   return (
-    <header styleName={className}>
+    <div styleName={className}>
       <HeaderFrame>
-        Normal header
+        <header styleName="header">
+          Normal header
+        </header>
       </HeaderFrame>
-    </header>
+    </div>
   );
 };
 
