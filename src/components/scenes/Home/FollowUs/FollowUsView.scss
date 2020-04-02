@@ -1,0 +1,7 @@
+@import '~scss/utils';
+
+.follow-us {
+  width: 100%;
+  min-height: 50vh;
+  @include gradient(theme(ocean, dark2), theme(ocean, dark1));
+}

@@ -1,0 +1,21 @@
+@import '~scss/utils';
+
+.three {
+  width: 100%;
+  padding: layout(md);
+  @include gradient(theme(blueRose, dark2), theme(blueRose, light2));
+  color: #fff;
+}
+
+.three__main {
+  @include flex-column(start, center);
+}
+
+// Steps
+
+.three__steps {
+  width: 100%;
+  max-width: 75rem;
+  border-radius: border-radius(round);
+  overflow: hidden;
+}

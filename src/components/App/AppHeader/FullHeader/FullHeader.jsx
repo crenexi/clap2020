@@ -8,7 +8,7 @@ const FullHeader = () => {
   const { coverUrl } = content;
 
   const handleDownClick = () => {
-    scrollService.scrollToElement('thisIsWar');
+    scrollService.scrollToElement('threeSteps');
   };
 
   return (

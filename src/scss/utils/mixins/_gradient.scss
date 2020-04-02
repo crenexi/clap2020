@@ -7,14 +7,3 @@
     background: linear-gradient(.45turn, $color1, $color2, $color3);
   }
 }
-
-@mixin text-gradient($color1, $color2, $color3: '') {
-  @if $color3 == '' {
-    background: linear-gradient(to right, $color1, $color2);
-  } @else {
-    background: linear-gradient(to right, $color1, $color2, $color3);
-  }
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
