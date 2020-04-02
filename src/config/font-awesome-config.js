@@ -2,6 +2,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
   faSpinnerThird as faSpinnerThirdSolid,
+  faStarOfLife,
 } from '@fortawesome/pro-solid-svg-icons';
 
 import {
@@ -44,7 +45,6 @@ import {
   faShareAlt,
   faShieldVirus,
   faSpinnerThird,
-  faStarOfLife,
   faStretcher,
   faUserMd,
   faUserNurse,
