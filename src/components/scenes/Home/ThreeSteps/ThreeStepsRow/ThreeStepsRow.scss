@@ -1,0 +1,18 @@
+@import '~scss/utils';
+
+.row {
+  width: 100%;
+  padding: 2rem;
+
+  &:nth-child(1) {
+    background-color: theme(blueRose, base);
+  }
+
+  &:nth-child(2) {
+    background-color: theme(blueRose, dark1);
+  }
+
+  &:nth-child(3) {
+    background-color: theme(blueRose, dark2);
+  }
+}

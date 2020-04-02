@@ -1,0 +1,16 @@
+@mixin text-gradient($fallbackColor, $gradient) {
+  color: $fallbackColor;
+
+  @supports ((background-clip: text)
+    or (-webkit-background-clip: text))
+    and ((text-fill-color: transparent)
+    or (-webkit-text-fill-color: transparent)) {
+    background-image: $gradient;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    @content;
+  }
+}

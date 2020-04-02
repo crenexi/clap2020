@@ -1,0 +1,54 @@
+@import '~scss/utils';
+
+.thanks {
+  width: 100%;
+}
+
+.thanks__header-wrap {
+  background-color: #fff;
+  padding: layout(md);
+}
+
+.thanks__header-border,
+.thanks__header {
+  border-radius: border-radius(sharp);
+}
+
+.thanks__header-border {
+  padding: spacing(md);
+  @include gradient(theme(marine, dark2), theme(blueRose, light1));
+}
+
+.thanks__header {
+  @include flex-row(center, center);
+  padding: layout(lg) spacing(md);
+  background-color: #fff;
+}
+
+// Header content
+
+.thanks__header-hashtag {
+  margin-right: spacing(sm);
+  font-size: 4rem;
+  color: theme(cloud, dark2);
+}
+
+.thanks__header-title {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: font-family(primary);
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 0 theme(marine, light2);
+
+  @include text-gradient(
+    theme(marine, dark2),
+    linear-gradient(
+      90deg,
+      theme(blueRose, light1) 0%,
+      darken(theme(marine, dark2), 5%) 100%,
+    )
+  ) {
+    text-shadow: none;
+  };
+}
