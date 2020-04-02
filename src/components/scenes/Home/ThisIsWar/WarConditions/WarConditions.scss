@@ -2,7 +2,7 @@
 
 .conditions {
   @include flex-column(flex-start, center);
-  padding: layout(md);
+  padding: layout(md) layout(sm);
   @include gradient(theme(redRose, dark2), theme(redRose, light1));
 
   @include breakpoint('gt-xs') {
@@ -16,13 +16,13 @@
 
 .conditions__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-column-gap: spacing(lg);
   grid-row-gap: layout(sm);
   width: 100%;
   max-width: 80rem;
 
   @include breakpoint('gt-xs') {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     grid-column-gap: spacing(xl);
     grid-row-gap: layout(md);
   }
