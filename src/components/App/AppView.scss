@@ -1,0 +1,29 @@
+@import '~scss/utils';
+@import '~scss/core';
+
+.app {
+  min-height: 100vh;
+  transition-duration: 1s;
+  opacity: 1;
+}
+
+.app--loading {
+  max-height: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+// Loading view
+
+.app-loading {
+  @include position(fixed, 0 null null 0);
+  @include size(100%, 100vh);
+  background-color: #fff;
+}
+
+.app-loading__center {
+  @include position(absolute, 40% null null 50%);
+  padding: spacing(md);
+  transform: translate(-50%, -50%);
+}

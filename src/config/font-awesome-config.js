@@ -1,6 +1,11 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
+  faSpinnerThird as faSpinnerThirdSolid,
+  faStarOfLife,
+} from '@fortawesome/pro-solid-svg-icons';
+
+import {
   faAmbulance,
   faArrowAltDown,
   faBrain,
@@ -39,7 +44,7 @@ import {
   faRectanglePortrait,
   faShareAlt,
   faShieldVirus,
-  faStarOfLife,
+  faSpinnerThird,
   faStretcher,
   faUserMd,
   faUserNurse,
@@ -86,6 +91,8 @@ const buildLibrary = () => {
     faRectanglePortrait,
     faShareAlt,
     faShieldVirus,
+    faSpinnerThird,
+    faSpinnerThirdSolid,
     faStarOfLife,
     faStretcher,
     faUserMd,

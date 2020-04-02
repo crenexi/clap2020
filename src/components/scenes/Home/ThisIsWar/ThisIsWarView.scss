@@ -78,11 +78,11 @@
 
 .war__bottom {
   @include flex-column(start, center);
-  padding: spacing(md) spacing(sm) spacing(lg);
+  padding: layout(lg) spacing(sm) layout(lg);
   background-color: theme(ocean, dark2);
 
   @include breakpoint('gt-xs') {
-    padding: spacing(lg) spacing(lg) spacing(xl);
+    padding: layout(lg) spacing(lg) layout(lg);
   }
 
   @include breakpoint('gt-sm') {
