@@ -1,14 +1,30 @@
 @import '~scss/utils';
+@import '~scss/shared/animations/arrive-down';
+@import '~scss/shared/animations/depart-up';
+
+$header-easing: cubic-bezier(0.22, 1, 0.36, 1);
+$header-duration: 350ms;
+
+// Header position
 
 .header-frame {
   @include position(fixed, 0 0 null 0);
   z-index: z-index(header);
-
-  &--hidden {
-    pointer-events: none;
-    opacity: 0;
-  }
 }
+
+// Header visibility control
+
+.header-frame:not(.header-frame--hidden) {
+  animation: arrive-down $header-duration $header-easing both;
+}
+
+.header-frame--hidden {
+  pointer-events: none;
+  opacity: 0;
+  animation: depart-up $header-duration $header-easing both;
+}
+
+// Header layout
 
 .header,
 .header__brand,
