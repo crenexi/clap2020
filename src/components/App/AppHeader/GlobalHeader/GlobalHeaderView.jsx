@@ -14,7 +14,7 @@ const GlobalHeaderView = ({ hidden }) => {
   return (
     <div styleName={className}>
       <HeaderFrame>
-        <header styleName="header">
+        <header styleName="header" id="global-header">
           <div styleName="header__brand">
             <BrandLogo variant="main" />
           </div>

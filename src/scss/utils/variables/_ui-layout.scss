@@ -18,8 +18,8 @@ $header-height-sm: $rem-header-height-sm * 1rem;
 $header-height-gt-sm: $rem-header-height-gt-sm * 1rem;
 
 $ui-layout: (
-  headerHeightSm: $rem-header-height-sm,
-  headerHeightGtSm: $rem-header-height-gt-sm,
+  headerHeightSm: $header-height-sm,
+  headerHeightGtSm: $header-height-gt-sm,
   pxHeaderHeightXs: $px-header-height-xs,
   pxHeaderHeightSm: $px-header-height-sm,
   pxHeaderHeightGtSm: $px-header-height-gt-sm,
