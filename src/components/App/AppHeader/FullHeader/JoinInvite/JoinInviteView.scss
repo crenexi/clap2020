@@ -2,6 +2,7 @@
 
 .join {
   @include flex-column(center, center);
+  padding: spacing(md) 0 spacing(lg);
   text-align: center;
 }
 

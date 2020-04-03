@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import BrandLogo from 'components/shared/BrandLogo';
+import Countdown from 'components/shared/Countdown';
 import HeaderFrame from '../HeaderFrame';
 import './GlobalHeaderView.scss';
 
@@ -17,7 +18,9 @@ const GlobalHeaderView = ({ hidden }) => {
           <div styleName="header__brand">
             <BrandLogo variant="main" />
           </div>
-          <div styleName="header__countdown" />
+          <div styleName="header__countdown">
+            <Countdown />
+          </div>
           <div styleName="header__actions">
             [button...]
           </div>

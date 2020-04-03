@@ -67,6 +67,6 @@
   }
 
   @include breakpoint('gt-sm') {
-    bottom: calc(3.1rem + 20px);
+    bottom: calc(3.1rem + 30px);
   }
 }
