@@ -1,22 +1,20 @@
-$base-font-size: 18px;
-$base-line-height: 1.5em;
-
+// Note: base font size and line height in ui-layout vars
 // Root typography
 
 body {
   font-family: font-family(base);
-  font-size: $base-font-size * .8;
-  line-height: $base-line-height * 1.14;
+  font-size: $px-base-font-size-xs * 1px;
+  line-height: $em-base-line-height * 1.14em;
   color: color(content, base);
 
   @include breakpoint('gt-xs') {
-    font-size: $base-font-size * .9;
-    line-height: $base-line-height * 1.07;
+    font-size: $px-base-font-size-sm * 1px;
+    line-height: $em-base-line-height * 1.07em;
   }
 
   @include breakpoint('gt-sm') {
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    font-size: $px-base-font-size * 1px;
+    line-height: $em-base-line-height * 1em;
   }
 }
 

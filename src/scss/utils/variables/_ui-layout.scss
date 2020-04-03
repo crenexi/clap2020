@@ -1,4 +1,26 @@
+// Base font size and line height for body
+$px-base-font-size: 18;
+$px-base-font-size-xs: $px-base-font-size * .8;
+$px-base-font-size-sm: $px-base-font-size * .9;
+$em-base-line-height: 1.5;
+
+// Header height in rem
+$rem-header-height-sm: 4;
+$rem-header-height-gt-sm: 6;
+
+// Header height in px
+$px-header-height-xs: $rem-header-height-sm * $px-base-font-size-xs;
+$px-header-height-sm: $rem-header-height-sm * $px-base-font-size-sm;
+$px-header-height-gt-sm: $rem-header-height-gt-sm * $px-base-font-size;
+
+// Header height with unit
+$header-height-sm: $rem-header-height-sm * 1rem;
+$header-height-gt-sm: $rem-header-height-gt-sm * 1rem;
+
 $ui-layout: (
-  headerHeightSm: 4rem,
-  headerHeightGtSm: 6rem,
+  headerHeightSm: $rem-header-height-sm,
+  headerHeightGtSm: $rem-header-height-gt-sm,
+  pxHeaderHeightXs: $px-header-height-xs,
+  pxHeaderHeightSm: $px-header-height-sm,
+  pxHeaderHeightGtSm: $px-header-height-gt-sm,
 );
