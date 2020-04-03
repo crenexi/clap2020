@@ -12,7 +12,7 @@ const GlobalHeader = () => {
     },
   });
 
-  return <GlobalHeaderView hidden={isHidden} />;
+  return <GlobalHeaderView isHidden={isHidden} />;
 };
 
 export default GlobalHeader;

@@ -6,9 +6,9 @@ import Countdown from 'components/shared/Countdown';
 import HeaderFrame from '../HeaderFrame';
 import './GlobalHeaderView.scss';
 
-const GlobalHeaderView = ({ hidden }) => {
+const GlobalHeaderView = ({ isHidden }) => {
   const className = classNames('header-frame', {
-    'header-frame--hidden': hidden,
+    'header-frame--hidden': isHidden,
   });
 
   return (
@@ -19,7 +19,7 @@ const GlobalHeaderView = ({ hidden }) => {
             <BrandLogo variant="main" />
           </div>
           <div styleName="header__countdown">
-            <Countdown />
+            <Countdown isActive={!isHidden} />
           </div>
           <div styleName="header__actions">
             [button...]
@@ -31,7 +31,7 @@ const GlobalHeaderView = ({ hidden }) => {
 };
 
 GlobalHeaderView.propTypes = {
-  hidden: PropTypes.bool.isRequired,
+  isHidden: PropTypes.bool.isRequired,
 };
 
 export default GlobalHeaderView;
