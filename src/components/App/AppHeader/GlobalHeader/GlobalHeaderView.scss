@@ -3,7 +3,6 @@
 .header-frame {
   @include position(fixed, 0 0 null 0);
   z-index: z-index(header);
-  width: 100%;
 
   &--hidden {
     pointer-events: none;
@@ -11,6 +10,35 @@
   }
 }
 
+.header,
+.header__brand,
+.header__countdown,
+.header__actions {
+  height: 100%;
+}
+
 .header {
-  width: 100%;
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+}
+
+// Header left
+
+.header__brand {
+  @include flex-column(center, start);
+  width: 6rem;
+
+  @include breakpoint('gt-sm') {
+    width: 8rem;
+  }
+}
+
+.header__countdown {
+  @include flex-column(center, center);
+}
+
+// Header right
+
+.header__actions {
+  @include flex-row(flex-end, center);
 }
