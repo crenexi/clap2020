@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import BrandLogo from 'components/shared/BrandLogo';
 import Countdown from 'components/shared/Countdown';
 import HeaderFrame from '../HeaderFrame';
 import './GlobalHeaderView.scss';
 
 const GlobalHeaderView = ({ isHidden }) => {
+  const theme = useTheme();
+  const isGtSm = useMediaQuery(theme.breakpoints.up('md'));
+
   const className = classNames('header-frame', {
     'header-frame--hidden': isHidden,
   });
@@ -19,7 +24,7 @@ const GlobalHeaderView = ({ isHidden }) => {
             <BrandLogo variant="main" />
           </div>
           <div styleName="header__countdown">
-            <Countdown isActive={!isHidden} />
+            {isGtSm && <Countdown isActive={!isHidden} />}
           </div>
           <div styleName="header__actions">
             [button...]

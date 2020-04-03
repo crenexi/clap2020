@@ -19,7 +19,7 @@ const CountdownView = ({ fromNow, timeZone, ticker }) => {
 
     const valueClass = (() => {
       const base = 'countdown__value';
-      if (value === 0) return `${base} ${base}--zero`;
+      if (!firstNonZero && value === 0) return `${base} ${base}--zero`;
       if (isFirstNonZero && value <= 10) return `${base} ${base}--under10`;
       return base;
     })();
