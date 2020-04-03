@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from 'components/scenes/Home';
 import Share from 'components/scenes/Share';
 import Latest from 'components/scenes/Latest';
-import Countdown from 'components/scenes/Countdown';
+import GetReady from 'components/scenes/GetReady';
 import Design from 'components/scenes/Design';
 import withAnalyticsTracker from 'utils/with-analytics-tracker';
 import withOpacityDelay from 'utils/with-opacity-delay';
@@ -13,7 +13,7 @@ const AppMain = () => {
   const routesData = [
     { path: '/share', component: Share },
     { path: '/latest', component: Latest },
-    { path: '/countdown', component: Countdown },
+    { path: '/get-ready', component: GetReady },
     { path: '/design', component: Design },
   ];
 
