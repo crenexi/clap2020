@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes, { oneOf } from 'prop-types';
+import { Link } from 'react-router-dom';
 import { capitalize } from 'utils/helpers';
 import './BrandLogo.scss';
 
@@ -8,9 +9,9 @@ const BrandLogo = ({ className, variant, ext, width }) => {
   const src = `${assetsPath}/brand/Logo_${capitalize(variant)}.${ext}`;
 
   return (
-    <div className={className} styleName="logo" style={{ width }}>
+    <Link to="/" className={className} styleName="logo" style={{ width }}>
       <img style={{ maxWidth: '100%' }} src={src} alt="Clap2020 Logo" />
-    </div>
+    </Link>
   );
 };
 

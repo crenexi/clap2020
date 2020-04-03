@@ -1,0 +1,15 @@
+@import '~scss/utils';
+
+.header {
+  @include size(100%);
+  @include flex-column(center, center);
+}
+
+.header__logo {
+  display: flex;
+  width: 6rem;
+
+  @include breakpoint('gt-sm') {
+    width: 8rem;
+  }
+}

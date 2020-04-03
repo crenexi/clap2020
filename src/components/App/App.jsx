@@ -8,6 +8,7 @@ import defaultContent from 'config/default-content';
 import { SettingsProvider } from 'contexts/SettingsContext';
 import { ContentProvider } from 'contexts/ContentContext';
 import logger from 'services/logger';
+import ScrollToTop from './ScrollToTop';
 import AppView from './AppView';
 
 // Initialize Clap2020 icon library
@@ -15,20 +16,19 @@ fontAwesomeConfig.buildLibrary();
 
 const App = () => {
   logger.info('\nMain Engine Start.\nT-Zero. SRB Ignition.\nLiftoff.');
-  const theme = muiConfig.createTheme();
+  const isDevEnv = process.env.NODE_ENV === 'development';
+  const isIndexRoute = document.location.pathname === '/';
 
-  // Logs the MUI theme values
+  // Create Material UI theme
+  const theme = muiConfig.createTheme();
   // logger.info(theme);
 
-  // Application loading indication
-  const loadingDuration = 1500;
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Loading for minimum duration
+  // Application loading indication on home page only
+  const [isLoading, setIsLoading] = useState(isIndexRoute && !isDevEnv);
   useEffect(() => {
     const timeOutId = setTimeout(() => {
       setIsLoading(false);
-    }, loadingDuration);
+    }, 1500);
 
     return () => clearTimeout(timeOutId);
   }, []);
@@ -38,6 +38,7 @@ const App = () => {
       <SettingsProvider value={defaultSettings}>
         <ContentProvider value={defaultContent}>
           <Router>
+            <ScrollToTop />
             <AppView isLoading={isLoading} />
           </Router>
         </ContentProvider>

@@ -1,0 +1,26 @@
+@import '~scss/utils';
+
+.frame {
+  width: 100%;
+  height: ui-layout(headerHeightSm);
+  padding: 0 spacing(sm);
+  background-color: #fff;
+  box-shadow: shadow(2);
+
+  @include breakpoint('gt-xs') {
+    padding: 0 spacing(md);
+  }
+
+  @include breakpoint('gt-sm') {
+    height: ui-layout(headerHeightGtSm);
+    padding: 0 spacing(lg);
+  }
+
+  @include breakpoint('gt-md') {
+    padding: 0 spacing(xl);
+  }
+
+  @include breakpoint('gt-lg') {
+    padding: 0 spacing(2xl);
+  }
+}

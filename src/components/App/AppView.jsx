@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Loading from 'components/shared/Loading';
 import AppMain from './AppMain';
 import AppHeader from './AppHeader';
@@ -7,7 +8,9 @@ import AppFooter from './AppFooter';
 import './AppView.scss';
 
 const AppView = ({ isLoading }) => {
-  const className = isLoading ? 'app app--loading' : 'app';
+  const className = classNames('app', {
+    'app--loading': isLoading,
+  });
 
   const appLoading = (
     <div styleName="app-loading">
