@@ -8,6 +8,7 @@ import defaultContent from 'config/default-content';
 import { SettingsProvider } from 'contexts/SettingsContext';
 import { ContentProvider } from 'contexts/ContentContext';
 import logger from 'services/logger';
+import ScrollToTop from './ScrollToTop';
 import AppView from './AppView';
 
 // Initialize Clap2020 icon library
@@ -24,8 +25,6 @@ const App = () => {
 
   // Application loading indication on home page only
   const [isLoading, setIsLoading] = useState(isIndexRoute && !isDevEnv);
-
-  // Loading for minimum duration
   useEffect(() => {
     const timeOutId = setTimeout(() => {
       setIsLoading(false);
@@ -39,6 +38,7 @@ const App = () => {
       <SettingsProvider value={defaultSettings}>
         <ContentProvider value={defaultContent}>
           <Router>
+            <ScrollToTop />
             <AppView isLoading={isLoading} />
           </Router>
         </ContentProvider>
