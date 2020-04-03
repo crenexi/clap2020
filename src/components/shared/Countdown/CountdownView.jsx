@@ -4,17 +4,21 @@ import countdownTickerType from 'types/countdown-ticker';
 import './CountdownView.scss';
 
 const CountdownView = ({ fromNow, timeZone, ticker }) => {
-  const { days, hours, minutes, seconds } = ticker;
+  const unitsData = [
+    { label: 'Days', value: ticker.days },
+    { label: 'Hours', value: ticker.hours },
+    { label: 'Minutes', value: ticker.minutes },
+    { label: 'Seconds', value: ticker.seconds },
+  ];
+
+  const units = unitsData.map(({ label, value }) => (
+    <div styleName="ticker__unit" key={label}>{value}</div>
+  ));
 
   return (
     <div styleName="countdown">
       <div>{fromNow}</div>
-      <div>
-        <div>{days}</div>
-        <div>{hours}</div>
-        <div>{minutes}</div>
-        <div>{seconds}</div>
-      </div>
+      <div styleName="ticker">{units}</div>
       <div>{timeZone}</div>
     </div>
   );

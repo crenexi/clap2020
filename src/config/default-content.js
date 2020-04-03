@@ -1,6 +1,10 @@
 const assetsPath = process.env.ASSETS_PATH;
 
 const defaultContent = {
+  countdown: {
+    eventDate: '2020-04-23',
+    eventTime: '19:00',
+  },
   fullHeader: {
     coverUrl: `${assetsPath}/covers/nurse.jpg`,
   },

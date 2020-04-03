@@ -1,5 +1,13 @@
 @import '~scss/utils';
 
 .countdown {
-  display: none;
+  @include flex-column(center, center);
+}
+
+.ticker {
+  @include flex-row(center, center);
+}
+
+.ticker__unit {
+  padding: 5px 10px;
 }
