@@ -25,12 +25,14 @@
   @include position(absolute, 0 0 null 0);
   z-index: 2;
   @include flex-row(center, center);
-  background-color: theme(blueRose, base);
+  height: ui-layout(headerHeightSm);
+  background-color: #fff;
   box-shadow: shadow(2);
 
   @include breakpoint('gt-sm') {
     @include position(absolute, 0 null null 0);
     @include flex-row(flex-start, flex-start);
+    height: auto;
     background-color: unset;
     box-shadow: unset;
   }
@@ -38,8 +40,7 @@
 
 .header__logo {
   display: flex;
-  width: 15vh;
-  padding: 9px 0 8px;
+  width: 6rem;
 
   @include breakpoint('gt-sm') {
     transform: unset;
