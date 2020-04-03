@@ -1,13 +1,85 @@
 @import '~scss/utils';
 
+$border: 1px solid theme(cloud, dark2);
+
 .countdown {
-  @include flex-column(center, center);
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1em;
 }
 
-.ticker {
+.countdown__row {
+  width: 100%;
+}
+
+.countdown__header,
+.countdown__ticker,
+.countdown__footer {
+  width: 100%;
+}
+
+// Countdown header
+
+.countdown__header {
+  @include flex-column(center, center);
+  padding: 4px 6px;
+  border: $border;
+  border-bottom: none;
+  @include border-top-radius(border-radius(sharp));
+  color: theme(ocean, dark1);
+}
+
+.countdown__from-now {
+  margin-bottom: -1px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+// Countdown ticker
+
+.countdown__ticker {
+  border: $border;
+  @include border-bottom-radius(border-radius(sharp));
+  overflow: hidden;
+}
+
+.countdown__units {
   @include flex-row(center, center);
 }
 
-.ticker__unit {
-  padding: 5px 10px;
+.countdown__unit {
+  @include flex-column(center, center);
+  flex: 1 0 3.2rem;
+  height: 2.7rem;
+
+  &:not(:first-child) {
+    border-left: $border;
+  }
+}
+
+.countdown__value {
+  font-family: font-family(primary);
+  font-size: 1.75rem;
+  color: theme(ocean, dark1);
+
+  &--under10 { color: theme(blueRose, base); }
+  &--zero { color: theme(redRose, base); }
+}
+
+.countdown__label {
+  margin: 5px 0 -4px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: .7rem;
+  font-weight: 700;
+  color: rgba(theme(ocean, dark1), .85);
+}
+
+// Countdown footer
+
+.countdown__zone {
+  font-size: .65rem;
+  font-weight: 700;
+  color: rgba(theme(ocean, dark1), .6);
 }

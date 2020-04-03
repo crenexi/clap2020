@@ -4,22 +4,49 @@ import countdownTickerType from 'types/countdown-ticker';
 import './CountdownView.scss';
 
 const CountdownView = ({ fromNow, timeZone, ticker }) => {
+  let firstNonZero = '';
+
   const unitsData = [
     { label: 'Days', value: ticker.days },
     { label: 'Hours', value: ticker.hours },
-    { label: 'Minutes', value: ticker.minutes },
-    { label: 'Seconds', value: ticker.seconds },
+    { label: 'Mins', value: ticker.minutes },
+    { label: 'Secs', value: ticker.seconds },
   ];
 
-  const units = unitsData.map(({ label, value }) => (
-    <div styleName="ticker__unit" key={label}>{value}</div>
-  ));
+  const units = unitsData.map(({ label, value }) => {
+    const isFirstNonZero = !firstNonZero && value;
+    if (isFirstNonZero) { firstNonZero = label; }
+
+    const valueClass = (() => {
+      const base = 'countdown__value';
+      if (value === 0) return `${base} ${base}--zero`;
+      if (isFirstNonZero && value <= 10) return `${base} ${base}--under10`;
+      return base;
+    })();
+
+    return (
+      <div styleName="countdown__unit" key={label}>
+        <div styleName={valueClass}>{value}</div>
+        <div styleName="countdown__label">{label}</div>
+      </div>
+    );
+  });
 
   return (
     <div styleName="countdown">
-      <div>{fromNow}</div>
-      <div styleName="ticker">{units}</div>
-      <div>{timeZone}</div>
+      <div styleName="countdown__header">
+        <div styleName="countdown__row">
+          <div styleName="countdown__from-now">Clap {fromNow} at 7:00 PM</div>
+        </div>
+      </div>
+      <div styleName="countdown__ticker">
+        <div styleName="countdown__row">
+          <div styleName="countdown__units">{units}</div>
+        </div>
+      </div>
+      <div styleName="countdown__row">
+        <div styleName="countdown__zone">{timeZone}</div>
+      </div>
     </div>
   );
 };
