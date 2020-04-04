@@ -51,7 +51,7 @@
 
   // Export font-families
   @each $key, $value in $font-families {
-    #{prepend-key('fontFamily', $key)}: $value;
+    #{prepend-key('fontFamily', $key)}: unquote($value);
   }
 
   // Export colors
