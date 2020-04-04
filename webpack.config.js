@@ -4,6 +4,7 @@ const DotenvWebpack = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 // const APP_PATH = path.resolve(__dirname, '/src/app');
 const DIST_PATH = path.join(__dirname, '/dist');
@@ -57,26 +58,35 @@ const scssLoaderRule = () => {
 #### Plugins #######
 ################# */
 
-// Loads environment variables
-const dotenvWebpack = () => new DotenvWebpack({
+// Environment variables loader plugin
+const createDotenvWebpackPlugin = () => new DotenvWebpack({
   safe: true,
 });
 
-const environmentPlugin = () => new webpack.EnvironmentPlugin({
+// Environment vars plugin
+const createEnvironmentPlugin = () => new webpack.EnvironmentPlugin({
   ASSETS_PATH: '/assets',
   DEBUG: false,
 });
 
-const htmlWebpackPlugin = () => new HtmlWebpackPlugin({
+// HTML plugin
+const createHtmlWebpackPlugin = () => new HtmlWebpackPlugin({
   template: './public/index.html',
   filename: 'index.html',
 });
 
-const copyWebpackPlugin = () => new CopyWebpackPlugin([
+// Copy plugin
+const createCopyWebpackPlugin = () => new CopyWebpackPlugin([
   { from: './public' },
 ]);
 
-const terser = () => new TerserPlugin({
+// Moment locals plugin
+const createMomentLocalesPlugin = () => new MomentLocalesPlugin({
+  localesToKeep: ['da', 'de-at', 'de-ch', 'el', 'en-au', 'en-ca', 'en-gb', 'en-ie', 'en-nz', 'es-do', 'es-us', 'es', 'fr-ca', 'fr-ch', 'fr', 'hi', 'it', 'ja', 'ko', 'nl-be', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'th', 'tl-ph', 'tr', 'uk'],
+});
+
+// Minimizer plugin
+const createTerserPlugin = () => new TerserPlugin({
   terserOptions: {
     parse: {
       ecma: 8,
@@ -138,10 +148,11 @@ const config = {
     ],
   },
   plugins: [
-    dotenvWebpack(),
-    environmentPlugin(),
-    htmlWebpackPlugin(),
-    copyWebpackPlugin(),
+    createDotenvWebpackPlugin(),
+    createEnvironmentPlugin(),
+    createHtmlWebpackPlugin(),
+    createCopyWebpackPlugin(),
+    createMomentLocalesPlugin(),
   ],
   devServer: {
     port: 4200,
@@ -165,7 +176,7 @@ const config = {
 if (getEnv() === 'production') {
   config.optimization = {
     minimize: true,
-    minimizer: [terser],
+    minimizer: [createTerserPlugin],
     runtimeChunk: false,
     splitChunks: {
       cacheGroups: {
