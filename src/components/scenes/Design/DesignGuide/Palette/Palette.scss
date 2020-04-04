@@ -26,8 +26,10 @@
   flex-direction: column;
   align-items: center;
 
-  &:not(:first-child) {
-    margin-left: 1.2rem;
+  @include breakpoint('gt-xs') {
+    &:not(:first-child) {
+      margin-left: 1.2rem;
+    }
   }
 }
 
