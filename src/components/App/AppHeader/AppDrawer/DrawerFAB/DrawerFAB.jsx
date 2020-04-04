@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import MuiFAB from '@material-ui/core/Fab';
+import useDrawer from 'hooks/use-drawer';
 import FaIcon from 'components/shared/FaIcon';
 import './DrawerFAB.scss';
 
-const DrawerFAB = ({ open, click }) => {
-  const icon = open ? 'times' : 'bars';
+const DrawerFAB = () => {
+  const { toggleDrawer } = useDrawer();
 
   const muiFABClasses = (() => {
     const base = 'c2-fab';
@@ -22,17 +22,12 @@ const DrawerFAB = ({ open, click }) => {
         color="primary"
         classes={muiFABClasses}
         aria-label="Toggle Drawer"
-        onClick={click}
+        onClick={toggleDrawer}
       >
-        <FaIcon icon={icon} />
+        <FaIcon icon="bars" />
       </MuiFAB>
     </div>
   );
-};
-
-DrawerFAB.propTypes = {
-  open: PropTypes.bool.isRequired,
-  click: PropTypes.func.isRequired,
 };
 
 export default DrawerFAB;

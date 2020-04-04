@@ -1,0 +1,20 @@
+@import '~scss/utils';
+
+.drawer__content {
+}
+
+// Drawer header
+
+.drawer__header {
+  display: grid;
+  grid-template-columns: auto min-content;
+  place-items: center start;
+}
+
+.drawer__brand {
+  padding: spacing(lg);
+}
+
+.drawer__close {
+  padding: spacing(sm);
+}

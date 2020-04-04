@@ -1,6 +1,45 @@
 const assetsPath = process.env.ASSETS_PATH;
 
 const defaultContent = {
+  nav: [
+    {
+      title: 'Three Steps',
+      subtitle: 'Aenean commodo ligula eget dolor',
+      icon: 'house-user',
+    },
+    {
+      title: 'Posters',
+      subtitle: 'Aenean commodo ligula eget dolor',
+      icon: 'images',
+    },
+    {
+      title: 'Heroes',
+      subtitle: 'Aenean commodo ligula eget dolor',
+      icon: 'user-nurse',
+    },
+    {
+      title: 'Countdown',
+      subtitle: 'Aenean commodo ligula eget dolor',
+      icon: 'hourglass-end',
+    },
+  ],
+  platforms: [
+    {
+      name: 'Twitter',
+      url: 'https://www.google.com',
+      icon: 'twitter',
+    },
+    {
+      name: 'Instagram',
+      url: 'https://www.google.com',
+      icon: 'instagram',
+    },
+    {
+      name: 'Facebook',
+      url: 'https://www.google.com',
+      icon: 'facebook-f',
+    },
+  ],
   countdown: {
     eventDate: '2020-04-23',
     eventTime: '19:00',

@@ -5,7 +5,6 @@ import Loading from 'components/shared/Loading';
 import AppHeader from './AppHeader';
 import AppMain from './AppMain';
 import AppFooter from './AppFooter';
-import AppDrawer from './AppDrawer';
 import './AppView.scss';
 
 const AppView = ({ isLoading }) => {
@@ -28,7 +27,6 @@ const AppView = ({ isLoading }) => {
         <AppHeader />
         <AppMain />
         <AppFooter />
-        <AppDrawer />
       </div>
     </Fragment>
   );

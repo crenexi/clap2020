@@ -1,0 +1,14 @@
+@import '~scss/utils';
+
+.nav {
+  @include flex-row(center, center);
+}
+
+.nav__item {
+}
+
+.nav__icon {
+}
+
+.nav__label {
+}

@@ -1,7 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes, { shape } from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { DrawerProvider } from 'contexts/DrawerContext';
 import GlobalHeader from './GlobalHeader';
+import AppDrawer from './AppDrawer';
 import TopHeader from './TopHeader';
 import FullHeader from './FullHeader';
 
@@ -15,8 +17,11 @@ const AppHeader = ({ location }) => {
 
   return (
     <Fragment>
-      <GlobalHeader />
-      {isFullHeader ? <FullHeader /> : <TopHeader />}
+      <DrawerProvider>
+        <AppDrawer />
+        <GlobalHeader />
+        {isFullHeader ? <FullHeader /> : <TopHeader />}
+      </DrawerProvider>
     </Fragment>
   );
 };
