@@ -5,15 +5,15 @@
   @include flex-column(center, center);
   width: 100%;
   min-height: 100vh;
-  padding: 5rem 1rem;
+  padding: 4.5rem 1rem 5.5rem;
   text-align: center;
 
   @include breakpoint('gt-xs') {
-    padding: 6rem 3rem;
+    padding: 4.5rem 3rem 6rem;
   }
 
   @include breakpoint('gt-sm') {
-    padding: 6rem 5rem;
+    padding: 6rem 5rem 9.5rem;
   }
 
   @include breakpoint('gt-md') {

@@ -24,7 +24,7 @@ const FullHeaderView = ({ coverUrl, downClick }) => (
     <div styleName="header__down-invite">
       <IconButton
         icon="arrow-alt-down"
-        label="Three Steps"
+        label="3 Simple Steps"
         click={downClick}
       />
     </div>
