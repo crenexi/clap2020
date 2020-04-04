@@ -3,20 +3,21 @@ import { isTabOrShift } from 'utils/helpers';
 import AppDrawerView from './AppDrawerView';
 
 const AppDrawer = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   // Toggles the drawer
-  const handleToggle = isOpen => (event) => {
+  const handleToggle = (event) => {
     if (isTabOrShift(event)) return;
-    setIsOpen(isOpen);
+    setOpen(!open);
   };
 
-  // Closes the drawer
+  // Open/close the drawer
   const handleClose = () => handleToggle(false);
 
   return (
     <AppDrawerView
-      isOpen={isOpen}
+      open={open}
+      onToggle={handleToggle}
       onClose={handleClose}
     />
   );

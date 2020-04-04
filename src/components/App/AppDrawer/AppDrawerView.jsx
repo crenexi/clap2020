@@ -5,13 +5,13 @@ import DrawerFAB from './DrawerFAB';
 import DrawerNav from './DrawerNav';
 import './AppDrawerView.scss';
 
-const AppDrawerView = ({ isOpen, onClose }) => {
+const AppDrawerView = ({ open, onToggle, onClose }) => {
   return (
     <Fragment>
-      <DrawerFAB isOpen={isOpen} />
+      <DrawerFAB open={open} click={onToggle} />
       <Drawer
         anchor="bottom"
-        open={isOpen}
+        open={open}
         onClose={onClose}
       >
         <DrawerNav onClose={onClose} />
@@ -21,7 +21,8 @@ const AppDrawerView = ({ isOpen, onClose }) => {
 };
 
 AppDrawerView.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
+  open: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
