@@ -3,12 +3,12 @@
 :global {
   .c2-button__label {
     color: color(content, base);
-    // font-size: 1.7rem;
   }
 
   .MuiButton-root.c2-button {
     background-color: rgba(theme(ocean, base), .08);
     border: 1px solid rgba(theme(ocean, base), .15);
+    border-radius: border-radius(sharp);
     transition-duration: 150ms;
 
     &:hover {
@@ -20,20 +20,34 @@
       background-color: rgba(theme(ocean, base), .5);
     }
 
-    &--small {
-      // @include size(2rem);
+    &.c2-button--disabled {
+      pointer-events: none;
+      opacity: .8;
+      border-color: transparent;
 
       .c2-button__label {
-        // font-size: 1.1rem;
+        color: rgba(0, 0, 0, .6);
       }
     }
+  }
 
-    &--large {
-      // @include size(2rem);
+  // Start and end icons
+  .MuiButton-root .c2-button__start-icon {
+    margin-left: 1px;
+    margin-right: 5px;
 
-      .c2-button__label {
-        // font-size: 1.1rem;
-      }
+    &.c2-button__icon--small {
+      margin-left: 1px;
+      margin-right: 4px;
+    }
+  }
+  .MuiButton-root .c2-button__end-icon {
+    margin-left: 5px;
+    margin-right: 1px;
+
+    &.c2-button__icon--small {
+      margin-left: 4px;
+      margin-right: 1px;
     }
   }
 
@@ -54,6 +68,15 @@
     .c2-button__label {
       color: #fff;
     }
+
+    &.c2-button--disabled {
+      border-color: transparent;
+      opacity: .85;
+
+      .c2-button__label {
+        color: rgba(255, 255, 255, .5);
+      }
+    }
   }
 
   // Ghost button
@@ -67,59 +90,85 @@
   }
 
   // Primary button
-  // .MuiIconButton-root.c2-button--primary {
-  //   @include gradient(theme(blueRose, dark1), theme(ocean, base));
-  //   border: 2px solid transparent;
+  .MuiButton-root.c2-button--primary {
+    background-color: theme(blueRose, dark1);
+    border: 2px solid theme(blueRose, dark1);
 
-  //   .c2-button__label {
-  //     color: #fff;
-  //   }
+    .c2-button__label {
+      color: #fff;
+    }
 
-  //   &:hover {
-  //     background: transparent;
-  //     border-color: theme(blueRose, dark1);
+    &:hover {
+      background: transparent;
+      border-color: theme(blueRose, dark1);
 
-  //     .c2-button__label {
-  //       color: theme(blueRose, dark1);
-  //     }
-  //   }
-  // }
+      .c2-button__label {
+        color: theme(blueRose, dark2);
+      }
+    }
+
+    &:active {
+      background: theme(ocean, base);
+      border-color: theme(ocean, base);
+
+      .c2-button__label {
+        color: #fff;
+      }
+    }
+
+    &.c2-button--disabled .c2-button__label {
+      color: rgba(255, 255, 255, .8);
+    }
+  }
 
   // Secondary button
-  // .MuiIconButton-root.c2-button--secondary {
-  //   background-color: transparent;
-  //   border: 2px solid theme(blueRose, dark1);
+  .MuiButton-root.c2-button--secondary {
+    background-color: transparent;
+    border: 2px solid theme(blueRose, dark1);
 
-  //   .c2-button__label {
-  //     color: theme(blueRose, dark1);
-  //   }
+    .c2-button__label {
+      color: theme(blueRose, dark1);
+    }
 
-  //   &:hover {
-  //     background: theme(blueRose, dark1);
-  //     border-color: transparent;
+    &:hover {
+      background: theme(blueRose, base);
+      border-color: theme(blueRose, base);
 
-  //     .c2-button__label {
-  //       color: #fff;
-  //     }
-  //   }
-  // }
+      .c2-button__label {
+        color: #fff;
+      }
+    }
+
+    &:active {
+      background: theme(ocean, base);
+      border-color: theme(ocean, base);
+
+      .c2-button__label {
+        color: #fff;
+      }
+    }
+
+    &.c2-button--disabled .c2-button__label {
+      color: rgba(255, 255, 255, .8);
+    }
+  }
 
   // White button
-//   .MuiIconButton-root.c2-button--white {
-//     background-color: transparent;
-//     border: 2px solid #fff;
+  .MuiButton-root.c2-button--white {
+    background-color: transparent;
+    border: 2px solid #fff;
 
-//     .c2-button__label {
-//       color: #fff;
-//     }
+    .c2-button__label {
+      color: #fff;
+    }
 
-//     &:hover {
-//       background: #fff;
-//       border-color: transparent;
+    &:hover {
+      background: #fff;
+      border-color: transparent;
 
-//       .c2-button__label {
-//         color: theme(blueRose, dark1);
-//       }
-//     }
-//   }
+      .c2-button__label {
+        color: theme(blueRose, dark2);
+      }
+    }
+  }
 }

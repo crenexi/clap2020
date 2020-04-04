@@ -23,8 +23,8 @@ const GlobalHeaderView = ({ isHidden, hasCountdown }) => {
             {hasCountdown && <Countdown isActive={!isHidden} />}
           </div>
           <div styleName="header__actions">
-            <Button variant="inverted" size="medium">
-              Hello World
+            <Button variant="primary" endIcon="expand-alt">
+              Posters to Share
             </Button>
           </div>
         </header>

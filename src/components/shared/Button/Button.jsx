@@ -16,6 +16,10 @@ const IconButton = (props) => {
       sizeSmall: `${base}--small`,
       sizeLarge: `${base}--large`,
       disabled: `${base}--disabled`,
+      startIcon: `${base}__start-icon`,
+      endIcon: `${base}__end-icon`,
+      iconSizeSmall: `${base}__icon--small`,
+      iconSizeLarge: `${base}__icon--large`,
       label: `${base}__label`,
     };
   })();
