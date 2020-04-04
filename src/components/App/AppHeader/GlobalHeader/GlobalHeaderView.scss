@@ -40,9 +40,14 @@ $header-duration: 350ms;
 
 // Header left
 
+.header__left {
+  @include flex-row(start, center);
+}
+
 .header__brand {
   @include flex-column(center, start);
   width: 6rem;
+  padding-left: spacing(xs);
 
   @include breakpoint('gt-sm') {
     width: 8rem;

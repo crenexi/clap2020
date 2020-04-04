@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import DrawerToggle from 'components/shared/DrawerToggle';
 import BrandLogo from 'components/shared/BrandLogo';
 import Countdown from 'components/shared/Countdown';
 import Button from 'components/shared/Button';
@@ -16,8 +17,11 @@ const GlobalHeaderView = ({ isHidden, hasCountdown }) => {
     <div styleName={className}>
       <HeaderFrame>
         <header styleName="header" id="global-header">
-          <div styleName="header__brand">
-            <BrandLogo variant="main" />
+          <div styleName="header__left">
+            <DrawerToggle />
+            <div styleName="header__brand">
+              <BrandLogo variant="main" />
+            </div>
           </div>
           <div styleName="header__countdown">
             {hasCountdown && <Countdown isActive={!isHidden} />}
