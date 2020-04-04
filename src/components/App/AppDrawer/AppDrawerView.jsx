@@ -14,7 +14,7 @@ const AppDrawerView = ({ isOpen, onClose }) => {
         open={isOpen}
         onClose={onClose}
       >
-        <DrawerNav />
+        <DrawerNav onClose={onClose} />
       </Drawer>
     </Fragment>
   );

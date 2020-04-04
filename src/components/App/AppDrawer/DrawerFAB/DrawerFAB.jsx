@@ -1,15 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Fab as MuiFAB } from '@material-ui/core/Fab';
+import MuiFAB from '@material-ui/core/Fab';
 import FaIcon from 'components/shared/FaIcon';
 import './DrawerFAB.scss';
 
-const DrawerFAB = ({ drawerIsOpen }) => {
-  const icon = drawerIsOpen ? 'close' : 'menu';
+const DrawerFAB = ({ isOpen }) => {
+  const icon = isOpen ? 'times' : 'bars';
+
+  const muiFABClasses = (() => {
+    const base = 'c2-fab';
+    return {
+      root: base,
+      primary: `${base}--primary`,
+      label: `${base}__label`,
+    };
+  })();
 
   return (
-    <div>
-      <MuiFAB color="primary" aria-label="add">
+    <div styleName="fab-frame">
+      <MuiFAB
+        color="primary"
+        classes={muiFABClasses}
+        aria-label="Toggle Drawer"
+      >
         <FaIcon icon={icon} />
       </MuiFAB>
     </div>
@@ -17,7 +30,7 @@ const DrawerFAB = ({ drawerIsOpen }) => {
 };
 
 DrawerFAB.propTypes = {
-  drawerIsOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 };
 
 export default DrawerFAB;

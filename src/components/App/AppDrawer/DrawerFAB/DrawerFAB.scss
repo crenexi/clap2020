@@ -1,1 +1,34 @@
 @import '~scss/utils';
+
+.fab-frame {
+  position: fixed;
+  right: spacing(sm);
+  bottom: spacing(sm);
+
+  @include breakpoint('gt-xs') {
+    right: spacing(md);
+    bottom: spacing(md);
+  }
+
+  @include breakpoint('gt-md') {
+    right: spacing(lg);
+    bottom: spacing(lg);
+  }
+}
+
+:global {
+  .MuiFab-root.c2-fab  {
+  }
+
+  .MuiFab-root.c2-fab--primary {
+    background-color: theme(blueRose, dark1);
+    background: linear-gradient(90deg,
+      theme(ocean, base),
+      theme(blueRose, base),
+    );
+  }
+
+  .MuiFab-label.c2-fab__label {
+    font-size: 1.2rem;
+  }
+}
