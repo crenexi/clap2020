@@ -23,7 +23,9 @@ const GlobalHeaderView = ({ isHidden, hasCountdown }) => {
             {hasCountdown && <Countdown isActive={!isHidden} />}
           </div>
           <div styleName="header__actions">
-            <Button variant="primary" endIcon="expand-alt">Share Posters</Button>
+            <Button variant="primary" endIcon="arrow-circle-right">
+              Share Posters
+            </Button>
           </div>
         </header>
       </HeaderFrame>

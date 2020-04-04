@@ -8,6 +8,7 @@ import {
 import {
   faAmbulance,
   faArrowAltDown,
+  faArrowCircleRight,
   faBars,
   faBrain,
   faCalendarDay,
@@ -61,6 +62,7 @@ const buildLibrary = () => {
   library.add(
     faAmbulance,
     faArrowAltDown,
+    faArrowCircleRight,
     faBars,
     faBrain,
     faCalendarDay,
