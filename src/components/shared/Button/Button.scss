@@ -1,0 +1,174 @@
+@import '~scss/utils';
+
+:global {
+  .c2-button__label {
+    color: color(content, base);
+  }
+
+  .MuiButton-root.c2-button {
+    background-color: rgba(theme(ocean, base), .08);
+    border: 1px solid rgba(theme(ocean, base), .15);
+    border-radius: border-radius(sharp);
+    transition-duration: 150ms;
+
+    &:hover {
+      background-color: rgba(theme(ocean, base), .2);
+      border-color: rgba(theme(ocean, base), .3);
+    }
+
+    &:active {
+      background-color: rgba(theme(ocean, base), .5);
+    }
+
+    &.c2-button--disabled {
+      pointer-events: none;
+      opacity: .8;
+      border-color: transparent;
+
+      .c2-button__label {
+        color: rgba(0, 0, 0, .6);
+      }
+    }
+  }
+
+  // Start and end icons
+  .MuiButton-root .c2-button__start-icon {
+    margin-left: 1px;
+    margin-right: 5px;
+
+    &.c2-button__icon--small {
+      margin-left: 1px;
+      margin-right: 4px;
+    }
+  }
+  .MuiButton-root .c2-button__end-icon {
+    margin-left: 5px;
+    margin-right: 1px;
+
+    &.c2-button__icon--small {
+      margin-left: 4px;
+      margin-right: 1px;
+    }
+  }
+
+  // Default Inverted button
+  .MuiButton-root.c2-button--inverted {
+    background-color: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .15);
+      border-color: rgba(255, 255, 255, .25);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, .4);
+    }
+
+    .c2-button__label {
+      color: #fff;
+    }
+
+    &.c2-button--disabled {
+      border-color: transparent;
+      opacity: .85;
+
+      .c2-button__label {
+        color: rgba(255, 255, 255, .5);
+      }
+    }
+  }
+
+  // Ghost button
+  .MuiButton-root.c2-button--ghost {
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: theme(cloud, dark2);
+    }
+  }
+
+  // Primary button
+  .MuiButton-root.c2-button--primary {
+    background-color: theme(blueRose, dark1);
+    border: 2px solid theme(blueRose, dark1);
+
+    .c2-button__label {
+      color: #fff;
+    }
+
+    &:hover {
+      background: transparent;
+      border-color: theme(blueRose, dark1);
+
+      .c2-button__label {
+        color: theme(blueRose, dark2);
+      }
+    }
+
+    &:active {
+      background: theme(ocean, base);
+      border-color: theme(ocean, base);
+
+      .c2-button__label {
+        color: #fff;
+      }
+    }
+
+    &.c2-button--disabled .c2-button__label {
+      color: rgba(255, 255, 255, .8);
+    }
+  }
+
+  // Secondary button
+  .MuiButton-root.c2-button--secondary {
+    background-color: transparent;
+    border: 2px solid theme(blueRose, dark1);
+
+    .c2-button__label {
+      color: theme(blueRose, dark1);
+    }
+
+    &:hover {
+      background: theme(blueRose, base);
+      border-color: theme(blueRose, base);
+
+      .c2-button__label {
+        color: #fff;
+      }
+    }
+
+    &:active {
+      background: theme(ocean, base);
+      border-color: theme(ocean, base);
+
+      .c2-button__label {
+        color: #fff;
+      }
+    }
+
+    &.c2-button--disabled .c2-button__label {
+      color: rgba(255, 255, 255, .8);
+    }
+  }
+
+  // White button
+  .MuiButton-root.c2-button--white {
+    background-color: transparent;
+    border: 2px solid #fff;
+
+    .c2-button__label {
+      color: #fff;
+    }
+
+    &:hover {
+      background: #fff;
+      border-color: transparent;
+
+      .c2-button__label {
+        color: theme(blueRose, dark2);
+      }
+    }
+  }
+}

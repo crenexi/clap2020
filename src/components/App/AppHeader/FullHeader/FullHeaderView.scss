@@ -4,6 +4,7 @@
   position: relative;
   @include flex-column(center, center);
   width: 100%;
+  min-height: -webkit-fill-available;
   min-height: 100vh;
   padding: 4.5rem 1rem 5.5rem;
   text-align: center;

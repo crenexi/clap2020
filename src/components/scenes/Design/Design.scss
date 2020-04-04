@@ -5,11 +5,7 @@
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  min-height: calc(100vh - #{ui-layout(headerHeightSm)});
-
-  @include breakpoint('gt-sm') {
-    min-height: calc(100vh - #{ui-layout(headerHeightGtSm)});
-  }
+  @include min-full-height();
 }
 
 .design__header {
