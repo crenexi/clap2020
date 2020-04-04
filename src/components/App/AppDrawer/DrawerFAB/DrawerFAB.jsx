@@ -4,8 +4,8 @@ import MuiFAB from '@material-ui/core/Fab';
 import FaIcon from 'components/shared/FaIcon';
 import './DrawerFAB.scss';
 
-const DrawerFAB = ({ isOpen }) => {
-  const icon = isOpen ? 'times' : 'bars';
+const DrawerFAB = ({ open, click }) => {
+  const icon = open ? 'times' : 'bars';
 
   const muiFABClasses = (() => {
     const base = 'c2-fab';
@@ -22,6 +22,7 @@ const DrawerFAB = ({ isOpen }) => {
         color="primary"
         classes={muiFABClasses}
         aria-label="Toggle Drawer"
+        onClick={click}
       >
         <FaIcon icon={icon} />
       </MuiFAB>
@@ -30,7 +31,8 @@ const DrawerFAB = ({ isOpen }) => {
 };
 
 DrawerFAB.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
+  open: PropTypes.bool.isRequired,
+  click: PropTypes.func.isRequired,
 };
 
 export default DrawerFAB;
