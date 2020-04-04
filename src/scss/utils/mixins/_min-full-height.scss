@@ -1,7 +1,9 @@
 @mixin min-full-height() {
+  min-height: -webkit-fill-available;
   min-height: calc(100vh - #{ui-layout(headerHeightSm)});
 
   @include breakpoint('gt-sm') {
+    min-height: -webkit-fill-available;
     min-height: calc(100vh - #{ui-layout(headerHeightGtSm)});
   }
 }
