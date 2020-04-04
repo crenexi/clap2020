@@ -8,6 +8,7 @@ import {
 import {
   faAmbulance,
   faArrowAltDown,
+  faBars,
   faBrain,
   faCalendarDay,
   faCalendarPlus,
@@ -39,7 +40,6 @@ import {
   faLungs,
   faLungsVirus,
   faMedal,
-  faMenu,
   faMicroscope,
   faDoorOpen,
   faProcedures,
@@ -61,6 +61,7 @@ const buildLibrary = () => {
   library.add(
     faAmbulance,
     faArrowAltDown,
+    faBars,
     faBrain,
     faCalendarDay,
     faCalendarPlus,
@@ -92,7 +93,6 @@ const buildLibrary = () => {
     faLungs,
     faLungsVirus,
     faMedal,
-    faMenu,
     faMicroscope,
     faDoorOpen,
     faProcedures,
