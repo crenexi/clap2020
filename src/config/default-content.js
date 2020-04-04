@@ -11,7 +11,7 @@ const defaultContent = {
   joinInvite: {
     preTitle: '#Clap2020 #ClapBecauseWeCare',
     title: 'They fight. We applaud.',
-    subtitle: 'Across the globe, healthcare workers challenge the menace of COVID-19. Join us to raise a thundering applause for doctors, nurses, first responders, essential workers, and society.',
+    subtitle: 'Across the globe, healthcare workers challenge the menace of COVID-19. Join us at your doorstep for three minutes on 4/23 to raise a thundering applause for doctors, nurses, first responders, essential workers, and society.',
     dateText: {
       day: 'Thursday',
       date: 'April 23',
