@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import BrandLogo from 'components/shared/BrandLogo';
 import Countdown from 'components/shared/Countdown';
+import Button from 'components/shared/Button';
 import HeaderFrame from '../HeaderFrame';
 import './GlobalHeaderView.scss';
 
@@ -22,7 +23,9 @@ const GlobalHeaderView = ({ isHidden, hasCountdown }) => {
             {hasCountdown && <Countdown isActive={!isHidden} />}
           </div>
           <div styleName="header__actions">
-            [button...]
+            <Button variant="inverted" size="medium">
+              Hello World
+            </Button>
           </div>
         </header>
       </HeaderFrame>
