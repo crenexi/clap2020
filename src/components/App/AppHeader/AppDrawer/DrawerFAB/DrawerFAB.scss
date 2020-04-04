@@ -4,6 +4,7 @@
   position: fixed;
   right: spacing(sm);
   bottom: spacing(sm);
+  z-index: z-index(header);
 
   @include breakpoint('gt-xs') {
     right: spacing(md);

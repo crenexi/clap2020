@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DrawerToggle from 'components/shared/DrawerToggle';
 import BrandLogo from 'components/shared/BrandLogo';
 import Countdown from 'components/shared/Countdown';
@@ -9,6 +11,9 @@ import HeaderFrame from '../HeaderFrame';
 import './GlobalHeaderView.scss';
 
 const GlobalHeaderView = ({ isHidden, hasCountdown }) => {
+  const theme = useTheme();
+  const isGtXs = useMediaQuery(theme.breakpoints.up('sm'));
+
   const className = classNames('header-frame', {
     'header-frame--hidden': isHidden,
   });
@@ -18,7 +23,7 @@ const GlobalHeaderView = ({ isHidden, hasCountdown }) => {
       <HeaderFrame>
         <header styleName="header" id="global-header">
           <div styleName="header__left">
-            <DrawerToggle />
+            {isGtXs && <DrawerToggle />}
             <div styleName="header__brand">
               <BrandLogo variant="main" />
             </div>
