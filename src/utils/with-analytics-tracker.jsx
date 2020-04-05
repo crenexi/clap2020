@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import PropTypes, { shape } from 'prop-types';
 import defaultSettings from 'config/default-settings';
+import locationType from 'types/location';
 import ReactGA from 'react-ga';
 
 ReactGA.initialize(defaultSettings.gaTrackingId);
@@ -28,9 +28,7 @@ const withAnalyticsTracker = (WrappedComponent, options = {}) => {
 
   // Prop types for HOC
   HOC.propTypes = {
-    location: shape({
-      pathname: PropTypes.string.isRequired,
-    }).isRequired,
+    location: locationType.isRequired,
   };
 
   return HOC;
