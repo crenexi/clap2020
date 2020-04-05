@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import PropTypes, { shape } from 'prop-types';
+import locationType from 'types/location';
 import { withRouter } from 'react-router-dom';
 import { DrawerProvider } from 'contexts/DrawerContext';
 import GlobalHeader from './GlobalHeader';
@@ -27,9 +27,7 @@ const AppHeader = ({ location }) => {
 };
 
 AppHeader.propTypes = {
-  location: shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
+  location: locationType.isRequired,
 };
 
 export default withRouter(props => <AppHeader {...props} />);

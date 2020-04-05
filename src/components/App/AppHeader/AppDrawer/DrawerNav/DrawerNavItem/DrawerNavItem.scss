@@ -1,0 +1,60 @@
+@import '~scss/utils';
+
+.item__icon {
+  width: 3rem;
+  @include flex-row(center, center);
+  font-size: 1.8rem;
+}
+
+.item__text {
+  margin: spacing(sm) 0 spacing(sm) spacing(sm);
+  padding-right: spacing(sm);
+  line-height: 1.25em;
+
+  @include breakpoint('gt-xs') {
+    margin: spacing(md) 0 spacing(md) spacing(md);
+    padding-right: spacing(md);
+  }
+}
+
+.item__title {
+  letter-spacing: .2px;
+  font-family: font-family(primary);
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.item__subtitle {
+  margin-top: spacing(sm);
+  font-size: 1rem;
+  color: theme(blueRose, light2);
+}
+
+:global {
+  @include breakpoint('gt-xs') {
+    .MuiButtonBase-root.c2-nav-list-item {
+      position: relative;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .15);
+      }
+
+      &::before {
+        content: '';
+        @include position(absolute, 0 null 0 0);
+        @include size(5px, 100%);
+        background-color: theme(blueRose, light1);
+        opacity: 0;
+      }
+
+      &--active {
+        pointer-events: none;
+        background-color: rgba(0, 0, 0, .1);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

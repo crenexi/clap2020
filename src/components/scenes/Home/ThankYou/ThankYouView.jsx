@@ -1,20 +1,29 @@
 import React from 'react';
-import FaIcon from 'components/shared/FaIcon';
+import { arrayOf } from 'prop-types';
+import workforceGroupType from 'types/workforce-group';
+import ThankYouHeader from './ThankYouHeader';
+import FrontLineGroups from './FrontLineGroups';
+import ResponseGroups from './ResponseGroups';
+import EssentialGroups from './EssentialGroups';
 import './ThankYouView.scss';
 
-const ThankYouView = () => (
-  <div styleName="thanks">
-    <div styleName="thanks__header-wrap">
-      <div styleName="thanks__header-border">
-        <div styleName="thanks__header">
-          <div styleName="thanks__header-hashtag">
-            <FaIcon icon="hashtag" />
-          </div>
-          <div styleName="thanks__header-title">Thank you</div>
-        </div>
-      </div>
+const ThankYouView = (props) => {
+  const { frontLineGroups, responseGroups, essentialGroups } = props;
+
+  return (
+    <div styleName="thanks">
+      <ThankYouHeader />
+      <FrontLineGroups groups={frontLineGroups} />
+      <ResponseGroups groups={responseGroups} />
+      <EssentialGroups groups={essentialGroups} />
     </div>
-  </div>
-);
+  );
+};
+
+ThankYouView.propTypes = {
+  frontLineGroups: arrayOf(workforceGroupType).isRequired,
+  responseGroups: arrayOf(workforceGroupType).isRequired,
+  essentialGroups: arrayOf(workforceGroupType).isRequired,
+};
 
 export default ThankYouView;
