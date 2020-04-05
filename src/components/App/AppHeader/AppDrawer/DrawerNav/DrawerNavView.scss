@@ -56,11 +56,13 @@
 
 :global {
   @include breakpoint('gt-xs') {
-    .c2-nav-list {
+    .MuiButtonBase-root.c2-nav-list {
       border: 2px solid transparent;
+      border-radius: border-radius(sharp);
 
       &:hover {
-        border-color: rgba(255, 255, 255, .1);
+        background-color: rgba(0, 0, 0, .15);
+        border-color: rgba(255, 255, 255, .15);
       }
     }
   }
