@@ -1,11 +1,11 @@
-import PropTypes, { shape } from 'prop-types';
+import PropTypes, { shape, oneOf } from 'prop-types';
 
 const essentialGroup = shape({
   name: PropTypes.string.isRequired,
+  bucket: oneOf(['frontLine', 'response', 'essential']),
   icon: PropTypes.string.isRequired,
   coverUrl: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  isFrontLine: PropTypes.bool.isRequired,
 });
 
 export default essentialGroup;
