@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Loading from 'components/shared/Loading';
-import AppMain from './AppMain';
 import AppHeader from './AppHeader';
+import AppMain from './AppMain';
 import AppFooter from './AppFooter';
 import './AppView.scss';
 

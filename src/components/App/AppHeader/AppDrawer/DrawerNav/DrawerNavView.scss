@@ -1,0 +1,39 @@
+@import '~scss/utils';
+
+.nav {
+  padding: spacing(sm);
+
+  @include breakpoint('gt-sm') {
+    padding: spacing(md);
+  }
+}
+
+.list__icon {
+  width: 3rem;
+  @include flex-row(center, center);
+  font-size: 1.8rem;
+}
+
+.list__text {
+  margin: spacing(sm) 0 spacing(sm) spacing(sm);
+  padding-right: spacing(sm);
+  line-height: 1.25em;
+
+  @include breakpoint('gt-xs') {
+    margin: spacing(md) 0 spacing(md) spacing(md);
+    padding-right: spacing(md);
+  }
+}
+
+.list__title {
+  letter-spacing: .2px;
+  font-family: font-family(primary);
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.list__subtitle {
+  margin-top: spacing(sm);
+  font-size: 1rem;
+  color: theme(blueRose, light2);
+}

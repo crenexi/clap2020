@@ -1,6 +1,49 @@
 const assetsPath = process.env.ASSETS_PATH;
 
 const defaultContent = {
+  nav: [
+    {
+      link: '/',
+      title: 'Three Steps',
+      subtitle: 'Spread the word to clap',
+      icon: 'house-user',
+    },
+    {
+      link: '/share',
+      title: 'Share Posters',
+      subtitle: 'Tweet, send, and save',
+      icon: 'image',
+    },
+    {
+      link: '/heroes',
+      title: 'Fallen Heroes',
+      subtitle: 'Stories of coronavirus',
+      icon: 'head-side-mask',
+    },
+    {
+      link: '/get-ready',
+      title: 'Countdown',
+      subtitle: 'Clap for three minutes',
+      icon: 'calendar-day',
+    },
+  ],
+  platforms: [
+    {
+      name: 'Twitter',
+      url: 'https://www.google.com',
+      icon: 'twitter',
+    },
+    {
+      name: 'Instagram',
+      url: 'https://www.google.com',
+      icon: 'instagram',
+    },
+    {
+      name: 'Facebook',
+      url: 'https://www.google.com',
+      icon: 'facebook-f',
+    },
+  ],
   countdown: {
     eventDate: '2020-04-23',
     eventTime: '19:00',

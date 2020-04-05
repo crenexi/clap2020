@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // This component exists around route children in
 // order to delay the visibility of the route for
@@ -14,11 +14,7 @@ const withOpacityDelay = (WrappedComponent) => {
 
   const HOC = (props) => {
     setRootOpacity(0);
-
-    useEffect(() => {
-      const timeOutId = setTimeout(() => setRootOpacity(1), 0);
-      return () => clearTimeout(timeOutId);
-    }, []);
+    setTimeout(() => setRootOpacity(1), 100);
 
     return <WrappedComponent {...props} />;
   };

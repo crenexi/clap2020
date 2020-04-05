@@ -8,6 +8,8 @@ import {
 import {
   faAmbulance,
   faArrowAltDown,
+  faArrowCircleRight,
+  faBars,
   faBrain,
   faCalendarDay,
   faCalendarPlus,
@@ -31,6 +33,7 @@ import {
   faHospital,
   faHospitals,
   faHourglassEnd,
+  faHouseUser,
   faIdBadge,
   faImage,
   faImages,
@@ -50,15 +53,24 @@ import {
   faShieldVirus,
   faSpinnerThird,
   faStretcher,
+  faTimes,
   faUserMd,
   faUserNurse,
   faViruses,
 } from '@fortawesome/pro-light-svg-icons';
 
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+
 const buildLibrary = () => {
   library.add(
     faAmbulance,
     faArrowAltDown,
+    faArrowCircleRight,
+    faBars,
     faBrain,
     faCalendarDay,
     faCalendarPlus,
@@ -68,6 +80,7 @@ const buildLibrary = () => {
     faCopy,
     faDownload,
     faExpandAlt,
+    faFacebookF,
     faFileImage,
     faFilePdf,
     faFolderOpen,
@@ -82,9 +95,11 @@ const buildLibrary = () => {
     faHospital,
     faHospitals,
     faHourglassEnd,
+    faHouseUser,
     faIdBadge,
     faImage,
     faImages,
+    faInstagram,
     faLongArrowAltLeft,
     faLongArrowAltRight,
     faLungs,
@@ -103,6 +118,8 @@ const buildLibrary = () => {
     faSpinnerThirdSolid,
     faStarOfLife,
     faStretcher,
+    faTimes,
+    faTwitter,
     faUserMd,
     faUserNurse,
     faViruses,
