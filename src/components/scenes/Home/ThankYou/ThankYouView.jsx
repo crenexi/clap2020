@@ -1,20 +1,26 @@
 import React from 'react';
-import FaIcon from 'components/shared/FaIcon';
+import { arrayOf } from 'prop-types';
+import essentialGroupTypes from 'types/essential-group';
+import ThankYouHeader from './ThankYouHeader';
+import FrontLineGroups from './FrontLineGroups';
+import EssentialGroups from './EssentialGroups';
 import './ThankYouView.scss';
 
-const ThankYouView = () => (
-  <div styleName="thanks">
-    <div styleName="thanks__header-wrap">
-      <div styleName="thanks__header-border">
-        <div styleName="thanks__header">
-          <div styleName="thanks__header-hashtag">
-            <FaIcon icon="hashtag" />
-          </div>
-          <div styleName="thanks__header-title">Thank you</div>
-        </div>
-      </div>
+const ThankYouView = (props) => {
+  const { frontLineGroups, essentialGroups } = props;
+
+  return (
+    <div styleName="thanks">
+      <ThankYouHeader />
+      <FrontLineGroups groups={frontLineGroups} />
+      <EssentialGroups groups={essentialGroups} />
     </div>
-  </div>
-);
+  );
+};
+
+ThankYouView.propTypes = {
+  frontLineGroups: arrayOf(essentialGroupTypes).isRequired,
+  essentialGroups: arrayOf(essentialGroupTypes).isRequired,
+};
 
 export default ThankYouView;
