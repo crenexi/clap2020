@@ -1,5 +1,6 @@
 import React from 'react';
 import { arrayOf } from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import useDrawer from 'hooks/use-drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -8,10 +9,13 @@ import FaIcon from 'components/shared/FaIcon';
 import './DrawerNavView.scss';
 
 const DrawerNavView = ({ items }) => {
+  const history = useHistory();
   const { closeDrawer } = useDrawer();
 
-  const listItems = items.map(({ title, subtitle, icon }) => (
-    <ListItem button key={title}>
+  const handleClick = link => history.push(link);
+
+  const listItems = items.map(({ link, title, subtitle, icon }) => (
+    <ListItem button key={title} onClick={() => handleClick(link)}>
       <div styleName="list__icon">
         <FaIcon icon={icon} />
       </div>
