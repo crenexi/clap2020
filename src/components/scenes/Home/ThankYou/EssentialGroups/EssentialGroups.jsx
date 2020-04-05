@@ -7,7 +7,9 @@ import './EssentialGroups.scss';
 const EssentialGroups = ({ groups }) => {
   return (
     <div styleName="groups">
-      {groups.map(group => <EssentialGroup group={group} />)}
+      {groups.map(group => (
+        <EssentialGroup key={group.name} group={group} />
+      ))}
     </div>
   );
 };

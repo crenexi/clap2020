@@ -7,7 +7,9 @@ import './ResponseGroups.scss';
 const ResponseGroups = ({ groups }) => {
   return (
     <div styleName="groups">
-      {groups.map(group => <ResponseGroup group={group} />)}
+      {groups.map(group => (
+        <ResponseGroup key={group.name} group={group} />
+      ))}
     </div>
   );
 };

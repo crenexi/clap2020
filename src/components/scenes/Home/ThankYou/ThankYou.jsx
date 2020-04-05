@@ -1,4 +1,5 @@
 import React from 'react';
+import logger from 'services/logger';
 import useContent from 'hooks/use-content';
 import ThankYouView from './ThankYouView';
 
@@ -7,7 +8,7 @@ const ThankYou = () => {
 
   const bucketsSkeleton = {
     frontLines: [],
-    respones: [],
+    response: [],
     essential: [],
   };
 
@@ -22,15 +23,22 @@ const ThankYou = () => {
     return { ...buckets, [bucketId]: bucket };
   }, bucketsSkeleton);
 
-  console.log(buckets);
+  // Ensure all three buckets have data
+  if (!buckets
+    || !buckets.frontLines.length
+    || !buckets.response.length
+    || !buckets.essential.length
+  ) {
+    logger.error('Workforce groups data invalid');
+    return null;
+  }
 
   return (
-    <div>test</div>
-    // <ThankYouView
-    //   frontLineGroups={frontLineGroups}
-    //   responseGroups
-    //   essentialGroups={essentialGroups}
-    // />
+    <ThankYouView
+      frontLineGroups={buckets.frontLines}
+      responseGroups={buckets.response}
+      essentialGroups={buckets.essential}
+    />
   );
 };
 

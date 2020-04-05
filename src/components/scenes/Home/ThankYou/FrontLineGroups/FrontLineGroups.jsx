@@ -7,7 +7,9 @@ import './FrontLineGroups.scss';
 const FrontLineGroups = ({ groups }) => {
   return (
     <div styleName="groups">
-      {groups.map(group => <FrontLineGroup group={group} />)}
+      {groups.map(group => (
+        <FrontLineGroup key={group.name} group={group} />
+      ))}
     </div>
   );
 };
