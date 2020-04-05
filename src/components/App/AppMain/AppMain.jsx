@@ -2,8 +2,9 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from 'components/scenes/Home';
 import Share from 'components/scenes/Share';
-import Latest from 'components/scenes/Latest';
 import GetReady from 'components/scenes/GetReady';
+import Heroes from 'components/scenes/Heroes';
+import Latest from 'components/scenes/Latest';
 import Design from 'components/scenes/Design';
 import withAnalyticsTracker from 'utils/with-analytics-tracker';
 import withOpacityDelay from 'utils/with-opacity-delay';
@@ -12,8 +13,9 @@ import './AppMain.scss';
 const AppMain = () => {
   const routesData = [
     { path: '/share', component: Share },
-    { path: '/latest', component: Latest },
     { path: '/get-ready', component: GetReady },
+    { path: '/heroes', component: Heroes },
+    { path: '/latest', component: Latest },
     { path: '/design', component: Design },
   ];
 

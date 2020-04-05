@@ -3,24 +3,28 @@ const assetsPath = process.env.ASSETS_PATH;
 const defaultContent = {
   nav: [
     {
+      link: '/',
       title: 'Three Steps',
-      subtitle: 'Aenean commodo ligula eget dolor',
+      subtitle: 'Spread the word to clap',
       icon: 'house-user',
     },
     {
-      title: 'Posters',
-      subtitle: 'Aenean commodo ligula eget dolor',
-      icon: 'images',
+      link: '/share',
+      title: 'Share Posters',
+      subtitle: 'Tweet, send, and save',
+      icon: 'image',
     },
     {
-      title: 'Heroes',
-      subtitle: 'Aenean commodo ligula eget dolor',
-      icon: 'user-nurse',
+      link: '/heroes',
+      title: 'Fallen Heroes',
+      subtitle: 'Stories of coronavirus',
+      icon: 'head-side-mask',
     },
     {
+      link: '/get-ready',
       title: 'Countdown',
-      subtitle: 'Aenean commodo ligula eget dolor',
-      icon: 'hourglass-end',
+      subtitle: 'Clap for three minutes',
+      icon: 'calendar-day',
     },
   ],
   platforms: [

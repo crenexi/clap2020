@@ -29,6 +29,7 @@
 
   .c2-icon-button {
     @include size(3.5rem);
+    transition-duration: 150ms;
 
     &--small {
       @include size(2rem);
@@ -46,6 +47,21 @@
 
     &:hover {
       border-color: theme(cloud, dark2);
+    }
+  }
+
+  // Inverted button
+  .MuiIconButton-root.c2-icon-button--inverted {
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    .c2-icon-button__label {
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .1);
+      border-color: rgba(255, 255, 255, .2);
     }
   }
 

@@ -40,7 +40,7 @@ const IconButton = (props) => {
 };
 
 IconButton.propTypes = {
-  variant: oneOf(['ghost', 'primary', 'secondary', 'white']),
+  variant: oneOf(['ghost', 'inverted', 'primary', 'secondary', 'white']),
   icon: PropTypes.string.isRequired,
   size: oneOf(['small', 'medium']),
   disabled: PropTypes.bool,
