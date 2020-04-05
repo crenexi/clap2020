@@ -3,24 +3,34 @@ import useContent from 'hooks/use-content';
 import ThankYouView from './ThankYouView';
 
 const ThankYou = () => {
-  const { essentialGroups: allGroups } = useContent();
-  const frontLineGroups = [];
-  const essentialGroups = [];
+  const { workforceGroups } = useContent();
 
-  allGroups.forEach((group) => {
-    if (group.isFrontLine) {
-      frontLineGroups.push(group);
-      return;
-    }
+  const bucketsSkeleton = {
+    frontLines: [],
+    respones: [],
+    essential: [],
+  };
 
-    essentialGroups.push(group);
-  });
+  const buckets = workforceGroups.reduce((buckets, group) => {
+    const bucketId = group.bucket;
+    const bucket = [...(buckets[bucketId] || []), group];
+
+    // Pass up if bucket is not in skeleton
+    if (!(bucketId in buckets)) return buckets;
+
+    // Return buckets with updated bucket
+    return { ...buckets, [bucketId]: bucket };
+  }, bucketsSkeleton);
+
+  console.log(buckets);
 
   return (
-    <ThankYouView
-      frontLineGroups={frontLineGroups}
-      essentialGroups={essentialGroups}
-    />
+    <div>test</div>
+    // <ThankYouView
+    //   frontLineGroups={frontLineGroups}
+    //   responseGroups
+    //   essentialGroups={essentialGroups}
+    // />
   );
 };
 

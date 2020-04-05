@@ -1,8 +1,8 @@
 import React from 'react';
 import workforceGroupType from 'types/workforce-group';
-import './FrontLineGroup.scss';
+import './ResponseGroup.scss';
 
-const FrontLineGroup = ({ group }) => {
+const ResponseGroup = ({ group }) => {
   const { name, icon, coverUrl, description } = group;
 
   return (
@@ -12,8 +12,8 @@ const FrontLineGroup = ({ group }) => {
   );
 };
 
-FrontLineGroup.propTypes = {
+ResponseGroup.propTypes = {
   group: workforceGroupType.isRequired,
 };
 
-export default FrontLineGroup;
+export default ResponseGroup;

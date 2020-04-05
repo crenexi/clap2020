@@ -1,19 +1,19 @@
 import React from 'react';
-import essentialGroupType from 'types/essential-group';
+import workforceGroupType from 'types/workforce-group';
 import './EssentialGroup.scss';
 
 const EssentialGroup = ({ group }) => {
   const { name, icon, coverUrl, description } = group;
 
   return (
-    <div styleName="groups">
+    <div styleName="group">
       {name} | {icon} | {description} | {coverUrl}
     </div>
   );
 };
 
 EssentialGroup.propTypes = {
-  group: essentialGroupType.isRequired,
+  group: workforceGroupType.isRequired,
 };
 
 export default EssentialGroup;
