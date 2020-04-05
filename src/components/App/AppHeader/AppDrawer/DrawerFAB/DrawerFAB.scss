@@ -5,6 +5,11 @@
   right: spacing(sm);
   bottom: spacing(sm);
   z-index: z-index(header);
+  transition-duration: 150ms;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 
   @include breakpoint('gt-xs') {
     right: spacing(md);

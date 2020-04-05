@@ -29,16 +29,19 @@ const defaultContent = {
   ],
   platforms: [
     {
+      id: 'twitter',
       name: 'Twitter',
       url: 'https://www.google.com',
       icon: 'twitter',
     },
     {
+      id: 'instagram',
       name: 'Instagram',
       url: 'https://www.google.com',
       icon: 'instagram',
     },
     {
+      id: 'facebook',
       name: 'Facebook',
       url: 'https://www.google.com',
       icon: 'facebook-f',
