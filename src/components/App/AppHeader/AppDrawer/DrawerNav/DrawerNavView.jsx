@@ -15,7 +15,12 @@ const DrawerNavView = ({ items }) => {
   const handleClick = link => history.push(link);
 
   const listItems = items.map(({ link, title, subtitle, icon }) => (
-    <ListItem button key={title} onClick={() => handleClick(link)}>
+    <ListItem
+      classes={{ root: 'c2-nav-list' }}
+      button
+      key={title}
+      onClick={() => handleClick(link)}
+    >
       <div styleName="list__icon">
         <FaIcon icon={icon} />
       </div>

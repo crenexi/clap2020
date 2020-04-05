@@ -8,6 +8,22 @@
   }
 }
 
+.list:hover {
+  background-color: #fff;
+
+  .list__icon {
+    color: #000;
+  }
+
+  .list__title {
+    color: #000;
+  }
+
+  .list__subtitle {
+    color: color(content, subtle);
+  }
+}
+
 .list__icon {
   width: 3rem;
   @include flex-row(center, center);
@@ -36,4 +52,16 @@
   margin-top: spacing(sm);
   font-size: 1rem;
   color: theme(blueRose, light2);
+}
+
+:global {
+  @include breakpoint('gt-xs') {
+    .c2-nav-list {
+      border: 2px solid transparent;
+
+      &:hover {
+        border-color: rgba(255, 255, 255, .1);
+      }
+    }
+  }
 }
