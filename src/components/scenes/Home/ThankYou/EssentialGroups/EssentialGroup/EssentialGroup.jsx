@@ -3,11 +3,11 @@ import workforceGroupType from 'types/workforce-group';
 import './EssentialGroup.scss';
 
 const EssentialGroup = ({ group }) => {
-  const { name, icon, coverUrl, description } = group;
+  // const { name, icon, coverUrl, description } = group;
 
   return (
     <div styleName="group">
-      {name} | {icon} | {description} | {coverUrl}
+      Essential Group: {group.name}
     </div>
   );
 };

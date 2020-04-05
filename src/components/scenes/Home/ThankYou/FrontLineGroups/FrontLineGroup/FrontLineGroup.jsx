@@ -3,11 +3,11 @@ import workforceGroupType from 'types/workforce-group';
 import './FrontLineGroup.scss';
 
 const FrontLineGroup = ({ group }) => {
-  const { name, icon, coverUrl, description } = group;
+  // const { name, icon, coverUrl, description } = group;
 
   return (
     <div styleName="group">
-      {name} | {icon} | {description} | {coverUrl}
+      Front Lines Group: {group.name}
     </div>
   );
 };

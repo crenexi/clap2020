@@ -3,11 +3,11 @@ import workforceGroupType from 'types/workforce-group';
 import './ResponseGroup.scss';
 
 const ResponseGroup = ({ group }) => {
-  const { name, icon, coverUrl, description } = group;
+  // const { name, icon, coverUrl, description } = group;
 
   return (
     <div styleName="group">
-      {name} | {icon} | {description} | {coverUrl}
+      Response Group: {group.name}
     </div>
   );
 };
