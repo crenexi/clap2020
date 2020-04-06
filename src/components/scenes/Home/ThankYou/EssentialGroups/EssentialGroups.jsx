@@ -7,6 +7,10 @@ import './EssentialGroups.scss';
 const EssentialGroups = ({ groups }) => {
   return (
     <div styleName="groups">
+      <div>
+        <div>Recognizing our</div>
+        <h2>Essential Workers</h2>
+      </div>
       {groups.map(group => (
         <EssentialGroup key={group.name} group={group} />
       ))}
