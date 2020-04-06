@@ -194,7 +194,7 @@ const defaultContent = {
     {
       name: 'Transportation',
       bucket: 'essential',
-      icon: 'shipping-fast',
+      icon: 'car-bus',
       coverUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
       description: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.',
     },

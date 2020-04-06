@@ -2,7 +2,7 @@ import React from 'react';
 import ThisIsWar from './ThisIsWar';
 import ThreeSteps from './ThreeSteps';
 import ThankYou from './ThankYou';
-import FollowUs from './FollowUs';
+// import FollowUs from './FollowUs';
 import './Home.scss';
 
 const Home = () => (
@@ -10,7 +10,7 @@ const Home = () => (
     <ThreeSteps />
     <ThisIsWar />
     <ThankYou />
-    <FollowUs />
+    {/* <FollowUs /> */}
   </article>
 );
 
