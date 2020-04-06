@@ -9,19 +9,19 @@ const ThankYou = () => {
   // Static bucket content
   const buckets = {
     frontLines: {
-      preTitle: 'For battling on the',
+      preTitle: '#ThankYou for battling the',
       title: 'Front Lines',
       groups: [],
       videos: [],
     },
     response: {
-      preTitle: 'For commanding the',
-      title: 'Global Response',
+      preTitle: '#ThankYou for running',
+      title: 'Crisis Response',
       groups: [],
       videos: [],
     },
     essential: {
-      preTitle: 'For handling daily',
+      preTitle: '#ThankYou for handling',
       title: 'Essential Work',
       groups: [],
       videos: [],

@@ -11,7 +11,12 @@
 // Groups list styling
 
 .thanks__front-line-grid {
-  display: grid;
+  @include breakpoint('gt-xs') {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 30rem));
+    grid-gap: layout(sm);
+    place-content: start center;
+  }
 }
 
 .thanks__response-grid {

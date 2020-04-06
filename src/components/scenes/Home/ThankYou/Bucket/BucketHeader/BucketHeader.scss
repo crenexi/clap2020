@@ -7,12 +7,12 @@
 
   @include flex-column(center, center);
   background-color: #fff;
-  padding: spacing(sm) layout(2xs);
+  padding: spacing(xs) layout(2xs);
   text-align: center;
-  box-shadow: 0 0 3px rgba(0, 0, 0, .05);
+  box-shadow: 0 0 3px rgba(0, 0, 0, .1);
 
   @include breakpoint('gt-xs') {
-    padding: spacing(md) layout(xs);
+    padding: spacing(sm) layout(xs);
   }
 
   @include breakpoint('gt-sm') {
@@ -22,32 +22,40 @@
 
 .header__pre-title,
 .header__title {
-  text-transform: uppercase;
   font-family: font-family(primary);
   line-height: 1.1em;
+  font-weight: 700;
 }
 
 .header__pre-title {
-  margin-bottom: -5px;
+  margin: 2px 0 -3px;
   color: rgba(theme(ocean, dark1), .65);
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+
+  @include breakpoint('gt-xs') {
+    font-size: 1.35rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    font-size: 1.5rem;
+  }
 }
 
 .header__title {
   color: theme(ocean, dark1);
-  font-size: 2.25rem;
-  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2rem;
 
   @include breakpoint('gt-xs') {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   @include breakpoint('gt-sm') {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    line-height: 1em;
   }
 
   @include breakpoint('gt-md') {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
