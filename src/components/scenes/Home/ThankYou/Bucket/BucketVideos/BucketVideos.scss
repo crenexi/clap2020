@@ -1,30 +1,35 @@
 @import '~scss/utils';
 
 .videos {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  margin-top: spacing(md);
-  padding-top: spacing(md);
+  margin-top: layout(xs);
+  padding-top: layout(xs);
   border-top: 1px solid theme(cloud, dark2);
 
-  @include breakpoint('gt-xs') {
-    margin-top: spacing(lg);
-    padding-top: spacing(lg);
+  @include breakpoint('gt-sm') {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: layout(xs);
+    margin-top: layout(sm);
+    padding-top: layout(sm);
   }
 
   @include breakpoint('gt-sm') {
-    margin-top: spacing(xl);
-    padding-top: spacing(xl);
-  }
+    margin-top: layout(md);
+    padding-top: layout(md);
+    }
 
   @include breakpoint('gt-md') {
-    margin-top: spacing(2xl);
-    padding-top: spacing(2xl);
-  }
+    margin-top: layout(lg);
+    padding-top: layout(lg);
+    }
 }
 
 .video__item {
   width: 100%;
+
+  @include breakpoint('sm') {
+    &:not(:first-child) {
+      margin-top: layout(xs);
+    }
+  }
 }
