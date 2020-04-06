@@ -106,68 +106,72 @@ const defaultContent = {
       },
     ],
   },
-  thankYou: {
-    frontLineGroups: {
-      featureVideos: [
-        {
-          title: 'Healthcare Heroes Tribute',
-          src: 'https://youtu.be/A0BNO--7OdE',
-          attribution: 'Andy Austin FNP-C',
-          location: 'United States',
-        },
-        {
-          title: 'Healthcare Heroes Tribute',
-          src: 'https://youtu.be/aXOTKGFpHJQ',
-          attribution: 'Andy Austin FNP-C',
-          location: 'United States',
-        },
-        {
-          title: 'Alarming Interview in the ER',
-          src: 'https://youtu.be/jft5E7em858',
-          attribution: 'CBS This Morning',
-          location: 'Chicago, United States',
-        },
-        {
-          title: 'Doctors & Nurses Demand Help',
-          src: 'https://youtu.be/RvVKVzQ72SI',
-          attribution: 'NBC News',
-          location: 'New York City, United States',
-        },
-      ],
+  workforceVideos: [
+    {
+      isFeatured: true,
+      bucket: 'frontLines',
+      title: 'Healthcare Heroes Tribute',
+      src: 'https://youtu.be/A0BNO--7OdE',
+      attribution: 'Andy Austin FNP-C',
+      location: 'United States',
     },
-    responseGroups: {
-      featureVideos: [
-        {
-          title: 'Developing a Vaccine in Record Time',
-          src: 'https://youtu.be/7SuKywEZ5AM',
-          attribution: 'Wall Street Journal',
-          location: 'World',
-        },
-        {
-          title: 'New York Governor Thanks the National Guard',
-          src: 'https://www.youtube.com/watch?v=p_LSilzVP74',
-          attribution: 'ABC News',
-          location: 'New York, United States',
-        },
-      ],
+    {
+      isFeatured: true,
+      bucket: 'frontLines',
+      title: 'Healthcare Heroes Tribute',
+      src: 'https://youtu.be/aXOTKGFpHJQ',
+      attribution: 'Andy Austin FNP-C',
+      location: 'United States',
     },
-    essentialGroups: {
-      featuredVidoes: [
-        {
-          title: 'Essential Workers Push Back',
-          src: 'https://youtu.be/mJ-Fh8bFNdY',
-          attribution: 'Bloomberg',
-          location: 'United States',
-        },
-        {
-          title: 'Workers Applaud Cleaning Staff',
-          src: 'https://youtu.be/HPrnEuzHnco',
-          attribution: 'ABC News',
-          location: 'Barcelona, Spain',
-        },
-      ],
+    {
+      isFeatured: true,
+      bucket: 'frontLines',
+      title: 'Alarming Interview in the ER',
+      src: 'https://youtu.be/jft5E7em858',
+      attribution: 'CBS This Morning',
+      location: 'Chicago, United States',
     },
-  },
+    {
+      isFeatured: true,
+      bucket: 'frontLines',
+      title: 'Doctors & Nurses Demand Help',
+      src: 'https://youtu.be/RvVKVzQ72SI',
+      attribution: 'NBC News',
+      location: 'New York City, United States',
+    },
+    {
+      isFeatured: true,
+      bucket: 'response',
+      title: 'Developing a Vaccine in Record Time',
+      src: 'https://youtu.be/7SuKywEZ5AM',
+      attribution: 'Wall Street Journal',
+      location: 'World',
+    },
+    {
+      isFeatured: true,
+      bucket: 'response',
+      title: 'New York Governor Thanks the National Guard',
+      src: 'https://www.youtube.com/watch?v=p_LSilzVP74',
+      attribution: 'ABC News',
+      location: 'New York, United States',
+    },
+    {
+      isFeatured: true,
+      bucket: 'essential',
+      title: 'Essential Workers Push Back',
+      src: 'https://youtu.be/mJ-Fh8bFNdY',
+      attribution: 'Bloomberg',
+      location: 'United States',
+    },
+    {
+      isFeatured: true,
+      bucket: 'essential',
+      title: 'Workers Applaud Cleaning Staff',
+      src: 'https://youtu.be/HPrnEuzHnco',
+      attribution: 'ABC News',
+      location: 'Barcelona, Spain',
+    },
+  ],
   workforceGroups: [
     {
       name: 'ER Doctors',
