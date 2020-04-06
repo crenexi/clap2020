@@ -1,31 +1,43 @@
 import React from 'react';
-import { arrayOf } from 'prop-types';
-import workforceGroupType from 'types/workforce-group';
+import workforceBucketType from 'types/workforce-bucket';
 import ThankYouHeader from './ThankYouHeader';
-import FrontLineGroups from './FrontLineGroups';
-import ResponseGroups from './ResponseGroups';
-import EssentialGroups from './EssentialGroups';
+import Bucket from './Bucket';
+import FrontLineGroup from './FrontLineGroups';
+import ResponseGroup from './ResponseGroups';
+import EssentialGroup from './EssentialGroups';
 import './ThankYouView.scss';
 
 const ThankYouView = (props) => {
-  const { frontLineGroups, responseGroups, essentialGroups } = props;
+  const { frontLineBucket, responseBucket, essentialBucket } = props;
+
+  const frontLineGroups = frontLineBucket.groups.map(group => (
+    <FrontLineGroup key={group.name} group={group} />
+  ));
+
+  const responseGroups = responseBucket.groups.map(group => (
+    <ResponseGroup key={group.name} group={group} />
+  ));
+
+  const essentialGroups = essentialBucket.groups.map(group => (
+    <EssentialGroup key={group.name} group={group} />
+  ));
 
   return (
     <div styleName="thanks">
       <ThankYouHeader />
       <div styleName="thanks__main">
-        <FrontLineGroups groups={frontLineGroups} />
-        <ResponseGroups groups={responseGroups} />
-        <EssentialGroups groups={essentialGroups} />
+        <Bucket bucket={frontLineBucket}>{frontLineGroups}</Bucket>
+        <Bucket bucket={responseBucket}>{responseGroups}</Bucket>
+        <Bucket bucket={essentialBucket}>{essentialGroups}</Bucket>
       </div>
     </div>
   );
 };
 
 ThankYouView.propTypes = {
-  frontLineGroups: arrayOf(workforceGroupType).isRequired,
-  responseGroups: arrayOf(workforceGroupType).isRequired,
-  essentialGroups: arrayOf(workforceGroupType).isRequired,
+  frontLineBucket: workforceBucketType.isRequired,
+  responseBucket: workforceBucketType.isRequired,
+  essentialBucket: workforceBucketType.isRequired,
 };
 
 export default ThankYouView;
