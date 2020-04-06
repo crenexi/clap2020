@@ -7,8 +7,8 @@ import './Home.scss';
 
 const Home = () => (
   <article styleName="home">
-    <ThisIsWar />
     <ThreeSteps />
+    <ThisIsWar />
     <ThankYou />
     <FollowUs />
   </article>
