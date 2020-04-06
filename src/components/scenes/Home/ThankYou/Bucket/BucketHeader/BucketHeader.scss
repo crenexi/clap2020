@@ -1,25 +1,26 @@
 @import '~scss/utils';
 
 .header {
-  $border: 1px solid theme(cloud, dark2);
+  position: sticky;
+  top: ui-layout(headerHeightSm);
+  z-index: 2;
 
   @include flex-column(center, center);
   background-color: #fff;
-  border-top: $border;
-  border-bottom: $border;
-  padding: layout(sm) layout(2xs);
+  padding: spacing(sm) layout(2xs);
   text-align: center;
 
   @include breakpoint('gt-xs') {
-    padding: layout(md) layout(xs);
+    padding: spacing(md) layout(xs);
   }
 
   @include breakpoint('gt-sm') {
-    padding: layout(lg) layout(sm);
+    top: ui-layout(headerHeightGtSm);
+    padding: spacing(lg) layout(sm);
   }
 
   @include breakpoint('gt-md') {
-    padding: layout(xl) layout(md);
+    padding: spacing(xl) layout(md);
   }
 }
 

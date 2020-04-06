@@ -6,11 +6,14 @@ import './BucketVideos.scss';
 
 const BucketVideos = ({ videos }) => (
   <div styleName="videos">
-    {videos.map(video => (
-      <div styleName="video__item" key={video.videoId}>
-        <VideoEmbed video={video} />
-      </div>
-    ))}
+    <h4 styleName="videos__title">Featured Videos</h4>
+    <div styleName="videos__list">
+      {videos.map(video => (
+        <div styleName="video__item" key={video.videoId}>
+          <VideoEmbed video={video} />
+        </div>
+      ))}
+    </div>
   </div>
 );
 

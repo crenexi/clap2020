@@ -20,7 +20,7 @@ const VideoEmbed = ({ video }) => {
   );
 
   return (
-    <article styleName="video ">
+    <article styleName="video">
       <header styleName="video__header">
         <div styleName="video__icon"><FaIcon icon="video" /></div>
         <div styleName="video__header-content">

@@ -1,6 +1,7 @@
 @import '~scss/utils';
 
 .main-frame {
+  position: relative;
   padding: layout(xs) layout(2xs) layout(sm);
 
   @include breakpoint('gt-xs') {
@@ -17,4 +18,5 @@
 }
 
 .main {
+  width: 100%;
 }

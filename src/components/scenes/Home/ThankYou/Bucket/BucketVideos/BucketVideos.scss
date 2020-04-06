@@ -2,34 +2,61 @@
 
 .videos {
   margin-top: layout(xs);
-  padding-top: layout(xs);
+  padding-top: layout(2xs);
   border-top: 1px solid theme(cloud, dark2);
 
-  @include breakpoint('gt-sm') {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    grid-gap: layout(xs);
+  @include breakpoint('gt-xs') {
     margin-top: layout(sm);
-    padding-top: layout(sm);
+    padding-top: layout(xs);
   }
 
   @include breakpoint('gt-sm') {
     margin-top: layout(md);
-    padding-top: layout(md);
-    }
+    padding-top: layout(sm);
+  }
+}
+
+.videos__title {
+  text-align: center;
+
+  @include breakpoint('gt-sm') {
+    text-align: left;
+  }
+}
+
+.videos__list {
+  @include flex-column(normal, center);
+  padding-top: layout(2xs);
+
+  @include breakpoint('gt-sm') {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 40rem));
+    grid-column-gap: layout(sm);
+    grid-row-gap: layout(xs);
+    place-content: center center;
+    place-items: stretch stretch;
+    padding-top: layout(sm);
+  }
 
   @include breakpoint('gt-md') {
-    margin-top: layout(lg);
-    padding-top: layout(lg);
-    }
+  }
 }
 
 .video__item {
+  display: grid;
+  place-items: stretch stretch;
   width: 100%;
+  max-width: 25rem;
 
-  @include breakpoint('sm') {
+  &:not(:first-child) {
+    margin-top: layout(xs);
+  }
+
+  @include breakpoint('gt-sm') {
+    max-width: unset;
+
     &:not(:first-child) {
-      margin-top: layout(xs);
+      margin-top: 0;
     }
   }
 }
