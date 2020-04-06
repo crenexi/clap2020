@@ -13,9 +13,11 @@ const ThankYouView = (props) => {
   return (
     <div styleName="thanks">
       <ThankYouHeader />
-      <FrontLineGroups groups={frontLineGroups} />
-      <ResponseGroups groups={responseGroups} />
-      <EssentialGroups groups={essentialGroups} />
+      <div styleName="thanks__main">
+        <FrontLineGroups groups={frontLineGroups} />
+        <ResponseGroups groups={responseGroups} />
+        <EssentialGroups groups={essentialGroups} />
+      </div>
     </div>
   );
 };

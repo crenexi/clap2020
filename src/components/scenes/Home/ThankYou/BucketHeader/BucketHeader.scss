@@ -1,0 +1,56 @@
+@import '~scss/utils';
+
+.header {
+  $border: 1px solid theme(cloud, dark2);
+
+  @include flex-column(center, center);
+  background-color: #fff;
+  border-top: $border;
+  border-bottom: $border;
+  padding: layout(sm) layout(2xs);
+  text-align: center;
+
+  @include breakpoint('gt-xs') {
+    padding: layout(md) layout(xs);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(lg) layout(sm);
+  }
+
+  @include breakpoint('gt-md') {
+    padding: layout(xl) layout(md);
+  }
+}
+
+.header__pre-title,
+.header__title {
+  text-transform: uppercase;
+  font-family: font-family(primary);
+  line-height: 1.1em;
+}
+
+.header__pre-title {
+  margin-bottom: -5px;
+  color: rgba(theme(ocean, dark1), .65);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.header__title {
+  color: theme(ocean, dark1);
+  font-size: 2.25rem;
+  font-weight: 700;
+
+  @include breakpoint('gt-xs') {
+    font-size: 3rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    font-size: 3.5rem;
+  }
+
+  @include breakpoint('gt-md') {
+    font-size: 4rem;
+  }
+}

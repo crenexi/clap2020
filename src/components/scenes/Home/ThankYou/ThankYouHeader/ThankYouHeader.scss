@@ -34,19 +34,24 @@
 // Header content
 
 .header__content {
+  @include flex-row(center, center);
   position: relative;
 }
 
 .header__hashtag {
   margin: 3px spacing(2xs) 0 0;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   color: theme(cloud, dark2);
+
+  @include breakpoint('gt-xs') {
+    font-size: 3.2rem;
+  }
 
   @include breakpoint('gt-sm') {
     @include position(absolute, 50% 100% null null);
     transform: translateY(-50%);
     margin-right: spacing(sm);
-    font-size: 4rem;
+    font-size: 3.7rem;
   }
 }
 
