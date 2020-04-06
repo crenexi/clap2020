@@ -70,6 +70,7 @@ import {
   faUserNurse,
   faUsersMedical,
   faVials,
+  faVideo,
   faViruses,
 } from '@fortawesome/pro-light-svg-icons';
 
@@ -150,6 +151,7 @@ const buildLibrary = () => {
     faUserNurse,
     faUsersMedical,
     faVials,
+    faVideo,
     faViruses,
   );
 };

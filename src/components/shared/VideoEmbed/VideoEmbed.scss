@@ -3,3 +3,34 @@
 .video {
   display: block;
 }
+
+// Video header
+
+.video__header {
+  @include flex-row(normal, center);
+  text-align: left;
+  padding-bottom: spacing(xs);
+}
+
+.video__icon {
+  margin-right: spacing(xs);
+  color: theme(redRose, dark1);
+  font-size: 1.35rem;
+}
+
+// Video iframe
+
+.video__iframe-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.video__iframe {
+  @include position(absolute, 0 null null 0);
+  @include size(100%);
+  overflow: hidden;
+  background-color: theme(cloud, dark2);
+  border-radius: border-radius(sharp);
+  box-shadow: shadow(2);
+}

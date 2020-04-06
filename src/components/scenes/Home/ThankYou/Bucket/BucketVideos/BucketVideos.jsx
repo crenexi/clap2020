@@ -7,7 +7,7 @@ import './BucketVideos.scss';
 const BucketVideos = ({ videos }) => (
   <div styleName="videos">
     {videos.map(video => (
-      <div styleName="video__item" key={video.src}>
+      <div styleName="video__item" key={video.videoId}>
         <VideoEmbed video={video} />
       </div>
     ))}
