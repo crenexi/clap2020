@@ -4,15 +4,15 @@
   padding: layout(xs) layout(2xs) layout(sm);
 
   @include breakpoint('gt-xs') {
-    padding: layout(sm) layout(xs) layout(md);
+    padding: layout(sm) layout(md) layout(md);
   }
 
   @include breakpoint('gt-sm') {
-    padding: layout(md) layout(sm) layout(lg);
+    padding: layout(md) layout(lg) layout(lg);
   }
 
   @include breakpoint('gt-md') {
-    padding: layout(lg) layout(md) layout(xl);
+    padding: layout(md) layout(xl) layout(xl);
   }
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import videoEmbedType from 'types/video-embed';
+import './VideoEmbed.scss';
 
 const VideoEmbed = ({ video }) => {
   // const { title, src, attribution, location } = video;
