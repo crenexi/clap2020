@@ -9,6 +9,7 @@
   background-color: #fff;
   padding: spacing(sm) layout(2xs);
   text-align: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .05);
 
   @include breakpoint('gt-xs') {
     padding: spacing(md) layout(xs);
@@ -16,11 +17,6 @@
 
   @include breakpoint('gt-sm') {
     top: ui-layout(headerHeightGtSm);
-    padding: spacing(lg) layout(sm);
-  }
-
-  @include breakpoint('gt-md') {
-    padding: spacing(xl) layout(md);
   }
 }
 
