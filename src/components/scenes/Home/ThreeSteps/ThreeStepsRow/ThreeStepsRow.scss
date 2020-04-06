@@ -11,11 +11,15 @@ $border-width: .8rem;
   overflow: hidden;
 
   &:not(:first-child) {
-    border-top: 1px solid theme(cloud, dark2);
+    margin-top: spacing(sm);
   }
 
   @include breakpoint('gt-xs') {
     @include flex-row();
+
+    &:not(:first-child) {
+      margin-top: spacing(md);
+    }
   }
 }
 

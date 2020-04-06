@@ -2,7 +2,7 @@
 
 .three {
   width: 100%;
-  padding: layout(2xs);
+  padding: layout(xs) layout(2xs);
   background: theme(ocean, dark2);
   background: linear-gradient(
     135deg,
@@ -11,15 +11,11 @@
   );
 
   @include breakpoint('gt-xs') {
-    padding: layout(xs);
+    padding: layout(md) layout(sm);
   }
 
   @include breakpoint('gt-sm') {
-    padding: layout(sm);
-  }
-
-  @include breakpoint('gt-md') {
-    padding: layout(md);
+    padding: layout(lg) layout(md);
   }
 }
 
