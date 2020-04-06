@@ -10,12 +10,11 @@ const FrontLineGroup = ({ group }) => {
   return (
     <div styleName="group">
       <div styleName="group__card">
-        <div styleName="group__cover" style={coverStyle} />
-        <div styleName="group__icon">
-          <FaIcon icon={icon} />
+        <div styleName="group__cover" style={coverStyle}>
+          <div styleName="group__icon"><FaIcon icon={icon} /></div>
         </div>
         <div styleName="group__main">
-          <div styleName="group__name">{name}</div>
+          <h3 styleName="group__name">{name}</h3>
           <div styleName="group__desc">{description}</div>
         </div>
       </div>
