@@ -7,24 +7,28 @@ const defaultContent = {
       title: 'Three Steps',
       subtitle: 'Spread the word to clap',
       icon: 'house-user',
+      disabled: false,
     },
     {
       linkTo: '/share',
       title: 'Share Posters',
       subtitle: 'Tweet, send, and save',
       icon: 'image',
+      disabled: false,
     },
     {
       linkTo: '/heroes',
       title: 'Fallen Heroes',
       subtitle: 'Stories of coronavirus',
       icon: 'head-side-mask',
+      disabled: true,
     },
     {
       linkTo: '/get-ready',
       title: 'Countdown',
       subtitle: 'Clap for three minutes',
       icon: 'calendar-day',
+      disabled: false,
     },
   ],
   platforms: [
@@ -51,6 +55,14 @@ const defaultContent = {
   countdown: {
     eventDate: '2020-04-23',
     eventTime: '19:00',
+    quoteCoverUrl: `${assetsPath}/covers/new-york.jpg`,
+    featuredQuote: {
+      text: 'Thank you to the administration of this healthcare system, and most importantly thank you to the front line workers. These people are true heroes in the truest sense of the word.',
+      author: {
+        name: 'Andrew Cuomo',
+        title: 'Governor of New York',
+      },
+    },
   },
   fullHeader: {
     coverUrl: `${assetsPath}/covers/nurse.jpg`,
