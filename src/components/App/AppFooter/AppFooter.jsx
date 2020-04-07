@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import BrandLogo from 'components/shared/BrandLogo';
+import FollowUs from './FollowUs';
 import './AppFooter.scss';
 
 const AppFooter = () => {
   const clapTime = 'April 23rd @ 7:00 PM';
 
   return (
-    <footer styleName="footer">
-      <div styleName="footer__main">
-        <div styleName="footer__brand">
-          <BrandLogo variant="white" />
+    <Fragment>
+      <FollowUs />
+      <footer styleName="footer">
+        <div styleName="footer__main">
+          <div styleName="footer__brand">
+            <BrandLogo variant="white" />
+          </div>
+          <div styleName="footer__clap-time">{clapTime}</div>
         </div>
-        <div styleName="footer__clap-time">{clapTime}</div>
-      </div>
-    </footer>
+      </footer>
+    </Fragment>
   );
 };
 

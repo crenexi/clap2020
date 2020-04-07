@@ -5,6 +5,7 @@ const brandPlatform = shape({
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  accountId: PropTypes.string,
 });
 
 export default brandPlatform;

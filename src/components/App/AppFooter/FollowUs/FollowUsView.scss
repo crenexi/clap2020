@@ -1,0 +1,40 @@
+@import '~scss/utils';
+
+.follow {
+  padding: layout(xs) layout(2xs);
+  @include gradient(theme(ocean, dark1), theme(ocean, dark2));
+  color: #fff;
+
+  @include breakpoint('gt-sm') {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: spacing(md);
+    place-items: center center;
+    padding: layout(xs);
+  }
+}
+
+.follow__section {
+  padding: layout(2xs) layout(2xs) layout(sm);
+
+  &:last-child {
+    padding: layout(2xs);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(xs);
+  }
+}
+
+.follow__heading {
+  text-align: center;
+}
+
+.follow__section-main {
+  margin-top: layout(2xs);
+  @include flex-column(center, center);
+
+  @include breakpoint('gt-sm') {
+    margin-top: layout(sm);
+  }
+}

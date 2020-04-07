@@ -31,20 +31,21 @@ const defaultContent = {
     {
       id: 'twitter',
       name: 'Twitter',
-      url: 'https://www.google.com',
+      url: 'https://www.twitter.com/clap2020',
       icon: 'twitter',
-    },
-    {
-      id: 'instagram',
-      name: 'Instagram',
-      url: 'https://www.google.com',
-      icon: 'instagram',
+      accountId: '1247599607317585920',
     },
     {
       id: 'facebook',
       name: 'Facebook',
-      url: 'https://www.google.com',
+      url: 'https://www.facebook.com/clap2020nation',
       icon: 'facebook-f',
+    },
+    {
+      id: 'instagram',
+      name: 'Instagram',
+      url: 'https://www.instagram.com/clap2020nation',
+      icon: 'instagram',
     },
   ],
   countdown: {
