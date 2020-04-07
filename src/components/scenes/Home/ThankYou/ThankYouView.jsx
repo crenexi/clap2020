@@ -30,9 +30,11 @@ const ThankYouView = (props) => {
 
   const essentialGroups = (
     <div styleName="thanks__essential-grid">
-      {essentialBucket.groups.map(group => (
-        <EssentialGroup key={group.name} group={group} />
-      ))}
+      <div styleName="thanks__essential-grid__card">
+        {essentialBucket.groups.map(group => (
+          <EssentialGroup key={group.name} group={group} />
+        ))}
+      </div>
     </div>
   );
 

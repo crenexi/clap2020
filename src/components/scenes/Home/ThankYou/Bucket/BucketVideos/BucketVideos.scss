@@ -46,8 +46,8 @@
     @include size(100%, 5rem);
     background: linear-gradient(
       0,
-      theme(cloud, dark1),
-      rgba(theme(cloud, dark1), 0),
+      theme(cloud, base),
+      rgba(theme(cloud, base), 0),
     );
   }
 }

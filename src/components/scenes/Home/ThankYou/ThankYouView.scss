@@ -2,13 +2,14 @@
 
 .thanks {
   width: 100%;
+  background-color: theme(cloud, base);
 }
 
 .thanks__main {
   margin-top: -1px;
 }
 
-// Groups list styling
+// Front Lines groups section
 
 .thanks__front-line-grid {
   @include breakpoint('gt-xs') {
@@ -19,11 +20,16 @@
   }
 }
 
-.thanks__response-grid {
+// Response and essential groups sections
+
+.thanks__response-grid,
+.thanks__essential-grid {
   @include flex-column(start, center);
 }
 
-.thanks__response-grid__card {
+.thanks__response-grid__card,
+.thanks__essential-grid__card {
+  width: 100%;
   background-color: #fff;
   border-radius: border-radius(round);
   box-shadow: shadow(24);
@@ -34,13 +40,13 @@
   }
 
   @include breakpoint('gt-md') {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
     max-width: 94rem;
   }
 }
 
-.thanks__essential-grid {
-  display: grid;
+@include breakpoint('gt-md') {
+  .thanks__response-grid__card {
+    display: flex;
+    flex-direction: row;
+  }
 }

@@ -1,6 +1,6 @@
 @import '~scss/utils';
 
-$divider: 1px solid theme(cloud, dark2);
+$divider: 1px solid theme(cloud, dark1);
 
 .group {
   @include flex-column();
@@ -89,10 +89,12 @@ $divider: 1px solid theme(cloud, dark2);
 
   @include breakpoint('gt-md') {
     padding: spacing(lg) spacing(lg) 1.7rem;
+  }
+}
 
-    &:not(:first-child) {
-      border-left: $divider;
-    }
+@include breakpoint('gt-md') {
+  .group:not(:first-child) .group__main {
+    border-left: $divider;
   }
 }
 

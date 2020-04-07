@@ -1,5 +1,77 @@
 @import '~scss/utils';
 
+$divider: 1px solid theme(cloud, dark1);
+$border: 6px solid theme(ocean, base);
+
 .group {
-  @include flex-column();
+  @include flex-column(normal, center);
+  padding: spacing(lg);
+
+  &:not(:first-child) {
+    border-top: $divider;
+  }
+
+  @include breakpoint('gt-sm') {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+// Cover and icon
+
+.group__cover-border,
+.group__cover,
+.group__cover::before {
+  border-radius: 1000px;
+}
+
+.group__cover-border {
+  position: relative;
+  @include size(8rem);
+  padding: 10px;
+  @include gradient(theme(blueRose, dark1), theme(marine, dark1));
+}
+
+.group__cover {
+  @include size(100%);
+  @include bg-image(cover);
+  overflow: hidden;
+
+  @include breakpoint('gt-xs') {
+    max-height: 12rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    max-height: 14rem;
+  }
+}
+
+.group__cover::before {
+  content: '';
+  @include position(absolute, 0 null null 0);
+  @include size(100%);
+  background-color: rgba(theme(ocean, dark1), .5);
+}
+
+.group__icon {
+  @include position(absolute, 50% null null 50%);
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+// Main area
+
+.group__main {
+  margin-top: spacing(md);
+}
+
+.group__name {
+  flex: 1 1 0%;
+  color: #000;
+  text-align: center;
+}
+
+.group__desc {
+  margin-top: spacing(sm);
 }
