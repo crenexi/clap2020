@@ -1,0 +1,130 @@
+@import '~scss/utils';
+
+$divider: 1px solid theme(cloud, dark1);
+$border: 6px solid theme(ocean, base);
+
+.group {
+  @include flex-column(normal, center);
+  padding: spacing(lg);
+
+  &:not(:first-child) {
+    border-top: $divider;
+  }
+
+  @include breakpoint('gt-sm') {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: spacing(sm);
+  }
+}
+
+// Cover and icon
+
+.group__cover-border,
+.group__cover,
+.group__cover::before {
+  border-radius: 1000px;
+
+  @include breakpoint('gt-sm') {
+    border-radius: border-radius(sharp);
+  }
+}
+
+.group__cover-border {
+  position: relative;
+  @include size(8rem);
+  padding: 10px;
+  @include gradient(theme(blueRose, dark1), theme(marine, dark1));
+
+  @include breakpoint('gt-sm') {
+    @include size(100%);
+    margin-right: 3.25rem;
+    padding: 0;
+    background: transparent;
+  }
+}
+
+.group__cover {
+  @include size(100%);
+  @include bg-image(cover);
+  overflow: hidden;
+
+  @include breakpoint('gt-xs') {
+    max-height: 12rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    max-height: unset;
+  }
+}
+
+.group__cover::before {
+  content: '';
+  @include position(absolute, 0 null null 0);
+  @include size(100%);
+  background-color: rgba(theme(ocean, dark1), .5);
+}
+
+.group__icon {
+  @include position(absolute, 50% null null 50%);
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #fff;
+
+  @include breakpoint('gt-sm') {
+    @include position(absolute, 50% null null 100%);
+    @include size(5.5rem);
+    @include flex-column(center, center);
+    @include gradient(theme(blueRose, dark1), theme(marine, dark1));
+    border: 6px solid #fff;
+    border-radius: 50%;
+    font-size: 2.3rem;
+  }
+}
+
+// Main area
+
+.group__main {
+  margin: spacing(md) 0 0 0;
+
+  @include breakpoint('gt-sm') {
+    margin: 0;
+    padding: spacing(md);
+    padding-left: calc(3.5rem + #{spacing(md)})
+  }
+}
+
+.group__name {
+  flex: 1 1 0%;
+  margin-top: -.4rem;
+  color: #000;
+  text-align: center;
+}
+
+.group__desc {
+  margin-top: spacing(sm);
+}
+
+// Alternate styling
+
+@include breakpoint('gt-sm') {
+  .group:nth-child(even) {
+    grid-template-columns: 2fr 1fr;
+    grid-auto-flow: dense;
+
+    .group__cover-border {
+      grid-column: 2;
+    }
+
+    .group__icon {
+      left: unset;
+      right: 100%;
+      transform: translate(50%, -50%);
+    }
+
+    .group__main {
+      padding-left: spacing(md);
+      padding-right: calc(3.5rem + #{spacing(md)})
+    }
+  }
+}

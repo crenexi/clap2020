@@ -4,40 +4,61 @@ import useContent from 'hooks/use-content';
 import ThankYouView from './ThankYouView';
 
 const ThankYou = () => {
-  const { workforceGroups } = useContent();
+  const { workforceGroups, workforceVideos } = useContent();
 
-  const bucketsSkeleton = {
-    frontLines: [],
-    response: [],
-    essential: [],
+  // Static bucket content
+  const buckets = {
+    frontLines: {
+      preTitle: '#ThankYou for battling the',
+      title: 'Front Lines',
+      groups: [],
+      videos: [],
+    },
+    response: {
+      preTitle: '#ThankYou for mobilizing',
+      title: 'Crisis Response',
+      groups: [],
+      videos: [],
+    },
+    essential: {
+      preTitle: '#ThankYou for handling',
+      title: 'Essential Work',
+      groups: [],
+      videos: [],
+    },
   };
 
-  const buckets = workforceGroups.reduce((buckets, group) => {
+  // Populate buckets with groups
+  workforceGroups.forEach((group) => {
     const bucketId = group.bucket;
-    const bucket = [...(buckets[bucketId] || []), group];
 
-    // Pass up if bucket is not in skeleton
-    if (!(bucketId in buckets)) return buckets;
+    // Ensure bucket is valid
+    if (!(bucketId in buckets)) {
+      logger.error(`Bucket ${bucketId} not found for group ${group.name}`);
+      return;
+    }
 
-    // Return buckets with updated bucket
-    return { ...buckets, [bucketId]: bucket };
-  }, bucketsSkeleton);
+    buckets[bucketId].groups.push(group);
+  });
 
-  // Ensure all three buckets have data
-  if (!buckets
-    || !buckets.frontLines.length
-    || !buckets.response.length
-    || !buckets.essential.length
-  ) {
-    logger.error('Workforce groups data invalid');
-    return null;
-  }
+  // Populate buckets with videos
+  workforceVideos.filter(v => v.isFeatured).forEach((video) => {
+    const bucketId = video.bucket;
+
+    // Ensure bucket is valid
+    if (!(bucketId in buckets)) {
+      logger.error(`Bucket ${bucketId} not found for video ${video.title}`);
+      return;
+    }
+
+    buckets[bucketId].videos.push(video);
+  });
 
   return (
     <ThankYouView
-      frontLineGroups={buckets.frontLines}
-      responseGroups={buckets.response}
-      essentialGroups={buckets.essential}
+      frontLineBucket={buckets.frontLines}
+      responseBucket={buckets.response}
+      essentialBucket={buckets.essential}
     />
   );
 };

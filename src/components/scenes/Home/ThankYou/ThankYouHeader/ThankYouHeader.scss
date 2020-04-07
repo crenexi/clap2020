@@ -1,41 +1,68 @@
 @import '~scss/utils';
 
 .header-wrap {
+  position: relative;
+  z-index: 3;
+  padding: layout(2xs);
   background-color: #fff;
-  padding: layout(md);
-}
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), 0 0 12px 0 rgba(0, 0, 0, 0.1);
 
-.header-border,
-.header {
-  border-radius: border-radius(sharp);
+  @include breakpoint('gt-xs') {
+    padding: layout(xs);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(sm);
+  }
 }
 
 .header-border {
-  padding: spacing(md);
+  padding: spacing(sm);
   @include gradient(theme(marine, dark2), theme(blueRose, light1));
+
+  @include breakpoint('gt-sm') {
+    padding: spacing(md);
+  }
 }
 
 .header {
   @include flex-row(center, center);
-  padding: layout(lg) spacing(md);
+  padding: layout(lg) spacing(sm);
   background-color: #fff;
 }
 
 // Header content
 
+.header__content {
+  @include flex-row(center, center);
+  position: relative;
+}
+
 .header__hashtag {
-  margin-right: spacing(sm);
-  font-size: 4rem;
+  margin: 3px spacing(2xs) 0 0;
+  font-size: 2.7rem;
   color: theme(cloud, dark2);
+
+  @include breakpoint('gt-xs') {
+    font-size: 3.2rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    @include position(absolute, 50% 100% null null);
+    transform: translateY(-50%);
+    margin-right: spacing(sm);
+    font-size: 3.7rem;
+  }
 }
 
 .header__title {
-  letter-spacing: 2px;
+  letter-spacing: .5px;
+  text-align: center;
   text-transform: uppercase;
   font-family: font-family(primary);
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.25em;
+  line-height: 1em;
   text-shadow: 3px 3px 0 theme(marine, light2);
 
   @include text-gradient(
@@ -48,4 +75,18 @@
   ) {
     text-shadow: none;
   };
+
+  @include breakpoint('gt-xs') {
+    letter-spacing: 1px;
+    font-size: 3rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    font-size: 3.5rem;
+  }
+
+  @include breakpoint('gt-md') {
+    letter-spacing: 2px;
+    font-size: 4rem;
+  }
 }

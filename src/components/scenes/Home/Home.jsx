@@ -2,15 +2,15 @@ import React from 'react';
 import ThisIsWar from './ThisIsWar';
 import ThreeSteps from './ThreeSteps';
 import ThankYou from './ThankYou';
-import FollowUs from './FollowUs';
+// import FollowUs from './FollowUs';
 import './Home.scss';
 
 const Home = () => (
   <article styleName="home">
-    <ThisIsWar />
     <ThreeSteps />
+    <ThisIsWar />
     <ThankYou />
-    <FollowUs />
+    {/* <FollowUs /> */}
   </article>
 );
 

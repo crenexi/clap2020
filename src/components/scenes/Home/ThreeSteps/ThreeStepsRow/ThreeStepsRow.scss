@@ -1,18 +1,59 @@
 @import '~scss/utils';
 
+$border-width: .8rem;
+
 .row {
+  position: relative;
+  @include flex-column();
   width: 100%;
-  padding: 2rem;
+  padding-left: $border-width;
+  background-color: #fff;
+  overflow: hidden;
 
-  &:nth-child(1) {
-    background-color: theme(blueRose, base);
+  &:not(:first-child) {
+    margin-top: spacing(sm);
   }
 
-  &:nth-child(2) {
-    background-color: theme(blueRose, dark1);
+  @include breakpoint('gt-xs') {
+    @include flex-row();
+
+    &:not(:first-child) {
+      margin-top: spacing(md);
+    }
+  }
+}
+
+.row__left-border {
+  @include position(absolute, 0 null 0 0);
+  width: $border-width;
+  height: 100%;
+}
+
+.row__num {
+  @include flex-column(center, center);
+  width: 100%;
+  padding: spacing(sm) $border-width 0 0;
+  text-align: center;
+  font-family: font-family(primary);
+  font-size: 3rem;
+  line-height: 1em;
+
+  @include breakpoint('gt-xs') {
+    width: 7rem;
+    padding: spacing(lg) 0;
+    font-size: 5rem;
+  }
+}
+
+.row__main {
+  flex: 1 1 0%;
+  padding: spacing(lg) $border-width;
+
+  @include breakpoint('gt-xs') {
+    padding: spacing(xl) spacing(md) spacing(xl) 0;
   }
 
-  &:nth-child(3) {
-    background-color: theme(blueRose, dark2);
+  @include breakpoint('gt-sm') {
+    padding: spacing(2xl) spacing(lg) spacing(2xl) 0;
   }
 }

@@ -2,9 +2,21 @@
 
 .three {
   width: 100%;
-  padding: layout(md);
-  @include gradient(theme(blueRose, dark2), theme(blueRose, light2));
-  color: #fff;
+  padding: layout(xs) layout(2xs);
+  background: theme(ocean, dark2);
+  background: linear-gradient(
+    135deg,
+    theme(blueRose, dark2),
+    theme(blueRose, light1),
+  );
+
+  @include breakpoint('gt-xs') {
+    padding: layout(md) layout(sm);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(lg) layout(md);
+  }
 }
 
 .three__main {
@@ -15,7 +27,6 @@
 
 .three__steps {
   width: 100%;
-  max-width: 75rem;
-  border-radius: border-radius(round);
-  overflow: hidden;
+  max-width: 70rem;
+  box-shadow: shadow(4);
 }
