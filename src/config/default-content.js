@@ -7,24 +7,28 @@ const defaultContent = {
       title: 'Three Steps',
       subtitle: 'Spread the word to clap',
       icon: 'house-user',
+      disabled: false,
     },
     {
       linkTo: '/share',
       title: 'Share Posters',
       subtitle: 'Tweet, send, and save',
       icon: 'image',
+      disabled: false,
     },
     {
       linkTo: '/heroes',
       title: 'Fallen Heroes',
       subtitle: 'Stories of coronavirus',
       icon: 'head-side-mask',
+      disabled: true,
     },
     {
       linkTo: '/get-ready',
       title: 'Countdown',
       subtitle: 'Clap for three minutes',
       icon: 'calendar-day',
+      disabled: false,
     },
   ],
   platforms: [

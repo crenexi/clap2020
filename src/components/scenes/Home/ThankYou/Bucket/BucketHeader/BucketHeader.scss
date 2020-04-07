@@ -1,22 +1,16 @@
 @import '~scss/utils';
 
 .header {
-  position: sticky;
-  top: ui-layout(headerHeightSm);
   z-index: 5;
 
   @include flex-column(center, center);
   background-color: #fff;
-  padding: spacing(xs) layout(2xs);
+  padding: layout(xs) layout(2xs);
   text-align: center;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 
   @include breakpoint('gt-xs') {
-    padding: spacing(sm) layout(xs);
-  }
-
-  @include breakpoint('gt-sm') {
-    top: ui-layout(headerHeightGtSm);
+    padding: layout(sm) layout(xs);
   }
 }
 

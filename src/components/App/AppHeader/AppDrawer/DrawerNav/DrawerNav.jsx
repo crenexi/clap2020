@@ -12,10 +12,12 @@ const DrawerNav = ({ location }) => {
 
   const handleItemClick = link => history.push(link);
 
-  const items = itemsData.map((item) => {
-    const active = item.linkTo === location.pathname;
-    return { ...item, active };
-  });
+  const items = itemsData
+    .filter(item => !item.disabled)
+    .map((item) => {
+      const active = item.linkTo === location.pathname;
+      return { ...item, active };
+    });
 
   return (
     <DrawerNavView
