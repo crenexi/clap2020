@@ -15,7 +15,7 @@ const ThankYou = () => {
       videos: [],
     },
     response: {
-      preTitle: '#ThankYou for running',
+      preTitle: '#ThankYou for mobilizing',
       title: 'Crisis Response',
       groups: [],
       videos: [],

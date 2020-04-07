@@ -3,13 +3,13 @@
 .header {
   position: sticky;
   top: ui-layout(headerHeightSm);
-  z-index: 2;
+  z-index: 5;
 
   @include flex-column(center, center);
   background-color: #fff;
   padding: spacing(xs) layout(2xs);
   text-align: center;
-  box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 
   @include breakpoint('gt-xs') {
     padding: spacing(sm) layout(xs);
@@ -24,13 +24,13 @@
 .header__title {
   font-family: font-family(primary);
   line-height: 1.1em;
-  font-weight: 700;
 }
 
 .header__pre-title {
   margin: 2px 0 -3px;
   color: rgba(theme(ocean, dark1), .65);
   font-size: 1.1rem;
+  font-weight: 700;
 
   @include breakpoint('gt-xs') {
     font-size: 1.35rem;
@@ -45,6 +45,7 @@
   color: theme(ocean, dark1);
   text-transform: uppercase;
   font-size: 2rem;
+  font-weight: 400;
 
   @include breakpoint('gt-xs') {
     font-size: 2.5rem;

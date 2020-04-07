@@ -20,9 +20,11 @@ const ThankYouView = (props) => {
 
   const responseGroups = (
     <div styleName="thanks__response-grid">
-      {responseBucket.groups.map(group => (
-        <ResponseGroup key={group.name} group={group} />
-      ))}
+      <div styleName="thanks__response-grid__card">
+        {responseBucket.groups.map(group => (
+          <ResponseGroup key={group.name} group={group} />
+        ))}
+      </div>
     </div>
   );
 

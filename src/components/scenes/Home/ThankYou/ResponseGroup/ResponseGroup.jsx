@@ -4,13 +4,18 @@ import FaIcon from 'components/shared/FaIcon';
 import './ResponseGroup.scss';
 
 const ResponseGroup = ({ group }) => {
-  // const { name, icon, coverUrl, description } = group;
-  const { icon } = group;
+  const { name, icon, coverUrl, description } = group;
+  const coverStyle = { backgroundImage: `url('${coverUrl}')` };
 
   return (
     <div styleName="group">
-      Response Group: {group.name}
-      <FaIcon icon={icon} />
+      <div styleName="group__cover" style={coverStyle}>
+        <div styleName="group__icon"><FaIcon icon={icon} /></div>
+      </div>
+      <div styleName="group__main">
+        <h3 styleName="group__name">{name}</h3>
+        <div styleName="group__desc">{description}</div>
+      </div>
     </div>
   );
 };

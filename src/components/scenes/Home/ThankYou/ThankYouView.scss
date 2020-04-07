@@ -20,7 +20,25 @@
 }
 
 .thanks__response-grid {
-  display: grid;
+  @include flex-column(start, center);
+}
+
+.thanks__response-grid__card {
+  background-color: #fff;
+  border-radius: border-radius(round);
+  box-shadow: shadow(24);
+  overflow: hidden;
+
+  @include breakpoint('gt-xs') {
+    max-width: 30rem;
+  }
+
+  @include breakpoint('gt-md') {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 94rem;
+  }
 }
 
 .thanks__essential-grid {
