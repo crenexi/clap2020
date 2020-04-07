@@ -38,9 +38,17 @@
   @include breakpoint('gt-xs') {
     max-width: 30rem;
   }
+}
 
+.thanks__response-grid__card {
   @include breakpoint('gt-md') {
     max-width: 94rem;
+  }
+}
+
+.thanks__essential-grid__card {
+  @include breakpoint('gt-sm') {
+    max-width: 60rem;
   }
 }
 
