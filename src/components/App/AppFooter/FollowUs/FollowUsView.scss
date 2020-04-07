@@ -1,15 +1,20 @@
 @import '~scss/utils';
 
 .follow {
-  padding: layout(xs) layout(2xs);
   @include gradient(theme(ocean, dark1), theme(ocean, dark2));
   color: #fff;
+}
+
+.follow__main {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: layout(xs) layout(2xs);
 
   @include breakpoint('gt-sm') {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: spacing(md);
-    place-items: center center;
+    justify-content: center;
     padding: layout(xs);
   }
 }
@@ -18,11 +23,17 @@
   padding: layout(2xs) layout(2xs) layout(sm);
 
   &:last-child {
-    padding: layout(2xs);
+    padding-bottom: layout(2xs);
   }
 
   @include breakpoint('gt-sm') {
+    display: grid;
+    grid-template-rows: min-content auto;
     padding: layout(xs);
+
+    &:last-child {
+      padding-bottom: layout(xs);
+    }
   }
 }
 
@@ -35,6 +46,28 @@
   @include flex-column(center, center);
 
   @include breakpoint('gt-sm') {
-    margin-top: layout(sm);
+    margin-top: 0;
+  }
+}
+
+// Facebook group section
+
+.follow__group-btn-context {
+  @include flex-column(center, center);
+}
+
+.follow__group-icon {
+  margin-bottom: spacing(sm);
+  font-size: 1.75rem;
+}
+
+@include breakpoint('gt-sm') {
+  .follow__group-btn-context {
+    @include flex-row(center, center);
+  }
+
+  .follow__group-icon {
+    margin-bottom: 0;
+    margin-right: spacing(sm);
   }
 }

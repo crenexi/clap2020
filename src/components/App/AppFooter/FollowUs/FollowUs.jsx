@@ -5,6 +5,7 @@ import FollowUsView from './FollowUsView';
 
 const FollowUs = () => {
   const { platforms } = useContent();
+  const fbGroupUrl = 'https://www.facebook.com/groups/clap2020';
 
   const twitterIntents = (() => {
     const config = platforms.find(p => p.id === 'twitter');
@@ -26,6 +27,7 @@ const FollowUs = () => {
   return (
     <FollowUsView
       twitterIntents={twitterIntents}
+      fbGroupUrl={fbGroupUrl}
     />
   );
 };
