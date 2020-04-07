@@ -51,6 +51,14 @@ const defaultContent = {
   countdown: {
     eventDate: '2020-04-23',
     eventTime: '19:00',
+    quoteCoverUrl: `${assetsPath}/covers/new-york.jpg`,
+    featuredQuote: {
+      text: 'Thank you to the administration of this healthcare system, and most importantly thank you to the front line workers. These people are true heroes in the truest sense of the word.',
+      author: {
+        name: 'Andrew Cuomo',
+        title: 'Governor of New York',
+      },
+    },
   },
   fullHeader: {
     coverUrl: `${assetsPath}/covers/nurse.jpg`,

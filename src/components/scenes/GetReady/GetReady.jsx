@@ -1,10 +1,17 @@
 import React from 'react';
-import './GetReady.scss';
+import useContent from 'hooks/use-content';
+import GetReadyView from './GetReadyView';
 
-const GetReady = () => (
-  <article styleName="ready">
-    <h1>Get Ready (with BigCountdown)</h1>
-  </article>
-);
+const GetReady = () => {
+  const { countdown } = useContent();
+  const { featuredQuote, quoteCoverUrl } = countdown;
+
+  return (
+    <GetReadyView
+      featuredQuote={featuredQuote}
+      quoteCoverUrl={quoteCoverUrl}
+    />
+  );
+};
 
 export default GetReady;
