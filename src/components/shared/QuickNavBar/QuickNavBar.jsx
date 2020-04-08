@@ -1,32 +1,19 @@
 import React from 'react';
-import useBreakpoint from 'hooks/use-breakpoint';
-import Button from 'components/shared/Button';
+import PropTypes, { arrayOf } from 'prop-types';
 import './QuickNavBar.scss';
 
-const QuickNavBar = () => {
-  const isGtSm = useBreakpoint('gt-sm');
-
-  return (
-    <div styleName="bar">
-      <div styleName="bar__nav">
-        <Button
-          to="/?scrollTo=threeSteps"
-          variant="secondary"
-          startIcon="arrow-circle-left"
-        >
-          3 Steps
-        </Button>
-        {isGtSm && <div />}
-        <Button
-          to="/share"
-          variant="primary"
-          endIcon="arrow-circle-right"
-        >
-          Posters
-        </Button>
-      </div>
+const QuickNavBar = ({ items }) => (
+  <div styleName="bar">
+    <div styleName="bar__nav">
+      {items.map(item => (
+        <div styleName="bar__nav-item">{item}</div>
+      ))}
     </div>
-  );
+  </div>
+);
+
+QuickNavBar.propTypes = {
+  items: arrayOf(PropTypes.node).isRequired,
 };
 
 export default QuickNavBar;

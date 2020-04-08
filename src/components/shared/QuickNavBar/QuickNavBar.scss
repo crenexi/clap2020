@@ -1,10 +1,14 @@
 @import '~scss/utils';
 
+$border: 1px solid theme(cloud, dark1);
+
 .bar {
   position: relative;
   z-index: z-index(quickNavBar);
   padding: spacing(xs) spacing(sm);
-  background-color: theme(cloud, base);
+  @include gradient(theme(ocean, dark1), theme(blueRose, base));
+  border-top: $border;
+  border-bottom: $border;
 
   @include breakpoint('gt-xs') {
     padding: spacing(md) spacing(lg);
@@ -18,7 +22,13 @@
   grid-gap: spacing(xs);
 
   @include breakpoint('gt-sm') {
-    width: auto;
-    grid-template-columns: 12rem auto 12rem;
+    grid-template-columns: 10rem 10rem;
+    justify-content: center;
+  }
+}
+
+.bar__nav-item {
+  @include breakpoint('gt-sm') {
+    display: grid;
   }
 }
