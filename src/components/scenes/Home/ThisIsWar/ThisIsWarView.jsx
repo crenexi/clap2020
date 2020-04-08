@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useBreakpoint from 'hooks/use-breakpoint';
 import quoteType from 'types/quote';
 import warConditionType from 'types/war-condition';
 import BgCover from 'components/shared/BgCover';
@@ -11,9 +10,7 @@ import './ThisIsWarView.scss';
 
 const ThisIsWarView = (props) => {
   const { coverUrl, featuredQuote, warConditions } = props;
-
-  const theme = useTheme();
-  const isGtSm = useMediaQuery(theme.breakpoints.up('md'));
+  const isGtSm = useBreakpoint('gt-sm');
 
   const warContentSecondary = (
     <div styleName="war__bottom">

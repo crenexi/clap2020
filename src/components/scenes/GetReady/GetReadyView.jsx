@@ -9,22 +9,32 @@ import './GetReadyView.scss';
 const GetReadyView = (props) => {
   const { featuredQuote, quoteCoverUrl } = props;
 
+  const countdown = (
+    <div styleName="ready__countdown">
+      <Countdown />
+    </div>
+  );
+
+  const quote = (
+    <aside styleName="ready__quote-frame">
+      <div styleName="ready__quote">
+        <BigQuote quote={featuredQuote} />
+      </div>
+    </aside>
+  );
+
   return (
     <article styleName="ready">
-      <BgCover
-        url={quoteCoverUrl}
-        imagePosition="center center"
-        blanketColor="rgba(5, 20, 52, .8)"
-      >
-        <section styleName="ready__countdown">
-          <Countdown />
-        </section>
-        <aside styleName="ready__quote-frame">
-          <div styleName="ready__quote">
-            <BigQuote quote={featuredQuote} />
-          </div>
-        </aside>
-      </BgCover>
+      <section>
+        <BgCover
+          url={quoteCoverUrl}
+          imagePosition="center center"
+          blanketColor="rgba(5, 20, 52, .8)"
+        >
+          {countdown}
+          {quote}
+        </BgCover>
+      </section>
     </article>
   );
 };

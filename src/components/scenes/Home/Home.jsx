@@ -1,17 +1,20 @@
 import React from 'react';
+import useBreakpoint from 'hooks/use-breakpoint';
+import ThankYou from 'components/shared/ThankYou';
 import ThisIsWar from './ThisIsWar';
 import ThreeSteps from './ThreeSteps';
-import ThankYou from './ThankYou';
-// import FollowUs from './FollowUs';
 import './Home.scss';
 
-const Home = () => (
-  <article styleName="home">
-    <ThreeSteps />
-    <ThisIsWar />
-    <ThankYou />
-    {/* <FollowUs /> */}
-  </article>
-);
+const Home = () => {
+  const isGtSm = useBreakpoint('gt-sm');
+
+  return (
+    <article styleName="home">
+      <section><ThreeSteps /></section>
+      <section><ThisIsWar /></section>
+      {isGtSm && <section><ThankYou /></section>}
+    </article>
+  );
+};
 
 export default Home;
