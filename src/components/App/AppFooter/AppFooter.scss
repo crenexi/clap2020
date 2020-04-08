@@ -3,14 +3,27 @@
 .footer {
   @include flex-column();
   width: 100%;
-  padding: 5rem 1rem;
+  padding: layout(md) layout(2xs) layout(xs);
   @include gradient(theme(ocean, dark1), theme(blueRose, dark1));
   color: #fff;
+
+  @include breakpoint('gt-xs') {
+    padding: layout(md) layout(lg) layout(sm);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(lg) layout(xl) layout(md);
+  }
 }
+
+// Main part
 
 .footer__main {
   @include flex-column(center, center);
   height: 100%;
+
+  @include breakpoint('gt-sm') {
+  }
 }
 
 .footer__brand {
@@ -26,4 +39,10 @@
   font-weight: 700;
   font-size: 1.7rem;
   @include divider-top(theme(blueRose, light2));
+}
+
+// Bottom part
+
+.footer__legal {
+
 }

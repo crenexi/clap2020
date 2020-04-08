@@ -8,14 +8,14 @@
 .follow__main {
   max-width: 75rem;
   margin: 0 auto;
-  padding: layout(xs) layout(2xs);
+  padding: layout(xs) layout(2xs) layout(2xs);
 
   @include breakpoint('gt-sm') {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: spacing(md);
     justify-content: center;
-    padding: layout(xs);
+    padding: layout(xs) layout(xs) layout(2xs);
   }
 }
 
