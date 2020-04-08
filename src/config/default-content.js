@@ -119,6 +119,9 @@ const defaultContent = {
       },
     ],
   },
+  thankYouInvite: {
+    heroImageUrl: `${assetsPath}/covers/rainy-street.jpg`,
+  },
   workforceVideos: [
     {
       videoId: 'A0BNO--7OdE',
@@ -189,7 +192,7 @@ const defaultContent = {
     {
       name: 'ER Doctors',
       bucket: 'frontLines',
-      icon: 'users-medical',
+      icon: 'star-of-life',
       coverUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
       description: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.',
     },
