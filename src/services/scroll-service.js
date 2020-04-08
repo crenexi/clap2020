@@ -7,7 +7,7 @@ const ScrollService = () => {
   const scrollToElement = (elementName, offset) => {
     const defaultOffset = () => {
       const globalHeaderElm = document.getElementById('global-header');
-      return globalHeaderElm.offsetHeight * -1;
+      return !globalHeaderElm ? 0 : globalHeaderElm.offsetHeight * -1;
     };
 
     const defaultOpts = {
@@ -17,7 +17,9 @@ const ScrollService = () => {
       offset: offset || defaultOffset(),
     };
 
-    scroller.scrollTo(elementName, defaultOpts);
+    setTimeout(() => {
+      scroller.scrollTo(elementName, defaultOpts);
+    }, 250);
   };
 
   return { scrollToElement };
