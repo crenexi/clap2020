@@ -1,15 +1,11 @@
 import React from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useBreakpoint from 'hooks/use-breakpoint';
 import useContent from 'hooks/use-content';
 import JoinInviteView from './JoinInviteView';
 
 const HeaderJoinInvite = () => {
   const { joinInvite: content } = useContent();
-
-  // Media query
-  const theme = useTheme();
-  const isLtMd = useMediaQuery(theme.breakpoints.down('sm'));
+  const isLtMd = useBreakpoint('lt-md');
 
   return (
     <JoinInviteView
