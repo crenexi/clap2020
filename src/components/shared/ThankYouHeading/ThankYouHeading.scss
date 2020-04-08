@@ -1,6 +1,6 @@
 @import '~scss/utils';
 
-.header-wrap {
+.heading-wrap {
   position: relative;
   z-index: 3;
   padding: layout(2xs);
@@ -16,7 +16,7 @@
   }
 }
 
-.header-border {
+.heading-border {
   padding: spacing(sm);
   @include gradient(theme(marine, dark2), theme(blueRose, light1));
 

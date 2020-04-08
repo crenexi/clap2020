@@ -1,6 +1,6 @@
 import React from 'react';
 import workforceBucketType from 'types/workforce-bucket';
-import ThankYouHeader from './ThankYouHeader';
+import ThankYouHeading from '../ThankYouHeading';
 import Bucket from './Bucket';
 import FrontLineGroup from './FrontLineGroup';
 import ResponseGroup from './ResponseGroup';
@@ -40,7 +40,7 @@ const ThankYouView = (props) => {
 
   return (
     <div styleName="thanks">
-      <ThankYouHeader />
+      <ThankYouHeading />
       <div styleName="thanks__main">
         <Bucket bucket={frontLineBucket}>{frontLineGroups}</Bucket>
         <Bucket bucket={responseBucket}>{responseGroups}</Bucket>
