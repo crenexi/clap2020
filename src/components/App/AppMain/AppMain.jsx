@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from 'components/scenes/Home';
+import Praise from 'components/scenes/Praise';
 import Share from 'components/scenes/Share';
 import GetReady from 'components/scenes/GetReady';
 import Heroes from 'components/scenes/Heroes';
@@ -12,6 +13,7 @@ import './AppMain.scss';
 
 const AppMain = () => {
   const routesData = [
+    { path: '/praise', component: Praise },
     { path: '/share', component: Share },
     { path: '/get-ready', component: GetReady },
     { path: '/heroes', component: Heroes },
