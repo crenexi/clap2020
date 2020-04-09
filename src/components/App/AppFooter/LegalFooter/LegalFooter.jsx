@@ -12,7 +12,6 @@ const LegalFooter = () => {
     <a href={cxUrl} target="_blank" rel="noopener noreferrer">Crenexi</a>
   );
 
-
   return (
     <div styleName="legal">
       <div styleName="legal__built-by">
