@@ -1,0 +1,15 @@
+@mixin simple-link($inverted: null) {
+  position: relative;
+  display: inline-block;
+
+  @if inverted {
+    color: lighten(theme(ocean, light2), 25%);
+  }
+
+  &::after {
+    content: '';
+    @include position(absolute, null 0 0 0);
+    width: 100%;
+    border-bottom: 1px dashed rgba(theme(blueRose, light2), .5);
+  }
+}

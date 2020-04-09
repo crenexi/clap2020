@@ -3,7 +3,7 @@
 .footer {
   @include flex-column();
   width: 100%;
-  padding: layout(md) layout(2xs) layout(xs);
+  padding: layout(md) layout(2xs) calc(56px + 1.5rem);
   @include gradient(theme(ocean, dark1), theme(blueRose, dark1));
   color: #fff;
 
