@@ -1,0 +1,73 @@
+@import '~scss/utils';
+
+.tweets {
+  @include flex-column(normal, center);
+  width: 100%;
+  padding: layout(xs) layout(2xs) layout(sm);
+
+  @include breakpoint('gt-xs') {
+    padding: layout(md) layout(xl);
+  }
+}
+
+// Header
+
+.tweets__header {
+  text-align: center;
+}
+
+// Items
+
+.tweets__list {
+  @include flex-column(center, center);
+  width: 100%;
+  margin-top: layout(xs);
+
+  @include breakpoint('gt-xs') {
+    margin-top: layout(md);
+  }
+}
+
+.tweets__item {
+  &:not(:first-child) {
+    margin-top: layout(sm);
+  }
+}
+
+.tweets__item-header {
+  position: relative;
+  margin-bottom: -5px;
+  text-align: center;
+
+  &::before {
+    content: '';
+    @include position(absolute, 50% null null 0);
+    transform: translateY(-2px);
+    width: 100%;
+    height: 2px;
+    background-color: theme(cloud, dark2);
+  }
+}
+
+.tweets__location {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: theme(cloud, dark1);
+  text-align: center;
+  white-space: nowrap;
+  font-family: font-family(primary);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.1em;
+}
+
+.tweets__embed {
+  @include breakpoint('gt-xs') {
+    display: flex;
+    justify-content: center;
+  }
+}

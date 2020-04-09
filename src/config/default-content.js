@@ -309,6 +309,23 @@ const defaultContent = {
       description: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.',
     },
   ],
+  praiseTweets: [
+    {
+      id: '1246234088878551040',
+      author: 'FDNY',
+      location: 'New York',
+    },
+    {
+      id: '1246573320511860737',
+      author: 'BloombergDotOrg',
+      location: 'World',
+    },
+    {
+      id: '1247700446963269633',
+      author: 'jaime_joyce',
+      location: 'New York',
+    },
+  ],
 };
 
 export default defaultContent;
