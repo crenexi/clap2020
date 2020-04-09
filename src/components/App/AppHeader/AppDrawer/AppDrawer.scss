@@ -16,6 +16,7 @@
 
   @include breakpoint('gt-xs') {
     overflow-y: hidden;
+    min-width: unset;
   }
 }
 
