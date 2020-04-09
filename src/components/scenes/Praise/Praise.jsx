@@ -8,7 +8,7 @@ import './Praise.scss';
 
 const Praise = () => {
   const { praiseTweets: tweets } = useContent();
-  console.log(tweets);
+
   const quickNavItems = [
     <Button
       to="/?scrollTo=threeSteps"

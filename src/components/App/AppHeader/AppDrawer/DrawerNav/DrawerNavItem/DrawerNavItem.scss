@@ -2,17 +2,16 @@
 
 .item__icon {
   width: 3rem;
+  min-width: 4rem;
   @include flex-row(center, center);
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
 .item__text {
-  margin: spacing(sm) 0 spacing(sm) spacing(sm);
+  margin: spacing(2xs) 0 spacing(2xs);
   padding-right: spacing(sm);
-  line-height: 1.25em;
 
   @include breakpoint('gt-xs') {
-    margin: spacing(md) 0 spacing(md) spacing(md);
     padding-right: spacing(md);
   }
 }
@@ -20,19 +19,34 @@
 .item__title {
   letter-spacing: .2px;
   font-family: font-family(primary);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 300;
+  line-height: .95em;
+
+  @include breakpoint('gt-xs') {
+    font-size: 2rem;
+  }
 }
 
 .item__subtitle {
-  margin-top: spacing(sm);
-  font-size: 1rem;
+  margin-top: spacing(2xs);
+  font-size: .9rem;
   color: theme(blueRose, light2);
+  line-height: 1.15em;
+
+  @include breakpoint('gt-xs') {
+    margin-top: spacing(xs);
+    font-size: 1rem;
+  }
 }
 
 :global {
-  @include breakpoint('gt-xs') {
-    .MuiButtonBase-root.c2-nav-list-item {
+  .MuiButtonBase-root.c2-nav-list-item {
+    &:not(:first-child) {
+      border-top: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    @include breakpoint('gt-xs') {
       position: relative;
 
       &:hover {
