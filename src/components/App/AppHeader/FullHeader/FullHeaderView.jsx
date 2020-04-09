@@ -7,8 +7,8 @@ import JoinInvite from './JoinInvite';
 import IconParade from './IconParade';
 import './FullHeaderView.scss';
 
-const FullHeaderView = ({ coverUrl, downClick }) => (
-  <div styleName="header">
+const FullHeaderView = ({ minHeight, coverUrl, downClick }) => (
+  <div styleName="header" style={{ minHeight }}>
     <div styleName="header__logo-aside">
       <div styleName="header__logo">
         <BrandLogo variant="main" />
@@ -33,6 +33,7 @@ const FullHeaderView = ({ coverUrl, downClick }) => (
 );
 
 FullHeaderView.propTypes = {
+  minHeight: PropTypes.string.isRequired,
   coverUrl: PropTypes.string.isRequired,
   downClick: PropTypes.func.isRequired,
 };
