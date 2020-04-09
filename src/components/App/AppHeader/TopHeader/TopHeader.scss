@@ -2,10 +2,25 @@
 
 .header {
   @include size(100%);
-  @include flex-column(center, center);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
 }
 
-.header__logo {
+.start {
+  @include flex-row(flex-start, center);
+}
+
+.center {
+  @include flex-row(center, center);
+}
+
+.end {
+  @include flex-row(flex-end, center);
+}
+
+// Logo in center
+
+.center__logo {
   display: flex;
   width: 6rem;
 

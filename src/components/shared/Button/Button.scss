@@ -12,12 +12,12 @@
     border-radius: border-radius(sharp);
 
     &:hover {
-      background-color: rgba(theme(ocean, base), .2);
-      border-color: rgba(theme(ocean, base), .3);
+      background-color: rgba(theme(ocean, base), .1);
+      border-color: rgba(theme(ocean, base), .2);
     }
 
     &:active {
-      background-color: rgba(theme(ocean, base), .5);
+      background-color: rgba(theme(ocean, base), .3);
     }
 
     &.c2-button--disabled {
