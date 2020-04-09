@@ -1,6 +1,6 @@
 @import '~scss/utils';
 
-.header-wrap {
+.heading-wrap {
   position: relative;
   z-index: 3;
   padding: layout(2xs);
@@ -16,7 +16,7 @@
   }
 }
 
-.header-border {
+.heading-border {
   padding: spacing(sm);
   @include gradient(theme(marine, dark2), theme(blueRose, light1));
 
@@ -25,7 +25,7 @@
   }
 }
 
-.header {
+.heading {
   @include flex-row(center, center);
   padding: layout(lg) spacing(sm);
   background-color: #fff;
@@ -33,12 +33,12 @@
 
 // Header content
 
-.header__content {
+.heading__content {
   @include flex-row(center, center);
   position: relative;
 }
 
-.header__hashtag {
+.heading__hashtag {
   margin: 3px spacing(2xs) 0 0;
   font-size: 2.7rem;
   color: theme(cloud, dark2);
@@ -55,7 +55,7 @@
   }
 }
 
-.header__title {
+.heading__title {
   letter-spacing: .5px;
   text-align: center;
   text-transform: uppercase;

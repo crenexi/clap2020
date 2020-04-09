@@ -1,0 +1,34 @@
+@import '~scss/utils';
+
+$border: 1px solid theme(cloud, dark1);
+
+.bar {
+  position: relative;
+  z-index: z-index(quickNavBar);
+  padding: spacing(xs) spacing(sm);
+  @include gradient(theme(ocean, dark1), theme(blueRose, base));
+  border-top: $border;
+  border-bottom: $border;
+
+  @include breakpoint('gt-xs') {
+    padding: spacing(md) spacing(lg);
+  }
+}
+
+.bar__nav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-gap: spacing(xs);
+
+  @include breakpoint('gt-sm') {
+    grid-template-columns: 10rem 10rem;
+    justify-content: center;
+  }
+}
+
+.bar__nav-item {
+  @include breakpoint('gt-sm') {
+    display: grid;
+  }
+}

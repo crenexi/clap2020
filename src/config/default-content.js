@@ -5,32 +5,97 @@ const defaultContent = {
     {
       linkTo: '/',
       title: 'Three Steps',
-      subtitle: 'Spread the word to clap',
+      subtitle: 'Spread the word',
       icon: 'house-user',
       disabled: false,
     },
     {
       linkTo: '/share',
       title: 'Share Posters',
-      subtitle: 'Tweet, send, and save',
+      subtitle: 'Tweet, post, save',
       icon: 'image',
+      disabled: false,
+    },
+    {
+      linkTo: '/praise',
+      title: 'Thank You',
+      subtitle: 'Groups to recognize',
+      icon: 'users',
       disabled: false,
     },
     {
       linkTo: '/heroes',
       title: 'Fallen Heroes',
       subtitle: 'Stories of coronavirus',
-      icon: 'head-side-mask',
+      icon: 'medal',
       disabled: true,
     },
     {
       linkTo: '/get-ready',
       title: 'Countdown',
-      subtitle: 'Clap for three minutes',
+      subtitle: 'Get ready to clap',
       icon: 'calendar-day',
       disabled: false,
     },
   ],
+  footerNavs: {
+    metaNav: [
+      {
+        title: 'Posters to Share',
+        url: 'https://www.facebook.com/pg/clap2020nation/photos/?tab=album&album_id=104599801212991',
+      },
+      {
+        title: 'Twitter Profile',
+        url: 'https://twitter.com/clap2020',
+      },
+      {
+        title: 'Facebook Event',
+        url: 'https://www.facebook.com/events/266720250995614',
+      },
+      {
+        title: 'Facebook Group',
+        url: 'https://www.facebook.com/groups/clap2020',
+      },
+      {
+        title: 'Instagram Profile',
+        url: 'https://www.instagram.com/clap2020nation',
+      },
+      {
+        title: 'Style Guide',
+        url: 'https://www.clap2020.com/design',
+      },
+    ],
+    covid19Nav: [
+      {
+        title: 'Coronavirus Self-Checker',
+        url: 'https://c19check.com/',
+      },
+      {
+        title: 'CDC Coronavirus Center',
+        url: 'https://www.cdc.gov/coronavirus/2019-ncov/index.html',
+      },
+      {
+        title: 'JHU Global Case Dashboard',
+        url: 'https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6',
+      },
+      {
+        title: 'Hospital Resource Projections',
+        url: 'https://covid19.healthdata.org/united-states-of-america',
+      },
+      {
+        title: 'Response Fund for Nurses',
+        url: 'https://www.nursingworld.org/foundation/programs/coronavirus-response-fund/',
+      },
+      {
+        title: 'WHO COVID-19 Response Fund',
+        url: 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate',
+      },
+      {
+        title: 'Frontline Foods',
+        url: 'https://www.frontlinefoods.org/',
+      },
+    ],
+  },
   platforms: [
     {
       id: 'twitter',
@@ -119,6 +184,9 @@ const defaultContent = {
       },
     ],
   },
+  thankYouInvite: {
+    heroImageUrl: `${assetsPath}/covers/rainy-street.jpg`,
+  },
   workforceVideos: [
     {
       videoId: 'A0BNO--7OdE',
@@ -189,7 +257,7 @@ const defaultContent = {
     {
       name: 'ER Doctors',
       bucket: 'frontLines',
-      icon: 'users-medical',
+      icon: 'star-of-life',
       coverUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
       description: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.',
     },
@@ -304,6 +372,23 @@ const defaultContent = {
       icon: 'tractor',
       coverUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
       description: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.',
+    },
+  ],
+  praiseTweets: [
+    {
+      id: '1246234088878551040',
+      author: 'FDNY',
+      location: 'New York',
+    },
+    {
+      id: '1246573320511860737',
+      author: 'BloombergDotOrg',
+      location: 'World',
+    },
+    {
+      id: '1247700446963269633',
+      author: 'jaime_joyce',
+      location: 'New York',
     },
   ],
 };

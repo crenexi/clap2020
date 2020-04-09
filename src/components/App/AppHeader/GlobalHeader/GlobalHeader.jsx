@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useBreakpoint from 'hooks/use-breakpoint';
 import useDocumentScroll from 'hooks/use-document-scroll';
 import GlobalHeaderView from './GlobalHeaderView';
 
 const GlobalHeader = () => {
   const minScrollTop = 300;
-  const [isHidden, setIsHidden] = useState(true);
+  const isGtSm = useBreakpoint('gt-sm');
 
-  // Media query
-  const theme = useTheme();
-  const isGtSm = useMediaQuery(theme.breakpoints.up('md'));
+  const [isHidden, setIsHidden] = useState(true);
 
   // On scroll, determine header visibility
   useDocumentScroll({

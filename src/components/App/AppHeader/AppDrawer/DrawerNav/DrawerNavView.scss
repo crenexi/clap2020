@@ -1,9 +1,9 @@
 @import '~scss/utils';
 
 .nav {
-  padding: spacing(sm);
+  padding: spacing(xs) spacing(sm) spacing(md);
 
   @include breakpoint('gt-sm') {
-    padding: spacing(md);
+    padding: spacing(sm) spacing(md) spacing(lg);
   }
 }

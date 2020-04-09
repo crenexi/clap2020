@@ -2,12 +2,13 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
   faSpinnerThird as faSpinnerThirdSolid,
-  faStarOfLife,
+  faStarOfLife as faStarOfLifeSolid,
 } from '@fortawesome/pro-solid-svg-icons';
 
 import {
   faAmbulance,
   faArrowAltDown,
+  faArrowCircleLeft,
   faArrowCircleRight,
   faBadgeSheriff,
   faBars,
@@ -21,6 +22,7 @@ import {
   faCoffee,
   faCoffinCross,
   faCopy,
+  faCopyright,
   faDollyFlatbedAlt,
   faDoorOpen,
   faDownload,
@@ -64,6 +66,7 @@ import {
   faShippingFast,
   faShoppingCart,
   faSpinnerThird,
+  faStarOfLife,
   faStretcher,
   faTimes,
   faTractor,
@@ -87,6 +90,7 @@ const buildLibrary = () => {
   library.add(
     faAmbulance,
     faArrowAltDown,
+    faArrowCircleLeft,
     faArrowCircleRight,
     faBadgeSheriff,
     faBars,
@@ -100,6 +104,7 @@ const buildLibrary = () => {
     faCoffee,
     faCoffinCross,
     faCopy,
+    faCopyright,
     faDollyFlatbedAlt,
     faDoorOpen,
     faDownload,
@@ -147,6 +152,7 @@ const buildLibrary = () => {
     faSpinnerThird,
     faSpinnerThirdSolid,
     faStarOfLife,
+    faStarOfLifeSolid,
     faStretcher,
     faTimes,
     faTractor,

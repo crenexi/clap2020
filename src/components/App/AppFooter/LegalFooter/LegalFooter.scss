@@ -1,0 +1,43 @@
+@import '~scss/utils';
+
+$border: 1px solid rgba(255, 255, 255, .1);
+
+.legal {
+  padding-top: layout(md);
+  @include flex-column(center, center);
+
+  a {
+    @include simple-link;
+  }
+}
+
+.legal__icon {
+  font-size: 1.3rem;
+}
+
+.legal__cx-fav {
+  width: 1.5rem;
+  margin-left: 4px;
+  transform: translateY(1px);
+
+  img {
+    @include flex-column(center, center);
+    width: 100%;
+  }
+}
+
+// Built by
+
+.legal__built-by {
+  @include flex-row(center, center);
+  padding: spacing(md) 0;
+  border-top: $border;
+  border-bottom: $border;
+  font-family: font-family(primary);
+  font-size: 1.3rem;
+}
+
+.legal__copyright {
+  @include flex-row(center, center);
+  padding-top: spacing(md);
+}

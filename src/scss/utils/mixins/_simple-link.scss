@@ -1,0 +1,27 @@
+@mixin simple-link($inverted: null) {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    @include position(absolute, null 0 0 0);
+    width: 100%;
+    border-bottom: 1px dashed rgba(0, 0, 0, .5);
+  }
+
+  @if inverted {
+    color: lighten(theme(ocean, light2), 35%);
+
+    &::after {
+      border-color: rgba(255, 255, 255, .3);
+    }
+
+    &:hover {
+      color: #fff;
+
+      &::after {
+        border-color: #fff;
+      }
+    }
+  }
+}

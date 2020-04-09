@@ -1,16 +1,13 @@
 import React from 'react';
 import ThisIsWar from './ThisIsWar';
 import ThreeSteps from './ThreeSteps';
-import ThankYou from './ThankYou';
-// import FollowUs from './FollowUs';
-import './Home.scss';
+import ThankYouInvite from './ThankYouInvite';
 
 const Home = () => (
-  <article styleName="home">
-    <ThreeSteps />
-    <ThisIsWar />
-    <ThankYou />
-    {/* <FollowUs /> */}
+  <article>
+    <section><ThreeSteps /></section>
+    <section><ThisIsWar /></section>
+    <section><ThankYouInvite /></section>
   </article>
 );
 

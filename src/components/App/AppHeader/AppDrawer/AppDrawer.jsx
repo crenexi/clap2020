@@ -31,7 +31,9 @@ const AppDrawer = () => {
     <div styleName="drawer">
       {drawerHeader}
       <DrawerNav />
-      <BrandSocialNav />
+      <div styleName="drawer__footer">
+        <BrandSocialNav />
+      </div>
     </div>
   );
 
