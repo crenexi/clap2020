@@ -38,6 +38,64 @@ const defaultContent = {
       disabled: false,
     },
   ],
+  footerNavs: {
+    metaNav: [
+      {
+        title: 'Posters to Share',
+        url: 'https://www.facebook.com/pg/clap2020nation/photos/?tab=album&album_id=104599801212991',
+      },
+      {
+        title: 'Twitter Profile',
+        url: 'https://twitter.com/clap2020',
+      },
+      {
+        title: 'Facebook Event',
+        url: 'https://www.facebook.com/events/266720250995614',
+      },
+      {
+        title: 'Facebook Group',
+        url: 'https://www.facebook.com/groups/clap2020',
+      },
+      {
+        title: 'Instagram Profile',
+        url: 'https://www.instagram.com/clap2020nation',
+      },
+      {
+        title: 'Style Guide',
+        url: 'https://www.clap2020.com/design',
+      },
+    ],
+    covidNav: [
+      {
+        title: 'Coronavirus Self-Checker',
+        url: 'https://c19check.com/',
+      },
+      {
+        title: 'CDC Coronavirus Center',
+        url: 'https://www.cdc.gov/coronavirus/2019-ncov/index.html',
+      },
+      {
+        title: 'JHU Global Case Dashboard',
+        url: 'https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6',
+      },
+      {
+        title: 'Hospital Resource Projections',
+        url: 'https://covid19.healthdata.org/united-states-of-america',
+      },
+      {
+        title: 'Coronavirus Response Fund for Nurses',
+        url: 'https://covid19.healthdata.org/united-states-of-america',
+      },
+      {
+        title: 'WHO COVID-19 Response Fund',
+        url: 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate',
+      },
+      {
+        title: 'Frontline Foods',
+        url: 'https://c19check.com/',
+      },
+    ],
+  },
   platforms: [
     {
       id: 'twitter',
