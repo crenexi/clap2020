@@ -6,6 +6,10 @@
   padding: layout(xs) layout(2xs) layout(sm);
 
   @include breakpoint('gt-xs') {
+    padding: layout(md);
+  }
+
+  @include breakpoint('gt-sm') {
     padding: layout(md) layout(xl);
   }
 }
@@ -33,7 +37,7 @@
 }
 
 .tweets__item {
-  overflow-x: scroll;
+  overflow-x: auto;
 
   &:not(:first-child) {
     margin-top: layout(sm);
