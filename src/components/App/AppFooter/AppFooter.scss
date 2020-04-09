@@ -29,6 +29,7 @@
 }
 
 .main__nav {
+  @include flex-column(normal, center);
   @include size(100%);
 
   @include breakpoint('gt-md') {

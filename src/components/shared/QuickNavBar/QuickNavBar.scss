@@ -28,7 +28,7 @@ $border: 1px solid theme(cloud, dark1);
 }
 
 .bar__nav-item {
-  @include breakpoint('gt-sm') {
-    display: grid;
-  }
+  display: grid;
+  place-content: stretch;
+  place-items: stretch;
 }

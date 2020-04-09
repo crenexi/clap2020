@@ -9,6 +9,7 @@
 .app {
   min-height: -webkit-fill-available;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .app--loading {

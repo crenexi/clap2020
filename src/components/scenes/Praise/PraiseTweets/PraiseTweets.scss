@@ -10,6 +10,11 @@
   }
 }
 
+.tweets__list,
+.tweets__item {
+  max-width: 100%;
+}
+
 // Header
 
 .tweets__header {
@@ -20,7 +25,6 @@
 
 .tweets__list {
   @include flex-column(center, center);
-  width: 100%;
   margin-top: layout(xs);
 
   @include breakpoint('gt-xs') {
@@ -29,6 +33,8 @@
 }
 
 .tweets__item {
+  overflow-x: scroll;
+
   &:not(:first-child) {
     margin-top: layout(sm);
   }
@@ -43,8 +49,7 @@
     content: '';
     @include position(absolute, 50% null null 0);
     transform: translateY(-2px);
-    width: 100%;
-    height: 2px;
+    @include size(100%, 2px);
     background-color: theme(cloud, dark2);
   }
 }
