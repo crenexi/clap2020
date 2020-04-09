@@ -1,5 +1,81 @@
 @import '~scss/utils';
 
-.nav {
+.nav,
+.section {
+  width: 100%;
+}
 
+.nav {
+  line-height: 1em;
+}
+
+.section {
+  &:not(:first-child) {
+    margin-top: layout(sm);
+  }
+}
+
+@include breakpoint('gt-xs') {
+  .nav {
+    @include flex-column(normal, center);
+  }
+
+  .section {
+    width: 18rem;
+  }
+}
+
+@include breakpoint('gt-md') {
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: layout(xs);
+    place-content: start;
+    place-items: start;
+  }
+
+  .section {
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}
+
+// Nav section
+
+.section__heading {
+  margin-bottom: spacing(xs);
+  padding-bottom: spacing(2xs);
+  border-bottom: 2px solid theme(blueRose, dark1);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: font-family(primary);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.section__list {
+  width: 100%;
+}
+
+.section__item {
+  &:not(:first-child) {
+    margin-top: .8rem;
+  }
+
+  a {
+    padding: .4rem 0;
+    @include simple-link;
+  }
+
+  @include breakpoint('gt-sm') {
+    &:not(:first-child) {
+      margin-top: .6rem;
+    }
+
+    a {
+      padding: .25rem 0;
+    }
+  }
 }

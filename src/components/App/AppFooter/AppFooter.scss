@@ -16,33 +16,46 @@
   }
 }
 
-// Main part
+// Main part layout
 
-.footer__main {
-  @include flex-column(center, center);
-  height: 100%;
+.main {
+  display: grid;
+  grid-row-gap: layout(md);
 
-  @include breakpoint('gt-sm') {
+  @include breakpoint('gt-md') {
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: layout(lg);
   }
 }
 
-.footer__brand {
+.main__nav {
+  @include size(100%);
+
+  @include breakpoint('gt-md') {
+    display: grid;
+    place-content: center;
+    padding-bottom: layout(sm);
+  }
+}
+
+.main__brand-frame {
+  @include flex-column(center, center);
+  @include size(100%);
+}
+
+// Brand and clap time
+
+.main__brand {
   width: 60%;
   max-width: 15rem;
 }
 
-.footer__clap-time {
-  margin-top: layout(sm);
-  padding-top: layout(sm);
+.main__clap-time {
+  margin-top: layout(xs);
+  padding: layout(xs) 0 5px;
   text-align: center;
   font-family: font-family(primary);
   font-weight: 700;
   font-size: 1.7rem;
   @include divider-top(theme(blueRose, light2));
-}
-
-// Bottom part
-
-.footer__legal {
-
 }

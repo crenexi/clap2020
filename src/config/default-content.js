@@ -65,7 +65,7 @@ const defaultContent = {
         url: 'https://www.clap2020.com/design',
       },
     ],
-    covidNav: [
+    covid19Nav: [
       {
         title: 'Coronavirus Self-Checker',
         url: 'https://c19check.com/',
@@ -83,8 +83,8 @@ const defaultContent = {
         url: 'https://covid19.healthdata.org/united-states-of-america',
       },
       {
-        title: 'Coronavirus Response Fund for Nurses',
-        url: 'https://covid19.healthdata.org/united-states-of-america',
+        title: 'Response Fund for Nurses',
+        url: 'https://www.nursingworld.org/foundation/programs/coronavirus-response-fund/',
       },
       {
         title: 'WHO COVID-19 Response Fund',
@@ -92,7 +92,7 @@ const defaultContent = {
       },
       {
         title: 'Frontline Foods',
-        url: 'https://c19check.com/',
+        url: 'https://www.frontlinefoods.org/',
       },
     ],
   },
