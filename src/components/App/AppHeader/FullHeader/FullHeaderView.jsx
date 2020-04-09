@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import BgCover from 'components/shared/BgCover';
 import BrandLogo from 'components/shared/BrandLogo';
 import IconButton from 'components/shared/IconButton';
-import JoinInvite from './JoinInvite';
+import AboveTheFold from './AboveTheFold';
 import IconParade from './IconParade';
 import './FullHeaderView.scss';
 
@@ -19,7 +19,7 @@ const FullHeaderView = ({ minHeight, coverUrl, downClick }) => (
       imagePosition="75% top"
       blanketColor="rgba(255, 255, 255, .65)"
     >
-      <JoinInvite />
+      <AboveTheFold />
     </BgCover>
     <div styleName="header__down-invite">
       <IconButton
