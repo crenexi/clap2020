@@ -9,8 +9,13 @@ const navItemType = shape({
 
 // Item component
 const FooterNavItem = ({ item }) => (
-  <div styleName="section__item" key={item.url}>
-    <a href={item.url} target="_blank" rel="noopener noreferrer">
+  <div styleName="section__item">
+    <a
+      title={item.title}
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {item.title}
     </a>
   </div>
@@ -26,13 +31,17 @@ const FooterNav = ({ metaNav, covid19Nav }) => (
     <div styleName="section">
       <h5 styleName="section__heading">Clap2020</h5>
       <div styleName="section__list">
-        {metaNav.map(item => <FooterNavItem item={item} />)}
+        {metaNav.map(item => (
+          <FooterNavItem item={item} key={item.title} />
+        ))}
       </div>
     </div>
     <div styleName="section">
       <h5 styleName="section__heading">Coronavirus</h5>
       <div styleName="section__list">
-        {covid19Nav.map(item => <FooterNavItem item={item} />)}
+        {covid19Nav.map(item => (
+          <FooterNavItem item={item} key={item.title} />
+        ))}
       </div>
     </div>
   </nav>

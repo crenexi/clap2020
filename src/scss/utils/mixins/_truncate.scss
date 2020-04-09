@@ -1,6 +1,15 @@
-@mixin truncate($width: 100%) {
-  width: $width;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+@mixin truncate($lines: 1, $fallbackWidth: 100%) {
+  @supports (display: -webkit-inline-box) {
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @supports not (display: -webkit-inline-box) {
+    width: $fallbackWidth;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

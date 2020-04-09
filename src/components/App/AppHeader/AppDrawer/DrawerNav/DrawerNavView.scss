@@ -1,6 +1,7 @@
 @import '~scss/utils';
 
 .nav {
+  @include flex-column(normal, center);
   padding: spacing(xs) spacing(sm) spacing(md);
 
   @include breakpoint('gt-sm') {

@@ -10,7 +10,8 @@
     "lint:fix": "./node_modules/.bin/eslint --fix --ext js,jsx src",
     "build": "webpack --config webpack.config.js",
     "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js",
-    "publish:prod": "gulp publish:prod"
+    "publish:prod": "gulp publish:prod",
+    "deploy:prod": "npm run build:prod && npm run deploy:prod"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",
