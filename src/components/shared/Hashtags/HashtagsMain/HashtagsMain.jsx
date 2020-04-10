@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes, { arrayOf, shape } from 'prop-types';
+import useContent from 'hooks/use-content';
 import { onlyAlpha } from 'utils/helpers';
 import logger from 'services/logger';
-import HashtagsView from './HashtagsView';
+import HashtagsMainView from './HashtagsMainView';
 
-const Hashtags = (props) => {
-  const { baseTags, topCities, unitedStates } = props;
+const HashtagsMain = () => {
+  const { hashtags: content } = useContent();
+  const { baseTags, topCities, unitedStates } = content;
   const defaultEndTag = '#USA';
+
+  // Ensure cities data are supplied
+  if (!baseTags || !topCities || !unitedStates) {
+    logger.error('Data for HashtagsMain does not exist');
+    return null;
+  }
 
   // Data with alphabetical only
   const statesOnlyAlpha = unitedStates.map(state => onlyAlpha(state));
@@ -98,7 +105,8 @@ const Hashtags = (props) => {
   };
 
   return (
-    <HashtagsView
+    <HashtagsMainView
+      statesMenu={statesOnlyAlpha}
       citiesMenu={citiesMenu}
       selectedCity={selectedCity}
       selectedState={selectedState}
@@ -111,13 +119,4 @@ const Hashtags = (props) => {
   );
 };
 
-Hashtags.propTypes = {
-  baseTags: PropTypes.string.isRequired,
-  topCities: arrayOf(shape({
-    name: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired,
-  })).isRequired,
-  unitedStates: arrayOf(PropTypes.string).isRequired,
-};
-
-export default Hashtags;
+export default HashtagsMain;

@@ -133,9 +133,6 @@ const defaultContent = {
     coverUrl: `${assetsPath}/covers/nurse.jpg`,
   },
   aboveTheFold: {
-    baseHashtags: '#Clap2020 #ClapBecauseWeCare',
-  },
-  locations: {
     // title: 'They fight. We applaud.',
     // subtitle: 'Across the globe, healthcare workers challenge the menace of COVID-19. Join us at your doorstep for three minutes on 4/23 to raise a thundering applause for doctors, nurses, first responders, essential workers, and society.',
     // dateText: {
@@ -143,6 +140,9 @@ const defaultContent = {
     //   date: 'April 23',
     //   time: '7:00 PM',
     // },
+  },
+  hashtags: {
+    baseTags: '#Clap2020 #ClapBecauseWeCare',
     unitedStates: [
       'Alabama',
       'Alaska',
