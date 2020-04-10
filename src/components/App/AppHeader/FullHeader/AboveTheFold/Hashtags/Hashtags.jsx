@@ -1,36 +1,38 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import IconButton from 'components/shared/IconButton';
-import StateSelect from './StateSelect';
+import HashtagsView from './HashtagsView';
 import './Hashtags.scss';
 
 const Hashtags = ({ baseTags }) => {
+  const [tags, setTags] = useState(baseTags);
   const [stateTag, setStateTag] = useState('#NewYork');
+  const [cityTag, setCityTag] = useState('#NYC');
 
-  const handleCopy = () => {};
+  const updateTags = () => {
+    setTags(`${baseTags} ${cityTag} ${stateTag}`);
+  };
+
+  const handleChangeCityTag = (newCityTag) => {
+    setCityTag(newCityTag);
+    updateTags();
+  };
+
+  const handleChangeStateTag = (newStateTag) => {
+    setStateTag(newStateTag);
+    updateTags();
+  };
+
+  const handleCopyTags = () => {};
 
   return (
-    <div styleName="hashtags">
-      <div styleName="tags">
-        <div styleName="tags__text">{baseTags} {stateTag}</div>
-        <div styleName="tags__copy">
-          <IconButton
-            variant="white"
-            size="medium"
-            icon="copy"
-            click={handleCopy}
-          />
-        </div>
-      </div>
-      <div styleName="options">
-        <div styleName="options__item">
-          <StateSelect
-            value={stateTag}
-            change={val => setStateTag(val)}
-          />
-        </div>
-      </div>
-    </div>
+    <HashtagsView
+      tags={tags}
+      cityTag={cityTag}
+      stateTag={stateTag}
+      changeCityTag={handleChangeCityTag}
+      changeStateTag={handleChangeStateTag}
+      copyTags={handleCopyTags}
+    />
   );
 };
 

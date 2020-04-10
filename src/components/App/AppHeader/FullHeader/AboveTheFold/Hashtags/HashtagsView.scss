@@ -1,0 +1,19 @@
+@import '~scss/utils';
+
+.hashtags {
+  border-radius: border-radius(sharp);
+  box-shadow: shadow(24);
+  overflow: hidden;
+}
+
+// Layout
+
+.hashtags__result,
+.hashtags__options {
+  padding: spacing(md) spacing(lg);
+}
+
+.hashtags__result {
+  @include flex-row(center, center);
+  @include gradient(theme(redRose, base), theme(redRose, light2));
+}

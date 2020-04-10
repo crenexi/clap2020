@@ -1,15 +1,14 @@
 import React from 'react';
-import useContent from 'hooks/use-content';
+// import useContent from 'hooks/use-content';
 import Hashtags from './Hashtags';
 import './AboveTheFold.scss';
 
 const AboveTheFold = () => {
-  const { aboveTheFold: content } = useContent();
-  const { baseTags } = content;
+  // const { aboveTheFold: content } = useContent();
 
   return (
     <div styleName="atf">
-      <Hashtags baseTags={baseTags} />
+      <Hashtags />
     </div>
   );
 };
