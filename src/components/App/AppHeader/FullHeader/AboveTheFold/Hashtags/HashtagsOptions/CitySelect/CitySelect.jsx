@@ -52,7 +52,7 @@ const CitySelect = ({ menu, value, change }) => {
         label={label}
       >
         <MenuItem value="">
-          <div styleName="select__null-item">None</div>
+          <div styleName="select__null-item">N/A</div>
         </MenuItem>
         {menuItems}
       </Select>

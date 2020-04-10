@@ -1,10 +1,12 @@
 @import '~scss/utils';
 
 .options {
+  display: grid;
+  padding: spacing(md);
 }
 
 .options__item {
   &:not(:first-child) {
-    margin-left: layout(sm);
+    // margin-left: layout(sm);
   }
 }

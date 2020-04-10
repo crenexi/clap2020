@@ -34,5 +34,6 @@
 .frame-content {
   position: relative;
   @include flex-column();
+  max-width: 100%;
   height: 100%;
 }

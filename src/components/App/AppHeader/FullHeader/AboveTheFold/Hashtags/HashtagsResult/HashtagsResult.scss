@@ -1,11 +1,36 @@
 @import '~scss/utils';
 
 .result {
+  @include flex-row(flex-start, center);
+  padding: spacing(sm) spacing(xs);
 }
 
-.result__tags {
+// Poster preview
+
+.poster {
+  @include flex-column(center, center);
+  @include size(3rem);
+  background-color: rgba(0, 0, 0, .25);
+  border-radius: border-radius(sharp);
+}
+
+.poster__preview {
+  color: rgba(0, 0, 0, .5);
+}
+
+// Tags styling
+
+.tags {
+  @include flex-column(center, flex-start);
   color: #fff;
   font-family: font-family(primary);
-  font-size: 2.5rem;
   font-weight: 400;
+}
+
+.tags__base {
+  font-size: 1rem;
+}
+
+.tags__end {
+  font-size: 1rem;
 }

@@ -5,12 +5,7 @@ import './HashtagsActions.scss';
 
 const HashtagsActions = ({ copyTags }) => {
   const copyButton = (
-    <IconButton
-      variant="white"
-      size="medium"
-      icon="copy"
-      click={copyTags}
-    />
+    <IconButton variant="primary" icon="copy" click={copyTags} />
   );
 
   return (

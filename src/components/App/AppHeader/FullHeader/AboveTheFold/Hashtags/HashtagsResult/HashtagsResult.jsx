@@ -4,9 +4,14 @@ import './HashtagsResult.scss';
 
 const HashtagsResult = ({ baseTags, endTags }) => (
   <div styleName="result">
-    <div styleName="result__tags">
-      <div>{baseTags}</div>
-      <div>{endTags}</div>
+    <div styleName="poster">
+      <div styleName="poster__preview">
+        Poster
+      </div>
+    </div>
+    <div styleName="tags">
+      <div styleName="tags__base">{baseTags}</div>
+      <div styleName="tags__end">{endTags}</div>
     </div>
   </div>
 );
