@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes, { arrayOf, shape } from 'prop-types';
 import { onlyAlpha } from 'utils/helpers';
+import logger from 'services/logger';
 import HashtagsView from './HashtagsView';
 
 const Hashtags = (props) => {
-  const { baseTags, topCities } = props;
+  const { baseTags, topCities, unitedStates } = props;
+  const defaultEndTag = '#USA';
+
+  // Data with alphabetical only
+  const statesOnlyAlpha = unitedStates.map(state => onlyAlpha(state));
+  const topCitiesOnlyAlpha = topCities.map(city => ({
+    name: onlyAlpha(city.name),
+    state: onlyAlpha(city.state),
+  }));
 
   // State
   const [citiesMenu, setCitiesMenu] = useState([]);
@@ -12,47 +21,89 @@ const Hashtags = (props) => {
   const [selectedState, setSelectedState] = useState('');
   const [endTags, setEndTags] = useState('');
 
+  /**
+   * Updates the citiesMenu state
+   */
+  const updateCitiesMenu = () => {
+    // If no state selected, use all cities
+    if (!selectedState) {
+      setCitiesMenu(topCitiesOnlyAlpha.map(c => c.name));
+      return;
+    }
+
+    // Filter cities that match the selectedState
+    const cities = topCitiesOnlyAlpha
+      .filter(c => c.state === selectedState)
+      .map(c => c.name);
+
+    setCitiesMenu(cities);
+  };
+
+  /**
+   * Updates the endTags state
+   */
   const updateEndTags = () => {
-    setEndTags(`#${selectedCity} #${selectedState}`);
+    console.log('UPDATING END TAGS');
+    console.log(`SELECTED CITY: ${selectedCity}`);
+    console.log(`SELECTED STATE: ${selectedState}`);
+    const updatedEndTags = 'test';
+
+    // if (!selectedState) {
+    //   setEndTags(defaultEndTag);
+    // } else {
+    //   // Determine resulting tags string, accounting for blanks
+    //   const endTags = [selectedState, selectedCity].reduce((tags, val) => {
+    //     return !val ? tags : `#${val} ${tags}`;
+    //   }, defaultEndTag);
+
+    //   setEndTags(endTags);
+    // }
 
     // Add stateTag by default if city selected
     // if (selectedCity && !selectedState) {
     //   const city = topCities.find(city => city.state === selectedState);
     //   setSelectedState(!city ? '' : city.state);
     // }
+
+    setEndTags(updatedEndTags);
   };
 
-  // Helper: updates city menu based on selectedState
-  // const updateCitiesMenu = () => {
-  //   const cityKey = city => onlyAlpha(city.name);
+  // Initialization
+  useEffect(() => updateCitiesMenu(), []);
 
-  //   // If no state selected, use all cities
-  //   if (!selectedState) {
-  //     setCitiesMenu(topCities.map(cityKey));
-  //     return;
-  //   }
+  // Trigger updates based on selection changes
+  useEffect(updateCitiesMenu, [selectedState]);
+  useEffect(updateEndTags, [selectedCity, selectedState]);
 
-  //   // Filter cities that match the active state
-  //   const ofSelectedState = city => onlyAlpha(city.state) === selectedState;
-  //   setCitiesMenu(topCities.filter(ofSelectedState).map(cityKey));
-  // };
-
-  // Update cities when state tag changes
-  // useEffect(() => {
-  //   updateCitiesMenu();
-  // }, [selectedState]);
-
-  // Event: handle cityTag change
+  // Event: handle city selection
   const handleChangeCity = (city) => {
     setSelectedCity(city);
-    updateEndTags();
+
+    if (city) {
+      // Find state match to selected city
+      const topCityMatch = topCitiesOnlyAlpha.find(c => c.name === city);
+
+      // Ensure city was found in top cities
+      if (!topCityMatch) {
+        logger.error('Selected city not found in topCitiesOnlyAlpha');
+        return;
+      }
+
+      // Ensure state found in states list
+      if (statesOnlyAlpha.every(state => state !== topCityMatch.state)) {
+        logger.error(`${city} in Top Cities has an invalid state`);
+        return;
+      }
+
+      // State match found and valid
+      setSelectedState(topCityMatch.state);
+    }
   };
 
-  // Event: handle stateTag change
+  // Event: handle state selection
   const handleChangeState = (state) => {
-    setSelectedCity('');
     setSelectedState(state);
-    updateEndTags();
+    setSelectedCity('');
   };
 
   // Event: handle copying tags
@@ -80,6 +131,7 @@ Hashtags.propTypes = {
     name: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
   })).isRequired,
+  unitedStates: arrayOf(PropTypes.string).isRequired,
 };
 
 export default Hashtags;

@@ -233,7 +233,7 @@ const defaultContent = {
       { name: 'Indianapolis', state: 'Indiana' },
       { name: 'San Jose', state: 'California' },
       { name: 'Nashville', state: 'Tennessee' },
-      { name: 'Virginia Beach', state: 'Virginia Beach' },
+      { name: 'Virginia Beach', state: 'Virginia' },
       { name: 'Providence', state: 'Rhode Island' },
       { name: 'Milwaukee', state: 'Wisconsin' },
       { name: 'Jacksonville', state: 'Florida' },

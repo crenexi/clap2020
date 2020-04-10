@@ -8,7 +8,7 @@ const AboveTheFold = () => {
   // Get content
   const { aboveTheFold: content, locations } = useContent();
   const { baseHashtags } = content;
-  const { topCities } = locations;
+  const { topCities, unitedStates } = locations;
 
   // Ensure cities data are supplied
   if (!topCities) {
@@ -18,7 +18,11 @@ const AboveTheFold = () => {
 
   return (
     <div styleName="atf">
-      <Hashtags baseTags={baseHashtags} topCities={topCities} />
+      <Hashtags
+        baseTags={baseHashtags}
+        topCities={topCities}
+        unitedStates={unitedStates}
+      />
     </div>
   );
 };
