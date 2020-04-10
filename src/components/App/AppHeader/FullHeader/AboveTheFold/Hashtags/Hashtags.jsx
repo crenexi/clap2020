@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import HashtagsView from './HashtagsView';
-import './Hashtags.scss';
 
 const Hashtags = ({ baseTags }) => {
   const [tags, setTags] = useState(baseTags);

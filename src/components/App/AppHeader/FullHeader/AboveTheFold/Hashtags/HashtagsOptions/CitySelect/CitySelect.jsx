@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
-import './StateSelect.scss';
+import './CitySelect.scss';
 
 const useStyles = makeStyles(() => ({
   formControl: {
@@ -13,24 +13,16 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const StateSelect = ({ states, value, change }) => {
-  const label = 'State';
+const CitySelect = ({ cities, value, change }) => {
+  const label = 'City';
   const classes = useStyles();
-  const assetsPath = process.env.ASSETS_PATH;
 
-  const menuItems = states.sort().map((stateName) => {
-    const stateKey = stateName.replace(/[\s.]/g, '');
-    const stateTag = `#${stateKey}`;
-    const thumbUrl = `${assetsPath}/states/flag-thumbs/${stateKey}.png`;
-    const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
+  const menuItems = cities.sort().map((cityName) => {
+    const cityKey = cityName.replace(/[\s.]/g, '');
+    const cityTag = `#${cityKey}`;
 
     return (
-      <MenuItem key={stateTag} value={stateTag}>
-        <div styleName="state">
-          <div styleName="state__thumb" style={thumbStyle} />
-          {stateTag}
-        </div>
-      </MenuItem>
+      <MenuItem key={cityTag} value={cityTag}>{cityTag}</MenuItem>
     );
   });
 
@@ -54,10 +46,10 @@ const StateSelect = ({ states, value, change }) => {
   );
 };
 
-StateSelect.propTypes = {
-  states: arrayOf(PropTypes.string).isRequired,
+CitySelect.propTypes = {
+  cities: arrayOf(PropTypes.string).isRequired,
   value: PropTypes.string.isRequired,
   change: PropTypes.func.isRequired,
 };
 
-export default StateSelect;
+export default CitySelect;

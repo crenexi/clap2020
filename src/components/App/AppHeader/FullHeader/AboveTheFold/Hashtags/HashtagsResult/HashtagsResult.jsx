@@ -11,3 +11,5 @@ const HashtagsResult = ({ tags }) => (
 HashtagsResult.propTypes = {
   tags: PropTypes.string.isRequired,
 };
+
+export default HashtagsResult;

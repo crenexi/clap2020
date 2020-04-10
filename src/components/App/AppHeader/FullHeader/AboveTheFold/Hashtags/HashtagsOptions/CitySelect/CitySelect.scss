@@ -1,0 +1,9 @@
+@import '~scss/utils';
+
+.select {
+  width: 15rem;
+}
+
+.select__null-item {
+  color: rgba(0, 0, 0, .5);
+}
