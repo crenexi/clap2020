@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes, { arrayOf, shape } from 'prop-types';
+import PropTypes, { arrayOf, oneOfType, shape } from 'prop-types';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
+import './SelectControl.scss';
 
-const NativeSelectControl = (props) => {
+const SelectControl = (props) => {
   const { classes, variant, label, helperText } = props;
   const { menu, value, change } = props;
-  const name = label.replace(' ', '-').toLowerCase();
-  const id = `${name}-native-label`;
 
   const styles = {
     formControl: {
@@ -24,6 +24,19 @@ const NativeSelectControl = (props) => {
     },
   };
 
+  // First assemble MenuItems
+  const menuItems = menu.map((item) => {
+    // Handle string item
+    if (typeof item === 'string') {
+      return <MenuItem key={item} value={item}>{item}</MenuItem>;
+    }
+
+    // Handle object item
+    const { value, children } = item;
+    return <MenuItem key={value} value={value}>{children}</MenuItem>;
+  });
+
+  // Build the FormControl
   return (
     <FormControl
       className={classes.formControl}
@@ -34,22 +47,20 @@ const NativeSelectControl = (props) => {
         className={classes.inputLabel}
         style={styles.inputLabel}
         shrink
-        htmlFor={id}
       >
         {label}
       </InputLabel>
       <Select
         className={classes.select}
-        native
         value={value}
         onChange={change}
-        inputProps={{ id, name }}
+        label={label}
         displayEmpty
       >
-        <option aria-label="None" value="">- None -</option>
-        {menu.sort().map((state) => {
-          return <option key={state} value={state}>#{state}</option>;
-        })}
+        <MenuItem value="">
+          <div styleName="item--null">- None -</div>
+        </MenuItem>
+        {menuItems}
       </Select>
       {helperText && (
         <FormHelperText style={styles.formHelperText}>
@@ -60,8 +71,14 @@ const NativeSelectControl = (props) => {
   );
 };
 
-NativeSelectControl.propTypes = {
-  menu: arrayOf(PropTypes.string).isRequired,
+SelectControl.propTypes = {
+  menu: arrayOf(oneOfType([
+    PropTypes.string,
+    shape({
+      value: PropTypes.string,
+      children: PropTypes.element,
+    }),
+  ])).isRequired,
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   change: PropTypes.func.isRequired,
@@ -74,10 +91,10 @@ NativeSelectControl.propTypes = {
   helperText: PropTypes.string,
 };
 
-NativeSelectControl.defaultProps = {
+SelectControl.defaultProps = {
   classes: {},
   variant: 'outlined',
   helperText: '',
 };
 
-export default NativeSelectControl;
+export default SelectControl;

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import NativeSelectControl from 'components/shared/forms/NativeSelectControl';
+import SelectControl from 'components/shared/forms/SelectControl';
 import useBreakpoint from 'hooks/use-breakpoint';
 import './StateSelect.scss';
 
@@ -11,59 +12,34 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const StateSelect = ({ menu, value, change }) => {
-  // const assetsPath = process.env.ASSETS_PATH;
+const StateSelect = (props) => {
+  const { menu, value, change } = props;
+  const assetsPath = process.env.ASSETS_PATH;
   const isGtXs = useBreakpoint('gt-xs');
   const classes = useStyles();
 
   const handleChange = event => change(event.target.value);
 
-  // &--null {
-  //   color: rgba(0, 0, 0, .5);
-  // }
-  /*
-    inputLabel = (
-      <InputLabel className={classes.inputLabel} shrink>
-        {name}
-      </InputLabel>
-    );
+  const menuItemsGtXs = () => menu.sort().map((stateKey) => {
+    const thumbUrl = `${assetsPath}/states/flag-thumbs/${stateKey}.png`;
+    const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
 
-    // Menu Items for MUI
-    const menuItems = menu.sort().map((state) => {
-      const thumbUrl = `${assetsPath}/states/flag-thumbs/${state}.png`;
-      const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
+    return {
+      value: stateKey,
+      children: (
+        <div styleName="state">
+          <div styleName="state__thumb" style={thumbStyle} />
+          #{stateKey}
+        </div>
+      ),
+    };
+  });
 
-      return (
-        <MenuItem key={state} value={state}>
-          <div styleName="state">
-            <div styleName="state__thumb" style={thumbStyle} />
-            #{state}
-          </div>
-        </MenuItem>
-      );
-    });
-
-    // Select for MUI
-    select = (
-      <Select
-        className={classes.select}
-        value={value}
-        onChange={handleChange}
-        label={name}
-      >
-        <MenuItem value="">
-          <div styleName="select__null-item">N/A</div>
-        </MenuItem>
-        {menuItems}
-      </Select>
-    );
-  }
-  */
-
+  // Props in both native/fancy controls
   const controlProps = {
-    menu,
     value,
     label: 'State',
+    helperText: 'Add state hashtag',
     className: classes.formControl,
     change: handleChange,
   };
@@ -71,9 +47,9 @@ const StateSelect = ({ menu, value, change }) => {
   return (
     <div styleName="select-frame">
       { !isGtXs ? (
-        <NativeSelectControl {...controlProps} />
+        <NativeSelectControl menu={menu} {...controlProps} />
       ) : (
-        <div>test</div>
+        <SelectControl menu={menuItemsGtXs()} {...controlProps} />
       )}
     </div>
   );
