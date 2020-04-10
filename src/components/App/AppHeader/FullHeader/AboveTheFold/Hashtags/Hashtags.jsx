@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { arrayOf, shape } from 'prop-types';
 import HashtagsView from './HashtagsView';
 
-const Hashtags = ({ baseTags }) => {
+const Hashtags = (props) => {
+  const { baseTags, cities, states } = props;
+
+  // State
   const [tags, setTags] = useState(baseTags);
   const [stateTag, setStateTag] = useState('#NewYork');
   const [cityTag, setCityTag] = useState('#NYC');
@@ -37,6 +40,11 @@ const Hashtags = ({ baseTags }) => {
 
 Hashtags.propTypes = {
   baseTags: PropTypes.string.isRequired,
+  cities: arrayOf(shape({
+    name: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+  })).isRequired,
+  states: arrayOf(PropTypes.string).isRequired,
 };
 
 export default Hashtags;

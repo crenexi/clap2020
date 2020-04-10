@@ -1,19 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useContent from 'hooks/use-content';
+import logger from 'services/logger';
 import CitySelect from './CitySelect';
 import StateSelect from './StateSelect';
 import './HashtagsOptions.scss';
 
 const HashtagsOptions = (props) => {
   const { cityTag, stateTag, changeCityTag, changeStateTag } = props;
+
+  // Get content
   const { locations } = useContent();
   const { topCities, states } = locations;
+
+  // Ensure cities and states data are supplied
+  if (!topCities || !states) {
+    logger.error('Locations data does not exist');
+    return null;
+  }
+
+  // City is object; turn into names array
+  const cityNames = topCities.map(city => city.name);
 
   // City dropdown
   const citySelect = (
     <CitySelect
-      cities={topCities}
+      cities={cityNames}
       value={cityTag}
       change={changeCityTag}
     />
