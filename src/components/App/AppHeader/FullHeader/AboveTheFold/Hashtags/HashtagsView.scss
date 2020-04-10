@@ -17,3 +17,7 @@
   @include flex-row(center, center);
   @include gradient(theme(redRose, base), theme(redRose, light2));
 }
+
+.hashtags__options {
+  background-color: #fff;
+}

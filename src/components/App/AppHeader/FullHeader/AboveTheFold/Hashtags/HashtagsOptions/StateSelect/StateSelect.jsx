@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const StateSelect = ({ states, value, change }) => {
+const StateSelect = ({ menu, value, change }) => {
   const assetsPath = process.env.ASSETS_PATH;
   const isGtXs = useBreakpoint('gt-xs');
   const classes = useStyles();
@@ -23,16 +23,8 @@ const StateSelect = ({ states, value, change }) => {
 
   const handleChange = event => change(event.target.value);
 
-  // Helper: keeps only alphabetical chars
-  const onlyAlpha = str => str.match(/[A-Za-z]/g).join('');
-
   // Native select for xs
   if (!isGtXs) {
-    const options = states.sort().map((stateName) => {
-      const stateTag = `#${onlyAlpha(stateName)}`;
-      return <option key={stateTag} value={stateTag}>{stateTag}</option>;
-    });
-
     select = (
       <Select
         native
@@ -42,22 +34,22 @@ const StateSelect = ({ states, value, change }) => {
           name: label,
         }}
       >
-        <option aria-label="None" value="" />
-        {options}
+        <option aria-label="None" value="">None</option>
+        {menu.sort().map((state) => {
+          return <option key={state} value={state}>#{state}</option>;
+        })}
       </Select>
     );
   } else {
-    const menuItems = states.sort().map((stateName) => {
-      const stateKey = onlyAlpha(stateName);
-      const stateTag = `#${stateKey}`;
-      const thumbUrl = `${assetsPath}/states/flag-thumbs/${stateKey}.png`;
+    const menuItems = menu.sort().map((state) => {
+      const thumbUrl = `${assetsPath}/states/flag-thumbs/${state}.png`;
       const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
 
       return (
-        <MenuItem key={stateTag} value={stateTag}>
+        <MenuItem key={state} value={state}>
           <div styleName="state">
             <div styleName="state__thumb" style={thumbStyle} />
-            {stateTag}
+            #{state}
           </div>
         </MenuItem>
       );
@@ -89,7 +81,7 @@ const StateSelect = ({ states, value, change }) => {
 };
 
 StateSelect.propTypes = {
-  states: arrayOf(PropTypes.string).isRequired,
+  menu: arrayOf(PropTypes.string).isRequired,
   value: PropTypes.string.isRequired,
   change: PropTypes.func.isRequired,
 };

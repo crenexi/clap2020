@@ -8,21 +8,17 @@ const AboveTheFold = () => {
   // Get content
   const { aboveTheFold: content, locations } = useContent();
   const { baseHashtags } = content;
-  const { topCities, states } = locations;
+  const { topCities } = locations;
 
-  // Ensure cities and states data are supplied
-  if (!topCities || !states) {
-    logger.error('Locations data does not exist');
+  // Ensure cities data are supplied
+  if (!topCities) {
+    logger.error('Top Cities data does not exist');
     return null;
   }
 
   return (
     <div styleName="atf">
-      <Hashtags
-        baseTags={baseHashtags}
-        cities={topCities}
-        states={states}
-      />
+      <Hashtags baseTags={baseHashtags} topCities={topCities} />
     </div>
   );
 };

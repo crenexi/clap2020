@@ -1,26 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { arrayOf } from 'prop-types';
 import HashtagsResult from './HashtagsResult';
 import HashtagsActions from './HashtagsActions';
 import HashtagsOptions from './HashtagsOptions';
 import './HashtagsView.scss';
 
 const HashtagsView = (props) => {
-  const { tags, cityTag, stateTag } = props;
-  const { changeCityTag, changeStateTag, copyTags } = props;
+  const { citiesMenu, selectedCity, selectedState } = props;
+  const { changeCity, changeState, copyTags } = props;
+  const { baseTags, endTags } = props;
 
   return (
     <div styleName="hashtags">
       <div styleName="hashtags__result">
-        <HashtagsResult tags={tags} />
+        <HashtagsResult baseTags={baseTags} endTags={endTags} />
         <HashtagsActions copyTags={copyTags} />
       </div>
       <div styleName="hashtags__options">
         <HashtagsOptions
-          cityTag={cityTag}
-          stateTag={stateTag}
-          changeCityTag={changeCityTag}
-          changeStateTag={changeStateTag}
+          citiesMenu={citiesMenu}
+          selectedCity={selectedCity}
+          selectedState={selectedState}
+          changeCity={changeCity}
+          changeState={changeState}
         />
       </div>
     </div>
@@ -28,11 +30,13 @@ const HashtagsView = (props) => {
 };
 
 HashtagsView.propTypes = {
-  tags: PropTypes.string.isRequired,
-  cityTag: PropTypes.string.isRequired,
-  stateTag: PropTypes.string.isRequired,
-  changeCityTag: PropTypes.func.isRequired,
-  changeStateTag: PropTypes.func.isRequired,
+  citiesMenu: arrayOf(PropTypes.string).isRequired,
+  selectedCity: PropTypes.string.isRequired,
+  selectedState: PropTypes.string.isRequired,
+  changeCity: PropTypes.func.isRequired,
+  changeState: PropTypes.func.isRequired,
+  baseTags: PropTypes.string.isRequired,
+  endTags: PropTypes.string.isRequired,
   copyTags: PropTypes.func.isRequired,
 };
 

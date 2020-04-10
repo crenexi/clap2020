@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const CitySelect = ({ cities, value, change }) => {
+const CitySelect = ({ menu, value, change }) => {
   const isGtXs = useBreakpoint('gt-xs');
   const classes = useStyles();
   const label = 'City';
@@ -22,16 +22,8 @@ const CitySelect = ({ cities, value, change }) => {
 
   const handleChange = event => change(event.target.value);
 
-  // Helper: keeps only alphabetical chars
-  const onlyAlpha = str => str.match(/[A-Za-z]/g).join('');
-
   // Native select for xs
   if (!isGtXs) {
-    const options = cities.sort().map((cityName) => {
-      const cityTag = `#${onlyAlpha(cityName)}`;
-      return <option key={cityTag} value={cityTag}>{cityTag}</option>;
-    });
-
     select = (
       <Select
         native
@@ -42,13 +34,14 @@ const CitySelect = ({ cities, value, change }) => {
         }}
       >
         <option aria-label="None" value="" />
-        {options}
+        {menu.sort().map((city) => {
+          return <option key={city} value={city}>#{city}</option>;
+        })}
       </Select>
     );
   } else {
-    const menuItems = cities.sort().map((cityName) => {
-      const cityTag = `#${onlyAlpha(cityName)}`;
-      return <MenuItem key={cityTag} value={cityTag}>{cityTag}</MenuItem>;
+    const menuItems = menu.sort().map((city) => {
+      return <MenuItem key={city} value={city}>#{city}</MenuItem>;
     });
 
     select = (
@@ -77,7 +70,7 @@ const CitySelect = ({ cities, value, change }) => {
 };
 
 CitySelect.propTypes = {
-  cities: arrayOf(PropTypes.string).isRequired,
+  menu: arrayOf(PropTypes.string).isRequired,
   value: PropTypes.string.isRequired,
   change: PropTypes.func.isRequired,
 };

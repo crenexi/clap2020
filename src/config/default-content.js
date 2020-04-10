@@ -143,7 +143,7 @@ const defaultContent = {
     //   date: 'April 23',
     //   time: '7:00 PM',
     // },
-    states: [
+    unitedStates: [
       'Alabama',
       'Alaska',
       'Arizona',

@@ -1,58 +1,65 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { arrayOf } from 'prop-types';
 import useContent from 'hooks/use-content';
+import { onlyAlpha } from 'utils/helpers';
 import logger from 'services/logger';
 import CitySelect from './CitySelect';
 import StateSelect from './StateSelect';
 import './HashtagsOptions.scss';
 
 const HashtagsOptions = (props) => {
-  const { cityTag, stateTag, changeCityTag, changeStateTag } = props;
+  const { citiesMenu, selectedCity, selectedState } = props;
+  const { changeCity, changeState } = props;
 
   // Get content
   const { locations } = useContent();
-  const { topCities, states } = locations;
+  const { unitedStates } = locations;
 
   // Ensure cities and states data are supplied
-  if (!topCities || !states) {
-    logger.error('Locations data does not exist');
+  if (!unitedStates) {
+    logger.error('United States data does not exist');
     return null;
   }
 
-  // City is object; turn into names array
-  const cityNames = topCities.map(city => city.name);
-
-  // City dropdown
-  const citySelect = (
-    <CitySelect
-      cities={cityNames}
-      value={cityTag}
-      change={changeCityTag}
-    />
-  );
+  // Prepare states menu
+  const statesMenu = unitedStates.map(state => onlyAlpha(state));
 
   // State dropdown
-  const stateSelect = (
-    <StateSelect
-      states={states}
-      value={stateTag}
-      change={changeStateTag}
-    />
+  const stateSelect = !statesMenu.length ? null : (
+    <div styleName="options__item">
+      <StateSelect
+        menu={statesMenu}
+        value={selectedState}
+        change={changeState}
+      />
+    </div>
+  );
+
+  // City dropdown
+  const citySelect = !citiesMenu.length ? null : (
+    <div styleName="options__item">
+      <CitySelect
+        menu={citiesMenu}
+        value={selectedCity}
+        change={changeCity}
+      />
+    </div>
   );
 
   return (
     <div styleName="options">
-      <div styleName="options__item">{citySelect}</div>
-      <div styleName="options__item">{stateSelect}</div>
+      {stateSelect}
+      {citySelect}
     </div>
   );
 };
 
 HashtagsOptions.propTypes = {
-  cityTag: PropTypes.string.isRequired,
-  stateTag: PropTypes.string.isRequired,
-  changeCityTag: PropTypes.func.isRequired,
-  changeStateTag: PropTypes.func.isRequired,
+  citiesMenu: arrayOf(PropTypes.string).isRequired,
+  selectedCity: PropTypes.string.isRequired,
+  selectedState: PropTypes.string.isRequired,
+  changeCity: PropTypes.func.isRequired,
+  changeState: PropTypes.func.isRequired,
 };
 
 export default HashtagsOptions;
