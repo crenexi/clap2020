@@ -43,27 +43,13 @@ const Hashtags = (props) => {
    * Updates the endTags state
    */
   const updateEndTags = () => {
-    console.log('UPDATING END TAGS');
-    console.log(`SELECTED CITY: ${selectedCity}`);
-    console.log(`SELECTED STATE: ${selectedState}`);
-    const updatedEndTags = 'test';
+    let updatedEndTags = defaultEndTag;
 
-    // if (!selectedState) {
-    //   setEndTags(defaultEndTag);
-    // } else {
-    //   // Determine resulting tags string, accounting for blanks
-    //   const endTags = [selectedState, selectedCity].reduce((tags, val) => {
-    //     return !val ? tags : `#${val} ${tags}`;
-    //   }, defaultEndTag);
-
-    //   setEndTags(endTags);
-    // }
-
-    // Add stateTag by default if city selected
-    // if (selectedCity && !selectedState) {
-    //   const city = topCities.find(city => city.state === selectedState);
-    //   setSelectedState(!city ? '' : city.state);
-    // }
+    if (selectedState) {
+      // Determine resulting tags string, accounting for blanks
+      const tags = [selectedState, selectedCity].filter(t => t);
+      updatedEndTags = tags.reduce((tags, tag) => `#${tag} ${tags}`, '');
+    }
 
     setEndTags(updatedEndTags);
   };
