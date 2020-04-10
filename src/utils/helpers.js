@@ -9,6 +9,14 @@ export const isTabOrShift = (e) => {
   return e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift');
 };
 
+// Combine style classes from MUIs makeStyles
+export const combineClasses = (set1, set2) => {
+  return Object.entries(set2).reduce((merged, [key, value]) => ({
+    ...merged,
+    [key]: (key in merged) ? `${merged[key]} ${value}` : value,
+  }), set1);
+};
+
 export default {
   capitalize,
   onlyAlpha,

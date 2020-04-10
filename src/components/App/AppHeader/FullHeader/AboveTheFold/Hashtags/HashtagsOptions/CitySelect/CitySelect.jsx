@@ -1,70 +1,52 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import Select from '@material-ui/core/Select';
+import NativeSelectControl from 'components/shared/forms/NativeSelectControl';
+import SelectControl from 'components/shared/forms/SelectControl';
 import useBreakpoint from 'hooks/use-breakpoint';
 import './CitySelect.scss';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles({
   formControl: {
     width: '100%',
   },
-}));
+});
 
-const CitySelect = ({ menu, value, change }) => {
-  const isGtXs = useBreakpoint('gt-xs');
+const CitySelect = (props) => {
+  const { menu, value, change } = props;
   const classes = useStyles();
-  const label = 'City';
-  let select = null;
+  const isGtXs = useBreakpoint('gt-xs');
 
   const handleChange = event => change(event.target.value);
 
-  // Native select for xs
-  if (!isGtXs) {
-    select = (
-      <Select
-        native
-        value={value}
-        onChange={handleChange}
-        inputProps={{
-          name: label,
-        }}
-      >
-        <option aria-label="None" value="" />
-        {menu.sort().map((city) => {
-          return <option key={city} value={city}>#{city}</option>;
-        })}
-      </Select>
-    );
-  } else {
-    const menuItems = menu.sort().map((city) => {
-      return <MenuItem key={city} value={city}>#{city}</MenuItem>;
-    });
+  // List for native select
+  const menuItemsXs = () => menu.sort().map(cityKey => ({
+    value: cityKey,
+    label: `#${cityKey}`,
+  }));
 
-    select = (
-      <Select
-        className={classes.select}
-        value={value}
-        onChange={handleChange}
-        label={label}
-      >
-        <MenuItem value="">
-          <div styleName="select__null-item">N/A</div>
-        </MenuItem>
-        {menuItems}
-      </Select>
-    );
-  }
+  // List for normal select
+  const menuItemsGtXs = () => menu.sort().map(cityKey => ({
+    value: cityKey,
+    children: `#${cityKey}`,
+  }));
+
+  // Props in both native/fancy controls
+  const controlProps = {
+    value,
+    classes,
+    label: 'City',
+    helperText: 'Add city hashtag',
+    change: handleChange,
+  };
 
   return (
-    <div styleName="select">
-      <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel className={classes.inputLabel}>{label}</InputLabel>
-        {select}
-      </FormControl>
+    <div styleName="select-frame">
+      { !isGtXs ? (
+        <NativeSelectControl menu={menuItemsXs()} {...controlProps} />
+      ) : (
+        <SelectControl menu={menuItemsGtXs()} {...controlProps} />
+      )}
     </div>
   );
 };

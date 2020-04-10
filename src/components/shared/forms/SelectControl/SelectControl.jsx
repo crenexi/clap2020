@@ -1,28 +1,35 @@
 import React from 'react';
 import PropTypes, { arrayOf, oneOfType, shape } from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
+import { combineClasses } from 'utils/helpers';
 import './SelectControl.scss';
+
+const useStyles = makeStyles({
+  formControl: {
+    marginTop: '.35rem',
+  },
+  inputLabel: {
+    backgroundColor: '#fff',
+    padding: '0 3px',
+  },
+  formHelperText: {
+    margin: '3px 0 0 0',
+    '&:not(:first-child)': {
+      marginTop: '3px',
+    },
+  },
+});
 
 const SelectControl = (props) => {
   const { classes, variant, label, helperText } = props;
   const { menu, value, change } = props;
 
-  const styles = {
-    formControl: {
-      marginTop: '.35rem',
-    },
-    inputLabel: {
-      backgroundColor: '#fff',
-      padding: '0 3px',
-    },
-    formHelperText: {
-      margin: '3px 0 0 0',
-    },
-  };
+  const mergedClasses = combineClasses(useStyles(), classes);
 
   // First assemble MenuItems
   const menuItems = menu.map((item) => {
@@ -38,20 +45,10 @@ const SelectControl = (props) => {
 
   // Build the FormControl
   return (
-    <FormControl
-      className={classes.formControl}
-      style={styles.formControl}
-      variant={variant}
-    >
-      <InputLabel
-        className={classes.inputLabel}
-        style={styles.inputLabel}
-        shrink
-      >
-        {label}
-      </InputLabel>
+    <FormControl className={mergedClasses.formControl} variant={variant}>
+      <InputLabel className={mergedClasses.inputLabel} shrink>{label}</InputLabel>
       <Select
-        className={classes.select}
+        className={mergedClasses.select}
         value={value}
         onChange={change}
         label={label}
@@ -63,7 +60,7 @@ const SelectControl = (props) => {
         {menuItems}
       </Select>
       {helperText && (
-        <FormHelperText style={styles.formHelperText}>
+        <FormHelperText className={mergedClasses.formHelperText}>
           {helperText}
         </FormHelperText>
       )}
@@ -76,19 +73,20 @@ SelectControl.propTypes = {
     PropTypes.string,
     shape({
       value: PropTypes.string,
-      children: PropTypes.element,
+      children: PropTypes.node,
     }),
   ])).isRequired,
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   change: PropTypes.func.isRequired,
-  classes: shape({
-    formControl: PropTypes.object,
-    inputLabel: PropTypes.object,
-    select: PropTypes.object,
-  }),
   variant: PropTypes.string,
   helperText: PropTypes.string,
+  classes: shape({
+    formControl: PropTypes.string,
+    inputLabel: PropTypes.string,
+    select: PropTypes.string,
+    formHelperText: PropTypes.string,
+  }),
 };
 
 SelectControl.defaultProps = {

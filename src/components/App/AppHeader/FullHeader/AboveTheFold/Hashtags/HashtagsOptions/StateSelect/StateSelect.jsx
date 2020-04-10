@@ -6,20 +6,27 @@ import SelectControl from 'components/shared/forms/SelectControl';
 import useBreakpoint from 'hooks/use-breakpoint';
 import './StateSelect.scss';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles({
   formControl: {
     width: '100%',
   },
-}));
+});
 
 const StateSelect = (props) => {
   const { menu, value, change } = props;
+  const classes = useStyles();
   const assetsPath = process.env.ASSETS_PATH;
   const isGtXs = useBreakpoint('gt-xs');
-  const classes = useStyles();
 
   const handleChange = event => change(event.target.value);
 
+  // List for native select
+  const menuItemsXs = () => menu.sort().map(stateKey => ({
+    value: stateKey,
+    label: `#${stateKey}`,
+  }));
+
+  // List for normal select
   const menuItemsGtXs = () => menu.sort().map((stateKey) => {
     const thumbUrl = `${assetsPath}/states/flag-thumbs/${stateKey}.png`;
     const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
@@ -38,16 +45,16 @@ const StateSelect = (props) => {
   // Props in both native/fancy controls
   const controlProps = {
     value,
+    classes,
     label: 'State',
     helperText: 'Add state hashtag',
-    className: classes.formControl,
     change: handleChange,
   };
 
   return (
     <div styleName="select-frame">
       { !isGtXs ? (
-        <NativeSelectControl menu={menu} {...controlProps} />
+        <NativeSelectControl menu={menuItemsXs()} {...controlProps} />
       ) : (
         <SelectControl menu={menuItemsGtXs()} {...controlProps} />
       )}
