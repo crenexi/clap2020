@@ -1,13 +1,42 @@
 @import '~scss/utils';
 
 .hashtags {
+  border-radius: border-radius(sharp);
+  box-shadow: shadow(24);
+  overflow: hidden;
 }
 
-.text {
+.tags,
+.options {
+  padding: spacing(md) spacing(lg);
 }
 
-.location {
+// Tags row
+
+.tags {
+  @include flex-row(center, center);
+  @include gradient(theme(redRose, base), theme(redRose, light2));
 }
 
-.copy-btn {
+.tags__text {
+  color: #fff;
+  font-family: font-family(primary);
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.tags__copy {
+  margin-left: layout(sm);
+}
+
+// Form elements row
+
+.options {
+  background-color: #fff;
+}
+
+.options__item {
+  &:not(:first-child) {
+    margin-left: layout(sm);
+  }
 }

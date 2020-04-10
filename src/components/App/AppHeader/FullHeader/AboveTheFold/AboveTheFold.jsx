@@ -5,13 +5,11 @@ import './AboveTheFold.scss';
 
 const AboveTheFold = () => {
   const { aboveTheFold: content } = useContent();
-  const { hashtagsText } = content;
+  const { baseTags } = content;
 
   return (
     <div styleName="atf">
-      <Hashtags
-        text={hashtagsText}
-      />
+      <Hashtags baseTags={baseTags} />
     </div>
   );
 };

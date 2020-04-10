@@ -133,7 +133,7 @@ const defaultContent = {
     coverUrl: `${assetsPath}/covers/nurse.jpg`,
   },
   aboveTheFold: {
-    hashtagsText: '#Clap2020 #ClapBecauseWeCare',
+    baseTags: '#Clap2020 #ClapBecauseWeCare',
   },
   locations: {
     states: [

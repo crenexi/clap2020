@@ -2,19 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './StateMenuItem.scss';
 
-const StateMenuItem = ({ stateKey, thumbUrl }) => {
+const StateMenuItem = ({ stateTag, thumbUrl }) => {
   const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
 
   return (
     <div styleName="state">
       <div styleName="state__thumb" style={thumbStyle} />
-      <div styleName="state__name">{`#${stateKey}`}</div>
+      <div styleName="state__name">{stateTag}</div>
     </div>
   );
 };
 
 StateMenuItem.propTypes = {
-  stateKey: PropTypes.string.isRequired,
+  stateTag: PropTypes.string.isRequired,
   thumbUrl: PropTypes.string.isRequired,
 };
 
