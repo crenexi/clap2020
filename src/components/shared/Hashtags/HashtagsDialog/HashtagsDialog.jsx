@@ -19,6 +19,7 @@ const HashtagsDialog = (props) => {
   return (
     <Dialog
       fullScreen={!isGtSm}
+      fullWidth
       open={open}
       TransitionComponent={Transition}
     >

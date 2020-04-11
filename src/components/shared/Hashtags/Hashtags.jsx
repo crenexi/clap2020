@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Button from 'components/shared/Button';
 import logger from 'services/logger';
+import ShareButtons from 'components/shared/ShareButtons';
 import HashtagsDialog from './HashtagsDialog';
 import HashtagsMain from './HashtagsMain';
-import HashtagsActions from './HashtagsActions';
 import './Hashtags.scss';
 
 const Hashtags = () => {
@@ -47,7 +47,7 @@ const Hashtags = () => {
   );
 
   const actionsComponent = (
-    <HashtagsActions share={handleShare} copy={handleCopy} />
+    <ShareButtons share={handleShare} copy={handleCopy} />
   );
 
   return (
