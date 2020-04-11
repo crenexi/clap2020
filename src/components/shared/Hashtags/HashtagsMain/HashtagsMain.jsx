@@ -99,11 +99,6 @@ const HashtagsMain = () => {
     setSelectedCity('');
   };
 
-  // Event: handle copying tags
-  const handleCopyTags = () => {
-    // base tags plus tags
-  };
-
   return (
     <HashtagsMainView
       statesMenu={statesOnlyAlpha}
@@ -114,7 +109,6 @@ const HashtagsMain = () => {
       changeState={handleChangeState}
       baseTags={baseTags}
       endTags={endTags}
-      copyTags={handleCopyTags}
     />
   );
 };

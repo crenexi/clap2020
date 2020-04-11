@@ -1,1 +1,9 @@
 @import '~scss/utils';
+
+.header {
+  display: grid;
+  grid-template-columns: auto min-content;
+  place-items: center start;
+  padding: spacing(md) spacing(sm) spacing(md) spacing(lg);
+  background-color: #fff;
+}

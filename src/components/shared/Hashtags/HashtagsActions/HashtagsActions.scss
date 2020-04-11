@@ -1,0 +1,10 @@
+@import '~scss/utils';
+
+.actions {
+  @include flex-row();
+  width: 100%;
+}
+
+.actions__item {
+  flex: 1 1 0%;
+}

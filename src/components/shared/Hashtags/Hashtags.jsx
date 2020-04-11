@@ -1,14 +1,54 @@
 import React, { useState } from 'react';
 import Button from 'components/shared/Button';
+import logger from 'services/logger';
 import HashtagsDialog from './HashtagsDialog';
-// import HashtagsMain from './HashtagsMain';
+import HashtagsMain from './HashtagsMain';
+import HashtagsActions from './HashtagsActions';
 import './Hashtags.scss';
 
 const Hashtags = () => {
+  const [payload, setPayload] = useState('');
   const [dialogOpen, setDialogOpen] = useState(false);
+
+  const handleChangePayload = (payload) => {
+    setPayload(payload);
+  };
 
   const handleOpenDialog = () => setDialogOpen(true);
   const handleCloseDialog = () => setDialogOpen(false);
+
+  const handleShare = ({ to }) => {
+    if (to === 'webAPI') {
+      logger.info(`SHARING TO WEB API: ${payload}`);
+      return;
+    }
+
+    if (to === 'facebook') {
+      logger.info(`SHARING TO FACEBOOK: ${payload}`);
+      return;
+    }
+
+    if (to === 'twitter') {
+      logger.info(`SHARING TO TWITTER: ${payload}`);
+      return;
+    }
+
+    logger.error(`Sharing target ${to} not supported`);
+  };
+
+  const handleCopy = () => {
+    logger.info(`COPYING: ${payload}`);
+  };
+
+  const mainComponent = (
+    <HashtagsMain
+      changePayload={handleChangePayload}
+    />
+  );
+
+  const actionsComponent = (
+    <HashtagsActions share={handleShare} copy={handleCopy} />
+  );
 
   return (
     <div styleName="card">
@@ -16,10 +56,9 @@ const Hashtags = () => {
       <HashtagsDialog
         open={dialogOpen}
         onClose={handleCloseDialog}
-      >
-        Hello World
-        {/* <HashtagsMain /> */}
-      </HashtagsDialog>
+        mainComponent={mainComponent}
+        actionsComponent={actionsComponent}
+      />
     </div>
   );
 };
