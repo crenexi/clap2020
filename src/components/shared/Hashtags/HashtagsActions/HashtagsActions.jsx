@@ -1,40 +1,84 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { userAgent } from 'utils/helpers';
 import Button from 'components/shared/Button';
 import FaIcon from 'components/shared/FaIcon';
 import './HashtagsActions.scss';
 
 const HashtagsActions = ({ share, copy }) => {
-  const tweetButton = (
-    <Button variant="ghost" click={() => share({ to: 'twitter' })}>
-      <FaIcon icon="twitter" prefix="fab" />
-    </Button>
-  );
+  const buttonClass = 'c2-action-btn';
+  const labelClass = 'c2-action-btn-label';
 
-  const facebookButton = (
-    <Button variant="ghost" click={() => share({ to: 'facebook' })}>
-      <FaIcon icon="facebook-f" prefix="fab" />
-    </Button>
-  );
+  const sn = {
+    actions: 'actions',
+    actionsRow: 'actions__row',
+    actionsItem: 'actions__item',
+  };
 
-  const copyButton = (
-    <Button variant="ghost" click={copy}>
-      <FaIcon icon="copy" />
-    </Button>
-  );
+  console.log(userAgent.isMobile());
 
-  const shareButton = (
-    <Button variant="ghost" click={() => share({ to: 'webAPI' })}>
-      <FaIcon icon="share-alt" />
-    </Button>
-  );
+  // Define key/children/click for buttons0
+  const btnsData = [
+    {
+      key: 'twitter',
+      children: <FaIcon icon="twitter" prefix="fab" />,
+      click: () => share({ to: 'twitter' }),
+    },
+    {
+      key: 'facebook',
+      children: <FaIcon icon="facebook-f" prefix="fab" />,
+      click: () => share({ to: 'facebook' }),
+    },
+    {
+      key: 'share',
+      children: <FaIcon icon="share-alt" />,
+      click: () => share({ to: 'webAPI' }),
+    },
+    {
+      key: 'email',
+      children: <FaIcon icon="envelope" />,
+      click: () => share({ to: 'email' }),
+    },
+    {
+      key: 'copy',
+      children: <FaIcon icon="copy" />,
+      click: copy,
+    },
+  ];
+
+  // Create JSX buttons map
+  const buttons = btnsData.reduce((buttons, btnData) => {
+    const { key, children, click } = btnData;
+
+    const classes = {
+      root: `${buttonClass} ${buttonClass}--${key}`,
+      label: `${labelClass} ${labelClass}--${key}`,
+    };
+
+    const button = (
+      <Button
+        variant="ghost"
+        classes={classes}
+        click={click}
+      >
+        {children}
+      </Button>
+    );
+
+    return { ...buttons, [key]: button };
+  }, {});
 
   return (
-    <div styleName="actions">
-      <div styleName="actions__item">{tweetButton}</div>
-      <div styleName="actions__item">{facebookButton}</div>
-      <div styleName="actions__item">{copyButton}</div>
-      <div styleName="actions__item">{shareButton}</div>
+    <div styleName={sn.actions}>
+      <div styleName={sn.actionsRow}>
+        <div styleName={sn.actionsItem}>{buttons.twitter}</div>
+        <div styleName={sn.actionsItem}>{buttons.facebook}</div>
+        <div styleName={sn.actionsItem}>{buttons.share}</div>
+      </div>
+      <div styleName={sn.actionsRow}>
+        <div styleName={sn.actionsItem}>{buttons.email}</div>
+        <div styleName={sn.actionsItem}>{buttons.copy}</div>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,22 @@
   display: grid;
   grid-template-columns: auto min-content;
   place-items: center start;
-  padding: spacing(md) spacing(sm) spacing(md) spacing(lg);
-  background-color: #fff;
+  padding: spacing(xs);
+  @include gradient(theme(blueRose, dark1), theme(blueRose, light1));
+  color: #fff;
+}
+
+.header__title {
+  margin: -2px 0 2px;
+  padding-left: spacing(md);
+}
+
+.header__close {
+  margin-top: 3px;
+}
+
+@include breakpoint('gt-sm') {
+  .header {
+    padding: spacing(md);
+  }
 }

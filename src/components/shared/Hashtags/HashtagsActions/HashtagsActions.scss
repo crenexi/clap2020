@@ -1,10 +1,18 @@
 @import '~scss/utils';
 
 .actions {
-  @include flex-row();
   width: 100%;
+}
+
+.actions__row {
+  @include flex-row();
 }
 
 .actions__item {
   flex: 1 1 0%;
+}
+
+:global {
+  .c2-action-btn {
+  }
 }

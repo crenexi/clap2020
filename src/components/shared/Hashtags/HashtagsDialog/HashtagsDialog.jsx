@@ -22,11 +22,13 @@ const HashtagsDialog = (props) => {
       open={open}
       TransitionComponent={Transition}
     >
-      <DialogContent>
-        <div styleName="header">
-          <h3>Share Now</h3>
-          <IconButton icon="times" click={onClose} />
+      <div styleName="header">
+        <h2 styleName="header__title">Share Now</h2>
+        <div styleName="header__close">
+          <IconButton variant="inverted" icon="times" click={onClose} />
         </div>
+      </div>
+      <DialogContent>
         {mainComponent}
       </DialogContent>
       <DialogActions>{actionsComponent}</DialogActions>
