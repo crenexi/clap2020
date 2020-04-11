@@ -108,7 +108,7 @@ const defaultContent = {
       id: 'facebook',
       name: 'Facebook',
       url: 'https://www.facebook.com/clap2020nation',
-      icon: 'facebook-f',
+      icon: 'facebook',
     },
     {
       id: 'instagram',

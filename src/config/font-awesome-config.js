@@ -82,9 +82,12 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 
 import {
-  faFacebookF,
+  faFacebook,
   faInstagram,
+  faLinkedinIn,
+  faRedditAlien,
   faTwitter,
+  faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 
 const buildLibrary = () => {
@@ -112,7 +115,7 @@ const buildLibrary = () => {
     faEnvelope,
     faExpandAlt,
     faExternalLink,
-    faFacebookF,
+    faFacebook,
     faFileImage,
     faFilePdf,
     faFolderOpen,
@@ -134,6 +137,7 @@ const buildLibrary = () => {
     faImages,
     faInstagram,
     faLandmarkAlt,
+    faLinkedinIn,
     faLongArrowAltLeft,
     faLongArrowAltRight,
     faLungs,
@@ -147,6 +151,7 @@ const buildLibrary = () => {
     faQuoteRight,
     faRectangleLandscape,
     faRectanglePortrait,
+    faRedditAlien,
     faShareAlt,
     faShieldVirus,
     faShippingFast,
@@ -167,6 +172,7 @@ const buildLibrary = () => {
     faVials,
     faVideo,
     faViruses,
+    faWhatsapp,
   );
 };
 
