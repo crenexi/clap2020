@@ -17,8 +17,24 @@ export const combineClasses = (set1, set2) => {
   }), set1);
 };
 
+// Determine if user is on a native (mobile) device
+export const userAgent = (() => {
+  const getUA = () => navigator.userAgent.replace(/\s/g, '').toLowerCase();
+
+  const isAndroid = (ua = getUA()) => !!(ua.match(/android/i));
+  const isIOS = (ua = getUA()) => !!(ua.match(/iphone|ipad|ipod/i));
+
+  const isMobile = (ua = getUA()) => {
+    const otherRegEx = /webos|blackberry|windowsphone/i;
+    return !!(isAndroid(ua) || isIOS(ua) || ua.match(otherRegEx));
+  };
+
+  return { isAndroid, isIOS, isMobile };
+})();
+
 export default {
   capitalize,
   onlyAlpha,
   isTabOrShift,
+  userAgent,
 };
