@@ -6,13 +6,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import useBreakpoint from 'hooks/use-breakpoint';
 import IconButton from 'components/shared/IconButton';
-import './HashtagsDialog.scss';
+import './ShareDialog.scss';
 
 const Transition = forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const HashtagsDialog = (props) => {
+const ShareDialog = (props) => {
   const { open, onClose, mainComponent, actionsComponent } = props;
   const isGtSm = useBreakpoint('gt-sm');
 
@@ -32,16 +32,18 @@ const HashtagsDialog = (props) => {
       <DialogContent>
         {mainComponent}
       </DialogContent>
-      <DialogActions>{actionsComponent}</DialogActions>
+      <DialogActions>
+        {actionsComponent}
+      </DialogActions>
     </Dialog>
   );
 };
 
-HashtagsDialog.propTypes = {
+ShareDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   mainComponent: PropTypes.element.isRequired,
   actionsComponent: PropTypes.element.isRequired,
 };
 
-export default HashtagsDialog;
+export default ShareDialog;

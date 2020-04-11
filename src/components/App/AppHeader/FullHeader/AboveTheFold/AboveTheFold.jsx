@@ -1,15 +1,15 @@
 import React from 'react';
 // import useContent from 'hooks/use-content';
-import Hashtags from 'components/shared/Hashtags';
+import ShareNow from 'components/shared/ShareNow';
 import './AboveTheFold.scss';
 
 const AboveTheFold = () => {
   // Get content
-  // const { aboveTheFold: content, locations } = useContent();
+  // const { aboveTheFold: content, baseTags } = useContent();
 
   return (
     <div styleName="atf">
-      <Hashtags />
+      <ShareNow />
     </div>
   );
 };

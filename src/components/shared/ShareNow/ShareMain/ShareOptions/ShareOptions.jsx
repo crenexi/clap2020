@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
 import CitySelect from './CitySelect';
 import StateSelect from './StateSelect';
-import './HashtagsOptions.scss';
+import './ShareOptions.scss';
 
-const HashtagsOptions = (props) => {
+const ShareOptions = (props) => {
   const { statesMenu, citiesMenu, selectedCity, selectedState } = props;
   const { changeCity, changeState } = props;
 
@@ -38,7 +38,7 @@ const HashtagsOptions = (props) => {
   );
 };
 
-HashtagsOptions.propTypes = {
+ShareOptions.propTypes = {
   statesMenu: arrayOf(PropTypes.string).isRequired,
   citiesMenu: arrayOf(PropTypes.string).isRequired,
   selectedCity: PropTypes.string.isRequired,
@@ -47,4 +47,4 @@ HashtagsOptions.propTypes = {
   changeState: PropTypes.func.isRequired,
 };
 
-export default HashtagsOptions;
+export default ShareOptions;

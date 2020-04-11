@@ -1,6 +1,6 @@
 @import '~scss/utils';
 
-.result {
+.preview {
   @include flex-row(flex-start, center);
   padding: spacing(sm) spacing(xs);
 }

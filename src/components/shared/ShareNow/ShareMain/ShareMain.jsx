@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import useContent from 'hooks/use-content';
 import { onlyAlpha } from 'utils/helpers';
 import logger from 'services/logger';
-import HashtagsMainView from './HashtagsMainView';
+import ShareMainView from './ShareMainView';
 
-const HashtagsMain = () => {
-  const { hashtags: content } = useContent();
-  const { baseTags, topCities, unitedStates } = content;
+const ShareMain = () => {
+  const { baseTags, shareNow: content } = useContent();
+  const { topCities, unitedStates } = content;
   const defaultEndTag = '#USA';
 
   // Ensure cities data are supplied
   if (!baseTags || !topCities || !unitedStates) {
-    logger.error('Data for HashtagsMain does not exist');
+    logger.error('Data for ShareMain does not exist');
     return null;
   }
 
@@ -100,7 +100,7 @@ const HashtagsMain = () => {
   };
 
   return (
-    <HashtagsMainView
+    <ShareMainView
       statesMenu={statesOnlyAlpha}
       citiesMenu={citiesMenu}
       selectedCity={selectedCity}
@@ -113,4 +113,4 @@ const HashtagsMain = () => {
   );
 };
 
-export default HashtagsMain;
+export default ShareMain;

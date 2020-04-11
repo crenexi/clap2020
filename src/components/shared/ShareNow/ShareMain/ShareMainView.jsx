@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
-import HashtagsResult from './HashtagsResult';
-import HashtagsOptions from './HashtagsOptions';
-import './HashtagsMainView.scss';
+import ShareResult from './ShareResult';
+import ShareOptions from './ShareOptions';
+import './ShareMainView.scss';
 
-const HashtagsMainView = (props) => {
+const ShareMainView = (props) => {
   const { statesMenu, citiesMenu, selectedCity, selectedState } = props;
   const { changeCity, changeState } = props;
   const { baseTags, endTags } = props;
@@ -12,10 +12,10 @@ const HashtagsMainView = (props) => {
   return (
     <div styleName="main">
       <div styleName="main__result">
-        <HashtagsResult baseTags={baseTags} endTags={endTags} />
+        <ShareResult baseTags={baseTags} endTags={endTags} />
       </div>
       <div styleName="main__options">
-        <HashtagsOptions
+        <ShareOptions
           statesMenu={statesMenu}
           citiesMenu={citiesMenu}
           selectedCity={selectedCity}
@@ -28,7 +28,7 @@ const HashtagsMainView = (props) => {
   );
 };
 
-HashtagsMainView.propTypes = {
+ShareMainView.propTypes = {
   statesMenu: arrayOf(PropTypes.string).isRequired,
   citiesMenu: arrayOf(PropTypes.string).isRequired,
   selectedCity: PropTypes.string.isRequired,
@@ -39,4 +39,4 @@ HashtagsMainView.propTypes = {
   endTags: PropTypes.string.isRequired,
 };
 
-export default HashtagsMainView;
+export default ShareMainView;

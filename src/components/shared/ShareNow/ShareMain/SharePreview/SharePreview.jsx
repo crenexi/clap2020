@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './HashtagsResult.scss';
+import './SharePreview.scss';
 
-const HashtagsResult = ({ baseTags, endTags }) => (
-  <div styleName="result">
+const SharePreview = ({ baseTags, endTags }) => (
+  <div styleName="preview">
     <div styleName="poster">
       <div styleName="poster__preview">
         Poster
@@ -16,9 +16,9 @@ const HashtagsResult = ({ baseTags, endTags }) => (
   </div>
 );
 
-HashtagsResult.propTypes = {
+SharePreview.propTypes = {
   baseTags: PropTypes.string.isRequired,
   endTags: PropTypes.string.isRequired,
 };
 
-export default HashtagsResult;
+export default SharePreview;

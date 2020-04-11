@@ -1,6 +1,7 @@
 const assetsPath = process.env.ASSETS_PATH;
 
 const defaultContent = {
+  baseTags: '#Clap2020 #ClapBecauseWeCare',
   nav: [
     {
       linkTo: '/',
@@ -141,8 +142,7 @@ const defaultContent = {
     //   time: '7:00 PM',
     // },
   },
-  hashtags: {
-    baseTags: '#Clap2020 #ClapBecauseWeCare',
+  shareNow: {
     unitedStates: [
       'Alabama',
       'Alaska',

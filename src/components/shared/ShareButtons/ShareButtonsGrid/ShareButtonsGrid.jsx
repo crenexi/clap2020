@@ -1,5 +1,6 @@
 import React from 'react';
-import shareButtonsType from 'types/share-buttons';
+import { arrayOf } from 'prop-types';
+import shareButtonType from 'types/share-button';
 import Button from 'components/shared/Button';
 import IconButton from 'components/shared/IconButton';
 import ShareButtonsGridView from './ShareButtonsGridView';
@@ -42,7 +43,7 @@ const ShareButtonsGrid = ({ buttonsData }) => {
 };
 
 ShareButtonsGrid.propTypes = {
-  buttonsData: shareButtonsType.isRequired,
+  buttonsData: arrayOf(shareButtonType).isRequired,
 };
 
 export default ShareButtonsGrid;
