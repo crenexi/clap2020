@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
-import ShareResult from './ShareResult';
+import SharePreview from './SharePreview';
 import ShareOptions from './ShareOptions';
 import './ShareMainView.scss';
 
@@ -12,7 +12,7 @@ const ShareMainView = (props) => {
   return (
     <div styleName="main">
       <div styleName="main__result">
-        <ShareResult baseTags={baseTags} endTags={endTags} />
+        <SharePreview baseTags={baseTags} endTags={endTags} />
       </div>
       <div styleName="main__options">
         <ShareOptions
