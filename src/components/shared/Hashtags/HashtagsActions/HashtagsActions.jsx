@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { userAgent } from 'utils/helpers';
 import Button from 'components/shared/Button';
@@ -8,14 +8,13 @@ import './HashtagsActions.scss';
 const HashtagsActions = ({ share, copy }) => {
   const buttonClass = 'c2-action-btn';
   const labelClass = 'c2-action-btn-label';
+  const isMobile = userAgent.isMobile();
 
   const sn = {
     actions: 'actions',
     actionsRow: 'actions__row',
     actionsItem: 'actions__item',
   };
-
-  console.log(userAgent.isMobile());
 
   // Define key/children/click for buttons0
   const btnsData = [
@@ -28,6 +27,11 @@ const HashtagsActions = ({ share, copy }) => {
       key: 'facebook',
       children: <FaIcon icon="facebook-f" prefix="fab" />,
       click: () => share({ to: 'facebook' }),
+    },
+    {
+      key: 'instagram',
+      children: <FaIcon icon="instagram" prefix="fab" />,
+      click: () => share({ to: 'instagram' }),
     },
     {
       key: 'share',
@@ -68,15 +72,34 @@ const HashtagsActions = ({ share, copy }) => {
     return { ...buttons, [key]: button };
   }, {});
 
-  return (
-    <div styleName={sn.actions}>
+  const rowsMobile = (
+    <Fragment>
       <div styleName={sn.actionsRow}>
         <div styleName={sn.actionsItem}>{buttons.twitter}</div>
         <div styleName={sn.actionsItem}>{buttons.facebook}</div>
-        <div styleName={sn.actionsItem}>{buttons.share}</div>
+        <div styleName={sn.actionsItem}>{buttons.instagram}</div>
       </div>
       <div styleName={sn.actionsRow}>
         <div styleName={sn.actionsItem}>{buttons.email}</div>
+        <div styleName={sn.actionsItem}>{buttons.share}</div>
+      </div>
+    </Fragment>
+  );
+
+  const rowsDesktop = (
+    <Fragment>
+      <div styleName={sn.actionsRow}>
+        <div styleName={sn.actionsItem}>{buttons.twitter}</div>
+        <div styleName={sn.actionsItem}>{buttons.facebook}</div>
+        <div styleName={sn.actionsItem}>{buttons.email}</div>
+      </div>
+    </Fragment>
+  );
+
+  return (
+    <div styleName={sn.actions}>
+      {isMobile ? rowsMobile : rowsDesktop}
+      <div styleName={sn.actionsRow}>
         <div styleName={sn.actionsItem}>{buttons.copy}</div>
       </div>
     </div>
