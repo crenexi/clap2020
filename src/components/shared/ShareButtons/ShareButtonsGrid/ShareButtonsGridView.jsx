@@ -1,9 +1,9 @@
 import React from 'react';
-import shareButtonsType from 'types/share-button';
+import PropTypes, { shape } from 'prop-types';
 import { userAgent } from 'utils/helpers';
-import './ShareButtonsView.scss';
+import './ShareButtonsGridView.scss';
 
-const ShareButtonsView = ({ buttons }) => {
+const ShareButtonsGridView = ({ buttons }) => {
   const isMobile = userAgent.isMobile();
 
   const sn = {
@@ -37,8 +37,18 @@ const ShareButtonsView = ({ buttons }) => {
   );
 };
 
-ShareButtonsView.propTypes = {
-  buttons: shareButtonsType.isRequired,
+ShareButtonsGridView.propTypes = {
+  buttons: shape({
+    twitter: PropTypes.element.isRequired,
+    facebook: PropTypes.element.isRequired,
+    instagram: PropTypes.element.isRequired,
+    whatsapp: PropTypes.element.isRequired,
+    linkedin: PropTypes.element.isRequired,
+    reddit: PropTypes.element.isRequired,
+    email: PropTypes.element.isRequired,
+    share: PropTypes.element.isRequired,
+    copy: PropTypes.element.isRequired,
+  }).isRequired,
 };
 
-export default ShareButtonsView;
+export default ShareButtonsGridView;

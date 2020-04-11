@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'components/shared/Button';
-import IconButton from 'components/shared/IconButton';
 import FaIcon from 'components/shared/FaIcon';
-import ShareButtonsView from './ShareButtonsView';
+import ShareButtonsGrid from './ShareButtonsGrid';
 
 const ShareButtons = ({ share, copy }) => {
-  const buttonClass = 'c2-share-btn';
-  const labelClass = 'c2-share-btn-label';
-
-  // Define key/children/click for buttons0
-  const btnsData = [
+  const buttonsData = [
     {
       key: 'twitter',
       isIconButton: false,
@@ -67,37 +61,7 @@ const ShareButtons = ({ share, copy }) => {
     },
   ];
 
-  // Create JSX buttons map
-  const buttons = btnsData.reduce((buttons, btnData) => {
-    const { key, isIconButton, children, click } = btnData;
-
-    const classes = {
-      root: `${buttonClass} ${buttonClass}--${key}`,
-      label: `${labelClass} ${labelClass}--${key}`,
-    };
-
-    const button = isIconButton ? (
-      <IconButton
-        variant="ghost"
-        classes={classes}
-        click={click}
-      >
-        {children}
-      </IconButton>
-    ) : (
-      <Button
-        variant="ghost"
-        classes={classes}
-        click={click}
-      >
-        {children}
-      </Button>
-    );
-
-    return { ...buttons, [key]: button };
-  }, {});
-
-  return <ShareButtonsView buttons={buttons} />;
+  return <ShareButtonsGrid buttonsData={buttonsData} />;
 };
 
 ShareButtons.propTypes = {
