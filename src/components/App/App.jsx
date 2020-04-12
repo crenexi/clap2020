@@ -7,6 +7,7 @@ import defaultSettings from 'config/default-settings';
 import defaultContent from 'config/default-content';
 import { SettingsProvider } from 'contexts/SettingsContext';
 import { ContentProvider } from 'contexts/ContentContext';
+import { ModalProvider } from 'contexts/ModalContext';
 import logger from 'services/logger';
 import ScrollToTop from './ScrollToTop';
 import AppView from './AppView';
@@ -37,10 +38,12 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <SettingsProvider value={defaultSettings}>
         <ContentProvider value={defaultContent}>
-          <Router>
-            <ScrollToTop />
-            <AppView isLoading={isLoading} />
-          </Router>
+          <ModalProvider>
+            <Router>
+              <ScrollToTop />
+              <AppView isLoading={isLoading} />
+            </Router>
+          </ModalProvider>
         </ContentProvider>
       </SettingsProvider>
     </ThemeProvider>

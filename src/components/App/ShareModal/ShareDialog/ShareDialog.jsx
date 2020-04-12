@@ -5,6 +5,8 @@ import Slide from '@material-ui/core/Slide';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import useBreakpoint from 'hooks/use-breakpoint';
+import ShareEditor from 'components/shared/ShareEditor';
+import ShareButtons from 'components/shared/ShareButtons';
 import IconButton from 'components/shared/IconButton';
 import './ShareDialog.scss';
 
@@ -13,7 +15,7 @@ const Transition = forwardRef((props, ref) => {
 });
 
 const ShareDialog = (props) => {
-  const { open, onClose, mainComponent, actionsComponent } = props;
+  const { open, close, changePayload, sharePayload, copyPayload } = props;
   const isGtSm = useBreakpoint('gt-sm');
 
   return (
@@ -26,14 +28,14 @@ const ShareDialog = (props) => {
       <div styleName="header">
         <h2 styleName="header__title">Share Now</h2>
         <div styleName="header__close">
-          <IconButton variant="inverted" icon="times" click={onClose} />
+          <IconButton variant="inverted" icon="times" click={close} />
         </div>
       </div>
       <DialogContent>
-        {mainComponent}
+        <ShareEditor changePayload={changePayload} />
       </DialogContent>
       <DialogActions>
-        {actionsComponent}
+        <ShareButtons share={sharePayload} copy={copyPayload} />
       </DialogActions>
     </Dialog>
   );
@@ -41,9 +43,10 @@ const ShareDialog = (props) => {
 
 ShareDialog.propTypes = {
   open: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  mainComponent: PropTypes.element.isRequired,
-  actionsComponent: PropTypes.element.isRequired,
+  close: PropTypes.func.isRequired,
+  changePayload: PropTypes.func.isRequired,
+  sharePayload: PropTypes.func.isRequired,
+  copyPayload: PropTypes.func.isRequired,
 };
 
 export default ShareDialog;

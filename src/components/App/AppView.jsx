@@ -5,6 +5,7 @@ import Loading from 'components/shared/Loading';
 import AppHeader from './AppHeader';
 import AppMain from './AppMain';
 import AppFooter from './AppFooter';
+import ShareModal from './ShareModal';
 import './AppView.scss';
 
 const AppView = ({ isLoading }) => {
@@ -27,6 +28,7 @@ const AppView = ({ isLoading }) => {
         <AppHeader />
         <AppMain />
         <AppFooter />
+        <ShareModal />
       </div>
     </Fragment>
   );
