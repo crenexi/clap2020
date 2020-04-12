@@ -27,7 +27,10 @@ const ShareDialog = (props) => {
       TransitionComponent={Transition}
     >
       <div styleName="header">
-        <h2 styleName="header__title">Share Now</h2>
+        <div styleName="header__title-group">
+          <h3 styleName="header__title">Share Now</h3>
+          <div styleName="header__subtitle">Get the hashtags/posters out!</div>
+        </div>
         <div styleName="header__close">
           <IconButton variant="inverted" icon="times" click={close} />
         </div>

@@ -9,9 +9,18 @@
   color: #fff;
 }
 
-.header__title {
-  margin: -2px 0 2px;
+.header__title-group {
   padding-left: spacing(md);
+}
+
+.header__title {
+  line-height: 1em;
+}
+
+.header__subtitle {
+  margin-top: spacing(2xs);
+  color: rgba(255, 255, 255, .5);
+  line-height: 1.2em;
 }
 
 .header__close {
