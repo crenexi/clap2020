@@ -27,27 +27,22 @@ const CopyService = () => {
   };
 
   /** Copy to clipboard - using Clipboard API */
-  const copyToClipboard = (str) => {
-    const promise = new Promise();
-    const errMsg = '(Async) Copying to clipboard failed';
-
+  const copyToClipboard = str => new Promise((resolve, reject) => {
     // Fallback on textarea solution
     if (!navigator.clipboard) {
       copyToClipboardFallback(str);
-      promise.resolve();
-      return promise;
+      resolve();
     }
 
     // Use Clipboard API
+    const errMsg = '(Async) Copying to clipboard failed';
     navigator.clipboard.writeText(str)
-      .then(() => promise.resolve())
+      .then(resolve)
       .catch((err) => {
         logger.error(errMsg, err);
-        promise.reject(err);
+        reject(err);
       });
-
-    return promise;
-  };
+  });
 
   /** Handle the copy */
   const copy = ({ payload }) => {

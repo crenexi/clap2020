@@ -1,14 +1,14 @@
 @import '~scss/utils';
 
-.main {
+.editor {
   width: 100%;
 }
 
-.main__result {
+.editor__result {
   background-color: theme(cloud, base);
 }
 
-.main__options {
+.editor__options {
   border-top: 1px solid theme(cloud, dark1);
   background-color: #fff;
 }

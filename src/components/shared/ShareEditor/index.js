@@ -1,3 +1,3 @@
-import ShareMain from './ShareMain';
+import ShareEditor from './ShareEditor';
 
-export default ShareMain;
+export default ShareEditor;

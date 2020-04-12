@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import useContent from 'hooks/use-content';
 import { onlyAlpha } from 'utils/helpers';
 import logger from 'services/logger';
-import ShareMainView from './ShareMainView';
+import ShareEditorView from './ShareEditorView';
 
-const ShareMain = () => {
+const ShareEditor = ({ changePayload }) => {
   const { baseTags, shareNow: content } = useContent();
   const { topCities, unitedStates } = content;
   const defaultEndTag = '#USA';
 
   // Ensure cities data are supplied
   if (!baseTags || !topCities || !unitedStates) {
-    logger.error('Data for ShareMain does not exist');
+    logger.error('Data for ShareEditor does not exist');
     return null;
   }
 
@@ -28,9 +29,7 @@ const ShareMain = () => {
   const [selectedState, setSelectedState] = useState('');
   const [endTags, setEndTags] = useState('');
 
-  /**
-   * Updates the citiesMenu state
-   */
+  /** Updates the citiesMenu state */
   const updateCitiesMenu = () => {
     // If no state selected, use all cities
     if (!selectedState) {
@@ -46,9 +45,7 @@ const ShareMain = () => {
     setCitiesMenu(cities);
   };
 
-  /**
-   * Updates the endTags state
-   */
+  /** Updates the endTags state */
   const updateEndTags = () => {
     let updatedEndTags = defaultEndTag;
 
@@ -61,12 +58,22 @@ const ShareMain = () => {
     setEndTags(updatedEndTags);
   };
 
+  /** Helper that assembles final string to be shared */
+  const preparePayload = () => {
+    return `${baseTags} ${endTags}`;
+  };
+
   // Initialization
   useEffect(() => updateCitiesMenu(), []);
 
   // Trigger updates based on selection changes
   useEffect(updateCitiesMenu, [selectedState]);
   useEffect(updateEndTags, [selectedCity, selectedState]);
+
+  // Trigger payload update whenever anything relevant changes
+  useEffect(() => {
+    changePayload(preparePayload());
+  }, [endTags]);
 
   // Event: handle city selection
   const handleChangeCity = (city) => {
@@ -100,7 +107,7 @@ const ShareMain = () => {
   };
 
   return (
-    <ShareMainView
+    <ShareEditorView
       statesMenu={statesOnlyAlpha}
       citiesMenu={citiesMenu}
       selectedCity={selectedCity}
@@ -113,4 +120,8 @@ const ShareMain = () => {
   );
 };
 
-export default ShareMain;
+ShareEditor.propTypes = {
+  changePayload: PropTypes.func.isRequired,
+};
+
+export default ShareEditor;
