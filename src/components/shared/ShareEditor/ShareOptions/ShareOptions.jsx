@@ -3,6 +3,7 @@ import shareEditorOptionsType from 'types/share-editor-options';
 import shareEditorActionsType from 'types/share-editor-actions';
 import CitySelect from './CitySelect';
 import StateSelect from './StateSelect';
+import PosterSelect from './PosterSelect';
 import './ShareOptions.scss';
 
 const ShareOptions = ({ options, actions }) => {
@@ -10,9 +11,14 @@ const ShareOptions = ({ options, actions }) => {
   const { selectedPoster, selectedCity, selectedState } = options;
   const { changePoster, changeCity, changeState } = actions;
 
+  const sn = {
+    options: 'options',
+    item: 'item',
+  };
+
   // State dropdown
   const stateSelect = !statesMenu.length ? null : (
-    <div styleName="options__item">
+    <div styleName={sn.optionsItem}>
       <StateSelect
         menu={statesMenu}
         value={selectedState}
@@ -23,7 +29,7 @@ const ShareOptions = ({ options, actions }) => {
 
   // City dropdown
   const citySelect = !citiesMenu.length ? null : (
-    <div styleName="options__item">
+    <div styleName={sn.optionsItem}>
       <CitySelect
         menu={citiesMenu}
         value={selectedCity}
@@ -32,10 +38,18 @@ const ShareOptions = ({ options, actions }) => {
     </div>
   );
 
+  // Poster selection
+  const posterSelect = (
+    <div stylename={sn.optionsItem}>
+      <PosterSelect value={selectedPoster} change={changePoster} />
+    </div>
+  );
+
   return (
-    <div styleName="options">
+    <div styleName={sn.options}>
       {stateSelect}
       {citySelect}
+      {posterSelect}
     </div>
   );
 };
