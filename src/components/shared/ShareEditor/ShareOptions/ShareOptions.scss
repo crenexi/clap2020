@@ -2,9 +2,34 @@
 
 .options {
   display: grid;
-  padding: spacing(md);
+  padding: spacing(sm) spacing(md) spacing(lg);
 }
 
-.item:not(:first-child) {
+// Section layout & header
+
+.section {
+  &:not(:first-child) {
+    margin-top: spacing(lg);
+  }
+}
+
+.section__heading {
+  padding: 7px;
+  background-color: theme(cloud, dark1);
+  color: rgba(theme(ocean, dark2), .75);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .85rem;
+  line-height: 1.1rem;
+}
+
+.section__main {
+  margin-top: spacing(md);
+}
+
+// Items
+
+.section__item:not(:first-child) {
   margin-top: spacing(sm);
 }
