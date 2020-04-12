@@ -20,7 +20,10 @@
 .grid__primary-item {
   @include flex-column(center, center);
   flex-grow: 1;
-  padding: spacing(xs) 0;
+
+  &:not(:first-child) {
+    padding-top: spacing(xs);
+  }
 }
 
 .grid__primary-label {
