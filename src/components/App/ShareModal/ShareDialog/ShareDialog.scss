@@ -1,5 +1,7 @@
 @import '~scss/utils';
 
+// Header
+
 .header {
   display: grid;
   grid-template-columns: auto min-content;
@@ -31,4 +33,12 @@
   .header {
     padding: spacing(md);
   }
+}
+
+// Actions
+
+.actions {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid theme(cloud, dark2);
 }
