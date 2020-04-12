@@ -2,35 +2,34 @@
 
 .preview {
   @include flex-row(flex-start, center);
-  padding: spacing(sm) spacing(xs);
 }
 
 // Poster preview
 
 .poster {
-  @include flex-column(center, center);
-  @include size(3rem);
-  background-color: rgba(0, 0, 0, .25);
-  border-radius: border-radius(sharp);
+  width: 3.5rem;
+  @include flex-column(center, flex-start);
+  margin-right: spacing(xs);
 }
 
-.poster__preview {
-  color: rgba(0, 0, 0, .5);
+.poster__thumb {
+  @include size(2.5rem);
+  padding: 5px;
 }
 
 // Tags styling
 
 .tags {
   @include flex-column(center, flex-start);
-  color: #fff;
-  font-family: font-family(primary);
-  font-weight: 400;
+  color: #000;
+  font-family: font-family(content);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25em;
 }
 
 .tags__base {
-  font-size: 1rem;
 }
 
 .tags__end {
-  font-size: 1rem;
 }

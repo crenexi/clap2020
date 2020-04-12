@@ -11,7 +11,7 @@ const ShareEditorView = (props) => {
 
   return (
     <div styleName="editor">
-      <div styleName="editor__result">
+      <div styleName="editor__preview">
         <SharePreview baseTags={baseTags} endTags={endTags} />
       </div>
       <div styleName="editor__options">

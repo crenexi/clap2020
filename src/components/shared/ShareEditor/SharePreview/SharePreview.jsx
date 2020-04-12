@@ -5,9 +5,7 @@ import './SharePreview.scss';
 const SharePreview = ({ baseTags, endTags }) => (
   <div styleName="preview">
     <div styleName="poster">
-      <div styleName="poster__preview">
-        Poster
-      </div>
+      <div styleName="poster__thumb" />
     </div>
     <div styleName="tags">
       <div styleName="tags__base">{baseTags}</div>
