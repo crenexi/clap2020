@@ -24,6 +24,7 @@
 .header__logo-aside {
   @include position(absolute, 0 0 null 0);
   z-index: 2;
+  pointer-events: none;
   @include flex-row(center, center);
   height: ui-layout(headerHeightSm);
   background-color: #fff;
