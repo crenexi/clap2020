@@ -1,6 +1,6 @@
 import React from 'react';
 // import useContent from 'hooks/use-content';
-import ShareNow from 'components/shared/ShareNow';
+import ShareInviteCard from 'components/shared/ShareInviteCard';
 import './AboveTheFold.scss';
 
 const AboveTheFold = () => {
@@ -9,7 +9,7 @@ const AboveTheFold = () => {
 
   return (
     <div styleName="atf">
-      <ShareNow />
+      <ShareInviteCard />
     </div>
   );
 };

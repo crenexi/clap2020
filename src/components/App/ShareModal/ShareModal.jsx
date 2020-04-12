@@ -7,7 +7,7 @@ import ShareDialog from './ShareDialog';
 const SHARE_MODAL = 'SHARE_MODAL';
 
 const ShareModal = () => {
-  const { activeModal, openModal, closeModal } = useModal();
+  const { activeModal, closeModal } = useModal();
 
   // State
   const open = activeModal === SHARE_MODAL;
@@ -30,30 +30,3 @@ const ShareModal = () => {
 };
 
 export default ShareModal;
-
-const ShareInviteCard = () => {
-
-  const mainComponent = (
-    <ShareMain
-      changePayload={handleChangePayload}
-    />
-  );
-
-  const actionsComponent = (
-    <ShareButtons share={handleShare} copy={handleCopy} />
-  );
-
-  return (
-    <div styleName="card">
-      <Button variant="primary" click={handleOpenDialog}>Share Now</Button>
-      <ShareDialog
-        open={dialogOpen}
-        onClose={handleCloseDialog}
-        mainComponent={mainComponent}
-        actionsComponent={actionsComponent}
-      />
-    </div>
-  );
-};
-
-export default ShareInviteCard;

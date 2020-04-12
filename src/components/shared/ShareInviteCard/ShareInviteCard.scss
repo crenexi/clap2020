@@ -3,7 +3,13 @@
 .card {
   width: 50rem;
   max-width: 100%;
+  background-color: #fff;
   border-radius: border-radius(sharp);
   box-shadow: shadow(24);
   overflow: hidden;
+}
+
+.actions {
+  @include flex-row(center, center);
+  padding: spacing(md);
 }
