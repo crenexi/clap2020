@@ -10,6 +10,7 @@ const ShareButtonsGridView = ({ buttons }) => {
     grid: 'grid',
     gridPrimary: 'grid__primary',
     gridPrimaryItem: 'grid__primary-item',
+    gridPrimaryLabel: 'grid__primary-label',
     gridSocial: 'grid__social',
     gridSocialItem: 'grid__social-item',
   };
@@ -28,9 +29,15 @@ const ShareButtonsGridView = ({ buttons }) => {
         <div styleName={sn.gridSocialItem}>{buttons.email}</div>
       </div>
       <div styleName={sn.gridPrimary}>
-        <div styleName={sn.gridPrimaryItem}>{buttons.copy}</div>
+        <div styleName={sn.gridPrimaryItem}>
+          <h6 styleName={sn.gridPrimaryLabel}>Copy</h6>
+          {buttons.copy}
+        </div>
         {isMobile && (
-          <div styleName={sn.gridPrimaryItem}>{buttons.share}</div>
+          <div styleName={sn.gridPrimaryItem}>
+            <h6 styleName={sn.gridPrimaryLabel}>Choose</h6>
+            {buttons.share}
+          </div>
         )}
       </div>
     </div>

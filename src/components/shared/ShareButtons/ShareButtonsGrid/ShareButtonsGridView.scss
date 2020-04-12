@@ -2,8 +2,9 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: auto min-content;
   width: 100%;
+  padding: spacing(xs) spacing(sm);
 }
 
 // Primary area
@@ -11,10 +12,19 @@
 .grid__primary {
   display: flex;
   flex-direction: column;
+  margin-left: spacing(md);
+  padding: 0 spacing(xs) 0 spacing(md);
+  border-left: 1px solid theme(cloud, dark2);
 }
 
 .grid__primary-item {
-  flex: 1 1 50%;
+  @include flex-column(center, center);
+  flex-grow: 1;
+  padding: spacing(xs) 0;
+}
+
+.grid__primary-label {
+  margin-bottom: spacing(2xs);
 }
 
 // Social area
@@ -22,33 +32,55 @@
 .grid__social {
   display: flex;
   flex-wrap: wrap;
+  margin: -(spacing(2xs));
 }
 
 .grid__social-item {
   flex: 1 1 50%;
   display: grid;
   place-items: stretch;
+  padding: spacing(2xs);
 }
 
+@include breakpoint('gt-xs') {
+  .grid__social-item {
+    flex: 1 1 33.3333%;
+  }
+}
+
+// Button specifics
+
 @mixin share-btn-theme($platform) {
-  background: color(platform, $platform);
   background: color(platformGradient, $platform);
 
-  // .c2-share-btn-label {
-  // }
-
-  // &:hover {
-  // }
+  &::before {
+    border-color: color(platform, $platform);
+  }
 }
 
 :global {
   .MuiButtonBase-root.c2-share-btn {
+    position: relative;
     @include size(100%);
-    border-radius: 5px;
     border: none;
+    box-shadow: shadow(2);
+
+    &::before {
+      @include position(absolute, -5px null null -5px);
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      border: 3px solid theme(ocean, light2);
+      border-radius: border-radius(normal);
+      opacity: 0;
+    };
 
     &:hover {
       border: none;
+      box-shadow: shadow(4);
+
+      &::before {
+        opacity: 1;
+      }
     }
 
     .c2-share-btn-label {
@@ -73,21 +105,38 @@
       );
     }
 
-    &--copy,
-    &--share {
-      border: 3px solid theme(ocean, light2);
-
-      .c2-share-btn-label {
-        color: theme(ocean, light2);
+    @include breakpoint('gt-xs') {
+      &::before {
+        content: '';
       }
 
       &:hover {
-        background: theme(ocean, base);
-        background: linear-gradient(
-          135deg,
-          theme(ocean, base),
-          theme(blueRose, base),
-        );
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .MuiButtonBase-root.c2-icon-button.c2-share-btn {
+    @include size(3.5rem);
+    background: theme(ocean, base);
+    background: linear-gradient(
+      135deg,
+      theme(ocean, base),
+      theme(blueRose, base),
+    );
+
+    &::before {
+      border-radius: 50%;
+    }
+
+    .c2-share-btn-label {
+      @include flex-column(center, center);
+      font-size: 1.5rem;
+    }
+
+    &--share {
+      .c2-share-btn-label {
+        margin-left: -3px;
       }
     }
   }
