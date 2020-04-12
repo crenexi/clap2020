@@ -23,6 +23,7 @@ const ShareDialog = (props) => {
       fullScreen={!isGtSm}
       fullWidth
       open={open}
+      onClose={close}
       TransitionComponent={Transition}
     >
       <div styleName="header">
