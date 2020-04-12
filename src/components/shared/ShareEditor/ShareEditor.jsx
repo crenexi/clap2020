@@ -25,6 +25,7 @@ const ShareEditor = ({ changePayload }) => {
 
   // State
   const [citiesMenu, setCitiesMenu] = useState([]);
+  const [selectedPoster, setSelectedPoster] = useState('square');
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedState, setSelectedState] = useState('');
   const [endTags, setEndTags] = useState('');
@@ -75,6 +76,11 @@ const ShareEditor = ({ changePayload }) => {
     changePayload(preparePayload());
   }, [endTags]);
 
+  // Event: handle change poster
+  const handleChangePoster = (poster) => {
+    setSelectedPoster(poster);
+  };
+
   // Event: handle city selection
   const handleChangeCity = (city) => {
     setSelectedCity(city);
@@ -108,14 +114,22 @@ const ShareEditor = ({ changePayload }) => {
 
   return (
     <ShareEditorView
-      statesMenu={statesOnlyAlpha}
-      citiesMenu={citiesMenu}
-      selectedCity={selectedCity}
-      selectedState={selectedState}
-      changeCity={handleChangeCity}
-      changeState={handleChangeState}
-      baseTags={baseTags}
-      endTags={endTags}
+      tags={{
+        baseTags,
+        endTags,
+      }}
+      options={{
+        selectedPoster,
+        selectedCity,
+        selectedState,
+        citiesMenu,
+        statesMenu: statesOnlyAlpha,
+      }}
+      actions={{
+        changePoster: handleChangePoster,
+        changeCity: handleChangeCity,
+        changeState: handleChangeState,
+      }}
     />
   );
 };

@@ -1,12 +1,14 @@
 import React from 'react';
-import PropTypes, { arrayOf } from 'prop-types';
+import shareEditorOptionsType from 'types/share-editor-options';
+import shareEditorActionsType from 'types/share-editor-actions';
 import CitySelect from './CitySelect';
 import StateSelect from './StateSelect';
 import './ShareOptions.scss';
 
-const ShareOptions = (props) => {
-  const { statesMenu, citiesMenu, selectedCity, selectedState } = props;
-  const { changeCity, changeState } = props;
+const ShareOptions = ({ options, actions }) => {
+  const { statesMenu, citiesMenu } = options;
+  const { selectedPoster, selectedCity, selectedState } = options;
+  const { changePoster, changeCity, changeState } = actions;
 
   // State dropdown
   const stateSelect = !statesMenu.length ? null : (
@@ -39,12 +41,8 @@ const ShareOptions = (props) => {
 };
 
 ShareOptions.propTypes = {
-  statesMenu: arrayOf(PropTypes.string).isRequired,
-  citiesMenu: arrayOf(PropTypes.string).isRequired,
-  selectedCity: PropTypes.string.isRequired,
-  selectedState: PropTypes.string.isRequired,
-  changeCity: PropTypes.func.isRequired,
-  changeState: PropTypes.func.isRequired,
+  options: shareEditorOptionsType.isRequired,
+  actions: shareEditorActionsType.isRequired,
 };
 
 export default ShareOptions;

@@ -1,42 +1,26 @@
 import React from 'react';
-import PropTypes, { arrayOf } from 'prop-types';
+import shareEditorTagsType from 'types/share-editor-tags';
+import shareEditorOptionsType from 'types/share-editor-options';
+import shareEditorActionsType from 'types/share-editor-actions';
 import SharePreview from './SharePreview';
 import ShareOptions from './ShareOptions';
 import './ShareEditorView.scss';
 
-const ShareEditorView = (props) => {
-  const { statesMenu, citiesMenu, selectedCity, selectedState } = props;
-  const { changeCity, changeState } = props;
-  const { baseTags, endTags } = props;
-
-  return (
-    <div styleName="editor">
-      <div styleName="editor__preview">
-        <SharePreview baseTags={baseTags} endTags={endTags} />
-      </div>
-      <div styleName="editor__options">
-        <ShareOptions
-          statesMenu={statesMenu}
-          citiesMenu={citiesMenu}
-          selectedCity={selectedCity}
-          selectedState={selectedState}
-          changeCity={changeCity}
-          changeState={changeState}
-        />
-      </div>
+const ShareEditorView = ({ tags, options, actions }) => (
+  <div styleName="editor">
+    <div styleName="editor__preview">
+      <SharePreview tags={tags} />
     </div>
-  );
-};
+    <div styleName="editor__options">
+      <ShareOptions options={options} actions={actions} />
+    </div>
+  </div>
+);
 
 ShareEditorView.propTypes = {
-  statesMenu: arrayOf(PropTypes.string).isRequired,
-  citiesMenu: arrayOf(PropTypes.string).isRequired,
-  selectedCity: PropTypes.string.isRequired,
-  selectedState: PropTypes.string.isRequired,
-  changeCity: PropTypes.func.isRequired,
-  changeState: PropTypes.func.isRequired,
-  baseTags: PropTypes.string.isRequired,
-  endTags: PropTypes.string.isRequired,
+  tags: shareEditorTagsType.isRequired,
+  options: shareEditorOptionsType.isRequired,
+  actions: shareEditorActionsType.isRequired,
 };
 
 export default ShareEditorView;
