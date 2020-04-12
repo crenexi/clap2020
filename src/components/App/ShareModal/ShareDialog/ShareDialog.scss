@@ -7,8 +7,8 @@
   grid-template-columns: auto min-content;
   place-items: center start;
   padding: spacing(xs);
-  @include gradient(theme(blueRose, dark1), theme(blueRose, light1));
-  color: #fff;
+  background-color: #fff;
+  box-shadow: shadow(2);
 }
 
 .header__title-group {
@@ -16,13 +16,17 @@
 }
 
 .header__title {
+  color: theme(ocean, dark1);
+  text-transform: uppercase;
   line-height: 1em;
+  font-weight: 700;
 }
 
 .header__subtitle {
-  margin-top: spacing(2xs);
-  color: rgba(255, 255, 255, .5);
+  font-family: font-family(primary);
+  color: theme(ocean, base);
   line-height: 1.2em;
+  font-size: 1.2rem;
 }
 
 .header__close {
