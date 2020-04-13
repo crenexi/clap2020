@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes, { oneOf, shape } from 'prop-types';
+import classNames from 'classnames';
 import { IconButton as MuiIconButton } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import FaIcon from '../FaIcon';
@@ -10,10 +11,10 @@ const IconButton = (props) => {
   const { variant, icon, size, disabled, label } = props;
 
   // Class for label
-  const wrapperClass = (() => {
-    const base = 'wrapper__label';
-    return size === 'small' ? `${base} ${base}--small` : base;
-  })();
+  const wrapperLabelClass = classNames('wrapper__label', {
+    'wrapper__label--light': variant === 'inverted' || variant === 'white',
+    'wrapper__label--small': size === 'small',
+  });
 
   // Classes for MUI component
   const buttonClasses = (() => {
@@ -58,7 +59,7 @@ const IconButton = (props) => {
   return (
     <div styleName="wrapper">
       {button}
-      <div styleName={wrapperClass}>{label}</div>
+      <div styleName={wrapperLabelClass}>{label}</div>
     </div>
   );
 };
