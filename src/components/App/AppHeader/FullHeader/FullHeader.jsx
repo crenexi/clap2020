@@ -1,13 +1,15 @@
 import React from 'react';
 import useContent from 'hooks/use-content';
 import useWindowHeight from 'hooks/use-window-height';
+import useBreakpoint from 'hooks/use-breakpoint';
 import scrollService from 'services/scroll-service';
 import { userAgent } from 'utils/helpers';
-import FullHeaderView from './FullHeaderView';
+import FullHeaderNarrow from './FullHeaderNarrow';
+import FullHeaderWide from './FullHeaderWide';
+import './FullHeader.scss';
 
 const FullHeader = () => {
-  const { fullHeader: content } = useContent();
-  const { coverUrl } = content;
+  const isGtSm = useBreakpoint('gt-sm');
 
   // Non-ideal solution for getting full height of client;
   // I really don't know what the best solution is
@@ -20,16 +22,29 @@ const FullHeader = () => {
     return !windowHeight ? '100vh' : `${windowHeight}px`;
   })();
 
+  // Get content
+  const { aboveTheFold: content, baseTags } = useContent();
+
+  // Event: scroll to ThreeSteps
   const handleDownClick = () => {
     scrollService.scrollToElement('threeSteps');
   };
 
   return (
-    <FullHeaderView
-      minHeight={minHeight}
-      coverUrl={coverUrl}
-      downClick={handleDownClick}
-    />
+    <div styleName="header-frame" style={{ minHeight }}>
+      {!isGtSm ? (
+        <FullHeaderNarrow
+          content={content}
+          baseTags={baseTags}
+        />
+      ) : (
+        <FullHeaderWide
+          content={content}
+          baseTags={baseTags}
+          downClick={handleDownClick}
+        />
+      )}
+    </div>
   );
 };
 

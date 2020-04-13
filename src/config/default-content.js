@@ -150,14 +150,20 @@ const defaultContent = {
       },
     },
   },
-  fullHeader: {
-    coverUrl: `${assetsPath}/covers/nurse.jpg`,
-  },
   aboveTheFold: {
     title: [
-      'Raise a thunderous applause',
-      'for the COVID-19 front lines',
-      'across the United States',
+      {
+        text: 'Raise a thunderous applause',
+        coverUrl: `${assetsPath}/covers/balconies.jpg`,
+      },
+      {
+        text: 'for the COVID-19 front lines',
+        coverUrl: `${assetsPath}/covers/nurse.jpg`,
+      },
+      {
+        text: 'across the United States',
+        coverUrl: `${assetsPath}/covers/usa-flag.jpg`,
+      },
     ],
     tagsPretext: 'Spread the word with',
     subtitle: 'Clap at your doorstep for three minutes for doctors, nurses, first responders, essential workers, and the nation.',

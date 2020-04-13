@@ -1,0 +1,59 @@
+@import '~scss/utils';
+
+.header {
+  background-color: red;
+}
+
+// Section
+
+.section {
+  width: 100%;
+}
+
+.section__main {
+  width: 100%;
+}
+
+// Title
+
+.title {
+  width: 100%;
+
+  &--1 {
+    width: 100%;
+  }
+
+  &--2 {
+    width: 100%;
+  }
+
+  &--3 {
+    width: 100%;
+  }
+}
+
+// Subtitle
+
+.subtitle {
+  width: 100%;
+}
+
+// Hashtags
+
+.tags {
+  width: 100%;
+}
+
+.tags__pretext {
+  width: 100%;
+}
+
+.tags__text {
+  width: 100%;
+}
+
+// Share invitation card
+
+.share-invite {
+  width: 100%;
+}
