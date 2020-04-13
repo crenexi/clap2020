@@ -12,12 +12,18 @@ const FullHeaderSection = (props) => {
     children,
   } = props;
 
+  const blend = {
+    color: blanketColor,
+    mode: 'color',
+  };
+
   return (
     <div styleName="section" style={{ minHeight }}>
       <BgCover
         url={coverUrl}
         imagePosition={coverPosition}
         blanketColor={blanketColor}
+        blend={blend}
       >
         <div styleName="section__main">{children}</div>
       </BgCover>

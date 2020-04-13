@@ -158,7 +158,7 @@ const defaultContent = {
     },
     title: [
       {
-        coverUrl: `${assetsPath}/covers/balconies.jpg`,
+        coverUrl: `${assetsPath}/covers/woman-mask.jpg`,
         text: 'Raise a thunderous applause',
       },
       {
@@ -171,7 +171,7 @@ const defaultContent = {
       },
     ],
     subtitle: {
-      coverUrl: '',
+      coverUrl: `${assetsPath}/covers/urban-lights.jpg`,
       text: 'Clap at your doorstep for three minutes for doctors, nurses, first responders, essential workers, and the nation.',
       tagsPretext: 'Spread the word with',
     },

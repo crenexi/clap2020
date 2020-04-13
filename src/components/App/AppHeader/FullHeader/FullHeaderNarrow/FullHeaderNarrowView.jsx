@@ -12,8 +12,8 @@ const FullHeaderNarrowView = (props) => {
     <FullHeaderSection
       minHeight={minSectionHeight}
       coverUrl={title1.coverUrl}
-      coverPosition="center center"
-      blanketColor="rgba(0, 0, 0, .5)"
+      coverPosition="13% center"
+      blanketColor="rgba(5, 25, 65, .5)"
     >
       <div styleName="title title--1">{title1.text}</div>
     </FullHeaderSection>
@@ -23,8 +23,8 @@ const FullHeaderNarrowView = (props) => {
     <FullHeaderSection
       minHeight={minSectionHeight}
       coverUrl={title2.coverUrl}
-      coverPosition="center center"
-      blanketColor="rgba(0, 0, 0, .5)"
+      coverPosition="75% top"
+      blanketColor="rgba(5, 25, 65, .8)"
     >
       <div styleName="title title--2">{title2.text}</div>
       {/* <ATFDateText content={dateText} /> */}
@@ -35,8 +35,8 @@ const FullHeaderNarrowView = (props) => {
     <FullHeaderSection
       minHeight={minSectionHeight}
       coverUrl={title3.coverUrl}
-      coverPosition="center center"
-      blanketColor="rgba(0, 0, 0, .5)"
+      coverPosition="left center"
+      blanketColor="rgba(5, 25, 65, .85)"
     >
       <div styleName="title title--3">{title3.text}</div>
     </FullHeaderSection>
@@ -46,8 +46,8 @@ const FullHeaderNarrowView = (props) => {
     <FullHeaderSection
       minHeight={minSectionHeight}
       coverUrl={subtitle.coverUrl}
-      coverPosition="center center"
-      blanketColor="rgba(0, 0, 0, .5)"
+      coverPosition="center bottom"
+      blanketColor="rgba(5, 25, 65, .75)"
     >
       <div styleName="subtitle">{subtitle.text}</div>
       <div styleName="tags">
