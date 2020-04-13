@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
   formHelperText: {
     margin: '3px 0 0 0',
-    color: 'rgba(0, 0, 0, .5)',
+    color: 'rgba(0, 0, 0, .65)',
     '&:not(:first-child)': {
       marginTop: '3px',
     },

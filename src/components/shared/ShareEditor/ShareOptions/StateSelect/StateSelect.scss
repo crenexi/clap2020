@@ -7,7 +7,7 @@
 // State item
 
 .state {
-  @include flex-row(center, center);
+  @include flex-row(flex-start, center);
   text-align: left;
 }
 

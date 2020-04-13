@@ -13,6 +13,8 @@ const useStyles = makeStyles({
 });
 
 const CitySelect = (props) => {
+  const helperText = 'Add city hashtag (optional)';
+
   const { menu, value, change } = props;
   const classes = useStyles();
   const isGtXs = useBreakpoint('gt-xs');
@@ -35,8 +37,8 @@ const CitySelect = (props) => {
   const controlProps = {
     value,
     classes,
+    helperText,
     label: 'City',
-    helperText: 'Add city hashtag',
     change: handleChange,
   };
 

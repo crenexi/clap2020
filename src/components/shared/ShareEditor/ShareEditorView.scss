@@ -23,6 +23,10 @@
 }
 
 @include breakpoint('gt-xs') {
+  .editor {
+    padding: spacing(md);
+  }
+
   .editor__preview {
     position: inherit;
     margin-left: 0;

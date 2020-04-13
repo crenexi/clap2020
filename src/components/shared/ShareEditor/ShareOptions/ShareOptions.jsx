@@ -38,17 +38,13 @@ const ShareOptions = ({ options, actions }) => {
     <div styleName="options">
       <div styleName="section">
         <div styleName="section__heading">Poster Format</div>
-        <div styleName="section__main">
-          <div styleName="section__item">{posterSelect}</div>
-        </div>
+        <div styleName="section__main">{posterSelect}</div>
       </div>
       <div styleName="section">
         <div styleName="section__heading">Location Hashtags</div>
         <div styleName="section__main">
-          <div styleName="section__item">
+          <div styleName="section__row">
             {!statesMenu.length ? null : stateSelect}
-          </div>
-          <div styleName="section__item">
             {!citiesMenu.length ? null : citySelect}
           </div>
         </div>

@@ -1,8 +1,11 @@
 @import '~scss/utils';
 
 .options {
-  display: grid;
   padding: spacing(sm) spacing(md) spacing(lg);
+
+  @include breakpoint('gt-xs') {
+    padding: spacing(sm) 0 spacing(lg);
+  }
 }
 
 // Section layout & header
@@ -28,8 +31,24 @@
   margin-top: spacing(sm);
 }
 
-// Items
+.section__row {
+  display: grid;
+  grid-gap: spacing(sm);
+}
 
-.section__item:not(:first-child) {
-  margin-top: spacing(sm);
+@include breakpoint('gt-xs') {
+  .section {
+    &:not(:first-child) {
+      margin-top: spacing(xl);
+    }
+  }
+
+  .section__main {
+    margin-top: spacing(md);
+  }
+
+  .section__row {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: spacing(xl);
+  }
 }

@@ -13,6 +13,8 @@ const useStyles = makeStyles({
 });
 
 const StateSelect = (props) => {
+  const helperText = 'Add state hashtag (optional)';
+
   const { menu, value, change } = props;
   const classes = useStyles();
   const assetsPath = process.env.ASSETS_PATH;
@@ -46,8 +48,8 @@ const StateSelect = (props) => {
   const controlProps = {
     value,
     classes,
+    helperText,
     label: 'State',
-    helperText: 'Add state hashtag',
     change: handleChange,
   };
 

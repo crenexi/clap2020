@@ -13,6 +13,9 @@ const SharePreview = ({ tags, poster }) => {
   const thumbUrl = !posterData ? '' : posterData.thumbUrl;
   const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
 
+  // Top styleName depends if there's a poster or not
+  const styleName = thumbUrl ? 'preview preview--has-thumb' : 'preview';
+
   const posterPreview = (
     <div styleName="poster">
       <div styleName="poster__thumb" style={thumbStyle} />
@@ -20,7 +23,7 @@ const SharePreview = ({ tags, poster }) => {
   );
 
   return (
-    <div styleName="preview">
+    <div styleName={styleName}>
       {poster && posterPreview}
       <div styleName="tags">
         <div styleName="tags__base">{baseTags}</div>

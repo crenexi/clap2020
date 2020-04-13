@@ -6,8 +6,11 @@ $preview-height-md: 7.5rem;
 
 .preview {
   display: grid;
-  grid-template-columns: min-content auto;
   min-height: $preview-height-xs;
+
+  &--has-thumb {
+    grid-template-columns: min-content auto;
+  }
 }
 
 .poster {
@@ -52,6 +55,10 @@ $preview-height-md: 7.5rem;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25em;
+}
+
+.preview:not(.preview--has-thumbs) .tags {
+  padding-left: spacing(md);
 }
 
 @include breakpoint('gt-xs') {
