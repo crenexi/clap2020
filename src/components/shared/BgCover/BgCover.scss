@@ -7,7 +7,8 @@
 
 .frame__cover,
 .frame__cover-image,
-.frame__cover-blanket {
+.frame__cover-blanket,
+.frame__cover-blend {
   @include size(100%);
 }
 
@@ -17,7 +18,8 @@
 }
 
 .frame__cover-image,
-.frame__cover-blanket {
+.frame__cover-blanket,
+.frame__cover-blend {
   @include position(absolute, 0 0 0 0);
 }
 
@@ -26,6 +28,12 @@
 
   &--animate {
     animation: zoom-pace 25s cubic-bezier(.2, 0, .8, 1) infinite;
+  }
+}
+
+@supports not (mix-blend-mode: multiply) {
+  .frame__cover-blend {
+    display: none;
   }
 }
 
