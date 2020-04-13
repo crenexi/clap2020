@@ -1,17 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import fullHeaderType from 'types/full-header';
-import BrandLogo from 'components/shared/BrandLogo';
-import IconButton from 'components/shared/IconButton';
-import IconParade from './IconParade';
+import useBreakpoint from 'hooks/use-breakpoint';
+// import useContent from 'hooks/use-content';
+// import scrollService from 'services/scroll-service';
+// import BrandLogo from 'components/shared/BrandLogo';
+// import IconButton from 'components/shared/IconButton';
+// import IconParade from './IconParade';
 import './FullHeaderWide.scss';
 
-const FullHeaderWide = (props) => {
-  const { content, baseTags, downClick } = props;
+const FullHeaderWide = () => {
+  // const { fullHeader: content, baseTags } = useContent();
+
+  // Event: scroll to ThreeSteps
+  // const handleDownClick = () => {
+  //   scrollService.scrollToElement('threeSteps');
+  // };
+
+  // Only render on large
+  const isGtSm = useBreakpoint('gt-sm');
+  if (!isGtSm) return null;
 
   return (
     <article styleName="header">
-      <section styleName="header__logo-aside">
+      Header Wide
+      {/* <section styleName="header__logo-aside">
         <div styleName="header__logo">
           <BrandLogo variant="main" />
         </div>
@@ -24,18 +35,12 @@ const FullHeaderWide = (props) => {
         <IconButton
           icon="arrow-alt-down"
           label="3 Simple Steps"
-          click={downClick}
+          click={handleDownClick}
         />
       </aside>
-      <IconParade />
+      <IconParade /> */}
     </article>
   );
-};
-
-FullHeaderWide.propTypes = {
-  content: fullHeaderType.isRequired,
-  baseTags: PropTypes.string.isRequired,
-  downClick: PropTypes.func.isRequired,
 };
 
 export default FullHeaderWide;

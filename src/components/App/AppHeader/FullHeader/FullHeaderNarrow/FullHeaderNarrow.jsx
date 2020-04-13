@@ -1,50 +1,36 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import fullHeaderType from 'types/full-header';
-// import BrandLogo from 'components/shared/BrandLogo';
-import './FullHeaderNarrow.scss';
+import useBreakpoint from 'hooks/use-breakpoint';
+import useWindowHeight from 'hooks/use-window-height';
+import useContent from 'hooks/use-content';
+import { userAgent } from 'utils/helpers';
+import FullHeaderNarrowView from './FullHeaderNarrowView';
 
-const FullHeaderNarrow = ({ content, baseTags }) => {
-  const { title, tagsPretext, subtitle } = content;
-  const [title1, title2, title3] = title;
+const FullHeaderNarrow = () => {
+  // Non-ideal solution for getting full height of client;
+  // I really don't know what the best solution is
+  const windowHeight = useWindowHeight();
+  const minHeight = (() => {
+    // For Android, subtract 56px
+    if (userAgent.isAndroid()) return 'calc(100vh - 56px)';
+    return !windowHeight ? '100vh' : `${windowHeight}px`;
+  })();
+
+  // Get header content
+  const { fullHeader: content, baseTags } = useContent();
+  const { title, subtitle } = content;
+
+  // Only render on small
+  const isGtSm = useBreakpoint('gt-sm');
+  if (isGtSm) return null;
 
   return (
-    <article styleName="header">
-      <section styleName="section">
-        <div styleName="section__main">
-          <div styleName="title title--1">{title1}</div>
-          {/* <ATFDateText content={dateText} /> */}
-        </div>
-      </section>
-      <section styleName="section">
-        <div styleName="section__main">
-          <div styleName="title title--2">{title2}</div>
-        </div>
-      </section>
-      <section styleName="section">
-        <div styleName="section__main">
-          <div styleName="title title--3">{title3}</div>
-        </div>
-      </section>
-      <section styleName="section">
-        <div styleName="section__main">
-          <div styleName="subtitle">{subtitle}</div>
-          <div styleName="tags">
-            <div styleName="tags__pretext">{tagsPretext}</div>
-            <div styleName="tags__text">{baseTags}</div>
-          </div>
-          <div styleName="share-invite">
-            {/* <ShareInviteCard /> */}
-          </div>
-        </div>
-      </section>
-    </article>
+    <FullHeaderNarrowView
+      minSectionHeight={minHeight}
+      baseTags={baseTags}
+      title={title}
+      subtitle={subtitle}
+    />
   );
-};
-
-FullHeaderNarrow.propTypes = {
-  content: fullHeaderType.isRequired,
-  baseTags: PropTypes.string.isRequired,
 };
 
 export default FullHeaderNarrow;

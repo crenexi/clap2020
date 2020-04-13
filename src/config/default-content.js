@@ -150,27 +150,30 @@ const defaultContent = {
       },
     },
   },
-  aboveTheFold: {
-    title: [
-      {
-        text: 'Raise a thunderous applause',
-        coverUrl: `${assetsPath}/covers/balconies.jpg`,
-      },
-      {
-        text: 'for the COVID-19 front lines',
-        coverUrl: `${assetsPath}/covers/nurse.jpg`,
-      },
-      {
-        text: 'across the United States',
-        coverUrl: `${assetsPath}/covers/usa-flag.jpg`,
-      },
-    ],
-    tagsPretext: 'Spread the word with',
-    subtitle: 'Clap at your doorstep for three minutes for doctors, nurses, first responders, essential workers, and the nation.',
+  fullHeader: {
     dateText: {
       day: 'Thursday',
       date: 'April 30',
       time: '7:00 PM',
+    },
+    title: [
+      {
+        coverUrl: `${assetsPath}/covers/balconies.jpg`,
+        text: 'Raise a thunderous applause',
+      },
+      {
+        coverUrl: `${assetsPath}/covers/nurse.jpg`,
+        text: 'for the COVID-19 front lines',
+      },
+      {
+        coverUrl: `${assetsPath}/covers/usa-flag.jpg`,
+        text: 'across the United States',
+      },
+    ],
+    subtitle: {
+      coverUrl: '',
+      text: 'Clap at your doorstep for three minutes for doctors, nurses, first responders, essential workers, and the nation.',
+      tagsPretext: 'Spread the word with',
     },
   },
   shareNow: {
