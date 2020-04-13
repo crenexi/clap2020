@@ -2,8 +2,11 @@
 
 .section {
   position: relative;
+  z-index: 2;
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, .15);
 }
 
 .section__main {
-  width: 100%;
+  @include size(100%);
+  padding: layout(xs) layout(2xs);
 }

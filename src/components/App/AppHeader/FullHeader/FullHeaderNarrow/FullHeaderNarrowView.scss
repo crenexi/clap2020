@@ -1,25 +1,54 @@
 @import '~scss/utils';
 
 .header {
-  background-color: red;
+  color: #fff;
+}
+
+.section-group {
+  display: grid;
+  place-items: stretch;
+}
+
+.section-frame {
+  @include flex-column();
+  @include size(100%);
+
+  &__start {
+    flex: 1 1 0%;
+  }
+
+  &__end {
+    padding-top: spacing(sm);
+  }
 }
 
 // Title
 
 .title {
-  width: 100%;
+  @include flex-column(center, center);
+  @include size(100%);
 
   &--1 {
-    width: 100%;
+    justify-content: flex-end;
   }
 
   &--2 {
-    width: 100%;
+    justify-content: center;
   }
 
   &--3 {
-    width: 100%;
+    justify-content: flex-start;
   }
+}
+
+.title__text {
+  text-align: center;
+  letter-spacing: -.5px;
+  font-family: font-family(primary);
+  font-size: 1.9rem;
+  line-height: 1em;
+  font-weight: 700;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .3), 0 0 20px rgba(0, 0, 0, .5);
 }
 
 // Subtitle

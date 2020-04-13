@@ -5,7 +5,6 @@ import './FullHeaderSection.scss';
 
 const FullHeaderSection = (props) => {
   const {
-    minHeight,
     coverUrl,
     coverPosition,
     blanketColor,
@@ -18,7 +17,7 @@ const FullHeaderSection = (props) => {
   };
 
   return (
-    <div styleName="section" style={{ minHeight }}>
+    <div styleName="section">
       <BgCover
         url={coverUrl}
         imagePosition={coverPosition}
@@ -32,7 +31,6 @@ const FullHeaderSection = (props) => {
 };
 
 FullHeaderSection.propTypes = {
-  minHeight: PropTypes.string.isRequired,
   coverUrl: PropTypes.string.isRequired,
   coverPosition: PropTypes.string.isRequired,
   blanketColor: PropTypes.string.isRequired,

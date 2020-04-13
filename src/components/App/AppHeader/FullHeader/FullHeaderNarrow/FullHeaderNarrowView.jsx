@@ -1,71 +1,119 @@
 import React from 'react';
 import PropTypes, { arrayOf, shape } from 'prop-types';
+import * as Scroll from 'react-scroll';
+import scrollService from 'services/scroll-service';
+import IconButton from 'components/shared/IconButton';
 import FullHeaderSection from './FullHeaderSection';
 // import BrandLogo from 'components/shared/BrandLogo';
 import './FullHeaderNarrowView.scss';
 
 const FullHeaderNarrowView = (props) => {
+  const ScrollElement = Scroll.Element;
   const { minSectionHeight, baseTags, title, subtitle } = props;
   const [title1, title2, title3] = title;
 
+  // Event: scroll to ThreeSteps
+  const handleDownClick = (target) => {
+    scrollService.scrollToElement(target);
+  };
+
+  const sectionGroupStyle = { minHeight: minSectionHeight };
+
   const section1 = (
     <FullHeaderSection
-      minHeight={minSectionHeight}
       coverUrl={title1.coverUrl}
-      coverPosition="13% center"
+      coverPosition="13% 30%"
       blanketColor="rgba(5, 25, 65, .5)"
     >
-      <div styleName="title title--1">{title1.text}</div>
+      <div styleName="title title--1">
+        <div styleName="title__text">{title1.text}</div>
+      </div>
     </FullHeaderSection>
   );
 
   const section2 = (
     <FullHeaderSection
-      minHeight={minSectionHeight}
       coverUrl={title2.coverUrl}
       coverPosition="75% top"
       blanketColor="rgba(5, 25, 65, .8)"
     >
-      <div styleName="title title--2">{title2.text}</div>
+      <div styleName="title title--2">
+        <div styleName="title__text">{title2.text}</div>
+      </div>
       {/* <ATFDateText content={dateText} /> */}
     </FullHeaderSection>
   );
 
   const section3 = (
     <FullHeaderSection
-      minHeight={minSectionHeight}
       coverUrl={title3.coverUrl}
       coverPosition="left center"
       blanketColor="rgba(5, 25, 65, .85)"
     >
-      <div styleName="title title--3">{title3.text}</div>
+      <div styleName="section-frame">
+        <div styleName="section-frame__start">
+          <div styleName="title title--3">
+            <div styleName="title__text">{title3.text}</div>
+          </div>
+        </div>
+        <div styleName="section-frame__end">
+          <IconButton
+            variant="inverted"
+            icon="arrow-alt-down"
+            label="Join the Clap"
+            click={() => handleDownClick('headerPartTwo')}
+          />
+        </div>
+      </div>
     </FullHeaderSection>
   );
 
   const section4 = (
     <FullHeaderSection
-      minHeight={minSectionHeight}
       coverUrl={subtitle.coverUrl}
       coverPosition="center bottom"
       blanketColor="rgba(5, 25, 65, .75)"
     >
-      <div styleName="subtitle">{subtitle.text}</div>
-      <div styleName="tags">
-        <div styleName="tags__pretext">{subtitle.tagsPretext}</div>
-        <div styleName="tags__text">{baseTags}</div>
-      </div>
-      <div styleName="share-invite">
-        {/* <ShareInviteCard /> */}
+      <div styleName="section-frame">
+        <div styleName="section-frame__start">
+          <div styleName="subtitle">{subtitle.text}</div>
+          <div styleName="tags">
+            <div styleName="tags__pretext">{subtitle.tagsPretext}</div>
+            <div styleName="tags__text">{baseTags}</div>
+          </div>
+          <div styleName="share-invite">
+            {/* <ShareInviteCard /> */}
+          </div>
+        </div>
+        <div styleName="section-frame__end">
+          <IconButton
+            variant="inverted"
+            icon="arrow-alt-down"
+            label="3 Simple Steps"
+            click={() => handleDownClick('threeSteps')}
+          />
+        </div>
       </div>
     </FullHeaderSection>
   );
 
   return (
     <article styleName="header">
-      {section1}
-      {section2}
-      {section3}
-      {section4}
+      <div
+        styleName="section-group"
+        style={sectionGroupStyle}
+      >
+        {section1}
+        {section2}
+        {section3}
+      </div>
+      <ScrollElement
+        name="headerPartTwo"
+        styleName="section-group"
+        style={sectionGroupStyle}
+      >
+        {section4}
+      </ScrollElement>
     </article>
   );
 };
