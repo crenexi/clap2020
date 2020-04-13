@@ -4,7 +4,6 @@ import joinInviteType from 'types/join-invite';
 import FaIcon from 'components/shared/FaIcon';
 import Countdown from 'components/shared/Countdown';
 import './JoinInviteView.scss';
-import MaskIcon from './MaskIcon';
 
 const JoinInviteView = ({ content, hasCountdown }) => {
   const { preTitle, title, subtitle, dateText } = content;
@@ -12,7 +11,6 @@ const JoinInviteView = ({ content, hasCountdown }) => {
 
   return (
     <div styleName="join">
-      <MaskIcon />
       <div styleName="join__pre-title">{preTitle}</div>
       <h2 styleName="join__title">{title}</h2>
       <div styleName="join__subtitle">{subtitle}</div>
