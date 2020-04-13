@@ -21,3 +21,11 @@
 .editor__options {
   margin-top: spacing(xs);
 }
+
+@include breakpoint('gt-xs') {
+  .editor__preview {
+    position: inherit;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

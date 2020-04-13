@@ -1,22 +1,46 @@
 @import '~scss/utils';
 
+$preview-height-xs: 3.5rem;
+$preview-height-sm: 5rem;
+$preview-height-md: 7.5rem;
+
 .preview {
-  @include flex-row(flex-start, center);
+  display: grid;
+  grid-template-columns: min-content auto;
+  min-height: $preview-height-xs;
 }
 
-// Poster preview
-
 .poster {
-  width: 3.5rem;
+  @include size($preview-height-xs);
   @include flex-column(center, flex-start);
-  padding: 0 spacing(2xs) 0 2px;
+  margin: 0 spacing(2xs) 0 2px;
 }
 
 .poster__thumb {
-  @include size(3rem);
+  @include size(100%);
   @include bg-image(cover);
-  padding: 5px;
   border-radius: border-radius(sharp);
+}
+
+@include breakpoint('gt-xs') {
+  .preview {
+    place-items: center;
+    min-height: $preview-height-sm;
+  }
+
+  .poster {
+    @include size($preview-height-sm);
+  }
+}
+
+@include breakpoint('gt-sm') {
+  .preview {
+    min-height: $preview-height-md;
+  }
+
+  .poster {
+    @include size($preview-height-md);
+  }
 }
 
 // Tags styling
@@ -24,15 +48,37 @@
 .tags {
   @include flex-column(center, flex-start);
   padding: 0 spacing(2xs);
-  color: #000;
-  font-family: font-family(content);
+  color: theme(ocean, dark2);
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25em;
 }
 
-.tags__base {
+@include breakpoint('gt-xs') {
+  .tags {
+    text-align: center;
+    font-family: font-family(primary);
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.1em;
+  }
+
+  .tags__base {
+    color: theme(redRose, base);
+  }
+
+  .tags__end {
+    font-weight: 700;
+  }
 }
 
-.tags__end {
+@include breakpoint('gt-sm') {
+  .tags {
+  }
+
+  .tags__base {
+  }
+
+  .tags__end {
+  }
 }
