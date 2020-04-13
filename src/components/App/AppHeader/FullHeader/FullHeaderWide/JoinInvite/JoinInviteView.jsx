@@ -1,33 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import joinInviteType from 'types/join-invite';
-import FaIcon from 'components/shared/FaIcon';
 import Countdown from 'components/shared/Countdown';
 import './JoinInviteView.scss';
 
 const JoinInviteView = ({ content, hasCountdown }) => {
-  const { preTitle, title, subtitle, dateText } = content;
-  const { day, date, time } = dateText;
+  const { preTitle, title, subtitle } = content;
 
   return (
     <div styleName="join">
       <div styleName="join__pre-title">{preTitle}</div>
       <h2 styleName="join__title">{title}</h2>
       <div styleName="join__subtitle">{subtitle}</div>
-      <div styleName="join__when">
-        <span styleName="join__when-span">
-          <span styleName="join__when-icon">
-            <FaIcon icon="calendar-day" />
-          </span>
-          <span styleName="join__when-text">{day}, {date}</span>
-        </span>
-        <span styleName="join__when-span">
-          <span styleName="join__when-icon">
-            <FaIcon icon="clock" />
-          </span>
-          <span styleName="join__when-text">{time}</span>
-        </span>
-      </div>
       {hasCountdown && <Countdown />}
     </div>
   );

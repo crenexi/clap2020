@@ -3,13 +3,16 @@ import PropTypes, { arrayOf, shape } from 'prop-types';
 import * as Scroll from 'react-scroll';
 import scrollService from 'services/scroll-service';
 import IconButton from 'components/shared/IconButton';
+import ATFMaskIcon from 'components/shared/ATFMaskIcon';
+import ATFDateTime from 'components/shared/ATFDateTime';
+import FaIcon from 'components/shared/FaIcon';
+import ShareInviteCard from 'components/shared/ShareInviteCard';
 import FullHeaderSection from './FullHeaderSection';
-// import BrandLogo from 'components/shared/BrandLogo';
 import './FullHeaderNarrowView.scss';
 
 const FullHeaderNarrowView = (props) => {
   const ScrollElement = Scroll.Element;
-  const { minSectionHeight, baseTags, title, subtitle } = props;
+  const { minSectionHeight, baseTags, event, title, subtitle } = props;
   const [title1, title2, title3] = title;
 
   // Event: scroll to ThreeSteps
@@ -40,7 +43,6 @@ const FullHeaderNarrowView = (props) => {
       <div styleName="title title--2">
         <div styleName="title__text">{title2.text}</div>
       </div>
-      {/* <ATFDateText content={dateText} /> */}
     </FullHeaderSection>
   );
 
@@ -76,13 +78,29 @@ const FullHeaderNarrowView = (props) => {
     >
       <div styleName="section-frame">
         <div styleName="section-frame__start">
-          <div styleName="subtitle">{subtitle.text}</div>
-          <div styleName="tags">
-            <div styleName="tags__pretext">{subtitle.tagsPretext}</div>
-            <div styleName="tags__text">{baseTags}</div>
+          <div styleName="about-card">
+            <div styleName="about-card__heading">What</div>
+            <ATFMaskIcon />
+            <div styleName="about-card__text">{subtitle.text}</div>
+          </div>
+          <div styleName="about-card">
+            <div styleName="about-card__heading">When</div>
+            <ATFDateTime event={event} />
+          </div>
+          <div styleName="about-card">
+            <div styleName="about-card__heading">Where</div>
+            <div styleName="about-card__text">
+              <FaIcon icon="globe" />
+              <span>&nbsp;The United States (local time)</span>
+            </div>
+          </div>
+          <div styleName="about-card tags-card">
+            <div styleName="about-card__heading">Hashtags</div>
+            <div styleName="tags-pretext">{subtitle.tagsPretext}</div>
+            <div styleName="tags-text">{baseTags}</div>
           </div>
           <div styleName="share-invite">
-            {/* <ShareInviteCard /> */}
+            <ShareInviteCard />
           </div>
         </div>
         <div styleName="section-frame__end">
@@ -100,7 +118,7 @@ const FullHeaderNarrowView = (props) => {
   return (
     <article styleName="header">
       <div
-        styleName="section-group"
+        styleName="title-sections"
         style={sectionGroupStyle}
       >
         {section1}
@@ -109,7 +127,7 @@ const FullHeaderNarrowView = (props) => {
       </div>
       <ScrollElement
         name="headerPartTwo"
-        styleName="section-group"
+        styleName="subtitle-sections"
         style={sectionGroupStyle}
       >
         {section4}
@@ -121,6 +139,11 @@ const FullHeaderNarrowView = (props) => {
 FullHeaderNarrowView.propTypes = {
   minSectionHeight: PropTypes.string.isRequired,
   baseTags: PropTypes.string.isRequired,
+  event: shape({
+    day: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+  }).isRequired,
   title: arrayOf(shape({
     coverUrl: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,

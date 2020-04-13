@@ -4,7 +4,13 @@
   color: #fff;
 }
 
-.section-group {
+.title-sections {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  place-items: stretch;
+}
+
+.subtitle-sections {
   display: grid;
   place-items: stretch;
 }
@@ -53,22 +59,104 @@
 
 // Subtitle
 
-.subtitle {
-  width: 100%;
+.about-card {
+  position: relative;
+  @include flex-column(flex-start, center);
+  padding: 1.1rem spacing(lg) spacing(sm);
+  background-color: #fff;
+  border-radius: border-radius(round);
+  color: #000;
+
+  &:not(:first-child) {
+    margin-top: spacing(lg);
+  }
+}
+
+.about-card__heading {
+  @include position(absolute, 0 null null 50%);
+  transform: translate(-50%, -.65rem);
+  @include flex-column(center, center);
+  height: 1.5rem;
+  padding: 0 10px 2px 10px;
+  background-color: theme(blueRose, dark2);
+  border-radius: 50px;
+  border: 2px solid #fff;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: .85rem;
+  line-height: 1em;
+}
+
+.about-card__text {
+  margin-bottom: 4px;
+  text-align: left;
+  font-size: .93rem;
+  line-height: 1.3em;
+
+  &:not(:first-child) {
+    margin-top: spacing(2xs);
+  }
 }
 
 // Hashtags
 
-.tags {
-  width: 100%;
+.tags-card {
+  width: calc(100% - 1.7rem);
+  @include flex-column(flex-start, center);
+  margin: spacing(lg) auto 0;
+  padding-bottom: 2.3rem;
+  background-color: theme(ocean, dark2);
+  border: 3px solid #fff;
+  @include border-bottom-radius(0);
+  text-align: center;
 }
 
-.tags__pretext {
-  width: 100%;
+.tags-pretext {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 700;
 }
 
-.tags__text {
-  width: 100%;
+.tags-text {
+  color: theme(marine, base);
+  letter-spacing: -.5px;
+  font-family: font-family(primary);
+  font-size: 1.45rem;
+  line-height: 1em;
+}
+
+.share-invite {
+  position: relative;
+  z-index: 2;
+  margin-top: -1.5rem;
+  margin-bottom: spacing(lg);
+}
+
+@include breakpoint('gt-xs') {
+  .tags-text {
+    font-size: 1.6rem;
+  }
+}
+
+@include breakpoint('gt-sm') {
+  .tags-text {
+    font-size: 1.75rem;
+  }
+}
+
+@include breakpoint('gt-md') {
+  .tags-text {
+    font-size: 2rem;
+  }
+}
+
+@include breakpoint('gt-lg') {
+  .tags-text {
+    font-size: 2.25rem;
+  }
 }
 
 // Share invitation card

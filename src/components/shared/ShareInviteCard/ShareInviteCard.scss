@@ -1,9 +1,8 @@
 @import '~scss/utils';
 
 .card-frame {
-  margin: layout(md) 0;
-  width: 50rem;
-  max-width: 100%;
+  width: 100%;
+  max-width: 50rem;
 }
 
 .card {
@@ -12,14 +11,15 @@
   width: 100%;
   min-height: 5rem;
   background-color: #fff;
-  border-radius: border-radius(sharp);
   box-shadow: shadow(24);
-  overflow: hidden;
+  border-radius: border-radius(round);
 }
 
 .preview {
   @include size(100%);
   @include bg-image(cover);
+  @include border-left-radius(border-radius(round));
+  overflow: hidden;
 }
 
 .invite {

@@ -23,7 +23,7 @@ const FullHeaderNarrow = () => {
 
   // Get header content
   const { fullHeader: content, baseTags } = useContent();
-  const { title, subtitle } = content;
+  const { event, title, subtitle } = content;
 
   // Only render on small
   const isGtSm = useBreakpoint('gt-sm');
@@ -33,6 +33,7 @@ const FullHeaderNarrow = () => {
     <FullHeaderNarrowView
       minSectionHeight={minSectionHeight}
       baseTags={baseTags}
+      event={event}
       title={title}
       subtitle={subtitle}
     />

@@ -151,7 +151,7 @@ const defaultContent = {
     },
   },
   fullHeader: {
-    dateText: {
+    event: {
       day: 'Thursday',
       date: 'April 30',
       time: '7:00 PM',

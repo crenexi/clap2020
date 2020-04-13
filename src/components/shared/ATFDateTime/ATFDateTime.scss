@@ -1,0 +1,67 @@
+@import '~scss/utils';
+
+.dt {
+  position: relative;
+  @include flex-row(normal, normal, wrap);
+  margin-top: 7px;
+  margin-bottom: spacing(sm);
+  padding-bottom: spacing(sm);
+
+  &::after {
+    content: '';
+    @include position(absolute, null null -2px 50%);
+    transform: translateX(-50%);
+    @include size(3rem, 4px);
+    @include gradient(theme(blueRose, light2), theme(redRose, light2));
+  }
+
+  @include breakpoint('gt-xs') {
+    margin-bottom: spacing(md);
+    padding-bottom: spacing(md);
+  }
+
+  @include breakpoint('gt-sm') {
+    margin-bottom: spacing(lg);
+    padding-bottom: spacing(lg);
+  }
+
+  @include breakpoint('gt-md') {
+    margin-bottom: spacing(xl);
+    padding-bottom: spacing(xl);
+  }
+
+  @include breakpoint('gt-lg') {
+    margin-bottom: spacing(2xl);
+    padding-bottom: spacing(2xl);
+  }
+}
+
+.dt-span {
+  display: inline-block;
+  @include flex-row(center, center);
+  font-family: font-family(primary);
+  line-height: 1em;
+
+  &:not(:first-child) {
+    margin-left: spacing(sm);
+  }
+}
+
+.dt-icon {
+  display: inline-block;
+  margin-right: spacing(2xs);
+  font-size: 1.4rem;
+
+  @include breakpoint('gt-sm') {
+    font-size: 1.8rem;
+  }
+}
+
+.dt-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+
+  @include breakpoint('gt-sm') {
+    font-size: 1.7rem;
+  }
+}
