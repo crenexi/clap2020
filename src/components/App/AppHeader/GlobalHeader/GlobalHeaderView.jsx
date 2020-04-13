@@ -5,7 +5,7 @@ import useBreakpoint from 'hooks/use-breakpoint';
 import DrawerToggle from 'components/shared/DrawerToggle';
 import BrandLogo from 'components/shared/BrandLogo';
 import Countdown from 'components/shared/Countdown';
-import Button from 'components/shared/Button';
+import ShareInviteButton from 'components/shared/ShareInviteButton';
 import HeaderFrame from '../HeaderFrame';
 import './GlobalHeaderView.scss';
 
@@ -30,13 +30,7 @@ const GlobalHeaderView = ({ isHidden, hasCountdown }) => {
             {hasCountdown && <Countdown isActive={!isHidden} />}
           </div>
           <div styleName="header__actions">
-            <Button
-              to="/share"
-              variant="primary"
-              endIcon="arrow-circle-right"
-            >
-              Share Posters
-            </Button>
+            <ShareInviteButton label="Share" />
           </div>
         </header>
       </HeaderFrame>

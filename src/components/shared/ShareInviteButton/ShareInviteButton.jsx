@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useModal from 'hooks/use-modal';
 import Button from 'components/shared/Button';
 import './ShareInviteButton.scss';
 
 const SHARE_MODAL = 'SHARE_MODAL';
 
-const ShareInviteButton = () => {
+const ShareInviteButton = ({ label }) => {
   const { openModal } = useModal();
 
   const classes = (() => {
@@ -24,9 +25,17 @@ const ShareInviteButton = () => {
       endIcon="expand-alt"
       click={handleOpenModal}
     >
-      Share tags/poster
+      {label}
     </Button>
   );
+};
+
+ShareInviteButton.propTypes = {
+  label: PropTypes.string,
+};
+
+ShareInviteButton.defaultProps = {
+  label: 'Share tags/poster',
 };
 
 export default ShareInviteButton;
