@@ -3,3 +3,70 @@
 .atf {
   @include size(100%);
 }
+
+// Title rows
+
+.title {
+  width: 100%;
+
+}
+
+.title__row {
+  width: 100%;
+}
+
+.title__row1 {
+  width: 100%;
+
+  &__frame {
+    width: 100%;
+  }
+
+  &__text {
+    width: 100%;
+  }
+}
+
+.title__row2 {
+  width: 100%;
+
+  &__frame {
+    width: 100%;
+  }
+
+  &__text {
+    width: 100%;
+  }
+}
+
+.title__row3 {
+  width: 100%;
+
+  &__frame {
+    width: 100%;
+  }
+
+  &__text {
+    width: 100%;
+  }
+}
+
+// Hashtags
+
+.tags {
+  width: 100%;
+}
+
+.tags__pretext {
+  width: 100%;
+}
+
+.tags__text {
+  width: 100%;
+}
+
+// Subtitle
+
+.subtitle {
+  width: 100%;
+}

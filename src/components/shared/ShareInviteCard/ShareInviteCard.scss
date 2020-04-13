@@ -1,15 +1,42 @@
 @import '~scss/utils';
 
-.card {
+.card-frame {
+  margin: layout(md) 0;
   width: 50rem;
   max-width: 100%;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 5rem auto;
+  width: 100%;
+  min-height: 5rem;
   background-color: #fff;
   border-radius: border-radius(sharp);
   box-shadow: shadow(24);
   overflow: hidden;
 }
 
-.actions {
+.preview {
+  @include size(100%);
+  @include bg-image(cover);
+}
+
+.invite {
   @include flex-row(center, center);
-  padding: spacing(md);
+  padding: spacing(md) spacing(xs);
+}
+
+@include breakpoint('gt-xs') {
+  .card {
+    grid-template-columns: 7rem auto;
+    min-height: 7rem;
+  }
+}
+
+@include breakpoint('gt-sm') {
+  .card {
+    grid-template-columns: 9rem auto;
+    min-height: 9rem;
+  }
 }

@@ -13,13 +13,12 @@ const FullHeader = () => {
   // I really don't know what the best solution is
   const minHeight = (() => {
     // For Android, subtract 56px
-    if (userAgent.isAndroid()) return '100vh - 56px';
+    if (userAgent.isAndroid()) return 'calc(100vh - 56px)';
 
     // Using a throttled resize listener, get client height
     const windowHeight = useWindowHeight();
     return !windowHeight ? '100vh' : `${windowHeight}px`;
   })();
-
 
   const handleDownClick = () => {
     scrollService.scrollToElement('threeSteps');

@@ -139,7 +139,7 @@ const defaultContent = {
     },
   ],
   countdown: {
-    eventDate: '2020-04-23',
+    eventDate: '2020-04-30',
     eventTime: '19:00',
     quoteCoverUrl: `${assetsPath}/covers/new-york.jpg`,
     featuredQuote: {
@@ -154,13 +154,18 @@ const defaultContent = {
     coverUrl: `${assetsPath}/covers/nurse.jpg`,
   },
   aboveTheFold: {
-    // title: 'They fight. We applaud.',
-    // subtitle: 'Across the globe, healthcare workers challenge the menace of COVID-19. Join us at your doorstep for three minutes on 4/23 to raise a thundering applause for doctors, nurses, first responders, essential workers, and society.',
-    // dateText: {
-    //   day: 'Thursday',
-    //   date: 'April 23',
-    //   time: '7:00 PM',
-    // },
+    title: [
+      'Raise a thunderous applause',
+      'for the COVID-19 front lines',
+      'across the United States',
+    ],
+    tagsPretext: 'Spread the word with',
+    subtitle: 'Clap at your doorstep for three minutes for doctors, nurses, first responders, essential workers, and the nation.',
+    dateText: {
+      day: 'Thursday',
+      date: 'April 30',
+      time: '7:00 PM',
+    },
   },
   shareNow: {
     unitedStates: [
