@@ -11,14 +11,6 @@ const ShareOptions = ({ options, actions }) => {
   const { selectedPoster, selectedCity, selectedState } = options;
   const { changePoster, changeCity, changeState } = actions;
 
-  const sn = {
-    options: 'options',
-    section: 'section',
-    sectionHeading: 'section__heading',
-    sectionMain: 'section__main',
-    sectionItem: 'section__item',
-  };
-
   // State dropdown
   const stateSelect = (
     <StateSelect
@@ -43,20 +35,20 @@ const ShareOptions = ({ options, actions }) => {
   );
 
   return (
-    <div styleName={sn.options}>
-      <div styleName={sn.section}>
-        <div styleName={sn.sectionHeading}>Poster Format</div>
-        <div styleName={sn.sectionMain}>
-          <div styleName={sn.sectionItem}>{posterSelect}</div>
+    <div styleName="options">
+      <div styleName="section">
+        <div styleName="section__heading">Poster Format</div>
+        <div styleName="section__main">
+          <div styleName="section__item">{posterSelect}</div>
         </div>
       </div>
-      <div styleName={sn.section}>
-        <div styleName={sn.sectionHeading}>Location Hashtags</div>
-        <div styleName={sn.sectionMain}>
-          <div styleName={sn.sectionItem}>
+      <div styleName="section">
+        <div styleName="section__heading">Location Hashtags</div>
+        <div styleName="section__main">
+          <div styleName="section__item">
             {!statesMenu.length ? null : stateSelect}
           </div>
-          <div styleName={sn.sectionItem}>
+          <div styleName="section__item">
             {!citiesMenu.length ? null : citySelect}
           </div>
         </div>

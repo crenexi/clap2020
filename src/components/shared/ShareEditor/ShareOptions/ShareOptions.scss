@@ -9,12 +9,12 @@
 
 .section {
   &:not(:first-child) {
-    margin-top: spacing(lg);
+    margin-top: spacing(md);
   }
 }
 
 .section__heading {
-  padding: 7px;
+  padding: 3px 7px;
   background-color: theme(cloud, dark1);
   color: rgba(theme(ocean, dark2), .75);
   text-align: center;
@@ -25,7 +25,7 @@
 }
 
 .section__main {
-  margin-top: spacing(md);
+  margin-top: spacing(sm);
 }
 
 // Items

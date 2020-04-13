@@ -25,7 +25,7 @@ const ShareEditor = ({ changePayload }) => {
 
   // State
   const [citiesMenu, setCitiesMenu] = useState([]);
-  const [selectedPoster, setSelectedPoster] = useState('');
+  const [selectedPoster, setSelectedPoster] = useState('square');
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedState, setSelectedState] = useState('');
   const [endTags, setEndTags] = useState('');
