@@ -9,18 +9,21 @@
 .poster {
   width: 3.5rem;
   @include flex-column(center, flex-start);
-  margin-right: spacing(xs);
+  padding: 0 spacing(2xs) 0 2px;
 }
 
 .poster__thumb {
-  @include size(2.5rem);
+  @include size(3rem);
+  @include bg-image(cover);
   padding: 5px;
+  border-radius: border-radius(sharp);
 }
 
 // Tags styling
 
 .tags {
   @include flex-column(center, flex-start);
+  padding: 0 spacing(2xs);
   color: #000;
   font-family: font-family(content);
   font-size: 1rem;

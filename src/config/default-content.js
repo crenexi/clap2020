@@ -2,6 +2,26 @@ const assetsPath = process.env.ASSETS_PATH;
 
 const defaultContent = {
   baseTags: '#Clap2020 #ClapBecauseWeCare',
+  posters: [
+    {
+      format: 'story',
+      thumbUrl: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
+      hdUrl: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
+      url: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
+    },
+    {
+      format: 'square',
+      thumbUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
+      hdUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
+      url: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
+    },
+    {
+      format: 'rectangle',
+      thumbUrl: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
+      hdUrl: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
+      url: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
+    },
+  ],
   nav: [
     {
       linkTo: '/',

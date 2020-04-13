@@ -9,7 +9,7 @@ import './ShareEditorView.scss';
 const ShareEditorView = ({ tags, options, actions }) => (
   <div styleName="editor">
     <div styleName="editor__preview">
-      <SharePreview tags={tags} />
+      <SharePreview tags={tags} poster={options.selectedPoster} />
     </div>
     <div styleName="editor__options">
       <ShareOptions options={options} actions={actions} />

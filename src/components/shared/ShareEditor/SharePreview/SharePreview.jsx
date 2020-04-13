@@ -1,15 +1,27 @@
 import React from 'react';
+import { oneOf } from 'prop-types';
 import shareEditorTagsType from 'types/share-editor-tags';
+import useContent from 'hooks/use-content';
 import './SharePreview.scss';
 
-const SharePreview = ({ tags }) => {
+const SharePreview = ({ tags, poster }) => {
   const { baseTags, endTags } = tags;
+  const { posters: postersData } = useContent();
+
+  // Get thumb from posters data
+  const posterData = postersData.find(p => p.format === poster);
+  const thumbUrl = !posterData ? '' : posterData.thumbUrl;
+  const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
+
+  const posterPreview = (
+    <div styleName="poster">
+      <div styleName="poster__thumb" style={thumbStyle} />
+    </div>
+  );
 
   return (
     <div styleName="preview">
-      <div styleName="poster">
-        <div styleName="poster__thumb" />
-      </div>
+      {poster && posterPreview}
       <div styleName="tags">
         <div styleName="tags__base">{baseTags}</div>
         <div styleName="tags__end">{endTags}</div>
@@ -20,6 +32,7 @@ const SharePreview = ({ tags }) => {
 
 SharePreview.propTypes = {
   tags: shareEditorTagsType.isRequired,
+  poster: oneOf(['', 'story', 'square', 'rectangle']).isRequired,
 };
 
 export default SharePreview;
