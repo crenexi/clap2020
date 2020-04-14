@@ -85,6 +85,7 @@ import {
 
 import {
   faFacebook,
+  faFacebookMessenger,
   faInstagram,
   faLinkedinIn,
   faRedditAlien,
@@ -118,6 +119,7 @@ const buildLibrary = () => {
     faExpandAlt,
     faExternalLink,
     faFacebook,
+    faFacebookMessenger,
     faFileImage,
     faFilePdf,
     faFolderOpen,

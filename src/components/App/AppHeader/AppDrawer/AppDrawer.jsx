@@ -3,6 +3,7 @@ import Drawer from '@material-ui/core/Drawer';
 import useDrawer from 'hooks/use-drawer';
 import BrandLogo from 'components/shared/BrandLogo';
 import IconButton from 'components/shared/IconButton';
+import BrandMessenger from 'components/shared/BrandMessenger';
 import BrandSocialNav from 'components/shared/BrandSocialNav';
 import DrawerFAB from './DrawerFAB';
 import DrawerNav from './DrawerNav';
@@ -39,6 +40,9 @@ const AppDrawer = () => {
       <DrawerNav />
       <div styleName="drawer__footer">
         <BrandSocialNav />
+        <div styleName="drawer__messenger">
+          <BrandMessenger />
+        </div>
       </div>
     </div>
   );

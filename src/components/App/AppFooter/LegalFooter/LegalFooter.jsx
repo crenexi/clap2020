@@ -1,5 +1,6 @@
 import React from 'react';
 import FaIcon from 'components/shared/FaIcon';
+import BrandMessenger from 'components/shared/BrandMessenger';
 import './LegalFooter.scss';
 
 const LegalFooter = () => {
@@ -14,6 +15,9 @@ const LegalFooter = () => {
 
   return (
     <div styleName="legal">
+      <div styleName="legal__messenger">
+        <BrandMessenger />
+      </div>
       <div styleName="legal__built-by">
         <span>Built with clean&nbsp;</span>
         <div styleName="legal__icon">

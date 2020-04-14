@@ -2,10 +2,10 @@
 
 .nav {
   @include flex-row(center, center);
-  padding: spacing(md);
+  padding: spacing(sm);
 
   @include breakpoint('gt-sm') {
-    padding: spacing(lg);
+    padding: spacing(md);
   }
 }
 

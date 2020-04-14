@@ -7,7 +7,7 @@ import './Button.scss';
 
 const IconButton = (props) => {
   const { classes, children, variant, size, startIcon, endIcon } = props;
-  const { disabled, click, href, to, target } = props;
+  const { disabled, click, href, rel, to, target } = props;
 
   // Classes for MUI component
   const allClasses = (() => {
@@ -54,6 +54,7 @@ const IconButton = (props) => {
     <MuiButton
       href={href}
       target={target}
+      rel={rel}
       {...buttonProps}
     >
       {children}
@@ -75,6 +76,7 @@ IconButton.propTypes = {
   click: PropTypes.func,
   href: PropTypes.string,
   target: PropTypes.string,
+  rel: PropTypes.string,
   to: PropTypes.string,
 };
 
@@ -88,6 +90,7 @@ IconButton.defaultProps = {
   click: () => {},
   href: '',
   target: '',
+  rel: '',
   to: '',
 };
 

@@ -1,0 +1,15 @@
+@import '~scss/utils';
+
+.frame {
+  width: auto;
+}
+
+.row {
+  @include flex-row(center, center);
+}
+
+.icon {
+  margin-right: 5px;
+  margin-left: 2px;
+  font-size: 1.25rem;
+}
