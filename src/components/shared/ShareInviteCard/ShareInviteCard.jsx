@@ -4,8 +4,11 @@ import ShareInviteButton from '../ShareInviteButton';
 import './ShareInviteCard.scss';
 
 const ShareInviteCard = () => {
-  const { shareInvite: content, posters } = useContent();
-  const { pretext, text } = content;
+  const { campaignContent } = useContent();
+
+  // Content
+  const { status, posters } = campaignContent;
+  const { pretext, text } = status.campaignTags;
 
   // Get the thumb URL of the square poster
   const squarePoster = posters.find(p => p.format === 'square');

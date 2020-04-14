@@ -6,8 +6,11 @@ import logger from 'services/logger';
 import ShareEditorView from './ShareEditorView';
 
 const ShareEditor = ({ changePayload }) => {
-  const { baseTags, shareNow: content } = useContent();
-  const { topCities, unitedStates } = content;
+  const { campaignContent, datasetsContent } = useContent();
+
+  // Content
+  const { text: baseTags } = campaignContent.campaignTags;
+  const { topCities, unitedStates } = datasetsContent;
   const defaultEndTag = '#USA';
 
   // Ensure cities data are supplied

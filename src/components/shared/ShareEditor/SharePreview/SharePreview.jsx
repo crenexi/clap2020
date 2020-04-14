@@ -5,11 +5,14 @@ import useContent from 'hooks/use-content';
 import './SharePreview.scss';
 
 const SharePreview = ({ tags, poster }) => {
+  const { campaignContent } = useContent();
+
+  // Content
+  const { posters } = campaignContent;
   const { baseTags, endTags } = tags;
-  const { posters: postersData } = useContent();
 
   // Get thumb from posters data
-  const posterData = postersData.find(p => p.format === poster);
+  const posterData = posters.find(p => p.format === poster);
   const thumbUrl = !posterData ? '' : posterData.thumbUrl;
   const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
 

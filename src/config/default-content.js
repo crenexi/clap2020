@@ -1,6 +1,3 @@
-import { toCamelCase } from 'utils/helpers';
-import logger from 'services/logger';
-
 const assetsPath = process.env.ASSETS_PATH;
 
 // Endpoint: /ui/drawer-nav

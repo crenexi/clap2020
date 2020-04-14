@@ -6,9 +6,11 @@ import Loading from 'components/shared/Loading';
 import CountdownView from './CountdownView';
 
 const Countdown = ({ isActive }) => {
-  const { countdown: countdownContent } = useContent();
-  const { eventDate, eventTime } = countdownContent;
-  const eventMoment = moment(`${eventDate} ${eventTime}`);
+  const { campaignStatus } = useContent();
+
+  // Content
+  const { nextEvent } = campaignStatus;
+  const eventMoment = moment(`${nextEvent.date} ${nextEvent.time}`);
 
   const cleanTZ = (tz) => {
     // Remove underscores from time zone guess
