@@ -13,7 +13,13 @@ const AppDrawer = () => {
 
   const drawerHeader = (
     <div styleName="drawer__header">
-      <div styleName="drawer__brand">
+      <div
+        styleName="drawer__brand"
+        onClick={closeDrawer}
+        onKeyDown={closeDrawer}
+        role="button"
+        tabIndex="0"
+      >
         <BrandLogo variant="white" />
       </div>
       <div styleName="drawer__close">
