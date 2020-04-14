@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes, { arrayOf, shape } from 'prop-types';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import scrollService from 'services/scroll-service';
 import BrandLogo from 'components/shared/BrandLogo';
 import IconButton from 'components/shared/IconButton';
@@ -9,6 +10,10 @@ import IconParade from './IconParade';
 import './FullHeaderWideView.scss';
 
 const FullHeaderWideView = (props) => {
+  const asideBreakpoint = 1500;
+  const asideMediaQuery = `(min-width: ${asideBreakpoint}px)`;
+  const isLargeLayout = useMediaQuery(asideMediaQuery);
+
   const { nextEvent, title, subtitle } = props;
   const [title1, title2, title3] = title;
 
@@ -20,6 +25,10 @@ const FullHeaderWideView = (props) => {
   // First image
   const coreCoverUrl = title1.coverUrl;
   const coreCoverStyle = { backgroundImage: `url('${coreCoverUrl}')` };
+
+  // Subtitle image
+  const asideCoverUrl = subtitle.coverUrl;
+  const asideCoverStyle = { backgroundImage: `url('${asideCoverUrl}')` };
 
   // Event: scroll to ThreeSteps
   const handleDownClick = () => {
@@ -73,13 +82,15 @@ const FullHeaderWideView = (props) => {
   // Frame cover
   const frameCover = (
     <div styleName="frame__cover">
-      <div styleName="core-cover">
-        <div styleName="core-cover__bg" style={coreCoverStyle} />
-        <div styleName="core-cover__blanket" />
-        <div styleName="core-cover__blend" />
+      <div styleName="cover cover--core">
+        <div styleName="cover__bg" style={coreCoverStyle} />
+        <div styleName="cover__blanket" />
+        <div styleName="cover__blend" />
       </div>
-      <div styleName="aside-cover">
-        Test
+      <div styleName="cover cover--aside">
+        <div styleName="cover__bg" style={asideCoverStyle} />
+        <div styleName="cover__blanket" />
+        <div styleName="cover__blend" />
       </div>
     </div>
   );
@@ -101,13 +112,17 @@ const FullHeaderWideView = (props) => {
             </div>
           </div>
         </div>
-        <div styleName="core__right">
-          <ATFAbout nextEvent={nextEvent} subtitle={subtitle} />
-        </div>
+        {!isLargeLayout && (
+          <div styleName="core__right">
+            <ATFAbout nextEvent={nextEvent} subtitle={subtitle} />
+          </div>
+        )}
       </section>
-      <aside styleName="aside">
-        Test
-      </aside>
+      {isLargeLayout && (
+        <aside styleName="aside">
+          <ATFAbout nextEvent={nextEvent} subtitle={subtitle} />
+        </aside>
+      )}
     </div>
   );
 
