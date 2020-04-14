@@ -12,19 +12,18 @@ const FullHeaderWideView = (props) => {
   const [title1, title2, title3] = title;
 
   // Event: scroll to ThreeSteps
-  const handleDownClick = (target) => {
-    scrollService.scrollToElement(target);
+  const handleDownClick = () => {
+    scrollService.scrollToElement('threeSteps');
   };
 
   return (
     <article styleName="header">
       <div styleName="start">
         <div styleName="start__brand">
-          <BrandLogo variant="main" />
+          <BrandLogo variant="white" />
         </div>
       </div>
       <div styleName="main">
-        HEADER!
         {title1.text}
         {title2.text}
         {title3.text}
@@ -34,9 +33,11 @@ const FullHeaderWideView = (props) => {
       <aside styleName="end">
         <div styleName="end__down-invite">
           <IconButton
+            variant="white"
             icon="arrow-alt-down"
             label="3 Simple Steps"
             click={handleDownClick}
+            invite
           />
         </div>
       </aside>

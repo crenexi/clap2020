@@ -1,11 +1,18 @@
 @import '~scss/utils';
 
+@keyframes invite-down {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 100%; }
+  0% { transform: translateY(-1rem); }
+  100% { transform: translateY(0); }
+}
+
 .wrapper {
   @include flex-column(center, center);
 }
 
 .wrapper__label {
-  margin-top: 3px;
+  margin-top: 5px;
   white-space: nowrap;
   text-align: center;
   text-transform: uppercase;
@@ -23,6 +30,10 @@
   &--light {
     color: #fff;
   }
+}
+
+.wrapper--invite .wrapper__btn:not(:hover) {
+  animation: invite-down 2s linear infinite both;
 }
 
 :global {

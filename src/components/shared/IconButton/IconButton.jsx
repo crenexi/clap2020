@@ -8,7 +8,12 @@ import './IconButton.scss';
 
 const IconButton = (props) => {
   const { classes, children, click, href, target, to } = props;
-  const { variant, icon, size, disabled, label } = props;
+  const { variant, icon, size, disabled, label, invite } = props;
+
+  // Class for wrapper
+  const wrapperClass = classNames('wrapper', {
+    'wrapper--invite': invite,
+  });
 
   // Class for label
   const wrapperLabelClass = classNames('wrapper__label', {
@@ -57,8 +62,10 @@ const IconButton = (props) => {
   );
 
   return (
-    <div styleName="wrapper">
-      {button}
+    <div styleName={wrapperClass}>
+      <div styleName="wrapper__btn">
+        {button}
+      </div>
       <div styleName={wrapperLabelClass}>{label}</div>
     </div>
   );
@@ -79,6 +86,7 @@ IconButton.propTypes = {
   target: PropTypes.string,
   to: PropTypes.string,
   label: PropTypes.string,
+  invite: PropTypes.string,
 };
 
 IconButton.defaultProps = {
@@ -93,6 +101,7 @@ IconButton.defaultProps = {
   target: '',
   to: '',
   label: '',
+  invite: false,
 };
 
 export default IconButton;
