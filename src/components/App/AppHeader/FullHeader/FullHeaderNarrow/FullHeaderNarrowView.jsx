@@ -12,7 +12,7 @@ import './FullHeaderNarrowView.scss';
 
 const FullHeaderNarrowView = (props) => {
   const ScrollElement = Scroll.Element;
-  const { minSectionHeight, baseTags, event, title, subtitle } = props;
+  const { minSectionHeight, event, title, subtitle } = props;
   const [title1, title2, title3] = title;
 
   // Event: scroll to ThreeSteps
@@ -95,7 +95,9 @@ const FullHeaderNarrowView = (props) => {
                 <span>&nbsp;The United States (local time)</span>
               </div>
             </div>
-            <ShareInviteCard />
+            <div styleName="share-invite">
+              <ShareInviteCard />
+            </div>
           </div>
         </div>
         <div styleName="section-frame__end">
@@ -133,7 +135,6 @@ const FullHeaderNarrowView = (props) => {
 
 FullHeaderNarrowView.propTypes = {
   minSectionHeight: PropTypes.string.isRequired,
-  baseTags: PropTypes.string.isRequired,
   event: shape({
     day: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
@@ -146,7 +147,6 @@ FullHeaderNarrowView.propTypes = {
   subtitle: shape({
     coverUrl: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
-    tagsPretext: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -11,7 +11,7 @@ const DrawerNav = ({ location }) => {
   const history = useHistory();
 
   // Content
-  const { drawerNav } = uiContent();
+  const { drawerNav } = uiContent;
 
   const handleItemClick = link => history.push(link);
 

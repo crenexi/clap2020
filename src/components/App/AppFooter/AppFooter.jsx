@@ -7,11 +7,11 @@ import LegalFooter from './LegalFooter';
 import './AppFooter.scss';
 
 const AppFooter = () => {
-  const { uiContent, campaignStatus } = useContent();
+  const { uiContent, campaignContent } = useContent();
 
   // Content
   const { metaNav, covid19Nav } = uiContent.footerNav;
-  const { clapTime } = campaignStatus;
+  const { clapTime } = campaignContent.status;
 
   return (
     <Fragment>

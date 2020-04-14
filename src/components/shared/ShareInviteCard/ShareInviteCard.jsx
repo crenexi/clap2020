@@ -16,22 +16,15 @@ const ShareInviteCard = () => {
   const previewStyle = { backgroundImage: `url('${thumbUrl}')` };
 
   return (
-    <div styleName="card">
+    <div styleName="frame">
       <div styleName="header">
         <div styleName="header__overline">Hashtags</div>
         <div styleName="header__pretext">{pretext}</div>
         <div styleName="header__text">{text}</div>
-  </div>
-  <div styleName="share-invite">
-    <ShareInviteCard />
-  </div>
-
-
-
-<div styleName="card-frame">
-      <div styleName="card">
-        <div styleName="preview" style={previewStyle} />
-        <div styleName="invite">
+      </div>
+      <div styleName="main">
+        <div styleName="main__preview" style={previewStyle} />
+        <div styleName="main__invite">
           <ShareInviteButton />
         </div>
       </div>

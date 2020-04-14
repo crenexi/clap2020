@@ -26,7 +26,7 @@ const FullHeaderNarrow = () => {
 
   // Get header content
   const { fullHeader } = uiContent;
-  const { campaignTags, nextEvent } = campaignContent;
+  const { campaignTags, nextEvent } = campaignContent.status;
   const { title, subtitle } = fullHeader;
 
   // Only render on small

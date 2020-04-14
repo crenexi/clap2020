@@ -125,7 +125,7 @@ const uiFullHeader = {
 const campaignStatus = {
   clapTime: 'April 30th @ 7:00 PM',
   campaignTags: {
-    preText: 'Spread the word with',
+    pretext: 'Spread the word with',
     text: '#Clap2020 #ClapBecauseWeCare',
   },
   nextEvent: {

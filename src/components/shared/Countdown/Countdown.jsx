@@ -6,10 +6,10 @@ import Loading from 'components/shared/Loading';
 import CountdownView from './CountdownView';
 
 const Countdown = ({ isActive }) => {
-  const { campaignStatus } = useContent();
+  const { campaignContent } = useContent();
 
   // Content
-  const { nextEvent } = campaignStatus;
+  const { nextEvent } = campaignContent.status;
   const eventMoment = moment(`${nextEvent.date} ${nextEvent.time}`);
 
   const cleanTZ = (tz) => {
