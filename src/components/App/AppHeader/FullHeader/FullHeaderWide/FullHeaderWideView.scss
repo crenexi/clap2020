@@ -1,68 +1,122 @@
 @import '~scss/utils';
 
+$frame-end-height: 10rem;
+$bg-color: rgb(5, 25, 65);
 $blanket-color: rgba(5, 25, 65, .5);
+$header-bg-transform: scale(1.17) translateY(3.2rem);
 
-.header {
+@keyframes header-bg-pace {
+  0% { transform: $header-bg-transform; }
+  100% { transform: scale(1); }
+}
+
+// Frame layout
+
+.frame {
   position: relative;
-  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
   min-height: 100vh;
+  background-color: $bg-color;
   color: #fff;
 }
 
-.header__bg {
+.frame__grid {
+  display: flex;
+  flex-direction: column;
+  @include size(100%);
+}
+
+// Frame start
+
+.frame__start {
+  @include flex-row(center, center);
+  padding: spacing(md);
+}
+
+.frame__brand {
+  width: 10rem;
+}
+
+// Frame end
+
+.frame__end {
+  @include flex-column(flex-end, center);
+  width: 100%;
+  height: $frame-end-height;
+  padding-bottom: spacing(sm);
+
+  @include breakpoint('gt-sm') {
+    padding-bottom: calc(2.3rem + 30px);
+  }
+}
+
+.frame__down-invite {
+  margin: 0 spacing(2xs);
+}
+
+// Frame cover
+
+.frame__cover {
+  display: none;
+}
+
+.core-cover {
+  display: block;
+}
+
+.core-cover__bg {
   @include position(absolute, 0 null null 0);
   @include size(100%);
   @include bg-image(cover);
+  background-position: 13% 30%;
+  transform: $header-bg-transform;
+  animation: header-bg-pace 15s ease-in-out both infinite alternate;
 }
 
-.header__blanket,
-.header__blend {
+.core-cover__blanket,
+.core-cover__blend {
   @include position(absolute, 0 null null 0);
   @include size(100%);
   background-color: $blanket-color;
 }
 
-.header__blend {
+.core-cover__blend {
   mix-blend-mode: color;
 }
 
-.header__grid {
+// Frame main layout
+
+.frame__main {
+  flex: 1 1 0%;
+  width: 100%;
+}
+
+@include breakpoint('gt-md') {
+  .frame__main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+// Core content
+
+.core {
   position: relative;
   @include flex-column();
   flex: 1 1 100%;
 }
 
-// Top area
+// Aside content
 
-.start {
-  @include flex-row(center, center);
+.aside {
+  display: none;
+  background-color: $bg-color;
 }
 
-.start__brand {
-  width: 10rem;
-}
-
-// Main layout
-
-.main {
-  flex: 1 1 0%;
-  width: 100%;
-}
-
-// Main content
-
-// Bottom area
-
-
-.end {
-  @include flex-column(center, center);
-  padding: spacing(lg) 0 spacing(sm);
-
-  @include breakpoint('gt-sm') {
-    padding-bottom: calc(3rem + 30px);
+@include breakpoint('gt-md') {
+  .aside {
+    display: block;
   }
-}
-
-.end__down-invite {
-  margin: 0 spacing(2xs);
 }

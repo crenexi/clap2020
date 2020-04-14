@@ -2,29 +2,23 @@
 
 // Parade animation
 
-@keyframes moveSection {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(50%);
-  }
-}
+// @keyframes moveSection {
+//   0% { transform: translateX(0); }
+//   100% { transform: translateX(50%); }
+// }
 
 // Parade layout & animation
 
 .parade {
-  $border: 2px solid theme(cloud, dark2);
+  $border: 5px solid rgb(54, 70, 102);
 
   @include position(absolute, null 10px 10px 10px);
   display: none;
   width: calc(100% - 20px);
-  height: 3.1rem;
-  background-color: theme(cloud, base);
-  border-top: $border;
+  height: 2.7rem;
+  background-color: rgba(5, 25, 65, .5);
   border-bottom: $border;
-  box-shadow: 0 0 1px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 1px rgba(0, 0, 0, .15);
 
   @include breakpoint('gt-sm') {
     display: block;
@@ -41,8 +35,8 @@
 
 .parade__section {
   position: absolute;
-  bottom: 0;
-  animation: moveSection 35s linear infinite;
+  bottom: -2px;
+  // animation: moveSection 50s linear infinite;
 
   &:first-child { left: 50%; }
   &:last-child { right: 50%; }
@@ -58,6 +52,6 @@
 .parade__icon {
   @include flex-column(center, flex-end);
   padding: 0 5px 2px;
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1em;
 }

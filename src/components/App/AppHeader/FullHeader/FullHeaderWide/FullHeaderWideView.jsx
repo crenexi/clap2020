@@ -12,43 +12,73 @@ const FullHeaderWideView = (props) => {
   const [title1, title2, title3] = title;
 
   // First image
-  const bgUrl = title1.coverUrl;
-  const bgStyle = { backgroundImage: `url('${bgUrl}')` };
+  const coreCoverUrl = title1.coverUrl;
+  const coreCoverStyle = { backgroundImage: `url('${coreCoverUrl}')` };
 
   // Event: scroll to ThreeSteps
   const handleDownClick = () => {
     scrollService.scrollToElement('threeSteps');
   };
 
+  // Frame start
+  const frameStart = (
+    <div styleName="frame__start">
+      <div styleName="frame__brand">
+        <BrandLogo variant="white" />
+      </div>
+    </div>
+  );
+
+  // Frame end
+  const frameEnd = (
+    <div styleName="frame__end">
+      <div styleName="frame__down-invite">
+        <IconButton
+          variant="white"
+          icon="arrow-alt-down"
+          label="3 Simple Steps"
+          click={handleDownClick}
+          invite
+        />
+      </div>
+    </div>
+  );
+
+  // Frame cover
+  const frameCover = (
+    <div styleName="frame__cover">
+      <div styleName="core-cover">
+        <div styleName="core-cover__bg" style={coreCoverStyle} />
+        <div styleName="core-cover__blanket" />
+        <div styleName="core-cover__blend" />
+      </div>
+    </div>
+  );
+
+  // Frame main
+  const frameMain = (
+    <div styleName="frame__main">
+      <section styleName="core">
+        {title1.text}
+        {title2.text}
+        {title3.text}
+        {subtitle.text}
+        {nextEvent.date}
+      </section>
+      <aside styleName="aside">
+        Test
+      </aside>
+    </div>
+  );
+
+  // Header has three items: core, aside, and icon parade
   return (
-    <article styleName="header">
-      <div styleName="header__bg" style={bgStyle} />
-      <div styleName="header__blanket" />
-      <div styleName="header__blend" />
-      <div styleName="header__grid">
-        <div styleName="start">
-          <div styleName="start__brand">
-            <BrandLogo variant="white" />
-          </div>
-        </div>
-        <div styleName="main">
-          {title1.text}
-          {title2.text}
-          {title3.text}
-          {subtitle.text}
-          {nextEvent.date}
-        </div>
-        <aside styleName="end">
-          <div styleName="end__down-invite">
-            <IconButton
-              variant="white"
-              icon="arrow-alt-down"
-              label="3 Simple Steps"
-              click={handleDownClick}
-              invite
-            />
-          </div>
-        </aside>
+    <article styleName="frame">
+      {frameCover}
+      <div styleName="frame__grid">
+        {frameStart}
+        {frameMain}
+        {frameEnd}
       </div>
       <IconParade />
     </article>
