@@ -3,6 +3,7 @@ import PropTypes, { arrayOf, shape } from 'prop-types';
 import scrollService from 'services/scroll-service';
 import BrandLogo from 'components/shared/BrandLogo';
 import IconButton from 'components/shared/IconButton';
+import Button from 'components/shared/Button';
 import ATFAbout from 'components/shared/ATFAbout';
 import IconParade from './IconParade';
 import './FullHeaderWideView.scss';
@@ -10,6 +11,11 @@ import './FullHeaderWideView.scss';
 const FullHeaderWideView = (props) => {
   const { nextEvent, title, subtitle } = props;
   const [title1, title2, title3] = title;
+
+  // Titles
+  const title1Text = title1.text;
+  const title2Text = title2.text;
+  const title3Text = title3.text;
 
   // First image
   const coreCoverUrl = title1.coverUrl;
@@ -19,6 +25,26 @@ const FullHeaderWideView = (props) => {
   const handleDownClick = () => {
     scrollService.scrollToElement('threeSteps');
   };
+
+  const thankYouInvite = (
+    <Button
+      to="/praise"
+      variant="white"
+      endIcon="arrow-circle-right"
+    >
+      Groups to Thank
+    </Button>
+  );
+
+  const countdownInvite = (
+    <Button
+      to="/get-ready"
+      variant="inverted"
+      endIcon="arrow-circle-right"
+    >
+      Clap Countdown
+    </Button>
+  );
 
   // Frame start
   const frameStart = (
@@ -63,8 +89,16 @@ const FullHeaderWideView = (props) => {
     <div styleName="frame__main">
       <section styleName="core">
         <div styleName="core__left">
-          <div styleName="core__title">
-            {title1.text}
+          <div styleName="core__left-content">
+            <div styleName="core__title">
+              <div styleName="core__title1">{title1Text}</div>
+              <div styleName="core__title2">{title2Text}</div>
+              <div styleName="core__title3">{title3Text}</div>
+            </div>
+            <div styleName="core__actions">
+              {thankYouInvite}
+              {countdownInvite}
+            </div>
           </div>
         </div>
         <div styleName="core__right">

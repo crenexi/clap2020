@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes, { shape } from 'prop-types';
 import ATFMaskIcon from 'components/shared/ATFMaskIcon';
 import ATFDateTime from 'components/shared/ATFDateTime';
-import FaIcon from 'components/shared/FaIcon';
 import ShareInviteCard from 'components/shared/ShareInviteCard';
 import './ATFAbout.scss';
 

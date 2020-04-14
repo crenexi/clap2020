@@ -110,14 +110,14 @@
 
 @include breakpoint('gt-xs') {
   .main {
-    grid-template-columns: 7rem auto;
+    grid-template-columns: 6rem auto;
     min-height: 6rem;
   }
 }
 
 @include breakpoint('gt-sm') {
   .main {
-    grid-template-columns: 9rem auto;
+    grid-template-columns: 7rem auto;
     min-height: 7rem;
   }
 }

@@ -120,7 +120,8 @@ $header-bg-transform: scale(1.17) translateY(3.2rem);
   position: relative;
   @include flex-row();
   flex: 1 1 100%;
-  padding: layout(2xs) layout(md) layout(sm);
+  height: 100%;
+  padding: layout(2xs) layout(xs) layout(sm);
 }
 
 .core__left,
@@ -128,8 +129,89 @@ $header-bg-transform: scale(1.17) translateY(3.2rem);
   flex: 1 1 50%;
 }
 
+.core__left {
+  @include flex-column(center, center);
+}
+
+.core__left-content {
+  @include flex-column(flex-start, flex-start);
+}
+
+.core__right {
+  @include flex-column(center, center);
+}
+
 .core__title {
+  align-self: center;
+  margin-bottom: -.35rem;
+  text-align: left;
+  letter-spacing: -.5px;
   font-family: font-family(primary);
+  font-size: 2.7rem;
+  line-height: 1em;
+  font-weight: 700;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .1), 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.core__title1 {
+}
+
+.core__title2 {
+  color: theme(marine, base);
+  font-weight: 300;
+}
+
+.core__title3 {
+  font-weight: 300;
+}
+
+.core__actions {
+  position: relative;
+  display: grid;
+  place-content: center;
+  place-items: stretch;
+  grid-gap: spacing(md);
+  margin-top: spacing(xl);
+  padding-top: spacing(xl);
+
+  &::before {
+    content: '';
+    @include position(absolute, -3px null null 0);
+    @include size(4.5rem, 6px);
+    background-color: theme(marine, dark2);
+  }
+}
+
+@include breakpoint('gt-md') {
+  .core {
+    padding: layout(2xs) layout(sm) layout(sm);
+  }
+
+  .core__left {
+    padding-left: layout(md);
+  }
+
+  .core__title {
+    font-size: 2.7rem;
+  }
+
+  .core__title1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media all and (min-width: $aside-breakpoint) {
+  .core {
+    padding: layout(2xs) layout(md) layout(sm);
+  }
+
+  .core__title {
+    font-size: 2.7rem;
+  }
+
+  .core__title1 {
+    font-size: 2.7rem;
+  }
 }
 
 // Aside content
