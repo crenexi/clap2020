@@ -37,7 +37,7 @@ const FullHeaderNarrow = () => {
     <FullHeaderNarrowView
       minSectionHeight={minSectionHeight}
       baseTags={campaignTags}
-      event={nextEvent}
+      nextEvent={nextEvent}
       title={title}
       subtitle={subtitle}
     />

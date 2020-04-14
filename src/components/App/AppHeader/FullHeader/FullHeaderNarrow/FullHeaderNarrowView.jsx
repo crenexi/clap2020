@@ -3,16 +3,13 @@ import PropTypes, { arrayOf, shape } from 'prop-types';
 import * as Scroll from 'react-scroll';
 import scrollService from 'services/scroll-service';
 import IconButton from 'components/shared/IconButton';
-import ATFMaskIcon from 'components/shared/ATFMaskIcon';
-import ATFDateTime from 'components/shared/ATFDateTime';
-import FaIcon from 'components/shared/FaIcon';
-import ShareInviteCard from 'components/shared/ShareInviteCard';
+import ATFAbout from 'components/shared/ATFAbout';
 import FullHeaderSection from './FullHeaderSection';
 import './FullHeaderNarrowView.scss';
 
 const FullHeaderNarrowView = (props) => {
   const ScrollElement = Scroll.Element;
-  const { minSectionHeight, event, title, subtitle } = props;
+  const { minSectionHeight, nextEvent, title, subtitle } = props;
   const [title1, title2, title3] = title;
 
   // Event: scroll to ThreeSteps
@@ -78,27 +75,7 @@ const FullHeaderNarrowView = (props) => {
     >
       <div styleName="section-frame">
         <div styleName="section-frame__start">
-          <div styleName="about">
-            <div styleName="about-card">
-              <div styleName="about-card__heading">What</div>
-              <ATFMaskIcon />
-              <div styleName="about-card__text">{subtitle.text}</div>
-            </div>
-            <div styleName="about-card">
-              <div styleName="about-card__heading">When</div>
-              <ATFDateTime event={event} />
-            </div>
-            <div styleName="about-card">
-              <div styleName="about-card__heading">Where</div>
-              <div styleName="about-card__text">
-                <FaIcon icon="globe" />
-                <span>&nbsp;The United States (local time)</span>
-              </div>
-            </div>
-            <div styleName="share-invite">
-              <ShareInviteCard />
-            </div>
-          </div>
+          <ATFAbout nextEvent={nextEvent} subtitle={subtitle} />
         </div>
         <div styleName="section-frame__end">
           <IconButton
@@ -135,7 +112,7 @@ const FullHeaderNarrowView = (props) => {
 
 FullHeaderNarrowView.propTypes = {
   minSectionHeight: PropTypes.string.isRequired,
-  event: shape({
+  nextEvent: shape({
     day: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
