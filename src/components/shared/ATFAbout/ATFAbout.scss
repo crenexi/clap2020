@@ -25,18 +25,18 @@
 
 .card__heading {
   @include position(absolute, 0 null null 50%);
-  transform: translate(-50%, -.65rem);
+  transform: translate(-50%, -.7rem);
   @include flex-column(center, center);
   height: 1.5rem;
   padding: 0 10px 2px 10px;
   background-color: theme(blueRose, dark2);
   border-radius: 50px;
-  border: 2px solid #fff;
+  border: 3px solid #fff;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 1px;
-  font-size: .85rem;
+  font-size: .8rem;
   line-height: 1em;
 }
 
