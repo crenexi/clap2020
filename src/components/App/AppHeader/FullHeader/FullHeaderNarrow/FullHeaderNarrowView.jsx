@@ -78,28 +78,23 @@ const FullHeaderNarrowView = (props) => {
     >
       <div styleName="section-frame">
         <div styleName="section-frame__start">
-          <div styleName="about-card">
-            <div styleName="about-card__heading">What</div>
-            <ATFMaskIcon />
-            <div styleName="about-card__text">{subtitle.text}</div>
-          </div>
-          <div styleName="about-card">
-            <div styleName="about-card__heading">When</div>
-            <ATFDateTime event={event} />
-          </div>
-          <div styleName="about-card">
-            <div styleName="about-card__heading">Where</div>
-            <div styleName="about-card__text">
-              <FaIcon icon="globe" />
-              <span>&nbsp;The United States (local time)</span>
+          <div styleName="about">
+            <div styleName="about-card">
+              <div styleName="about-card__heading">What</div>
+              <ATFMaskIcon />
+              <div styleName="about-card__text">{subtitle.text}</div>
             </div>
-          </div>
-          <div styleName="about-card tags-card">
-            <div styleName="about-card__heading">Hashtags</div>
-            <div styleName="tags-pretext">{subtitle.tagsPretext}</div>
-            <div styleName="tags-text">{baseTags}</div>
-          </div>
-          <div styleName="share-invite">
+            <div styleName="about-card">
+              <div styleName="about-card__heading">When</div>
+              <ATFDateTime event={event} />
+            </div>
+            <div styleName="about-card">
+              <div styleName="about-card__heading">Where</div>
+              <div styleName="about-card__text">
+                <FaIcon icon="globe" />
+                <span>&nbsp;The United States (local time)</span>
+              </div>
+            </div>
             <ShareInviteCard />
           </div>
         </div>

@@ -59,9 +59,15 @@
 
 // Subtitle
 
+.about {
+  @include flex-column(center, center);
+}
+
 .about-card {
   position: relative;
   @include flex-column(flex-start, center);
+  width: 100%;
+  max-width: 25rem;
   padding: 1.1rem spacing(lg) spacing(sm);
   background-color: #fff;
   border-radius: border-radius(round);
@@ -104,6 +110,7 @@
 
 .tags-card {
   width: calc(100% - 1.7rem);
+  max-width: 23.3rem;
   @include flex-column(flex-start, center);
   margin: spacing(lg) auto 0;
   padding-bottom: 2.3rem;
@@ -162,5 +169,5 @@
 // Share invitation card
 
 .share-invite {
-  width: 100%;
+  @include flex-column(center, center);
 }

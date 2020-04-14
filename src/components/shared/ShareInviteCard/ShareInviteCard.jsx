@@ -4,7 +4,8 @@ import ShareInviteButton from '../ShareInviteButton';
 import './ShareInviteCard.scss';
 
 const ShareInviteCard = () => {
-  const { posters } = useContent();
+  const { shareInvite: content, posters } = useContent();
+  const { pretext, text } = content;
 
   // Get the thumb URL of the square poster
   const squarePoster = posters.find(p => p.format === 'square');
@@ -12,7 +13,19 @@ const ShareInviteCard = () => {
   const previewStyle = { backgroundImage: `url('${thumbUrl}')` };
 
   return (
-    <div styleName="card-frame">
+    <div styleName="card">
+      <div styleName="header">
+        <div styleName="header__overline">Hashtags</div>
+        <div styleName="header__pretext">{pretext}</div>
+        <div styleName="header__text">{text}</div>
+  </div>
+  <div styleName="share-invite">
+    <ShareInviteCard />
+  </div>
+
+
+
+<div styleName="card-frame">
       <div styleName="card">
         <div styleName="preview" style={previewStyle} />
         <div styleName="invite">

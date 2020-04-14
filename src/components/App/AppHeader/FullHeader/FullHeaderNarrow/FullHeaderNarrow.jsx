@@ -6,6 +6,9 @@ import { userAgent } from 'utils/helpers';
 import FullHeaderNarrowView from './FullHeaderNarrowView';
 
 const FullHeaderNarrow = () => {
+  const { uiContent, campaignContent } = useContent();
+
+  // Window height state
   const [minSectionHeight, setMinSectionHeight] = useState('100vh');
   const windowHeight = useWindowHeight();
 
@@ -22,8 +25,9 @@ const FullHeaderNarrow = () => {
   }, [windowHeight]);
 
   // Get header content
-  const { fullHeader: content, baseTags } = useContent();
-  const { event, title, subtitle } = content;
+  const { fullHeader } = uiContent;
+  const { campaignTags, nextEvent } = campaignContent;
+  const { title, subtitle } = fullHeader;
 
   // Only render on small
   const isGtSm = useBreakpoint('gt-sm');
@@ -32,8 +36,8 @@ const FullHeaderNarrow = () => {
   return (
     <FullHeaderNarrowView
       minSectionHeight={minSectionHeight}
-      baseTags={baseTags}
-      event={event}
+      baseTags={campaignTags}
+      event={nextEvent}
       title={title}
       subtitle={subtitle}
     />
