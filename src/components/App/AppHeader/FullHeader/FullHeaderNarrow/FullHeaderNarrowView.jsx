@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes, { arrayOf, shape } from 'prop-types';
 import * as Scroll from 'react-scroll';
 import scrollService from 'services/scroll-service';
+import BrandLogo from 'components/shared/BrandLogo';
 import IconButton from 'components/shared/IconButton';
 import ATFAbout from 'components/shared/ATFAbout';
 import FullHeaderSection from '../FullHeaderSection';
@@ -26,6 +27,9 @@ const FullHeaderNarrowView = (props) => {
       blanketColor="rgba(5, 25, 65, .5)"
     >
       <div styleName="title title--1">
+        <div styleName="title__logo">
+          <BrandLogo variant="white" />
+        </div>
         <div styleName="title__text">{title1.text}</div>
       </div>
     </FullHeaderSection>
