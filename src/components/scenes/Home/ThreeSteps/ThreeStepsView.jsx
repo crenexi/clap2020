@@ -3,6 +3,9 @@ import * as Scroll from 'react-scroll';
 import scssVars from 'scss/utils/exports';
 import ThreeStepsRow from './ThreeStepsRow';
 import ThreeStepsHeading from './ThreeStepsHeading';
+import StepOne from './StepOne';
+import StepTwo from './StepTwo';
+import StepThree from './StepThree';
 import './ThreeStepsView.scss';
 
 const ThreeStepsView = () => {
@@ -23,7 +26,7 @@ const ThreeStepsView = () => {
               icon="hashtag"
               theme={shareTheme}
             />
-            Content
+            <StepOne />
           </ThreeStepsRow>
           <ThreeStepsRow step={2} theme={remindTheme}>
             <ThreeStepsHeading
@@ -31,7 +34,7 @@ const ThreeStepsView = () => {
               icon="calendar-plus"
               theme={remindTheme}
             />
-            Content
+            <StepTwo />
           </ThreeStepsRow>
           <ThreeStepsRow step={3} theme={clapTheme}>
             <ThreeStepsHeading
@@ -39,7 +42,7 @@ const ThreeStepsView = () => {
               icon="hands-heart"
               theme={clapTheme}
             />
-            Content
+            <StepThree />
           </ThreeStepsRow>
         </div>
       </div>

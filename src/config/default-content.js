@@ -1,147 +1,188 @@
 const assetsPath = process.env.ASSETS_PATH;
 
-const defaultContent = {
-  nav: [
-    {
-      linkTo: '/',
-      title: 'Three Steps',
-      subtitle: 'Spread the word',
-      icon: 'house-user',
-      disabled: false,
-    },
-    {
-      linkTo: '/share',
-      title: 'Share Posters',
-      subtitle: 'Tweet, post, save',
-      icon: 'image',
-      disabled: false,
-    },
-    {
-      linkTo: '/praise',
-      title: 'Thank You',
-      subtitle: 'Groups to recognize',
-      icon: 'users',
-      disabled: false,
-    },
-    {
-      linkTo: '/heroes',
-      title: 'Fallen Heroes',
-      subtitle: 'Stories of coronavirus',
-      icon: 'medal',
-      disabled: true,
-    },
-    {
-      linkTo: '/get-ready',
-      title: 'Countdown',
-      subtitle: 'Get ready to clap',
-      icon: 'calendar-day',
-      disabled: false,
-    },
-  ],
-  footerNavs: {
-    metaNav: [
-      {
-        title: 'Posters to Share',
-        url: 'https://www.facebook.com/pg/clap2020nation/photos/?tab=album&album_id=104599801212991',
-      },
-      {
-        title: 'Twitter Profile',
-        url: 'https://twitter.com/clap2020',
-      },
-      {
-        title: 'Facebook Event',
-        url: 'https://www.facebook.com/events/266720250995614',
-      },
-      {
-        title: 'Facebook Group',
-        url: 'https://www.facebook.com/groups/clap2020',
-      },
-      {
-        title: 'Instagram Profile',
-        url: 'https://www.instagram.com/clap2020nation',
-      },
-      {
-        title: 'Style Guide',
-        url: 'https://www.clap2020.com/design',
-      },
-    ],
-    covid19Nav: [
-      {
-        title: 'Coronavirus Self-Checker',
-        url: 'https://c19check.com/',
-      },
-      {
-        title: 'CDC Coronavirus Center',
-        url: 'https://www.cdc.gov/coronavirus/2019-ncov/index.html',
-      },
-      {
-        title: 'JHU Global Case Dashboard',
-        url: 'https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6',
-      },
-      {
-        title: 'Hospital Resource Projections',
-        url: 'https://covid19.healthdata.org/united-states-of-america',
-      },
-      {
-        title: 'Response Fund for Nurses',
-        url: 'https://www.nursingworld.org/foundation/programs/coronavirus-response-fund/',
-      },
-      {
-        title: 'WHO COVID-19 Response Fund',
-        url: 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate',
-      },
-      {
-        title: 'Frontline Foods',
-        url: 'https://www.frontlinefoods.org/',
-      },
-    ],
+// Endpoint: /ui/drawer-nav
+const uiDrawerNav = [
+  {
+    linkTo: '/',
+    title: 'Three Steps',
+    subtitle: 'Spread the word',
+    icon: 'house-user',
+    disabled: false,
   },
-  platforms: [
+  {
+    linkTo: '/share',
+    title: 'Share Posters',
+    subtitle: 'Tweet, post, save',
+    icon: 'image',
+    disabled: false,
+  },
+  {
+    linkTo: '/praise',
+    title: 'Thank You',
+    subtitle: 'Groups to recognize',
+    icon: 'users',
+    disabled: false,
+  },
+  {
+    linkTo: '/heroes',
+    title: 'Fallen Heroes',
+    subtitle: 'Stories of coronavirus',
+    icon: 'medal',
+    disabled: true,
+  },
+  {
+    linkTo: '/get-ready',
+    title: 'Countdown',
+    subtitle: 'Get ready to clap',
+    icon: 'calendar-day',
+    disabled: false,
+  },
+];
+
+// Endpoint: /ui/footer-nav
+const uiFooterNav = {
+  metaNav: [
     {
-      id: 'twitter',
-      name: 'Twitter',
-      url: 'https://www.twitter.com/clap2020',
-      icon: 'twitter',
-      accountId: '1247599607317585920',
+      title: 'Posters to Share',
+      url: 'https://www.facebook.com/pg/clap2020nation/photos/?tab=album&album_id=104599801212991',
     },
     {
-      id: 'facebook',
-      name: 'Facebook',
-      url: 'https://www.facebook.com/clap2020nation',
-      icon: 'facebook-f',
+      title: 'Twitter Profile',
+      url: 'https://twitter.com/clap2020',
     },
     {
-      id: 'instagram',
-      name: 'Instagram',
+      title: 'Facebook Event',
+      url: 'https://www.facebook.com/events/266720250995614',
+    },
+    {
+      title: 'Facebook Group',
+      url: 'https://www.facebook.com/groups/clap2020',
+    },
+    {
+      title: 'Instagram Profile',
       url: 'https://www.instagram.com/clap2020nation',
-      icon: 'instagram',
+    },
+    {
+      title: 'Style Guide',
+      url: 'https://www.clap2020.com/design',
     },
   ],
-  countdown: {
-    eventDate: '2020-04-23',
-    eventTime: '19:00',
-    quoteCoverUrl: `${assetsPath}/covers/new-york.jpg`,
-    featuredQuote: {
-      text: 'Thank you to the administration of this healthcare system, and most importantly thank you to the front line workers. These people are true heroes in the truest sense of the word.',
-      author: {
-        name: 'Andrew Cuomo',
-        title: 'Governor of New York',
-      },
+  covid19Nav: [
+    {
+      title: 'Coronavirus Self-Checker',
+      url: 'https://c19check.com/',
     },
-  },
-  fullHeader: {
-    coverUrl: `${assetsPath}/covers/nurse.jpg`,
-  },
-  joinInvite: {
-    preTitle: '#Clap2020 #ClapBecauseWeCare',
-    title: 'They fight. We applaud.',
-    subtitle: 'Across the globe, healthcare workers challenge the menace of COVID-19. Join us at your doorstep for three minutes on 4/23 to raise a thundering applause for doctors, nurses, first responders, essential workers, and society.',
-    dateText: {
-      day: 'Thursday',
-      date: 'April 23',
-      time: '7:00 PM',
+    {
+      title: 'CDC Coronavirus Center',
+      url: 'https://www.cdc.gov/coronavirus/2019-ncov/index.html',
     },
+    {
+      title: 'JHU Global Case Dashboard',
+      url: 'https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6',
+    },
+    {
+      title: 'Hospital Resource Projections',
+      url: 'https://covid19.healthdata.org/united-states-of-america',
+    },
+    {
+      title: 'Response Fund for Nurses',
+      url: 'https://www.nursingworld.org/foundation/programs/coronavirus-response-fund/',
+    },
+    {
+      title: 'WHO COVID-19 Response Fund',
+      url: 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate',
+    },
+    {
+      title: 'Frontline Foods',
+      url: 'https://www.frontlinefoods.org/',
+    },
+  ],
+};
+
+// Endpoint: /ui/full-header
+const uiFullHeader = {
+  title: [
+    {
+      coverUrl: `${assetsPath}/covers/woman-mask.jpg`,
+      text: 'Raise a thunderous applause',
+    },
+    {
+      coverUrl: `${assetsPath}/covers/nurse.jpg`,
+      text: 'for the COVID-19 front lines',
+    },
+    {
+      coverUrl: `${assetsPath}/covers/usa-flag.jpg`,
+      text: 'across the United States',
+    },
+  ],
+  subtitle: {
+    coverUrl: `${assetsPath}/covers/urban-lights.jpg`,
+    text: 'Clap at your doorstep for three minutes for doctors, nurses, first responders, essential workers, and the nation.',
   },
+};
+
+// Endpoint: /campaign/status
+const campaignStatus = {
+  clapTime: 'April 30th @ 7:00 PM',
+  campaignTags: {
+    pretext: 'Spread the word with',
+    text: '#Clap2020 #ClapBecauseWeCare',
+  },
+  nextEvent: {
+    datetime: '2020-04-30 19:00',
+    day: 'Thursday',
+    date: 'April 30',
+    time: '7:00 PM',
+  },
+};
+
+// Endpoint: /campaign/posters
+const campaignPosters = [
+  {
+    format: 'story',
+    thumbUrl: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
+    hdUrl: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
+    url: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
+  },
+  {
+    format: 'square',
+    thumbUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
+    hdUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
+    url: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
+  },
+  {
+    format: 'rectangle',
+    thumbUrl: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
+    hdUrl: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
+    url: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
+  },
+];
+
+// Endpoint: /campaign/platforms
+const campaignPlatforms = [
+  {
+    id: 'twitter',
+    name: 'Twitter',
+    url: 'https://www.twitter.com/clap2020',
+    icon: 'twitter',
+    accountId: '1247599607317585920',
+  },
+  {
+    id: 'facebook',
+    name: 'Facebook',
+    url: 'https://www.facebook.com/clap2020nation',
+    icon: 'facebook',
+  },
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    url: 'https://www.instagram.com/clap2020nation',
+    icon: 'instagram',
+  },
+];
+
+// Endpoint: /scenes/home
+const sceneHome = {
   thisIsWar: {
     coverUrl: `${assetsPath}/covers/mask.jpg`,
     featuredQuote: {
@@ -187,6 +228,22 @@ const defaultContent = {
   thankYouInvite: {
     heroImageUrl: `${assetsPath}/covers/rainy-street.jpg`,
   },
+};
+
+// Endpoint: /scenes/get-ready
+const sceneGetReady = {
+  quoteCoverUrl: `${assetsPath}/covers/new-york.jpg`,
+  featuredQuote: {
+    text: 'Thank you to the administration of this healthcare system, and most importantly thank you to the front line workers. These people are true heroes in the truest sense of the word.',
+    author: {
+      name: 'Andrew Cuomo',
+      title: 'Governor of New York',
+    },
+  },
+};
+
+// Endpoint: /scenes/praise
+const scenePraise = {
   workforceVideos: [
     {
       videoId: 'A0BNO--7OdE',
@@ -374,7 +431,7 @@ const defaultContent = {
       description: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.',
     },
   ],
-  praiseTweets: [
+  tweets: [
     {
       id: '1246234088878551040',
       author: 'FDNY',
@@ -391,6 +448,154 @@ const defaultContent = {
       location: 'New York',
     },
   ],
+};
+
+// Endpoint: /datasets/united-states
+const datasetUnitedStates = [
+  'Alabama',
+  'Alaska',
+  'Arizona',
+  'Arkansas',
+  'California',
+  'Colorado',
+  'Connecticut',
+  'Delaware',
+  'Florida',
+  'Georgia',
+  'Hawaii',
+  'Idaho',
+  'Illinois',
+  'Indiana',
+  'Iowa',
+  'Kansas',
+  'Kentucky',
+  'Louisiana',
+  'Maine',
+  'Maryland',
+  'Massachusetts',
+  'Michigan',
+  'Minnesota',
+  'Mississippi',
+  'Missouri',
+  'Montana',
+  'Nebraska',
+  'Nevada',
+  'New Hampshire',
+  'New Jersey',
+  'New Mexico',
+  'New York',
+  'North Carolina',
+  'North Dakota',
+  'Ohio',
+  'Oklahoma',
+  'Oregon',
+  'Pennsylvania',
+  'Rhode Island',
+  'South Carolina',
+  'South Dakota',
+  'Tennessee',
+  'Texas',
+  'Utah',
+  'Vermont',
+  'Virginia',
+  'Washington',
+  'West Virginia',
+  'Wisconsin',
+  'Wyoming',
+  'D.C.',
+];
+
+const datasetTopCities = [
+  { name: 'NYC', state: 'New York' },
+  { name: 'Los Angeles', state: 'California' },
+  { name: 'Chicago', state: 'Illinois' },
+  { name: 'Dallas', state: 'Texas' },
+  { name: 'Houston', state: 'Texas' },
+  { name: 'Washington', state: 'D.C.' },
+  { name: 'Miami', state: 'Florida' },
+  { name: 'Philadelphia', state: 'Pennsylvania' },
+  { name: 'Atlanta', state: 'Georgia' },
+  { name: 'Boston', state: 'Massachusetts' },
+  { name: 'Phoenix', state: 'Arizona' },
+  { name: 'San Francisco', state: 'California' },
+  { name: 'Riverside', state: 'California' },
+  { name: 'Detroit', state: 'Michigan' },
+  { name: 'Seattle', state: 'Washington' },
+  { name: 'Minneapolis', state: 'Minnesota' },
+  { name: 'San Diego', state: 'California' },
+  { name: 'Tampa', state: 'Florida' },
+  { name: 'Denver', state: 'Colorado' },
+  { name: 'St. Louis', state: 'Missouri' },
+  { name: 'Baltimore', state: 'Maryland' },
+  { name: 'Orlando', state: 'Florida' },
+  { name: 'Charlotte', state: 'North Carolina' },
+  { name: 'San Antonio', state: 'Texas' },
+  { name: 'Portland', state: 'Oregon' },
+  { name: 'Sacramento', state: 'California' },
+  { name: 'Pitsburgh', state: 'Pennsylvania' },
+  { name: 'Las Vegas', state: 'Nevada' },
+  { name: 'Cincinnati', state: 'Ohio' },
+  { name: 'Austin', state: 'Texas' },
+  { name: 'Kansas City', state: 'Missouri' },
+  { name: 'Columbus', state: 'Ohio' },
+  { name: 'Cleveland', state: 'Ohio' },
+  { name: 'Indianapolis', state: 'Indiana' },
+  { name: 'San Jose', state: 'California' },
+  { name: 'Nashville', state: 'Tennessee' },
+  { name: 'Virginia Beach', state: 'Virginia' },
+  { name: 'Providence', state: 'Rhode Island' },
+  { name: 'Milwaukee', state: 'Wisconsin' },
+  { name: 'Jacksonville', state: 'Florida' },
+  { name: 'Oklahoma City', state: 'Oklahoma' },
+  { name: 'Memphis', state: 'Tennessee' },
+  { name: 'Richmond', state: 'Virginia' },
+  { name: 'Louisville', state: 'Kentucky' },
+  { name: 'New Orlean', state: 'Louisiana' },
+  { name: 'Salt Lake City', state: 'Utah' },
+  { name: 'Hartford', state: 'Connecticut' },
+  { name: 'Birmingham', state: 'Alabama' },
+  { name: 'Buffalo', state: 'New York' },
+  { name: 'Rochester', state: 'New York' },
+  { name: 'Grand Rapids', state: 'Michigan' },
+  { name: 'Tuscon', state: 'Arizona' },
+  { name: 'Fresno', state: 'California' },
+  { name: 'Tulsa', state: 'Oklahoma' },
+  { name: 'Honolulu', state: 'Hawaii' },
+  { name: 'Worcester', state: 'Massachusetts' },
+  { name: 'Bridgeport', state: 'Connecticut' },
+  { name: 'Omaha', state: 'Nebraska' },
+  { name: 'Albuquerque', state: 'New Mexico' },
+  { name: 'Greenville', state: 'South Carolina' },
+  { name: 'Bakersfield', state: 'California' },
+  { name: 'Knoxville', state: 'Tennessee' },
+  { name: 'Albany', state: 'New York' },
+  { name: 'McAllen', state: 'Texas' },
+  { name: 'New Haven', state: 'Connecticut' },
+  { name: 'Oxnard', state: 'California' },
+  { name: 'El Paso', state: 'Texas' },
+];
+
+// Content
+const defaultContent = {
+  uiContent: {
+    drawerNav: uiDrawerNav,
+    footerNav: uiFooterNav,
+    fullHeader: uiFullHeader,
+  },
+  campaignContent: {
+    status: campaignStatus,
+    posters: campaignPosters,
+    platforms: campaignPlatforms,
+  },
+  sceneContent: {
+    home: sceneHome,
+    getReady: sceneGetReady,
+    praise: scenePraise,
+  },
+  datasetContent: {
+    unitedStates: datasetUnitedStates,
+    topCities: datasetTopCities,
+  },
 };
 
 export default defaultContent;

@@ -1,0 +1,148 @@
+@import '~scss/utils';
+
+.grid {
+  display: grid;
+  grid-template-columns: auto min-content;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: spacing(xs) spacing(sm);
+}
+
+// Primary area
+
+.grid__primary {
+  display: flex;
+  flex-direction: column;
+  margin-left: spacing(md);
+  padding: 0 spacing(xs) 0 spacing(md);
+  border-left: 1px solid theme(cloud, dark2);
+}
+
+.grid__primary-item {
+  @include flex-column(center, center);
+  flex-grow: 1;
+
+  &:not(:first-child) {
+    padding-top: spacing(xs);
+  }
+}
+
+.grid__primary-label {
+  margin-bottom: spacing(2xs);
+}
+
+// Social area
+
+.grid__social {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -(spacing(2xs));
+}
+
+.grid__social-item {
+  flex: 1 1 50%;
+  display: grid;
+  place-items: stretch;
+  padding: spacing(2xs);
+}
+
+@include breakpoint('gt-xs') {
+  .grid__social-item {
+    flex: 1 1 33.3333%;
+  }
+}
+
+// Button specifics
+
+@mixin share-btn-theme($platform) {
+  background: color(platformGradient, $platform);
+
+  &::before {
+    border-color: color(platform, $platform);
+  }
+}
+
+:global {
+  .MuiButtonBase-root.c2-share-btn {
+    position: relative;
+    @include size(100%);
+    border: none;
+    box-shadow: shadow(2);
+
+    &::before {
+      @include position(absolute, -5px null null -5px);
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      border: 3px solid theme(ocean, light2);
+      border-radius: border-radius(normal);
+      opacity: 0;
+    };
+
+    &:hover {
+      border: none;
+      box-shadow: shadow(4);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    .c2-share-btn-label {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    &--twitter { @include share-btn-theme(twitter) };
+    &--facebook { @include share-btn-theme(facebook) };
+    &--instagram { @include share-btn-theme(instagram) };
+    &--whatsapp { @include share-btn-theme(whatsapp) };
+    &--facebook { @include share-btn-theme(facebook) };
+    &--linkedin { @include share-btn-theme(linkedin) };
+    &--reddit { @include share-btn-theme(reddit) };
+
+    &--email {
+      background: theme(ocean, base);
+      background: linear-gradient(
+        135deg,
+        theme(ocean, base),
+        theme(blueRose, base),
+      );
+    }
+
+    @include breakpoint('gt-xs') {
+      &::before {
+        content: '';
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .MuiButtonBase-root.c2-icon-button.c2-share-btn {
+    @include size(3.5rem);
+    background: theme(ocean, base);
+    background: linear-gradient(
+      135deg,
+      theme(ocean, base),
+      theme(blueRose, base),
+    );
+
+    &::before {
+      border-radius: 50%;
+    }
+
+    .c2-share-btn-label {
+      @include flex-column(center, center);
+      font-size: 1.5rem;
+    }
+
+    &--share {
+      .c2-share-btn-label {
+        margin-left: -3px;
+      }
+    }
+  }
+}

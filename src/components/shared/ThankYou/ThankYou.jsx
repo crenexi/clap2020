@@ -4,7 +4,10 @@ import useContent from 'hooks/use-content';
 import ThankYouView from './ThankYouView';
 
 const ThankYou = () => {
-  const { workforceGroups, workforceVideos } = useContent();
+  const { sceneContent } = useContent();
+
+  // Content
+  const { workforceGroups, workforceVideos } = sceneContent.praise;
 
   // Static bucket content
   const buckets = {

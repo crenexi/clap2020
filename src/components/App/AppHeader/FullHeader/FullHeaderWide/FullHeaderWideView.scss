@@ -1,0 +1,268 @@
+@import '~scss/utils';
+
+$aside-breakpoint: 1500px;
+$bg-color: rgb(5, 25, 65);
+$core-blanket-color: rgba(5, 25, 65, .5);
+$aside-blanket-color: rgba(5, 25, 65, .75);
+$header-bg-transform: scale(1.17) translateY(3.2rem);
+
+@keyframes header-bg-pace {
+  0% { transform: $header-bg-transform; }
+  100% { transform: scale(1); }
+}
+
+// Frame layout
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $bg-color;
+  color: #fff;
+}
+
+.frame__grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include size(100%);
+}
+
+// Frame main layout (horizontal split)
+
+.frame__cover,
+.frame__main {
+  width: 100%;
+}
+
+@media all and (min-width: $aside-breakpoint) {
+  .frame__cover,
+  .frame__main {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+  }
+}
+
+// Frame start
+
+.frame__start {
+  @include flex-row(center, center);
+  padding: spacing(md);
+}
+
+.frame__brand {
+  display: flex;
+  width: 8.5rem;
+}
+
+// Frame end
+
+.frame__end {
+  @include flex-column(flex-end, center);
+  width: 100%;
+  min-height: 10rem;
+  padding-bottom: spacing(sm);
+
+  @include breakpoint('gt-sm') {
+    padding-bottom: calc(2.3rem + 30px);
+  }
+}
+
+.frame__down-invite {
+  margin: 0 spacing(2xs);
+}
+
+// Frame cover
+
+.frame__cover {
+  @include position(absolute, 0 0 0 0);
+  @include size(100%);
+  overflow: hidden;
+}
+
+.cover {
+  position: relative;
+  @include size(100%);
+  overflow: hidden;
+}
+
+.cover__bg {
+  @include position(absolute, 0 null null 0);
+  @include size(100%);
+  @include bg-image(cover);
+}
+
+.cover__blanket,
+.cover__blend {
+  @include position(absolute, 0 null null 0);
+  @include size(100%);
+}
+
+.cover__blend {
+  mix-blend-mode: color;
+}
+
+.cover--core {
+  .cover__bg {
+    background-position: 13% 30%;
+    transform: $header-bg-transform;
+    animation: header-bg-pace 15s ease-in-out both infinite alternate;
+  }
+
+  .cover__blanket,
+  .cover__blend {
+    background-color: $core-blanket-color;
+  }
+}
+
+.cover--aside {
+  .cover__bg {
+    background-position: 50% 50%;
+  }
+
+  .cover__blanket,
+  .cover__blend {
+    background-color: $aside-blanket-color;
+  }
+}
+
+// Main layout
+
+.frame__main {
+  flex: 1 1 0%;
+}
+
+// Core content
+
+.core {
+  position: relative;
+  @include flex-row();
+  flex: 1 1 100%;
+  height: 100%;
+  padding: layout(2xs) layout(xs) layout(sm);
+}
+
+.core__left,
+.core__right {
+  flex: 1 1 50%;
+}
+
+.core__left {
+  @include flex-column(center, center);
+}
+
+.core__left-content {
+  @include flex-column(flex-start, flex-start);
+}
+
+.core__right {
+  @include flex-column(center, center);
+}
+
+.core__title {
+  align-self: center;
+  margin-bottom: -.35rem;
+  text-align: left;
+  letter-spacing: -.5px;
+  font-family: font-family(primary);
+  font-size: 2.7rem;
+  line-height: 1em;
+  font-weight: 700;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .1), 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.core__title1 {
+  margin-top: layout(md);
+}
+
+.core__title2 {
+  margin-top: spacing(2xs);
+  color: theme(marine, base);
+  font-weight: 300;
+}
+
+.core__title3 {
+  font-weight: 300;
+}
+
+.core__actions {
+  position: relative;
+  display: grid;
+  place-content: center;
+  place-items: stretch;
+  grid-gap: spacing(md);
+  margin-top: spacing(xl);
+  padding-top: spacing(xl);
+
+  &::before {
+    content: '';
+    @include position(absolute, -3px null null 0);
+    @include size(4.5rem, 6px);
+    background-color: theme(marine, dark2);
+  }
+}
+
+@include breakpoint('gt-md') {
+  .core {
+    padding: layout(2xs) layout(sm) layout(sm);
+  }
+
+  .core__left {
+    padding-left: layout(md);
+  }
+
+  .core__title {
+    font-size: 2.6rem;
+  }
+
+  .core__title1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media all and (min-width: $aside-breakpoint) {
+  .core {
+    padding: layout(2xs) layout(md) layout(sm);
+  }
+
+  .core__title {
+    font-size: 3rem;
+  }
+
+  .core__title1 {
+    font-size: 3.5rem;
+  }
+
+  .core__title2 {
+    margin-top: spacing(xs);
+  }
+}
+
+// Aside content
+
+.aside {
+  position: relative;
+  display: none;
+  @include flex-column(center, center);
+  height: 100%;
+  padding: 0 layout(md);
+}
+
+.aside::before,
+.aside::after {
+  content: '';
+  border-color: rgba(255, 255, 255, .15);
+  border-width: 7px;
+  border-right-style: solid;
+  border-left-style: solid;
+}
+
+.aside::before {
+  @include position(absolute, -3rem 1rem -3rem 1rem);
+}
+
+.aside::after {
+  @include position(absolute, 1rem 2rem 1rem 2rem);
+}

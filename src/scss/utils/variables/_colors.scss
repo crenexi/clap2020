@@ -5,7 +5,21 @@ $colors: (
     subtle: rgba(0, 0, 0, .65),
   ),
   platform: (
+    messenger: #0084ff,
     twitter: #1DA1F2,
+    facebook: #4267B2,
+    instagram: #e4405f,
+    whatsapp: #25d366,
+    linkedin: #2867B2,
+    reddit: #FF5700,
+  ),
+  platformGradient: (
+    twitter: linear-gradient(135deg, #0c85d0, #4db5f5),
+    facebook: linear-gradient(135deg, #34518d, #6283c5),
+    instagram: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%),
+    whatsapp: linear-gradient(135deg, #1da851, #4be083),
+    linkedin: linear-gradient(135deg, #1f4f88, #3a80d3),
+    reddit: linear-gradient(135deg, #cc4600, #ff7933),
   ),
 );
 

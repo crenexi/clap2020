@@ -3,8 +3,11 @@ import useContent from 'hooks/use-content';
 import ThisIsWarView from './ThisIsWarView';
 
 const ThisIsWar = () => {
-  const { thisIsWar: content } = useContent();
-  const { coverUrl, featuredQuote, warConditions } = content;
+  const { sceneContent } = useContent();
+
+  // Content
+  const { thisIsWar } = sceneContent.home;
+  const { coverUrl, featuredQuote, warConditions } = thisIsWar;
 
   return (
     <ThisIsWarView

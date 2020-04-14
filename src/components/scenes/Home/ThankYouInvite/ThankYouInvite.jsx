@@ -6,8 +6,14 @@ import Button from 'components/shared/Button';
 import './ThankYouInvite.scss';
 
 const ThankYouInvite = () => {
-  const { thankYouInvite: content, workforceGroups } = useContent();
-  const heroStyle = { backgroundImage: `url('${content.heroImageUrl}')` };
+  const { sceneContent } = useContent();
+
+  // Content
+  const { heroImageUrl } = sceneContent.home.thankYouInvite;
+  const { workforceGroups } = sceneContent.praise;
+
+  // Styles
+  const heroStyle = { backgroundImage: `url('${heroImageUrl}')` };
 
   // Front Lines icons
   const icons = workforceGroups

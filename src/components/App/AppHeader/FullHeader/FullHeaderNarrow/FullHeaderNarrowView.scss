@@ -1,0 +1,64 @@
+@import '~scss/utils';
+
+.header {
+  color: #fff;
+}
+
+.title-sections {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  place-items: stretch;
+}
+
+.subtitle-sections {
+  display: grid;
+  place-items: stretch;
+}
+
+.section-frame {
+  @include flex-column();
+  @include size(100%);
+
+  &__start {
+    flex: 1 1 0%;
+  }
+
+  &__end {
+    padding-top: spacing(sm);
+  }
+}
+
+// Title
+
+.title {
+  @include flex-column(center, center);
+  @include size(100%);
+
+  &--1 {
+    position: relative;
+    justify-content: flex-end;
+  }
+
+  &--2 {
+    justify-content: center;
+  }
+
+  &--3 {
+    justify-content: flex-start;
+  }
+}
+
+.title__logo {
+  @include position(absolute, 0 0 null null);
+  width: 8rem;
+}
+
+.title__text {
+  text-align: center;
+  letter-spacing: -.5px;
+  font-family: font-family(primary);
+  font-size: 1.9rem;
+  line-height: 1em;
+  font-weight: 700;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .3), 0 0 20px rgba(0, 0, 0, .5);
+}

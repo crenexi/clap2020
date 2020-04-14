@@ -6,7 +6,7 @@
   max-width: 100vw;
   min-width: 85vw;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: theme(ocean, dark2);
   background: linear-gradient(-35deg,
     theme(ocean, dark1),
