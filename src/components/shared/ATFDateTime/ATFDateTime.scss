@@ -3,8 +3,7 @@
 .dt {
   position: relative;
   @include flex-row(normal, normal, wrap);
-  margin: 7px 0 spacing(sm);
-  margin-bottom: spacing(sm);
+  margin: 3px 0 spacing(sm);
   padding-bottom: spacing(sm);
 
   &::after {
@@ -13,30 +12,6 @@
     transform: translateX(-50%);
     @include size(3rem, 4px);
     @include gradient(theme(blueRose, light2), theme(redRose, light2));
-  }
-
-  @include breakpoint('gt-xs') {
-    margin-bottom: spacing(md);
-    margin: 10px 0 spacing(sm);
-    padding-bottom: spacing(md);
-  }
-
-  @include breakpoint('gt-sm') {
-    margin-bottom: spacing(lg);
-    margin: 13px 0 spacing(sm);
-    padding-bottom: spacing(lg);
-  }
-
-  @include breakpoint('gt-md') {
-    margin-bottom: spacing(xl);
-    margin: 16px 0 spacing(sm);
-    padding-bottom: spacing(xl);
-  }
-
-  @include breakpoint('gt-lg') {
-    margin-bottom: spacing(2xl);
-    margin: 19px 0 spacing(sm);
-    padding-bottom: spacing(2xl);
   }
 }
 
@@ -66,6 +41,6 @@
   font-weight: 700;
 
   @include breakpoint('gt-sm') {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 }

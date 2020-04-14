@@ -3,7 +3,7 @@ import PropTypes, { arrayOf, shape } from 'prop-types';
 import scrollService from 'services/scroll-service';
 import BrandLogo from 'components/shared/BrandLogo';
 import IconButton from 'components/shared/IconButton';
-// import ATFAbout from 'components/shared/ATFAbout';
+import ATFAbout from 'components/shared/ATFAbout';
 import IconParade from './IconParade';
 import './FullHeaderWideView.scss';
 
@@ -62,11 +62,14 @@ const FullHeaderWideView = (props) => {
   const frameMain = (
     <div styleName="frame__main">
       <section styleName="core">
-        {title1.text}
-        {title2.text}
-        {title3.text}
-        {subtitle.text}
-        {nextEvent.date}
+        <div styleName="core__left">
+          <div styleName="core__title">
+            {title1.text}
+          </div>
+        </div>
+        <div styleName="core__right">
+          <ATFAbout nextEvent={nextEvent} subtitle={subtitle} />
+        </div>
       </section>
       <aside styleName="aside">
         Test

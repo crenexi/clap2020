@@ -12,12 +12,18 @@
   width: calc(100% - 1.8rem);
   @include flex-column(flex-start, center);
   margin: spacing(lg) auto 0;
-  padding: 1.1rem spacing(lg) 2rem;
+  padding: 1.35rem spacing(lg) 2.2rem;
   background-color: theme(ocean, dark2);
   border: 3px solid #fff;
   border-radius: border-radius(round);
   @include border-bottom-radius(0);
   text-align: center;
+}
+
+.header__overline,
+.header__pretext,
+.header__text {
+  line-height: .95em;
 }
 
 .header__overline {
@@ -34,7 +40,6 @@
   color: #fff;
   letter-spacing: 1px;
   font-size: .8rem;
-  line-height: 1em;
 }
 
 .header__pretext {
@@ -45,11 +50,11 @@
 }
 
 .header__text {
+  margin-top: 3px;
   color: theme(marine, base);
   letter-spacing: -.5px;
   font-family: font-family(primary);
   font-size: 1.45rem;
-  line-height: 1em;
 }
 
 @include breakpoint('gt-xs') {
@@ -106,13 +111,13 @@
 @include breakpoint('gt-xs') {
   .main {
     grid-template-columns: 7rem auto;
-    min-height: 7rem;
+    min-height: 6rem;
   }
 }
 
 @include breakpoint('gt-sm') {
   .main {
     grid-template-columns: 9rem auto;
-    min-height: 9rem;
+    min-height: 7rem;
   }
 }

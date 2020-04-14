@@ -20,13 +20,7 @@ const ATFAbout = (props) => {
         <div styleName="card">
           <div styleName="card__heading">When</div>
           <ATFDateTime event={nextEvent} />
-        </div>
-        <div styleName="card">
-          <div styleName="card__heading">Where</div>
-          <div styleName="card__text">
-            <FaIcon icon="globe" />
-            <span>&nbsp;The United States (local time)</span>
-          </div>
+          <div styleName="card__where">United States (local)</div>
         </div>
         <div styleName="share-invite">
           <ShareInviteCard />

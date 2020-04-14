@@ -13,13 +13,15 @@
   position: relative;
   @include flex-column(flex-start, center);
   width: 100%;
-  padding: 1.1rem spacing(lg) spacing(sm);
+  margin-top: spacing(lg);
+  padding: 1rem spacing(lg) .6rem;
   background-color: #fff;
   border-radius: border-radius(round);
+  box-shadow: shadow(24);
   color: #000;
 
-  &:not(:first-child) {
-    margin-top: spacing(lg);
+  &:first-child {
+    margin-top: spacing(sm);
   }
 }
 
@@ -48,6 +50,19 @@
 
   &:not(:first-child) {
     margin-top: spacing(2xs);
+  }
+}
+
+.card__where {
+  @include flex-row(center, center);
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  font-size: .85rem;
+  font-weight: 700;
+  line-height: 1.2em;
+
+  @include breakpoint('gt-sm') {
+    margin-bottom: 3px;
   }
 }
 
