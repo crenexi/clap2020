@@ -1,11 +1,35 @@
 @import '~scss/utils';
 
+$blanket-color: rgba(5, 25, 65, .5);
+
 .header {
   position: relative;
-  @include flex-column();
+  display: flex;
   min-height: 100vh;
-  background-color: theme(ocean, dark2);
   color: #fff;
+}
+
+.header__bg {
+  @include position(absolute, 0 null null 0);
+  @include size(100%);
+  @include bg-image(cover);
+}
+
+.header__blanket,
+.header__blend {
+  @include position(absolute, 0 null null 0);
+  @include size(100%);
+  background-color: $blanket-color;
+}
+
+.header__blend {
+  mix-blend-mode: color;
+}
+
+.header__grid {
+  position: relative;
+  @include flex-column();
+  flex: 1 1 100%;
 }
 
 // Top area

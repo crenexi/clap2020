@@ -86,7 +86,7 @@ IconButton.propTypes = {
   target: PropTypes.string,
   to: PropTypes.string,
   label: PropTypes.string,
-  invite: PropTypes.string,
+  invite: PropTypes.bool,
 };
 
 IconButton.defaultProps = {
