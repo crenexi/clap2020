@@ -129,6 +129,7 @@ const campaignStatus = {
     text: '#Clap2020 #ClapBecauseWeCare',
   },
   nextEvent: {
+    datetime: '2020-04-30 19:00',
     day: 'Thursday',
     date: 'April 30',
     time: '7:00 PM',
@@ -231,10 +232,6 @@ const sceneHome = {
 
 // Endpoint: /scenes/get-ready
 const sceneGetReady = {
-  event: {
-    date: '2020-04-30',
-    time: '19:00',
-  },
   quoteCoverUrl: `${assetsPath}/covers/new-york.jpg`,
   featuredQuote: {
     text: 'Thank you to the administration of this healthcare system, and most importantly thank you to the front line workers. These people are true heroes in the truest sense of the word.',

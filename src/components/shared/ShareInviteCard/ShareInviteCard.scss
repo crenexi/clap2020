@@ -8,13 +8,14 @@
 // Header
 
 .header {
-  width: calc(100% - 1.7rem);
-  max-width: 23.3rem;
+  position: relative;
+  width: calc(100% - 1.8rem);
   @include flex-column(flex-start, center);
   margin: spacing(lg) auto 0;
-  padding-bottom: 2.3rem;
+  padding: 1.1rem spacing(lg) 2rem;
   background-color: theme(ocean, dark2);
   border: 3px solid #fff;
+  border-radius: border-radius(round);
   @include border-bottom-radius(0);
   text-align: center;
 }

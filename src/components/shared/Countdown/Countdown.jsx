@@ -9,8 +9,8 @@ const Countdown = ({ isActive }) => {
   const { campaignContent } = useContent();
 
   // Content
-  const { nextEvent } = campaignContent.status;
-  const eventMoment = moment(`${nextEvent.date} ${nextEvent.time}`);
+  const { datetime } = campaignContent.status.nextEvent;
+  const eventMoment = moment(datetime);
 
   const cleanTZ = (tz) => {
     // Remove underscores from time zone guess
