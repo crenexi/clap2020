@@ -1,1 +1,9 @@
 @import '~scss/utils';
+
+.step {
+  width: 100%;
+}
+
+.countdown {
+  @include flex-column(center, center);
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './StepOne.scss';
 
 const StepOne = () => {
   return (
