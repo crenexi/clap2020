@@ -24,19 +24,17 @@ const FullHeaderNarrow = () => {
     setMinSectionHeight(minHeight);
   }, [windowHeight]);
 
-  // Get header content
-  const { fullHeader } = uiContent;
-  const { campaignTags, nextEvent } = campaignContent.status;
-  const { title, subtitle } = fullHeader;
-
   // Only render on small
   const isGtSm = useBreakpoint('gt-sm');
   if (isGtSm) return null;
 
+  // Content
+  const { title, subtitle } = uiContent.fullHeader;
+  const { nextEvent } = campaignContent.status;
+
   return (
     <FullHeaderNarrowView
       minSectionHeight={minSectionHeight}
-      baseTags={campaignTags}
       nextEvent={nextEvent}
       title={title}
       subtitle={subtitle}

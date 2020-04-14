@@ -1,45 +1,25 @@
 import React from 'react';
 import useBreakpoint from 'hooks/use-breakpoint';
-// import useContent from 'hooks/use-content';
-// import scrollService from 'services/scroll-service';
-// import BrandLogo from 'components/shared/BrandLogo';
-// import IconButton from 'components/shared/IconButton';
-// import IconParade from './IconParade';
-import './FullHeaderWide.scss';
+import useContent from 'hooks/use-content';
+import FullHeaderWideView from './FullHeaderWideView';
 
 const FullHeaderWide = () => {
-  // const { fullHeader: content, baseTags } = useContent();
+  const { uiContent, campaignContent } = useContent();
 
-  // Event: scroll to ThreeSteps
-  // const handleDownClick = () => {
-  //   scrollService.scrollToElement('threeSteps');
-  // };
-
-  // Only render on large
+  // Only render on small
   const isGtSm = useBreakpoint('gt-sm');
   if (!isGtSm) return null;
 
+  // Content
+  const { title, subtitle } = uiContent.fullHeader;
+  const { nextEvent } = campaignContent.status;
+
   return (
-    <article styleName="header">
-      Header Wide
-      {/* <section styleName="header__logo-aside">
-        <div styleName="header__logo">
-          <BrandLogo variant="main" />
-        </div>
-      </section>
-      <section>
-        HELLO WORLD {content.tagsPretext}
-        {baseTags}
-      </section>
-      <aside styleName="header__down-invite">
-        <IconButton
-          icon="arrow-alt-down"
-          label="3 Simple Steps"
-          click={handleDownClick}
-        />
-      </aside>
-      <IconParade /> */}
-    </article>
+    <FullHeaderWideView
+      nextEvent={nextEvent}
+      title={title}
+      subtitle={subtitle}
+    />
   );
 };
 

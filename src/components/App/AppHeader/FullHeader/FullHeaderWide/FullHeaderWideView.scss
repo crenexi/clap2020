@@ -1,0 +1,51 @@
+@import '~scss/utils';
+
+.header {
+  position: relative;
+  @include flex-column();
+}
+
+// Top area
+
+.start {
+  @include flex-row(center, center);
+}
+
+.start__brand {
+  width: 10rem;
+}
+
+// Main layout
+
+.main {
+  flex: 1 1 0%;
+  width: 100%;
+}
+
+// Main content
+
+// Bottom area
+
+@keyframes invite-down {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 100%; }
+  0% { transform: translate(-50%, -1rem); }
+  100% { transform: translate(-50%, 0); }
+}
+
+.end {
+  width: 100%;
+  padding: spacing(lg) 0 spacing(sm);
+
+  @include breakpoint('gt-sm') {
+    padding-bottom: calc(3.1rem + 30px);
+  }
+}
+
+.end__down-invite {
+  margin: 0 spacing(2xs);
+
+  &:not(:hover) {
+    animation: invite-down 2s linear infinite both;
+  }
+}
