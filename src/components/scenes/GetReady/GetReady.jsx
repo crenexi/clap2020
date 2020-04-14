@@ -3,8 +3,9 @@ import useContent from 'hooks/use-content';
 import GetReadyView from './GetReadyView';
 
 const GetReady = () => {
-  const { countdown } = useContent();
-  const { featuredQuote, quoteCoverUrl } = countdown;
+  const { sceneContent } = useContent();
+
+  const { featuredQuote, quoteCoverUrl } = sceneContent.getReady;
 
   return (
     <GetReadyView

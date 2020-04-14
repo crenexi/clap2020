@@ -7,7 +7,10 @@ import PraiseTweets from './PraiseTweets';
 import './Praise.scss';
 
 const Praise = () => {
-  const { praiseTweets: tweets } = useContent();
+  const { sceneContent } = useContent();
+
+  // Content
+  const { tweets } = sceneContent.praise;
 
   const quickNavItems = [
     <Button
