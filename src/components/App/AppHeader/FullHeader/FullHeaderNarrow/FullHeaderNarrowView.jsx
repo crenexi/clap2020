@@ -4,7 +4,7 @@ import * as Scroll from 'react-scroll';
 import scrollService from 'services/scroll-service';
 import IconButton from 'components/shared/IconButton';
 import ATFAbout from 'components/shared/ATFAbout';
-import FullHeaderSection from './FullHeaderSection';
+import FullHeaderSection from '../FullHeaderSection';
 import './FullHeaderNarrowView.scss';
 
 const FullHeaderNarrowView = (props) => {
