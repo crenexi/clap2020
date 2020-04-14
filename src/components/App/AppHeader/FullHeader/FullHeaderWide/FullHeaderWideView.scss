@@ -1,6 +1,6 @@
 @import '~scss/utils';
 
-$frame-end-height: 10rem;
+$aside-breakpoint: 1500px;
 $bg-color: rgb(5, 25, 65);
 $blanket-color: rgba(5, 25, 65, .5);
 $header-bg-transform: scale(1.17) translateY(3.2rem);
@@ -15,17 +15,33 @@ $header-bg-transform: scale(1.17) translateY(3.2rem);
 .frame {
   position: relative;
   overflow: hidden;
+  display: grid;
   width: 100%;
-  height: 100vh;
   min-height: 100vh;
   background-color: $bg-color;
   color: #fff;
 }
 
 .frame__grid {
+  position: relative;
   display: flex;
   flex-direction: column;
   @include size(100%);
+}
+
+// Frame main layout (horizontal split)
+
+.frame__cover,
+.frame__main {
+  width: 100%;
+}
+
+@media all and (min-width: $aside-breakpoint) {
+  .frame__cover,
+  .frame__main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 // Frame start
@@ -44,7 +60,7 @@ $header-bg-transform: scale(1.17) translateY(3.2rem);
 .frame__end {
   @include flex-column(flex-end, center);
   width: 100%;
-  height: $frame-end-height;
+  min-height: 10rem;
   padding-bottom: spacing(sm);
 
   @include breakpoint('gt-sm') {
@@ -59,11 +75,16 @@ $header-bg-transform: scale(1.17) translateY(3.2rem);
 // Frame cover
 
 .frame__cover {
-  display: none;
+  @include position(absolute, 0 0 0 0);
+  @include size(100%);
+  overflow: hidden;
 }
 
-.core-cover {
-  display: block;
+.core-cover,
+.aside-cover {
+  position: relative;
+  @include size(100%);
+  overflow: hidden;
 }
 
 .core-cover__bg {
@@ -86,18 +107,10 @@ $header-bg-transform: scale(1.17) translateY(3.2rem);
   mix-blend-mode: color;
 }
 
-// Frame main layout
+// Main layout
 
 .frame__main {
   flex: 1 1 0%;
-  width: 100%;
-}
-
-@include breakpoint('gt-md') {
-  .frame__main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }
 }
 
 // Core content
@@ -106,6 +119,7 @@ $header-bg-transform: scale(1.17) translateY(3.2rem);
   position: relative;
   @include flex-column();
   flex: 1 1 100%;
+  padding: layout(xs) layout(sm) layout(md);
 }
 
 // Aside content
@@ -115,7 +129,7 @@ $header-bg-transform: scale(1.17) translateY(3.2rem);
   background-color: $bg-color;
 }
 
-@include breakpoint('gt-md') {
+@media all and (min-width: $aside-breakpoint) {
   .aside {
     display: block;
   }

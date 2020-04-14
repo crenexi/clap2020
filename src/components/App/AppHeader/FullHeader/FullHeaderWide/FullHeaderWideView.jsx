@@ -52,6 +52,9 @@ const FullHeaderWideView = (props) => {
         <div styleName="core-cover__blanket" />
         <div styleName="core-cover__blend" />
       </div>
+      <div styleName="aside-cover">
+        Test
+      </div>
     </div>
   );
 
