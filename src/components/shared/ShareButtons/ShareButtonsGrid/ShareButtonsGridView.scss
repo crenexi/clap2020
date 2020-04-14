@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: auto min-content;
   width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
   padding: spacing(xs) spacing(sm);
 }
 

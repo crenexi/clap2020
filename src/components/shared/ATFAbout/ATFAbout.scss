@@ -4,11 +4,15 @@
   @include flex-column(center, center);
 }
 
+.about__center {
+  width: 100%;
+  max-width: 25rem;
+}
+
 .card {
   position: relative;
   @include flex-column(flex-start, center);
   width: 100%;
-  max-width: 25rem;
   padding: 1.1rem spacing(lg) spacing(sm);
   background-color: #fff;
   border-radius: border-radius(round);

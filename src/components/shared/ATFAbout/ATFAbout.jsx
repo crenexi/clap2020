@@ -11,24 +11,26 @@ const ATFAbout = (props) => {
 
   return (
     <div styleName="about">
-      <div styleName="card">
-        <div styleName="card__heading">What</div>
-        <ATFMaskIcon />
-        <div styleName="card__text">{subtitle.text}</div>
-      </div>
-      <div styleName="card">
-        <div styleName="card__heading">When</div>
-        <ATFDateTime event={nextEvent} />
-      </div>
-      <div styleName="card">
-        <div styleName="card__heading">Where</div>
-        <div styleName="card__text">
-          <FaIcon icon="globe" />
-          <span>&nbsp;The United States (local time)</span>
+      <div styleName="about__center">
+        <div styleName="card">
+          <div styleName="card__heading">What</div>
+          <ATFMaskIcon />
+          <div styleName="card__text">{subtitle.text}</div>
         </div>
-      </div>
-      <div styleName="share-invite">
-        <ShareInviteCard />
+        <div styleName="card">
+          <div styleName="card__heading">When</div>
+          <ATFDateTime event={nextEvent} />
+        </div>
+        <div styleName="card">
+          <div styleName="card__heading">Where</div>
+          <div styleName="card__text">
+            <FaIcon icon="globe" />
+            <span>&nbsp;The United States (local time)</span>
+          </div>
+        </div>
+        <div styleName="share-invite">
+          <ShareInviteCard />
+        </div>
       </div>
     </div>
   );
