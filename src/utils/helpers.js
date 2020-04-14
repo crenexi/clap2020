@@ -32,9 +32,15 @@ export const userAgent = (() => {
   return { isAndroid, isIOS, isMobile };
 })();
 
+// Convert string to camelCase
+export const toCamelCase = (str) => {
+  return str.replace(/-([a-z])/g, g => g[1].toUpperCase());
+};
+
 export default {
   capitalize,
   onlyAlpha,
   isTabOrShift,
   userAgent,
+  toCamelCase,
 };
