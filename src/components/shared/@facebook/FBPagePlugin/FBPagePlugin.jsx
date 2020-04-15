@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import Loading from 'components/shared/Loading';
 import './FBPagePlugin.scss';
 
 const FBPagePlugin = ({ width, height, withEvents }) => {
   const pageUrl = 'https://www.facebook.com/clap2020nation/';
   const tabs = !withEvents ? '' : 'events';
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (!window.FB) {
+      setIsLoading(false);
+      return;
+    }
+
+    window.FB.Event.subscribe('xfbml.render', () => setIsLoading(false));
+  }, []);
+
   return (
     <div styleName="frame">
+      {isLoading && <Loading size="small" />}
       <div styleName="card">
         <div
           className="fb-page"
@@ -22,7 +35,13 @@ const FBPagePlugin = ({ width, height, withEvents }) => {
           data-hide-cta="true"
         >
           <blockquote cite={pageUrl} className="fb-xfbml-parse-ignore">
-            <a href={pageUrl}>Clap2020</a>
+            <a
+              href={pageUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Clap2020 Page
+            </a>
           </blockquote>
         </div>
       </div>
