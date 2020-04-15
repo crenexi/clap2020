@@ -29,6 +29,7 @@
   @include breakpoint('gt-sm') {
     display: grid;
     grid-template-rows: min-content auto;
+    grid-row-gap: spacing(sm);
     padding: layout(xs);
 
     &:last-child {

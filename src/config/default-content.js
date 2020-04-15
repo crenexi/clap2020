@@ -52,7 +52,7 @@ const uiFooterNav = {
     },
     {
       title: 'Facebook Event',
-      url: 'https://www.facebook.com/events/266720250995614',
+      url: 'https://www.facebook.com/events/217497266335496/',
     },
     {
       title: 'Facebook Group',
@@ -77,8 +77,8 @@ const uiFooterNav = {
       url: 'https://www.cdc.gov/coronavirus/2019-ncov/index.html',
     },
     {
-      title: 'JHU Global Case Dashboard',
-      url: 'https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6',
+      title: 'JHU U.S. Case Dashboard',
+      url: 'https://www.arcgis.com/apps/opsdashboard/index.html#/409af567637846e3b5d4182fcd779bea',
     },
     {
       title: 'Hospital Resource Projections',
