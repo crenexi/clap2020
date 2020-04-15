@@ -1,7 +1,7 @@
 @import '~scss/utils';
 
 .frame:not(:first-child) {
-  margin-top: spacing(lg);
+  margin-top: spacing(md);
 }
 
 .header {
@@ -21,10 +21,4 @@
 
 .main {
   padding-top: spacing(xs);
-}
-
-@include breakpoint('gt-xs') {
-  .frame:not(:first-child) {
-    margin-top: spacing(xl);
-  }
 }

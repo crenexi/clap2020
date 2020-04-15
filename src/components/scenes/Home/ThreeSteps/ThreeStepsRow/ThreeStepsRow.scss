@@ -39,8 +39,9 @@ $border-width: .8rem;
   line-height: 1em;
 
   @include breakpoint('gt-xs') {
+    justify-content: flex-start;
     width: 7rem;
-    padding: spacing(lg) 0;
+    padding: 1.3rem 0;
     font-size: 5rem;
   }
 }

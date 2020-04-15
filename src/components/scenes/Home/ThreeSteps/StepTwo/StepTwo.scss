@@ -4,6 +4,15 @@
   overflow-x: auto;
 }
 
+.event-invite {
+  @include flex-column(center, center);
+}
+
+.event-invite__btn {
+  display: grid;
+  place-items: stretch;
+}
+
 @include breakpoint('gt-sm') {
   .step {
     display: grid;
