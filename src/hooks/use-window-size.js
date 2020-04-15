@@ -12,12 +12,12 @@ const getWindowSize = () => {
 };
 
 const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({});
+  const [windowSize, setWindowSize] = useState(getWindowSize());
 
   // Throttle the change
   const throttled = throttle(() => {
     setWindowSize(getWindowSize());
-  }, 100);
+  }, 250);
 
   // Register (and unregister) the listener
   useEffect(() => {

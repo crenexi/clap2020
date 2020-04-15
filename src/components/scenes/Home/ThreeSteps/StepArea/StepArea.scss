@@ -29,3 +29,9 @@
     margin-top: spacing(2xl);
   }
 }
+
+@include breakpoint('gt-sm') {
+  .frame:not(:first-child) {
+    margin-top: 0;
+  }
+}

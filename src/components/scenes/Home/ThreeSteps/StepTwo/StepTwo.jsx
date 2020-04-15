@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useBreakpoint from 'hooks/use-breakpoint';
+import FBGroupPlugin from 'components/shared/@facebook/FBGroupPlugin';
 import FBPagePlugin from 'components/shared/@facebook/FBPagePlugin';
 import StepArea from '../StepArea';
 import StepSection from '../StepSection';
 import './StepTwo.scss';
 
 const StepTwo = ({ theme }) => {
-  const isGtXs = useBreakpoint('gt-xs');
-  const pluginWidth = 250;
-
+  // Content
   const calendarSubtitle = 'Add your own calendar reminder';
   const facebookSubtitle = 'Get notified & share stories';
+
+  // Plugin width
+  const isGtXs = useBreakpoint('gt-xs');
+  const pluginWidth = !isGtXs ? 225 : 350;
 
   return (
     <div styleName="step">
@@ -31,14 +34,14 @@ const StepTwo = ({ theme }) => {
           title="Join Group"
           endIcon="users"
         >
-          Group Plugin
+          <FBGroupPlugin width={pluginWidth} />
         </StepSection>
         <StepSection
           theme={theme}
           title="Follow Page"
           endIcon="thumbs-up"
         >
-          <FBPagePlugin width={pluginWidth} withEvents={isGtXs} />
+          <FBPagePlugin width={pluginWidth} />
         </StepSection>
       </StepArea>
     </div>
