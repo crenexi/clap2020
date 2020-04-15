@@ -1,0 +1,6 @@
+@import '~scss/utils';
+
+.frame {
+  @include flex-column(center, center);
+  width: 100%;
+}
