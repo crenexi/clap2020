@@ -1,0 +1,31 @@
+@import '~scss/utils';
+
+.frame:not(:first-child) {
+  margin-top: spacing(xl);
+}
+
+.header {
+  width: 100%;
+}
+
+.header__title {
+  color: theme(ocean, dark1);
+  line-height: .8em;
+}
+
+.header__subtitle {
+  margin-top: spacing(2xs);
+  color: rgba(theme(ocean, base), .5);
+  font-size: .85rem;
+  line-height: 1.1em;
+}
+
+.main {
+  padding-top: spacing(sm);
+}
+
+@include breakpoint('gt-xs') {
+  .frame:not(:first-child) {
+    margin-top: spacing(2xl);
+  }
+}

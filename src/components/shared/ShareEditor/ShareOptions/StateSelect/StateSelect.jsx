@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import NativeSelectControl from 'components/shared/forms/NativeSelectControl';
-import SelectControl from 'components/shared/forms/SelectControl';
+import NativeSelectControl from 'components/shared/@forms/NativeSelectControl';
+import SelectControl from 'components/shared/@forms/SelectControl';
 import useBreakpoint from 'hooks/use-breakpoint';
 import './StateSelect.scss';
 

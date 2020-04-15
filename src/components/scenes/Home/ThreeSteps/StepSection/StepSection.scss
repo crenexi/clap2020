@@ -1,0 +1,30 @@
+@import '~scss/utils';
+
+.frame:not(:first-child) {
+  margin-top: spacing(lg);
+}
+
+.header {
+  padding: 5px 0;
+  @include flex-row(normal, center);
+}
+
+.header__title {
+  flex: 1 1 0%;
+}
+
+.header__icon {
+  @include flex-column(center, center);
+  margin: 0 6px 1px 0;
+  font-size: 1.2rem;
+}
+
+.main {
+  padding-top: spacing(xs);
+}
+
+@include breakpoint('gt-xs') {
+  .frame:not(:first-child) {
+    margin-top: spacing(xl);
+  }
+}

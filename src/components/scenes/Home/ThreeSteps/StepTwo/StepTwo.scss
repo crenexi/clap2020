@@ -1,1 +1,13 @@
 @import '~scss/utils';
+
+.step {
+  overflow-x: auto;
+}
+
+@include breakpoint('gt-sm') {
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: layout(sm);
+  }
+}
