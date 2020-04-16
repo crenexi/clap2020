@@ -1,31 +1,24 @@
 import React from 'react';
+import useContent from 'hooks/use-content';
 import calendarService from 'services/calendar-service';
 import AddToCalendarGrid from './AddToCalendarGrid';
 import './AddToCalendar.scss';
 
 const AddToCalendar = () => {
+  const { campaignContent } = useContent();
+  const { nextEvent } = campaignContent.status;
+
   const clients = [
     { id: 'google', name: 'Google Calendar' },
     { id: 'apple', name: 'Apple Calendar' },
-    { id: 'microsoft', name: 'Outlook & Live' },
     { id: 'yahoo', name: 'Yahoo Calendar' },
   ];
 
   const handleClientClick = (clientId) => {
-    const href = (() => {
-      switch (clientId) {
-        case 'google':
-          return calendarService.googleLink();
-        case 'apple':
-          return calendarService.icsLink();
-        case 'microsoft':
-          return calendarService.liveLink();
-        case 'yahoo':
-          return calendarService.yahooLink();
-        default:
-          return '';
-      }
-    })();
+    const href = calendarService.createLink({
+      event: nextEvent.meta,
+      to: clientId,
+    });
 
     console.log(href);
   };

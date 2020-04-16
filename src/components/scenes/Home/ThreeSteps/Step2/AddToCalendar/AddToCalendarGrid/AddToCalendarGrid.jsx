@@ -15,7 +15,7 @@ const AddToCalendarGrid = (props) => {
             <FaIcon icon={id} prefix="fab" />
           </div>
           <div styleName="item__btn">
-            <Button size="small" click={onClientClick}>
+            <Button size="small" click={() => onClientClick(id)}>
               {name}
             </Button>
           </div>
