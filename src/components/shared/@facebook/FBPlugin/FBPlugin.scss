@@ -1,0 +1,16 @@
+@import '~scss/utils';
+@import '~scss/shared/animations/arrive-fade';
+
+.plugin {
+  @include flex-column(center, center);
+  width: 100%;
+
+  &--hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+.plugin:not(.plugin--hidden) {
+  animation: arrive-fade 750ms linear;
+}

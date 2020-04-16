@@ -1,25 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Loading from 'components/shared/Loading';
-import './FBGroupPlugin.scss';
+import FBPlugin from '../FBPlugin';
 
 const FBGroupPlugin = ({ width }) => {
   const groupUrl = 'https://www.facebook.com/groups/clap2020/';
 
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (!window.FB) {
-      setIsLoading(false);
-      return;
-    }
-
-    window.FB.Event.subscribe('xfbml.render', () => setIsLoading(false));
-  }, []);
-
   return (
-    <div styleName="frame">
-      {isLoading && <Loading size="small" />}
+    <FBPlugin>
       <div
         className="fb-group"
         data-href={groupUrl}
@@ -37,7 +24,7 @@ const FBGroupPlugin = ({ width }) => {
           </a>
         </blockquote>
       </div>
-    </div>
+    </FBPlugin>
   );
 };
 
