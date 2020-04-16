@@ -2,9 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import useBreakpoint from 'hooks/use-breakpoint';
 import Countdown from 'components/shared/Countdown';
-import './StepThree.scss';
+import './Step3.scss';
 
-const StepThree = () => {
+const Step3 = () => {
   const isGtSm = useBreakpoint('gt-sm');
 
   const countdown = isGtSm ? null : (
@@ -20,8 +20,8 @@ const StepThree = () => {
   );
 };
 
-StepThree.propTypes = {
+Step3.propTypes = {
   // theme: PropTypes.string.isRequired,
 };
 
-export default StepThree;
+export default Step3;

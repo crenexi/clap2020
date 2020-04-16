@@ -1,15 +1,15 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import './StepOne.scss';
+import './Step1.scss';
 
-const StepOne = () => {
+const Step1 = () => {
   return (
     <div>Step One</div>
   );
 };
 
-StepOne.propTypes = {
+Step1.propTypes = {
   // theme: PropTypes.string.isRequired,
 };
 
-export default StepOne;
+export default Step1;

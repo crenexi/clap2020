@@ -4,11 +4,11 @@ import useBreakpoint from 'hooks/use-breakpoint';
 import Button from 'components/shared/Button';
 import FBGroupPlugin from 'components/shared/@facebook/FBGroupPlugin';
 import FBPagePlugin from 'components/shared/@facebook/FBPagePlugin';
-import StepArea from '../StepArea';
-import StepSection from '../StepSection';
-import './StepTwo.scss';
+import StepSectionL1 from '../StepSectionL1';
+import StepSectionL2 from '../StepSectionL2';
+import './Step2.scss';
 
-const StepTwo = ({ theme }) => {
+const Step2 = ({ theme }) => {
   // Content
   const calendarSubtitle = 'Add your own calendar reminder';
   const facebookSubtitle = 'Get notified & share stories';
@@ -20,20 +20,20 @@ const StepTwo = ({ theme }) => {
 
   return (
     <div styleName="step">
-      <StepArea title="Calendar" subtitle={calendarSubtitle}>
-        <StepSection
+      <StepSectionL1 title="Calendar" subtitle={calendarSubtitle}>
+        <StepSectionL2
           theme={theme}
           title="Add to Calendar"
           endIcon="calendar-plus"
         >
           Coming soon...
-        </StepSection>
-      </StepArea>
-      <StepArea title="Facebook" subtitle={facebookSubtitle}>
-        <StepSection
+        </StepSectionL2>
+      </StepSectionL1>
+      <StepSectionL1 title="Facebook" subtitle={facebookSubtitle}>
+        <StepSectionL2
           theme={theme}
           title="View Event"
-          endIcon="calendar-day"
+          endIcon="calendar-check"
         >
           <div styleName="event-invite">
             <div
@@ -50,28 +50,28 @@ const StepTwo = ({ theme }) => {
               </Button>
             </div>
           </div>
-        </StepSection>
-        <StepSection
+        </StepSectionL2>
+        <StepSectionL2
           theme={theme}
           title="Join Group"
           endIcon="users"
         >
           <FBGroupPlugin width={pluginWidth} />
-        </StepSection>
-        <StepSection
+        </StepSectionL2>
+        <StepSectionL2
           theme={theme}
           title="Follow Page"
           endIcon="thumbs-up"
         >
           <FBPagePlugin width={pluginWidth} />
-        </StepSection>
-      </StepArea>
+        </StepSectionL2>
+      </StepSectionL1>
     </div>
   );
 };
 
-StepTwo.propTypes = {
+Step2.propTypes = {
   theme: PropTypes.string.isRequired,
 };
 
-export default StepTwo;
+export default Step2;

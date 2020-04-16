@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FaIcon from 'components/shared/FaIcon';
-import './ThreeStepsHeading.scss';
+import './StepHeader.scss';
 
-const ThreeStepsHeading = ({ title, icon, theme }) => {
+const StepHeader = ({ title, icon, theme }) => {
   const style = {
     color: theme,
   };
@@ -18,10 +18,10 @@ const ThreeStepsHeading = ({ title, icon, theme }) => {
   );
 };
 
-ThreeStepsHeading.propTypes = {
+StepHeader.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
 };
 
-export default ThreeStepsHeading;
+export default StepHeader;

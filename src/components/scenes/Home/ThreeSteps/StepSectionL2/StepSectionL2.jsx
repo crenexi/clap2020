@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FaIcon from 'components/shared/FaIcon';
-import './StepSection.scss';
+import './StepSectionL2.scss';
 
-const StepSection = (props) => {
+const StepSectionL2 = (props) => {
   const { children, theme, title, endIcon } = props;
 
   const iconStyle = {
@@ -25,15 +25,15 @@ const StepSection = (props) => {
   );
 };
 
-StepSection.propTypes = {
+StepSectionL2.propTypes = {
   children: PropTypes.node.isRequired,
   theme: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   endIcon: PropTypes.string,
 };
 
-StepSection.defaultProps = {
+StepSectionL2.defaultProps = {
   endIcon: '',
 };
 
-export default StepSection;
+export default StepSectionL2;

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ThreeStepsRow.scss';
+import './StepFrame.scss';
 
-const ThreeStepsRow = ({ children, step, theme }) => {
+const StepFrame = ({ children, step, theme }) => {
   const borderStyle = {
     backgroundColor: theme,
   };
@@ -16,10 +16,10 @@ const ThreeStepsRow = ({ children, step, theme }) => {
   );
 };
 
-ThreeStepsRow.propTypes = {
+StepFrame.propTypes = {
   children: PropTypes.node.isRequired,
   step: PropTypes.number.isRequired,
   theme: PropTypes.string.isRequired,
 };
 
-export default ThreeStepsRow;
+export default StepFrame;

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useBreakpoint from 'hooks/use-breakpoint';
 import Button from 'components/shared/Button';
-import './StepArea.scss';
+import './StepSectionL1.scss';
 
-const StepArea = (props) => {
+const StepSectionL1 = (props) => {
   const { children, title, subtitle } = props;
   const isGtSm = useBreakpoint('gt-sm');
 
@@ -46,10 +46,10 @@ const StepArea = (props) => {
   );
 };
 
-StepArea.propTypes = {
+StepSectionL1.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
 };
 
-export default StepArea;
+export default StepSectionL1;
