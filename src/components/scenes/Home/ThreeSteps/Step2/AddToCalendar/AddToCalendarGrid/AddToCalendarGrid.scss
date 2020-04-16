@@ -1,16 +1,62 @@
 @import '~scss/utils';
 
 .grid {
+  display: grid;
+  max-width: 15rem;
+  margin: 0 auto;
 }
 
 .item {
+  @include flex-row(stretch, center);
+  padding: spacing(sm) 0;
 
+  &:not(:first-child) {
+    border-top: 1px solid theme(cloud, dark1);
+  }
 }
 
 .item__label {
-
+  @include flex-column(center, center);
+  width: 2.7rem;
+  font-size: 1.7rem;
 }
 
-.item__btn {
+.item--google .item__label { color: color(platform, google); }
+.item--apple .item__label { color: color(platform, apple); }
+.item--microsoft .item__label { color: color(platform, microsoft); }
+.item--yahoo .item__label { color: color(platform, yahoo); }
 
+.item__btn {
+  display: grid;
+  flex: 1 1 0%;
+}
+
+@include breakpoint('gt-xs') {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    grid-column-gap: layout(xs);
+    grid-row-gap: spacing(sm);
+    place-content: center;
+    max-width: 30rem;
+  }
+
+  .item {
+    padding-top: 0;
+
+    &:not(:first-child) {
+      margin: 0;
+      border-top: none;
+    }
+  }
+}
+
+@include breakpoint('gt-sm') {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 15rem;
+  }
+
+  .item__btn {
+    order: -1;
+  }
 }

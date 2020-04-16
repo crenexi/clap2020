@@ -3,7 +3,7 @@
 .frame {
   padding: spacing(xs) spacing(sm) spacing(sm);
   border-radius: border-radius(sharp);
-  box-shadow: 0 0 3px rgba(0, 0, 0, .15), 0 0 10px rgba(0, 0, 0, .08);
+  border: 1px solid theme(cloud, dark1);
 
   &:not(:first-child) {
     margin-top: spacing(md);

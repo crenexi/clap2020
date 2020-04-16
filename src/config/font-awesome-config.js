@@ -87,18 +87,23 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 
 import {
+  faApple,
   faFacebook,
   faFacebookMessenger,
+  faGoogle,
   faInstagram,
   faLinkedinIn,
+  faMicrosoft,
   faRedditAlien,
   faTwitter,
   faWhatsapp,
+  faYahoo,
 } from '@fortawesome/free-brands-svg-icons';
 
 const buildLibrary = () => {
   library.add(
     faAmbulance,
+    faApple,
     faArrowAltDown,
     faArrowCircleLeft,
     faArrowCircleRight,
@@ -130,6 +135,7 @@ const buildLibrary = () => {
     faFolderOpen,
     faGlobe,
     faGlobeAmericas,
+    faGoogle,
     faHandHoldingHeart,
     faHandsHeart,
     faHandsWash,
@@ -154,6 +160,7 @@ const buildLibrary = () => {
     faLungsVirus,
     faMedal,
     faMicroscope,
+    faMicrosoft,
     faPlus,
     faPodium,
     faProcedures,
@@ -185,6 +192,7 @@ const buildLibrary = () => {
     faVideo,
     faViruses,
     faWhatsapp,
+    faYahoo,
   );
 };
 

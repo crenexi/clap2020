@@ -1,25 +1,23 @@
 import React from 'react';
 import PropTypes, { arrayOf, shape } from 'prop-types';
-import IconButton from 'components/shared/IconButton';
+import Button from 'components/shared/Button';
 import FaIcon from 'components/shared/FaIcon';
+import './AddToCalendarGrid.scss';
 
 const AddToCalendarGrid = (props) => {
   const { clients, onClientClick } = props;
 
   return (
     <div styleName="grid">
-      {clients.map(({ id, name, faIcon }) => (
-        <div styleName="item" key={id}>
+      {clients.map(({ id, name }) => (
+        <div styleName={`item item--${id}`} key={id}>
           <div styleName="item__label">
-            <FaIcon icon={faIcon} prefix="fab" />
-            <span>{name}</span>
+            <FaIcon icon={id} prefix="fab" />
           </div>
           <div styleName="item__btn">
-            <IconButton
-              icon="calendar-plus"
-              size="large"
-              click={onClientClick}
-            />
+            <Button size="small" click={onClientClick}>
+              {name}
+            </Button>
           </div>
         </div>
       ))}
@@ -32,7 +30,7 @@ AddToCalendarGrid.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   })).isRequired,
-  onClientClick: PropTypes.string.isRequired,
+  onClientClick: PropTypes.func.isRequired,
 };
 
 export default AddToCalendarGrid;

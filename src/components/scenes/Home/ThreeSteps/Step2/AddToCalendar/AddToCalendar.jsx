@@ -1,6 +1,7 @@
 import React from 'react';
 import calendarService from 'services/calendar-service';
 import AddToCalendarGrid from './AddToCalendarGrid';
+import './AddToCalendar.scss';
 
 const AddToCalendar = () => {
   const clients = [
@@ -31,15 +32,10 @@ const AddToCalendar = () => {
 
   return (
     <div styleName="frame">
-      <div styleName="brief">
-        <p>asljdflkjaslkdjfl asdf sadf </p>
-      </div>
-      <div styleName="main">
-        <AddToCalendarGrid
-          clients={clients}
-          onClientClick={handleClientClick}
-        />
-      </div>
+      <AddToCalendarGrid
+        clients={clients}
+        onClientClick={handleClientClick}
+      />
     </div>
   );
 };
