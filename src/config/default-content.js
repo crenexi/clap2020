@@ -133,6 +133,13 @@ const campaignStatus = {
     day: 'Thursday',
     date: 'April 30',
     time: '7:00 PM',
+    meta: {
+      title: 'Clap for Healthcare & Essential Workers',
+      description: 'Visit www.clap2020.com for details',
+      start: '2020-04-30T19:00:00',
+      end: '2020-04-30T19:30:00',
+      location: 'United States',
+    },
   },
 };
 
