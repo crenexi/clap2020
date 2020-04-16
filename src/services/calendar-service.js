@@ -1,52 +1,22 @@
+import { google, yahoo } from 'calendar-link';
+
 const CalendarService = () => {
-  const toURI = str => encodeURI(str);
-  const alphaNumeric = str => str.match(/[A-Z1-9]/gi);
+  const createLink = (options = {}) => {
+    const { event, to } = options;
 
-  /* Generate Google Calendar URL */
-  const googleLink = (options = {}) => {
-    const { title, startDate, endDate, location, body } = options;
-
-    const baseUrl = 'https://calendar.google.com/calendar/r/eventedit';
-    const dates = `${alphaNumeric(startDate)}/${alphaNumeric(endDate)}`;
-
-    const query = (() => {
-      const params = [
-        'action=TEMPLATE',
-        `text=${toURI(title)}`,
-        `dates=${dates}`,
-        `location=${toURI(location)}`,
-        `details=${toURI(body)}`,
-        `sprops=website:www.clap2020.com`,
-        `sprops=name:Clap2020`,
-      ];
-
-      return params.reduce((a, v) => `${a}&${v}`, '?');
-    });
-
-    return `${baseUrl}?${query}`;
+    switch (to) {
+      case 'google':
+        return google(event);
+      case 'apple':
+        return '';
+      case 'yahoo':
+        return yahoo(event);
+      default:
+        return '';
+    }
   };
 
-  /* Generate Apple Calendar URL */
-  const icsLink = (options = {}) => {
-    return options;
-  };
-
-  /* Generate Live/Outlook Calendar URL */
-  const liveLink = (options = {}) => {
-    return options;
-  };
-
-  /* Generate Yahoo Calendar URL */
-  const yahooLink = (options = {}) => {
-    return options;
-  };
-
-  return {
-    googleLink,
-    icsLink,
-    liveLink,
-    yahooLink,
-  };
+  return { createLink };
 };
 
 export default new CalendarService();
