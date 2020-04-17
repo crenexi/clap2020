@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import useBreakpoint from 'hooks/use-breakpoint';
 import Button from 'components/shared/Button';
@@ -10,13 +10,6 @@ const StepSectionL1 = (props) => {
 
   // State
   const [open, setOpen] = useState(false);
-
-  // Reload FB plugins
-  useEffect(() => {
-    if (open && window.FB) {
-      window.FB.XFBML.parse();
-    }
-  }, [open]);
 
   const header = (
     <div styleName="header">

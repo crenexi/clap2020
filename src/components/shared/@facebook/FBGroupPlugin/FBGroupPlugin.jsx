@@ -6,7 +6,7 @@ const FBGroupPlugin = ({ width }) => {
   const groupUrl = 'https://www.facebook.com/groups/clap2020/';
 
   return (
-    <FBPlugin>
+    <FBPlugin minHeight={95}>
       <div
         className="fb-group"
         data-href={groupUrl}

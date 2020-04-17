@@ -8,7 +8,7 @@ const FBPagePlugin = ({ width, height, withEvents }) => {
   const tabs = !withEvents ? '' : 'events';
 
   return (
-    <FBPlugin>
+    <FBPlugin minHeight={130}>
       <div styleName="card">
         <div
           className="fb-page"

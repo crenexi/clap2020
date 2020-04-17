@@ -26,7 +26,7 @@ const ThreeStepsView = () => {
               icon="hashtag"
               theme={shareTheme}
             />
-            <Step1 theme={shareTheme} />
+            <Step1 />
           </StepFrame>
           <StepFrame step={2} theme={remindTheme}>
             <StepHeader
@@ -34,7 +34,7 @@ const ThreeStepsView = () => {
               icon="calendar-day"
               theme={remindTheme}
             />
-            <Step2 theme={remindTheme} />
+            <Step2 />
           </StepFrame>
           <StepFrame step={3} theme={clapTheme}>
             <StepHeader
@@ -42,7 +42,7 @@ const ThreeStepsView = () => {
               icon="hands-heart"
               theme={clapTheme}
             />
-            <Step3 theme={clapTheme} />
+            <Step3 />
           </StepFrame>
         </div>
       </div>

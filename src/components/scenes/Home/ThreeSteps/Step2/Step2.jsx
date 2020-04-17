@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import useBreakpoint from 'hooks/use-breakpoint';
 import Button from 'components/shared/Button';
 import FBGroupPlugin from 'components/shared/@facebook/FBGroupPlugin';
@@ -9,7 +8,7 @@ import StepSectionL2 from '../StepSectionL2';
 import AddToCalendar from './AddToCalendar';
 import './Step2.scss';
 
-const Step2 = ({ theme }) => {
+const Step2 = () => {
   // Content
   const calendarSubtitle = 'Add your own calendar reminder';
   const facebookSubtitle = 'Get notified & share stories';
@@ -40,43 +39,26 @@ const Step2 = ({ theme }) => {
   return (
     <div styleName="step">
       <StepSectionL1 title="Facebook" subtitle={facebookSubtitle}>
-        <StepSectionL2
-          theme={theme}
-          title="View Event"
-          endIcon="calendar-check"
-        >
+        <StepSectionL2 title="View Event" endIcon="calendar-check">
           {eventInvite}
         </StepSectionL2>
         <StepSectionL2
-          theme={theme}
           title="Join Group"
           endIcon="users"
         >
           <FBGroupPlugin width={pluginWidth} />
         </StepSectionL2>
-        <StepSectionL2
-          theme={theme}
-          title="Follow Page"
-          endIcon="thumbs-up"
-        >
+        <StepSectionL2 title="Follow Page" endIcon="thumbs-up">
           <FBPagePlugin width={pluginWidth} />
         </StepSectionL2>
       </StepSectionL1>
       <StepSectionL1 title="Calendar" subtitle={calendarSubtitle}>
-        <StepSectionL2
-          theme={theme}
-          title="Add to Calendar"
-          endIcon="calendar-plus"
-        >
+        <StepSectionL2 title="Add to Calendar" endIcon="calendar-plus">
           <AddToCalendar />
         </StepSectionL2>
       </StepSectionL1>
     </div>
   );
-};
-
-Step2.propTypes = {
-  theme: PropTypes.string.isRequired,
 };
 
 export default Step2;

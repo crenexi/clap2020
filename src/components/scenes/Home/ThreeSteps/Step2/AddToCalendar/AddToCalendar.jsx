@@ -15,12 +15,10 @@ const AddToCalendar = () => {
   ];
 
   const handleClientClick = (clientId) => {
-    const href = calendarService.createLink({
+    calendarService.createLink({
       event: nextEvent.meta,
       to: clientId,
     });
-
-    console.log(href);
   };
 
   return (

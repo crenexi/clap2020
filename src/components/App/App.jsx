@@ -26,11 +26,7 @@ const App = () => {
   }, []);
 
   // Load Facebook plugins
-  const facebook = useFacebook();
-  useEffect(() => {
-    facebook.load();
-    // return facebook.unload;
-  }, []);
+  useEffect(useFacebook().loadScript, []);
 
   return (
     <Router>

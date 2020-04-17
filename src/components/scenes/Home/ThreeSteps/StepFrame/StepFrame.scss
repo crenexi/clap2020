@@ -8,6 +8,7 @@ $border-width: .8rem;
   width: 100%;
   padding-left: $border-width;
   background-color: #fff;
+  box-shadow: shadow(4);
   overflow: hidden;
 
   &:not(:first-child) {
