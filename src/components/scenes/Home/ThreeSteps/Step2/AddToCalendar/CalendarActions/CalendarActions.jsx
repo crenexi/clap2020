@@ -8,13 +8,13 @@ import './CalendarActions.scss';
 const CalendarActions = ({ actions, click }) => {
   const list = actions.map(({ id, label, icon, iconPrefix }) => (
     <div styleName={`action action--${id}`} key={id}>
-      <div styleName="action__icon">
-        <FaIcon icon={icon} prefix={iconPrefix || 'fal'} />
-      </div>
       <div styleName="action__btn">
         <Button size="small" click={() => click(id)}>
           {label}
         </Button>
+      </div>
+      <div styleName="action__icon">
+        <FaIcon icon={icon} prefix={iconPrefix || 'fal'} />
       </div>
     </div>
   ));

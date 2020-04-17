@@ -5,7 +5,8 @@
 }
 
 .section {
-}
-
-.send-email {
+  background: red;
+  &:not(:first-child) {
+    margin-top: spacing(xs);
+  }
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import eventMetaType from 'types/event-meta';
-import Button from 'components/shared/Button';
 import CalendarActions from './CalendarActions';
 import CalendarCopy from './CalendarCopy';
 import './AddToCalendarView.scss';
 
 const AddToCalendarView = (props) => {
-  const { eventMeta, onActionClick, emailHref, onCopy } = props;
+  const { eventMeta, onActionClick, onCopy } = props;
 
   const actions = [
     {
@@ -35,19 +34,10 @@ const AddToCalendarView = (props) => {
     },
   ];
 
-  const emailButton = (
-    <Button size="small" startIcon="envelope" href={emailHref}>
-      Email Event
-    </Button>
-  );
-
   return (
     <div styleName="frame">
       <div styleName="section">
         <CalendarActions actions={actions} click={onActionClick} />
-      </div>
-      <div styleName="section">
-        <div styleName="send-email">{emailButton}</div>
       </div>
       <div styleName="section">
         <CalendarCopy eventMeta={eventMeta} onCopy={onCopy} />
@@ -58,7 +48,6 @@ const AddToCalendarView = (props) => {
 
 AddToCalendarView.propTypes = {
   eventMeta: eventMetaType.isRequired,
-  emailHref: PropTypes.string.isRequired,
   onActionClick: PropTypes.func.isRequired,
   onCopy: PropTypes.func.isRequired,
 };
