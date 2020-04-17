@@ -14,7 +14,7 @@ const StepSectionL2 = (props) => {
             <FaIcon styleName="header__icon" icon={endIcon} />
           </div>
         )}
-        <h5>{title}</h5>
+        <div styleName="header__title">{title}</div>
       </div>
       <div styleName="main">{children}</div>
     </div>
