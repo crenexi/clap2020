@@ -11,13 +11,14 @@ import AppView from './AppView';
 fontAwesomeConfig.buildLibrary();
 
 const App = () => {
-  logger.info('\nMain Engine Start.\nT-Zero. SRB Ignition.\nLiftoff.');
   const isDevEnv = process.env.NODE_ENV === 'development';
   const isIndexRoute = document.location.pathname === '/';
 
   // Application loading indication on home page only
   const [isLoading, setIsLoading] = useState(isIndexRoute && !isDevEnv);
   useEffect(() => {
+    logger.info('\nMain Engine Start.\nT-Zero. SRB Ignition.\nLiftoff.');
+
     const timeOutId = setTimeout(() => {
       setIsLoading(false);
     }, 1500);

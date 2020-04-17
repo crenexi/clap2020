@@ -1,39 +1,56 @@
-// import throttle from 'lodash.throttle';
-import logger from 'services/logger';
+import debounce from 'lodash.debounce';
+// import logger from 'services/logger';
 
-const sdkPlugins = () => {
+const sdkPlugins = (() => {
   const onReadyQueue = [];
 
-  /* Initialize */
-  // const initialize = (options) => {
-  //   errorHandler = options.errorHandler;
-  // };
-
   /* Parses Facebook plugins */
-  // const parse = () => {
-  //   logger.info('[PARSE]');
-  //   window.FB.XFBML.parse();
-  // };
-  // const throttledParse = throttle(parse, 1000);
+  const parse = () => {
+    window.FB.XFBML.parse();
+  };
+
+  /* Parses only after second of debounce */
+  const debouncedParse = debounce(parse, 750, {
+    maxWait: 5000,
+    leading: false,
+    trailing: true,
+  });
 
   /* Register a plugin */
   const load = (options = {}) => {
-    logger.info('[SDKPLUGINS.REGISTER]');
     const { onReady } = options;
-
     // Note onReady, if it's supplied
     if (onReady && typeof onReady === 'function') {
       onReadyQueue.push(onReady);
     }
 
-    logger.info(onReadyQueue);
+    // Parse plugins
+    debouncedParse();
   };
 
-  return {
-    // initialize,
-    load,
+  /* Runs when render is complete */
+  const onRender = () => {
+    // Avoid the first call of onRender, which appears to
+    // happen directly after the event subscription rather
+    // than after the first parse. Weird.
+    if (!onReadyQueue.length) return;
+    onReadyQueue.forEach(fn => fn());
   };
-};
+
+  /* Initializes - i.e. sets up listeners */
+  const init = () => {
+    window.FB.Event.subscribe('xfbml.render', onRender);
+
+    // Listen for resize
+    window.addEventListener('resize', debouncedParse);
+
+    // setTimeout(() => {
+    // window.addEventListener('resize', throttledOnRenderPlugins);
+    // }, 100);
+  };
+
+  return { init, load };
+})();
 
 export default sdkPlugins;
 

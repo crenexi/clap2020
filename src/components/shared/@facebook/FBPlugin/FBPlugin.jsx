@@ -4,21 +4,20 @@ import classNames from 'classnames';
 import useFacebook from 'hooks/use-facebook';
 import Loading from 'components/shared/Loading';
 import ErrorText from 'components/shared/ErrorText';
-import logger from 'services/logger';
 import './FBPlugin.scss';
 
 const FBPlugin = ({ children, minHeight }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const { hasError, loadPlugins } = useFacebook();
+  const { scriptLoaded, hasError, loadPlugins } = useFacebook();
 
   // Render plugins on load
   useEffect(() => {
-    logger.info('[USE EFFECT IN COMP]');
-
-    loadPlugins({
-      onReady: () => setIsLoading(false),
-    });
-  }, []);
+    if (scriptLoaded) {
+      loadPlugins({
+        onReady: () => setIsLoading(false),
+      });
+    }
+  }, [scriptLoaded]);
 
   // Error stops loading
   useEffect(() => {

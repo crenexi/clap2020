@@ -6,11 +6,8 @@ import sdkLoad from './sdk-load';
 import sdkPlugins from './sdk-plugins';
 
 const FacebookProvider = ({ children }) => {
-  const status = {
-    scriptLoaded: false,
-  };
-
   // State
+  const [scriptLoaded, setScriptLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   // Error handler
@@ -19,25 +16,27 @@ const FacebookProvider = ({ children }) => {
     setHasError(true);
   };
 
-  // Connect error handler to plugins
-  // sdkPlugins.initialize({ errorHandler: handleErr });
+  /* Signal plugins should be parsed */
+  const loadPlugins = (options) => {
+    try {
+      sdkPlugins.load(options);
+    } catch (err) {
+      handleErr(err);
+    }
+  };
 
   /* Load the SDK script on the fly */
   const loadScript = () => {
     sdkLoad().then(() => {
-      status.scriptLoaded = true;
-      sdkPlugins.load().catch(handleErr);
+      setScriptLoaded(true);
+      sdkPlugins.init();
+      loadPlugins();
     });
-  };
-
-  /* Signal plugins should be parsed */
-  const loadPlugins = (options) => {
-    if (!status.scriptLoaded) return;
-    sdkPlugins.load(options).catch(handleErr);
   };
 
   // Context value
   const facebook = {
+    scriptLoaded,
     hasError,
     loadScript,
     loadPlugins,
@@ -65,7 +64,6 @@ export default FacebookProvider;
 
 //     // Listen for resize
 //     setTimeout(() => {
-//       // window.addEventListener('resize', throttledOnRenderPlugins);
 //     }, 100);
 
 //     // SDK is ready
