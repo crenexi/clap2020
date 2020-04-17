@@ -1,39 +1,32 @@
 import React from 'react';
-import PropTypes, { shape } from 'prop-types';
+import PropTypes from 'prop-types';
 import moment from 'moment-timezone';
+import eventMetaType from 'types/event-meta';
 import FaIcon from 'components/shared/FaIcon';
 import IconButton from 'components/shared/IconButton';
 import './CalendarCopy.scss';
 
 const CalendarCopy = ({ eventMeta, onCopy }) => {
-  const { title, start, end, location, description } = eventMeta;
-
+  const { title, start, location, description } = eventMeta;
   const formatDate = dt => moment(dt).format('MMM D @ h:mm A');
-  const timeText = `${formatDate(start)} - ${formatDate(end)}`;
 
   const eventDetails = [
-    { id: 'Time', icon: 'clock', text: timeText },
+    { id: 'Title', icon: 'hand-holding-heart', text: title },
+    { id: 'Time', icon: 'clock', text: formatDate(start) },
     { id: 'Location', icon: 'globe-americas', text: location },
     { id: 'Description', icon: 'align-left', text: description },
   ];
 
-  // Event title
-  const titleDetail = (
-    <div styleName="detail detail--title">
-      <div styleName="detail__text">{title}</div>
-      <div styleName="detail__action">
-        <IconButton icon="copy" size="small" click={() => onCopy(title)} />
-      </div>
-    </div>
-  );
-
   // Event details
-  const details = eventDetails.map(({ icon, text }) => (
+  const details = eventDetails.map(({ id, icon, text }) => (
     <div styleName="detail" key={text}>
       <div styleName="detail__icon">
         <FaIcon icon={icon} />
       </div>
-      <div styleName="detail__text">{text}</div>
+      <div styleName="detail__main">
+        <div styleName="detail__label">{id}</div>
+        <div styleName="detail__text">{text}</div>
+      </div>
       <div styleName="detail__action">
         <IconButton icon="copy" size="small" click={() => onCopy(text)} />
       </div>
@@ -42,22 +35,14 @@ const CalendarCopy = ({ eventMeta, onCopy }) => {
 
   return (
     <div styleName="frame">
-      <div styleName="details">
-        {titleDetail}
-        {details}
-      </div>
+      <div styleName="heading">Event Details</div>
+      <div styleName="details">{details}</div>
     </div>
   );
 };
 
 CalendarCopy.propTypes = {
-  eventMeta: shape({
-    title: PropTypes.string.isRequired,
-    start: PropTypes.string.isRequired,
-    end: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-  }).isRequired,
+  eventMeta: eventMetaType.isRequired,
   onCopy: PropTypes.func.isRequired,
 };
 

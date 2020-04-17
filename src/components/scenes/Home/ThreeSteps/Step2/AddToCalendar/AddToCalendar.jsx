@@ -11,8 +11,6 @@ import AddToCalendarView from './AddToCalendarView';
 const AddToCalendar = ({ eventMeta, icsUrl }) => {
   // Create and go to new event link
   const openNewEvent = (actionId) => {
-    console.log(actionId);
-
     const url = (() => {
       if (actionId === 'google') return calLinkGoogle(eventMeta);
       if (actionId === 'yahoo') return calLinkYahoo(eventMeta);

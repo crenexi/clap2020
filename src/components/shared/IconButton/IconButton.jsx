@@ -12,6 +12,7 @@ const IconButton = (props) => {
 
   // Class for wrapper
   const wrapperClass = classNames('wrapper', {
+    'wrapper--with-label': label,
     'wrapper--invite': invite,
   });
 
@@ -26,7 +27,7 @@ const IconButton = (props) => {
     const base = 'c2-icon-button';
     return {
       root: `${base} ${base}--${variant} ${classes.root}`,
-      label: `${base}__label ${classes.label}`,
+      label: `${base}__label ${classes.label || ''}`,
       sizeSmall: `${base}--small`,
       disabled: `${base}--disabled`,
     };
@@ -66,7 +67,7 @@ const IconButton = (props) => {
       <div styleName="wrapper__btn">
         {button}
       </div>
-      <div styleName={wrapperLabelClass}>{label}</div>
+      {label && <div styleName={wrapperLabelClass}>{label}</div>}
     </div>
   );
 };

@@ -12,8 +12,8 @@ const EmailEvent = ({ event }) => {
   const href = (() => {
     const bodyText = [
       `#Clap2020 #ClapBecauseWeCare`,
-      `\n\nFacebook Event: ${fbUrl}`,
-      `\nEvent File (.ics): ${icsUrl}`,
+      `\n\nFacebook Event: \n${fbUrl}`,
+      `\n\nEvent File (.ics): \n${icsUrl}`,
       `\n\n${description}`,
     ].join('');
 

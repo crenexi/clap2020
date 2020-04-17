@@ -5,7 +5,9 @@
 }
 
 .section {
+  width: 100%;
+
   &:not(:first-child) {
-    margin-top: spacing(xs);
+    margin-top: spacing(md);
   }
 }

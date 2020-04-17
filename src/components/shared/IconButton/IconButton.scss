@@ -8,7 +8,11 @@
 }
 
 .wrapper {
-  @include flex-column(center, center);
+  display: flex;
+
+  &--with-label {
+    @include flex-column(center, center);
+  }
 }
 
 .wrapper__label {
