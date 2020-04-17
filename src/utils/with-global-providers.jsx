@@ -6,6 +6,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { SettingsProvider } from 'contexts/SettingsContext';
 import { ContentProvider } from 'contexts/ContentContext';
 import { ModalProvider } from 'contexts/ModalContext';
+import { SnackProvider } from 'contexts/SnackContext';
 import { FacebookProvider } from 'contexts/FacebookContext';
 
 const withGlobalProviders = (WrappedComponent) => {
@@ -20,9 +21,11 @@ const withGlobalProviders = (WrappedComponent) => {
         <ContentProvider value={defaultContent}>
           <ThemeProvider theme={theme}>
             <ModalProvider>
-              <FacebookProvider>
-                <WrappedComponent {...props} />;
-              </FacebookProvider>
+              <SnackProvider>
+                <FacebookProvider>
+                  <WrappedComponent {...props} />
+                </FacebookProvider>
+              </SnackProvider>
             </ModalProvider>
           </ThemeProvider>
         </ContentProvider>

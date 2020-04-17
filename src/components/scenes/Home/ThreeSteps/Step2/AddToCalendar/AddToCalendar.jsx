@@ -5,10 +5,15 @@ import {
   yahoo as calLinkYahoo,
 } from 'calendar-link';
 import eventMetaType from 'types/event-meta';
+import useSnack from 'hooks/use-snack';
+import logger from 'services/logger';
 import copyService from 'services/copy-service';
 import AddToCalendarView from './AddToCalendarView';
 
 const AddToCalendar = ({ eventMeta, icsUrl }) => {
+  // Snack state
+  const { startSnack } = useSnack();
+
   // Create and go to new event link
   const openNewEvent = (actionId) => {
     const url = (() => {
@@ -37,8 +42,19 @@ const AddToCalendar = ({ eventMeta, icsUrl }) => {
     openDownloadDialog();
   };
 
-  const handleCopy = (text) => {
-    copyService.copy(text);
+  const handleCopy = ({ label, value }) => {
+    copyService.copy(value)
+      .then(() => startSnack({
+        variant: 'success',
+        message: `Copied ${label}`,
+      }))
+      .catch((err) => {
+        logger.error(err);
+        startSnack({
+          variant: 'error',
+          message: 'Something went wrong',
+        });
+      });
   };
 
   return (

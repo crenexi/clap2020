@@ -17,7 +17,13 @@ const CalendarCopy = ({ eventMeta, onCopy }) => {
     { id: 'Description', icon: 'align-left', text: description },
   ];
 
-  // Event details
+  const handleCopy = ({ id, text }) => {
+    onCopy({
+      label: id,
+      value: text,
+    });
+  };
+
   const details = eventDetails.map(({ id, icon, text }) => (
     <div styleName="detail" key={text}>
       <div styleName="detail__icon">
@@ -28,7 +34,11 @@ const CalendarCopy = ({ eventMeta, onCopy }) => {
         <div styleName="detail__text">{text}</div>
       </div>
       <div styleName="detail__action">
-        <IconButton icon="copy" size="small" click={() => onCopy(text)} />
+        <IconButton
+          icon="copy"
+          size="small"
+          click={() => handleCopy({ id, text })}
+        />
       </div>
     </div>
   ));
