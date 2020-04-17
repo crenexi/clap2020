@@ -1,10 +1,18 @@
 import React from 'react';
-import PropTypes, { oneOfType, oneOf } from 'prop-types';
+import PropTypes, { oneOf } from 'prop-types';
+import classNames from 'classnames';
 import FaIcon from '../FaIcon';
 import './Loading.scss';
 
-const Loading = ({ size, color, withStar }) => {
-  const className = size ? `loading loading--${size}` : 'loading';
+const Loading = ({ size, color, center, withStar }) => {
+  const frameStyleName = classNames('frame', {
+    'frame--center': center,
+  });
+
+  const loadingStyleName = classNames('loading', {
+    [`loading--${size}`]: size,
+  });
+
   const isSmallerSize = ['tiny', 'small'].includes(size);
 
   // Use different spinner weights based on size
@@ -24,29 +32,33 @@ const Loading = ({ size, color, withStar }) => {
   );
 
   return (
-    <div styleName={className}>
-      {withStar && !isSmallerSize && starOfLife }
-      <div styleName="loading__spinner">
-        <FaIcon
-          icon="spinner-third"
-          prefix={iconPrefix}
-          style={iconStyle}
-          spin
-        />
+    <div styleName={frameStyleName}>
+      <div styleName={loadingStyleName}>
+        {withStar && !isSmallerSize && starOfLife }
+        <div styleName="loading__spinner">
+          <FaIcon
+            icon="spinner-third"
+            prefix={iconPrefix}
+            style={iconStyle}
+            spin
+          />
+        </div>
       </div>
     </div>
   );
 };
 
 Loading.propTypes = {
-  size: oneOfType([() => null, oneOf(['tiny', 'small', 'large'])]),
-  color: oneOfType([() => null, PropTypes.string]),
+  size: oneOf(['tiny', 'small', 'large']),
+  color: PropTypes.string,
+  center: PropTypes.bool,
   withStar: PropTypes.bool,
 };
 
 Loading.defaultProps = {
-  size: null,
-  color: null,
+  size: '',
+  color: '',
+  center: false,
   withStar: false,
 };
 

@@ -1,5 +1,15 @@
 @import '~scss/utils';
 
+.frame {
+  width: auto;
+
+  &--center {
+    @include position(absolute, 0 0 0 0);
+    @include flex-column(center, center);
+    @include size(100%);
+  }
+}
+
 .loading {
   position: relative;
   @include size(2rem);
