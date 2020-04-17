@@ -8,28 +8,23 @@
 
 .action {
   @include flex-row(stretch, center);
-  padding: spacing(sm) 0;
+  padding: spacing(xs) 0;
+}
 
-  &:not(:first-child) {
-    border-top: 1px solid theme(cloud, dark1);
-  }
+.action__btn,
+.action__icon {
+  transition-duration: 150ms;
+}
+
+.action__btn {
+  display: grid;
+  flex: 1 1 0%;
 }
 
 .action__icon {
   @include flex-column(center, center);
   width: 2.7rem;
-  font-size: 1.7rem;
-}
-
-.action--google .action__label { color: color(platform, google); }
-.action--apple .action__label { color: color(platform, apple); }
-.action--microsoft .action__label { color: color(platform, microsoft); }
-.action--yahoo .action__label { color: color(platform, yahoo); }
-.action--other .action__label { color: theme(blueRose, dark2); }
-
-.action__btn {
-  display: grid;
-  flex: 1 1 0%;
+  font-size: 1.5rem;
 }
 
 @include breakpoint('gt-sm') {
@@ -37,8 +32,23 @@
     grid-template-columns: 1fr;
     max-width: 15rem;
   }
+}
 
-  .action__btn {
-    order: -1;
+// Theme
+
+@mixin set-action-theme($color) {
+  .action__icon {
+    color: $color;
+  }
+
+  &:hover {
+    .action__btn { transform: translateX(3px); }
+    .action__icon { transform: translateX(-3px); }
   }
 }
+
+.action--google { @include set-action-theme(color(platform, google)); }
+.action--apple { @include set-action-theme(color(platform, apple)); }
+.action--microsoft { @include set-action-theme(color(platform, microsoft)); }
+.action--yahoo { @include set-action-theme(color(platform, yahoo)); }
+.action--other { @include set-action-theme(theme(blueRose, dark2)); }
