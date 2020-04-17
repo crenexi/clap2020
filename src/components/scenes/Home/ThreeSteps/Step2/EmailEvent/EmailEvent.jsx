@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes, { shape } from 'prop-types';
 import eventMetaType from 'types/event-meta';
 import Button from 'components/shared/Button';
+import './EmailEvent.scss';
 
 const EmailEvent = ({ event }) => {
   const { meta, fbUrl, icsUrl } = event;
@@ -22,7 +23,15 @@ const EmailEvent = ({ event }) => {
     return `mailto:?subject=${subject}&body=${body}`;
   })();
 
-  return <Button href={href} target="_blank">Email Event</Button>;
+  return (
+    <div styleName="frame">
+      <div styleName="button">
+        <Button size="small" href={href} target="_blank">
+          Open Email
+        </Button>
+      </div>
+    </div>
+  );
 };
 
 EmailEvent.propTypes = {
