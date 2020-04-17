@@ -10,8 +10,8 @@ const sdkPlugins = (() => {
   };
 
   /* Parses only after second of debounce */
-  const debouncedParse = debounce(parse, 750, {
-    maxWait: 5000,
+  const debouncedParse = debounce(parse, 500, {
+    maxWait: 3000,
     leading: false,
     trailing: true,
   });
