@@ -13,7 +13,7 @@ const AlertSnack = ({ children, open, onClose, variant }) => {
     <Snackbar
       open={open}
       anchorOrigin={anchorOrigin}
-      autoHideDuration={33500}
+      autoHideDuration={3500}
       onClose={onClose}
     >
       <Alert

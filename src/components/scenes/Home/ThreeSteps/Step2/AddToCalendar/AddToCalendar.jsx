@@ -11,7 +11,6 @@ import copyService from 'services/copy-service';
 import AddToCalendarView from './AddToCalendarView';
 
 const AddToCalendar = ({ eventMeta, icsUrl }) => {
-  // Snack state
   const { startSnack } = useSnack();
 
   // Create and go to new event link
