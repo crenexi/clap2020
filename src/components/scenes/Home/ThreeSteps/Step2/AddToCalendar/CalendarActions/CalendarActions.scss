@@ -1,0 +1,44 @@
+@import '~scss/utils';
+
+.list {
+  display: grid;
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+.action {
+  @include flex-row(stretch, center);
+  padding: spacing(sm) 0;
+
+  &:not(:first-child) {
+    border-top: 1px solid theme(cloud, dark1);
+  }
+}
+
+.action__icon {
+  @include flex-column(center, center);
+  width: 2.7rem;
+  font-size: 1.7rem;
+}
+
+.action--google .action__label { color: color(platform, google); }
+.action--apple .action__label { color: color(platform, apple); }
+.action--microsoft .action__label { color: color(platform, microsoft); }
+.action--yahoo .action__label { color: color(platform, yahoo); }
+.action--other .action__label { color: theme(blueRose, dark2); }
+
+.action__btn {
+  display: grid;
+  flex: 1 1 0%;
+}
+
+@include breakpoint('gt-sm') {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 15rem;
+  }
+
+  .action__btn {
+    order: -1;
+  }
+}

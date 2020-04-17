@@ -140,6 +140,7 @@ const campaignStatus = {
       end: '2020-04-30T19:30:00',
       location: 'United States',
     },
+    icsUrl: `${assetsPath}/events/04-30_Clap-Healthcare-Essential.ics`,
   },
 };
 

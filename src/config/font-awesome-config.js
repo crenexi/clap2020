@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/pro-solid-svg-icons';
 
 import {
+  faAlignLeft,
   faAmbulance,
   faArrowAltDown,
   faArrowCircleLeft,
@@ -31,6 +32,7 @@ import {
   faEnvelope,
   faExpandAlt,
   faExternalLink,
+  faFileDownload,
   faFileImage,
   faFilePdf,
   faFolderOpen,
@@ -102,6 +104,7 @@ import {
 
 const buildLibrary = () => {
   library.add(
+    faAlignLeft,
     faAmbulance,
     faApple,
     faArrowAltDown,
@@ -130,6 +133,7 @@ const buildLibrary = () => {
     faExternalLink,
     faFacebook,
     faFacebookMessenger,
+    faFileDownload,
     faFileImage,
     faFilePdf,
     faFolderOpen,
