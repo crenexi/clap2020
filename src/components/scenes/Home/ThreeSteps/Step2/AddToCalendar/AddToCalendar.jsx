@@ -25,7 +25,7 @@ const AddToCalendar = ({ eventMeta, icsUrl }) => {
     const timeoutId = setTimeout(() => {
       setGuideState(zeroGuideState);
       clearTimeout(timeoutId);
-    }, 350);
+    }, 150);
   };
 
   // Create and go to new event link

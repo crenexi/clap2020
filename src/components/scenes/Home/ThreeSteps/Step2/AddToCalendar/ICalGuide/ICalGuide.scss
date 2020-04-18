@@ -1,23 +1,41 @@
 @import '~scss/utils';
 
 .guide {
-  max-width: 20rem;
-  margin: 0 auto;
+  @include size(100%);
+  padding: spacing(xs) spacing(sm);
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: border-radius(normal);
   font-size: .8rem;
-  line-height: 1.35em;
+  line-height: 1.25em;
+  overflow-y: auto;
 }
 
 .header {
   display: grid;
   grid-template-columns: auto min-content;
   align-items: center;
+  padding: 0 spacing(xs);
 }
 
-.download-btn {
+.main {
+  padding: spacing(xs);
+}
+
+.main__btn {
   @include flex-column(center, center);
-  padding: layout(lg) 0;
+  padding: spacing(sm) 0;
 }
 
-.footnote {
+.main__footnote {
   color: color(content, subtle);
+}
+
+.download-btn-content {
+  @include flex-column(center, center);
+
+  &__icon {
+    margin-bottom: 3px;
+    font-size: 1.75rem;
+  }
 }

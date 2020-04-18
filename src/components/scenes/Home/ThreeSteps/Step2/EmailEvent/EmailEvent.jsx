@@ -27,7 +27,7 @@ const EmailEvent = ({ event }) => {
     <div styleName="frame">
       <div styleName="button">
         <Button size="small" href={href} target="_blank">
-          Open Email
+          Send as Email
         </Button>
       </div>
     </div>

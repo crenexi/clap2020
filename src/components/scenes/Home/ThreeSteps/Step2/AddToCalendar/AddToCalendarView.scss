@@ -1,11 +1,13 @@
 @import '~scss/utils';
-@import '~scss/shared/animations/arrive-full-up';
-@import '~scss/shared/animations/depart-full-down';
+@import '~scss/shared/animations/arrive-grow';
+@import '~scss/shared/animations/depart-shrink';
 
 .frame {
   position: relative;
   width: 100%;
   overflow: hidden;
+  margin: -(spacing(xs)) 0;
+  padding: spacing(sm);
 }
 
 .main {
@@ -23,9 +25,10 @@
 // Overlay for download guide
 
 .guide {
-  @include position(absolute, 0 null null 0);
-  @include size(100%);
-  background-color: #fff;
+  @include position(absolute, .25rem null null .25rem);
+  width: 100%;
+  padding: spacing(xs);
+  opacity: 1;
 
   &:not(.guide--open) {
     pointer-events: none;
@@ -33,10 +36,10 @@
   }
 
   &--open {
-    animation: arrive-full-up 350ms ease-out both;
+    animation: arrive-grow 150ms ease;
   }
 
   &--closing {
-    animation: depart-full-down 350ms ease-in both;
+    animation: depart-shrink 150ms ease;
   }
 }

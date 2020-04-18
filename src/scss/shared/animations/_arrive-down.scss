@@ -1,11 +1,11 @@
 @keyframes arrive-down {
   0% {
     opacity: 0;
-    transform: translateY(-5rem);
+    transform: translateY(-3rem) translateZ(0);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
 }

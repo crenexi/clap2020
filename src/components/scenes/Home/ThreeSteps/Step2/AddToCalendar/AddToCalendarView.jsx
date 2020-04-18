@@ -20,19 +20,19 @@ const AddToCalendarView = (props) => {
   const actions = [
     {
       id: 'google',
-      label: 'Google Calendar',
+      label: 'Add to Google',
       icon: 'google',
       iconPrefix: 'fab',
     },
     {
       id: 'apple',
-      label: 'Apple Calendar',
+      label: 'Add to Apple',
       icon: 'apple',
       iconPrefix: 'fab',
     },
     {
       id: 'yahoo',
-      label: 'Yahoo Calendar',
+      label: 'Add to Yahoo',
       icon: 'yahoo',
       iconPrefix: 'fab',
     },
