@@ -1,0 +1,11 @@
+@keyframes depart-shrink {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(.9) translate3d(0, 0, 0);
+  }
+}

@@ -8,6 +8,7 @@ $border: 1px solid rgba(255, 255, 255, .1);
 }
 
 .legal__icon {
+  @include flex-column(center, center);
   font-size: 1.3rem;
 }
 
@@ -45,7 +46,48 @@ $border: 1px solid rgba(255, 255, 255, .1);
   font-size: 1.3rem;
 }
 
+
+// Main content
+
+.legal__main {
+  @include flex-column(center, center);
+  padding-top: spacing(lg);
+
+  small {
+    font-size: .85rem;
+  }
+
+  a {
+    @include simple-link;
+    line-height: 1.5em;
+  }
+}
+
+.legal__detail:not(:first-child) {
+  margin: spacing(2xs) 0 0 0;
+}
+
 .legal__copyright {
   @include flex-row(center, center);
-  padding-top: spacing(md);
+}
+
+@include breakpoint('gt-xs') {
+  .legal__main {
+    flex-direction: row;
+  }
+
+  .legal__detail:not(:first-child) {
+    margin: 0 0 0 spacing(xs);
+    padding: 0 0 0 spacing(xs);
+
+    a::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: calc(-#{spacing(xs)} - 1px);
+      height: calc(100% - 7px);
+      border-left: 1px solid rgba(255, 255, 255, .15);
+      transform: rotate(20deg);
+    }
+  }
 }

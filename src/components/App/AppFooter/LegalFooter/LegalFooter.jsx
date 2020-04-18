@@ -8,6 +8,8 @@ const LegalFooter = () => {
   const cxAssetsPath = 'https://crenexi.s3.amazonaws.com/public';
   const cxFavUrl = `${cxAssetsPath}/brand/fav_light.svg`;
   const thisYear = (new Date()).getFullYear();
+  const tosUrl = '/assets/legal/Clap2020-TOS.html';
+  const ppUrl = '/assets/legal/Clap2020-Privacy-Policy.html';
 
   const cxLink = (
     <a href={cxUrl} target="_blank" rel="noopener noreferrer">Crenexi</a>
@@ -28,12 +30,26 @@ const LegalFooter = () => {
           <img src={cxFavUrl} alt="Crenexi Fav" />
         </span>
       </div>
-      <small styleName="legal__copyright">
-        <span styleName="legal__icon">
-          <FaIcon icon="copyright" />
-        </span>
-        <span>&nbsp;Crenexi {thisYear}</span>
-      </small>
+      <div styleName="legal__main">
+        <small styleName="legal__detail">
+          <div styleName="legal__copyright">
+            <span styleName="legal__icon">
+              <FaIcon icon="copyright" />
+            </span>
+            <span>&nbsp;Crenexi {thisYear}</span>
+          </div>
+        </small>
+        <small styleName="legal__detail">
+          <a href={tosUrl} target="blank" rel="noopener noreferrer">
+            Terms of Service
+          </a>
+        </small>
+        <small styleName="legal__detail">
+          <a href={ppUrl} target="blank" rel="noopener noreferrer">
+            Privacy Policy
+          </a>
+        </small>
+      </div>
     </div>
   );
 };

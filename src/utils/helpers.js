@@ -1,8 +1,17 @@
 // Capitalize string
 export const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
-// Helper: keeps only alphabetical chars
-export const onlyAlpha = str => str.match(/[A-Za-z]/g).join('');
+// Keeps only alphabetical chars
+export const onlyAlpha = (str) => {
+  const match = str.match(/[A-Z]/gi);
+  return !match ? '' : match.join('');
+};
+
+// Keeps only alphanumeric chars
+export const alphaNumeric = (str) => {
+  const match = str.match(/[A-Z0-9]/gi);
+  return !match ? '' : match.join('');
+};
 
 // Checks if event is a Tab or Shift key press
 export const isTabOrShift = (e) => {
@@ -40,6 +49,7 @@ export const toCamelCase = (str) => {
 export default {
   capitalize,
   onlyAlpha,
+  alphaNumeric,
   isTabOrShift,
   userAgent,
   toCamelCase,

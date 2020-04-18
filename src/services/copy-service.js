@@ -45,14 +45,15 @@ const CopyService = () => {
   });
 
   /** Handle the copy */
-  const copy = ({ payload }) => {
-    if (!payload) {
-      logger.error(`Invalid 'payload' supplied to CopyService.copy`);
+  const copy = (str) => {
+    if (!str) {
+      const errMsg = `Invalid 'str' supplied to CopyService.copy`;
+      logger.error(errMsg);
       return null;
     }
 
     // Returns a promise, or just returns if fallback is used
-    return copyToClipboard(payload);
+    return copyToClipboard(str);
   };
 
   return { copy };

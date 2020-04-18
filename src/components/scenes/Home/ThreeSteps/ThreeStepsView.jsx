@@ -1,11 +1,11 @@
 import React from 'react';
 import * as Scroll from 'react-scroll';
 import scssVars from 'scss/utils/exports';
-import ThreeStepsRow from './ThreeStepsRow';
-import ThreeStepsHeading from './ThreeStepsHeading';
-import StepOne from './StepOne';
-import StepTwo from './StepTwo';
-import StepThree from './StepThree';
+import StepFrame from './StepFrame';
+import StepHeader from './StepHeader';
+import Step1 from './Step1';
+import Step2 from './Step2';
+import Step3 from './Step3';
 import './ThreeStepsView.scss';
 
 const ThreeStepsView = () => {
@@ -20,30 +20,30 @@ const ThreeStepsView = () => {
     <ScrollElement styleName="three" name="threeSteps">
       <div styleName="three__main">
         <div styleName="three__steps">
-          <ThreeStepsRow step={1} theme={shareTheme}>
-            <ThreeStepsHeading
+          <StepFrame step={1} theme={shareTheme}>
+            <StepHeader
               title="Share"
               icon="hashtag"
               theme={shareTheme}
             />
-            <StepOne />
-          </ThreeStepsRow>
-          <ThreeStepsRow step={2} theme={remindTheme}>
-            <ThreeStepsHeading
+            <Step1 />
+          </StepFrame>
+          <StepFrame step={2} theme={remindTheme}>
+            <StepHeader
               title="Remind"
-              icon="calendar-plus"
+              icon="calendar-day"
               theme={remindTheme}
             />
-            <StepTwo />
-          </ThreeStepsRow>
-          <ThreeStepsRow step={3} theme={clapTheme}>
-            <ThreeStepsHeading
+            <Step2 />
+          </StepFrame>
+          <StepFrame step={3} theme={clapTheme}>
+            <StepHeader
               title="Clap"
               icon="hands-heart"
               theme={clapTheme}
             />
-            <StepThree />
-          </ThreeStepsRow>
+            <Step3 />
+          </StepFrame>
         </div>
       </div>
     </ScrollElement>

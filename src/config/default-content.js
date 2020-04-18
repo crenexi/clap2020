@@ -52,7 +52,7 @@ const uiFooterNav = {
     },
     {
       title: 'Facebook Event',
-      url: 'https://www.facebook.com/events/266720250995614',
+      url: 'https://www.facebook.com/events/217497266335496/',
     },
     {
       title: 'Facebook Group',
@@ -77,8 +77,8 @@ const uiFooterNav = {
       url: 'https://www.cdc.gov/coronavirus/2019-ncov/index.html',
     },
     {
-      title: 'JHU Global Case Dashboard',
-      url: 'https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6',
+      title: 'JHU U.S. Case Dashboard',
+      url: 'https://www.arcgis.com/apps/opsdashboard/index.html#/409af567637846e3b5d4182fcd779bea',
     },
     {
       title: 'Hospital Resource Projections',
@@ -133,6 +133,15 @@ const campaignStatus = {
     day: 'Thursday',
     date: 'April 30',
     time: '7:00 PM',
+    meta: {
+      title: 'Clap for Healthcare & Essential Workers',
+      description: 'Visit www.clap2020.com for details',
+      start: '2020-04-30T19:00:00',
+      end: '2020-04-30T19:30:00',
+      location: 'United States',
+    },
+    fbUrl: 'https://www.facebook.com/events/217497266335496/',
+    icsUrl: `${assetsPath}/events/04-30_Clap-Healthcare-Essential.ics`,
   },
 };
 

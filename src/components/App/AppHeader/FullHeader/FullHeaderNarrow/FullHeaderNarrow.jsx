@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useBreakpoint from 'hooks/use-breakpoint';
-import useWindowHeight from 'hooks/use-window-height';
+import useWindowSize from 'hooks/use-window-size';
 import useContent from 'hooks/use-content';
 import { userAgent } from 'utils/helpers';
 import FullHeaderNarrowView from './FullHeaderNarrowView';
@@ -10,7 +10,7 @@ const FullHeaderNarrow = () => {
 
   // Window height state
   const [minSectionHeight, setMinSectionHeight] = useState('100vh');
-  const windowHeight = useWindowHeight();
+  const { windowHeight } = useWindowSize();
 
   // On window height changes
   useEffect(() => {
