@@ -10,7 +10,7 @@ const SHARE_MODAL = 'SHARE_MODAL';
 
 const ShareModal = () => {
   const { activeModal, closeModal } = useModal();
-  const { startSnack } = useSnack();
+  const { pushSnack } = useSnack();
 
   // State
   const open = activeModal === SHARE_MODAL;
@@ -25,13 +25,13 @@ const ShareModal = () => {
   // Handle copy
   const handleCopyPayload = () => {
     copyService.copy(payload)
-      .then(() => startSnack({
+      .then(() => pushSnack({
         variant: 'success',
         message: `Copied hashtags!`,
       }))
       .catch((err) => {
         logger.error(err);
-        startSnack({
+        pushSnack({
           variant: 'error',
           message: 'Something went wrong',
         });

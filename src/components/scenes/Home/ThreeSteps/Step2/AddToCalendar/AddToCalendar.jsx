@@ -7,12 +7,12 @@ import {
 import eventMetaType from 'types/event-meta';
 import useSnack from 'hooks/use-snack';
 import logger from 'services/logger';
-import { capitalize, alphaNumeric } from 'utils/helpers';
+import { alphaNumeric } from 'utils/helpers';
 import copyService from 'services/copy-service';
 import AddToCalendarView from './AddToCalendarView';
 
 const AddToCalendar = ({ eventMeta, icsUrl }) => {
-  const { startSnack } = useSnack();
+  const { pushSnack } = useSnack();
 
   // State
   const zeroGuideState = { open: false, closing: false };
@@ -30,9 +30,7 @@ const AddToCalendar = ({ eventMeta, icsUrl }) => {
 
   // Create and go to new event link
   const openNewEvent = (actionId) => {
-    const actionTitle = capitalize(actionId);
-
-    // Ensure for calendar-link API
+    // 1. Ensure for calendar-link API
     const event = {
       title: eventMeta.title.trim(),
       start: alphaNumeric(eventMeta.start),
@@ -41,18 +39,15 @@ const AddToCalendar = ({ eventMeta, icsUrl }) => {
       description: eventMeta.description.trim(),
     };
 
-    const newEventUrl = (() => {
+    // 2. Generate URL for calendar
+    const calendarUrl = (() => {
       if (actionId === 'google') return calLinkGoogle(event);
       if (actionId === 'yahoo') return calLinkYahoo(event);
       return '';
     })();
 
-    // Delay for snack
-    startSnack({ message: `Opening ${actionTitle}...` });
-    const timeoutId = setTimeout(() => {
-      window.open(newEventUrl, '_blank');
-      clearTimeout(timeoutId);
-    }, 3000);
+    // 3. Create a window for the URL
+    window.open(calendarUrl, (new Date()).getTime());
   };
 
   const handleActionClick = (actionId) => {
@@ -68,13 +63,13 @@ const AddToCalendar = ({ eventMeta, icsUrl }) => {
 
   const handleCopy = ({ label, value }) => {
     copyService.copy(value)
-      .then(() => startSnack({
+      .then(() => pushSnack({
         variant: 'success',
         message: `Copied ${label}`,
       }))
       .catch((err) => {
         logger.error(err);
-        startSnack({
+        pushSnack({
           variant: 'error',
           message: 'Something went wrong',
         });

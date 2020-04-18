@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes, { oneOf } from 'prop-types';
+import PropTypes, { shape, oneOf } from 'prop-types';
 import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '../Alert';
 
-const AlertSnack = ({ children, open, onClose, variant }) => {
+const AlertSnack = (props) => {
+  const { snack, open, onClose, onExited } = props;
+
+  const hideDuration = 3500;
+
   const anchorOrigin = {
     vertical: 'top',
     horizontal: 'center',
@@ -11,32 +15,40 @@ const AlertSnack = ({ children, open, onClose, variant }) => {
 
   return (
     <Snackbar
+      key={snack.key}
       open={open}
       anchorOrigin={anchorOrigin}
-      autoHideDuration={3500}
+      autoHideDuration={hideDuration}
       onClose={onClose}
+      onExited={onExited}
     >
       <Alert
         canClose
         onClose={onClose}
-        variant={variant}
+        variant={snack.variant}
       >
-        {children}
+        {snack.message}
       </Alert>
     </Snackbar>
   );
 };
 
 AlertSnack.propTypes = {
-  children: PropTypes.node.isRequired,
+  snack: shape({
+    key: PropTypes.number,
+    variant: oneOf(['', 'success', 'danger']),
+    message: PropTypes.string.isRequired,
+  }),
   open: PropTypes.bool.isRequired,
-  onClose: PropTypes.func,
-  variant: oneOf(['', 'success', 'danger']),
+  onClose: PropTypes.func.isRequired,
+  onExited: PropTypes.func.isRequired,
 };
 
 AlertSnack.defaultProps = {
-  variant: '',
-  onClose: () => {},
+  snack: {
+    variant: '',
+    message: '',
+  },
 };
 
 export default AlertSnack;
