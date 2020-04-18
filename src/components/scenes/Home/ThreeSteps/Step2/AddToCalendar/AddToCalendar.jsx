@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   google as calLinkGoogle,
@@ -7,17 +7,26 @@ import {
 import eventMetaType from 'types/event-meta';
 import useSnack from 'hooks/use-snack';
 import logger from 'services/logger';
-import { capitalize } from 'utils/helpers';
+import { capitalize, alphaNumeric } from 'utils/helpers';
 import copyService from 'services/copy-service';
 import AddToCalendarView from './AddToCalendarView';
 
 const AddToCalendar = ({ eventMeta, icsUrl }) => {
-  const alphaNumeric = (str) => {
-    const match = str.match(/[A-Z0-9]/gi);
-    return !match ? '' : match.join('');
-  };
-
   const { startSnack } = useSnack();
+
+  // State
+  const zeroGuideState = { open: false, closing: false };
+  const [guideState, setGuideState] = useState(zeroGuideState);
+
+  // Download guide handlers
+  const handleGuideClose = () => {
+    setGuideState({ ...guideState, closing: true });
+
+    const timeoutId = setTimeout(() => {
+      setGuideState(zeroGuideState);
+      clearTimeout(timeoutId);
+    }, 350);
+  };
 
   // Create and go to new event link
   const openNewEvent = (actionId) => {
@@ -46,12 +55,6 @@ const AddToCalendar = ({ eventMeta, icsUrl }) => {
     }, 3000);
   };
 
-  // Open the dialog that prompts ICS download
-  const openDownloadDialog = () => {
-    console.log('download prompt...');
-    console.log(icsUrl);
-  };
-
   const handleActionClick = (actionId) => {
     // URL-supported actions
     if (['google', 'yahoo'].includes(actionId)) {
@@ -59,8 +62,8 @@ const AddToCalendar = ({ eventMeta, icsUrl }) => {
       return;
     }
 
-    // Otherwise download
-    openDownloadDialog();
+    // Otherwise open guide to download .ics
+    setGuideState({ ...guideState, open: true });
   };
 
   const handleCopy = ({ label, value }) => {
@@ -81,6 +84,9 @@ const AddToCalendar = ({ eventMeta, icsUrl }) => {
   return (
     <AddToCalendarView
       eventMeta={eventMeta}
+      icsUrl={icsUrl}
+      guideState={guideState}
+      onGuideClose={handleGuideClose}
       onActionClick={handleActionClick}
       onCopy={handleCopy}
     />

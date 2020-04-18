@@ -1,13 +1,42 @@
 @import '~scss/utils';
+@import '~scss/shared/animations/arrive-full-up';
+@import '~scss/shared/animations/depart-full-down';
 
 .frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main {
   width: 100%;
 }
 
-.section {
+.main__section {
   width: 100%;
 
   &:not(:first-child) {
     margin-top: spacing(md);
+  }
+}
+
+// Overlay for download guide
+
+.guide {
+  @include position(absolute, 0 null null 0);
+  @include size(100%);
+  background-color: #fff;
+
+  &:not(.guide--open) {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &--open {
+    animation: arrive-full-up 350ms ease-out both;
+  }
+
+  &--closing {
+    animation: depart-full-down 350ms ease-in both;
   }
 }

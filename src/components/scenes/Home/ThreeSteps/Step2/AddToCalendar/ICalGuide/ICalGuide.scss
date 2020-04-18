@@ -1,0 +1,23 @@
+@import '~scss/utils';
+
+.guide {
+  max-width: 20rem;
+  margin: 0 auto;
+  font-size: .8rem;
+  line-height: 1.35em;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto min-content;
+  align-items: center;
+}
+
+.download-btn {
+  @include flex-column(center, center);
+  padding: layout(lg) 0;
+}
+
+.footnote {
+  color: color(content, subtle);
+}
