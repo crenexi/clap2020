@@ -7,21 +7,43 @@ import {
 import eventMetaType from 'types/event-meta';
 import useSnack from 'hooks/use-snack';
 import logger from 'services/logger';
+import { capitalize } from 'utils/helpers';
 import copyService from 'services/copy-service';
 import AddToCalendarView from './AddToCalendarView';
 
 const AddToCalendar = ({ eventMeta, icsUrl }) => {
+  const alphaNumeric = (str) => {
+    const match = str.match(/[A-Z0-9]/gi);
+    return !match ? '' : match.join('');
+  };
+
   const { startSnack } = useSnack();
 
   // Create and go to new event link
   const openNewEvent = (actionId) => {
-    const url = (() => {
-      if (actionId === 'google') return calLinkGoogle(eventMeta);
-      if (actionId === 'yahoo') return calLinkYahoo(eventMeta);
-      return '';
-    });
+    const actionTitle = capitalize(actionId);
 
-    console.log(url);
+    // Ensure for calendar-link API
+    const event = {
+      title: eventMeta.title.trim(),
+      start: alphaNumeric(eventMeta.start),
+      end: alphaNumeric(eventMeta.end),
+      location: eventMeta.location.trim(),
+      description: eventMeta.description.trim(),
+    };
+
+    const newEventUrl = (() => {
+      if (actionId === 'google') return calLinkGoogle(event);
+      if (actionId === 'yahoo') return calLinkYahoo(event);
+      return '';
+    })();
+
+    // Delay for snack
+    startSnack({ message: `Opening ${actionTitle}...` });
+    const timeoutId = setTimeout(() => {
+      window.open(newEventUrl, '_blank');
+      clearTimeout(timeoutId);
+    }, 3000);
   };
 
   // Open the dialog that prompts ICS download
