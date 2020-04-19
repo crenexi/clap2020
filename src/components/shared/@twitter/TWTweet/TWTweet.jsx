@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes, { shape } from 'prop-types';
-import useBreakpoint from 'hooks/use-breakpoint';
 import logger from 'services/logger';
 import Loading from 'components/shared/Loading';
 import ErrorText from 'components/shared/ErrorText';
@@ -10,17 +9,6 @@ import './TWTweet.scss';
 const TWTweet = ({ id, options }) => {
   const { hideConversation, hideCards } = options;
   const frameRef = useRef(null);
-
-  // Breakpoints
-  const isGtXs = useBreakpoint('gt-xs');
-  const isGtMd = useBreakpoint('gt-md');
-
-  // Responsive width
-  const width = (() => {
-    if (!isGtXs) return 250;
-    if (!isGtMd) return 400;
-    return 550;
-  });
 
   // State
   const [twitterReady, setTwitterReady] = useState(false);
@@ -37,7 +25,6 @@ const TWTweet = ({ id, options }) => {
   // Load the tweet
   const loadTweet = () => {
     const params = {
-      width,
       conversation: hideConversation ? 'none' : undefined,
       cards: hideCards ? 'hidden' : undefined,
       theme: 'light',
@@ -52,7 +39,6 @@ const TWTweet = ({ id, options }) => {
     }
 
     // Create the tweet
-    console.log(frameRef.current);
     window.twttr.widgets.createTweet(id, frameRef.current, params)
       .then(() => setLoading(false))
       .catch(handleLoadErr);
@@ -68,10 +54,12 @@ const TWTweet = ({ id, options }) => {
 
   return (
     <TWPlugin onReady={handleReady}>
-      <div styleName="tweet-frame" ref={frameRef}>
+      <div styleName="tweet-frame">
         {loading && <Loading size="small" />}
         {error && <ErrorText subtle>Error loading tweet</ErrorText>}
-        <div styleName="tweet" ref={frameRef} />
+        <div styleName="tweet-card">
+          <div styleName="tweet" ref={frameRef} />
+        </div>
       </div>
     </TWPlugin>
   );

@@ -4,20 +4,30 @@
   width: 100%;
 }
 
-.step__section:not(:first-child) {
+.main {
+  width: 100%;
+}
+
+.main__section:not(:first-child) {
   margin-top: layout(sm);
 }
 
 @include breakpoint('gt-sm') {
-  .step {
+  .main {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: layout(lg);
   }
 
-  .step__section:not(:first-child) {
+  .main__section:not(:first-child) {
     margin: 0;
   }
+}
+
+// Featured tweets
+
+.featured-tweets {
+  width: 100%;
 }
 
 // Countdown
@@ -28,16 +38,16 @@
 
 // Noise methods
 
-.featured-tweet {
-
-}
-
 .noise-methods {
-
+  width: 100%;
 }
 
 // Countdown invitation
 
 .countdown-invite {
+  @include flex-column(center, center);
+}
 
+.countdown-invite__btn {
+  margin-top: spacing(lg);
 }

@@ -9,54 +9,54 @@ import StepSectionL1 from '../StepSectionL1';
 import './Step3.scss';
 
 const Step3 = () => {
+  const isGtSm = useBreakpoint('gt-sm');
+
+  // Static content
+  const methodsSubtitle = `How people are 'clapping' world-wide`;
+
+  // Content
   const { sceneContent } = useContent();
   const { featuredTweetId } = sceneContent.home.threeSteps;
 
-  const isGtSm = useBreakpoint('gt-sm');
-
-  const countdown = isGtSm ? null : (
-    <div styleName="countdown">
-      <Countdown />
-    </div>
-  );
-
-  const noiseMethods = (
-    <div styleName="noise-methods">
-      Noise Methods...
-      {/* <NoiseMethods /> */}
-    </div>
-  );
-
-  const featuredTweet = (
-    <div styleName="featured-tweet">
-      <TWTweet id={featuredTweetId} options={{ hideCards: true }} />
-    </div>
+  const featuredTweets = (
+    <TWTweet id={featuredTweetId} options={{ hideCards: true }} />
   );
 
   const countdownInvite = (
-    <div styleName="countdown-invite">
-      <Button
-        variant="secondary"
-        endIcon="arrow-circle-right"
-        to="/get-ready"
-      >
-        Big Countdown
-      </Button>
-    </div>
+    <Button
+      variant="secondary"
+      endIcon="arrow-circle-right"
+      to="/get-ready"
+    >
+      Large Countdown
+    </Button>
   );
 
   return (
     <div styleName="step">
-      <div styleName="step__section">
-        {countdown}
-        <StepSectionL1 title="Noise Methods" subtitle="How people are 'clapping' world-wide">
-          {featuredTweet}
-          {noiseMethods}
-        </StepSectionL1>
+      <div styleName="main">
+        <div styleName="main__section">
+          <div styleName="featured-tweets">{featuredTweets}</div>
+        </div>
+        <div styleName="main__section">
+          <StepSectionL1 title="Noise Methods" subtitle={methodsSubtitle}>
+            <div styleName="noise-methods">
+              Noise Methods...
+              {/* <NoiseMethods /> */}
+            </div>
+          </StepSectionL1>
+        </div>
       </div>
-      <div styleName="step__section">
-        {countdownInvite}
-      </div>
+      <StepSectionL1
+        title="Countdown"
+        subtitle="Be ready to join the moment"
+        keepOpen
+      >
+        <div styleName="countdown-invite">
+          {isGtSm ? null : <Countdown />}
+          <div styleName="countdown-invite__btn">{countdownInvite}</div>
+        </div>
+      </StepSectionL1>
     </div>
   );
 };
