@@ -59,7 +59,7 @@ const BigCountdownView = (props) => {
         </div>
       </div>
       <div styleName="row">
-        <div styleName="zone">{timeZone}</div>
+        <div styleName="zone">Current TZ: {timeZone}</div>
       </div>
     </div>
   );
