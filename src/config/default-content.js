@@ -192,6 +192,51 @@ const campaignPlatforms = [
 
 // Endpoint: /scenes/home
 const sceneHome = {
+  threeSteps: {
+    featuredTweetId: '1248388629476470789',
+  },
+  noiseMethods: [
+    {
+      title: 'Clapping',
+      subtitle: '',
+      icon: '',
+    },
+    {
+      title: 'Cheering',
+      subtitle: '',
+      icon: '',
+    },
+    {
+      title: 'Whistling',
+      subtitle: '',
+      icon: '',
+    },
+    {
+      title: 'Pots & Pans',
+      subtitle: '',
+      icon: '',
+    },
+    {
+      title: 'Horns',
+      subtitle: '',
+      icon: '',
+    },
+    {
+      title: 'Sirens',
+      subtitle: '',
+      icon: '',
+    },
+    {
+      title: '',
+      subtitle: '',
+      icon: '',
+    },
+    {
+      title: '',
+      subtitle: '',
+      icon: '',
+    },
+  ],
   thisIsWar: {
     coverUrl: `${assetsPath}/covers/mask.jpg`,
     featuredQuote: {

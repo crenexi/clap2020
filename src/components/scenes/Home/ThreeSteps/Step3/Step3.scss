@@ -4,6 +4,40 @@
   width: 100%;
 }
 
+.step__section:not(:first-child) {
+  margin-top: layout(sm);
+}
+
+@include breakpoint('gt-sm') {
+  .step {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: layout(lg);
+  }
+
+  .step__section:not(:first-child) {
+    margin: 0;
+  }
+}
+
+// Countdown
+
 .countdown {
   @include flex-column(center, center);
+}
+
+// Noise methods
+
+.featured-tweet {
+
+}
+
+.noise-methods {
+
+}
+
+// Countdown invitation
+
+.countdown-invite {
+
 }

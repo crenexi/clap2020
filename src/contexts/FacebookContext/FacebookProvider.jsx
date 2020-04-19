@@ -27,11 +27,13 @@ const FacebookProvider = ({ children }) => {
 
   /* Load the SDK script on the fly */
   const loadScript = () => {
-    sdkLoad().then(() => {
-      setScriptLoaded(true);
-      sdkPlugins.init();
-      loadPlugins();
-    });
+    if (!scriptLoaded) {
+      sdkLoad().then(() => {
+        setScriptLoaded(true);
+        sdkPlugins.init();
+        loadPlugins();
+      });
+    }
   };
 
   // Context value
@@ -54,20 +56,3 @@ FacebookProvider.propTypes = {
 };
 
 export default FacebookProvider;
-
-// const loadSDK = () => {
-//   loadSDKScript().then(() => {
-//     // const throttledOnRenderPlugins = throttle(onRenderPlugins, 1000);
-
-//     // Listener for render completion
-//     // window.FB.Event.subscribe('xfbml.render', throttledOnRenderPlugins);
-
-//     // Listen for resize
-//     setTimeout(() => {
-//     }, 100);
-
-//     // SDK is ready
-//     isSDKReady = true;
-//     renderPlugins();
-//   }).catch(handleErr);
-// };
