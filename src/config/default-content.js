@@ -127,6 +127,16 @@ const campaignStatus = {
   campaignTags: {
     pretext: 'Spread the word with',
     text: '#Clap2020 #ClapBecauseWeCare',
+    list: ['Clap2020', 'ClapBecauseWeCare'],
+    listExtended: [
+      'Clap2020',
+      'ClapBecauseWeCare',
+      'ThankYou',
+      'HealthcareHeroes',
+      'EssentialWorkers',
+      'StayAtHome',
+      'COVID19',
+    ],
   },
   nextEvent: {
     datetime: '2020-04-30 19:00',

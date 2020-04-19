@@ -20,11 +20,7 @@ const StepSectionL1 = (props) => {
 
   const toggle = (
     <div styleName="toggle">
-      <Button
-        variant="secondary"
-        endIcon="chevron-down"
-        click={() => setOpen(!open)}
-      >
+      <Button endIcon="chevron-down" click={() => setOpen(!open)}>
         Expand
       </Button>
     </div>
