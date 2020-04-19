@@ -5,36 +5,59 @@ import TwitterContext from './TwitterContext';
 import scriptLoad from './script-load';
 
 const TwitterProvider = ({ children }) => {
-  // State
-  const [scriptLoaded, setScriptLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  // State of script
+  const [scriptState, setScriptState] = useState({
+    ready: false,
+    loading: false,
+    error: false,
+  });
 
-  // Error handler
+  /* Error handler */
   const handleErr = (err) => {
     logger.error(err);
-    setHasError(true);
+    setScriptState({ ...scriptState, error: true });
   };
 
-  /* Load the SDK script on the fly */
-  const loadScript = () => {
-    if (!scriptLoaded) {
-      scriptLoad().then(() => setScriptLoaded(true).catch(handleErr));
+  /* Load the script on the fly */
+  const initLoadScript = () => {
+    // Signal the loading has begun
+    setScriptState({ ...scriptState, loading: true });
+
+    // Error if 10 seconds pass
+    const timeoutId = setTimeout(() => {
+      setScriptState({ ...scriptState, error: true });
+      clearTimeout(timeoutId);
+    }, 10 * 1000);
+
+    // Success handler
+    const onScriptReady = () => {
+      // Clear fallback ax
+      clearTimeout(timeoutId);
+
+      // Signal script is ready
+      setScriptState({
+        ...scriptState,
+        ready: true,
+        loading: false,
+      });
+    };
+
+    // Load script
+    scriptLoad().then(onScriptReady).catch(handleErr);
+  };
+
+  /* Simply ensures the script is loaded */
+  const ping = () => {
+    if (!scriptState.ready && !scriptState.loading) {
+      initLoadScript();
     }
   };
 
-  // After 10 seconds, error if script isn't loaded
-  (() => {
-    const id = setTimeout(() => {
-      if (!scriptLoaded) setHasError(true);
-      clearTimeout(id);
-    }, 10 * 1000);
-  })();
-
   // Context value
   const twitter = {
-    scriptLoaded,
-    hasError,
-    loadScript,
+    ping,
+    ready: scriptState.ready,
+    error: scriptState.error,
   };
 
   return (

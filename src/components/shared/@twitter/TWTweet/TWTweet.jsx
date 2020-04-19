@@ -24,13 +24,13 @@ const TWTweet = ({ id, options }) => {
 
   // State
   const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  const [error, setError] = useState(false);
 
   // Error handler
-  const handleLoadErr = () => {
-    logger.error(`Failed to load tweet '${id}'`);
-    setHasError(true);
-    setIsLoading(true);
+  const handleLoadErr = (err) => {
+    logger.error(err, `Failed to load tweet '${id}'`);
+    setError(true);
+    setIsLoading(false);
   };
 
   // Load the tweet
@@ -45,24 +45,21 @@ const TWTweet = ({ id, options }) => {
 
     if (!window.twttr) {
       logger.error(`'window.twttr' does not exist`);
-      setHasError(true);
+      setError(true);
       setIsLoading(false);
       return;
     }
 
     // Create the tweet
-    window.twttr.widgets.createTweet(id, frameRef, params)
+    window.twttr.widgets.createTweet(id, frameRef.current, params)
       .then(() => setIsLoading(false))
-      .then(handleLoadErr);
+      .catch(handleLoadErr);
   };
 
-  // On load, trigger the tweet load
-  useEffect(loadTweet, []);
-
   return (
-    <TWPlugin>
-      {isLoading && <Loading />}
-      {hasError && <ErrorText subtle>Error loading tweet</ErrorText>}
+    <TWPlugin onReady={loadTweet}>
+      {isLoading && <Loading size="small" />}
+      {error && <ErrorText subtle>Error loading tweet</ErrorText>}
       <div styleName="frame" ref={frameRef} />
     </TWPlugin>
   );

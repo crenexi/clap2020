@@ -29,7 +29,7 @@ const Step3 = () => {
 
   const featuredTweet = (
     <div styleName="featured-tweet">
-      {/* <TWTweet id={featuredTweetId} options={{ hideCards: true }} /> */}
+      <TWTweet id={featuredTweetId} options={{ hideCards: true }} />
     </div>
   );
 

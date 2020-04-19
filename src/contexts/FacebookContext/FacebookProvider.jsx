@@ -33,8 +33,7 @@ const FacebookProvider = ({ children }) => {
       clearTimeout(timeoutId);
     }, 10 * 1000);
 
-    // Load script
-    sdkLoad().then(() => {
+    const onScriptReady = () => {
       // Clear fallback ax
       clearTimeout(timeoutId);
 
@@ -47,7 +46,10 @@ const FacebookProvider = ({ children }) => {
 
       // Process plugin queue
       pluginQueue.forEach(p => sdkPlugins.register(p));
-    });
+    };
+
+    // Load script
+    sdkLoad().then(onScriptReady).catch(handleErr);
   };
 
   /* Registers a plugin */

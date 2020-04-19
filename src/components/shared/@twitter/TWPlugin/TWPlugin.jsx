@@ -5,28 +5,37 @@ import Loading from 'components/shared/Loading';
 import ErrorText from 'components/shared/ErrorText';
 import './TWPlugin.scss';
 
-const TWPlugin = ({ children }) => {
+const TWPlugin = ({ children, onReady }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const { scriptLoaded, hasError } = useTwitter();
+  const { ping, ready, error } = useTwitter();
 
   // Stop loading when ready or error
   useEffect(() => {
-    if (scriptLoaded || hasError) {
+    if (ready || error) {
       setIsLoading(false);
+      onReady();
+      return;
     }
-  }, [scriptLoaded, hasError]);
+
+    ping();
+  }, [ready, error]);
 
   return (
     <div styleName="frame">
       {isLoading && <Loading size="small" center />}
-      {hasError && <ErrorText subtle>Error loading plugins</ErrorText>}
-      {scriptLoaded && children}
+      {error && <ErrorText subtle>Error loading plugins</ErrorText>}
+      {!isLoading && children}
     </div>
   );
 };
 
 TWPlugin.propTypes = {
   children: PropTypes.node.isRequired,
+  onReady: PropTypes.func,
+};
+
+TWPlugin.defaultProps = {
+  onReady: () => {},
 };
 
 export default TWPlugin;
