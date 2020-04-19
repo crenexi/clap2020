@@ -51,13 +51,14 @@ const TWTweet = ({ id, options }) => {
     }
 
     // Create the tweet
+    console.log(frameRef.current);
     window.twttr.widgets.createTweet(id, frameRef.current, params)
       .then(() => setIsLoading(false))
       .catch(handleLoadErr);
   };
 
   return (
-    <TWPlugin onReady={loadTweet}>
+    <TWPlugin>
       {isLoading && <Loading size="small" />}
       {error && <ErrorText subtle>Error loading tweet</ErrorText>}
       <div styleName="frame" ref={frameRef} />
