@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import useContent from 'hooks/use-content';
 import useBreakpoint from 'hooks/use-breakpoint';
 import { userAgent } from 'utils/helpers';

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import quoteType from 'types/quote';
-import Countdown from 'components/shared/Countdown';
 import BgCover from 'components/shared/BgCover';
 import BigQuote from 'components/shared/BigQuote';
+import BigCountdown from './BigCountdown';
 import './GetReadyView.scss';
 
 const GetReadyView = (props) => {
@@ -11,7 +11,7 @@ const GetReadyView = (props) => {
 
   const countdown = (
     <div styleName="ready__countdown">
-      <Countdown />
+      <BigCountdown />
     </div>
   );
 

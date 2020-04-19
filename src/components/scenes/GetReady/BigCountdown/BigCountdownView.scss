@@ -1,0 +1,189 @@
+@import '~scss/utils';
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+.countdown {
+  position: relative;
+  width: 100%;
+  max-width: 60rem;
+  padding: layout(xs);
+  color: theme(ocean, dark2);
+}
+
+.row {
+  @include flex-column(center, center);
+}
+
+// Countdown header
+
+.header {
+}
+
+.from-now {
+}
+
+// Countdown ticker
+
+.ticker {
+}
+
+.units {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: spacing(xs);
+  place-content: center;
+}
+
+@include breakpoint('gt-xs') {
+  .units {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: spacing(sm);
+  }
+}
+
+@include breakpoint('gt-md') {
+  .units {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: spacing(md);
+  }
+}
+
+// Unit
+
+.unit {
+  @include flex-column(center, center);
+  @include size(6.5rem);
+  border-radius: border-radius(round);
+  box-shadow: shadow(24);
+  font-family: font-family(primary);
+  color: #fff;
+}
+
+.value {
+  @include flex-column(center, center);
+  margin-top: -5px;
+  letter-spacing: 1px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: .9em;
+  text-shadow: 2px 3px 0 rgba(theme(ocean, dark1), .65);
+}
+
+.unit--under10 .value {
+}
+
+.unit--zero .value {
+}
+
+.label {
+  margin-top: spacing(xs);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  line-height: .8em;
+  font-weight: 400;
+  text-shadow: 1px 2px 0 rgba(theme(ocean, dark1), .65);
+}
+
+@include breakpoint('gt-xs') {
+  .unit {
+    @include size(8rem);
+  }
+
+  .value {
+    font-size: 4.5rem;
+  }
+
+  .label {
+    margin-top: spacing(sm);
+    font-size: 1.35rem;
+  }
+}
+
+@include breakpoint('gt-sm') {
+  .label {
+    font-weight: 300;
+  }
+}
+
+@include breakpoint('gt-md') {
+  .unit {
+    @include size(9.5rem);
+  }
+
+  .value {
+    font-size: 5.5rem;
+  }
+
+  .label {
+    margin-top: spacing(md);
+    font-size: 1.5rem;
+  }
+}
+
+// Specific blocks
+
+// Day
+.unit:nth-child(1) {
+  @include gradient(theme(blueRose, dark2), theme(blueRose, base));
+}
+
+// Hour
+.unit:nth-child(2) {
+  @include gradient(theme(blueRose, dark1), theme(blueRose, light1));
+}
+
+// Minute
+.unit:nth-child(3) {
+  @include gradient(theme(blueRose, base), theme(blueRose, light2));
+}
+
+// Second
+.unit:nth-child(4) {
+  @include gradient(theme(ocean, base), theme(ocean, light2));
+}
+
+// Countdown footer
+
+.zone {
+}
+
+// Countdown past
+
+.countdown--past {
+  .value {
+  }
+
+  .header,
+  .label {
+  }
+}
+
+// Clap time
+
+// .clap-time {
+//   @include position(absolute, 0 null null 0);
+//   display: none;
+//   @include size(100%);
+//   @include gradient(theme(redRose, base), theme(blueRose, base));
+//   border-radius: border-radius(sharp);
+// }
+
+// .clap-time__center {
+//   color: #fff;
+//   text-align: center;
+//   text-transform: uppercase;
+//   letter-spacing: 1px;
+//   font-family: font-family(primary);
+//   font-size: 2rem;
+//   font-weight: 700;
+//   animation: bounce-clap-time 1s infinite both;
+// }
+
+// .countdown--now .clap-time {
+//   @include flex-column(center, center);
+// }

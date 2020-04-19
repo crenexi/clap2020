@@ -66,10 +66,11 @@ const Countdown = ({ isActive, component }) => {
 
   if (isLoading) return <Loading size="small" />;
 
-  // const component
+  // Base component
+  const BaseComponent = component || CountdownView;
 
   return !isVisible ? null : (
-    <CountdownView
+    <BaseComponent
       fromNow={fromNow}
       timeZone={timeZone}
       ticker={ticker}
@@ -80,7 +81,7 @@ const Countdown = ({ isActive, component }) => {
 
 Countdown.propTypes = {
   isActive: PropTypes.bool,
-  component: PropTypes.node,
+  component: PropTypes.func,
 };
 
 Countdown.defaultProps = {
