@@ -37,8 +37,8 @@ const Step3 = () => {
         </div>
         <div styleName="main__section">
           <StepSectionL1
-            title="Noise Methods"
-            subtitle="How people bring the thunder"
+            title="Bring the Thunder"
+            subtitle="How people are 'clapping' across the world"
           >
             <div styleName="noise-methods">
               <NoiseMethods />

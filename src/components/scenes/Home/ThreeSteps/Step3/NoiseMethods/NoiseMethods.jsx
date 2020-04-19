@@ -8,7 +8,7 @@ const NoiseMethods = () => {
   const { noiseMethods } = sceneContent.home;
 
   const methods = noiseMethods.map(item => (
-    <div styleName="methods__item">
+    <div styleName="methods__item" key={item.title}>
       <NoiseMethod item={item} />
     </div>
   ));

@@ -15,7 +15,7 @@
 @include breakpoint('gt-sm') {
   .main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 4fr 6fr;
     grid-gap: layout(sm);
   }
 

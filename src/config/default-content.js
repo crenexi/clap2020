@@ -213,7 +213,7 @@ const sceneHome = {
     },
     {
       title: 'Honks & Sirens',
-      subtitle: 'Fire and police departments have demonstrated incredible, parade-like support. Honk for the front lines.',
+      subtitle: 'Fire and police departments have demonstrated incredible, parade-like support.',
       icon: 'siren',
     },
     {

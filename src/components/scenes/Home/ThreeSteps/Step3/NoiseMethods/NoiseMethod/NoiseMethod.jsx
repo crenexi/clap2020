@@ -13,7 +13,7 @@ const NoiseMethod = ({ item }) => {
           <FaIcon icon={icon} />
         </div>
         <div styleName="card__title">{title}</div>
-        <div styleName="card__title">{subtitle}</div>
+        <div styleName="card__subtitle">{subtitle}</div>
       </div>
     </div>
   );

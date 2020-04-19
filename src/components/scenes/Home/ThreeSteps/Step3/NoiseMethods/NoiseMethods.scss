@@ -5,9 +5,15 @@
 }
 
 .methods {
-
+  display: grid;
+  grid-gap: spacing(sm);
 }
 
 .methods__item {
+}
 
+@include breakpoint('gt-xs') {
+  .methods {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  }
 }
