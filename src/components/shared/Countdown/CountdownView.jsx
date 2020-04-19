@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import countdownTickerType from 'types/countdown-ticker';
 import './CountdownView.scss';
 
-const CountdownView = ({ fromNow, timeZone, ticker }) => {
+const CountdownView = (props) => {
+  const { fromNow, timeZone, ticker, isPast } = props;
   let firstNonZero = '';
 
   const unitsData = [
@@ -13,39 +15,48 @@ const CountdownView = ({ fromNow, timeZone, ticker }) => {
     { label: 'Secs', value: ticker.seconds },
   ];
 
+  // Countdown class
+  const countdownStyleName = classNames('countdown', {
+    'countdown--past': isPast,
+  });
+
+  // Unit class
   const units = unitsData.map(({ label, value }) => {
     const isFirstNonZero = !firstNonZero && value;
     if (isFirstNonZero) { firstNonZero = label; }
 
-    const valueClass = (() => {
-      const base = 'countdown__value';
-      if (!firstNonZero && value === 0) return `${base} ${base}--zero`;
-      if (isFirstNonZero && value <= 10) return `${base} ${base}--under10`;
-      return base;
-    })();
+    const unitStyleName = classNames('unit', {
+      'unit--zero': !isPast && !firstNonZero && value === 0,
+      'unit--under10': !isPast && isFirstNonZero && value <= 10,
+    });
 
     return (
-      <div styleName="countdown__unit" key={label}>
-        <div styleName={valueClass}>{value}</div>
-        <div styleName="countdown__label">{label}</div>
+      <div styleName={unitStyleName} key={label}>
+        <div styleName="value">{value}</div>
+        <div styleName="label">{label}</div>
       </div>
     );
   });
 
+  // Relative time ago
+  const fromNowText = !isPast
+    ? `Clap ${fromNow} at 7:00 PM`
+    : `Clap was ${fromNow}`;
+
   return (
-    <div styleName="countdown">
-      <div styleName="countdown__header">
-        <div styleName="countdown__row">
-          <div styleName="countdown__from-now">Clap {fromNow} at 7:00 PM</div>
+    <div styleName={countdownStyleName}>
+      <div styleName="header">
+        <div styleName="row">
+          <div styleName="from-now">{fromNowText}</div>
         </div>
       </div>
-      <div styleName="countdown__ticker">
-        <div styleName="countdown__row">
-          <div styleName="countdown__units">{units}</div>
+      <div styleName="ticker">
+        <div styleName="row">
+          <div styleName="units">{units}</div>
         </div>
       </div>
-      <div styleName="countdown__row">
-        <div styleName="countdown__zone">{timeZone}</div>
+      <div styleName="row">
+        <div styleName="zone">{timeZone}</div>
       </div>
     </div>
   );
@@ -55,6 +66,7 @@ CountdownView.propTypes = {
   fromNow: PropTypes.string.isRequired,
   timeZone: PropTypes.string.isRequired,
   ticker: countdownTickerType.isRequired,
+  isPast: PropTypes.bool.isRequired,
 };
 
 export default CountdownView;

@@ -3,34 +3,37 @@
 $border: 1px solid theme(cloud, dark2);
 
 .countdown {
+  min-width: 17rem;
+  max-width: 100%;
   margin-top: 3px;
+  border-radius: border-radius(sharp);
   text-align: center;
   font-size: 1rem;
   line-height: 1em;
 }
 
-.countdown__row {
+.row {
   width: 100%;
 }
 
-.countdown__header,
-.countdown__ticker,
-.countdown__footer {
+.header,
+.ticker,
+.footer {
   width: 100%;
 }
 
 // Countdown header
 
-.countdown__header {
+.header {
   @include flex-column(center, center);
   padding: 4px 6px;
   border: $border;
   border-bottom: none;
   @include border-top-radius(border-radius(sharp));
-  color: theme(ocean, dark1);
+  color: theme(ocean, light1);
 }
 
-.countdown__from-now {
+.from-now {
   margin-bottom: -1px;
   text-transform: uppercase;
   font-size: 1rem;
@@ -39,17 +42,17 @@ $border: 1px solid theme(cloud, dark2);
 
 // Countdown ticker
 
-.countdown__ticker {
+.ticker {
   border: $border;
   @include border-bottom-radius(border-radius(sharp));
   overflow: hidden;
 }
 
-.countdown__units {
+.units {
   @include flex-row(center, center);
 }
 
-.countdown__unit {
+.unit {
   @include flex-column(center, center);
   flex: 1 0 3.2rem;
   height: 2.7rem;
@@ -59,16 +62,21 @@ $border: 1px solid theme(cloud, dark2);
   }
 }
 
-.countdown__value {
+.value {
   font-family: font-family(primary);
   font-size: 1.75rem;
   color: theme(ocean, dark1);
-
-  &--under10 { color: theme(blueRose, base); }
-  &--zero { color: theme(redRose, base); }
 }
 
-.countdown__label {
+.unit--under10 .value {
+  color: theme(blueRose, base);
+}
+
+.unit--zero .value {
+  color: theme(redRose, base);
+}
+
+.label {
   margin: 5px 0 -4px;
   text-transform: uppercase;
   letter-spacing: .5px;
@@ -79,8 +87,20 @@ $border: 1px solid theme(cloud, dark2);
 
 // Countdown footer
 
-.countdown__zone {
-  font-size: .65rem;
-  font-weight: 700;
-  color: rgba(theme(ocean, dark1), .6);
+.zone {
+  font-size: .7rem;
+  color: theme(ocean, dark1);
+}
+
+// Countdown past
+
+.countdown--past {
+  .value {
+    color: theme(ocean, light2);
+  }
+
+  .header,
+  .label {
+    color: theme(ocean, dark1);
+  }
 }

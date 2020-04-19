@@ -5,7 +5,7 @@ import useContent from 'hooks/use-content';
 import Loading from 'components/shared/Loading';
 import CountdownView from './CountdownView';
 
-const Countdown = ({ isActive }) => {
+const Countdown = ({ isActive, component }) => {
   const { campaignContent } = useContent();
 
   // Content
@@ -29,28 +29,25 @@ const Countdown = ({ isActive }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [fromNow, setFromNow] = useState('');
   const [ticker, setTicker] = useState(initialTicker);
+  const [isPast, setIsPast] = useState(false);
 
-  const updateCountdown = (intervalId) => {
+  const updateCountdown = () => {
     const nowMoment = moment();
     const duration = eventMoment - nowMoment;
     const durationMoment = moment.duration(duration, 'millisecond');
-    const isPast = duration < 0;
 
-    // Update values
     const updatedTicker = {
-      days: isPast ? 0 : durationMoment.days(),
-      hours: isPast ? 0 : durationMoment.hours(),
-      minutes: isPast ? 0 : durationMoment.minutes(),
-      seconds: isPast ? 0 : durationMoment.seconds(),
+      days: Math.abs(durationMoment.days()),
+      hours: Math.abs(durationMoment.hours()),
+      minutes: Math.abs(durationMoment.minutes()),
+      seconds: Math.abs(durationMoment.seconds()),
     };
 
     setFromNow(nowMoment.to(eventMoment));
     setTicker(updatedTicker);
+    setIsPast(duration < 0);
     setIsLoading(false);
     setIsVisible(true);
-
-    // If time has passed, clear interval
-    if (isPast) clearInterval(intervalId);
   };
 
   // Tick every second
@@ -61,9 +58,7 @@ const Countdown = ({ isActive }) => {
       setIsVisible(false);
     } else {
       setIsLoading(true);
-      intervalId = setInterval(() => {
-        updateCountdown(intervalId);
-      }, 1000);
+      intervalId = setInterval(updateCountdown, 1000);
     }
 
     return () => clearInterval(intervalId);
@@ -71,21 +66,26 @@ const Countdown = ({ isActive }) => {
 
   if (isLoading) return <Loading size="small" />;
 
+  // const component
+
   return !isVisible ? null : (
     <CountdownView
       fromNow={fromNow}
       timeZone={timeZone}
       ticker={ticker}
+      isPast={isPast}
     />
   );
 };
 
 Countdown.propTypes = {
   isActive: PropTypes.bool,
+  component: PropTypes.node,
 };
 
 Countdown.defaultProps = {
   isActive: true,
+  component: undefined,
 };
 
 export default Countdown;
