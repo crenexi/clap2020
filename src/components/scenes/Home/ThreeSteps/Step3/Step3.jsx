@@ -5,7 +5,7 @@ import Countdown from 'components/shared/Countdown';
 import Button from 'components/shared/Button';
 import TWTweet from 'components/shared/@twitter/TWTweet';
 import StepSectionL1 from '../StepSectionL1';
-import NoiseMethods from './NoiseMethods';
+// import NoiseMethods from './NoiseMethods';
 import './Step3.scss';
 
 const Step3 = () => {
@@ -22,13 +22,14 @@ const Step3 = () => {
 
   const noiseMethods = (
     <div styleName="noise-methods">
-      <NoiseMethods />
+      Noise Methods...
+      {/* <NoiseMethods /> */}
     </div>
   );
 
   const featuredTweet = (
     <div styleName="featured-tweet">
-      <TWTweet id={featuredTweetId} options={{ hideCards: true }} />
+      {/* <TWTweet id={featuredTweetId} options={{ hideCards: true }} /> */}
     </div>
   );
 

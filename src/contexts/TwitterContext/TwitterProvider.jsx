@@ -22,6 +22,14 @@ const TwitterProvider = ({ children }) => {
     }
   };
 
+  // After 10 seconds, error if script isn't loaded
+  (() => {
+    const id = setTimeout(() => {
+      if (!scriptLoaded) setHasError(true);
+      clearTimeout(id);
+    }, 10 * 1000);
+  })();
+
   // Context value
   const twitter = {
     scriptLoaded,

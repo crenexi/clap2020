@@ -49,7 +49,7 @@ const Loading = ({ size, color, center, withStar }) => {
 };
 
 Loading.propTypes = {
-  size: oneOf(['tiny', 'small', 'large']),
+  size: oneOf(['', 'tiny', 'small', 'large']),
   color: PropTypes.string,
   center: PropTypes.bool,
   withStar: PropTypes.bool,

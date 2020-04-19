@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes, { shape } from 'prop-types';
 import useBreakpoint from 'hooks/use-breakpoint';
 import logger from 'services/logger';
@@ -43,12 +43,21 @@ const TWTweet = ({ id, options }) => {
       dnt: 'true',
     };
 
+    if (!window.twttr) {
+      logger.error(`'window.twttr' does not exist`);
+      setHasError(true);
+      setIsLoading(false);
+      return;
+    }
+
+    // Create the tweet
     window.twttr.widgets.createTweet(id, frameRef, params)
       .then(() => setIsLoading(false))
       .then(handleLoadErr);
   };
 
-  loadTweet();
+  // On load, trigger the tweet load
+  useEffect(loadTweet, []);
 
   return (
     <TWPlugin>

@@ -1,71 +1,65 @@
 import debounce from 'lodash.debounce';
-// import logger from 'services/logger';
+import logger from 'services/logger';
 
 const sdkPlugins = (() => {
-  const onReadyQueue = [];
-
-  /* Parses Facebook plugins */
-  const parse = () => {
-    window.FB.XFBML.parse();
-  };
+  let plugins = [];
 
   /* Parses only after second of debounce */
+  const parse = () => window.FB.XFBML.parse();
   const debouncedParse = debounce(parse, 500, {
     maxWait: 3000,
     leading: false,
     trailing: true,
   });
 
-  /* Register a plugin */
-  const load = (options = {}) => {
-    const { onReady } = options;
-    // Note onReady, if it's supplied
-    if (onReady && typeof onReady === 'function') {
-      onReadyQueue.push(onReady);
-    }
+  /* Runs when render is complete */
+  const onRender = () => {
+    logger.info('[ON RENDER]');
+    if (!plugins.length) return;
 
-    // Parse plugins
+    // Call onReady supplied to plugins
+    plugins.forEach(({ onReady }) => {
+      if (onReady && typeof onReady === 'function') {
+        onReady();
+      }
+    });
+  };
+
+  /* Adds listeners */
+  const init = () => {
+    logger.info('[INIT]');
+    window.FB.Event.subscribe('xfbml.render', onRender);
+    window.addEventListener('resize', debouncedParse);
+  };
+
+  /* Removes listeners */
+  const destroy = () => {
+    logger.info('[DESTROY]');
+    window.FB.Event.unsubscribe('xfbml.render', onRender);
+    window.removeEventListener('resize', debouncedParse);
+  };
+
+  /* Register a plugin */
+  const register = (plugin) => {
+    logger.info('[REGISTER]');
+    // Setup listeners if this is the first plugin being registered
+    if (!plugins.length) init();
+
+    // Add and render
+    plugins.push(plugin);
     debouncedParse();
   };
 
-  /* Runs when render is complete */
-  const onRender = () => {
-    // Avoid the first call of onRender, which appears to
-    // happen directly after the event subscription rather
-    // than after the first parse. Weird.
-    if (!onReadyQueue.length) return;
-    onReadyQueue.forEach(fn => fn());
+  /* Deregister a plugin */
+  const deregister = (id) => {
+    logger.info('[DE-REGISTER]');
+    plugins = plugins.filter(p => p.id !== id);
+
+    // Destroy listeners if there's no more registered plugins
+    if (!plugins.length) destroy();
   };
 
-  /* Initializes - i.e. sets up listeners */
-  const init = () => {
-    window.FB.Event.subscribe('xfbml.render', onRender);
-
-    // Listen for resize
-    window.addEventListener('resize', debouncedParse);
-
-    // setTimeout(() => {
-    // window.addEventListener('resize', throttledOnRenderPlugins);
-    // }, 100);
-  };
-
-  return { init, load };
+  return { register, deregister };
 })();
 
 export default sdkPlugins;
-
-// /* Called when render is completed */
-// const onRenderPlugins = () => {
-//   logger.info('[ON RENDER PLUGINS]');
-//   isRendering = false;
-// };
-
-
-// const renderPlugins = () => {
-//   logger.info('[RENDER PLUGINS]');
-
-//   if (isSDKReady && !isRendering) {
-//     isRendering = true;
-//     throttledParse();
-//   }
-// };
