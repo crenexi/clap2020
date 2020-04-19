@@ -5,14 +5,11 @@ import Countdown from 'components/shared/Countdown';
 import Button from 'components/shared/Button';
 import TWTweet from 'components/shared/@twitter/TWTweet';
 import StepSectionL1 from '../StepSectionL1';
-// import NoiseMethods from './NoiseMethods';
+import NoiseMethods from './NoiseMethods';
 import './Step3.scss';
 
 const Step3 = () => {
   const isGtSm = useBreakpoint('gt-sm');
-
-  // Static content
-  const methodsSubtitle = `How people are 'clapping' world-wide`;
 
   // Content
   const { sceneContent } = useContent();
@@ -39,24 +36,28 @@ const Step3 = () => {
           <div styleName="featured-tweets">{featuredTweets}</div>
         </div>
         <div styleName="main__section">
-          <StepSectionL1 title="Noise Methods" subtitle={methodsSubtitle}>
+          <StepSectionL1
+            title="Noise Methods"
+            subtitle="How people bring the thunder"
+          >
             <div styleName="noise-methods">
-              Noise Methods...
-              {/* <NoiseMethods /> */}
+              <NoiseMethods />
             </div>
           </StepSectionL1>
         </div>
       </div>
-      <StepSectionL1
-        title="Countdown"
-        subtitle="Be ready to join the moment"
-        keepOpen
-      >
-        <div styleName="countdown-invite">
-          {isGtSm ? null : <Countdown />}
-          <div styleName="countdown-invite__btn">{countdownInvite}</div>
-        </div>
-      </StepSectionL1>
+      <div styleName="countdown-frame">
+        <StepSectionL1
+          title="Countdown"
+          subtitle="Be ready to join the moment"
+          keepOpen
+        >
+          <div styleName="countdown-invite">
+            {isGtSm ? null : <Countdown />}
+            <div styleName="countdown-invite__btn">{countdownInvite}</div>
+          </div>
+        </StepSectionL1>
+      </div>
     </div>
   );
 };

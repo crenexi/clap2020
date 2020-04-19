@@ -15,8 +15,8 @@
 @include breakpoint('gt-sm') {
   .main {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: layout(lg);
+    grid-template-columns: 1fr 1fr;
+    grid-gap: layout(sm);
   }
 
   .main__section:not(:first-child) {
@@ -44,10 +44,32 @@
 
 // Countdown invitation
 
+.countdown-frame {
+  margin-top: spacing(lg);
+}
+
 .countdown-invite {
   @include flex-column(center, center);
+  padding-top: spacing(2xs);
 }
 
 .countdown-invite__btn {
-  margin-top: spacing(lg);
+  @include flex-column(center, center);
+  width: 100%;
+  margin-top: spacing(md);
+  padding: layout(xs) spacing(sm);
+  background-color: theme(cloud, dark1);
+  border-top: 1px solid theme(cloud, dark2);
+  border-bottom: 1px solid theme(cloud, dark2);
+}
+
+@include breakpoint('gt-sm') {
+  .countdown-frame {
+    margin-top: spacing(xl);
+  }
+
+  .countdown-invite__btn {
+    margin-top: 0;
+    padding: layout(md) spacing(lg);
+  }
 }
