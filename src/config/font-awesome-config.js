@@ -94,6 +94,7 @@ import {
   faVials,
   faVideo,
   faViruses,
+  faWhistle,
 } from '@fortawesome/pro-light-svg-icons';
 
 import {
@@ -106,7 +107,6 @@ import {
   faRedditAlien,
   faTwitter,
   faWhatsapp,
-  faWhistle,
   faYahoo,
 } from '@fortawesome/free-brands-svg-icons';
 
