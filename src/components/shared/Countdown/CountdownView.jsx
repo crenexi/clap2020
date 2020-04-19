@@ -18,6 +18,7 @@ const CountdownView = (props) => {
   // Countdown class
   const countdownStyleName = classNames('countdown', {
     'countdown--past': isPast,
+    'countdown--now': isPast && Math.abs(ticker.minutes) < 15,
   });
 
   // Unit class
@@ -57,6 +58,9 @@ const CountdownView = (props) => {
       </div>
       <div styleName="row">
         <div styleName="zone">{timeZone}</div>
+      </div>
+      <div styleName="clap-time">
+        <div styleName="clap-time__center">Clap Time!</div>
       </div>
     </div>
   );

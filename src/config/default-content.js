@@ -139,8 +139,7 @@ const campaignStatus = {
     ],
   },
   nextEvent: {
-    // datetime: '2020-04-30 19:00',
-    datetime: '2020-04-19 04:11',
+    datetime: '2020-04-30 19:00',
     day: 'Thursday',
     date: 'April 30',
     time: '7:00 PM',
