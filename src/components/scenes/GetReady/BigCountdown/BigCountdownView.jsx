@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import countdownTickerType from 'types/countdown-ticker';
-import './CountdownView.scss';
+import './BigCountdownView.scss';
 
-const CountdownView = (props) => {
+const BigCountdownView = (props) => {
   const { fromNow, timeZone, ticker, isPast } = props;
   let firstNonZero = '';
 
   const unitsData = [
     { label: 'Days', value: ticker.days },
     { label: 'Hours', value: ticker.hours },
-    { label: 'Mins', value: ticker.minutes },
-    { label: 'Secs', value: ticker.seconds },
+    { label: 'Minutes', value: ticker.minutes },
+    { label: 'Seconds', value: ticker.seconds },
   ];
 
   // Countdown class
@@ -28,7 +28,6 @@ const CountdownView = (props) => {
 
     const unitStyleName = classNames('unit', {
       'unit--zero': !isPast && !firstNonZero && value === 0,
-      'unit--under10': !isPast && isFirstNonZero && value <= 10,
     });
 
     return (
@@ -41,8 +40,8 @@ const CountdownView = (props) => {
 
   // Relative time ago
   const fromNowText = !isPast
-    ? `Clap ${fromNow} at 7:00 PM`
-    : `Clap was ${fromNow}`;
+    ? `Clap time is ${fromNow} at 7:00 PM`
+    : `Clap time was ${fromNow}`;
 
   return (
     <div styleName={countdownStyleName}>
@@ -51,26 +50,26 @@ const CountdownView = (props) => {
           <div styleName="from-now">{fromNowText}</div>
         </div>
       </div>
+      <div styleName="clap-time">
+        <div styleName="clap-time__center">Clap Time!</div>
+      </div>
       <div styleName="ticker">
         <div styleName="row">
           <div styleName="units">{units}</div>
         </div>
       </div>
       <div styleName="row">
-        <div styleName="zone">{timeZone}</div>
-      </div>
-      <div styleName="clap-time">
-        <div styleName="clap-time__center">Clap Time!</div>
+        <div styleName="zone">Current TZ: {timeZone}</div>
       </div>
     </div>
   );
 };
 
-CountdownView.propTypes = {
+BigCountdownView.propTypes = {
   fromNow: PropTypes.string.isRequired,
   timeZone: PropTypes.string.isRequired,
   ticker: countdownTickerType.isRequired,
   isPast: PropTypes.bool.isRequired,
 };
 
-export default CountdownView;
+export default BigCountdownView;
