@@ -1,5 +1,10 @@
 @import '~scss/utils';
 
-.frame {
+.tweet-frame {
+  @include size(100%);
+}
 
+.tweet {
+  @include flex-column(center, center);
+  width: 100%;
 }
