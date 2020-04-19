@@ -19,10 +19,10 @@
   display: inline-block;
   @include flex-row(center, center);
   font-family: font-family(primary);
-  line-height: 1em;
+  line-height: .95em;
 
   &:not(:first-child) {
-    margin-left: spacing(sm);
+    margin-left: spacing(xs);
   }
 }
 

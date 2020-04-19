@@ -28,7 +28,6 @@ const BigCountdownView = (props) => {
 
     const unitStyleName = classNames('unit', {
       'unit--zero': !isPast && !firstNonZero && value === 0,
-      'unit--under10': !isPast && isFirstNonZero && value <= 10,
     });
 
     return (
@@ -51,6 +50,9 @@ const BigCountdownView = (props) => {
           <div styleName="from-now">{fromNowText}</div>
         </div>
       </div>
+      <div styleName="clap-time">
+        <div styleName="clap-time__center">Clap Time!</div>
+      </div>
       <div styleName="ticker">
         <div styleName="row">
           <div styleName="units">{units}</div>
@@ -59,9 +61,6 @@ const BigCountdownView = (props) => {
       <div styleName="row">
         <div styleName="zone">{timeZone}</div>
       </div>
-      {/* <div styleName="clap-time">
-        <div styleName="clap-time__center">Clap Time!</div>
-      </div> */}
     </div>
   );
 };
