@@ -4,6 +4,93 @@
   width: 100%;
 }
 
+.main {
+  width: 100%;
+}
+
+.main__section:not(:first-child) {
+  margin-top: layout(sm);
+}
+
+@include breakpoint('gt-sm') {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: layout(sm);
+  }
+
+  .main__section:not(:first-child) {
+    margin: 0;
+  }
+}
+
+@include breakpoint('gt-md') {
+  .main {
+    grid-template-columns: 4fr 6fr;
+  }
+}
+
+// Featured tweets
+
+.featured-tweets {
+  width: 100%;
+}
+
+.share-buttons {
+  display: grid;
+  grid-gap: spacing(sm);
+  width: 100%;
+  max-width: 15rem;
+  margin: 0 auto;
+  justify-items: stretch;
+  padding: spacing(xs) 0 spacing(sm);
+}
+
+.share-buttons__icon {
+  margin-left: 7px;
+  font-size: 1.25rem;
+}
+
+// Countdown
+
 .countdown {
   @include flex-column(center, center);
+}
+
+// Noise methods
+
+.noise-methods {
+  width: 100%;
+}
+
+// Countdown invitation
+
+.countdown-frame {
+  margin-top: spacing(lg);
+}
+
+.countdown-invite {
+  @include flex-column(center, center);
+  padding-top: spacing(2xs);
+}
+
+.countdown-invite__btn {
+  @include flex-column(center, center);
+  width: 100%;
+  margin-top: spacing(md);
+  padding: layout(xs) spacing(sm);
+  background-color: theme(cloud, dark1);
+  border-top: 1px solid theme(cloud, dark2);
+  border-bottom: 1px solid theme(cloud, dark2);
+}
+
+@include breakpoint('gt-sm') {
+  .countdown-frame {
+    margin-top: spacing(xl);
+  }
+
+  .countdown-invite__btn {
+    margin-top: 0;
+    padding: layout(md) spacing(lg);
+  }
 }

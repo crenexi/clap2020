@@ -5,11 +5,11 @@ import Button from 'components/shared/Button';
 import './StepSectionL1.scss';
 
 const StepSectionL1 = (props) => {
-  const { children, title, subtitle } = props;
+  const { children, title, subtitle, keepOpen } = props;
   const isGtSm = useBreakpoint('gt-sm');
 
   // State
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(keepOpen);
 
   const header = (
     <div styleName="header">
@@ -20,11 +20,7 @@ const StepSectionL1 = (props) => {
 
   const toggle = (
     <div styleName="toggle">
-      <Button
-        variant="secondary"
-        endIcon="chevron-down"
-        click={() => setOpen(!open)}
-      >
+      <Button endIcon="chevron-down" click={() => setOpen(!open)}>
         Expand
       </Button>
     </div>
@@ -43,6 +39,11 @@ StepSectionL1.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  keepOpen: PropTypes.bool,
+};
+
+StepSectionL1.defaultProps = {
+  keepOpen: false,
 };
 
 export default StepSectionL1;

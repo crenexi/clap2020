@@ -1,0 +1,8 @@
+@import '~scss/utils';
+@import '~scss/shared/animations/arrive-fade';
+
+.frame {
+  position: relative;
+  @include flex-column(center, center);
+  width: 100%;
+}

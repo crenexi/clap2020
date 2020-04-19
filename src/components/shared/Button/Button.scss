@@ -99,7 +99,7 @@
     }
 
     &:hover {
-      background: transparent;
+      background: #fff;
       border-color: theme(blueRose, dark1);
 
       .c2-button__label {
@@ -123,7 +123,7 @@
 
   // Secondary button
   .MuiButton-root.c2-button--secondary {
-    background-color: transparent;
+    background-color: #fff;
     border: 2px solid theme(blueRose, dark1);
 
     .c2-button__label {

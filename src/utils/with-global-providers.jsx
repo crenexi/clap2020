@@ -7,6 +7,7 @@ import { SettingsProvider } from 'contexts/SettingsContext';
 import { ContentProvider } from 'contexts/ContentContext';
 import { ModalProvider } from 'contexts/ModalContext';
 import { SnackProvider } from 'contexts/SnackContext';
+import { TwitterProvider } from 'contexts/TwitterContext';
 import { FacebookProvider } from 'contexts/FacebookContext';
 
 const withGlobalProviders = (WrappedComponent) => {
@@ -22,9 +23,11 @@ const withGlobalProviders = (WrappedComponent) => {
           <ThemeProvider theme={theme}>
             <ModalProvider>
               <SnackProvider>
-                <FacebookProvider>
-                  <WrappedComponent {...props} />
-                </FacebookProvider>
+                <TwitterProvider>
+                  <FacebookProvider>
+                    <WrappedComponent {...props} />
+                  </FacebookProvider>
+                </TwitterProvider>
               </SnackProvider>
             </ModalProvider>
           </ThemeProvider>

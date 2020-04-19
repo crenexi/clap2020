@@ -127,6 +127,16 @@ const campaignStatus = {
   campaignTags: {
     pretext: 'Spread the word with',
     text: '#Clap2020 #ClapBecauseWeCare',
+    list: ['Clap2020', 'ClapBecauseWeCare'],
+    listExtended: [
+      'Clap2020',
+      'ClapBecauseWeCare',
+      'ThankYou',
+      'HealthcareHeroes',
+      'EssentialWorkers',
+      'StayAtHome',
+      'COVID19',
+    ],
   },
   nextEvent: {
     datetime: '2020-04-30 19:00',
@@ -192,6 +202,41 @@ const campaignPlatforms = [
 
 // Endpoint: /scenes/home
 const sceneHome = {
+  threeSteps: {
+    featuredTweetId: '1248388629476470789',
+  },
+  noiseMethods: [
+    {
+      title: 'Claps & Cheers',
+      subtitle: 'The classic. A global phenomenon of clapping for healthcare & essential workers. Bring some thunder.',
+      icon: 'hands-wash',
+    },
+    {
+      title: 'Bells & Whistles',
+      subtitle: 'What if I told you that stainless steel whistle for coaching 4-year-old soccer can now cheer for nurses?',
+      icon: 'whistle',
+    },
+    {
+      title: 'Pots & Pans',
+      subtitle: 'Endless household items are taken up to make some noise. How about a pan & spatula?',
+      icon: 'house',
+    },
+    {
+      title: 'Honks & Sirens',
+      subtitle: 'Fire and police departments have demonstrated incredible, parade-like support.',
+      icon: 'siren',
+    },
+    {
+      title: 'Stadium Items',
+      subtitle: 'Remember that horn you got for $23 at some disastrous game? It\'s not wasted if it roars for doctors.',
+      icon: 'megaphone',
+    },
+    {
+      title: 'Instruments',
+      subtitle: 'Talented much? Get out there at clap time and show your musical support. Show some love.',
+      icon: 'trumpet',
+    },
+  ],
   thisIsWar: {
     coverUrl: `${assetsPath}/covers/mask.jpg`,
     featuredQuote: {

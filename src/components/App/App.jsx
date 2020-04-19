@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import withGlobalProviders from 'utils/with-global-providers';
 import { BrowserRouter as Router } from 'react-router-dom';
 import fontAwesomeConfig from 'config/font-awesome-config';
-import useFacebook from 'hooks/use-facebook';
 import logger from 'services/logger';
 import ScrollToTop from './ScrollToTop';
 import AppView from './AppView';
@@ -25,9 +24,6 @@ const App = () => {
 
     return () => clearTimeout(timeOutId);
   }, []);
-
-  // Load Facebook plugins
-  useEffect(useFacebook().loadScript, []);
 
   return (
     <Router>
