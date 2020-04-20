@@ -27,15 +27,13 @@ const AppMain = () => {
   };
 
   // Routes list
-  const routes = routesData.map(({ path, component }) => {
-    return (
-      <Route
-        key={path}
-        path={path}
-        component={withHOCs(component)}
-      />
-    );
-  });
+  const routes = routesData.map(({ path, component }) => (
+    <Route
+      key={path}
+      path={path}
+      component={withHOCs(component)}
+    />
+  ));
 
   return (
     <main styleName="main">
