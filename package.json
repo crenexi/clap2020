@@ -12,8 +12,8 @@
     "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js",
     "publish:prod": "gulp publish:prod",
     "deploy:prod": "npm run build:prod && npm run publish:prod",
-    "stats:create": "webpack --profile --json > stats.json",
-    "stats:analyze": "webpack-bundle-analyzer stats.json"
+    "stats:create": "cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js --profile --json > dist/stats.json",
+    "stats:analyze": "webpack-bundle-analyzer dist/stats.json"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",

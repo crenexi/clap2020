@@ -81,7 +81,7 @@ const createCopyWebpackPlugin = () => new CopyWebpackPlugin([
 
 // Moment locals plugin
 const createMomentLocalesPlugin = () => new MomentLocalesPlugin({
-  localesToKeep: ['da', 'de-at', 'de-ch', 'el', 'en-au', 'en-ca', 'en-gb', 'en-ie', 'en-nz', 'es-do', 'es-us', 'es', 'fr-ca', 'fr-ch', 'fr', 'hi', 'it', 'ja', 'ko', 'nl-be', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'th', 'tl-ph', 'tr', 'uk'],
+  localesToKeep: ['en-au', 'en-ca', 'en-gb', 'es-us', 'es'],
 });
 
 // Minimizer plugin
