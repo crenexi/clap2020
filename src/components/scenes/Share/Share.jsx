@@ -26,7 +26,7 @@ const Share = ({ match }) => {
       <ShareNav />
       <Switch>
         {routes}
-        <Route component={Error404} />
+        <Route render={() => <Error404 backTo={match.path} />} />
       </Switch>
     </Fragment>
   );

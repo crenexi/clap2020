@@ -1,6 +1,8 @@
 @import '~scss/utils';
 
 .follow {
+  position: relative;
+  z-index: -1;
   @include gradient(theme(ocean, dark1), theme(ocean, dark2));
   color: #fff;
 }

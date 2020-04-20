@@ -4,17 +4,17 @@
 body {
   font-family: font-family(base);
   font-size: $px-base-font-size-xs * 1px;
-  line-height: $em-base-line-height * 1.1em;
+  line-height: $em-base-line-height;
   color: color(content, base);
 
   @include breakpoint('gt-xs') {
     font-size: $px-base-font-size-sm * 1px;
-    line-height: $em-base-line-height * 1.05em;
+    line-height: $em-base-line-height * .95;
   }
 
   @include breakpoint('gt-sm') {
     font-size: $px-base-font-size * 1px;
-    line-height: $em-base-line-height * 1em;
+    line-height: $em-base-line-height * .9;
   }
 }
 

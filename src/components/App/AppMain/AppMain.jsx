@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import Error404 from 'components/shared/Error404';
 import Home from 'components/scenes/Home';
 import Praise from 'components/scenes/Praise';
 import Share from 'components/scenes/Share';
@@ -13,12 +14,12 @@ import './AppMain.scss';
 
 const AppMain = () => {
   const routesData = [
-    { path: '/praise', component: Praise },
-    { path: '/share', component: Share },
-    { path: '/get-ready', component: GetReady },
-    { path: '/heroes', component: Heroes },
-    { path: '/latest', component: Latest },
-    { path: '/design', component: Design },
+    { path: '/praise', exact: true, component: Praise },
+    { path: '/share', exact: false, component: Share },
+    { path: '/get-ready', exact: true, component: GetReady },
+    { path: '/heroes', exact: true, component: Heroes },
+    { path: '/latest', exact: true, component: Latest },
+    { path: '/design', exact: true, component: Design },
   ];
 
   // Add any HOCs for routes here
@@ -26,9 +27,9 @@ const AppMain = () => {
     return withAnalyticsTracker(withOpacityDelay(component));
   };
 
-  // Routes list
-  const routes = routesData.map(({ path, component }) => (
+  const routes = routesData.map(({ path, exact, component }) => (
     <Route
+      exact={exact}
       key={path}
       path={path}
       component={withHOCs(component)}
@@ -40,7 +41,7 @@ const AppMain = () => {
       <Switch>
         <Route exact path="/" component={withHOCs(Home)} />
         {routes}
-        <Redirect to="/" />
+        <Route component={Error404} />
       </Switch>
     </main>
   );

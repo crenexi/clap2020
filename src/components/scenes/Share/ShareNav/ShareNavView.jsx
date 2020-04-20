@@ -4,7 +4,7 @@ import './ShareNavView.scss';
 const ShareNavView = () => {
   return (
     <div styleName="frame">
-      Share Nav
+      Test
     </div>
   );
 };
