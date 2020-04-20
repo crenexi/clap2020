@@ -6,7 +6,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
-// const APP_PATH = path.resolve(__dirname, '/src/app');
 const DIST_PATH = path.join(__dirname, '/dist');
 
 // Helper to get environment
@@ -60,7 +59,7 @@ const scssLoaderRule = () => {
 
 // Environment variables loader plugin
 const createDotenvWebpackPlugin = () => new DotenvWebpack({
-  safe: true,
+  path: path.resolve(__dirname, '.env'),
 });
 
 // Environment vars plugin
