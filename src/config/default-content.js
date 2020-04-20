@@ -2,7 +2,7 @@ const assetsPath = process.env.ASSETS_PATH;
 
 // Endpoint: /meta
 const uiMeta = {
-  error404CoverUrl: `${assetsPath}/meta/errors/lost-in-jumanji.gif,`,
+  error404CoverUrl: `${assetsPath}/meta/errors/lost-in-jumanji.gif`,
 };
 
 // Endpoint: /ui/drawer-nav

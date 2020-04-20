@@ -14,7 +14,11 @@ const Error404 = ({ backTo }) => {
 
   return (
     <div styleName="frame">
-      <BgCover url={error404CoverUrl} blanketColor="rgba(0, 0, 0, .5)">
+      <BgCover
+        url={error404CoverUrl}
+        imagePosition="60% 60%"
+        blanketColor="rgba(0, 0, 0, .5)"
+      >
         <div styleName="main">
           <div styleName="main__404">404</div>
           <h1 styleName="main__title">{title}</h1>
