@@ -25,7 +25,8 @@ const Error404 = ({ backTo }) => {
           <div styleName="main__subtitle">{subtitle}</div>
           <div styleName="main__action">
             <Button
-              variant="primary"
+              variant="white"
+              size="large"
               startIcon="arrow-circle-left"
               to={backTo}
             >
