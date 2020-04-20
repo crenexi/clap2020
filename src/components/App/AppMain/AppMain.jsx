@@ -2,24 +2,22 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from 'components/shared/Error404';
 import Home from 'components/scenes/Home';
-import Praise from 'components/scenes/Praise';
-import Share from 'components/scenes/Share';
-import GetReady from 'components/scenes/GetReady';
-import Heroes from 'components/scenes/Heroes';
-import Latest from 'components/scenes/Latest';
-import Design from 'components/scenes/Design';
+import { PraiseAsync } from 'components/scenes/Praise';
+import { ShareAsync } from 'components/scenes/Share';
+import { GetReadyAsync } from 'components/scenes/GetReady';
+// import { HeroesAsync } from 'components/scenes/Heroes';
+import { DesignAsync } from 'components/scenes/Design';
 import withAnalyticsTracker from 'utils/with-analytics-tracker';
 import withOpacityDelay from 'utils/with-opacity-delay';
 import './AppMain.scss';
 
 const AppMain = () => {
   const routesData = [
-    { path: '/praise', exact: true, component: Praise },
-    { path: '/share', exact: false, component: Share },
-    { path: '/get-ready', exact: true, component: GetReady },
-    { path: '/heroes', exact: true, component: Heroes },
-    { path: '/latest', exact: true, component: Latest },
-    { path: '/design', exact: true, component: Design },
+    { path: '/praise', exact: true, component: PraiseAsync },
+    { path: '/share', exact: false, component: ShareAsync },
+    { path: '/get-ready', exact: true, component: GetReadyAsync },
+    // { path: '/heroes', exact: true, component: HeroesAsync },
+    { path: '/design', exact: true, component: DesignAsync },
   ];
 
   // Add any HOCs for routes here
