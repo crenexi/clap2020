@@ -9,11 +9,12 @@
     "lint": "./node_modules/.bin/eslint --ext js,jsx src",
     "lint:fix": "./node_modules/.bin/eslint --fix --ext js,jsx src",
     "build": "webpack --config webpack.config.js",
-    "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js",
+    "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js --progress",
     "publish:prod": "gulp publish:prod",
     "deploy:prod": "npm run build:prod && npm run publish:prod",
     "stats:create": "cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js --profile --json > dist/stats.json",
-    "stats:analyze": "webpack-bundle-analyzer dist/stats.json"
+    "stats:analyze": "webpack-bundle-analyzer -s gzip dist/stats.json",
+    "scss-utils": "scss src/scss/utils/variables/_index.scss ./scss-utils.css"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",
@@ -29,6 +30,8 @@
     "bourbon": "^6.0.0",
     "calendar-link": "^1.2.5",
     "classnames": "^2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^3.1.0",
     "cross-env": "^7.0.2",
     "debug": "^4.1.1",
     "dotenv-webpack": "^1.7.0",

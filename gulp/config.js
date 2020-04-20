@@ -8,7 +8,7 @@ module.exports = {
     profile: 's3-deploy',
     headers: {
       'x-amz-acl': 'bucket-owner-full-control',
-      'Cache-Control': 'max-age=86400, no-transform, public',
+      'Cache-Control': 'max-age=315360000, no-transform, public',
     },
   },
 };

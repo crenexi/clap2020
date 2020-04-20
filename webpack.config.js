@@ -1,17 +1,18 @@
 const path = require('path');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DotenvWebpack = require('dotenv-webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const DIST_PATH = path.join(__dirname, '/dist');
 
-// Helper to get environment
-const getEnv = (defaultEnv = 'development') => {
-  return process.env.BABEL_ENV || process.env.NODE_ENV || defaultEnv;
-};
+const env = process.env.BABEL_ENV || process.env.NODE_ENV || 'development';
+const isProduction = env === 'production';
+const isDevelopment = env === 'development';
 
 /* #################
 #### Loaders #######
@@ -27,7 +28,7 @@ const jsLoaderRule = () => ({
 });
 
 const scssLoaderRule = () => {
-  const localIdentName = getEnv() === 'development'
+  const localIdentName = isDevelopment
     ? '[name]__[local]___[hash:base64:5]'
     : '[hash:base64:5]';
 
@@ -58,7 +59,7 @@ const scssLoaderRule = () => {
 ################# */
 
 // Environment variables loader plugin
-const createDotenvWebpackPlugin = () => new DotenvWebpack({
+const createDotenvPlugin = () => new DotenvWebpack({
   path: path.resolve(__dirname, '.env'),
 });
 
@@ -68,14 +69,17 @@ const createEnvironmentPlugin = () => new webpack.EnvironmentPlugin({
   DEBUG: false,
 });
 
+// Clean
+const createCleanPlugin = () => new CleanWebpackPlugin();
+
 // HTML plugin
-const createHtmlWebpackPlugin = () => new HtmlWebpackPlugin({
+const createHtmlPlugin = () => new HtmlPlugin({
   template: './public/index.html',
   filename: 'index.html',
 });
 
 // Copy plugin
-const createCopyWebpackPlugin = () => new CopyWebpackPlugin([
+const createCopyPlugin = () => new CopyPlugin([
   { from: './public' },
 ]);
 
@@ -105,6 +109,18 @@ const createTerserPlugin = () => new TerserPlugin({
   },
   parallel: true,
   cache: true,
+  sourceMap: true,
+});
+
+// Compression plugin
+const createCompressionPlugin = () => new CompressionPlugin({
+  filename: '[path].br[query]',
+  algorithm: 'brotliCompress',
+  test: /\.(js|css|html|svg)$/,
+  compressionOptions: { level: 11 },
+  threshold: 10240,
+  minRatio: 0.8,
+  deleteOriginalAssets: false,
 });
 
 /* #################
@@ -128,11 +144,12 @@ const aliasRelativePaths = {
 ################# */
 
 const config = {
-  mode: getEnv(),
+  mode: env,
   entry: './src/main.jsx',
   output: {
     path: DIST_PATH,
     filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
@@ -147,11 +164,15 @@ const config = {
     ],
   },
   plugins: [
-    createDotenvWebpackPlugin(),
+    createDotenvPlugin(),
     createEnvironmentPlugin(),
-    createHtmlWebpackPlugin(),
-    createCopyWebpackPlugin(),
+    createCleanPlugin(),
+    createHtmlPlugin(),
+    createCopyPlugin(),
     createMomentLocalesPlugin(),
+    ...(!isProduction ? [] : [
+      createCompressionPlugin(),
+    ]),
   ],
   devServer: {
     port: 4200,
@@ -160,7 +181,8 @@ const config = {
     inline: true,
     hot: true,
   },
-  performance: {
+  devtool: isProduction ? false : 'eval',
+  performance: isDevelopment && {
     hints: false,
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
@@ -172,21 +194,13 @@ const config = {
 ################# */
 
 // Optimize only if production build
-if (getEnv() === 'production') {
+if (isProduction) {
   config.optimization = {
     minimize: true,
-    minimizer: [createTerserPlugin],
+    minimizer: [createTerserPlugin()],
     runtimeChunk: false,
     splitChunks: {
-      cacheGroups: {
-        default: false,
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor_app',
-          chunks: 'all',
-          minChunks: 2,
-        },
-      },
+      chunks: 'all',
     },
   };
 }
