@@ -12,20 +12,26 @@ const onDocumentReady = () => {
   // Star of life icon
   (() => {
     const elm = document.getElementById(ids.star);
-    const node = icon(faStarOfLife).node[0];
-    elm.appendChild(node);
+
+    if (elm) {
+      const node = icon(faStarOfLife).node[0];
+      elm.appendChild(node);
+    }
   })();
 
   // Spinner icon
   (() => {
     const elm = document.getElementById(ids.spinner);
-    const node = icon(faSpinnerThird, {
-      classes: ['fa-spin'],
-      styles: {
-        'animation-duration': '350ms',
-      },
-    }).node[0];
-    elm.appendChild(node);
+
+    if (elm) {
+      const node = icon(faSpinnerThird, {
+        classes: ['fa-spin'],
+        styles: {
+          'animation-duration': '350ms',
+        },
+      }).node[0];
+      elm.appendChild(node);
+    }
   })();
 };
 
