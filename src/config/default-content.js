@@ -1,5 +1,10 @@
 const assetsPath = process.env.ASSETS_PATH;
 
+// Endpoint: /meta
+const uiMeta = {
+  error404CoverUrl: `${assetsPath}/meta/errors/lost-in-jumanji.gif,`,
+};
+
 // Endpoint: /ui/drawer-nav
 const uiDrawerNav = [
   {
@@ -632,6 +637,7 @@ const datasetTopCities = [
 // Content
 const defaultContent = {
   uiContent: {
+    meta: uiMeta,
     drawerNav: uiDrawerNav,
     footerNav: uiFooterNav,
     fullHeader: uiFullHeader,
