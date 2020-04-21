@@ -1,7 +1,7 @@
 import React from 'react';
 import MuiFAB from '@material-ui/core/Fab';
-import useDrawer from 'hooks/use-drawer';
-import FaIcon from 'components/shared/FaIcon';
+import useDrawer from '@hooks/use-drawer';
+import FaIcon from '@components/shared/FaIcon';
 import './DrawerFAB.scss';
 
 const DrawerFAB = () => {

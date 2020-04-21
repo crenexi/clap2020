@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf } from 'prop-types';
-import shareButtonType from 'types/share-button-type';
-import { Button, IconButton } from 'components/ui';
+import shareButtonType from '@types/share-button-type';
+import { Button, IconButton } from '@components/ui';
 import Grid from './Grid';
 
 const GridContainer = ({ buttonsData }) => {

@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import logger from 'services/logger';
+import logger from '@services/logger';
 
 const useBreakpoint = (key = '') => {
   const theme = useTheme();

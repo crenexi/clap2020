@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes, { shape, oneOf } from 'prop-types';
 import { Button as MuiButton } from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import { FaIcon } from 'components/ui';
+import { FaIcon } from '@components/ui';
 import './Button.scss';
 
 const IconButton = (props) => {

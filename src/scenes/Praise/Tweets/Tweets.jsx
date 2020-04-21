@@ -1,8 +1,8 @@
 import React from 'react';
 import { arrayOf } from 'prop-types';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
-import praiseTweetType from 'types/praise-tweet';
-import FaIcon from 'components/shared/FaIcon';
+import praiseTweetType from '@types/praise-tweet';
+import FaIcon from '@components/shared/FaIcon';
 import './PraiseTweets.scss';
 
 const PraiseTweets = ({ tweets }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import noiseMethodType from 'types/noise-method';
-import FaIcon from 'components/shared/FaIcon';
+import noiseMethodType from '@types/noise-method';
+import FaIcon from '@components/shared/FaIcon';
 import './NoiseMethod.scss';
 
 const NoiseMethod = ({ item }) => {

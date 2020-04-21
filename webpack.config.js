@@ -128,16 +128,17 @@ const createCompressionPlugin = () => new CompressionPlugin({
 ################# */
 
 const aliasRelativePaths = {
-  src: './src',
-  config: './src/shared/config',
-  constants: './src/shared/constants',
-  types: './src/shared/types',
-  contexts: './src/shared/contexts',
-  hooks: './src/shared/hooks',
-  helpers: './src/shared/helpers',
-  services: './src/shared/services',
-  components: './src/shared/components',
-  styles: './src/shared/styles',
+  '@src': './src',
+  '@config': './src/shared/config',
+  '@constants': './src/shared/constants',
+  '@types': './src/shared/types',
+  '@contexts': './src/shared/contexts',
+  '@hooks': './src/shared/hooks',
+  '@helpers': './src/shared/helpers',
+  '@services': './src/shared/services',
+  '@components': './src/shared/components',
+  '@styles': './src/shared/styles',
+  'style-utils': './src/shared/helpers/scss',
 };
 
 /* #################

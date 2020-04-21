@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import Drawer from '@material-ui/core/Drawer';
-import useDrawer from 'hooks/use-drawer';
-import BrandLogo from 'components/shared/BrandLogo';
-import IconButton from 'components/shared/IconButton';
-import BrandMessenger from 'components/shared/BrandMessenger';
-import BrandSocialNav from 'components/shared/BrandSocialNav';
+import useDrawer from '@hooks/use-drawer';
+import BrandLogo from '@components/shared/BrandLogo';
+import IconButton from '@components/shared/IconButton';
+import BrandMessenger from '@components/shared/BrandMessenger';
+import BrandSocialNav from '@components/shared/BrandSocialNav';
 import DrawerFAB from './DrawerFAB';
 import DrawerNav from './DrawerNav';
 import './AppDrawer.scss';

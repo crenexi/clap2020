@@ -1,4 +1,4 @@
-import { assetsPath } from 'config/app-settings';
+import { assetsPath } from '@config/app-settings';
 
 const initialState = {
   threeSteps: {

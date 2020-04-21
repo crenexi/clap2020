@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import joinInviteType from 'types/join-invite';
-import Countdown from 'components/shared/Countdown';
+import joinInviteType from '@types/join-invite';
+import Countdown from '@components/shared/Countdown';
 import './JoinInviteView.scss';
 
 const JoinInviteView = ({ content, hasCountdown }) => {

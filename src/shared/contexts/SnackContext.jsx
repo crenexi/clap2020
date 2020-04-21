@@ -1,6 +1,6 @@
 import React, { Fragment, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { AlertSnack } from 'components/ui';
+import { AlertSnack } from '@components/ui';
 
 const SnackContext = React.createContext(null);
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
-import Button from 'components/shared/Button';
-import TwitterButton from 'components/shared/TwitterButton';
-import BrandSocialNav from 'components/shared/BrandSocialNav';
-import FaIcon from 'components/shared/FaIcon';
+import Button from '@components/shared/Button';
+import TwitterButton from '@components/shared/TwitterButton';
+import BrandSocialNav from '@components/shared/BrandSocialNav';
+import FaIcon from '@components/shared/FaIcon';
 import './FollowUsView.scss';
 
 const FollowUsView = (props) => {

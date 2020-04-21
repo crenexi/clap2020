@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import withGlobalProviders from 'utils/with-global-providers';
 import { BrowserRouter as Router } from 'react-router-dom';
-import fontAwesomeConfig from 'config/font-awesome-config';
-import logger from 'services/logger';
+import fontAwesomeConfig from '@config/font-awesome-config';
+import logger from '@services/logger';
 import ScrollToTop from './ScrollToTop';
 import AppView from './AppView';
 

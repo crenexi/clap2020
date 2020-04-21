@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
-import calendarActionType from 'types/calendar-action';
-import Button from 'components/shared/Button';
-import FaIcon from 'components/shared/FaIcon';
+import calendarActionType from '@types/calendar-action';
+import Button from '@components/shared/Button';
+import FaIcon from '@components/shared/FaIcon';
 import './CalendarActions.scss';
 
 const CalendarActions = ({ actions, click }) => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import useBreakpoint from 'hooks/use-breakpoint';
-import DrawerToggle from 'components/shared/DrawerToggle';
-import BrandLogo from 'components/shared/BrandLogo';
-import Countdown from 'components/shared/Countdown';
-import ShareInviteButton from 'components/shared/ShareInviteButton';
+import useBreakpoint from '@hooks/use-breakpoint';
+import DrawerToggle from '@components/shared/DrawerToggle';
+import BrandLogo from '@components/shared/BrandLogo';
+import Countdown from '@components/shared/Countdown';
+import ShareInviteButton from '@components/shared/ShareInviteButton';
 import HeaderFrame from '../HeaderFrame';
 import './GlobalHeaderView.scss';
 

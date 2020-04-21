@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes, { arrayOf, shape } from 'prop-types';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import scrollService from 'services/scroll-service';
-import BrandLogo from 'components/shared/BrandLogo';
-import IconButton from 'components/shared/IconButton';
-import Button from 'components/shared/Button';
-import ATFAbout from 'components/shared/ATFAbout';
+import scrollService from '@services/scroll-service';
+import BrandLogo from '@components/shared/BrandLogo';
+import IconButton from '@components/shared/IconButton';
+import Button from '@components/shared/Button';
+import ATFAbout from '@components/shared/ATFAbout';
 import IconParade from './IconParade';
 import './FullHeaderWideView.scss';
 

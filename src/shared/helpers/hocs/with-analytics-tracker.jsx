@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import defaultSettings from 'config/app-settings';
-import locationType from 'types/router-location';
+import defaultSettings from '@config/app-settings';
+import locationType from '@types/router-location';
 import ReactGA from 'react-ga';
 
 ReactGA.initialize(defaultSettings.gaTrackingId);

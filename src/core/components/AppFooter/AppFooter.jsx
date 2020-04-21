@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import useContent from 'hooks/use-content';
-import BrandLogo from 'components/shared/BrandLogo';
+import useContent from '@hooks/use-content';
+import BrandLogo from '@components/shared/BrandLogo';
 import FollowUs from './FollowUs';
 import FooterNav from './FooterNav';
 import LegalFooter from './LegalFooter';

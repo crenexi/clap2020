@@ -1,6 +1,6 @@
-@import '~helpers/scss';
-@import '~styles/keyframes/arrive-grow';
-@import '~styles/keyframes/depart-shrink';
+@import '~style-utils';
+@import '~@styles/keyframes/arrive-grow';
+@import '~@styles/keyframes/depart-shrink';
 
 .frame {
   position: relative;

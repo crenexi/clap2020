@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from 'components/shared/Button';
-import BrandLogo from 'components/shared/BrandLogo';
+import Button from '@components/shared/Button';
+import BrandLogo from '@components/shared/BrandLogo';
 import HeaderFrame from '../HeaderFrame';
 import './TopHeader.scss';
 

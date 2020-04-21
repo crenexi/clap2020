@@ -1,4 +1,4 @@
-@import '~helpers/scss';
+@import '~style-utils';
 
 .tweets {
   @include flex-column(normal, center);

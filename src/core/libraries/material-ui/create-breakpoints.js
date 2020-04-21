@@ -1,4 +1,4 @@
-import scssExports from 'helpers/scss/exports';
+import scssExports from '@helpers/scss/exports';
 
 const createBreakpoints = () => {
   const shorten = key => key.split('breakpoint').pop().toLowerCase();

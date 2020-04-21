@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes, { oneOf } from 'prop-types';
 import { Link } from 'react-router-dom';
-import { assetsPath } from 'config/app-settings';
-import { capitalize } from 'helpers';
+import { assetsPath } from '@config/app-settings';
+import { capitalize } from '@helpers';
 import './BrandFav.scss';
 
 const BrandFav = ({ className, variant, ext, width }) => {

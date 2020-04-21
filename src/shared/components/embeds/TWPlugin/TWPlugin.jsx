@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import useTwitter from 'hooks/use-twitter';
-import { ErrorText } from 'components/ui';
+import useTwitter from '@hooks/use-twitter';
+import { ErrorText } from '@components/ui';
 import './TWPlugin.scss';
 
 const TWPlugin = ({ children, onReady }) => {

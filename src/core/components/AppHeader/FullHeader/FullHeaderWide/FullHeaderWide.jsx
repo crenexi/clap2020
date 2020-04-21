@@ -1,6 +1,6 @@
 import React from 'react';
-import useBreakpoint from 'hooks/use-breakpoint';
-import useContent from 'hooks/use-content';
+import useBreakpoint from '@hooks/use-breakpoint';
+import useContent from '@hooks/use-content';
 import FullHeaderWideView from './FullHeaderWideView';
 
 const FullHeaderWide = () => {

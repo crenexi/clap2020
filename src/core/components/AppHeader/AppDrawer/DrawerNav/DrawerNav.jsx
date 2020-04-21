@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
-import locationType from 'types/location';
-import useContent from 'hooks/use-content';
-import useDrawer from 'hooks/use-drawer';
+import locationType from '@types/location';
+import useContent from '@hooks/use-content';
+import useDrawer from '@hooks/use-drawer';
 import DrawerNavView from './DrawerNavView';
 
 const DrawerNav = ({ location }) => {

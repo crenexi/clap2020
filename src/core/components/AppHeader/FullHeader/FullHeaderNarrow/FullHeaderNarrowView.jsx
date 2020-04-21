@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes, { arrayOf, shape } from 'prop-types';
 import * as Scroll from 'react-scroll';
-import scrollService from 'services/scroll-service';
-import BrandLogo from 'components/shared/BrandLogo';
-import IconButton from 'components/shared/IconButton';
-import ATFAbout from 'components/shared/ATFAbout';
+import scrollService from '@services/scroll-service';
+import BrandLogo from '@components/shared/BrandLogo';
+import IconButton from '@components/shared/IconButton';
+import ATFAbout from '@components/shared/ATFAbout';
 import FullHeaderSection from '../FullHeaderSection';
 import './FullHeaderNarrowView.scss';
 

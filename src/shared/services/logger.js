@@ -1,5 +1,5 @@
 import debug from 'debug';
-import appSettings from 'config/app-settings';
+import appSettings from '@config/app-settings';
 
 // Should be the same as declared in main.jsx
 const debugPrefix = appSettings.debugPrefix;

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
-import navItemType from 'types/nav-item';
-import FaIcon from 'components/shared/FaIcon';
+import navItemType from '@types/nav-item';
+import FaIcon from '@components/shared/FaIcon';
 import './DrawerNavItem.scss';
 
 const DrawerNavItem = ({ item, click }) => {

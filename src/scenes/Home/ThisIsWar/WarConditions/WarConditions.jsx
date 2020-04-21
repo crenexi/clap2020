@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf } from 'prop-types';
-import warConditionType from 'types/war-condition';
-import FaIcon from 'components/shared/FaIcon';
+import warConditionType from '@types/war-condition';
+import FaIcon from '@components/shared/FaIcon';
 import './WarConditions.scss';
 
 const WarConditions = ({ conditions }) => (

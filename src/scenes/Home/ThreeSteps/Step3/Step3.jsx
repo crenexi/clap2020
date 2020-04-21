@@ -1,11 +1,11 @@
 import React from 'react';
-import useContent from 'hooks/use-content';
-import useBreakpoint from 'hooks/use-breakpoint';
+import useContent from '@hooks/use-content';
+import useBreakpoint from '@hooks/use-breakpoint';
 import { userAgent } from 'utils/helpers';
-import Countdown from 'components/shared/Countdown';
-import Button from 'components/shared/Button';
-import FaIcon from 'components/shared/FaIcon';
-import TWTweet from 'components/shared/@twitter/TWTweet';
+import Countdown from '@components/shared/Countdown';
+import Button from '@components/shared/Button';
+import FaIcon from '@components/shared/FaIcon';
+import TWTweet from '@components/shared/@twitter/TWTweet';
 import StepSectionL1 from '../StepSectionL1';
 import StepSectionL2 from '../StepSectionL2';
 import NoiseMethods from './NoiseMethods';

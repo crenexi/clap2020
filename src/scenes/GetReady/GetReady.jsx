@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
-import quoteType from 'types/quote';
-import BgCover from 'components/shared/BgCover';
-import TwitterButton from 'components/shared/TwitterButton';
-import ATFDateTime from 'components/shared/ATFDateTime';
-import ShareInviteButton from 'components/shared/ShareInviteButton';
-import BigQuote from 'components/shared/BigQuote';
+import quoteType from '@types/quote';
+import BgCover from '@components/shared/BgCover';
+import TwitterButton from '@components/shared/TwitterButton';
+import ATFDateTime from '@components/shared/ATFDateTime';
+import ShareInviteButton from '@components/shared/ShareInviteButton';
+import BigQuote from '@components/shared/BigQuote';
 import BigCountdown from './BigCountdown';
 import './GetReadyView.scss';
 

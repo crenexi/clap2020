@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import locationType from 'types/location';
+import locationType from '@types/location';
 import { withRouter } from 'react-router-dom';
-import { DrawerProvider } from 'contexts/DrawerContext';
+import { DrawerProvider } from '@contexts/DrawerContext';
 import GlobalHeader from './GlobalHeader';
 import AppDrawer from './AppDrawer';
 import TopHeader from './TopHeader';

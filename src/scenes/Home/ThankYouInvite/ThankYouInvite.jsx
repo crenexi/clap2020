@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import useContent from 'hooks/use-content';
-import ThankYouHeading from 'components/shared/ThankYouHeading';
-import FaIcon from 'components/shared/FaIcon';
-import Button from 'components/shared/Button';
+import useContent from '@hooks/use-content';
+import ThankYouHeading from '@components/shared/ThankYouHeading';
+import FaIcon from '@components/shared/FaIcon';
+import Button from '@components/shared/Button';
 import './ThankYouInvite.scss';
 
 const ThankYouInvite = () => {

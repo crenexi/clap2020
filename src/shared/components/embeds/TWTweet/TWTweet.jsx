@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import reactRefType from 'types/react-ref-type';
-import { Loading, ErrorText } from 'components/ui';
+import reactRefType from '@types/react-ref-type';
+import { Loading, ErrorText } from '@components/ui';
 import TWPlugin from '../TWPlugin';
 
 const TWTweet = (props) => {

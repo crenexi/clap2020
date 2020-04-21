@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
-import eventMetaType from 'types/event-meta';
-import Button from 'components/shared/Button';
+import eventMetaType from '@types/event-meta';
+import Button from '@components/shared/Button';
 import './EmailEvent.scss';
 
 const EmailEvent = ({ event }) => {

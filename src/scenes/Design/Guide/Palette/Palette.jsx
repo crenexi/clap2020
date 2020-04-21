@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import theme from 'config/app-theme';
+import theme from '@config/app-theme';
 import Heading from '../../Heading';
 import './Palette.scss';
 

@@ -4,11 +4,11 @@ import {
   google as calLinkGoogle,
   yahoo as calLinkYahoo,
 } from 'calendar-link';
-import eventMetaType from 'types/event-meta';
-import useSnack from 'hooks/use-snack';
-import logger from 'services/logger';
+import eventMetaType from '@types/event-meta';
+import useSnack from '@hooks/use-snack';
+import logger from '@services/logger';
 import { alphaNumeric } from 'utils/helpers';
-import copyService from 'services/copy-service';
+import copyService from '@services/copy-service';
 import AddToCalendarView from './AddToCalendarView';
 
 const AddToCalendar = ({ eventMeta, icsUrl }) => {

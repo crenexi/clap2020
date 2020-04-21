@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment-timezone';
-import eventMetaType from 'types/event-meta';
-import FaIcon from 'components/shared/FaIcon';
-import IconButton from 'components/shared/IconButton';
+import eventMetaType from '@types/event-meta';
+import FaIcon from '@components/shared/FaIcon';
+import IconButton from '@components/shared/IconButton';
 import './CalendarCopy.scss';
 
 const CalendarCopy = ({ eventMeta, onCopy }) => {

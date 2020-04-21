@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconButton from 'components/shared/IconButton';
-import Button from 'components/shared/Button';
+import IconButton from '@components/shared/IconButton';
+import Button from '@components/shared/Button';
 import './ICalGuide.scss';
 
 const ICalGuide = ({ icsUrl, onClose }) => {

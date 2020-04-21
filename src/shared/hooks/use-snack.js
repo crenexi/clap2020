@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import SnackContext from 'contexts/SnackContext';
+import SnackContext from '@contexts/SnackContext';
 
 const useSnack = () => useContext(SnackContext);
 

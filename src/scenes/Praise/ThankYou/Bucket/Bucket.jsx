@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import workforceBucketType from 'types/workforce-bucket';
+import workforceBucketType from '@types/workforce-bucket';
 import BucketHeader from './BucketHeader';
 import BucketMain from './BucketMain';
 import BucketVideos from './BucketVideos';

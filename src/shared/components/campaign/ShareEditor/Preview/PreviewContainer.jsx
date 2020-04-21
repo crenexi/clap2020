@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { oneOf } from 'prop-types';
-import shareEditorTagsType from 'types/share-editor-tags-type';
+import shareEditorTagsType from '@types/share-editor-tags-type';
 import Preview from './Preview';
 
 const PreviewContainer = ({ tags, poster }) => {

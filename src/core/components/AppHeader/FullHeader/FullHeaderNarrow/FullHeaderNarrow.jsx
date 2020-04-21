@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import useBreakpoint from 'hooks/use-breakpoint';
-import useWindowSize from 'hooks/use-window-size';
-import useContent from 'hooks/use-content';
+import useBreakpoint from '@hooks/use-breakpoint';
+import useWindowSize from '@hooks/use-window-size';
+import useContent from '@hooks/use-content';
 import { userAgent } from 'utils/helpers';
 import FullHeaderNarrowView from './FullHeaderNarrowView';
 

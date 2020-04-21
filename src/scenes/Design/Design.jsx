@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FaIcon from 'components/shared/FaIcon';
-import DesignGuide from 'components/scenes/Design/DesignGuide';
+import FaIcon from '@components/shared/FaIcon';
+import DesignGuide from '@components/scenes/Design/DesignGuide';
 import './Design.scss';
 
 const Design = () => (

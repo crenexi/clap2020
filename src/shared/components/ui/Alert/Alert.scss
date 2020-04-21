@@ -1,4 +1,4 @@
-@import '~helpers/scss';
+@import '~style-utils';
 
 .alert {
   @include flex-row(normal, center);

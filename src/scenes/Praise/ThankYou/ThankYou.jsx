@@ -1,5 +1,5 @@
 import React from 'react';
-import workforceBucketType from 'types/workforce-bucket';
+import workforceBucketType from '@types/workforce-bucket';
 import ThankYouHeading from '../ThankYouHeading';
 import Bucket from './Bucket';
 import FrontLineGroup from './FrontLineGroup';

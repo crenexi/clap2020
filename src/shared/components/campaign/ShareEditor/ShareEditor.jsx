@@ -1,7 +1,7 @@
 import React from 'react';
-import shareEditorTagsType from 'types/share-editor-tags-type';
-import shareEditorOptionsType from 'types/share-editor-options-type';
-import shareEditorActionsType from 'types/share-editor-actions-type';
+import shareEditorTagsType from '@types/share-editor-tags-type';
+import shareEditorOptionsType from '@types/share-editor-options-type';
+import shareEditorActionsType from '@types/share-editor-actions-type';
 import Preview from './Preview';
 import Options from './Options';
 import './ShareEditor.scss';

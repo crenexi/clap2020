@@ -1,5 +1,5 @@
 import React from 'react';
-import useContent from 'hooks/use-content';
+import useContent from '@hooks/use-content';
 import NoiseMethod from './NoiseMethod';
 import './NoiseMethods.scss';
 

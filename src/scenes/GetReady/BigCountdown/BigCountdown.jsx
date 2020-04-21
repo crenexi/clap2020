@@ -1,5 +1,5 @@
 import React from 'react';
-import Countdown from 'components/shared/Countdown';
+import Countdown from '@components/shared/Countdown';
 import BigCountdownView from './BigCountdownView';
 
 const BigCountdown = () => (

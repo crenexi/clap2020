@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import moment from 'moment-timezone';
-import { Loading } from 'components/ui';
+import { Loading } from '@components/ui';
 import Countdown from './Countdown';
 
 const CountdownContainer = ({ isActive, component }) => {

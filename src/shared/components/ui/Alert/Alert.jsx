@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes, { oneOf } from 'prop-types';
-import { FaIcon } from 'components/ui';
+import { FaIcon } from '@components/ui';
 import './Alert.scss';
 
 const Alert = ({ children, canClose, onClose, variant }) => {

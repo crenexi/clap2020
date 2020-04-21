@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import useBreakpoint from 'hooks/use-breakpoint';
-import useDocumentScroll from 'hooks/use-document-scroll';
+import useBreakpoint from '@hooks/use-breakpoint';
+import useDocumentScroll from '@hooks/use-document-scroll';
 import GlobalHeaderView from './GlobalHeaderView';
 
 const GlobalHeader = () => {

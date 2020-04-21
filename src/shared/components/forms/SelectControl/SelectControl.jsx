@@ -6,7 +6,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
-import { combineClasses } from 'helpers';
+import { combineClasses } from '@helpers';
 import './SelectControl.scss';
 
 const useStyles = makeStyles({

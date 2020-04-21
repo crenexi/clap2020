@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
 import classNames from 'classnames';
-import eventMetaType from 'types/event-meta';
+import eventMetaType from '@types/event-meta';
 import ICalGuide from './ICalGuide';
 import CalendarActions from './CalendarActions';
 import CalendarCopy from './CalendarCopy';

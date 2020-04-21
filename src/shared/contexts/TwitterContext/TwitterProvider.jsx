@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import logger from 'services/logger';
+import logger from '@services/logger';
 import TwitterContext from './TwitterContext';
 import scriptLoad from './script-load';
 

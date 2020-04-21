@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
-import { userAgent } from 'helpers';
+import { userAgent } from '@helpers';
 import './Grid.scss';
 
 const Grid = ({ buttons }) => {

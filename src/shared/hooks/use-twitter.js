@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import TwitterContext from 'contexts/TwitterContext';
+import TwitterContext from '@contexts/TwitterContext';
 
 const useTwitter = () => useContext(TwitterContext);
 

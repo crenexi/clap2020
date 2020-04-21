@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes, { shape } from 'prop-types';
-import logger from 'services/logger';
+import logger from '@services/logger';
 import TWTweet from './TWTweet';
 
 const TWTweetContainer = ({ id, options }) => {

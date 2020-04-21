@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useSelector from 'react-redux';
-import { unitedStates } from 'constants/datasets';
-import { onlyAlpha } from 'helpers';
-import logger from 'services/logger';
+import { unitedStates } from '@constants/datasets';
+import { onlyAlpha } from '@helpers';
+import logger from '@services/logger';
 import ShareEditor from './ShareEditor';
 
 const ShareEditorContainer = ({ changePayload }) => {

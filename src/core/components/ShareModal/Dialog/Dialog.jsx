@@ -4,10 +4,10 @@ import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
-import useBreakpoint from 'hooks/use-breakpoint';
-import ShareEditor from 'components/shared/ShareEditor';
-import ShareButtons from 'components/shared/ShareButtons';
-import IconButton from 'components/shared/IconButton';
+import useBreakpoint from '@hooks/use-breakpoint';
+import ShareEditor from '@components/shared/ShareEditor';
+import ShareButtons from '@components/shared/ShareButtons';
+import IconButton from '@components/shared/IconButton';
 import './ShareDialog.scss';
 
 const Transition = forwardRef((props, ref) => {

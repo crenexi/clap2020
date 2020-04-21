@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { arrayOf } from 'prop-types';
-import videoEmbedType from 'types/video-embed';
-import VideoEmbed from 'components/shared/VideoEmbed';
-import Button from 'components/shared/Button';
+import videoEmbedType from '@types/video-embed';
+import VideoEmbed from '@components/shared/VideoEmbed';
+import Button from '@components/shared/Button';
 import './BucketVideos.scss';
 
 const BucketVideos = ({ videos }) => {

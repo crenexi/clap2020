@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import quoteType from 'types/quote-type';
+import quoteType from '@types/quote-type';
 import FaIcon from '../FaIcon';
 import './BigQuote.scss';
 

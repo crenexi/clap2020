@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
 import List from '@material-ui/core/List';
-import navItemType from 'types/nav-item';
+import navItemType from '@types/nav-item';
 import DrawerNavItem from './DrawerNavItem';
 import './DrawerNavView.scss';
 

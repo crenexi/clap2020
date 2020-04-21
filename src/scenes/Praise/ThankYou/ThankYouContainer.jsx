@@ -1,6 +1,6 @@
 import React from 'react';
-import logger from 'services/logger';
-import useContent from 'hooks/use-content';
+import logger from '@services/logger';
+import useContent from '@hooks/use-content';
 import ThankYouView from './ThankYouView';
 
 const ThankYou = () => {

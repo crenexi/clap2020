@@ -1,5 +1,5 @@
 import React from 'react';
-import useDrawer from 'hooks/use-drawer';
+import useDrawer from '@hooks/use-drawer';
 import IconButton from '../IconButton';
 
 const DrawerToggle = () => {

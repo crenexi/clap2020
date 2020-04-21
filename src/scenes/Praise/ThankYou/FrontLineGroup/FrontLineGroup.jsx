@@ -1,6 +1,6 @@
 import React from 'react';
-import workforceGroupType from 'types/workforce-group';
-import FaIcon from 'components/shared/FaIcon';
+import workforceGroupType from '@types/workforce-group';
+import FaIcon from '@components/shared/FaIcon';
 import './FrontLineGroup.scss';
 
 const FrontLineGroup = ({ group }) => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
-import useBreakpoint from 'hooks/use-breakpoint';
-import quoteType from 'types/quote';
-import warConditionType from 'types/war-condition';
-import BgCover from 'components/shared/BgCover';
-import BigQuote from 'components/shared/BigQuote';
+import useBreakpoint from '@hooks/use-breakpoint';
+import quoteType from '@types/quote';
+import warConditionType from '@types/war-condition';
+import BgCover from '@components/shared/BgCover';
+import BigQuote from '@components/shared/BigQuote';
 import WarConditions from './WarConditions';
 import './ThisIsWarView.scss';
 

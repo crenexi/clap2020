@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import routerMatchType from 'types/router-match';
+import routerMatchType from '@types/router-match';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import Error404 from 'components/shared/Error404';
+import Error404 from '@components/shared/Error404';
 import ShareNav from './ShareNav';
 import ShareIntro from './ShareIntro';
 import ShareNow from './ShareNow';

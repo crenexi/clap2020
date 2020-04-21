@@ -1,6 +1,6 @@
 import React from 'react';
-import FaIcon from 'components/shared/FaIcon';
-import BrandMessenger from 'components/shared/BrandMessenger';
+import FaIcon from '@components/shared/FaIcon';
+import BrandMessenger from '@components/shared/BrandMessenger';
 import './LegalFooter.scss';
 
 const LegalFooter = () => {

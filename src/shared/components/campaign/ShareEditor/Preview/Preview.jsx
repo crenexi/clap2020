@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import shareEditorTagsType from 'types/share-editor-tags-type';
+import shareEditorTagsType from '@types/share-editor-tags-type';
 import './Preview.scss';
 
 const Preview = ({ tags, posterThumbUrl }) => {

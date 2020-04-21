@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce';
-// import logger from 'services/logger';
+// import logger from '@services/logger';
 
 const sdkPlugins = (() => {
   let plugins = [];

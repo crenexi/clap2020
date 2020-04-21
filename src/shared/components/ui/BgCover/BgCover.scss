@@ -1,5 +1,5 @@
-@import '~helpers/scss';
-@import '~styles/keyframes/zoom-pace';
+@import '~style-utils';
+@import '~@styles/keyframes/zoom-pace';
 
 .frame {
   @include position(absolute, 0 0 0 0);

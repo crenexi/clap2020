@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaIcon from 'components/shared/FaIcon';
+import FaIcon from '@components/shared/FaIcon';
 import './StepHeader.scss';
 
 const StepHeader = ({ title, icon, theme }) => {

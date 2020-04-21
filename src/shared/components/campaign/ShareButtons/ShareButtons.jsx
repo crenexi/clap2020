@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaIcon } from 'components/ui';
+import { FaIcon } from '@components/ui';
 import Grid from './Grid';
 
 const ShareButtons = ({ share, copy }) => {

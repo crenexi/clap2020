@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import useContent from 'hooks/use-content';
-import QuickNavBar from 'components/shared/QuickNavBar';
-import ThankYou from 'components/shared/ThankYou';
-import Button from 'components/shared/Button';
+import useContent from '@hooks/use-content';
+import QuickNavBar from '@components/shared/QuickNavBar';
+import ThankYou from '@components/shared/ThankYou';
+import Button from '@components/shared/Button';
 import PraiseTweets from './PraiseTweets';
 import './Praise.scss';
 

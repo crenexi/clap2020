@@ -1,5 +1,5 @@
 import React from 'react';
-import FaIcon from 'components/shared/FaIcon';
+import FaIcon from '@components/shared/FaIcon';
 import times from 'lodash.times';
 import flatten from 'lodash.flatten';
 import uniqueId from 'lodash.uniqueid';

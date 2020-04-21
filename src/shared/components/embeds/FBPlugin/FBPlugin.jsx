@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import uniqueId from 'lodash.uniqueid';
-import useFacebook from 'hooks/use-facebook';
-import { Loading, ErrorText } from 'components/ui';
+import useFacebook from '@hooks/use-facebook';
+import { Loading, ErrorText } from '@components/ui';
 import './FBPlugin.scss';
 
 const FBPlugin = ({ children, minHeight }) => {

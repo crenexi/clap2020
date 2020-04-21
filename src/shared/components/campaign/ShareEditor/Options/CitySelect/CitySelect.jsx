@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { SelectControl, NativeSelectControl } from 'components/forms';
-import useBreakpoint from 'hooks/use-breakpoint';
+import { SelectControl, NativeSelectControl } from '@components/forms';
+import useBreakpoint from '@hooks/use-breakpoint';
 import './CitySelect.scss';
 
 const useStyles = makeStyles({
