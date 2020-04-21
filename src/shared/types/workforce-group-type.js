@@ -1,6 +1,6 @@
 import PropTypes, { shape, oneOf } from 'prop-types';
 
-const essentialGroup = shape({
+const essentialGroupType = shape({
   name: PropTypes.string.isRequired,
   bucket: oneOf(['frontLines', 'response', 'essential']),
   icon: PropTypes.string.isRequired,
@@ -8,4 +8,4 @@ const essentialGroup = shape({
   description: PropTypes.string.isRequired,
 });
 
-export default essentialGroup;
+export default essentialGroupType;

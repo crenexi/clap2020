@@ -1,6 +1,6 @@
 import PropTypes, { shape } from 'prop-types';
 
-const quote = shape({
+const quoteType = shape({
   text: PropTypes.string.isRequired,
   author: shape({
     name: PropTypes.string.isRequired,
@@ -8,4 +8,4 @@ const quote = shape({
   }),
 });
 
-export default quote;
+export default quoteType;

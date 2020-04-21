@@ -1,6 +1,6 @@
 import PropTypes, { shape } from 'prop-types';
 
-const eventMeta = shape({
+const eventMetaType = shape({
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   start: PropTypes.string.isRequired,
@@ -8,4 +8,4 @@ const eventMeta = shape({
   location: PropTypes.string.isRequired,
 });
 
-export default eventMeta;
+export default eventMetaType;

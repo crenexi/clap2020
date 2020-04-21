@@ -1,6 +1,6 @@
 import PropTypes, { shape } from 'prop-types';
 
-const joinInvite = shape({
+const joinInviteType = shape({
   preTitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
@@ -11,4 +11,4 @@ const joinInvite = shape({
   }),
 });
 
-export default joinInvite;
+export default joinInviteType;

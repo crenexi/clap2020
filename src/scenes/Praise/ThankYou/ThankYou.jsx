@@ -1,69 +1,59 @@
 import React from 'react';
-import logger from 'services/logger';
-import useContent from 'hooks/use-content';
-import ThankYouView from './ThankYouView';
+import workforceBucketType from 'types/workforce-bucket';
+import ThankYouHeading from '../ThankYouHeading';
+import Bucket from './Bucket';
+import FrontLineGroup from './FrontLineGroup';
+import ResponseGroup from './ResponseGroup';
+import EssentialGroup from './EssentialGroup';
+import './ThankYouView.scss';
 
-const ThankYou = () => {
-  const { sceneContent } = useContent();
+const ThankYouView = (props) => {
+  const { frontLineBucket, responseBucket, essentialBucket } = props;
 
-  // Content
-  const { workforceGroups, workforceVideos } = sceneContent.praise;
+  const frontLineGroups = (
+    <div styleName="thanks__front-line-grid">
+      {frontLineBucket.groups.map(group => (
+        <FrontLineGroup key={group.name} group={group} />
+      ))}
+    </div>
+  );
 
-  // Static bucket content
-  const buckets = {
-    frontLines: {
-      preTitle: '#ThankYou for battling the',
-      title: 'Front Lines',
-      groups: [],
-      videos: [],
-    },
-    response: {
-      preTitle: '#ThankYou for mobilizing',
-      title: 'Crisis Response',
-      groups: [],
-      videos: [],
-    },
-    essential: {
-      preTitle: '#ThankYou for handling',
-      title: 'Essential Work',
-      groups: [],
-      videos: [],
-    },
-  };
+  const responseGroups = (
+    <div styleName="thanks__response-grid">
+      <div styleName="thanks__response-grid__card">
+        {responseBucket.groups.map(group => (
+          <ResponseGroup key={group.name} group={group} />
+        ))}
+      </div>
+    </div>
+  );
 
-  // Populate buckets with groups
-  workforceGroups.forEach((group) => {
-    const bucketId = group.bucket;
-
-    // Ensure bucket is valid
-    if (!(bucketId in buckets)) {
-      logger.error(`Bucket ${bucketId} not found for group ${group.name}`);
-      return;
-    }
-
-    buckets[bucketId].groups.push(group);
-  });
-
-  // Populate buckets with videos
-  workforceVideos.filter(v => v.isFeatured).forEach((video) => {
-    const bucketId = video.bucket;
-
-    // Ensure bucket is valid
-    if (!(bucketId in buckets)) {
-      logger.error(`Bucket ${bucketId} not found for video ${video.title}`);
-      return;
-    }
-
-    buckets[bucketId].videos.push(video);
-  });
+  const essentialGroups = (
+    <div styleName="thanks__essential-grid">
+      <div styleName="thanks__essential-grid__card">
+        {essentialBucket.groups.map(group => (
+          <EssentialGroup key={group.name} group={group} />
+        ))}
+      </div>
+    </div>
+  );
 
   return (
-    <ThankYouView
-      frontLineBucket={buckets.frontLines}
-      responseBucket={buckets.response}
-      essentialBucket={buckets.essential}
-    />
+    <div styleName="thanks">
+      <ThankYouHeading />
+      <div styleName="thanks__main">
+        <Bucket bucket={frontLineBucket}>{frontLineGroups}</Bucket>
+        <Bucket bucket={responseBucket}>{responseGroups}</Bucket>
+        <Bucket bucket={essentialBucket}>{essentialGroups}</Bucket>
+      </div>
+    </div>
   );
 };
 
-export default ThankYou;
+ThankYouView.propTypes = {
+  frontLineBucket: workforceBucketType.isRequired,
+  responseBucket: workforceBucketType.isRequired,
+  essentialBucket: workforceBucketType.isRequired,
+};
+
+export default ThankYouView;

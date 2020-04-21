@@ -1,6 +1,6 @@
 import PropTypes, { shape } from 'prop-types';
 
-const navItem = shape({
+const navItemType = shape({
   linkTo: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
@@ -9,4 +9,4 @@ const navItem = shape({
   disabled: PropTypes.bool,
 });
 
-export default navItem;
+export default navItemType;
