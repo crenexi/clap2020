@@ -1,3 +1,1 @@
-import StepFrame from './StepFrame';
-
-export default StepFrame;
+export { default } from './StepFrame';

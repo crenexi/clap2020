@@ -1,3 +1,1 @@
-import StepSectionL1 from './StepSectionL1';
-
-export default StepSectionL1;
+export { default } from './StepSectionL1';

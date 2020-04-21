@@ -1,3 +1,1 @@
-import Logos from './Logos';
-
-export default Logos;
+export { default } from './Logos';

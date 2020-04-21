@@ -1,3 +1,1 @@
-import LegalFooter from './LegalFooter';
-
-export default LegalFooter;
+export { default } from './Legal';

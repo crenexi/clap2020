@@ -1,3 +1,1 @@
-import EssentialGroup from './EssentialGroup';
-
-export default EssentialGroup;
+export { default } from './EssentialGroup';

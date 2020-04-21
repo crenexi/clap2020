@@ -1,3 +1,1 @@
-import PraiseTweets from './PraiseTweets';
-
-export default PraiseTweets;
+export { default } from './Tweets';

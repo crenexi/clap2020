@@ -1,4 +1,2 @@
-import Praise from './Praise';
-
 export { default as PraiseAsync } from './PraiseAsync';
-export default Praise;
+export { default } from './Praise';

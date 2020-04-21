@@ -1,3 +1,1 @@
-import ThisIsWar from './ThisIsWar';
-
-export default ThisIsWar;
+export { default } from './ThisIsWar';

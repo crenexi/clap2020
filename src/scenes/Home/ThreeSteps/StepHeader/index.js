@@ -1,3 +1,1 @@
-import StepHeader from './StepHeader';
-
-export default StepHeader;
+export { default } from './StepHeader';

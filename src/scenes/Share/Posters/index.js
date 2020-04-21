@@ -1,3 +1,1 @@
-import SharePosters from './SharePosters';
-
-export default SharePosters;
+export { default } from './Posters';

@@ -1,3 +1,1 @@
-import BucketHeader from './BucketHeader';
-
-export default BucketHeader;
+export { default } from './BucketHeader';

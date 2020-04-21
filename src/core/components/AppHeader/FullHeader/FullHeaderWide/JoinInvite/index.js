@@ -1,3 +1,1 @@
-import JoinInvite from './JoinInvite';
-
-export default JoinInvite;
+export { default } from './JoinInvite';

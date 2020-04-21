@@ -1,3 +1,1 @@
-import DesignSection from './DesignSection';
-
-export default DesignSection;
+export { default } from './Section';

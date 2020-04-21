@@ -1,11 +1,11 @@
-import sassVars from 'scss/utils/exports';
+import scssExports from 'helpers/scss/exports';
 
 const createBreakpoints = () => {
   const shorten = key => key.split('breakpoint').pop().toLowerCase();
   const isBreakpointKey = ([key]) => key.includes('breakpoint');
   const withShortKey = ([key, val]) => [shorten(key), val];
 
-  const bpEntries = Object.entries(sassVars)
+  const bpEntries = Object.entries(scssExports)
     .filter(isBreakpointKey)
     .map(withShortKey);
 

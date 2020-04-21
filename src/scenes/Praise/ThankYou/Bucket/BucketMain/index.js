@@ -1,3 +1,1 @@
-import BucketMain from './BucketMain';
-
-export default BucketMain;
+export { default } from './BucketMain';

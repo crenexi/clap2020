@@ -1,3 +1,1 @@
-import CalendarActions from './CalendarActions';
-
-export default CalendarActions;
+export { default } from './CalendarActions';

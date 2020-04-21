@@ -1,3 +1,1 @@
-import DrawerFAB from './DrawerFAB';
-
-export default DrawerFAB;
+export { default } from './DrawerFAB';

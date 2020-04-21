@@ -1,3 +1,1 @@
-import HeaderFrame from './HeaderFrame';
-
-export default HeaderFrame;
+export { default } from './HeaderFrame';

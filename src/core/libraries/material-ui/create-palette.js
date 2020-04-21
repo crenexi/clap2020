@@ -9,7 +9,7 @@ import {
   themeMarineDark2,
   themeMarineDark1,
   themeMarineBase,
-} from 'scss/utils/exports';
+} from 'helpers/scss/exports';
 
 const createPalette = () => ({
   type: 'light',

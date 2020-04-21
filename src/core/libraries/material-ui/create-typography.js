@@ -1,4 +1,4 @@
-import { fontFamilyBase, fontFamilyPrimary } from 'scss/utils/exports';
+import { fontFamilyBase, fontFamilyPrimary } from 'helpers/scss/exports';
 
 // Note: this configuration should match scss core typography config
 const createTypography = () => ({

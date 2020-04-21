@@ -1,3 +1,1 @@
-import ShareNow from './ShareNow';
-
-export default ShareNow;
+export { default } from './Now';

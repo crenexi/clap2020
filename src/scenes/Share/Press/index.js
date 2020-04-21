@@ -1,3 +1,1 @@
-import SharePress from './SharePress';
-
-export default SharePress;
+export { default } from './Press';

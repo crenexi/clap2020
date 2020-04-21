@@ -1,3 +1,1 @@
-import ResponseGroup from './ResponseGroup';
-
-export default ResponseGroup;
+export { default } from './ResponseGroup';

@@ -1,3 +1,1 @@
-import TopHeader from './TopHeader';
-
-export default TopHeader;
+export { default } from './TopHeader';

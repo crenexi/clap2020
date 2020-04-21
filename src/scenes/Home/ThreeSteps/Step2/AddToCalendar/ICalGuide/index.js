@@ -1,3 +1,1 @@
-import ICalGuide from './ICalGuide';
-
-export default ICalGuide;
+export { default } from './ICalGuide';

@@ -1,3 +1,1 @@
-import AppDrawer from './AppDrawer';
-
-export default AppDrawer;
+export { default } from './AppDrawer';

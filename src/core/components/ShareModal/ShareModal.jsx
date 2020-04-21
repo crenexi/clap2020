@@ -4,7 +4,7 @@ import shareService from 'services/share-service';
 import copyService from 'services/copy-service';
 import useModal from 'hooks/use-modal';
 import useSnack from 'hooks/use-snack';
-import ShareDialog from './ShareDialog';
+import ShareDialog from './Dialog';
 
 const SHARE_MODAL = 'SHARE_MODAL';
 

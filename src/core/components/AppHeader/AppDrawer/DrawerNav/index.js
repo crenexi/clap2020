@@ -1,3 +1,1 @@
-import DrawerNav from './DrawerNav';
-
-export default DrawerNav;
+export { default } from './DrawerNav';

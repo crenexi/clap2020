@@ -1,3 +1,1 @@
-import AddToCalendar from './AddToCalendar';
-
-export default AddToCalendar;
+export { default } from './AddToCalendar';

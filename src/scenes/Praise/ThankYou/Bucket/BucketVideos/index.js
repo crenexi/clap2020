@@ -1,3 +1,1 @@
-import BucketVideos from './BucketVideos';
-
-export default BucketVideos;
+export { default } from './BucketVideos';

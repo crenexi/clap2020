@@ -1,3 +1,1 @@
-import FullHeader from './FullHeader';
-
-export default FullHeader;
+export { default } from './FullHeader';

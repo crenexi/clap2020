@@ -1,3 +1,1 @@
-import IconParade from './IconParade';
-
-export default IconParade;
+export { default } from './IconParade';

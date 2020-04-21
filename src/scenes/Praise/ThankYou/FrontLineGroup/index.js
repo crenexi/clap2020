@@ -1,3 +1,1 @@
-import FrontLineGroup from './FrontLineGroup';
-
-export default FrontLineGroup;
+export { default } from './FrontLineGroup';

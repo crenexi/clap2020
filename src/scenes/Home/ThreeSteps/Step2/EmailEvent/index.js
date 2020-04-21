@@ -1,3 +1,1 @@
-import EmailEvent from './EmailEvent';
-
-export default EmailEvent;
+export { default } from './EmailEvent';

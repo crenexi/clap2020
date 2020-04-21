@@ -1,3 +1,1 @@
-import FullHeaderNarrow from './FullHeaderNarrow';
-
-export default FullHeaderNarrow;
+export { default } from './FullHeaderNarrow';

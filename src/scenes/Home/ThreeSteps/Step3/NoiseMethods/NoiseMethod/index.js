@@ -1,3 +1,1 @@
-import NoiseMethod from './NoiseMethod';
-
-export default NoiseMethod;
+export { default } from './NoiseMethod';

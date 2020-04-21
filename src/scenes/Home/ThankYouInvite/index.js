@@ -1,3 +1,1 @@
-import ThankYouInvite from './ThankYouInvite';
-
-export default ThankYouInvite;
+export { default } from './ThankYouInvite';

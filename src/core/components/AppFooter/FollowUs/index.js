@@ -1,3 +1,1 @@
-import FollowUs from './FollowUs';
-
-export default FollowUs;
+export { default } from './FollowUs';

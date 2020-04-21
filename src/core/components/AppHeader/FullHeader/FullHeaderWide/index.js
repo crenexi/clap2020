@@ -1,3 +1,1 @@
-import FullHeaderWide from './FullHeaderWide';
-
-export default FullHeaderWide;
+export { default } from './FullHeaderWide';

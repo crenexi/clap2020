@@ -1,3 +1,1 @@
-import ShareModal from './ShareModal';
-
-export default ShareModal;
+export { default } from './ShareModal';

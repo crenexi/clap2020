@@ -1,3 +1,1 @@
-import ShareIntro from './ShareIntro';
-
-export default ShareIntro;
+export { default } from './Intro';

@@ -1,3 +1,1 @@
-import ShareNav from './ShareNav';
-
-export default ShareNav;
+export { default } from './NavContainer';
