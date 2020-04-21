@@ -1,3 +1,1 @@
-import NativeSelectControl from './NativeSelectControl';
-
-export default NativeSelectControl;
+export { default } from './NativeSelectControl';

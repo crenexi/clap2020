@@ -1,3 +1,1 @@
-import TWPlugin from './TWPlugin';
-
-export default TWPlugin;
+export { default } from './TWPlugin';

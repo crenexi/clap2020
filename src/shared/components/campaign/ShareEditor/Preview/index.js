@@ -1,3 +1,1 @@
-import SharePreview from './SharePreview';
-
-export default SharePreview;
+export { default } from './PreviewContainer';

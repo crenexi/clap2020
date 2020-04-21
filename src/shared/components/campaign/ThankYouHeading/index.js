@@ -1,3 +1,1 @@
-import ThankYouHeading from './ThankYouHeading';
-
-export default ThankYouHeading;
+export { default } from './ThankYouHeading';

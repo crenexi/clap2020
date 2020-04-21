@@ -1,3 +1,1 @@
-import ShareInviteCard from './ShareInviteCard';
-
-export default ShareInviteCard;
+export { default } from './ShareInviteCardContainer';

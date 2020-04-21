@@ -1,26 +1,20 @@
 import React from 'react';
-import useContent from 'hooks/use-content';
+import PropTypes from 'prop-types';
 import ShareInviteButton from '../ShareInviteButton';
 import './ShareInviteCard.scss';
 
-const ShareInviteCard = () => {
-  const { campaignContent } = useContent();
+const ShareInviteCard = (props) => {
+  const { tagsPretext, tagsText, posterThumbUrl } = props;
 
-  // Content
-  const { status, posters } = campaignContent;
-  const { pretext, text } = status.campaignTags;
-
-  // Get the thumb URL of the square poster
-  const squarePoster = posters.find(p => p.format === 'square');
-  const thumbUrl = !squarePoster ? '' : squarePoster.thumbUrl;
-  const previewStyle = { backgroundImage: `url('${thumbUrl}')` };
+  // Square poster thumb
+  const previewStyle = { backgroundImage: `url('${posterThumbUrl}')` };
 
   return (
     <div styleName="frame">
       <div styleName="header">
         <div styleName="header__overline">Hashtags</div>
-        <div styleName="header__pretext">{pretext}</div>
-        <div styleName="header__text">{text}</div>
+        <div styleName="header__pretext">{tagsPretext}</div>
+        <div styleName="header__text">{tagsText}</div>
       </div>
       <div styleName="main">
         <div styleName="main__preview" style={previewStyle} />
@@ -30,6 +24,12 @@ const ShareInviteCard = () => {
       </div>
     </div>
   );
+};
+
+ShareInviteCard.propTypes = {
+  tagsPretext: PropTypes.string.isRequired,
+  tagsText: PropTypes.string.isRequired,
+  posterThumbUrl: PropTypes.string.isRequired,
 };
 
 export default ShareInviteCard;

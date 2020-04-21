@@ -137,6 +137,7 @@ const aliasRelativePaths = {
   helpers: './src/shared/helpers',
   services: './src/shared/services',
   components: './src/shared/components',
+  styles: './src/shared/styles',
 };
 
 /* #################

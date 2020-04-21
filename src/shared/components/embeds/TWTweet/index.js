@@ -1,3 +1,1 @@
-import TWTweet from './TWTweet';
-
-export default TWTweet;
+export { default } from './TWTweetContainer';

@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import FBPlugin from '../FBPlugin';
 import './FBPagePlugin.scss';
 
-const FBPagePlugin = ({ width, height, withEvents }) => {
-  const pageUrl = 'https://www.facebook.com/clap2020nation/';
-  const tabs = !withEvents ? '' : 'events';
+const FBPagePlugin = ({ width, height }) => {
+  const url = useSelector(s => s.campaign.urls.messenger);
 
   return (
     <FBPlugin minHeight={130}>
       <div styleName="card">
         <div
           className="fb-page"
-          data-href={pageUrl}
-          data-tabs={tabs}
+          data-href={url}
           data-width={width}
           data-height={height}
           data-small-header="false"
@@ -22,9 +21,9 @@ const FBPagePlugin = ({ width, height, withEvents }) => {
           data-show-facepile="false"
           data-hide-cta="true"
         >
-          <blockquote cite={pageUrl} className="fb-xfbml-parse-ignore">
+          <blockquote cite={url} className="fb-xfbml-parse-ignore">
             <a
-              href={pageUrl}
+              href={url}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,13 +39,11 @@ const FBPagePlugin = ({ width, height, withEvents }) => {
 FBPagePlugin.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
-  withEvents: PropTypes.bool,
 };
 
 FBPagePlugin.defaultProps = {
   width: 340,
   height: 500,
-  withEvents: false,
 };
 
 export default FBPagePlugin;

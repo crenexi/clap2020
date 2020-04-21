@@ -1,3 +1,1 @@
-import ShareOptions from './ShareOptions';
-
-export default ShareOptions;
+export { default } from './Options';

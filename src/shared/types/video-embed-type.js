@@ -1,6 +1,6 @@
 import PropTypes, { shape, oneOf } from 'prop-types';
 
-const videoEmbed = shape({
+const videoEmbedType = shape({
   videoId: PropTypes.string.isRequired,
   isFeatured: PropTypes.bool.isRequired,
   bucket: oneOf(['frontLines', 'response', 'essential']),
@@ -9,4 +9,4 @@ const videoEmbed = shape({
   location: PropTypes.string.isRequired,
 });
 
-export default videoEmbed;
+export default videoEmbedType;

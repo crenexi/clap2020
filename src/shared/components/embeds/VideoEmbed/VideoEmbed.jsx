@@ -1,6 +1,6 @@
 import React from 'react';
-import videoEmbedType from 'types/video-embed';
-import FaIcon from 'components/shared/FaIcon';
+import videoEmbedType from 'types/video-embed-type';
+import FaIcon from 'components/ui/FaIcon';
 import './VideoEmbed.scss';
 
 const VideoEmbed = ({ video }) => {
@@ -9,7 +9,7 @@ const VideoEmbed = ({ video }) => {
 
   const iframe = (
     <iframe
-      styleName="video__iframe"
+      styleName="iframe"
       src={src}
       frameBorder="0"
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
@@ -21,16 +21,16 @@ const VideoEmbed = ({ video }) => {
 
   return (
     <article styleName="video">
-      <header styleName="video__header">
-        <div styleName="video__icon"><FaIcon icon="video" /></div>
-        <div styleName="video__header-content">
-          <h5 styleName="video__header-title">{title}</h5>
-          <div styleName="video__header-details">
+      <header styleName="header">
+        <div styleName="icon"><FaIcon icon="video" /></div>
+        <div styleName="header__content">
+          <h5 styleName="header__title">{title}</h5>
+          <div styleName="header__details">
             {location} | By {attribution}
           </div>
         </div>
       </header>
-      <div styleName="video__iframe-wrap">{iframe}</div>
+      <div styleName="iframe-wrap">{iframe}</div>
     </article>
   );
 };

@@ -1,3 +1,1 @@
-import VideoEmbed from './VideoEmbed';
-
-export default VideoEmbed;
+export { default } from './VideoEmbed';

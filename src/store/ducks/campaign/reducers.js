@@ -74,7 +74,11 @@ const initialState = {
       icon: 'instagram',
     },
   ],
-  messengerUrl: 'https://m.me/clap2020nation',
+  urls: {
+    fbGroup: 'https://www.facebook.com/groups/clap2020/',
+    fbPage: 'https://www.facebook.com/clap2020nation/',
+    fbPageDM: 'https://m.me/clap2020nation',
+  },
 };
 
 const reducers = (state = initialState, action = {}) => {

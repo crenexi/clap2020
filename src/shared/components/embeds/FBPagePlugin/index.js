@@ -1,3 +1,1 @@
-import FBPagePlugin from './FBPagePlugin';
-
-export default FBPagePlugin;
+export { default } from './FBPagePlugin';

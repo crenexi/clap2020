@@ -1,3 +1,1 @@
-import CitySelect from './CitySelect';
-
-export default CitySelect;
+export { default } from './CitySelect';

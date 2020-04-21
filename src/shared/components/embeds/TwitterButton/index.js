@@ -1,3 +1,1 @@
-import TwitterButton from './TwitterButton';
-
-export default TwitterButton;
+export { default } from './TwitterButton';

@@ -1,3 +1,1 @@
-import SelectControl from './SelectControl';
-
-export default SelectControl;
+export { default } from './SelectControl';

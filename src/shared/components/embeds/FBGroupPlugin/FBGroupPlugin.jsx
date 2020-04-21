@@ -1,22 +1,23 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import FBPlugin from '../FBPlugin';
 
 const FBGroupPlugin = ({ width }) => {
-  const groupUrl = 'https://www.facebook.com/groups/clap2020/';
+  const url = useSelector(s => s.campaign.urls.fbGroup);
 
   return (
     <FBPlugin minHeight={95}>
       <div
         className="fb-group"
-        data-href={groupUrl}
+        data-href={url}
         data-width={width}
         data-show-social-context="false"
         data-show-metadata="false"
       >
-        <blockquote cite={groupUrl} className="fb-xfbml-parse-ignore">
+        <blockquote cite={url} className="fb-xfbml-parse-ignore">
           <a
-            href={groupUrl}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
           >

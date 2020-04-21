@@ -68,9 +68,6 @@ const ShareEditorContainer = ({ changePayload }) => {
     return `${baseTags} ${endTags}`;
   };
 
-  // Initialization
-  useEffect(() => updateCitiesMenu(), []);
-
   // Trigger updates based on selection changes
   useEffect(updateCitiesMenu, [selectedState]);
   useEffect(updateEndTags, [selectedCity, selectedState]);

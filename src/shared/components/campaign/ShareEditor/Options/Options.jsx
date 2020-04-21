@@ -1,12 +1,12 @@
 import React from 'react';
-import shareEditorOptionsType from 'types/share-editor-options';
-import shareEditorActionsType from 'types/share-editor-actions';
+import shareEditorOptionsType from 'types/share-editor-options-type';
+import shareEditorActionsType from 'types/share-editor-actions-type';
 import CitySelect from './CitySelect';
 import StateSelect from './StateSelect';
 import PosterSelect from './PosterSelect';
-import './ShareOptions.scss';
+import './Options.scss';
 
-const ShareOptions = ({ options, actions }) => {
+const Options = ({ options, actions }) => {
   const { statesMenu, citiesMenu } = options;
   const { selectedPoster, selectedCity, selectedState } = options;
   const { changePoster, changeCity, changeState } = actions;
@@ -53,9 +53,9 @@ const ShareOptions = ({ options, actions }) => {
   );
 };
 
-ShareOptions.propTypes = {
+Options.propTypes = {
   options: shareEditorOptionsType.isRequired,
   actions: shareEditorActionsType.isRequired,
 };
 
-export default ShareOptions;
+export default Options;

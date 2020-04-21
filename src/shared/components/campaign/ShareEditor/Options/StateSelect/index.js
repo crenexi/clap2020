@@ -1,3 +1,1 @@
-import StateSelect from './StateSelect';
-
-export default StateSelect;
+export { default } from './StateSelect';

@@ -36,7 +36,9 @@ const Praise = () => {
     <Fragment>
       {quickNavBar}
       <article styleName="praise">
-        <section><ThankYou /></section>
+        <section>
+          <ThankYou />
+        </section>
       </article>
       {quickNavBar}
       {praiseTweets}

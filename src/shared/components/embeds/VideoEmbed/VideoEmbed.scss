@@ -8,27 +8,27 @@
 
 // Video header
 
-.video__header {
+.header {
   @include flex-row(normal, center);
   margin-left: 3px;
 }
 
-.video__icon {
+.icon {
   margin-right: spacing(sm);
   color: theme(redRose, dark1);
   font-size: 1.35rem;
 }
 
-.video__header-content {
+.header__content {
   text-align: left;
 }
 
-.video__header-title {
+.header__title {
   color: #000;
   line-height: 1.15em;
 }
 
-.video__header-details {
+.header__details {
   margin-top: 3px;
   color: rgba(theme(ocean, dark2), .7);
   font-size: .75rem;
@@ -37,7 +37,7 @@
 
 // Video iframe
 
-.video__iframe-wrap {
+.iframe-wrap {
   position: relative;
   margin-top: spacing(xs);
   padding-bottom: 56.25%; /* 16:9 */
@@ -48,7 +48,7 @@
   }
 }
 
-.video__iframe {
+.iframe {
   @include position(absolute, 0 null null 0);
   @include size(100%);
   overflow: hidden;

@@ -1,1 +1,1 @@
-export { default as ClapAbout } from './ClapAbout';
+export { default } from './ClapAbout';

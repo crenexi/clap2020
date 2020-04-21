@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as MuiButton } from '@material-ui/core';
-import FaIcon from 'components/shared/FaIcon';
+import FaIcon from 'components/ui/FaIcon';
 import './TwitterButton.scss';
 
 const IconButton = (props) => {

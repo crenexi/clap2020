@@ -33,12 +33,12 @@
 
 // Header content
 
-.heading__content {
+.content {
   @include flex-row(center, center);
   position: relative;
 }
 
-.heading__hashtag {
+.hashtag {
   margin: 3px spacing(2xs) 0 0;
   font-size: 2.7rem;
   color: theme(cloud, dark2);
@@ -55,7 +55,7 @@
   }
 }
 
-.heading__title {
+.title {
   letter-spacing: .5px;
   text-align: center;
   text-transform: uppercase;

@@ -1,3 +1,1 @@
-import PosterSelect from './PosterSelect';
-
-export default PosterSelect;
+export { default } from './PosterSelect';
