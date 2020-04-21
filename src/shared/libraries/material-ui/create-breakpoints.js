@@ -1,6 +1,6 @@
 import sassVars from 'scss/utils/exports';
 
-const createMuiBreakpoints = () => {
+const createBreakpoints = () => {
   const shorten = key => key.split('breakpoint').pop().toLowerCase();
   const isBreakpointKey = ([key]) => key.includes('breakpoint');
   const withShortKey = ([key, val]) => [shorten(key), val];
@@ -17,4 +17,4 @@ const createMuiBreakpoints = () => {
   }, { keys: '', values: '' });
 };
 
-export default createMuiBreakpoints;
+export default createBreakpoints;

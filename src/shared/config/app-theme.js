@@ -53,8 +53,6 @@ const paletteRows = [
   },
 ];
 
-const themeConfig = {
-  paletteRows,
-};
+const appTheme = { paletteRows };
 
-export default themeConfig;
+export default appTheme;

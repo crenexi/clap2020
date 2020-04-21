@@ -1,7 +1,8 @@
 import debug from 'debug';
+import appSettings from 'config/app-settings';
 
 // Should be the same as declared in main.jsx
-const debugPrefix = 'mistan-city-app';
+const debugPrefix = appSettings.debugPrefix;
 
 const levelColors = {
   trace: 'lightblue',
@@ -41,7 +42,10 @@ const Logger = (() => {
     createMessage('error', { msg, src, color });
   };
 
-  return { trace, info, warn, error };
+  const group = console.group; // eslint-disable-line no-console
+  const groupEnd = console.groupEnd; // eslint-disable-line no-console
+
+  return { trace, info, warn, error, group, groupEnd };
 })();
 
 export default Logger;
