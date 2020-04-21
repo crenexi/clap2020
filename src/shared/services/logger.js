@@ -25,7 +25,7 @@ const createMessage = (level, { msg, src, color }) => {
   }
 };
 
-const Logger = (() => {
+const logger = (() => {
   const trace = (msg, src, color) => {
     createMessage('trace', { msg, src, color });
   };
@@ -48,4 +48,4 @@ const Logger = (() => {
   return { trace, info, warn, error, group, groupEnd };
 })();
 
-export default Logger;
+export default logger;

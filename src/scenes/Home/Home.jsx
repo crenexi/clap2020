@@ -1,13 +1,19 @@
 import React from 'react';
-import ThisIsWar from './ThisIsWar';
-import ThreeSteps from './ThreeSteps';
-import ThankYouInvite from './ThankYouInvite';
+import ThisIsWar from './components/ThisIsWar';
+import ThreeSteps from './components/ThreeSteps';
+import ThankYouInvite from './components/ThankYouInvite';
 
 const Home = () => (
   <article>
-    <section><ThreeSteps /></section>
-    <section><ThisIsWar /></section>
-    <section><ThankYouInvite /></section>
+    <section>
+      <ThreeSteps />
+    </section>
+    <section>
+      <ThisIsWar />
+    </section>
+    <section>
+      <ThankYouInvite />
+    </section>
   </article>
 );
 

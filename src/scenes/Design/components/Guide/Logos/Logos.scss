@@ -1,0 +1,29 @@
+@import '~scss/utils';
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  justify-content: center;
+  place-items: center;
+
+  @include breakpoint('gt-sm') {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+  }
+
+  &:not(:first-child) {
+    padding-top: 1rem;
+  }
+}
+
+.grid-item {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 1rem;
+
+  &--inverted {
+    background-color: theme(blueRose, base);
+  }
+}
