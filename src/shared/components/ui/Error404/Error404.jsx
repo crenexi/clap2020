@@ -1,21 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import useContent from 'hooks/use-content';
-import BgCover from 'components/shared/BgCover';
-import Button from 'components/shared/Button';
+import BgCover from '../BgCover';
+import Button from '../Button';
 import './Error404.scss';
 
 const Error404 = ({ backTo }) => {
-  const { uiContent } = useContent();
-  const { error404CoverUrl } = uiContent.meta;
-
-  const title = `That's strange.`;
-  const subtitle = `You've reached an alternate reality. Something's wrong.`;
+  const { title, subtitle, coverUrl } = useSelector(s => s.meta.error404);
 
   return (
     <div styleName="frame">
       <BgCover
-        url={error404CoverUrl}
+        url={coverUrl}
         imagePosition="60% 60%"
         blanketColor="rgba(0, 0, 0, .5)"
       >

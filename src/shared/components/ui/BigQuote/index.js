@@ -1,3 +1,1 @@
-import BigQuote from './BigQuote';
-
-export default BigQuote;
+export { default } from './BigQuote';

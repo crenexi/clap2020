@@ -1,5 +1,5 @@
 import React from 'react';
-import FaIcon from 'components/ui/FaIcon';
+import { FaIcon } from 'components/ui';
 import './ThankYouHeading.scss';
 
 const ThankYouHeading = () => (

@@ -1,3 +1,1 @@
-import ErrorText from './ErrorText';
-
-export default ErrorText;
+export { default } from './ErrorText';

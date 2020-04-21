@@ -2,7 +2,11 @@ import { assetsPath } from 'config/app-settings';
 
 const initialState = {
   meta: {
-    error404CoverUrl: `${assetsPath}/meta/errors/lost-in-jumanji.gif`,
+    error404: {
+      title: `That's strange.`,
+      subtitle: `You've reached an alternate reality. Something's wrong.`,
+      CoverUrl: `${assetsPath}/meta/errors/lost-in-jumanji.gif`,
+    },
   },
   drawerNav: [
     {

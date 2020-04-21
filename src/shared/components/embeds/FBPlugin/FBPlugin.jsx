@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import uniqueId from 'lodash.uniqueid';
 import useFacebook from 'hooks/use-facebook';
-import Loading from 'components/ui/Loading';
-import ErrorText from 'components/ui/ErrorText';
+import { Loading, ErrorText } from 'components/ui';
 import './FBPlugin.scss';
 
 const FBPlugin = ({ children, minHeight }) => {

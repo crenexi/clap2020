@@ -1,3 +1,1 @@
-import FaIcon from './FaIcon';
-
-export default FaIcon;
+export { default } from './FaIcon';

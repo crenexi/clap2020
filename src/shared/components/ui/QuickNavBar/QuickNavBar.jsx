@@ -5,9 +5,9 @@ import './QuickNavBar.scss';
 
 const QuickNavBar = ({ items }) => (
   <div styleName="bar">
-    <div styleName="bar__nav">
+    <div styleName="nav">
       {items.map(item => (
-        <div styleName="bar__nav-item" key={uniqueId()}>{item}</div>
+        <div styleName="nav-item" key={uniqueId()}>{item}</div>
       ))}
     </div>
   </div>

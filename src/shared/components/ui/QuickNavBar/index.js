@@ -1,3 +1,1 @@
-import QuickNavBar from './QuickNavBar';
-
-export default QuickNavBar;
+export { default } from './QuickNavBar';

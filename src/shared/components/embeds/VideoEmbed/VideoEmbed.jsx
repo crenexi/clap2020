@@ -1,6 +1,6 @@
 import React from 'react';
 import videoEmbedType from 'types/video-embed-type';
-import FaIcon from 'components/ui/FaIcon';
+import { FaIcon } from 'components/ui';
 import './VideoEmbed.scss';
 
 const VideoEmbed = ({ video }) => {

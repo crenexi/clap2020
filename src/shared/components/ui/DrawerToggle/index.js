@@ -1,3 +1,1 @@
-import DrawerToggle from './DrawerToggle';
-
-export default DrawerToggle;
+export { default } from './DrawerToggle';

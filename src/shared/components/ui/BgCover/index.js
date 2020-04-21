@@ -1,3 +1,1 @@
-import BgCover from './BgCover';
-
-export default BgCover;
+export { default } from './BgCover';

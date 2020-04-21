@@ -1,3 +1,1 @@
-import AlertSnack from './AlertSnack';
-
-export default AlertSnack;
+export { default } from './AlertSnack';

@@ -1,3 +1,1 @@
-import LoadingScene from './LoadingScene';
-
-export default LoadingScene;
+export { default } from './LoadingScene';
