@@ -1,3 +1,1 @@
-import ShareButtons from './ShareButtons';
-
-export default ShareButtons;
+export { default } from './ShareButtons';

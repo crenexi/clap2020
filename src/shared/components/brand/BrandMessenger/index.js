@@ -1,3 +1,1 @@
-import BrandMessenger from './BrandMessenger';
-
-export default BrandMessenger;
+export { default } from './BrandMessenger';

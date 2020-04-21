@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes, { oneOf } from 'prop-types';
 import { Link } from 'react-router-dom';
-import { capitalize } from 'utils/helpers';
+import { assetsPath } from 'config/app-settings';
+import { capitalize } from 'helpers';
 import './BrandLogo.scss';
 
 const BrandLogo = ({ className, variant, ext, width }) => {
-  const assetsPath = process.env.ASSETS_PATH;
   const src = `${assetsPath}/brand/Logo_${capitalize(variant)}.${ext}`;
 
   return (

@@ -1,0 +1,37 @@
+@import '~helpers/scss';
+
+.editor {
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.preview {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin-left: -(spacing(sm));
+  margin-right: -(spacing(sm));
+  padding: spacing(xs);
+  background-color: #fff;
+  border: 4px solid theme(marine, dark2);
+  border-radius: border-radius(round);
+  box-shadow: shadow(12);
+}
+
+.options {
+  margin-top: spacing(xs);
+}
+
+@include breakpoint('gt-xs') {
+  .editor {
+    padding: spacing(md);
+  }
+
+  .preview {
+    position: inherit;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

@@ -1,3 +1,1 @@
-import ShareEditor from './ShareEditor';
-
-export default ShareEditor;
+export { default } from './ShareEditorContainer';

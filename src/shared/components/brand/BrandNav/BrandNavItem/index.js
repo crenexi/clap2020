@@ -1,3 +1,1 @@
-import BrandNavItem from './BrandNavItem';
-
-export default BrandNavItem;
+export { default } from './BrandNavItem';

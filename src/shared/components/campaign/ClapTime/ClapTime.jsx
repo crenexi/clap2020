@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
-import FaIcon from 'components/shared/@ui/FaIcon';
+import FaIcon from 'components/ui/FaIcon';
 import './ClapTime.scss';
 
 const ClapTime = ({ event }) => (

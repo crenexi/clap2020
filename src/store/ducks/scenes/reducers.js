@@ -1,8 +1,8 @@
 import combineReducers from 'redux';
-import homeReducers from './home/reducers';
-import getReadyReducers from './get-ready/reducers';
-import praiseReducers from './praise/reducers';
-import shareReducers from './share/reducers';
+import { homeReducers } from './home';
+import { getReadyReducers } from './get-ready';
+import { praiseReducers } from './praise';
+import { shareReducers } from './share';
 
 const reducer = combineReducers({
   home: homeReducers,

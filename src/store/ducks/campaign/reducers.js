@@ -1,6 +1,7 @@
+import { assetsPath } from 'config/app-settings';
+
 const initialState = {
-  clapTime: 'April 30th @ 7:00 PM',
-  campaignTags: {
+  tags: {
     pretext: 'Spread the word with',
     text: '#Clap2020 #ClapBecauseWeCare',
     list: ['Clap2020', 'ClapBecauseWeCare'],
@@ -13,6 +14,24 @@ const initialState = {
       'StayAtHome',
       'COVID19',
     ],
+  },
+  status: {
+    clapTime: 'April 30th @ 7:00 PM',
+    nextEvent: {
+      datetime: '2020-04-30 19:00',
+      day: 'Thursday',
+      date: 'April 30',
+      time: '7:00 PM',
+      meta: {
+        title: 'Clap for Healthcare & Essential Workers',
+        description: 'Visit www.clap2020.com for details',
+        start: '2020-04-30T19:00:00',
+        end: '2020-04-30T19:30:00',
+        location: 'United States',
+      },
+      fbUrl: 'https://www.facebook.com/events/217497266335496/',
+      icsUrl: `${assetsPath}/events/04-30_Clap-Healthcare-Essential.ics`,
+    },
   },
   posters: [
     {
@@ -55,6 +74,7 @@ const initialState = {
       icon: 'instagram',
     },
   ],
+  messengerUrl: 'https://m.me/clap2020nation',
 };
 
 const reducers = (state = initialState, action = {}) => {

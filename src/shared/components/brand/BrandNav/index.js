@@ -1,3 +1,1 @@
-import BrandSocialNav from './BrandSocialNav';
-
-export default BrandSocialNav;
+export { default } from './BrandNav';

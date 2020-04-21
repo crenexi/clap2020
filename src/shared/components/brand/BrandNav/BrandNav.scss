@@ -1,0 +1,10 @@
+@import '~helpers/scss';
+
+.nav {
+  @include flex-row(center, center);
+  padding: spacing(sm);
+
+  @include breakpoint('gt-sm') {
+    padding: spacing(md);
+  }
+}

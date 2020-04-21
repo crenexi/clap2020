@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaIcon from 'components/shared/FaIcon';
-import ShareButtonsGrid from './ShareButtonsGrid';
+import FaIcon from 'components/ui/FaIcon';
+import Grid from './Grid';
 
 const ShareButtons = ({ share, copy }) => {
   const buttonsData = [
@@ -61,7 +61,7 @@ const ShareButtons = ({ share, copy }) => {
     },
   ];
 
-  return <ShareButtonsGrid buttonsData={buttonsData} />;
+  return <Grid buttonsData={buttonsData} />;
 };
 
 ShareButtons.propTypes = {

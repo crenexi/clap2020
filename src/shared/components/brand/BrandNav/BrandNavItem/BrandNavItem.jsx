@@ -1,7 +1,7 @@
 import React from 'react';
 import brandPlatformType from 'types/brand-platform-type';
 import FaIcon from 'components/ui/FaIcon';
-import './BrandNav.scss';
+import './BrandNavItem.scss';
 
 const BrandNavItem = ({ platform }) => {
   const { id, name, url, icon } = platform;

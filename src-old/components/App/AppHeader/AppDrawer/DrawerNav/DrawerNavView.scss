@@ -1,4 +1,4 @@
-@import '~scss/utils';
+@import '~helpers/scss';
 
 .nav {
   @include flex-column(normal, center);
