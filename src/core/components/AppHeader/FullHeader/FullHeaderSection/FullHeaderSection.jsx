@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BgCover from '@components/shared/BgCover';
+import { BgCover } from '@components/ui';
 import './FullHeaderSection.scss';
 
 const FullHeaderSection = (props) => {
@@ -24,7 +24,7 @@ const FullHeaderSection = (props) => {
         blanketColor={blanketColor}
         blend={blend}
       >
-        <div styleName="section__main">{children}</div>
+        <div styleName="main">{children}</div>
       </BgCover>
     </div>
   );

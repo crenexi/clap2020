@@ -1,1 +1,1 @@
-export { default } from './IconParade';
+export { default } from './IconParadeContainer';

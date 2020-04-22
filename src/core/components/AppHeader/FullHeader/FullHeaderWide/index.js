@@ -1,1 +1,1 @@
-export { default } from './FullHeaderWide';
+export { default } from './FullHeaderWideContainer';

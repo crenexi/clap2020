@@ -27,9 +27,9 @@ $header-duration: 350ms;
 // Header layout
 
 .header,
-.header__brand,
-.header__countdown,
-.header__actions {
+.brand,
+.countdown,
+.actions {
   height: 100%;
 }
 
@@ -40,11 +40,11 @@ $header-duration: 350ms;
 
 // Header left
 
-.header__left {
+.left {
   @include flex-row(start, center);
 }
 
-.header__brand {
+.brand {
   @include flex-column(center, start);
   width: 6rem;
   padding-left: spacing(xs);
@@ -54,12 +54,12 @@ $header-duration: 350ms;
   }
 }
 
-.header__countdown {
+.countdown {
   @include flex-column(center, center);
 }
 
 // Header right
 
-.header__actions {
+.actions {
   @include flex-row(flex-end, center);
 }

@@ -6,7 +6,7 @@
   box-shadow: 0 -5px 5px rgba(0, 0, 0, .15);
 }
 
-.section__main {
+.main {
   @include size(100%);
   padding: layout(xs) layout(2xs);
 }

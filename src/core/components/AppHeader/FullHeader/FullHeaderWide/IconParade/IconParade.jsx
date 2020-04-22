@@ -1,29 +1,15 @@
 import React from 'react';
-import FaIcon from '@components/shared/FaIcon';
-import times from 'lodash.times';
-import flatten from 'lodash.flatten';
+import PropTypes, { arrayOf, shape } from 'prop-types';
+import { FaIcon } from '@components/ui';
 import uniqueId from 'lodash.uniqueid';
-import scssVars from 'scss/utils/exports';
 import './IconParade.scss';
 
-const IconParade = () => {
-  const icons = [
-    { icon: 'user-nurse', color: scssVars.themeMarineDark2 },
-    { icon: 'hospital', color: scssVars.themeBlueRoseLight2 },
-    { icon: 'user-md', color: scssVars.themeMarineDark2 },
-    { icon: 'ambulance', color: scssVars.themeRedRoseLight2 },
-    { icon: 'hospitals', color: scssVars.themeBlueRoseLight2 },
-  ];
-
-  // Multiply array to get longer list
-  const manyIcons = flatten(times(10, () => icons));
-
-  // Icons row JSX
+const IconParade = ({ icons }) => {
   const iconsView = (
-    <div styleName="parade__icons">
-      {manyIcons.map(({ icon, color }) => (
-        <div styleName="parade__icon" key={uniqueId()} style={{ color }}>
-          <FaIcon icon={icon} />
+    <div styleName="icons">
+      {icons.map(({ key, color }) => (
+        <div styleName="icon" key={uniqueId()} style={{ color }}>
+          <FaIcon icon={key} />
         </div>
       ))}
     </div>
@@ -31,16 +17,23 @@ const IconParade = () => {
 
   return (
     <div styleName="parade">
-      <div styleName="parade__sections">
-        <div styleName="parade__section">
+      <div styleName="sections">
+        <div styleName="section">
           {iconsView}
         </div>
-        <div styleName="parade__section">
+        <div styleName="section">
           {iconsView}
         </div>
       </div>
     </div>
   );
+};
+
+IconParade.propTypes = {
+  icons: arrayOf(shape({
+    key: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default IconParade;

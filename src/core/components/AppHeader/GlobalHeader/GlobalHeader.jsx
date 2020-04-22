@@ -1,27 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import useBreakpoint from '@hooks/use-breakpoint';
-import useDocumentScroll from '@hooks/use-document-scroll';
-import GlobalHeaderView from './GlobalHeaderView';
+import { DrawerToggle } from '@components/ui';
+import { BrandLogo } from '@components/brand';
+import { Countdown, ShareInviteButton } from '@components/campaign';
+import HeaderFrame from '../HeaderFrame';
+import './GlobalHeader.scss';
 
-const GlobalHeader = () => {
-  const minScrollTop = 300;
-  const isGtSm = useBreakpoint('gt-sm');
+const GlobalHeader = ({ isHidden, hasCountdown }) => {
+  const isGtXs = useBreakpoint('gt-xs');
 
-  const [isHidden, setIsHidden] = useState(true);
-
-  // On scroll, determine header visibility
-  useDocumentScroll({
-    onScrollThrottled: ({ currScrollTop }) => {
-      setIsHidden(currScrollTop < minScrollTop);
-    },
+  const className = classNames('header-frame', {
+    'header-frame--hidden': isHidden,
   });
 
   return (
-    <GlobalHeaderView
-      isHidden={isHidden}
-      hasCountdown={isGtSm}
-    />
+    <div styleName={className}>
+      <HeaderFrame>
+        <header styleName="header" id="global-header">
+          <div styleName="left">
+            {isGtXs && <DrawerToggle />}
+            <div styleName="brand">
+              <BrandLogo variant="main" />
+            </div>
+          </div>
+          <div styleName="countdown">
+            {hasCountdown && <Countdown isActive={!isHidden} />}
+          </div>
+          <div styleName="actions">
+            <ShareInviteButton label="Share" />
+          </div>
+        </header>
+      </HeaderFrame>
+    </div>
   );
+};
+
+GlobalHeader.propTypes = {
+  isHidden: PropTypes.bool.isRequired,
+  hasCountdown: PropTypes.bool.isRequired,
 };
 
 export default GlobalHeader;

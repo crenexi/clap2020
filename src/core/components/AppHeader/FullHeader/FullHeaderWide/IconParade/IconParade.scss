@@ -25,7 +25,7 @@
   }
 }
 
-.parade__sections {
+.sections {
   position: relative;
   @include flex-row();
   @include size(100%);
@@ -33,7 +33,7 @@
   overflow: hidden;
 }
 
-.parade__section {
+.section {
   position: absolute;
   bottom: -2px;
   // animation: moveSection 50s linear infinite;
@@ -44,12 +44,12 @@
 
 // Icons list
 
-.parade__icons {
+.icons {
   @include flex-row(start, flex-end);
   color: rgba(255, 255, 255, .35);
 }
 
-.parade__icon {
+.icon {
   @include flex-column(center, flex-end);
   padding: 0 5px 2px;
   font-size: 2rem;
