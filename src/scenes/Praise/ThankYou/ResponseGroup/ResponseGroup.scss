@@ -22,7 +22,7 @@ $divider: 1px solid theme(cloud, dark1);
 
 // Cover image and icon
 
-.group__cover {
+.cover {
   position: relative;
   height: 45vw;
   max-height: 100%;
@@ -43,7 +43,7 @@ $divider: 1px solid theme(cloud, dark1);
   }
 }
 
-.group__cover::before {
+.cover::before {
   content: '';
   @include position(absolute, 0 null null 0);
   @include size(100%);
@@ -51,7 +51,7 @@ $divider: 1px solid theme(cloud, dark1);
   mix-blend-mode: hue;
 }
 
-.group__cover::after {
+.cover::after {
   content: '';
   @include position(absolute, 0 null 0 50%);
   @include size(6px, 200%);
@@ -60,11 +60,11 @@ $divider: 1px solid theme(cloud, dark1);
   background-color: #fff;
 }
 
-.group:nth-of-type(even) .group__cover::after {
+.group:nth-of-type(even) .cover::after {
   transform: translate(-3px, -25%) rotate(35deg);
 }
 
-.group__icon {
+.icon {
   @include position(absolute, 50% null null 50%);
   z-index: 2;
   transform: translate(-50%, -50%);
@@ -80,7 +80,7 @@ $divider: 1px solid theme(cloud, dark1);
 
 // Main content
 
-.group__main {
+.main {
   padding: spacing(md);
 
   @include breakpoint('gt-xs') {
@@ -93,17 +93,17 @@ $divider: 1px solid theme(cloud, dark1);
 }
 
 @include breakpoint('gt-md') {
-  .group:not(:first-child) .group__main {
+  .group:not(:first-child) .main {
     border-left: $divider;
   }
 }
 
 
-.group__name {
+.name {
   margin-top: -.3rem;
   text-align: center;
 }
 
-.group__desc {
+.desc {
   margin-top: spacing(sm);
 }

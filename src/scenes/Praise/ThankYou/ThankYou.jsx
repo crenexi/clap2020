@@ -1,17 +1,17 @@
 import React from 'react';
-import workforceBucketType from '@types/workforce-bucket';
-import ThankYouHeading from '../ThankYouHeading';
+import workforceBucketType from '@types/workforce-bucket-type';
+import { ThankYouHeading } from '@components/campaign';
 import Bucket from './Bucket';
 import FrontLineGroup from './FrontLineGroup';
 import ResponseGroup from './ResponseGroup';
 import EssentialGroup from './EssentialGroup';
-import './ThankYouView.scss';
+import './ThankYou.scss';
 
-const ThankYouView = (props) => {
+const ThankYou = (props) => {
   const { frontLineBucket, responseBucket, essentialBucket } = props;
 
   const frontLineGroups = (
-    <div styleName="thanks__front-line-grid">
+    <div styleName="front-line-grid">
       {frontLineBucket.groups.map(group => (
         <FrontLineGroup key={group.name} group={group} />
       ))}
@@ -19,8 +19,8 @@ const ThankYouView = (props) => {
   );
 
   const responseGroups = (
-    <div styleName="thanks__response-grid">
-      <div styleName="thanks__response-grid__card">
+    <div styleName="response-grid">
+      <div styleName="response-grid__card">
         {responseBucket.groups.map(group => (
           <ResponseGroup key={group.name} group={group} />
         ))}
@@ -29,8 +29,8 @@ const ThankYouView = (props) => {
   );
 
   const essentialGroups = (
-    <div styleName="thanks__essential-grid">
-      <div styleName="thanks__essential-grid__card">
+    <div styleName="essential-grid">
+      <div styleName="essential-grid__card">
         {essentialBucket.groups.map(group => (
           <EssentialGroup key={group.name} group={group} />
         ))}
@@ -41,7 +41,7 @@ const ThankYouView = (props) => {
   return (
     <div styleName="thanks">
       <ThankYouHeading />
-      <div styleName="thanks__main">
+      <div styleName="main">
         <Bucket bucket={frontLineBucket}>{frontLineGroups}</Bucket>
         <Bucket bucket={responseBucket}>{responseGroups}</Bucket>
         <Bucket bucket={essentialBucket}>{essentialGroups}</Bucket>
@@ -50,10 +50,10 @@ const ThankYouView = (props) => {
   );
 };
 
-ThankYouView.propTypes = {
+ThankYou.propTypes = {
   frontLineBucket: workforceBucketType.isRequired,
   responseBucket: workforceBucketType.isRequired,
   essentialBucket: workforceBucketType.isRequired,
 };
 
-export default ThankYouView;
+export default ThankYou;

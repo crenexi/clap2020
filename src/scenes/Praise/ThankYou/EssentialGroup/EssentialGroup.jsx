@@ -1,6 +1,6 @@
 import React from 'react';
-import workforceGroupType from '@types/workforce-group';
-import FaIcon from '@components/shared/FaIcon';
+import workforceGroupType from '@types/workforce-group-type';
+import { FaIcon } from '@components/ui';
 import './EssentialGroup.scss';
 
 const EssentialGroup = ({ group }) => {
@@ -9,14 +9,14 @@ const EssentialGroup = ({ group }) => {
 
   return (
     <div styleName="group">
-      <div styleName="group__cover-border">
-        <div styleName="group__cover" style={coverStyle}>
-          <div styleName="group__icon"><FaIcon icon={icon} /></div>
+      <div styleName="cover-border">
+        <div styleName="cover" style={coverStyle}>
+          <div styleName="icon"><FaIcon icon={icon} /></div>
         </div>
       </div>
-      <div styleName="group__main">
-        <h4 styleName="group__name">{name}</h4>
-        <div styleName="group__desc">{description}</div>
+      <div styleName="main">
+        <h4 styleName="name">{name}</h4>
+        <div styleName="desc">{description}</div>
       </div>
     </div>
   );

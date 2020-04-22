@@ -1,37 +1,35 @@
 import React from 'react';
 import { arrayOf } from 'prop-types';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
-import praiseTweetType from '@types/praise-tweet';
-import FaIcon from '@components/shared/FaIcon';
-import './PraiseTweets.scss';
+import praiseTweetType from '@types/praise-tweet-type';
+import { FaIcon } from '@components/ui';
+import './Tweets.scss';
 
-const PraiseTweets = ({ tweets }) => {
-  return (
-    <div styleName="tweets">
-      <div styleName="tweets__header">
-        <h4>Featured Tweets</h4>
-      </div>
-      <div styleName="tweets__list">
-        {tweets.map(({ id, location }) => (
-          <article styleName="tweets__item" key={id}>
-            <div styleName="tweets__item-header">
-              <div styleName="tweets__location">
-                <FaIcon icon="globe" />
-                &nbsp;{location}
-              </div>
-            </div>
-            <div styleName="tweets__embed">
-              <TwitterTweetEmbed tweetId={id} />
-            </div>
-          </article>
-        ))}
-      </div>
+const Tweets = ({ tweets }) => (
+  <div styleName="tweets">
+    <div styleName="header">
+      <h4>Featured Tweets</h4>
     </div>
-  );
-};
+    <div styleName="list">
+      {tweets.map(({ id, location }) => (
+        <article styleName="item" key={id}>
+          <div styleName="item-header">
+            <div styleName="location">
+              <FaIcon icon="globe" />
+              &nbsp;{location}
+            </div>
+          </div>
+          <div styleName="embed">
+            <TwitterTweetEmbed tweetId={id} />
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+);
 
-PraiseTweets.propTypes = {
+Tweets.propTypes = {
   tweets: arrayOf(praiseTweetType).isRequired,
 };
 
-export default PraiseTweets;
+export default Tweets;

@@ -1,10 +1,10 @@
 import React from 'react';
-import ShareNavView from './ShareNavView';
+import Nav from './Nav';
 
-const ShareNav = () => {
+const NavContainer = () => {
   return (
-    <ShareNavView />
+    <Nav />
   );
 };
 
-export default ShareNav;
+export default NavContainer;

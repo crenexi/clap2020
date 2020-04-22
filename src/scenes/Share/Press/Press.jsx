@@ -1,7 +1,7 @@
 import React from 'react';
-import './SharePressView.scss';
+import './Press.scss';
 
-const SharePressView = () => {
+const Press = () => {
   return (
     <div styleName="frame">
       Share Press
@@ -9,4 +9,4 @@ const SharePressView = () => {
   );
 };
 
-export default SharePressView;
+export default Press;

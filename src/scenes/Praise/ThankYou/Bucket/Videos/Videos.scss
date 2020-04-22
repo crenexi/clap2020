@@ -16,7 +16,7 @@
   }
 }
 
-.videos__title {
+.title {
   text-align: center;
 
   @include breakpoint('gt-sm') {
@@ -24,7 +24,7 @@
   }
 }
 
-.videos__list {
+.list {
   position: relative;
   @include flex-column(normal, center);
   padding-top: layout(2xs);
@@ -52,7 +52,7 @@
   }
 }
 
-.videos__list--hidden {
+.list--hidden {
   max-height: 15rem;
   pointer-events: none;
   overflow: hidden;
@@ -62,7 +62,7 @@
   }
 }
 
-.video__item {
+.video {
   display: grid;
   place-items: stretch stretch;
   width: 100%;
@@ -81,7 +81,7 @@
   }
 }
 
-.videos__invite {
+.invite {
   @include flex-column(normal, center);
   padding-top: spacing(md);
 }

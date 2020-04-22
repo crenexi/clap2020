@@ -1,1 +1,1 @@
-export { default } from './Press';
+export { default } from './PressContainer';

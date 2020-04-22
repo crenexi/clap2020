@@ -1,1 +1,1 @@
-export { default } from './BigCountdown';
+export { default } from './BigCountdownContainer';

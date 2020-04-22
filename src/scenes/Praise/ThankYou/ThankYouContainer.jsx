@@ -1,13 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import logger from '@services/logger';
-import useContent from '@hooks/use-content';
-import ThankYouView from './ThankYouView';
+import ThankYou from './ThankYou';
 
-const ThankYou = () => {
-  const { sceneContent } = useContent();
-
-  // Content
-  const { workforceGroups, workforceVideos } = sceneContent.praise;
+const ThankYouContainer = () => {
+  const { groups, videos } = useSelector(s => ({
+    groups: s.scenes.praise.workforceGroups,
+    videos: s.scenes.praise.workforceVideos,
+  }));
 
   // Static bucket content
   const buckets = {
@@ -32,7 +32,7 @@ const ThankYou = () => {
   };
 
   // Populate buckets with groups
-  workforceGroups.forEach((group) => {
+  groups.forEach((group) => {
     const bucketId = group.bucket;
 
     // Ensure bucket is valid
@@ -45,7 +45,7 @@ const ThankYou = () => {
   });
 
   // Populate buckets with videos
-  workforceVideos.filter(v => v.isFeatured).forEach((video) => {
+  videos.filter(v => v.isFeatured).forEach((video) => {
     const bucketId = video.bucket;
 
     // Ensure bucket is valid
@@ -58,7 +58,7 @@ const ThankYou = () => {
   });
 
   return (
-    <ThankYouView
+    <ThankYou
       frontLineBucket={buckets.frontLines}
       responseBucket={buckets.response}
       essentialBucket={buckets.essential}
@@ -66,4 +66,4 @@ const ThankYou = () => {
   );
 };
 
-export default ThankYou;
+export default ThankYouContainer;

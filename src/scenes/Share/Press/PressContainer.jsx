@@ -1,10 +1,10 @@
 import React from 'react';
-import SharePressView from './SharePressView';
+import Press from './Press';
 
-const SharePress = () => {
+const PressContainer = () => {
   return (
-    <SharePressView />
+    <Press />
   );
 };
 
-export default SharePress;
+export default PressContainer;

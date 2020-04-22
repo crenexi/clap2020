@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { arrayOf } from 'prop-types';
-import videoEmbedType from '@types/video-embed';
-import VideoEmbed from '@components/shared/VideoEmbed';
-import Button from '@components/shared/Button';
-import './BucketVideos.scss';
+import videoEmbedType from '@types/video-embed-type';
+import { Button } from '@components/ui';
+import { VideoEmbed } from '@components/embeds';
+import './Videos.scss';
 
-const BucketVideos = ({ videos }) => {
+const Videos = ({ videos }) => {
   const [hidden, setHidden] = useState(true);
 
   const listClass = (() => {
-    const base = 'videos__list';
+    const base = 'list';
     return hidden ? `${base} ${base}--hidden` : base;
   })();
 
   const invite = (
-    <div styleName="videos__invite">
+    <div styleName="invite">
       <Button
         variant="secondary"
         startIcon="chevron-down"
@@ -27,10 +27,10 @@ const BucketVideos = ({ videos }) => {
 
   return (
     <div styleName="videos">
-      <h4 styleName="videos__title">Featured Videos</h4>
+      <h4 styleName="title">Featured Videos</h4>
       <div styleName={listClass}>
         {videos.map(video => (
-          <div styleName="video__item" key={video.videoId}>
+          <div styleName="video" key={video.videoId}>
             <VideoEmbed video={video} />
           </div>
         ))}
@@ -40,8 +40,8 @@ const BucketVideos = ({ videos }) => {
   );
 };
 
-BucketVideos.propTypes = {
+Videos.propTypes = {
   videos: arrayOf(videoEmbedType).isRequired,
 };
 
-export default BucketVideos;
+export default Videos;

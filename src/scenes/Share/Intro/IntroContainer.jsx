@@ -1,10 +1,10 @@
 import React from 'react';
-import ShareIntroView from './ShareIntroView';
+import Intro from './Intro';
 
-const ShareIntro = () => {
+const IntroContainer = () => {
   return (
-    <ShareIntroView />
+    <Intro />
   );
 };
 
-export default ShareIntro;
+export default IntroContainer;

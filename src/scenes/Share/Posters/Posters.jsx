@@ -1,7 +1,7 @@
 import React from 'react';
-import './SharePostersView.scss';
+import './Posters.scss';
 
-const SharePostersView = () => {
+const Posters = () => {
   return (
     <div styleName="frame">
       Share Posters
@@ -9,4 +9,4 @@ const SharePostersView = () => {
   );
 };
 
-export default SharePostersView;
+export default Posters;

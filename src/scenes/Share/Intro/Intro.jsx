@@ -1,7 +1,7 @@
 import React from 'react';
-import './ShareIntroView.scss';
+import './Intro.scss';
 
-const ShareIntroView = () => {
+const Intro = () => {
   return (
     <div styleName="frame">
       Share Intro
@@ -9,4 +9,4 @@ const ShareIntroView = () => {
   );
 };
 
-export default ShareIntroView;
+export default Intro;

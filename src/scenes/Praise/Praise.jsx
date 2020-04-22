@@ -1,16 +1,12 @@
 import React, { Fragment } from 'react';
-import useContent from '@hooks/use-content';
-import QuickNavBar from '@components/shared/QuickNavBar';
-import ThankYou from '@components/shared/ThankYou';
-import Button from '@components/shared/Button';
-import PraiseTweets from './PraiseTweets';
+import { useSelector } from 'react-redux';
+import { Button, QuickNavBar } from '@components/ui';
+import ThankYou from './ThankYou';
+import Tweets from './Tweets';
 import './Praise.scss';
 
 const Praise = () => {
-  const { sceneContent } = useContent();
-
-  // Content
-  const { tweets } = sceneContent.praise;
+  const tweets = useSelector(s => s.scenes.praise.tweets);
 
   const quickNavItems = [
     <Button
@@ -30,7 +26,7 @@ const Praise = () => {
   ];
 
   const quickNavBar = <QuickNavBar items={quickNavItems} />;
-  const praiseTweets = <PraiseTweets tweets={tweets} />;
+  const praiseTweets = <Tweets tweets={tweets} />;
 
   return (
     <Fragment>

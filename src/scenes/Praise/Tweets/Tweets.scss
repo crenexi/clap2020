@@ -14,20 +14,20 @@
   }
 }
 
-.tweets__list,
-.tweets__item {
+.list,
+.item {
   max-width: 100%;
 }
 
 // Header
 
-.tweets__header {
+.header {
   text-align: center;
 }
 
 // Items
 
-.tweets__list {
+.list {
   @include flex-column(center, center);
   margin-top: layout(xs);
 
@@ -36,7 +36,7 @@
   }
 }
 
-.tweets__item {
+.item {
   overflow-x: auto;
 
   &:not(:first-child) {
@@ -44,7 +44,7 @@
   }
 }
 
-.tweets__item-header {
+.item-header {
   position: relative;
   margin-bottom: -5px;
   text-align: center;
@@ -58,7 +58,7 @@
   }
 }
 
-.tweets__location {
+.location {
   position: relative;
   z-index: 2;
   display: inline-flex;
@@ -74,7 +74,7 @@
   line-height: 1.1em;
 }
 
-.tweets__embed {
+.embed {
   @include breakpoint('gt-xs') {
     display: flex;
     justify-content: center;

@@ -1,10 +1,10 @@
 import React from 'react';
-import ShareNowView from './ShareNowView';
+import Now from './Now';
 
-const ShareNow = () => {
+const NowContainer = () => {
   return (
-    <ShareNowView />
+    <Now />
   );
 };
 
-export default ShareNow;
+export default NowContainer;

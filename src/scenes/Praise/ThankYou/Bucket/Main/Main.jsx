@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './BucketMain.scss';
+import './Main.scss';
 
-const BucketMain = ({ children }) => (
+const Main = ({ children }) => (
   <div styleName="main-frame">
     <div styleName="main">{children}</div>
   </div>
 );
 
-BucketMain.propTypes = {
+Main.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default BucketMain;
+export default Main;

@@ -1,10 +1,10 @@
 import React from 'react';
-import SharePostersView from './SharePostersView';
+import Posters from './Posters';
 
-const SharePosters = () => {
+const PostersContainer = () => {
   return (
-    <SharePostersView />
+    <Posters />
   );
 };
 
-export default SharePosters;
+export default PostersContainer;

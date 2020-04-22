@@ -1,7 +1,7 @@
 import React from 'react';
-import './ShareNowView.scss';
+import './Now.scss';
 
-const ShareNowView = () => {
+const Now = () => {
   return (
     <div styleName="frame">
       Share Now
@@ -9,4 +9,4 @@ const ShareNowView = () => {
   );
 };
 
-export default ShareNowView;
+export default Now;

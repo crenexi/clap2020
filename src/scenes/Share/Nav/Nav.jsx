@@ -1,7 +1,7 @@
 import React from 'react';
-import './ShareNavView.scss';
+import './Nav.scss';
 
-const ShareNavView = () => {
+const Nav = () => {
   return (
     <div styleName="frame">
       Test
@@ -9,4 +9,4 @@ const ShareNavView = () => {
   );
 };
 
-export default ShareNavView;
+export default Nav;

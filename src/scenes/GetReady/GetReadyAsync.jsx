@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
-import LoadingScene from '@components/shared/LoadingScene';
+import { LoadingScene } from '@components/ui';
 
-const LazyGetReady = lazy(() => import('./GetReady'));
+const LazyGetReady = lazy(() => import('./GetReadyContainer'));
 
 const GetReadyAsync = () => (
   <Suspense fallback={<LoadingScene />}>

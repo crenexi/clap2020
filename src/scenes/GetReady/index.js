@@ -1,2 +1,2 @@
 export { default as GetReadyAsync } from './GetReadyAsync';
-export { default } from './GetReady';
+export { default } from './GetReadyContainer';

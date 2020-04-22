@@ -1,26 +1,33 @@
 import React from 'react';
-import useContent from '@hooks/use-content';
-import GetReadyView from './GetReadyView';
+import { useSelector } from 'react-redux';
+import GetReady from './GetReady';
 
-const GetReady = () => {
-  const { sceneContent, campaignContent } = useContent();
-
-  const { featuredQuote, quoteCoverUrl } = sceneContent.getReady;
-  const { platforms, status } = campaignContent;
-  const twitterConfig = platforms.find(p => p.id === 'twitter');
+const GetReadyContainer = () => {
+  const {
+    featuredQuote,
+    quoteCoverUrl,
+    nextEvent,
+    twPlatform,
+    twFollowBase,
+  } = useSelector(s => ({
+    featuredQuote: s.scenes.getReady.featuredQuote,
+    quoteCoverUrl: s.scenes.getReady.quoteCoverUrl,
+    nextEvent: s.campaign.status.nextEvent,
+    twPlatform: s.campaign.platforms.find(p => p.id === 'twitter'),
+    twFollowBase: s.campaign.urls.twFollowBase,
+  }));
 
   // Twitter follow URL
-  const followUrlBase = 'https://twitter.com/intent/follow';
-  const followUrl = `${followUrlBase}?user_id=${twitterConfig.accountId}`;
+  const followUrl = `${twFollowBase}?user_id=${twPlatform.accountId}`;
 
   return (
-    <GetReadyView
+    <GetReady
       followUrl={followUrl}
-      nextEvent={status.nextEvent}
+      nextEvent={nextEvent}
       featuredQuote={featuredQuote}
       quoteCoverUrl={quoteCoverUrl}
     />
   );
 };
 
-export default GetReady;
+export default GetReadyContainer;

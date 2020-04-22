@@ -1,6 +1,6 @@
 import React from 'react';
-import workforceGroupType from '@types/workforce-group';
-import FaIcon from '@components/shared/FaIcon';
+import workforceGroupType from '@types/workforce-group-type';
+import { FaIcon } from '@components/ui';
 import './ResponseGroup.scss';
 
 const ResponseGroup = ({ group }) => {
@@ -9,12 +9,12 @@ const ResponseGroup = ({ group }) => {
 
   return (
     <div styleName="group">
-      <div styleName="group__cover" style={coverStyle}>
-        <div styleName="group__icon"><FaIcon icon={icon} /></div>
+      <div styleName="cover" style={coverStyle}>
+        <div styleName="icon"><FaIcon icon={icon} /></div>
       </div>
-      <div styleName="group__main">
-        <h3 styleName="group__name">{name}</h3>
-        <div styleName="group__desc">{description}</div>
+      <div styleName="main">
+        <h3 styleName="name">{name}</h3>
+        <div styleName="desc">{description}</div>
       </div>
     </div>
   );

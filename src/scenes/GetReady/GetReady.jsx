@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
-import quoteType from '@types/quote';
-import BgCover from '@components/shared/BgCover';
-import TwitterButton from '@components/shared/TwitterButton';
-import ATFDateTime from '@components/shared/ATFDateTime';
-import ShareInviteButton from '@components/shared/ShareInviteButton';
-import BigQuote from '@components/shared/BigQuote';
+import quoteType from '@types/quote-type';
+import { BgCover, BigQuote } from '@components/ui';
+import { TwitterButton } from '@components/brand';
+import { ClapTime, ShareInviteButton } from '@components/campaign';
 import BigCountdown from './BigCountdown';
-import './GetReadyView.scss';
+import './GetReady.scss';
 
-const GetReadyView = (props) => {
+const GetReady = (props) => {
   const { followUrl, nextEvent, featuredQuote, quoteCoverUrl } = props;
 
   const header = (
@@ -20,7 +18,7 @@ const GetReadyView = (props) => {
         </TwitterButton>
       </div>
       <div styleName="header__center">
-        <ATFDateTime event={nextEvent} />
+        <ClapTime event={nextEvent} />
       </div>
       <div styleName="header__right">
         <ShareInviteButton label="Share" />
@@ -59,7 +57,7 @@ const GetReadyView = (props) => {
   );
 };
 
-GetReadyView.propTypes = {
+GetReady.propTypes = {
   followUrl: PropTypes.string.isRequired,
   nextEvent: shape({
     day: PropTypes.string.isRequired,
@@ -70,4 +68,4 @@ GetReadyView.propTypes = {
   quoteCoverUrl: PropTypes.string.isRequired,
 };
 
-export default GetReadyView;
+export default GetReady;
