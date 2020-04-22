@@ -1,38 +1,71 @@
 import React from 'react';
-import logger from '@services/logger';
-import useContent from '@hooks/use-content';
-import FollowUsView from './FollowUsView';
+import PropTypes from 'prop-types';
+import { Button, FaIcon } from '@components/ui';
+import { BrandNav, TwitterButton } from '@components/brand';
+import './FollowUs.scss';
 
-const FollowUs = () => {
-  const { campaignContent } = useContent();
-  const followUrl = 'https://twitter.com/intent/follow';
-  const fbGroupUrl = 'https://www.facebook.com/groups/clap2020';
+const FollowUs = (props) => {
+  const { fbGroupUrl, twFollowUrl } = props;
 
-  // Content
-  const { platforms } = campaignContent;
+  const fbGroupButton = (
+    <Button
+      variant="white"
+      size="large"
+      href={fbGroupUrl}
+      target="_blank"
+    >
+      Facebook Group
+    </Button>
+  );
 
-  const twitterIntents = (() => {
-    const config = platforms.find(p => p.id === 'twitter');
+  const join = (
+    <div styleName="section">
+      <h5 styleName="heading">Share in group</h5>
+      <div styleName="section-main">
+        <div styleName="group-btn-context">
+          <div styleName="group-icon">
+            <FaIcon icon="users" />
+          </div>
+          {fbGroupButton}
+        </div>
+      </div>
+    </div>
+  );
 
-    if (!config) {
-      logger.error('Twitter platform config was not found');
-      return {};
-    }
+  const twitter = (
+    <div styleName="section">
+      <h5 styleName="heading">Follow on Twitter</h5>
+      <div styleName="section-main">
+        <TwitterButton href={twFollowUrl} startIcon="plus">
+          Follow @Clap2020
+        </TwitterButton>
+      </div>
+    </div>
+  );
 
-    const userId = config.accountId;
-
-    // URL for follow intention
-    const follow = `${followUrl}?user_id=${userId}`;
-
-    return { follow };
-  })();
+  const follow = (
+    <div styleName="section">
+      <h5 styleName="heading">View feeds</h5>
+      <div styleName="section-main">
+        <BrandNav />
+      </div>
+    </div>
+  );
 
   return (
-    <FollowUsView
-      twitterIntents={twitterIntents}
-      fbGroupUrl={fbGroupUrl}
-    />
+    <div styleName="follow">
+      <div styleName="main">
+        {join}
+        {twitter}
+        {follow}
+      </div>
+    </div>
   );
+};
+
+FollowUs.propTypes = {
+  fbGroupUrl: PropTypes.string.isRequired,
+  twFollowUrl: PropTypes.string.isRequired,
 };
 
 export default FollowUs;

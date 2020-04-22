@@ -78,6 +78,7 @@ const initialState = {
     fbGroup: 'https://www.facebook.com/groups/clap2020/',
     fbPage: 'https://www.facebook.com/clap2020nation/',
     fbPageDM: 'https://m.me/clap2020nation',
+    twFollowBase: 'https://twitter.com/intent/follow',
   },
 };
 

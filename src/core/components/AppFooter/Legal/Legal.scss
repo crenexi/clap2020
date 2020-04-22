@@ -7,12 +7,12 @@ $border: 1px solid rgba(255, 255, 255, .1);
   @include flex-column(center, center);
 }
 
-.legal__icon {
+.icon {
   @include flex-column(center, center);
   font-size: 1.3rem;
 }
 
-.legal__cx-fav {
+.cx-fav {
   width: 1.5rem;
   margin-left: 4px;
   transform: translateY(1px);
@@ -25,19 +25,19 @@ $border: 1px solid rgba(255, 255, 255, .1);
 
 // Messenger button
 
-.legal__messenger {
+.messenger {
   @include flex-column(center, center);
   padding-bottom: spacing(lg);
 }
 
 // Built by
 
-.legal__built-by a,
-.legal__copyright a {
+.built-by a,
+.copyright a {
   @include simple-link;
 }
 
-.legal__built-by {
+.built-by {
   @include flex-row(center, center);
   padding: spacing(md) 0;
   border-top: $border;
@@ -49,7 +49,7 @@ $border: 1px solid rgba(255, 255, 255, .1);
 
 // Main content
 
-.legal__main {
+.main {
   @include flex-column(center, center);
   padding-top: spacing(lg);
 
@@ -63,20 +63,20 @@ $border: 1px solid rgba(255, 255, 255, .1);
   }
 }
 
-.legal__detail:not(:first-child) {
+.detail:not(:first-child) {
   margin: spacing(2xs) 0 0 0;
 }
 
-.legal__copyright {
+.copyright {
   @include flex-row(center, center);
 }
 
 @include breakpoint('gt-xs') {
-  .legal__main {
+  .main {
     flex-direction: row;
   }
 
-  .legal__detail:not(:first-child) {
+  .detail:not(:first-child) {
     margin: 0 0 0 spacing(xs);
     padding: 0 0 0 spacing(xs);
 

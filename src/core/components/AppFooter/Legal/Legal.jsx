@@ -1,15 +1,11 @@
 import React from 'react';
-import FaIcon from '@components/shared/FaIcon';
-import BrandMessenger from '@components/shared/BrandMessenger';
-import './LegalFooter.scss';
+import PropTypes from 'prop-types';
+import { FaIcon } from '@components/ui';
+import { BrandMessenger } from '@components/brand';
+import './Legal.scss';
 
-const LegalFooter = () => {
-  const cxUrl = 'https://www.crenexi.com';
-  const cxAssetsPath = 'https://crenexi.s3.amazonaws.com/public';
-  const cxFavUrl = `${cxAssetsPath}/brand/fav_light.svg`;
-  const thisYear = (new Date()).getFullYear();
-  const tosUrl = '/assets/legal/Clap2020-TOS.html';
-  const ppUrl = '/assets/legal/Clap2020-Privacy-Policy.html';
+const Legal = (props) => {
+  const { thisYear, cxUrl, cxFavUrl, tosUrl, ppUrl } = props;
 
   const cxLink = (
     <a href={cxUrl} target="_blank" rel="noopener noreferrer">Crenexi</a>
@@ -17,34 +13,34 @@ const LegalFooter = () => {
 
   return (
     <div styleName="legal">
-      <div styleName="legal__messenger">
+      <div styleName="messenger">
         <BrandMessenger />
       </div>
-      <div styleName="legal__built-by">
+      <div styleName="built-by">
         <span>Built with clean&nbsp;</span>
-        <div styleName="legal__icon">
+        <div styleName="icon">
           <FaIcon icon="hands-wash" />
         </div>
         <span>&nbsp;by {cxLink}</span>
-        <span styleName="legal__cx-fav">
+        <span styleName="cx-fav">
           <img src={cxFavUrl} alt="Crenexi Fav" />
         </span>
       </div>
-      <div styleName="legal__main">
-        <small styleName="legal__detail">
-          <div styleName="legal__copyright">
-            <span styleName="legal__icon">
+      <div styleName="main">
+        <small styleName="detail">
+          <div styleName="copyright">
+            <span styleName="icon">
               <FaIcon icon="copyright" />
             </span>
             <span>&nbsp;Crenexi {thisYear}</span>
           </div>
         </small>
-        <small styleName="legal__detail">
+        <small styleName="detail">
           <a href={tosUrl} target="blank" rel="noopener noreferrer">
             Terms of Service
           </a>
         </small>
-        <small styleName="legal__detail">
+        <small styleName="detail">
           <a href={ppUrl} target="blank" rel="noopener noreferrer">
             Privacy Policy
           </a>
@@ -54,4 +50,12 @@ const LegalFooter = () => {
   );
 };
 
-export default LegalFooter;
+Legal.propTypes = {
+  thisYear: PropTypes.string.isRequired,
+  cxUrl: PropTypes.string.isRequired,
+  cxFavUrl: PropTypes.string.isRequired,
+  tosUrl: PropTypes.string.isRequired,
+  ppUrl: PropTypes.string.isRequired,
+};
+
+export default Legal;

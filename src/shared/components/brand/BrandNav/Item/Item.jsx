@@ -1,9 +1,9 @@
 import React from 'react';
 import brandPlatformType from '@types/brand-platform-type';
 import { FaIcon } from '@components/ui';
-import './BrandNavItem.scss';
+import './Item.scss';
 
-const BrandNavItem = ({ platform }) => {
+const Item = ({ platform }) => {
   const { id, name, url, icon } = platform;
 
   return (
@@ -23,8 +23,8 @@ const BrandNavItem = ({ platform }) => {
   );
 };
 
-BrandNavItem.propTypes = {
+Item.propTypes = {
   platform: brandPlatformType.isRequired,
 };
 
-export default BrandNavItem;
+export default Item;

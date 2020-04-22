@@ -7,6 +7,14 @@ const initialState = {
       subtitle: `You've reached an alternate reality. Something's wrong.`,
       CoverUrl: `${assetsPath}/meta/errors/lost-in-jumanji.gif`,
     },
+    legal: {
+      tosUrl: '/assets/legal/Clap2020-TOS.html',
+      ppUrl: '/assets/legal/Clap2020-Privacy-Policy.html',
+    },
+    crenexi: {
+      url: 'https://www.crenexi.com',
+      favUrl: 'https://crenexi.s3.amazonaws.com/public/brand/fav_light.svg',
+    },
   },
   drawerNav: [
     {

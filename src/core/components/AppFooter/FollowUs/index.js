@@ -1,1 +1,1 @@
-export { default } from './FollowUs';
+export { default } from './FollowUsContainer';

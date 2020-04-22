@@ -1,17 +1,17 @@
 import React, { Fragment } from 'react';
-import useContent from '@hooks/use-content';
-import BrandLogo from '@components/shared/BrandLogo';
+import { useSelector } from 'react-redux';
+import { BrandLogo } from '@components/brand';
 import FollowUs from './FollowUs';
-import FooterNav from './FooterNav';
-import LegalFooter from './LegalFooter';
+import Nav from './Nav';
+import Legal from './Legal';
 import './AppFooter.scss';
 
 const AppFooter = () => {
-  const { uiContent, campaignContent } = useContent();
-
-  // Content
-  const { metaNav, covid19Nav } = uiContent.footerNav;
-  const { clapTime } = campaignContent.status;
+  const { clapTime, metaNav, covid19Nav } = useSelector(s => ({
+    clapTime: s.campaign.status.clapTime,
+    metaNav: s.core.footerNav.metaNav,
+    covid19Nav: s.core.footerNav.covid19Nav,
+  }));
 
   return (
     <Fragment>
@@ -25,10 +25,10 @@ const AppFooter = () => {
             <div styleName="main__clap-time">{clapTime}</div>
           </div>
           <div styleName="main__nav">
-            <FooterNav metaNav={metaNav} covid19Nav={covid19Nav} />
+            <Nav metaNav={metaNav} covid19Nav={covid19Nav} />
           </div>
         </div>
-        <LegalFooter />
+        <Legal />
       </footer>
     </Fragment>
   );

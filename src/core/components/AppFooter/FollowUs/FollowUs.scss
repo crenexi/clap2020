@@ -7,7 +7,7 @@
   color: #fff;
 }
 
-.follow__main {
+.main {
   max-width: 75rem;
   margin: 0 auto;
   padding: layout(xs) layout(2xs) layout(2xs);
@@ -21,7 +21,7 @@
   }
 }
 
-.follow__section {
+.section {
   padding: layout(2xs) layout(2xs) layout(sm);
 
   &:last-child {
@@ -40,11 +40,11 @@
   }
 }
 
-.follow__heading {
+.heading {
   text-align: center;
 }
 
-.follow__section-main {
+.section-main {
   margin-top: layout(2xs);
   @include flex-column(center, center);
 
@@ -55,21 +55,21 @@
 
 // Facebook group section
 
-.follow__group-btn-context {
+.group-btn-context {
   @include flex-column(center, center);
 }
 
-.follow__group-icon {
+.group-icon {
   margin-bottom: spacing(sm);
   font-size: 1.75rem;
 }
 
 @include breakpoint('gt-sm') {
-  .follow__group-btn-context {
+  .group-btn-context {
     @include flex-row(center, center);
   }
 
-  .follow__group-icon {
+  .group-icon {
     margin-bottom: 0;
     margin-right: spacing(sm);
   }
