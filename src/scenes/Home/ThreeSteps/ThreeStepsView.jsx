@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Scroll from 'react-scroll';
-import scssVars from 'scss/utils/exports';
+import scssVars from '@helpers/scss/exports';
 import StepFrame from './StepFrame';
 import StepHeader from './StepHeader';
 import Step1 from './Step1';
@@ -18,8 +18,8 @@ const ThreeStepsView = () => {
 
   return (
     <ScrollElement styleName="three" name="threeSteps">
-      <div styleName="three__main">
-        <div styleName="three__steps">
+      <div styleName="main">
+        <div styleName="steps">
           <StepFrame step={1} theme={shareTheme}>
             <StepHeader
               title="Share"

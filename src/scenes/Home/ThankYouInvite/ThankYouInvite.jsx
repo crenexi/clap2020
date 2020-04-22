@@ -1,28 +1,25 @@
 import React, { Fragment } from 'react';
-import useContent from '@hooks/use-content';
-import ThankYouHeading from '@components/shared/ThankYouHeading';
-import FaIcon from '@components/shared/FaIcon';
-import Button from '@components/shared/Button';
+import { useSelector } from 'react-redux';
+import { Button, FaIcon } from '@components/ui';
+import { ThankYouHeading } from '@components/campaign';
 import './ThankYouInvite.scss';
 
 const ThankYouInvite = () => {
-  const { sceneContent } = useContent();
-
-  // Content
-  const { heroImageUrl } = sceneContent.home.thankYouInvite;
-  const { workforceGroups } = sceneContent.praise;
+  const { heroImageUrl, frontLineGroups } = useSelector(s => ({
+    heroImageUrl: s.scenes.home.thankYouInvite.heroImageUrl,
+    frontLineGroups: s.scenes.praise.workforceGroups
+      .filter(g => g.bucket === 'frontLines'),
+  }));
 
   // Styles
   const heroStyle = { backgroundImage: `url('${heroImageUrl}')` };
 
   // Front Lines icons
-  const icons = workforceGroups
-    .filter(g => g.bucket === 'frontLines')
-    .map(({ icon }) => (
-      <div styleName="invite__icon" key={icon}>
-        <FaIcon icon={icon} />
-      </div>
-    ));
+  const icons = frontLineGroups.map(({ icon }) => (
+    <div styleName="icon" key={icon}>
+      <FaIcon icon={icon} />
+    </div>
+  ));
 
   // Invitation button
   const inviteButton = (
@@ -40,10 +37,10 @@ const ThankYouInvite = () => {
     <Fragment>
       <ThankYouHeading />
       <div styleName="invite">
-        <div styleName="invite__hero" style={heroStyle} />
-        <div styleName="invite__main">
-          <div styleName="invite__icons">{icons}</div>
-          <div styleName="invite__btn">{inviteButton}</div>
+        <div styleName="hero" style={heroStyle} />
+        <div styleName="main">
+          <div styleName="icons">{icons}</div>
+          <div styleName="btn">{inviteButton}</div>
         </div>
       </div>
     </Fragment>

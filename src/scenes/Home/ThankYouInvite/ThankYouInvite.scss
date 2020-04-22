@@ -10,7 +10,7 @@
   }
 }
 
-.invite__hero {
+.hero {
   min-height: 15rem;
   @include bg-image(cover);
   background-position: center center;
@@ -20,7 +20,7 @@
   }
 }
 
-.invite__main {
+.main {
   order: -1;
   @include flex-column(center, center);
   padding: layout(md) layout(2xs);
@@ -33,7 +33,7 @@
   }
 }
 
-.invite__icons {
+.icons {
   @include flex-row(center, center);
   font-size: 1.5rem;
   color: theme(blueRose, dark2);
@@ -43,11 +43,11 @@
   }
 }
 
-.invite__icon:not(:first-child) {
+.icon:not(:first-child) {
   margin-left: 10px;
 }
 
-.invite__btn {
+.btn {
   margin-top: layout(sm);
   padding-top: layout(sm);
   @include divider-top(theme(blueRose, dark2));

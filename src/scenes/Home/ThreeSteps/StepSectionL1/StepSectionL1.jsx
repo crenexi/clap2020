@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import useBreakpoint from '@hooks/use-breakpoint';
-import Button from '@components/shared/Button';
+import { Button } from '@components/ui';
 import './StepSectionL1.scss';
 
 const StepSectionL1 = (props) => {

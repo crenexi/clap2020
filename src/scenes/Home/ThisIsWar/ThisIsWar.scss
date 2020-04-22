@@ -6,12 +6,12 @@
   text-align: left;
 }
 
-.war__cover-frame,
-.war__cover-content {
+.cover-frame,
+.cover-content {
   height: 100%;
 }
 
-.war__cover-frame {
+.cover-frame {
   position: relative;
   max-height: 60vw;
   height: 90vh;
@@ -20,7 +20,7 @@
   }
 }
 
-.war__cover-content {
+.cover-content {
   display: grid;
   grid-template-rows: 1fr;
   padding: 1rem 1rem 1rem 50%;
@@ -37,12 +37,12 @@
 
 // Top content
 
-.war__top {
+.top {
   @include flex-column(center, center);
   text-transform: uppercase;
 }
 
-.war__heading {
+.heading {
   font-family: font-family(primary);
   font-size: 2rem;
   line-height: .8em;
@@ -58,7 +58,7 @@
   }
 }
 
-.war__heading--bold {
+.heading--bold {
   font-size: 5rem;
   letter-spacing: -3px;
   color: theme(redRose, light1);
@@ -76,7 +76,7 @@
 
 // Bottom content
 
-.war__bottom {
+.bottom {
   @include flex-column(start, center);
   padding: layout(lg) spacing(sm) layout(lg);
   background-color: theme(ocean, dark2);
@@ -91,7 +91,7 @@
   }
 }
 
-.war__featured-quote {
+.featured-quote {
   max-width: 24rem;
 
   @include breakpoint('gt-xs') {

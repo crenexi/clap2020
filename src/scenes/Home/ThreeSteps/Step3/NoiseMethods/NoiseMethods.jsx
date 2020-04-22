@@ -1,11 +1,10 @@
 import React from 'react';
-import useContent from '@hooks/use-content';
+import { useSelector } from 'react-redux';
 import NoiseMethod from './NoiseMethod';
 import './NoiseMethods.scss';
 
 const NoiseMethods = () => {
-  const { sceneContent } = useContent();
-  const { noiseMethods } = sceneContent.home;
+  const { noiseMethods } = useSelector(s => s.scenes.home.noiseMethods);
 
   const methods = noiseMethods.map(item => (
     <div styleName="methods__item" key={item.title}>

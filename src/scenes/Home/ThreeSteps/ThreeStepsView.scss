@@ -19,13 +19,13 @@
   }
 }
 
-.three__main {
+.main {
   @include flex-column(start, center);
 }
 
 // Steps
 
-.three__steps {
+.steps {
   width: 100%;
   max-width: 70rem;
 }

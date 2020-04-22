@@ -4,6 +4,7 @@ const initialState = {
   tags: {
     pretext: 'Spread the word with',
     text: '#Clap2020 #ClapBecauseWeCare',
+    message: 'To all healthcare & essential workers, thank you!',
     list: ['Clap2020', 'ClapBecauseWeCare'],
     listExtended: [
       'Clap2020',

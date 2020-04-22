@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaIcon from '@components/shared/FaIcon';
+import { FaIcon } from '@components/ui';
 import './StepHeader.scss';
 
 const StepHeader = ({ title, icon, theme }) => {
@@ -10,8 +10,8 @@ const StepHeader = ({ title, icon, theme }) => {
 
   return (
     <div styleName="heading" style={style}>
-      <h3 styleName="heading__title">{title}</h3>
-      <div styleName="heading__icon">
+      <h3 styleName="title">{title}</h3>
+      <div styleName="icon">
         <FaIcon icon={icon} />
       </div>
     </div>

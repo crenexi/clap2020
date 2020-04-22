@@ -9,9 +9,9 @@ const StepFrame = ({ children, step, theme }) => {
 
   return (
     <div styleName="row">
-      <div styleName="row__left-border" style={borderStyle} />
-      <div styleName="row__num">{step}</div>
-      <div styleName="row__main">{children}</div>
+      <div styleName="left-border" style={borderStyle} />
+      <div styleName="num">{step}</div>
+      <div styleName="main">{children}</div>
     </div>
   );
 };

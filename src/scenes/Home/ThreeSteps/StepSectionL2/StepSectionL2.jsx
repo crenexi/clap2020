@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaIcon from '@components/shared/FaIcon';
+import { FaIcon } from '@components/ui';
 import './StepSectionL2.scss';
 
 const StepSectionL2 = (props) => {
