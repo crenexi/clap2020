@@ -1,9 +1,8 @@
 import React from 'react';
-import useContent from '@hooks/use-content';
+import { useSelector } from 'react-redux';
 import useBreakpoint from '@hooks/use-breakpoint';
-import Button from '@components/shared/Button';
-import FBGroupPlugin from '@components/shared/@facebook/FBGroupPlugin';
-import FBPagePlugin from '@components/shared/@facebook/FBPagePlugin';
+import { Button } from '@components/ui';
+import { FBGroupPlugin, FBPagePlugin } from '@components/embeds';
 import StepSectionL1 from '../StepSectionL1';
 import StepSectionL2 from '../StepSectionL2';
 import AddToCalendar from './AddToCalendar';
@@ -11,11 +10,9 @@ import EmailEvent from './EmailEvent';
 import './Step2.scss';
 
 const Step2 = () => {
-  const { campaignContent } = useContent();
-  const { nextEvent } = campaignContent.status;
-  const { meta: eventMeta, fbUrl, icsUrl } = nextEvent;
+  const fbUrl = useSelector(s => s.campaign.status.nextEvent.fbUrl);
 
-  // Content
+  // Static content
   const calendarSubtitle = 'Add your own calendar reminder';
   const facebookSubtitle = 'Get notified & share stories';
 
@@ -59,10 +56,10 @@ const Step2 = () => {
       </StepSectionL1>
       <StepSectionL1 title="Calendar" subtitle={calendarSubtitle}>
         <StepSectionL2 title="Add to Calendar" endIcon="calendar-plus">
-          <AddToCalendar eventMeta={eventMeta} icsUrl={icsUrl} />
+          <AddToCalendar />
         </StepSectionL2>
         <StepSectionL2 title="Email Event" endIcon="envelope">
-          <EmailEvent event={nextEvent} />
+          <EmailEvent />
         </StepSectionL2>
       </StepSectionL1>
     </div>

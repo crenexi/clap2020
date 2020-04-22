@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
-import BrandLogo from 'shared/components/BrandLogo';
-import BrandFav from 'shared/components/BrandFav';
-import DesignHeading from '../../Heading';
+import { BrandLogo, BrandFav } from '@components/brand';
+import Heading from '../../Heading';
 import './Logos.scss';
 
 const Logos = () => {
@@ -10,7 +9,7 @@ const Logos = () => {
 
   return (
     <Fragment>
-      <DesignHeading title="Logo Variants" />
+      <Heading title="Logo Variants" />
       <div styleName="grid">
         <div styleName={gridItemClass}>
           <BrandLogo variant="main" />
@@ -22,7 +21,7 @@ const Logos = () => {
           <BrandLogo variant="white" />
         </div>
       </div>
-      <DesignHeading title="Fav Variants" />
+      <Heading title="Fav Variants" />
       <div styleName="grid">
         <div styleName={gridItemClass}>
           <BrandFav variant="main" />

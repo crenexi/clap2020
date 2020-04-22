@@ -1,29 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import moment from 'moment-timezone';
-import eventMetaType from '@types/event-meta';
-import FaIcon from '@components/shared/FaIcon';
-import IconButton from '@components/shared/IconButton';
+import PropTypes, { arrayOf, shape } from 'prop-types';
+import { FaIcon, IconButton } from '@components/ui';
 import './CalendarCopy.scss';
 
-const CalendarCopy = ({ eventMeta, onCopy }) => {
-  const { title, start, location, description } = eventMeta;
-  const formatDate = dt => moment(dt).format('MMM D @ h:mm A');
-
-  const eventDetails = [
-    { id: 'Title', icon: 'hand-holding-heart', text: title },
-    { id: 'Time', icon: 'clock', text: formatDate(start) },
-    { id: 'Location', icon: 'globe-americas', text: location },
-    { id: 'Description', icon: 'align-left', text: description },
-  ];
-
-  const handleCopy = ({ id, text }) => {
-    onCopy({
-      label: id,
-      value: text,
-    });
-  };
-
+const CalendarCopy = ({ eventDetails, onCopy }) => {
   const details = eventDetails.map(({ id, icon, text }) => (
     <div styleName="detail" key={text}>
       <div styleName="detail__icon">
@@ -37,7 +17,7 @@ const CalendarCopy = ({ eventMeta, onCopy }) => {
         <IconButton
           icon="copy"
           size="small"
-          click={() => handleCopy({ id, text })}
+          click={() => onCopy({ id, text })}
         />
       </div>
     </div>
@@ -52,7 +32,11 @@ const CalendarCopy = ({ eventMeta, onCopy }) => {
 };
 
 CalendarCopy.propTypes = {
-  eventMeta: eventMetaType.isRequired,
+  eventDetails: arrayOf(shape({
+    id: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  })).isRequired,
   onCopy: PropTypes.func.isRequired,
 };
 

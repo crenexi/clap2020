@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import LoadingScene from '@components/shared/LoadingScene';
+import { LoadingScene } from '@components/ui';
 
 const LazyDesign = lazy(() => import('./Design'));
 

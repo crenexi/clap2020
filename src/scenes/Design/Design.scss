@@ -8,7 +8,7 @@
   @include min-full-height();
 }
 
-.design__header {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@
   text-align: center;
 }
 
-.design__back-link {
+.back-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +28,6 @@
   }
 }
 
-.design__title {
+.title {
   margin-bottom: 10px;
 }

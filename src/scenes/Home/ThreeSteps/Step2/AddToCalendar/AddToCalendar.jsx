@@ -1,96 +1,56 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import {
-  google as calLinkGoogle,
-  yahoo as calLinkYahoo,
-} from 'calendar-link';
-import eventMetaType from '@types/event-meta';
-import useSnack from '@hooks/use-snack';
-import logger from '@services/logger';
-import { alphaNumeric } from 'utils/helpers';
-import copyService from '@services/copy-service';
-import AddToCalendarView from './AddToCalendarView';
+import React from 'react';
+import PropTypes, { arrayOf, shape } from 'prop-types';
+import classNames from 'classnames';
+import ICalGuide from './ICalGuide';
+import CalendarActions from './CalendarActions';
+import CalendarCopy from './CalendarCopy';
+import './AddToCalendar.scss';
 
-const AddToCalendar = ({ eventMeta, icsUrl }) => {
-  const { pushSnack } = useSnack();
+const AddToCalendar = (props) => {
+  const {
+    actions,
+    guideState,
+    onGuideClose,
+    onActionClick,
+    onCopy,
+  } = props;
 
-  // State
-  const zeroGuideState = { open: false, closing: false };
-  const [guideState, setGuideState] = useState(zeroGuideState);
-
-  // Download guide handlers
-  const handleGuideClose = () => {
-    setGuideState({ ...guideState, closing: true });
-
-    const timeoutId = setTimeout(() => {
-      setGuideState(zeroGuideState);
-      clearTimeout(timeoutId);
-    }, 150);
-  };
-
-  // Create and go to new event link
-  const openNewEvent = (actionId) => {
-    // 1. Ensure for calendar-link API
-    const event = {
-      title: eventMeta.title.trim(),
-      start: alphaNumeric(eventMeta.start),
-      end: alphaNumeric(eventMeta.end),
-      location: eventMeta.location.trim(),
-      description: eventMeta.description.trim(),
-    };
-
-    // 2. Generate URL for calendar
-    const calendarUrl = (() => {
-      if (actionId === 'google') return calLinkGoogle(event);
-      if (actionId === 'yahoo') return calLinkYahoo(event);
-      return '';
-    })();
-
-    // 3. Create a window for the URL
-    window.open(calendarUrl, (new Date()).getTime());
-  };
-
-  const handleActionClick = (actionId) => {
-    // URL-supported actions
-    if (['google', 'yahoo'].includes(actionId)) {
-      openNewEvent(actionId);
-      return;
-    }
-
-    // Otherwise open guide to download .ics
-    setGuideState({ ...guideState, open: true });
-  };
-
-  const handleCopy = ({ label, value }) => {
-    copyService.copy(value)
-      .then(() => pushSnack({
-        variant: 'success',
-        message: `Copied ${label}`,
-      }))
-      .catch((err) => {
-        logger.error(err);
-        pushSnack({
-          variant: 'error',
-          message: 'Something went wrong',
-        });
-      });
-  };
+  const guideStyleName = classNames('guide', {
+    'guide--open': guideState.open,
+    'guide--closing': guideState.closing,
+  });
 
   return (
-    <AddToCalendarView
-      eventMeta={eventMeta}
-      icsUrl={icsUrl}
-      guideState={guideState}
-      onGuideClose={handleGuideClose}
-      onActionClick={handleActionClick}
-      onCopy={handleCopy}
-    />
+    <div styleName="frame">
+      <div styleName="main">
+        <div styleName="main__section">
+          <CalendarActions actions={actions} click={onActionClick} />
+        </div>
+        <div styleName="main__section">
+          <CalendarCopy onCopy={onCopy} />
+        </div>
+      </div>
+      <div styleName={guideStyleName}>
+        <ICalGuide onClose={onGuideClose} />
+      </div>
+    </div>
   );
 };
 
 AddToCalendar.propTypes = {
-  eventMeta: eventMetaType.isRequired,
-  icsUrl: PropTypes.string.isRequired,
+  actions: arrayOf(shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    iconPrefix: PropTypes.string.isRequired,
+  })).isRequired,
+  guideState: shape({
+    open: PropTypes.bool.isRequired,
+    closing: PropTypes.bool.isRequired,
+  }).isRequired,
+  onGuideClose: PropTypes.func.isRequired,
+  onActionClick: PropTypes.func.isRequired,
+  onCopy: PropTypes.func.isRequired,
 };
 
 export default AddToCalendar;

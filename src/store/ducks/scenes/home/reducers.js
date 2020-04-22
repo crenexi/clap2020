@@ -3,6 +3,10 @@ import { assetsPath } from '@config/app-settings';
 const initialState = {
   threeSteps: {
     featuredTweetId: '1248388629476470789',
+    iCalGuide: {
+      text: 'For iCal or other calendars, download the file below. Opening it on mobile should invite you to add it to a calendar app. You can also import the file in most calendar settings.',
+      footenote: 'Note: this .ics file is not assigned an ID or time zone. That is, it creates a new event rather than inviting you to one.',
+    },
   },
   noiseMethods: [
     {

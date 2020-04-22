@@ -1,1 +1,1 @@
-export { default } from './EmailEvent';
+export { default } from './EmailEventContainer';

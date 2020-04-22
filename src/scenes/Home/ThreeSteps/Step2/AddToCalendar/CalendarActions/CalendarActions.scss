@@ -11,17 +11,17 @@
   padding: spacing(xs) 0;
 }
 
-.action__btn,
-.action__icon {
+.btn,
+.icon {
   transition-duration: 150ms;
 }
 
-.action__btn {
+.btn {
   display: grid;
   flex: 1 1 0%;
 }
 
-.action__icon {
+.icon {
   @include flex-column(center, center);
   width: 2.7rem;
   font-size: 1.5rem;
@@ -37,13 +37,13 @@
 // Theme
 
 @mixin set-action-theme($color) {
-  .action__icon {
+  .icon {
     color: $color;
   }
 
   &:hover {
-    .action__btn { transform: translateX(3px); }
-    .action__icon { transform: translateX(-3px); }
+    .btn { transform: translateX(3px); }
+    .icon { transform: translateX(-3px); }
   }
 }
 

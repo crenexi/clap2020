@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react';
-import DesignHeading from '../../DesignHeading';
+import Heading from '../../Heading';
 
 const Typography = () => (
   <Fragment>
-    <DesignHeading title="Font" />
+    <Heading title="Font" />
     <h3>Barlow Condensed</h3>
     <p>Open Sans</p>
-    <DesignHeading title="Headings" />
+    <Heading title="Headings" />
     <h1>Heading One</h1>
-    <h2>Heading One</h2>
-    <h3>Heading One</h3>
-    <h4>Heading One</h4>
-    <h5>Heading One</h5>
-    <h6>Heading One</h6>
+    <h2>Heading Two</h2>
+    <h3>Heading Three</h3>
+    <h4>Heading Four</h4>
+    <h5>Heading Five</h5>
+    <h6>Heading Six</h6>
   </Fragment>
 );
 

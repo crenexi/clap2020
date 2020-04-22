@@ -1,1 +1,1 @@
-export { default } from './ICalGuide';
+export { default } from './ICalGuideContainer';

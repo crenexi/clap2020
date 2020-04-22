@@ -1,1 +1,1 @@
-export { default } from './AddToCalendar';
+export { default } from './AddToCalendarContainer';
