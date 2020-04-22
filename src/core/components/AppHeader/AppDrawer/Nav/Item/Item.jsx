@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
-import navItemType from '@types/nav-item';
-import FaIcon from '@components/shared/FaIcon';
-import './DrawerNavItem.scss';
+import navItemType from '@types/nav-item-type';
+import { FaIcon } from '@components/ui';
+import './Item.scss';
 
-const DrawerNavItem = ({ item, click }) => {
+const Item = ({ item, click }) => {
   const { linkTo, title, subtitle, icon, active } = item;
 
   const classes = (() => {
@@ -17,20 +17,20 @@ const DrawerNavItem = ({ item, click }) => {
 
   return (
     <ListItem button classes={classes} onClick={() => click(linkTo)}>
-      <div styleName="item__icon">
+      <div styleName="icon">
         <FaIcon icon={icon} />
       </div>
-      <div styleName="item__text">
-        <div styleName="item__title">{title}</div>
-        <div styleName="item__subtitle">{subtitle}</div>
+      <div styleName="text">
+        <div styleName="title">{title}</div>
+        <div styleName="subtitle">{subtitle}</div>
       </div>
     </ListItem>
   );
 };
 
-DrawerNavItem.propTypes = {
+Item.propTypes = {
   item: navItemType.isRequired,
   click: PropTypes.func.isRequired,
 };
 
-export default DrawerNavItem;
+export default Item;

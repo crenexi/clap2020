@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
 import List from '@material-ui/core/List';
-import navItemType from '@types/nav-item';
-import DrawerNavItem from './DrawerNavItem';
+import navItemType from '@types/nav-item-type';
+import Item from './Item';
 import './DrawerNavView.scss';
 
 const DrawerNavView = ({ items, closeDrawer, itemClick }) => (
@@ -14,7 +14,7 @@ const DrawerNavView = ({ items, closeDrawer, itemClick }) => (
   >
     <List>
       {items.map(item => (
-        <DrawerNavItem key={item.linkTo} item={item} click={itemClick} />
+        <Item key={item.linkTo} item={item} click={itemClick} />
       ))}
     </List>
   </div>

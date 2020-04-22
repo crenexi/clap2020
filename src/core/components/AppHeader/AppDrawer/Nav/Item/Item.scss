@@ -1,13 +1,13 @@
 @import '~style-utils';
 
-.item__icon {
+.icon {
   width: 3rem;
   min-width: 4rem;
   @include flex-row(center, center);
   font-size: 1.7rem;
 }
 
-.item__text {
+.text {
   margin: spacing(2xs) 0 spacing(2xs);
   padding-right: spacing(sm);
 
@@ -16,7 +16,7 @@
   }
 }
 
-.item__title {
+.title {
   letter-spacing: .2px;
   font-family: font-family(primary);
   font-size: 1.7rem;
@@ -28,7 +28,7 @@
   }
 }
 
-.item__subtitle {
+.subtitle {
   margin-top: spacing(2xs);
   font-size: .9rem;
   color: theme(blueRose, light2);

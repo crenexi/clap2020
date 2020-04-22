@@ -1,21 +1,19 @@
 import React, { Fragment } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import useDrawer from '@hooks/use-drawer';
-import BrandLogo from '@components/shared/BrandLogo';
-import IconButton from '@components/shared/IconButton';
-import BrandMessenger from '@components/shared/BrandMessenger';
-import BrandSocialNav from '@components/shared/BrandSocialNav';
-import DrawerFAB from './DrawerFAB';
-import DrawerNav from './DrawerNav';
+import { IconButton } from '@components/ui';
+import { BrandLogo, BrandNav, BrandMessenger } from '@components/brand';
+import FAB from './FAB';
+import Nav from './Nav';
 import './AppDrawer.scss';
 
 const AppDrawer = () => {
   const { drawerIsOpen, closeDrawer } = useDrawer();
 
   const drawerHeader = (
-    <div styleName="drawer__header">
+    <div styleName="header">
       <div
-        styleName="drawer__brand"
+        styleName="brand"
         onClick={closeDrawer}
         onKeyDown={closeDrawer}
         role="button"
@@ -23,7 +21,7 @@ const AppDrawer = () => {
       >
         <BrandLogo variant="white" />
       </div>
-      <div styleName="drawer__close">
+      <div styleName="close">
         <IconButton
           variant="inverted"
           size="medium"
@@ -37,10 +35,10 @@ const AppDrawer = () => {
   const drawer = (
     <div styleName="drawer">
       {drawerHeader}
-      <DrawerNav />
-      <div styleName="drawer__footer">
-        <BrandSocialNav />
-        <div styleName="drawer__messenger">
+      <Nav />
+      <div styleName="footer">
+        <BrandNav />
+        <div styleName="messenger">
           <BrandMessenger />
         </div>
       </div>
@@ -49,7 +47,7 @@ const AppDrawer = () => {
 
   return (
     <Fragment>
-      <DrawerFAB />
+      <FAB />
       <Drawer
         anchor="left"
         open={drawerIsOpen}

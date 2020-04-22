@@ -1,10 +1,10 @@
 import React from 'react';
 import MuiFAB from '@material-ui/core/Fab';
 import useDrawer from '@hooks/use-drawer';
-import FaIcon from '@components/shared/FaIcon';
-import './DrawerFAB.scss';
+import { FaIcon } from '@components/ui';
+import './FAB.scss';
 
-const DrawerFAB = () => {
+const FAB = () => {
   const { toggleDrawer } = useDrawer();
 
   const muiFABClasses = (() => {
@@ -30,4 +30,4 @@ const DrawerFAB = () => {
   );
 };
 
-export default DrawerFAB;
+export default FAB;

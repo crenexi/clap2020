@@ -22,7 +22,7 @@
 
 // Drawer header
 
-.drawer__header {
+.header {
   display: grid;
   grid-template-columns: auto min-content;
   place-items: center start;
@@ -33,7 +33,7 @@
   }
 }
 
-.drawer__brand {
+.brand {
   width: 6.5rem;
   margin: 0 spacing(lg);
 
@@ -42,17 +42,17 @@
   }
 }
 
-.drawer__close {
+.close {
   margin: 0 spacing(md);
 }
 
 // Bottom
 
-.drawer__footer {
+.footer {
   border-top: 1px solid rgba(255, 255, 255, .05);
 }
 
-.drawer__messenger {
+.messenger {
   @include flex-column(center, center);
   padding: spacing(sm) 0;
   border-top: 1px solid rgba(255, 255, 255, .05);
