@@ -1,36 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import withGlobalProviders from 'utils/with-global-providers';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { BrowserRouter as Router } from 'react-router-dom';
-import fontAwesomeConfig from '@config/font-awesome-config';
-import logger from '@services/logger';
-import ScrollToTop from './ScrollToTop';
-import AppView from './AppView';
+import { Loading } from '@components/ui';
+import AppHeader from '../AppHeader';
+import AppMain from '../AppMain';
+import AppFooter from '../AppFooter';
+import ShareModal from '../ShareModal';
+import ScrollToTop from '../ScrollToTop';
+import './App.scss';
 
-// Initialize Clap2020 icon library
-fontAwesomeConfig.buildLibrary();
+const AppView = ({ isLoading }) => {
+  const className = classNames('app', {
+    'app--loading': isLoading,
+  });
 
-const App = () => {
-  const isDevEnv = process.env.NODE_ENV === 'development';
-  const isIndexRoute = document.location.pathname === '/';
-
-  // Application loading indication on home page only
-  const [isLoading, setIsLoading] = useState(isIndexRoute && !isDevEnv);
-  useEffect(() => {
-    logger.info('\nMain Engine Start.\nT-Zero. SRB Ignition.\nLiftoff.');
-
-    const timeOutId = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timeOutId);
-  }, []);
+  const appLoading = (
+    <div styleName="app-loading">
+      <div styleName="app-loading__center">
+        <Loading size="large" withStar />
+      </div>
+    </div>
+  );
 
   return (
     <Router>
       <ScrollToTop />
-      <AppView isLoading={isLoading} />
+      {isLoading && appLoading}
+      <div styleName={className}>
+        <AppHeader />
+        <AppMain />
+        <AppFooter />
+        <ShareModal />
+      </div>
     </Router>
   );
 };
 
-export default withGlobalProviders(App);
+AppView.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+};
+
+export default AppView;

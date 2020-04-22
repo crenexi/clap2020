@@ -5,10 +5,9 @@ import Slide from '@material-ui/core/Slide';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import useBreakpoint from '@hooks/use-breakpoint';
-import ShareEditor from '@components/shared/ShareEditor';
-import ShareButtons from '@components/shared/ShareButtons';
-import IconButton from '@components/shared/IconButton';
-import './ShareDialog.scss';
+import { ShareEditor, ShareButtons } from '@components/campaign';
+import { IconButton } from '@components/ui';
+import './Dialog.scss';
 
 const Transition = forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;

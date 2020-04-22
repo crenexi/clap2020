@@ -129,6 +129,9 @@ const createCompressionPlugin = () => new CompressionPlugin({
 
 const aliasRelativePaths = {
   '@src': './src',
+  '@core': './src/core',
+  '@scenes': './src/scenes',
+  '@store': './src/store',
   '@config': './src/shared/config',
   '@constants': './src/shared/constants',
   '@types': './src/shared/types',
