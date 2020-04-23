@@ -1,6 +1,8 @@
 @import '~style-utils';
 
 .frame {
+  position: relative;
+  z-index: z-index(header);
   width: 100%;
   height: ui-layout(headerHeightSm);
   padding: 0 spacing(sm);
