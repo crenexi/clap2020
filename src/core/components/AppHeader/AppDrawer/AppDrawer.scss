@@ -49,11 +49,12 @@
 // Bottom
 
 .footer {
+  padding-top: 5px;
   border-top: 1px solid rgba(255, 255, 255, .05);
 }
 
 .messenger {
   @include flex-column(center, center);
-  padding: spacing(sm) 0;
-  border-top: 1px solid rgba(255, 255, 255, .05);
+  padding: spacing(xs);
+  background-color: rgba(theme(ocean, dark2), .5);
 }

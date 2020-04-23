@@ -2,19 +2,30 @@
 
 .footer {
   position: relative;
-  z-index: z-index(footer);
   @include flex-column();
   width: 100%;
   padding: layout(md) layout(2xs) calc(56px + 1.5rem);
   @include gradient(theme(ocean, dark1), theme(blueRose, dark1));
   color: #fff;
 
+  &--extra-space {
+    padding-bottom: calc(56px + 1.5rem + #{layout(md)})
+  }
+
   @include breakpoint('gt-xs') {
     padding: layout(md) layout(lg) layout(sm);
+
+    &--extra-space {
+      padding-bottom: calc(56px + 2rem + #{layout(md)})
+    }
   }
 
   @include breakpoint('gt-sm') {
     padding: layout(lg) layout(xl) layout(md);
+
+    &--extra-space {
+      padding-bottom: calc(56px + 3rem + #{layout(md)})
+    }
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouteMatch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
 import navItemType from '@types/nav-item-type';
@@ -6,7 +7,13 @@ import { FaIcon } from '@components/ui';
 import './Item.scss';
 
 const Item = ({ item, click }) => {
-  const { linkTo, title, subtitle, icon, active } = item;
+  const { linkTo, title, subtitle, icon } = item;
+
+  // Determine if route should be active
+  const active = useRouteMatch({
+    path: linkTo,
+    exact: linkTo === '/',
+  });
 
   const classes = (() => {
     const base = 'c2-nav-list-item';

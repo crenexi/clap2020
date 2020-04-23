@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import useDrawer from '@hooks/use-drawer';
 import { IconButton } from '@components/ui';
-import { BrandLogo, BrandNav, BrandMessenger } from '@components/brand';
+import { BrandLogo, BrandNav, BrandContact } from '@components/brand';
 import FAB from './FAB';
 import Nav from './Nav';
 import './AppDrawer.scss';
@@ -39,7 +39,7 @@ const AppDrawer = () => {
       <div styleName="footer">
         <BrandNav />
         <div styleName="messenger">
-          <BrandMessenger />
+          <BrandContact />
         </div>
       </div>
     </div>

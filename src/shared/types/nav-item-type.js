@@ -5,7 +5,6 @@ const navItemType = shape({
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
-  active: PropTypes.bool,
   disabled: PropTypes.bool,
 });
 

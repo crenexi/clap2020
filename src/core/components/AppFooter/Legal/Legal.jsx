@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaIcon } from '@components/ui';
-import { BrandMessenger } from '@components/brand';
+import { BrandContact } from '@components/brand';
 import './Legal.scss';
 
 const Legal = (props) => {
@@ -14,7 +14,7 @@ const Legal = (props) => {
   return (
     <div styleName="legal">
       <div styleName="messenger">
-        <BrandMessenger />
+        <BrandContact />
       </div>
       <div styleName="built-by">
         <span>Built with clean&nbsp;</span>
