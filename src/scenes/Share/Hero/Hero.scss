@@ -1,13 +1,53 @@
 @import '~style-utils';
 
-.main {
+// Layout
 
+.main {
+  @include flex-column(center, center);
+  width: 100%;
+  min-height: 33vh;
+  padding: 0 spacing(md);
+  color: #fff;
+  font-family: font-family(primary);
+
+  @include breakpoint('gt-xs') {
+    min-height: 50vh;
+  }
+
+  @include breakpoint('gt-sm') {
+    min-height: 66vh;
+  }
+
+  @include breakpoint('gt-md') {
+    min-height: 75vh;
+  }
+}
+
+// Content
+
+.main__title,
+.main__subtitle {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, .25), 0 0 30px rgba(0, 0, 0, .35);
+  text-transform: uppercase;
 }
 
 .main__title {
-
+  font-size: 4.5rem;
+  font-weight: 300;
 }
 
 .main__subtitle {
+  margin-top: spacing(sm);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
 
+@include breakpoint('gt-xs') {
+  .main__title {
+    font-size: 6.5rem;
+  }
+
+  .main__subtitle {
+    font-size: 1.7rem;
+  }
 }

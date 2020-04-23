@@ -12,12 +12,12 @@ const Hero = (props) => {
       imagePosition={imagePosition}
       blanketColor="rgba(0, 0, 0, .5)"
       blend={{
-        color: 'rgba(0, 0, 0, .5)',
-        mode: 'multiply',
+        color: 'rgba(8, 36, 94, .5)',
+        mode: 'color',
       }}
     >
       <div styleName="main">
-        <div styleName="main__title">{title}</div>
+        <h1 styleName="main__title">{title}</h1>
         <div styleName="main__subtitle">{subtitle}</div>
       </div>
     </BgCover>

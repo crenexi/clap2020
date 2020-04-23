@@ -8,8 +8,8 @@ const Press = ({ heroCoverUrl }) => {
     <Hero
       url={heroCoverUrl}
       imagePosition="center center"
-      title="Title"
-      subtitle="Subtitle"
+      title="Rally"
+      subtitle="the nation"
     />
   );
 

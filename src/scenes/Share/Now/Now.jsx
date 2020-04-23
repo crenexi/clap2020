@@ -7,9 +7,9 @@ const Now = ({ heroCoverUrl }) => {
   const hero = (
     <Hero
       url={heroCoverUrl}
-      imagePosition="center center"
-      title="Title"
-      subtitle="Subtitle"
+      imagePosition="0% 30%"
+      title="POST"
+      subtitle="hashtags &amp; posters"
     />
   );
 

@@ -2,9 +2,8 @@
 
 .frame {
   width: 100%;
-  @include min-full-height();
 }
 
 .hero {
-  min-height: 50vh;
+  width: 100%;
 }

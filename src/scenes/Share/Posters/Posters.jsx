@@ -7,9 +7,9 @@ const Posters = ({ heroCoverUrl }) => {
   const hero = (
     <Hero
       url={heroCoverUrl}
-      imagePosition="center center"
-      title="Title"
-      subtitle="Subtitle"
+      imagePosition="50% 25%"
+      title="Grab"
+      subtitle="images &amp; flyers"
     />
   );
 

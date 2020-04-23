@@ -7,9 +7,9 @@ const Intro = ({ heroCoverUrl }) => {
   const hero = (
     <Hero
       url={heroCoverUrl}
-      imagePosition="center center"
-      title="Title"
-      subtitle="Subtitle"
+      imagePosition="70% 55%"
+      title="Spread"
+      subtitle="the word, not the virus"
     />
   );
 
