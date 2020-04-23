@@ -3,7 +3,7 @@ import React from 'react';
 import { ShareAsync } from '@scenes/Share';
 // import { GetReadyAsync } from '@scenes/GetReady';
 // import { HeroesAsync } from '@components/scenes/Heroes';
-// import { DesignAsync } from '@scenes/Design';
+import { DesignAsync } from '@scenes/Design';
 import AppMain from './AppMain';
 
 const AppMainContainer = () => {
@@ -12,7 +12,7 @@ const AppMainContainer = () => {
     { path: '/share', exact: false, component: ShareAsync },
     // { path: '/get-ready', exact: true, component: GetReadyAsync },
     // { path: '/heroes', exact: true, component: HeroesAsync },
-    // { path: '/design', exact: true, component: DesignAsync },
+    { path: '/design', exact: true, component: DesignAsync },
   ];
 
   return <AppMain routes={routes} />;
