@@ -10,7 +10,6 @@ fontAwesome.buildLibrary();
 const AppContainer = () => {
   const isDevEnv = process.env.NODE_ENV === 'development';
   const isIndexRoute = document.location.pathname === '/';
-  logger.info('\nMain Engine Start.\nT-Zero. SRB Ignition.\nLiftoff.');
 
   // Application loading indication on home page only
   const [isLoading, setIsLoading] = useState(isIndexRoute && !isDevEnv);

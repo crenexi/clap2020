@@ -6,6 +6,7 @@ import React from 'react';
 // from being visible before the ScrollToTop is
 // executed. Without this it's an annoying glitch
 // when switching routes!
+// UPDATE: NO LONGER NEEDED AS SOLUTION
 const withOpacityDelay = (WrappedComponent) => {
   const setRootOpacity = (opacity) => {
     const rootElm = document.getElementById('root');
@@ -14,7 +15,7 @@ const withOpacityDelay = (WrappedComponent) => {
 
   const HOC = (props) => {
     setRootOpacity(0);
-    setTimeout(() => setRootOpacity(1), 100);
+    setTimeout(() => setRootOpacity(1), 0);
 
     return <WrappedComponent {...props} />;
   };
