@@ -3,9 +3,9 @@ import PropTypes, { arrayOf } from 'prop-types';
 import List from '@material-ui/core/List';
 import navItemType from '@types/nav-item-type';
 import Item from './Item';
-import './DrawerNavView.scss';
+import './Nav.scss';
 
-const DrawerNavView = ({ items, closeDrawer, itemClick }) => (
+const Nav = ({ items, closeDrawer, itemClick }) => (
   <div
     styleName="nav"
     role="presentation"
@@ -20,10 +20,10 @@ const DrawerNavView = ({ items, closeDrawer, itemClick }) => (
   </div>
 );
 
-DrawerNavView.propTypes = {
+Nav.propTypes = {
   items: arrayOf(navItemType).isRequired,
   closeDrawer: PropTypes.func.isRequired,
   itemClick: PropTypes.func.isRequired,
 };
 
-export default DrawerNavView;
+export default Nav;
