@@ -51,7 +51,7 @@ const Legal = (props) => {
 };
 
 Legal.propTypes = {
-  thisYear: PropTypes.string.isRequired,
+  thisYear: PropTypes.number.isRequired,
   cxUrl: PropTypes.string.isRequired,
   cxFavUrl: PropTypes.string.isRequired,
   tosUrl: PropTypes.string.isRequired,

@@ -186,7 +186,7 @@ const config = {
     inline: true,
     hot: true,
   },
-  devtool: isProduction ? false : 'eval',
+  devtool: isProduction ? false : 'eval-source-map',
   performance: isDevelopment && {
     hints: false,
     maxEntrypointSize: 512000,
