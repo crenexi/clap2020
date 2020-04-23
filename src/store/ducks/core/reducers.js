@@ -5,7 +5,7 @@ const initialState = {
     error404: {
       title: `That's strange.`,
       subtitle: `You've reached an alternate reality. Something's wrong.`,
-      CoverUrl: `${assetsPath}/meta/errors/lost-in-jumanji.gif`,
+      coverUrl: `${assetsPath}/meta/errors/lost-in-jumanji.gif`,
     },
     legal: {
       tosUrl: '/assets/legal/Clap2020-TOS.html',

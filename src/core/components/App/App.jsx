@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Loading } from '@components/ui';
 import AppHeader from '../AppHeader';
-// import AppMain from '../AppMain';
+import AppMain from '../AppMain';
 import AppFooter from '../AppFooter';
 import ShareModal from '../ShareModal';
 import ScrollToTop from '../ScrollToTop';
@@ -29,7 +29,7 @@ const AppView = ({ isLoading }) => {
       {isLoading && appLoading}
       <div styleName={className}>
         <AppHeader />
-        {/* <AppMain /> */}
+        <AppMain />
         <AppFooter />
         <ShareModal />
       </div>

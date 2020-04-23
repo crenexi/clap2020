@@ -39,7 +39,7 @@ const AddToCalendarContainer = () => {
 
 
   // Content
-  const { eventMeta } = useSelector(s => s.campaign.status.nextEvent.meta);
+  const eventMeta = useSelector(s => s.campaign.status.nextEvent.meta);
 
   // Snack API
   const { pushSnack } = useSnack();

@@ -6,7 +6,8 @@ import Button from '../Button';
 import './Error404.scss';
 
 const Error404 = ({ backTo }) => {
-  const { title, subtitle, coverUrl } = useSelector(s => s.meta.error404);
+  const error404Meta = useSelector(s => s.core.meta.error404);
+  const { title, subtitle, coverUrl } = error404Meta;
 
   return (
     <div styleName="frame">

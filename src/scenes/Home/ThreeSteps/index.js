@@ -1,1 +1,1 @@
-export { default } from './ThreeSteps';
+export { default } from './ThreeStepsContainer';

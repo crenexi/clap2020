@@ -1,7 +1,7 @@
 import React from 'react';
-import ThisIsWar from './components/ThisIsWar';
-import ThreeSteps from './components/ThreeSteps';
-import ThankYouInvite from './components/ThankYouInvite';
+import ThisIsWar from './ThisIsWar';
+import ThreeSteps from './ThreeSteps';
+import ThankYouInvite from './ThankYouInvite';
 
 const Home = () => (
   <article>

@@ -5,7 +5,7 @@ import FBPlugin from '../FBPlugin';
 import './FBPagePlugin.scss';
 
 const FBPagePlugin = ({ width, height }) => {
-  const url = useSelector(s => s.campaign.urls.messenger);
+  const url = useSelector(s => s.campaign.urls.fbPage);
 
   return (
     <FBPlugin minHeight={130}>

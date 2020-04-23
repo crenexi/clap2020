@@ -42,7 +42,7 @@ AddToCalendar.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
-    iconPrefix: PropTypes.string.isRequired,
+    iconPrefix: PropTypes.string,
   })).isRequired,
   guideState: shape({
     open: PropTypes.bool.isRequired,

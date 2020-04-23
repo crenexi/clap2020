@@ -9,7 +9,7 @@ const Step3Container = () => {
     tagsMessage,
   } = useSelector(s => ({
     featuredTweetId: s.scenes.home.threeSteps.featuredTweetId,
-    tagsMessage: s.campaign.tags.messaage,
+    tagsMessage: s.campaign.tags.message,
     tagsListExtended: s.campaign.tags.listExtended,
   }));
 

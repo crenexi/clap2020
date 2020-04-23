@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import reactRefType from '@types/react-ref-type';
 import { Loading, ErrorText } from '@components/ui';
 import TWPlugin from '../TWPlugin';
+import './TWTweet.scss';
 
 const TWTweet = (props) => {
   const { frameRef, loading, error, onReady } = props;

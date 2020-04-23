@@ -5,7 +5,7 @@ import moment from 'moment-timezone';
 import CalendarCopy from './CalendarCopy';
 
 const CalendarCopyContainer = ({ onCopy }) => {
-  const { eventMeta } = useSelector(s => s.campaign.status.nextEvent.meta);
+  const eventMeta = useSelector(s => s.campaign.status.nextEvent.meta);
   const { title, start, location, description } = eventMeta;
   const formatDate = dt => moment(dt).format('MMM D @ h:mm A');
 
