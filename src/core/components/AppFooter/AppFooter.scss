@@ -1,6 +1,8 @@
 @import '~style-utils';
 
 .footer {
+  position: relative;
+  z-index: z-index(footer);
   @include flex-column();
   width: 100%;
   padding: layout(md) layout(2xs) calc(56px + 1.5rem);

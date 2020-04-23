@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf } from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import routeType from '@types/route-type';
-import { withAnalyticsTracker, withOpacityDelay } from '@helpers/hocs';
+import { withAnalyticsTracker } from '@helpers/hocs';
 import { Error404 } from '@components/ui';
 import Home from '@scenes/Home';
 import './AppMain.scss';
@@ -10,7 +10,7 @@ import './AppMain.scss';
 const AppMain = ({ routes }) => {
   // Add any HOCs for routes here
   const withHOCs = (component) => {
-    return withAnalyticsTracker(withOpacityDelay(component));
+    return withAnalyticsTracker(component);
   };
 
   return (
