@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import workforceBucketType from '@types/workforce-bucket-type';
-import BucketHeader from './BucketHeader';
-import BucketMain from './BucketMain';
-import BucketVideos from './BucketVideos';
+import BucketHeader from './Header';
+import BucketMain from './Main';
+import BucketVideos from './Videos';
 import './Bucket.scss';
 
 const Bucket = ({ children, bucket }) => {
