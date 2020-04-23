@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Button, FaIcon } from '@components/ui';
+import './MButton.scss';
 
 const MButton = forwardRef((props, ref) => (
   <div {...props} ref={ref}>

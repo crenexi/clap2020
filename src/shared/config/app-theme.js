@@ -1,4 +1,4 @@
-import scssVars from 'scss/utils/exports';
+import scssVars from '@helpers/scss/exports';
 
 const paletteRows = [
   {

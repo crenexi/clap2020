@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider as StoreProvider } from 'react-redux';
-import App from './core/App';
+import appSettings from '@config/app-settings';
+import App from './core/components/App';
 import store from './store';
 import './loading';
 
 // Set debug in localStorage
 if (process.env.NODE_ENV !== 'production') {
-  localStorage.setItem('debug', 'mistan-city-app:*');
+  localStorage.setItem('debug', `${appSettings.debugPrefix}:*`);
 }
 
 // Render application

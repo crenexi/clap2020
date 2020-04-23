@@ -1,4 +1,4 @@
-import combineReducers from 'redux';
+import { combineReducers } from 'redux';
 import { homeReducers } from './home';
 import { getReadyReducers } from './get-ready';
 import { praiseReducers } from './praise';

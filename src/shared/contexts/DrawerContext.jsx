@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { isTabOrShift } from 'utils/helpers';
+import { isTabOrShift } from '@helpers';
 import PropTypes from 'prop-types';
 
 const DrawerContext = React.createContext(null);

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes, { oneOf, shape } from 'prop-types';
 import classNames from 'classnames';
-import { IconButton as MuiIconButton } from '@material-ui/core/IconButton';
+import MuiIconButton from '@material-ui/core/IconButton';
 import { Link } from 'react-router-dom';
 import FaIcon from '../FaIcon';
 import './IconButton.scss';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import BrandNavItem from './BrandNavItem';
+import Item from './Item';
 import './BrandNav.scss';
 
 const BrandSocialNav = () => {
@@ -9,7 +9,7 @@ const BrandSocialNav = () => {
   return (
     <div styleName="nav">
       {platforms.map(platform => (
-        <BrandNavItem key={platform.name} platform={platform} />
+        <Item key={platform.name} platform={platform} />
       ))}
     </div>
   );

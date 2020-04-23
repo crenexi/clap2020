@@ -110,7 +110,7 @@ import {
   faYahoo,
 } from '@fortawesome/free-brands-svg-icons';
 
-const buildLibrary = (() => {
+const buildLibrary = () => {
   library.add(
     faAlignLeft,
     faAmbulance,
@@ -214,6 +214,6 @@ const buildLibrary = (() => {
     faWhistle,
     faYahoo,
   );
-})();
+};
 
 export default buildLibrary;

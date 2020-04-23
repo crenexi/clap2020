@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
-import routerMatchType from '@types/router-match';
+import routerMatchType from '@types/router-match-type';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import Error404 from '@components/shared/Error404';
-import ShareNav from './ShareNav';
-import ShareIntro from './ShareIntro';
-import ShareNow from './ShareNow';
-import SharePress from './SharePress';
-import SharePosters from './SharePosters';
+import { Error404 } from '@components/ui';
+import ShareNav from './Nav';
+import ShareIntro from './Intro';
+import ShareNow from './Now';
+import SharePress from './Press';
+import SharePosters from './Posters';
 
 const Share = ({ match }) => {
   const routesData = [

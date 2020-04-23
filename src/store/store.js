@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 
 const store = createStore(reducers, compose(
-  applyMiddleware(thunk,),
+  applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f,
 ));
 

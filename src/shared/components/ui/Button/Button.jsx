@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes, { shape, oneOf } from 'prop-types';
-import { Button as MuiButton } from '@material-ui/core/Button';
+import MuiButton from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { FaIcon } from '@components/ui';
 import './Button.scss';
 
-const IconButton = (props) => {
+const Button = (props) => {
   const { classes, children, variant, size, startIcon, endIcon } = props;
   const { disabled, click, href, rel, to, target } = props;
 
@@ -62,7 +62,7 @@ const IconButton = (props) => {
   );
 };
 
-IconButton.propTypes = {
+Button.propTypes = {
   classes: shape({
     root: PropTypes.string,
     label: PropTypes.string,
@@ -80,7 +80,7 @@ IconButton.propTypes = {
   to: PropTypes.string,
 };
 
-IconButton.defaultProps = {
+Button.defaultProps = {
   classes: {},
   variant: 'default',
   size: 'medium',
@@ -94,4 +94,4 @@ IconButton.defaultProps = {
   to: '',
 };
 
-export default IconButton;
+export default Button;
