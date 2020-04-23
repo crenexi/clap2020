@@ -47,7 +47,7 @@ const FullHeaderWide = (props) => {
   const countdownInvite = (
     <Button
       to="/get-ready"
-      variant="inverted"
+      variant="primary"
       endIcon="arrow-circle-right"
     >
       Clap Countdown
