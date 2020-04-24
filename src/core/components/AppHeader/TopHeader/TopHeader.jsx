@@ -8,7 +8,7 @@ const TopHeader = () => (
   <HeaderFrame>
     <div styleName="header">
       <div styleName="start">
-        <Button to="/" variant="ghost" startIcon="arrow-circle-left">
+        <Button to="/" variant="ghost" startIcon="house-user">
           Home
         </Button>
       </div>

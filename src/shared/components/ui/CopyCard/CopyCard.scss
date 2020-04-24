@@ -12,6 +12,7 @@
   border-radius: border-radius(round);
   box-shadow: shadow(12);
   overflow: hidden;
+  color: color(content, base);
 }
 
 @include breakpoint('gt-xs') {
