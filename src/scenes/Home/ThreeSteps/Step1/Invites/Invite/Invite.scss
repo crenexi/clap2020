@@ -1,0 +1,17 @@
+@import '~style-utils';
+
+.invite {
+  @include size(100%);
+}
+
+.card {
+  @include flex-column(center, center);
+}
+
+.icon {
+
+}
+
+.label {
+
+}

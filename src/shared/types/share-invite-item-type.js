@@ -1,0 +1,9 @@
+import PropTypes, { shape } from 'prop-types';
+
+const shareInviteItemType = shape({
+  label: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  thumbUrl: PropTypes.string.isRequired,
+});
+
+export default shareInviteItemType;

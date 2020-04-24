@@ -2,6 +2,28 @@ import { assetsPath } from '@config/app-settings';
 
 const initialState = {
   threeSteps: {
+    shareInviteGrid: [
+      {
+        label: 'Copy URLs',
+        icon: 'globe',
+        thumbUrl: `${assetsPath}/thumbs/.jpg`,
+      },
+      {
+        label: 'Share on Socials',
+        icon: 'heartbeat',
+        thumbUrl: `${assetsPath}/thumbs/.jpg`,
+      },
+      {
+        label: 'Download Posters',
+        icon: 'image-polaroid',
+        thumbUrl: `${assetsPath}/thumbs/.jpg`,
+      },
+      {
+        label: 'Press Inquiries',
+        icon: 'folder-download',
+        thumbUrl: `${assetsPath}/thumbs/.jpg`,
+      },
+    ],
     featuredTweetId: '1248388629476470789',
     iCalGuide: {
       text: 'For iCal or other calendars, download the file below. Opening it on mobile should invite you to add it to a calendar app. You can also import the file in most calendar settings.',
