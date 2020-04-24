@@ -14,8 +14,8 @@ const CopyPosterContainer = () => {
   });
 
   // Handle selection change
-  const handleFormatChange = (format) => {
-    setSelection({ ...selection, format });
+  const handleChange = (changes) => {
+    setSelection({ ...selection, ...changes });
   };
 
   return (
@@ -24,7 +24,7 @@ const CopyPosterContainer = () => {
       brief={brief}
       footnote={footnote}
       selection={selection}
-      onFormatChange={handleFormatChange}
+      onChange={handleChange}
     />
   );
 };

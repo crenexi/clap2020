@@ -4,9 +4,9 @@ import PropTypes, { oneOf } from 'prop-types';
 import './PosterPreview.scss';
 
 const PosterPreview = ({ format, isBlackWhite }) => {
-  const { thumbUrl } = useSelector((s) => {
+  const thumbUrl = useSelector((s) => {
     const match = s.campaign.posters.find(p => p.format === format);
-    return isBlackWhite ? match.bwThumbUrl : thumbUrl;
+    return isBlackWhite ? match.bwThumbUrl : match.thumbUrl;
   });
 
   // Format label

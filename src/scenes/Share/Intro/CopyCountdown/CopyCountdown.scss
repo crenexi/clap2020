@@ -6,6 +6,7 @@
 
 .url {
   @include truncate(1, 100%);
+  line-height: 1.2em;
 }
 
 .time-until {

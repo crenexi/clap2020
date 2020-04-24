@@ -6,14 +6,14 @@ import Section from '../../Section';
 import './CopyPoster.scss';
 
 const CopyPoster = (props) => {
-  const { title, brief, footnote, selection, onFormatChange } = props;
+  const { title, brief, footnote, selection, onChange } = props;
 
   return (
     <div styleName="frame">
       <Section title={title} brief={brief}>
         <PosterSelect
           selection={selection}
-          onFormatChange={onFormatChange}
+          onChange={onChange}
         />
         <div styleName="footnote">
           <p>{footnote}</p>
@@ -28,7 +28,7 @@ CopyPoster.propTypes = {
   brief: PropTypes.string.isRequired,
   footnote: PropTypes.string.isRequired,
   selection: posterSelectionType.isRequired,
-  onFormatChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default CopyPoster;

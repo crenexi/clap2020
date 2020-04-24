@@ -1,36 +1,43 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import posterSelectionType from '@types/poster-selection-type';
-// import PosterIcon from '../PosterIcon';
-// import PosterPreview from '../PosterPreview';
+import PosterIcon from '../PosterIcon';
+import PosterPreview from '../PosterPreview';
 import './PosterSelect.scss';
 
 const PosterSelect = (props) => {
-  const { selection, onFormatChange } = props;
+  const { selection, onChange } = props;
 
-  const options = ['story', 'square', 'rectangle'].map(format => (
-    <div
-      styleName="select__option"
-      key={format}
-      onClick={() => onFormatChange(format)}
-      onKeyDown={() => onFormatChange(format)}
-      role="button"
-      tabIndex="0"
-    >
-      {format}
-      {/* <PosterIcon format={format} */}
-    </div>
-  ));
+  const options = ['story', 'square', 'rectangle'].map((format) => {
+    const styleName = classNames('option', {
+      'option--selected': selection.format === format,
+    });
+
+    return (
+      <div
+        role="button"
+        tabIndex="0"
+        styleName={styleName}
+        key={format}
+        onClick={() => onChange({ format })}
+        onKeyDown={() => onChange({ format })}
+      >
+        <PosterIcon format={format} />
+        <div styleName="option__label">{format}</div>
+      </div>
+    );
+  });
 
   return (
     <div styleName="frame">
-      <div styleName="select">
-        <div styleName="select__label">Label</div>
-        <div styleName="select__options">{options}</div>
-      </div>
+      <div styleName="options">{options}</div>
       <div styleName="preview">
-        {selection.format} | is blackwhite: {selection.isBlackWhite}
-        {/* <PosterPreview /> */}
+        <div styleName="preview__label">Preview</div>
+        <PosterPreview
+          format={selection.format}
+          isBlackWhite={selection.isBlackWhite}
+        />
       </div>
     </div>
   );
@@ -38,7 +45,7 @@ const PosterSelect = (props) => {
 
 PosterSelect.propTypes = {
   selection: posterSelectionType.isRequired,
-  onFormatChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default PosterSelect;

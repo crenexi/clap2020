@@ -5,9 +5,9 @@
 }
 
 .url {
-  font-size: 1.1rem;
-  line-height: 1em;
   @include truncate(1, 100%);
+  font-size: 1.1rem;
+  line-height: 1.2em;
 }
 
 @include breakpoint('gt-xs') {
