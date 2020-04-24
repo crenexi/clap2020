@@ -15,6 +15,8 @@ const Intro = (props) => {
     timeUntil,
   } = props;
 
+  const siteUrl = 'https://clap2020.com';
+
   return (
     <div styleName="frame">
       <Hero
@@ -29,8 +31,8 @@ const Intro = (props) => {
           brief={copySite.brief}
           narrow
         >
-          <CopyCard value="test">
-            Test
+          <CopyCard overline="Site URL" value={siteUrl}>
+            <div styleName="copy-site__url">{siteUrl}</div>
           </CopyCard>
         </Section>
       </div>

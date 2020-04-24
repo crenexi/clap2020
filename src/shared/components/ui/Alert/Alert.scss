@@ -3,7 +3,7 @@
 .alert {
   @include flex-row(normal, center);
   max-width: 95vw;
-  background-color: theme(ocean, dark1);
+  background-color: theme(ocean, base);
   padding: 0 spacing(xs);
   border-radius: 10px;
   box-shadow: shadow(24);
@@ -11,7 +11,7 @@
 }
 
 .alert--success {
-  background-color: theme(ocean, dark1);
+  background-color: theme(ocean, base);
   color: #fff;
 }
 

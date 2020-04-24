@@ -5,14 +5,14 @@ import copyService from '@services/copy-service';
 import useSnack from '@hooks/use-snack';
 import CopyCard from './CopyCard';
 
-const CopyCardContainer = ({ children, value }) => {
+const CopyCardContainer = ({ children, overline, value }) => {
   const { pushSnack } = useSnack();
 
   const handleCopy = () => {
     copyService.copy(value)
       .then(() => pushSnack({
         variant: 'success',
-        message: `Copied ${value}`,
+        message: `Copied ${overline}`,
       }))
       .catch((err) => {
         logger.error(err);
@@ -23,11 +23,14 @@ const CopyCardContainer = ({ children, value }) => {
       });
   };
 
-  return <CopyCard onCopy={handleCopy}>{children}</CopyCard>;
+  return (
+    <CopyCard overline={overline} onCopy={handleCopy}>{children}</CopyCard>
+  );
 };
 
 CopyCardContainer.propTypes = {
   children: PropTypes.node.isRequired,
+  overline: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };
 
