@@ -6,22 +6,22 @@ const initialState = {
       {
         label: 'Copy URLs',
         icon: 'globe',
-        thumbUrl: `${assetsPath}/thumbs/.jpg`,
+        thumbUrl: `${assetsPath}/thumbs/cookies_thumb.jpg`,
       },
       {
         label: 'Share on Socials',
         icon: 'heartbeat',
-        thumbUrl: `${assetsPath}/thumbs/.jpg`,
+        thumbUrl: `${assetsPath}/thumbs/medic_thumb.jpg`,
       },
       {
         label: 'Download Posters',
         icon: 'image-polaroid',
-        thumbUrl: `${assetsPath}/thumbs/.jpg`,
+        thumbUrl: `${assetsPath}/thumbs/tired-nurse_thumb.jpg`,
       },
       {
         label: 'Press Inquiries',
         icon: 'folder-download',
-        thumbUrl: `${assetsPath}/thumbs/.jpg`,
+        thumbUrl: `${assetsPath}/thumbs/usa-flag_thumb.jpg`,
       },
     ],
     featuredTweetId: '1248388629476470789',

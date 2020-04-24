@@ -14,18 +14,14 @@ const Intro = (props) => {
     timeUntil,
   } = props;
 
-  const hero = (
-    <Hero
-      url={heroCoverUrl}
-      imagePosition="70% 55%"
-      title="Spread"
-      subtitle="the word, not the virus"
-    />
-  );
-
   return (
     <div styleName="frame">
-      <div styleName="hero">{hero}</div>
+      <Hero
+        url={heroCoverUrl}
+        imagePosition="70% 55%"
+        title="Spread"
+        subtitle="the word, not the virus"
+      />
       <div styleName="copy-site">
         <Section
           title={copySite.title}

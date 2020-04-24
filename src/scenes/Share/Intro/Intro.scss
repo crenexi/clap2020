@@ -4,11 +4,6 @@
   width: 100%;
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-}
-
 .footnote {
   display: flex;
   flex-direction: column;
@@ -23,13 +18,13 @@
 // Section: copy site
 
 .copy-site {
-  background-color: #fff;
+  background-color: theme(cloud, dark1);
 }
 
 // Section: copy poster
 
 .copy-poster {
-  background-color: theme(cloud, dark1);
+  background-color: #fff;
 }
 
 // Section: copy countdown

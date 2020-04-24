@@ -4,18 +4,14 @@ import Hero from '../Hero';
 import './Press.scss';
 
 const Press = ({ heroCoverUrl }) => {
-  const hero = (
-    <Hero
-      url={heroCoverUrl}
-      imagePosition="center center"
-      title="Rally"
-      subtitle="the nation"
-    />
-  );
-
   return (
     <div styleName="frame">
-      <div styleName="hero">{hero}</div>
+      <Hero
+        url={heroCoverUrl}
+        imagePosition="center center"
+        title="Rally"
+        subtitle="the nation"
+      />
     </div>
   );
 };

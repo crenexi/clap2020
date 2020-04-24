@@ -4,18 +4,14 @@ import Hero from '../Hero';
 import './Now.scss';
 
 const Now = ({ heroCoverUrl }) => {
-  const hero = (
-    <Hero
-      url={heroCoverUrl}
-      imagePosition="0% 30%"
-      title="POST"
-      subtitle="hashtags &amp; posters"
-    />
-  );
-
   return (
     <div styleName="frame">
-      <div styleName="hero">{hero}</div>
+      <Hero
+        url={heroCoverUrl}
+        imagePosition="0% 30%"
+        title="POST"
+        subtitle="hashtags &amp; posters"
+      />
     </div>
   );
 };
