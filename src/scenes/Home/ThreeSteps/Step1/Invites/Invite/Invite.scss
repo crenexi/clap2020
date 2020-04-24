@@ -21,6 +21,7 @@
   transition-duration: 150ms;
   box-shadow: shadow(2);
   cursor: pointer;
+  color: #fff;
 }
 
 .card::before {
@@ -81,8 +82,6 @@
 .card__icon {
   margin-top: -7px;
   font-size: 2rem;
-  transition-duration: 150ms;
-  transition-timing-function: ease-in-out;
 }
 
 .card__label {
@@ -113,6 +112,12 @@
   opacity: .65;
 }
 
+.card:hover,
+.card:focus,
+.card:active {
+  color: #fff;
+}
+
 .card:active {
   transform: translateX(7px);
 }
@@ -122,10 +127,6 @@
     transform: translateY(-4px);
     box-shadow: shadow-hover(4);
 
-    .card__icon {
-      transform: rotate(360deg);
-    }
-
     .card__arrow {
       opacity: 1;
       transform: translateX(6px);
@@ -134,7 +135,7 @@
 
   .card:active {
     opacity: .5;
-    transform: translateY(0) scale(.97);
+    transform: translateY(0);
   }
 }
 

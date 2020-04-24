@@ -5,21 +5,25 @@ const initialState = {
     shareInviteBrief: 'Spread support, not the virus. Together, we can raise a thunderous applause for healthcare and essential workers across the United States. For just three minutes. We highly encourage you to take up the following links, posters, and prints to spread the message to clap in your neighborhood and city when the countdown completes.',
     shareInviteGrid: [
       {
+        to: '/share',
         label: 'Copy URLs',
         icon: 'globe',
         thumbUrl: `${assetsPath}/thumbs/cookies_thumb.jpg`,
       },
       {
+        to: '/share/social',
         label: 'Share on Socials',
         icon: 'heartbeat',
         thumbUrl: `${assetsPath}/thumbs/medic_thumb.jpg`,
       },
       {
+        to: '/share/posters',
         label: 'Download Posters',
         icon: 'image-polaroid',
         thumbUrl: `${assetsPath}/thumbs/tired-nurse_thumb.jpg`,
       },
       {
+        to: '/share/press',
         label: 'Press Inquiries',
         icon: 'folder-download',
         thumbUrl: `${assetsPath}/thumbs/usa-flag_thumb.jpg`,

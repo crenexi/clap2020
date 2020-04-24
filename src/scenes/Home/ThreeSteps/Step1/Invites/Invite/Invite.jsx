@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import shareInviteItemType from '@types/share-invite-item-type';
 import { FaIcon } from '@components/ui';
 import './Invite.scss';
 
-const Invite = ({ label, icon, thumbUrl }) => (
+const Invite = ({ to, label, icon, thumbUrl }) => (
   <div styleName="invite">
-    <div
+    <Link
       styleName="card"
       style={{ backgroundImage: `url('${thumbUrl}')` }}
+      to={to}
     >
       <div styleName="card__main">
         <div styleName="card__content">
@@ -20,7 +22,7 @@ const Invite = ({ label, icon, thumbUrl }) => (
           <FaIcon icon="arrow-right" />
         </div>
       </div>
-    </div>
+    </Link>
   </div>
 );
 
