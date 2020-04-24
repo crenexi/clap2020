@@ -41,6 +41,7 @@ const initialState = {
       hdUrl: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
       bwUrl: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
       thumbUrl: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
+      bwThumbUrl: 'https://api.time.com/wp-content/uploads/2019/03/kitten-report.jpg',
     },
     {
       format: 'square',
@@ -48,6 +49,7 @@ const initialState = {
       hdUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
       bwUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
       thumbUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
+      bwThumbUrl: 'https://homepages.cae.wisc.edu/~ece533/images/cat.png',
     },
     {
       format: 'rectangle',
@@ -55,6 +57,7 @@ const initialState = {
       hdUrl: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
       bwUrl: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
       thumbUrl: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
+      bwThumbUrl: 'https://r.ddmcdn.com/w_606/s_f/o_1/cx_0/cy_15/cw_606/ch_404/APL/uploads/2014/06/01-kitten-cuteness-1.jpg',
     },
   ],
   platforms: [

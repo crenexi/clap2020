@@ -6,6 +6,7 @@ const posterType = shape({
   hdUrl: PropTypes.string.isRequired,
   bwUrl: PropTypes.string.isRequired,
   thumbUrl: PropTypes.string.isRequired,
+  bwThumbUrl: PropTypes.string.isRequired,
 });
 
 export default posterType;
