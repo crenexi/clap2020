@@ -1,9 +1,27 @@
 @import '~style-utils';
 
-.grid {
-  display: grid;
+.frame {
+  width: 100%;
 }
 
-.grid__item {
+.brief {
+  max-width: 40rem;
+  margin: 0 auto spacing(md);
+  padding: spacing(md) spacing(lg);
+  background-color: theme(cloud, base);
+  border: 1px solid theme(cloud, dark1);
+  border-radius: 5px;
+  color: rgba(0, 0, 0, .7);
+  font-size: .85rem;
+}
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@include breakpoint('gt-xs') {
+  .grid {
+    margin: -(spacing(xs));
+  }
 }

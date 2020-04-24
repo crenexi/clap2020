@@ -2,6 +2,7 @@ import { assetsPath } from '@config/app-settings';
 
 const initialState = {
   threeSteps: {
+    shareInviteBrief: 'Spread support, not the virus. Together, we can raise a thunderous applause for healthcare and essential workers across the United States. For just three minutes. We highly encourage you to take up the following links, posters, and prints to spread the message to clap in your neighborhood and city when the countdown completes.',
     shareInviteGrid: [
       {
         label: 'Copy URLs',

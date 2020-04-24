@@ -9,10 +9,17 @@ const Invite = ({ label, icon, thumbUrl }) => (
       styleName="card"
       style={{ backgroundImage: `url('${thumbUrl}')` }}
     >
-      <div styleName="icon">
-        <FaIcon icon={icon} />
+      <div styleName="card__main">
+        <div styleName="card__content">
+          <div styleName="card__icon">
+            <FaIcon icon={icon} />
+          </div>
+          <div styleName="card__label">{label}</div>
+        </div>
+        <div styleName="card__arrow">
+          <FaIcon icon="arrow-right" />
+        </div>
       </div>
-      <h4 styleName="label">{label}</h4>
     </div>
   </div>
 );
