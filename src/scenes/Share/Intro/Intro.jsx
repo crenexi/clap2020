@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import shareSectionType from '@types/share-section-type';
+import { CopyCard } from '@components/ui';
 import Hero from '../Hero';
 import Section from '../Section';
 import './Intro.scss';
@@ -28,7 +29,9 @@ const Intro = (props) => {
           brief={copySite.brief}
           narrow
         >
-          Body
+          <CopyCard value="test">
+            Test
+          </CopyCard>
         </Section>
       </div>
       <div styleName="copy-poster">

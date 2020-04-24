@@ -16,7 +16,6 @@ const IntroContainer = () => {
   }));
 
   const timeUntil = moment(eventDT).fromNow();
-  console.log(timeUntil);
 
   return (
     <Intro
