@@ -1,0 +1,18 @@
+@import '~style-utils';
+
+.frame {
+  background-color: #fff;
+}
+
+.footnote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: spacing(sm);
+  padding-top: spacing(sm);
+  border-top: 1px solid theme(cloud, dark2);
+  color: rgba(theme(ocean, dark1), .6);
+  text-align: center;
+  font-size: .85rem;
+  line-height: 1.35em;
+}

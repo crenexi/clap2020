@@ -1,7 +1,7 @@
-import PropTypes, { shape } from 'prop-types';
+import PropTypes, { shape, oneOf } from 'prop-types';
 
 const posterType = shape({
-  format: PropTypes.string.isRequired,
+  format: oneOf(['story', 'square', 'rectangle']).isRequired,
   url: PropTypes.string.isRequired,
   hdUrl: PropTypes.string.isRequired,
   bwUrl: PropTypes.string.isRequired,

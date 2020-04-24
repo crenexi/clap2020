@@ -1,0 +1,15 @@
+@import '~style-utils';
+
+.frame {
+  background-color: theme(cloud, dark1);
+}
+
+.url {
+  font-size: 1.1rem;
+  line-height: 1em;
+  @include truncate(1, 100%);
+}
+
+@include breakpoint('gt-xs') {
+  font-size: 1.45rem;
+}

@@ -10,6 +10,7 @@ const initialState = {
     copyPoster: {
       title: 'Share Poster',
       brief: `Choose from 'story', 'square', or 'rectangle' formats.`,
+      footnote: 'Remember to share with #Clap2020 #ClapBecauseWeCare hashtags!',
     },
     copyCountdown: {
       title: 'Share Countdown',

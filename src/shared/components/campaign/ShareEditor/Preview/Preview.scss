@@ -78,14 +78,3 @@ $preview-height-md: 7.5rem;
     font-weight: 700;
   }
 }
-
-@include breakpoint('gt-sm') {
-  .tags {
-  }
-
-  .tags__base {
-  }
-
-  .tags__end {
-  }
-}

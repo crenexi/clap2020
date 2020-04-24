@@ -1,0 +1,10 @@
+@import '~style-utils';
+
+.icon {
+  background-color: rgba(theme(ocean, dark1), .35);
+  border: 3px solid rgba(theme(ocean, dark1), .5);
+
+  &--story { @include size(1.5rem, 2.5rem); }
+  &--square { @include size(2rem, 2rem); }
+  &--rectangle { @include size(2.5rem, 1.5rem); }
+}
