@@ -1,0 +1,95 @@
+@import '~style-utils';
+
+// Layout
+
+.section {
+  padding: layout(sm) layout(xs);
+
+  @include breakpoint('gt-xs') {
+    padding: layout(md) layout(sm);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(lg) layout(md);
+  }
+
+  @include breakpoint('gt-md') {
+    padding: layout(xl) layout(lg);
+  }
+}
+
+.section__frame {
+  max-width: 60rem;
+  margin: 0 auto
+}
+
+.section--wide .section__frame {
+  max-width: unset;
+}
+
+.section--narrow .section__frame {
+  max-width: 40rem;
+}
+
+.section--inverted {
+  color: #fff;
+}
+
+// Title and brief
+
+.title,
+.brief {
+  text-align: center;
+}
+
+.title {
+  color: #000;
+  line-height: 1em;
+}
+
+.section--inverted .title {
+  color: #fff;
+}
+
+.brief {
+  color: theme(ocean, dark1);
+  font-family: font-family(primary);
+  font-size: 1.7rem;
+  line-height: 1.1em;
+
+  &:not(:first-child) {
+    margin-top: layout(sm);
+  }
+}
+
+.section--inverted .brief {
+  color: lighten(theme(blueRose, light2), 7%);
+}
+
+// Content
+
+.main {
+  width: 100%;
+  @include margin(null auto);
+  margin-bottom: spacing(xs);
+
+  &:not(:first-child) {
+    margin-top: layout(sm);
+  }
+
+  @include breakpoint('gt-xs') {
+    margin-bottom: spacing(sm);
+
+    &:not(:first-child) {
+      margin-top: layout(md);
+    }
+  }
+
+  @include breakpoint('gt-md') {
+    margin-bottom: spacing(md);
+
+    &:not(:first-child) {
+      margin-top: layout(lg);
+    }
+  }
+}

@@ -8,7 +8,9 @@ const IntroContainer = () => {
   });
 
   return (
-    <Intro heroCoverUrl={heroCoverUrl} />
+    <Intro
+      heroCoverUrl={heroCoverUrl}
+    />
   );
 };
 
