@@ -30,7 +30,6 @@ const Praise = () => {
 
   return (
     <Fragment>
-      {quickNavBar}
       <article styleName="praise">
         <section>
           <ThankYou />

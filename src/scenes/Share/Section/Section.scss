@@ -54,8 +54,9 @@
 .brief {
   color: theme(ocean, dark1);
   font-family: font-family(primary);
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   line-height: 1.1em;
+  font-weight: 700;
 
   &:not(:first-child) {
     margin-top: layout(sm);
@@ -63,7 +64,7 @@
 }
 
 .section--inverted .brief {
-  color: lighten(theme(blueRose, light2), 7%);
+  color: lighten(theme(blueRose, light2), 20%);
 }
 
 // Content

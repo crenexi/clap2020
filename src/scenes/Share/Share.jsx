@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import routerMatchType from '@types/router-match-type';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import { Error404 } from '@components/ui';
+import { Button, QuickNavBar, Error404 } from '@components/ui';
+import { ThankYouHeading } from '@components/campaign';
 import ShareNav from './Nav';
 import ShareIntro from './Intro';
 import ShareNow from './Now';
@@ -21,6 +22,25 @@ const Share = ({ match }) => {
     return <Route exact key={path} path={path} component={component} />;
   });
 
+  const quickNavItems = [
+    <Button
+      to="/?scrollTo=thisIsWar"
+      variant="secondary"
+      startIcon="question-circle"
+    >
+      Wait, why Clap?
+    </Button>,
+    <Button
+      to="/praise"
+      variant="secondary"
+      startIcon="star-of-life"
+    >
+      Groups to Thank
+    </Button>,
+  ];
+
+  const quickNavBar = <QuickNavBar items={quickNavItems} inverted />;
+
   return (
     <Fragment>
       <ShareNav />
@@ -28,6 +48,8 @@ const Share = ({ match }) => {
         {routes}
         <Route render={() => <Error404 backTo={match.path} />} />
       </Switch>
+      {quickNavBar}
+      <ThankYouHeading />
     </Fragment>
   );
 };

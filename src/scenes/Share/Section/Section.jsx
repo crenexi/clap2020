@@ -15,7 +15,7 @@ const Section = (props) => {
   return (
     <div styleName={styleName}>
       <div styleName="section__frame">
-        {title && <h3 styleName="title">{title}</h3>}
+        {title && <h2 styleName="title">{title}</h2>}
         {brief && <div styleName="brief">{brief}</div>}
         <div styleName="main">{children}</div>
       </div>

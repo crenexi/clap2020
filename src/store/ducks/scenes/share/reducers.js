@@ -3,6 +3,18 @@ import { assetsPath } from '@config/app-settings';
 const initialState = {
   intro: {
     heroCoverUrl: `${assetsPath}/covers/cookies.jpg`,
+    copySite: {
+      title: 'Share Site',
+      brief: 'Thanks for sharing Clap2020.com',
+    },
+    copyPoster: {
+      title: 'Share Poster',
+      brief: `Choose from 'story', 'square', or 'rectangle' formats.`,
+    },
+    copyCountdown: {
+      title: 'Share Countdown',
+      brief: 'Remember: clap for three minutes at 0! Alternatively, use the reminder to thank a friend on the front lines or essential work.',
+    },
   },
   social: {
     heroCoverUrl: `${assetsPath}/covers/medic.jpg`,

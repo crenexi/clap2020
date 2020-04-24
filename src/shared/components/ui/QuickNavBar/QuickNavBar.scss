@@ -15,14 +15,19 @@ $border: 1px solid theme(cloud, dark1);
   }
 }
 
+.bar--inverted {
+  @include gradient(theme(cloud, dark2), #fff);
+}
+
 .nav {
   width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-gap: spacing(xs);
 
   @include breakpoint('gt-sm') {
-    grid-template-columns: 10rem 10rem;
     justify-content: center;
   }
 }

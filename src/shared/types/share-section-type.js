@@ -1,7 +1,7 @@
 import PropTypes, { shape } from 'prop-types';
 
 const shareSectionType = shape({
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   title: PropTypes.string,
   brief: PropTypes.string,
   wide: PropTypes.bool,

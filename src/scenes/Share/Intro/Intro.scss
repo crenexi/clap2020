@@ -8,3 +8,47 @@
   position: relative;
   width: 100%;
 }
+
+.footnote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: spacing(sm);
+  padding-top: spacing(sm);
+  border-top: 1px solid theme(cloud, dark2);
+  text-align: center;
+  font-size: .9rem;
+}
+
+// Section: copy site
+
+.copy-site {
+  background-color: #fff;
+}
+
+// Section: copy poster
+
+.copy-poster {
+  background-color: theme(cloud, dark1);
+}
+
+// Section: copy countdown
+
+.copy-countdown {
+  background-color: theme(blueRose, base);
+}
+
+.clap-time {
+  color: rgba(255, 255, 255, .65);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: font-family(primary);
+  font-size: 2.5rem;
+  font-weight: 300;
+
+  strong {
+    display: inline-block;
+    color: #fff;
+    font-weight: 400;
+  }
+}

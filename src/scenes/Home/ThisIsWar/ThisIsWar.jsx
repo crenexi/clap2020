@@ -1,11 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import * as Scroll from 'react-scroll';
 import useBreakpoint from '@hooks/use-breakpoint';
 import { BgCover, BigQuote } from '@components/ui';
 import WarConditions from './WarConditions';
 import './ThisIsWar.scss';
 
 const ThisIsWar = () => {
+  const ScrollElement = Scroll.Element;
+
   const { coverUrl, warConditions, featuredQuote } = useSelector(s => ({
     coverUrl: s.scenes.home.thisIsWar.coverUrl,
     warConditions: s.scenes.home.thisIsWar.warConditions,
@@ -23,7 +26,7 @@ const ThisIsWar = () => {
   );
 
   return (
-    <div styleName="war">
+    <ScrollElement styleName="war" name="thisIsWar">
       <div styleName="cover-frame">
         <BgCover
           url={coverUrl}
@@ -41,7 +44,7 @@ const ThisIsWar = () => {
       </div>
       {!isGtSm && warContentSecondary}
       <WarConditions conditions={warConditions} />
-    </div>
+    </ScrollElement>
   );
 };
 
