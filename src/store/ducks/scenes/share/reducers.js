@@ -5,6 +5,7 @@ const initialState = {
     heroCoverUrl: `${assetsPath}/covers/cookies.jpg`,
     copySite: {
       title: 'Share Site',
+      brief: '#Clap2020 #ClapBecauseWeCare',
     },
     copyPoster: {
       title: 'Share Poster',

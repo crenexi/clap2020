@@ -22,8 +22,12 @@
 }
 
 .copy-site__url {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 1em;
+}
+
+@include breakpoint('gt-xs') {
+  font-size: 1.45rem;
 }
 
 // Section: copy poster

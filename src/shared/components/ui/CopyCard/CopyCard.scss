@@ -43,6 +43,7 @@
 .main__content {
   @include flex-column(center, stretch);
   padding: spacing(sm) 0 spacing(sm) spacing(md);
+  overflow: hidden;
 }
 
 .main__action {
