@@ -22,10 +22,10 @@ const Now = ({ heroCoverUrl }) => {
         title="POST"
         subtitle="hashtags &amp; posters"
       />
-      <TweetReel />
+      <DialogInvite />
       <QuickShare />
       <QuickTweet />
-      <DialogInvite />
+      <TweetReel />
       <EndQuote featuredQuote={featuredQuote} />
     </div>
   );

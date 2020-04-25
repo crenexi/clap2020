@@ -1,6 +1,8 @@
 @import '~style-utils';
 
 .frame {
+  position: relative;
+  z-index: 2;
   background-color: theme(cloud, base);
-  border-bottom: 1px solid theme(cloud, dark2);
+  box-shadow: shadow(12);
 }
