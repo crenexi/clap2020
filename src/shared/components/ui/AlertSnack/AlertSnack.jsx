@@ -9,7 +9,7 @@ const AlertSnack = (props) => {
   const hideDuration = 3500;
 
   const anchorOrigin = {
-    vertical: 'top',
+    vertical: 'bottom',
     horizontal: 'center',
   };
 

@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import posterSelectionType from '@types/poster-selection-type';
+import { CopyCard } from '@components/ui';
 import { PosterSelect } from '@components/campaign';
 import Section from '../../Section';
 import './CopyPoster.scss';
 
 const CopyPoster = (props) => {
-  const { title, brief, footnote, selection, onChange } = props;
+  const {
+    title,
+    brief,
+    footnote,
+    selection,
+    selectionUrl,
+    onChange,
+  } = props;
 
   return (
     <div styleName="frame">
@@ -15,6 +23,11 @@ const CopyPoster = (props) => {
           selection={selection}
           onChange={onChange}
         />
+        <div styleName="main">
+          <CopyCard overline="Poster URL" value={selectionUrl}>
+            <div styleName="url">{selectionUrl}</div>
+          </CopyCard>
+        </div>
         <div styleName="footnote">
           <p>{footnote}</p>
         </div>
@@ -28,6 +41,7 @@ CopyPoster.propTypes = {
   brief: PropTypes.string.isRequired,
   footnote: PropTypes.string.isRequired,
   selection: posterSelectionType.isRequired,
+  selectionUrl: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

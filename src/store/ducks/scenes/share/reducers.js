@@ -9,12 +9,12 @@ const initialState = {
     },
     copyPoster: {
       title: 'Share Poster',
-      brief: `Choose from 'story', 'square', or 'rectangle' formats.`,
+      brief: `Choose from three formats`,
       footnote: 'Remember to share with #Clap2020 #ClapBecauseWeCare hashtags!',
     },
     copyCountdown: {
       title: 'Share Countdown',
-      brief: 'Remember: clap for three minutes at 0! Alternatively, use the reminder to thank a friend on the front lines or essential work.',
+      brief: 'Remember: clap for three minutes at 0! Alternatively, use the reminder to thank a friend on the front lines or in essential work.',
     },
   },
   social: {
