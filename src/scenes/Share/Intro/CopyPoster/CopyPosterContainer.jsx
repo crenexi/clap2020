@@ -10,7 +10,7 @@ const CopyPosterContainer = () => {
   // Poster selection state
   const [selection, setSelection] = useState({
     format: 'square',
-    isBlackWhite: false,
+    quality: 'standard',
   });
 
   // Handle selection change

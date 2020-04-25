@@ -1,23 +1,22 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import PropTypes, { oneOf } from 'prop-types';
+import { oneOf } from 'prop-types';
 import './PosterPreview.scss';
 
-const PosterPreview = ({ format, isBlackWhite }) => {
+const PosterPreview = ({ format, quality }) => {
   const thumbUrl = useSelector((s) => {
     const match = s.campaign.posters.find(p => p.format === format);
-    return isBlackWhite ? match.bwThumbUrl : match.thumbUrl;
-  });
 
-  // Format label
-  const label = isBlackWhite ? `${format} - Black/White` : format;
+    if (!match) return '';
+    return quality === 'black/white' ? match.bwThumbUrl : match.thumbUrl;
+  });
 
   // Background image
   const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
 
   return (
     <div styleName="frame">
-      <div styleName="label">{label}</div>
+      {quality} | {format}
       <div styleName="thumb" style={thumbStyle} />
     </div>
   );
@@ -25,11 +24,7 @@ const PosterPreview = ({ format, isBlackWhite }) => {
 
 PosterPreview.propTypes = {
   format: oneOf(['story', 'square', 'rectangle']).isRequired,
-  isBlackWhite: PropTypes.bool,
-};
-
-PosterPreview.defaultProps = {
-  isBlackWhite: false,
+  quality: oneOf(['standard', 'high-def', 'black/white']).isRequired,
 };
 
 export default PosterPreview;
