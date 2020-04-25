@@ -11,15 +11,12 @@ const PosterPreview = ({ format, quality }) => {
     return quality === 'black/white' ? match.bwThumbUrl : match.thumbUrl;
   });
 
-  // Thumb variants
-  const thumbStyleName = `thumb thumb--${format}`;
-
   // Background image
   const thumbStyle = { backgroundImage: `url('${thumbUrl}')` };
 
   return (
     <div styleName="frame">
-      <div styleName={thumbStyleName} style={thumbStyle} />
+      <div styleName="thumb" style={thumbStyle} />
       <div styleName="label">Preview</div>
     </div>
   );

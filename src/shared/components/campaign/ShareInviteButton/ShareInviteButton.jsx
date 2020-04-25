@@ -5,6 +5,7 @@ import { Button } from '@components/ui';
 import './ShareInviteButton.scss';
 
 const SHARE_MODAL = 'SHARE_MODAL';
+const DEFAULT_LABEL = 'Share tags/poster';
 
 const ShareInviteButton = ({ label, large }) => {
   const { openModal } = useModal();
@@ -25,7 +26,7 @@ const ShareInviteButton = ({ label, large }) => {
       endIcon="expand-alt"
       click={handleOpenModal}
     >
-      {label}
+      {label || DEFAULT_LABEL}
     </Button>
   );
 };
@@ -36,7 +37,7 @@ ShareInviteButton.propTypes = {
 };
 
 ShareInviteButton.defaultProps = {
-  label: 'Share tags/poster',
+  label: DEFAULT_LABEL,
   large: false,
 };
 

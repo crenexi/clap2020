@@ -5,7 +5,13 @@ import ShareInviteButton from '../ShareInviteButton';
 import './ShareInviteCard.scss';
 
 const ShareInviteCard = (props) => {
-  const { tagsPretext, tagsText, posterThumbUrl, large } = props;
+  const {
+    tagsPretext,
+    tagsText,
+    posterThumbUrl,
+    buttonLabel,
+    large,
+  } = props;
 
   const frameStyleName = classNames('frame', {
     'frame--large': large,
@@ -24,7 +30,7 @@ const ShareInviteCard = (props) => {
       <div styleName="main">
         <div styleName="main__preview" style={previewStyle} />
         <div styleName="main__invite">
-          <ShareInviteButton large={large} />
+          <ShareInviteButton label={buttonLabel} large={large} />
         </div>
       </div>
     </div>
@@ -35,6 +41,7 @@ ShareInviteCard.propTypes = {
   tagsPretext: PropTypes.string.isRequired,
   tagsText: PropTypes.string.isRequired,
   posterThumbUrl: PropTypes.string.isRequired,
+  buttonLabel: PropTypes.string.isRequired,
   large: PropTypes.bool.isRequired,
 };
 

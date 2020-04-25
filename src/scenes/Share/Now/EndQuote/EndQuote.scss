@@ -1,0 +1,11 @@
+@import '~style-utils';
+
+.frame {
+  @include gradient(theme(ocean, dark2), theme(ocean, dark1));
+}
+
+.main {
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: layout(xl) layout(2xs);
+}

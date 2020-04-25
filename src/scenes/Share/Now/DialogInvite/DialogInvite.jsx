@@ -13,7 +13,7 @@ const DialogInvite = () => {
     <div styleName="frame">
       <Section title={title} subtitle={subtitle} inverted wide>
         <div styleName="main">
-          <ShareInviteCard large />
+          <ShareInviteCard buttonLabel="Choose Now" large />
         </div>
       </Section>
     </div>

@@ -19,9 +19,24 @@ const initialState = {
   },
   social: {
     heroCoverUrl: `${assetsPath}/covers/medic.jpg`,
+    quickShare: {
+      title: 'Keep It Simple',
+      subtitle: 'We call on you to rally your family, friends, and neighbors to join the clap. All it takes is a share.',
+    },
+    quickTweet: {
+      title: '',
+      subtitle: `Active in the Twitterverse? Tired of polarizing tweets and grim lockdown drama? Shake it up by with a positive call to clap and show of appreciation to healthcare and essential workers.`,
+    },
     dialogInvite: {
-      title: 'Share Now',
+      title: 'Choose Size & State',
       subtitle: 'Support healthcare & essential lines today.',
+    },
+    featuredQuote: {
+      text: 'The teamwork right now is inspiring. ICU nurses are tough; we fight for our patients; we have one another’s backs. Doctors may be the architects of what happens in the hospital. But we are the builders. And so we build, even amid chaos and disintegration. We build, even as a silent enemy attempts to undo everything we’ve done. We build and we build, shift after shift, as fast — and as best — as we can.',
+      author: {
+        name: 'Simone Hannah-Clark',
+        title: 'ICU Nurse in New York',
+      },
     },
   },
   posters: {
@@ -29,6 +44,10 @@ const initialState = {
   },
   press: {
     heroCoverUrl: `${assetsPath}/covers/usa-flag.jpg`,
+    joinTheCause: {
+      title: 'Meet the Moment',
+      subtitle: 'Because they are',
+    },
   },
 };
 

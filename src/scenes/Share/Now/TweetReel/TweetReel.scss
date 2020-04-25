@@ -1,0 +1,6 @@
+@import '~style-utils';
+
+.frame {
+  background-color: theme(cloud, base);
+  border-bottom: 1px solid theme(cloud, dark2);
+}

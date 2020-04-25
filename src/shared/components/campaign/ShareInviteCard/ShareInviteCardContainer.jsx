@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import ShareInviteCard from './ShareInviteCard';
 
-const ShareInviteCardContainer = ({ large }) => {
+const ShareInviteCardContainer = ({ buttonLabel, large }) => {
   const { tagsPretext, tagsText, squarePoster } = useSelector(s => ({
     tagsPretext: s.campaign.tags.pretext,
     tagsText: s.campaign.tags.text,
@@ -15,16 +15,19 @@ const ShareInviteCardContainer = ({ large }) => {
       tagsPretext={tagsPretext}
       tagsText={tagsText}
       posterThumbUrl={squarePoster.thumbUrl}
+      buttonLabel={buttonLabel}
       large={large}
     />
   );
 };
 
 ShareInviteCardContainer.propTypes = {
+  buttonLabel: PropTypes.string,
   large: PropTypes.bool,
 };
 
 ShareInviteCardContainer.defaultProps = {
+  buttonLabel: '',
   large: false,
 };
 
