@@ -5,6 +5,10 @@
   max-width: 25rem;
 }
 
+.frame--large {
+  max-width: 35rem;
+}
+
 // Header
 
 .header {
@@ -61,11 +65,38 @@
   .header__text {
     font-size: 1.6rem;
   }
+
+  .frame--large {
+    .header {
+      width: calc(100% - 2.5rem);
+      padding: 2.35rem spacing(lg) 3.2rem;
+    }
+
+    .header__overline {
+      height: 2rem;
+      padding: 0 15px;
+      font-size: 1rem;
+      line-height: 1em;
+    }
+
+    .header__pretext {
+      font-size: 1.3rem;
+    }
+
+    .header__text {
+      margin-top: spacing(sm);
+      font-size: 2rem;
+    }
+  }
 }
 
 @include breakpoint('gt-sm') {
   .header__text {
     font-size: 1.75rem;
+  }
+
+  .frame--large .header__text {
+    font-size: 2.15rem;
   }
 }
 
@@ -73,11 +104,19 @@
   .header__text {
     font-size: 2rem;
   }
+
+  .frame--large .header__text {
+    font-size: 2.4rem;
+  }
 }
 
 @include breakpoint('gt-lg') {
   .header__text {
     font-size: 2.25rem;
+  }
+
+  .frame--large .header__text {
+    font-size: 2.65rem;
   }
 }
 
@@ -113,11 +152,21 @@
     grid-template-columns: 6rem auto;
     min-height: 6rem;
   }
+
+  .frame--large .main {
+    grid-template-columns: 8rem auto;
+    min-height: 8rem;
+  }
 }
 
 @include breakpoint('gt-sm') {
   .main {
     grid-template-columns: 7rem auto;
     min-height: 7rem;
+  }
+
+  .frame--large .main {
+    grid-template-columns: 10rem auto;
+    min-height: 10rem;
   }
 }

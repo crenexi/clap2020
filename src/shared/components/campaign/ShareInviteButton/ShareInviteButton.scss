@@ -41,4 +41,14 @@
       font-size: 1.3rem;
     }
   }
+
+  @include breakpoint('gt-xs') {
+    .MuiButton-root.c2-share-invite-btn--large {
+      padding: spacing(md) spacing(lg) spacing(md) spacing(xl);
+
+      .c2-share-invite-btn__label {
+        font-size: 1.5rem;
+      }
+    }
+  }
 }

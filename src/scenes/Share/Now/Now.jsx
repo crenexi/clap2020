@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Hero from '../Hero';
+import DialogInvite from './DialogInvite';
 import './Now.scss';
 
 const Now = ({ heroCoverUrl }) => {
@@ -12,6 +13,7 @@ const Now = ({ heroCoverUrl }) => {
         title="POST"
         subtitle="hashtags &amp; posters"
       />
+      <DialogInvite />
     </div>
   );
 };

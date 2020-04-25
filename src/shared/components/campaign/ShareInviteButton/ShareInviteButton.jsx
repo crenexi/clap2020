@@ -6,13 +6,13 @@ import './ShareInviteButton.scss';
 
 const SHARE_MODAL = 'SHARE_MODAL';
 
-const ShareInviteButton = ({ label }) => {
+const ShareInviteButton = ({ label, large }) => {
   const { openModal } = useModal();
 
   const classes = (() => {
     const base = 'c2-share-invite-btn';
     return {
-      root: base,
+      root: large ? `${base} ${base}--large` : base,
       label: `${base}__label`,
     };
   })();
@@ -32,10 +32,12 @@ const ShareInviteButton = ({ label }) => {
 
 ShareInviteButton.propTypes = {
   label: PropTypes.string,
+  large: PropTypes.bool,
 };
 
 ShareInviteButton.defaultProps = {
   label: 'Share tags/poster',
+  large: false,
 };
 
 export default ShareInviteButton;

@@ -19,6 +19,10 @@ const initialState = {
   },
   social: {
     heroCoverUrl: `${assetsPath}/covers/medic.jpg`,
+    dialogInvite: {
+      title: 'Share Now',
+      subtitle: 'Support healthcare & essential lines today.',
+    },
   },
   posters: {
     heroCoverUrl: `${assetsPath}/covers/tired-nurse.jpg`,
