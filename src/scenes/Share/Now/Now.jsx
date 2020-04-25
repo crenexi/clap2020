@@ -24,8 +24,8 @@ const Now = ({ heroCoverUrl }) => {
       />
       <DialogInvite />
       <QuickShare />
-      <QuickTweet />
       <TweetReel />
+      <QuickTweet />
       <EndQuote featuredQuote={featuredQuote} />
     </div>
   );

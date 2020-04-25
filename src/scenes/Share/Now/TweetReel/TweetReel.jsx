@@ -5,7 +5,7 @@ import './TweetReel.scss';
 const TweetReel = () => {
   return (
     <div styleName="frame">
-      <Section wide>
+      <Section inverted wide>
         Tweet Reel
       </Section>
     </div>

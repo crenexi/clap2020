@@ -50,6 +50,7 @@
 
 .section--inverted .title {
   color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .08), -2px -2px 10px rgba(0, 0, 0, .08);
 }
 
 .brief {
@@ -64,7 +65,8 @@
 }
 
 .section--inverted .brief {
-  color: lighten(theme(blueRose, light2), 20%);
+  color: lighten(theme(blueRose, light2), 25%);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .08), -2px -2px 10px rgba(0, 0, 0, .08);
 }
 
 // Content

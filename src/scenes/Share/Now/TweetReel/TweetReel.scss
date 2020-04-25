@@ -3,6 +3,6 @@
 .frame {
   position: relative;
   z-index: 2;
-  background-color: theme(cloud, base);
+  background: color(platformGradient, twitter);
   box-shadow: shadow(12);
 }

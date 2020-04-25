@@ -4,13 +4,13 @@ import Section from '../../Section';
 import './QuickTweet.scss';
 
 const QuickTweet = () => {
-  const { title, subtitle } = useSelector((s) => {
+  const { title, brief } = useSelector((s) => {
     return s.scenes.share.social.quickTweet;
   });
 
   return (
     <div styleName="frame">
-      <Section title={title} subtitle={subtitle} inverted narrow>
+      <Section title={title} brief={brief}>
         Quick Tweet
       </Section>
     </div>

@@ -5,13 +5,13 @@ import Section from '../../Section';
 import './DialogInvite.scss';
 
 const DialogInvite = () => {
-  const { title, subtitle } = useSelector((s) => {
+  const { title, brief } = useSelector((s) => {
     return s.scenes.share.social.dialogInvite;
   });
 
   return (
     <div styleName="frame">
-      <Section title={title} subtitle={subtitle} inverted wide>
+      <Section title={title} brief={brief} inverted wide>
         <div styleName="main">
           <ShareInviteCard buttonLabel="Choose Now" large />
         </div>

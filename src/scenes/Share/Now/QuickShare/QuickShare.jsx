@@ -4,13 +4,13 @@ import Section from '../../Section';
 import './QuickShare.scss';
 
 const QuickShare = () => {
-  const { title, subtitle } = useSelector((s) => {
+  const { title, brief } = useSelector((s) => {
     return s.scenes.share.social.quickShare;
   });
 
   return (
     <div styleName="frame">
-      <Section title={title} subtitle={subtitle}>
+      <Section title={title} brief={brief}>
         Quick Share
       </Section>
     </div>
