@@ -100,37 +100,10 @@
 // Preview
 
 .preview {
-  position: relative;
-  height: 7.5rem;
+  @include flex-column(center, center);
   margin: spacing(md) 0 0 0;
-  padding: spacing(sm) spacing(md) calc(1.6rem + #{spacing(sm)});
-  background-color: theme(cloud, base);
-  box-shadow: shadow(2);
-  border-radius: 5px;
-  overflow: hidden;
-}
 
-.preview__label {
-  @include position(absolute, null null 0 0);
-  @include flex-row(center, center);
-  width: 100%;
-  height: 1.6rem;
-  border-top: 1px solid theme(cloud, dark1);
-  text-align: center;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, .5);
-  font-size: .8rem;
-}
-
-@include breakpoint('gt-sm') {
-  .preview {
-    @include size(10rem, 7.5rem);
-  }
-}
-
-@include breakpoint('gt-sm') {
-  .preview {
-    @include size(12rem, 9rem);
+  @include breakpoint('gt-sm') {
     margin: 0 0 0 spacing(xl);
   }
 }

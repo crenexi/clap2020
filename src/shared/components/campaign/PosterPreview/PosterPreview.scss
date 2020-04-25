@@ -1,9 +1,35 @@
 @import '~style-utils';
 
 .frame {
+  @include size(10rem);
 
+  @include breakpoint('gt-sm') {
+    @include size(12rem);
+  }
+}
+
+.frame {
+  position: relative;
+  padding: spacing(xs) spacing(sm) calc(1.4rem + #{spacing(xs)});
+  background-color: theme(cloud, base);
+  box-shadow: shadow(2);
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .thumb {
+  @include size(100%);
+  @include bg-image(contain);
+}
 
+.label {
+  @include position(absolute, null null 0 0);
+  @include flex-row(center, center);
+  width: 100%;
+  height: 1.4rem;
+  border-top: 1px solid theme(cloud, dark1);
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, .5);
+  font-size: .8rem;
 }

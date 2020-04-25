@@ -61,7 +61,6 @@ const PosterSelect = (props) => {
         </RadioGroup>
       </div>
       <div styleName="preview">
-        <div styleName="preview__label">Preview</div>
         <PosterPreview
           format={selection.format}
           quality={selection.quality}
