@@ -3,3 +3,11 @@
 .frame {
 
 }
+
+.section-card {
+  width: auto;
+
+  &:not(:first-child) {
+    margin-top: spacing(lg);
+  }
+}

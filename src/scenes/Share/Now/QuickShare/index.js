@@ -1,1 +1,1 @@
-export { default } from './QuickShare';
+export { default } from './QuickShareContainer';
