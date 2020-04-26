@@ -3,7 +3,7 @@
 // Layout
 
 .section {
-  padding: layout(sm) layout(xs);
+  padding: layout(md) layout(xs);
 
   @include breakpoint('gt-xs') {
     padding: layout(md) layout(sm);
@@ -11,10 +11,6 @@
 
   @include breakpoint('gt-sm') {
     padding: layout(lg) layout(md);
-  }
-
-  @include breakpoint('gt-md') {
-    padding: layout(xl) layout(lg);
   }
 }
 
@@ -85,14 +81,6 @@
 
     &:not(:first-child) {
       margin-top: layout(md);
-    }
-  }
-
-  @include breakpoint('gt-md') {
-    margin-bottom: spacing(md);
-
-    &:not(:first-child) {
-      margin-top: layout(lg);
     }
   }
 }

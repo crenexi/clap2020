@@ -9,5 +9,6 @@
 }
 
 .main {
+  margin-top: -1rem;
   @include flex-column(center, center);
 }
