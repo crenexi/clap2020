@@ -31,99 +31,12 @@ const ShareCard = (props) => {
 
   const ScrollElement = Scroll.Element;
 
-  const allTagsSwitch = (
-    <Switch
-      checked={!!allTags}
-      onChange={onAllTagsToggle}
-      name="allTags"
-    />
-  );
-
-  const posterSwitch = (
-    <Switch
-      checked={!!includePoster}
-      onChange={onPosterToggle}
-      name="includePoster"
-    />
-  );
-
-  const currentOptions = (
-    <div styleName="options__current">
-      <div styleName="options__current-prop">
-        {posterSelection.format}
-      </div>
-      <div styleName="options__current-prop">
-        {posterSelection.quality}
-      </div>
-    </div>
-  );
-
-  const optionsToggle = (
-    <MuiButtonBase
-      style={{ width: '100%' }}
-      onClick={onToggleOptions}
-    >
-      <div styleName="options__btn">
-        <div styleName="options__btn-label">
-          {showOptions ? 'Hide' : 'Change'}
-        </div>
-        <div styleName="options__btn-icon">
-          <FaIcon icon={showOptions ? 'minus' : 'plus'} />
-        </div>
-      </div>
-    </MuiButtonBase>
-  );
-
-  const optionsMain = (
-    <div styleName="options__main">
-      <PosterSelect
-        selection={posterSelection}
-        onChange={onPosterSelect}
-      />
-      <div styleName="options__close">
-        {!isGtXs && (
-          <Button endIcon="check-circle" click={onToggleOptions}>
-            Looks Good
-          </Button>
-        )}
-      </div>
-    </div>
-  );
-
-  const options = (
-    <div styleName="options">
-      <h5 styleName="options__title">Poster URL</h5>
-      {currentOptions}
-      {optionsToggle}
-      {showOptions && optionsMain}
-    </div>
-  );
 
   return (
     <ScrollElement styleName="frame" name={cardId}>
       <div styleName="card">
         <div styleName="overline">{overline}</div>
-        <div styleName="main">
-          <div styleName="main__tags-switch">
-            <FormControlLabel
-              control={allTagsSwitch}
-              label="All Hashtags"
-            />
-          </div>
-          <div styleName="main__tags">
-            {allTags ? tagsText.all : tagsText.minimal }
-          </div>
-          <div styleName="main__poster-switch">
-            <FormControlLabel
-              control={posterSwitch}
-              label="Include Poster"
-            />
-          </div>
-          {includePoster && options}
-        </div>
-        <div styleName="actions">
-          <ShareButtons share={onShare} copy={onCopy} />
-        </div>
+
       </div>
     </ScrollElement>
   );

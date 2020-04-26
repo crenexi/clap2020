@@ -26,7 +26,6 @@
 
 @include breakpoint('gt-xs') {
   .card {
-    width: auto;
     min-width: 25rem;
   }
 }
@@ -54,15 +53,6 @@
   overflow: auto;
   padding: spacing(xs) spacing(md) spacing(xs);
   font-size: .95rem;
-}
-
-.main__tags {
-  padding: spacing(sm) spacing(sm);
-  background-color: #fff;
-  border-radius: border-radius(sharp);
-  box-shadow: shadow(2);
-  font-size: .9rem;
-  color: #000;
 }
 
 .main__tags-switch {

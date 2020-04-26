@@ -1,0 +1,20 @@
+@import '~style-utils';
+
+.frame {
+  width: 100%;
+}
+
+.switch {
+  width: 100%;
+}
+
+.value {
+  @include flex-column(center, normal);
+  min-height: 3.8rem;
+  padding: spacing(sm);
+  background-color: #fff;
+  border-radius: border-radius(sharp);
+  box-shadow: shadow(2);
+  font-size: .9rem;
+  color: #000;
+}
