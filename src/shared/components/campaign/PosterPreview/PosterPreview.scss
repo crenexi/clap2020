@@ -2,10 +2,6 @@
 
 .frame {
   @include size(10rem);
-
-  @include breakpoint('gt-sm') {
-    @include size(12rem);
-  }
 }
 
 .frame {

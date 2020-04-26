@@ -40,25 +40,28 @@ const PosterSelect = (props) => {
 
   // Qualities markup
   const qualityRadios = qualitiesData.map(quality => (
-    <FormControlLabel
-      key={quality}
-      value={quality}
-      control={<Radio />}
-      label={capitalize(quality)}
-    />
+    <div styleName="quality" key={quality}>
+      <FormControlLabel
+        value={quality}
+        control={<Radio />}
+        label={capitalize(quality)}
+      />
+    </div>
   ));
 
   return (
     <div styleName="frame">
-      <div styleName="formats">{formats}</div>
-      <div styleName="qualities">
-        <RadioGroup
-          name="quality"
-          value={selection.quality}
-          onChange={e => onChange({ quality: e.target.value })}
-        >
-          {qualityRadios}
-        </RadioGroup>
+      <div styleName="editor">
+        <div styleName="formats">{formats}</div>
+        <div styleName="qualities">
+          <RadioGroup
+            name="quality"
+            value={selection.quality}
+            onChange={e => onChange({ quality: e.target.value })}
+          >
+            {qualityRadios}
+          </RadioGroup>
+        </div>
       </div>
       <div styleName="preview">
         <PosterPreview

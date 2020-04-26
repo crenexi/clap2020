@@ -9,16 +9,9 @@ const QuickShare = (props) => {
 
   return (
     <div styleName="frame">
-      <Section title={title} brief={brief} wide>
+      <Section title={title} brief={brief}>
         <div styleName="main">
-          <div styleName="sections">
-            <div styleName="section">
-              <ShareCard overline="All Hashtags" />
-            </div>
-            <div styleName="section">
-              <ShareCard overline="Minimal Hashtags" />
-            </div>
-          </div>
+          <ShareCard overline="Quick Share" />
         </div>
       </Section>
     </div>

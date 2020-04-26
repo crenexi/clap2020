@@ -32,7 +32,7 @@ const ShareCardContainer = ({ overline }) => {
   const { openModal } = useModal();
 
   // Minimal hashtags state
-  const [minimalTags, setMinimalTags] = useState(false);
+  const [allTags, setAllTags] = useState(true);
 
   // Poster selection state
   const [includePoster, setIncludePoster] = useState(true);
@@ -54,7 +54,7 @@ const ShareCardContainer = ({ overline }) => {
     return 'https://www.google.com';
   };
 
-  const handleMinimalTagsToggle = () => setMinimalTags(!minimalTags);
+  const handleAllTagsToggle = () => setAllTags(!allTags);
 
   const handlePosterToggle = () => setIncludePoster(!includePoster);
 
@@ -89,11 +89,11 @@ const ShareCardContainer = ({ overline }) => {
       cardId={cardId}
       overline={overline}
       tagsText={tagsText}
-      minimalTags={minimalTags}
+      allTags={allTags}
       includePoster={includePoster}
       posterSelection={posterSelection}
       showOptions={showOptions}
-      onMinimalTagsToggle={handleMinimalTagsToggle}
+      onAllTagsToggle={handleAllTagsToggle}
       onPosterToggle={handlePosterToggle}
       onToggleOptions={handleToggleOptions}
       onPosterSelect={handlePosterSelect}

@@ -3,9 +3,13 @@
 .frame {
   width: 100%;
 
-  @include breakpoint('gt-sm') {
+  @include breakpoint('gt-xs') {
     @include flex-row();
   }
+}
+
+.editor {
+  flex: 1 1 0%;
 }
 
 // Select layout
@@ -18,7 +22,7 @@
   @include flex-row;
 }
 
-@include breakpoint('gt-sm') {
+@include breakpoint('gt-xs') {
   .formats {
     flex: 1 1 0%;
   }
@@ -70,14 +74,7 @@
   }
 
   .format__label {
-    padding: spacing(sm) 0 0;
-    font-size: .85rem;
-  }
-}
-
-@include breakpoint('gt-sm') {
-  .format__label {
-    padding: 0 0 spacing(md);
+    padding: spacing(xs) 0 0;
   }
 }
 
@@ -85,25 +82,26 @@
 
 .qualities {
   @include flex-column(center, center);
-  margin: spacing(md) 0 0 0;
-  padding: spacing(2xs) spacing(sm);
-  border-top: 1px solid theme(cloud, dark1);
-  border-bottom: 1px solid theme(cloud, dark1);
+  margin-top: spacing(xs);
+  padding: spacing(xs) spacing(sm);
+  background-color: theme(cloud, base);
+  border: 1px solid theme(cloud, dark1);
+  border-radius: border-radius(sharp);
 }
 
-@include breakpoint('gt-sm') {
-  .qualities {
-    margin: 0 0 0 spacing(lg);
-  }
+.quality {
+  margin: -5px 0;
 }
 
 // Preview
 
 .preview {
   @include flex-column(center, center);
-  margin: spacing(md) 0 0 0;
+  margin: spacing(sm) 0 0 0;
 
-  @include breakpoint('gt-sm') {
-    margin: 0 0 0 spacing(xl);
+  @include breakpoint('gt-xs') {
+    margin: 0 0 0 spacing(sm);
+    padding-left: spacing(sm);
+    border-left: 1px solid theme(cloud, dark1);
   }
 }

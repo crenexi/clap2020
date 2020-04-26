@@ -7,27 +7,3 @@
 .main {
   @include flex-column(center, center);
 }
-
-.sections {
-  width: auto;
-}
-
-.section {
-  width: auto;
-
-  &:not(:first-child) {
-    margin-top: spacing(lg);
-  }
-}
-
-@include breakpoint('gt-sm') {
-  .sections {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: layout(sm);
-  }
-
-  .section:not(:first-child) {
-    margin-top: 0;
-  }
-}

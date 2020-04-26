@@ -4,8 +4,9 @@ import * as Scroll from 'react-scroll';
 import MuiButtonBase from '@material-ui/core/ButtonBase';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { Button, FaIcon } from '@components/ui';
 import posterSelectionType from '@types/poster-selection-type';
+import useBreakpoint from '@hooks/use-breakpoint';
+import { Button, FaIcon } from '@components/ui';
 import { PosterSelect, ShareButtons } from '@components/campaign';
 import './ShareCard.scss';
 
@@ -14,11 +15,11 @@ const ShareCard = (props) => {
     cardId,
     overline,
     tagsText,
-    minimalTags,
+    allTags,
     includePoster,
     posterSelection,
     showOptions,
-    onMinimalTagsToggle,
+    onAllTagsToggle,
     onPosterToggle,
     onToggleOptions,
     onPosterSelect,
@@ -26,13 +27,15 @@ const ShareCard = (props) => {
     onCopy,
   } = props;
 
+  const isGtXs = useBreakpoint('gt-xs');
+
   const ScrollElement = Scroll.Element;
 
-  const minimalTagsSwitch = (
+  const allTagsSwitch = (
     <Switch
-      checked={!!minimalTags}
-      onChange={onMinimalTagsToggle}
-      name="minimalTags"
+      checked={!!allTags}
+      onChange={onAllTagsToggle}
+      name="allTags"
     />
   );
 
@@ -78,13 +81,11 @@ const ShareCard = (props) => {
         onChange={onPosterSelect}
       />
       <div styleName="options__close">
-        <Button
-          variant="primary"
-          endIcon="check-circle"
-          click={onToggleOptions}
-        >
-          Looks Good
-        </Button>
+        {!isGtXs && (
+          <Button endIcon="check-circle" click={onToggleOptions}>
+            Looks Good
+          </Button>
+        )}
       </div>
     </div>
   );
@@ -103,16 +104,16 @@ const ShareCard = (props) => {
       <div styleName="card">
         <div styleName="overline">{overline}</div>
         <div styleName="main">
-          <div styleName="main__tags">
-            {minimalTags ? tagsText.minimal : tagsText.all }
-          </div>
-          <div styleName="main__minimal-tags-toggle">
+          <div styleName="main__tags-switch">
             <FormControlLabel
-              control={minimalTagsSwitch}
-              label="Minimal Hashtags"
+              control={allTagsSwitch}
+              label="All Hashtags"
             />
           </div>
-          <div styleName="main__poster-toggle">
+          <div styleName="main__tags">
+            {allTags ? tagsText.all : tagsText.minimal }
+          </div>
+          <div styleName="main__poster-switch">
             <FormControlLabel
               control={posterSwitch}
               label="Include Poster"
@@ -135,11 +136,11 @@ ShareCard.propTypes = {
     minimal: PropTypes.string.isRequired,
     all: PropTypes.string.isRequired,
   }).isRequired,
-  minimalTags: PropTypes.bool.isRequired,
+  allTags: PropTypes.bool.isRequired,
   includePoster: PropTypes.bool.isRequired,
   posterSelection: posterSelectionType.isRequired,
   showOptions: PropTypes.bool.isRequired,
-  onMinimalTagsToggle: PropTypes.func.isRequired,
+  onAllTagsToggle: PropTypes.func.isRequired,
   onPosterToggle: PropTypes.func.isRequired,
   onToggleOptions: PropTypes.func.isRequired,
   onPosterSelect: PropTypes.func.isRequired,
