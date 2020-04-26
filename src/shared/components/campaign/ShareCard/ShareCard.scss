@@ -56,13 +56,17 @@
   font-size: .95rem;
 }
 
-.main__payload {
+.main__tags {
   padding: spacing(sm) spacing(sm);
   background-color: #fff;
   border-radius: border-radius(sharp);
   box-shadow: shadow(2);
   font-size: .9rem;
   color: #000;
+}
+
+.main__minimal-tags-toggle {
+  margin-top: 5px;
 }
 
 .main__poster-toggle {

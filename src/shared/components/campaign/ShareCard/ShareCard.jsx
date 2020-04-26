@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { shape } from 'prop-types';
 import * as Scroll from 'react-scroll';
 import MuiButtonBase from '@material-ui/core/ButtonBase';
 import Switch from '@material-ui/core/Switch';
@@ -13,10 +13,12 @@ const ShareCard = (props) => {
   const {
     cardId,
     overline,
-    payload,
+    tagsText,
+    minimalTags,
     includePoster,
     posterSelection,
     showOptions,
+    onMinimalTagsToggle,
     onPosterToggle,
     onToggleOptions,
     onPosterSelect,
@@ -25,6 +27,14 @@ const ShareCard = (props) => {
   } = props;
 
   const ScrollElement = Scroll.Element;
+
+  const minimalTagsSwitch = (
+    <Switch
+      checked={!!minimalTags}
+      onChange={onMinimalTagsToggle}
+      name="minimalTags"
+    />
+  );
 
   const posterSwitch = (
     <Switch
@@ -93,9 +103,20 @@ const ShareCard = (props) => {
       <div styleName="card">
         <div styleName="overline">{overline}</div>
         <div styleName="main">
-          <div styleName="main__payload">{payload}</div>
+          <div styleName="main__tags">
+            {minimalTags ? tagsText.minimal : tagsText.all }
+          </div>
+          <div styleName="main__minimal-tags-toggle">
+            <FormControlLabel
+              control={minimalTagsSwitch}
+              label="Minimal Hashtags"
+            />
+          </div>
           <div styleName="main__poster-toggle">
-            <FormControlLabel control={posterSwitch} label="Include Poster" />
+            <FormControlLabel
+              control={posterSwitch}
+              label="Include Poster"
+            />
           </div>
           {includePoster && options}
         </div>
@@ -110,10 +131,15 @@ const ShareCard = (props) => {
 ShareCard.propTypes = {
   cardId: PropTypes.string.isRequired,
   overline: PropTypes.string.isRequired,
-  payload: PropTypes.string.isRequired,
+  tagsText: shape({
+    minimal: PropTypes.string.isRequired,
+    all: PropTypes.string.isRequired,
+  }).isRequired,
+  minimalTags: PropTypes.bool.isRequired,
   includePoster: PropTypes.bool.isRequired,
   posterSelection: posterSelectionType.isRequired,
   showOptions: PropTypes.bool.isRequired,
+  onMinimalTagsToggle: PropTypes.func.isRequired,
   onPosterToggle: PropTypes.func.isRequired,
   onToggleOptions: PropTypes.func.isRequired,
   onPosterSelect: PropTypes.func.isRequired,
