@@ -1,4 +1,5 @@
 @import '~style-utils';
+@import '~@styles/keyframes/arrive-fade';
 
 .frame,
 .card {
@@ -32,11 +33,15 @@
 
 // Content
 
+.overline,
+.options__btn {
+  color: rgba(theme(ocean, dark1), .65);
+}
+
 .overline {
   padding: spacing(xs) spacing(md);
   background-color: theme(cloud, base);
   border-bottom: 1px solid theme(cloud, dark1);
-  color: rgba(theme(ocean, dark1), .5);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -46,61 +51,104 @@
 
 .main {
   @include flex-column(center, stretch);
-  padding: spacing(sm) spacing(md);
   overflow: auto;
-  color: rgba(0, 0, 0, .8);
+  padding: spacing(sm) spacing(md) spacing(xs);
   font-size: .95rem;
+}
+
+.main__payload {
+  padding: spacing(sm) spacing(sm);
+  background-color: #fff;
+  border-radius: border-radius(sharp);
+  box-shadow: shadow(2);
+  font-size: .9rem;
+  color: #000;
+}
+
+.main__poster-toggle {
+  margin-top: 5px;
 }
 
 // Poster selection
 
 .options,
-.options__toggle,
 .options__btn {
   width: 100%;
 }
 
 .options {
-  max-width: calc(100% - 2rem);
-  margin: 0 auto;
-  background-color: theme(cloud, base);
+  margin-top: spacing(2xs);
+  background-color: #fff;
   border: solid 1px theme(cloud, dark1);
   border-radius: border-radius(sharp);
   overflow: hidden;
+  animation: arrive-fade 350ms linear both;
 }
 
-.options__toggle {
+.options__title {
+  margin: spacing(xs) spacing(xs) 0;
+  text-align: center;
+}
 
+.options__current {
+  @include flex-row;
+  padding: spacing(xs) spacing(sm);
+}
+
+.options__current-prop {
+  flex: 1 1 0%;
+  padding: 4px 8px;
+  border-left: 3px solid theme(blueRose, dark1);
+  background-color: #fff;
+  box-shadow: shadow(2);
+  color: theme(blueRose, dark2);
+  text-align: center;
+  text-transform: capitalize;
+  font-size: .85rem;
+  line-height: 1.25;
+  font-weight: 700;
+
+  &:not(:first-child) {
+    margin-left: spacing(xs);
+  }
 }
 
 .options__btn {
   display: grid;
   grid-template-columns: auto min-content;
   align-items: center;
-  padding: spacing(sm) spacing(lg);
+  padding: .3rem spacing(sm);
   background-color: theme(cloud, base);
-  border-bottom: 1px solid theme(cloud, dark1);
-  color: rgba(0, 0, 0, .5);
+  border-top: 1px solid theme(cloud, dark1);
 }
 
 .options__btn-label {
+  margin-top: 2px;
+  @include truncate(1, 100%);
   text-align: left;
+  font-size: .9rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: .85rem;
 }
 
 .options__btn-icon {
+  margin: 2px spacing(2xs) 0;
   font-size: 1.15rem;
+  line-height: 1.25;
 }
 
 .options__main {
-  padding: spacing(sm) spacing(sm) spacing(md);
+  padding: spacing(sm);
+  border-top: 1px solid theme(cloud, dark1);
+  animation: arrive-fade 350ms linear both;
+}
+
+.options__close {
+  @include flex-column(center, center);
+  margin-top: spacing(sm);
 }
 
 // Actions
 
 .actions {
-  margin-top: spacing(xs);
   padding: 0 spacing(2xs) spacing(2xs);
 }

@@ -3,14 +3,14 @@
 // Layout
 
 .section {
-  padding: layout(md) layout(xs);
+  padding: layout(md) layout(2xs);
 
   @include breakpoint('gt-xs') {
-    padding: layout(md) layout(sm);
+    padding: layout(md) layout(xs);
   }
 
   @include breakpoint('gt-sm') {
-    padding: layout(lg) layout(md);
+    padding: layout(lg) layout(sm);
   }
 }
 
