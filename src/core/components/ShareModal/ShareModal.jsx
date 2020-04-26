@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logger from '@services/logger';
 import shareService from '@services/share-service';
 import copyService from '@services/copy-service';
@@ -15,6 +15,12 @@ const ShareModal = () => {
   // State
   const open = activeModal === SHARE_MODAL;
   const [payload, setPayload] = useState('');
+
+  // Watch for back presses to escape modal
+  useEffect(() => {
+    document.addEventListener('backbutton', closeModal, false);
+    return () => document.removeEventListener('backbutton', closeModal);
+  }, []);
 
   // Handle payload change
   const handleChangePayload = payload => setPayload(payload);

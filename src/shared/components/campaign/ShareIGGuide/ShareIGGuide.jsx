@@ -7,63 +7,82 @@ import { Button, IconButton } from '@components/ui';
 import './ShareIGGuide.scss';
 
 const ShareIGGuide = (props) => {
-  const { open, title, brief, onShare, onDownload, onClose } = props;
+  const { open, onShare, onDownload, onClose } = props;
+
+  const option1Instructions = 'Share to your story using your device share menu';
+  const option2Instructions = 'Download this story-size poster to share manually';
+
+  const dialogClasses = {
+    paper: 'c2-ig-modal__paper',
+  };
 
   const header = (
     <div styleName="header">
-      <h4 styleName="header__title">{title}</h4>
+      <div styleName="header__title">Instagram &amp; Snapchat</div>
       <div styleName="header__close">
-        <IconButton icon="times" click={onClose} />
+        <IconButton
+          variant="inverted"
+          size="small"
+          icon="times"
+          click={onClose}
+        />
       </div>
     </div>
   );
 
   const option1 = (
     <div styleName="option">
-      <h6>Option 2: iOS/Android Share</h6>
-      <div styleName="preview__preview">
-        Preview...
+      <div styleName="option__title">iOS/Android</div>
+      <div styleName="option__instruct">
+        <p>{option1Instructions}</p>
       </div>
-      <Button variant="primary" endIcon="share-alt" click={onShare}>
-        Share Now
-      </Button>
+      <div styleName="option__action">
+        <Button
+          variant="white"
+          size="large"
+          endIcon="share-alt"
+          click={onShare}
+        >
+          Share Now
+        </Button>
+      </div>
     </div>
   );
 
   const option2 = (
     <div styleName="option">
-      <h6>Option 2: Download &amp; Share</h6>
-      <div styleName="option__preview">
-        Preview...
+      <div styleName="option__title">Download to Share</div>
+      <div styleName="option__instruct">
+        <p>{option2Instructions}</p>
       </div>
-      <Button variant="primary" endIcon="download" click={onDownload}>
-        Download Poster
-      </Button>
-    </div>
-  );
-
-  const content = (
-    <div styleName="guide">
-      <div styleName="brief">{brief}</div>
-      <div styleName="options">
-        {option1}
-        {option2}
+      <div styleName="option__action">
+        <Button
+          variant="white"
+          size="large"
+          endIcon="download"
+          click={onDownload}
+        >
+          Download Poster
+        </Button>
       </div>
     </div>
   );
 
   return (
-    <Dialog open={open} onClose={onClose}>
+    <Dialog classes={dialogClasses} open={open} onClose={onClose}>
       <DialogTitle>{header}</DialogTitle>
-      <DialogContent>{content}</DialogContent>
+      <DialogContent>
+        <div styleName="options">
+          {option1}
+          {option2}
+        </div>
+      </DialogContent>
     </Dialog>
   );
 };
 
 ShareIGGuide.propTypes = {
   open: PropTypes.bool.isRequired,
-  title: PropTypes.bool.isRequired,
-  brief: PropTypes.bool.isRequired,
   onShare: PropTypes.func.isRequired,
   onDownload: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,

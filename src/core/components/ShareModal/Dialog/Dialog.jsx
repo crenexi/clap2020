@@ -17,8 +17,13 @@ const ShareDialog = (props) => {
   const { open, close, changePayload, sharePayload, copyPayload } = props;
   const isGtSm = useBreakpoint('gt-sm');
 
+  const dialogClasses = {
+    paper: 'c2-share-modal__paper',
+  };
+
   return (
     <Dialog
+      classes={dialogClasses}
       fullScreen={!isGtSm}
       fullWidth
       open={open}

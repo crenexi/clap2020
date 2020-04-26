@@ -81,10 +81,6 @@ const initialState = {
       icon: 'instagram',
     },
   ],
-  igGuide: {
-    title: 'Share to Instagram/Snapchat/Other',
-    brief: 'Brief...',
-  },
   urls: {
     fbGroup: 'https://www.facebook.com/groups/clap2020/',
     fbPage: 'https://www.facebook.com/clap2020nation/',

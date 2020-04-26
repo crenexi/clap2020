@@ -1,5 +1,11 @@
 @import '~style-utils';
 
+:global {
+  .MuiPaper-root.c2-share-modal__paper {
+    border-radius: border-radius(normal);
+  }
+}
+
 // Header
 
 .header {

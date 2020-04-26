@@ -7,14 +7,16 @@ import './QuickShare.scss';
 const QuickShare = (props) => {
   const { title, brief } = props;
 
+  const TEST = 'TEST PAYLOAD';
+
   const cardAll = (
-    <ShareCard overline="All Hashtags">
+    <ShareCard overline="All Hashtags" payload={TEST}>
       Body...
     </ShareCard>
   );
 
   const cardMinimal = (
-    <ShareCard overline="Minimal Hashtags">
+    <ShareCard overline="Minimal Hashtags" payload={TEST}>
       Body...
     </ShareCard>
   );
