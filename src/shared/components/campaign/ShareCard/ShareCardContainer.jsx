@@ -9,7 +9,10 @@ const ShareCardContainer = ({ overline, payload }) => {
   const { openModal } = useModal();
 
   // Poster selection state
-  const [posterSelection, setPosterSelection] = useState('square');
+  const [posterSelection, setPosterSelection] = useState({
+    format: 'square',
+    quality: 'standard',
+  });
 
   // Determine poster URL
   const posterUrl = () => {

@@ -18,6 +18,12 @@ const ShareCard = (props) => {
       <div styleName="card">
         <div styleName="overline">{overline}</div>
         <div styleName="main">{payload}</div>
+        <div styleName="poster-select">
+          <PosterSelect
+            selection={posterSelection}
+            onChange={onPosterSelect}
+          />
+        </div>
         <div styleName="actions">
           <ShareButtons share={onShare} copy={onCopy} />
         </div>
