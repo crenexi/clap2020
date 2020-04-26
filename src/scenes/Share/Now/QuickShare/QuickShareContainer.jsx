@@ -7,20 +7,10 @@ const QuickShareContainer = () => {
     return s.scenes.share.social.quickShare;
   });
 
-  const handleShare = () => {
-    console.log('Sharing!');
-  };
-
-  const handleCopy = () => {
-    console.log('Copying!');
-  };
-
   return (
     <QuickShare
       title={title}
       brief={brief}
-      onShare={handleShare}
-      onCopy={handleCopy}
     />
   );
 };

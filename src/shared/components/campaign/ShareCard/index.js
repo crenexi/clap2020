@@ -1,1 +1,1 @@
-export { default } from './ShareCard';
+export { default } from './ShareCardContainer';

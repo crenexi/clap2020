@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ShareCard, ShareButtons } from '@components/campaign';
+import { ShareCard } from '@components/campaign';
 import Section from '../../Section';
 import './QuickShare.scss';
 
 const QuickShare = (props) => {
-  const { title, brief, onShare, onCopy } = props;
+  const { title, brief } = props;
 
   const cardAll = (
     <ShareCard overline="All Hashtags">
-      <ShareButtons share={onShare} copy={onCopy} />
+      Body...
     </ShareCard>
   );
 
   const cardMinimal = (
     <ShareCard overline="Minimal Hashtags">
-      <ShareButtons share={onShare} copy={onCopy} />
+      Body...
     </ShareCard>
   );
 
@@ -32,8 +32,6 @@ const QuickShare = (props) => {
 QuickShare.propTypes = {
   title: PropTypes.string.isRequired,
   brief: PropTypes.string.isRequired,
-  onShare: PropTypes.func.isRequired,
-  onCopy: PropTypes.func.isRequired,
 };
 
 export default QuickShare;
