@@ -10,8 +10,9 @@
 
 .frame {
   position: relative;
+  margin-bottom: 2px;
   padding: spacing(xs) spacing(sm) calc(1.4rem + #{spacing(xs)});
-  background-color: theme(cloud, base);
+  background-color: #fff;
   box-shadow: shadow(2);
   border-radius: 5px;
   overflow: hidden;

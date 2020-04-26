@@ -14,19 +14,25 @@ const ShareCardContainer = ({ overline, payload }) => {
     quality: 'standard',
   });
 
+  // Poster options visibility
+  const [showOptions, setShowOptions] = useState(false);
+
   // Determine poster URL
   const posterUrl = () => {
     return 'https://www.google.com';
   };
 
-  const handleShare = ({ to }) => {
-    if (to === 'instagram') {
-      const modalData = {
-        payload,
-        url: posterUrl(),
-      };
+  const handleToggleOptions = () => setShowOptions(!showOptions);
 
-      openModal(IG_GUIDE_MODAL, modalData);
+  const handlePosterSelect = (updates) => {
+    setPosterSelection({ ...posterSelection, ...updates });
+  };
+
+  const handleShare = ({ to }) => {
+    const url = posterUrl();
+
+    if (to === 'instagram') {
+      openModal(IG_GUIDE_MODAL, { payload, url });
       // return;
     }
   };
@@ -39,7 +45,9 @@ const ShareCardContainer = ({ overline, payload }) => {
       overline={overline}
       payload={payload}
       posterSelection={posterSelection}
-      onPosterSelect={setPosterSelection}
+      showOptions={showOptions}
+      onToggleOptions={handleToggleOptions}
+      onPosterSelect={handlePosterSelect}
       onShare={handleShare}
       onCopy={handleCopy}
     />

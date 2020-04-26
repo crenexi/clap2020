@@ -54,11 +54,53 @@
 
 // Poster selection
 
-.poster-select {
+.options,
+.options__toggle,
+.options__btn {
+  width: 100%;
+}
+
+.options {
+  max-width: calc(100% - 2rem);
+  margin: 0 auto;
+  background-color: theme(cloud, base);
+  border: solid 1px theme(cloud, dark1);
+  border-radius: border-radius(sharp);
+  overflow: hidden;
+}
+
+.options__toggle {
+
+}
+
+.options__btn {
+  display: grid;
+  grid-template-columns: auto min-content;
+  align-items: center;
+  padding: spacing(sm) spacing(lg);
+  background-color: theme(cloud, base);
+  border-bottom: 1px solid theme(cloud, dark1);
+  color: rgba(0, 0, 0, .5);
+}
+
+.options__btn-label {
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .85rem;
+}
+
+.options__btn-icon {
+  font-size: 1.15rem;
+}
+
+.options__main {
+  padding: spacing(sm) spacing(sm) spacing(md);
 }
 
 // Actions
 
 .actions {
+  margin-top: spacing(xs);
   padding: 0 spacing(2xs) spacing(2xs);
 }
