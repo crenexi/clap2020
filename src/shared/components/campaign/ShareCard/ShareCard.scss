@@ -1,14 +1,21 @@
 @import '~style-utils';
 
-.frame {
+.frame,
+.card {
   @include size(100%);
+}
+
+.frame {
   @include flex-column(center, center);
+  max-width: 35rem;
+  margin: 0 auto;
 }
 
 .card {
   position: relative;
   overflow: hidden;
-  display: inline-block;
+  display: grid;
+  grid-template-rows: min-content auto min-content;
   width: 100%;
   background-color: #fff;
   border-radius: border-radius(round);
@@ -41,6 +48,8 @@
   @include flex-column(center, stretch);
   padding: spacing(sm) spacing(md);
   overflow: auto;
+  color: rgba(0, 0, 0, .8);
+  font-size: .95rem;
 }
 
 // Actions

@@ -1,31 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { shape } from 'prop-types';
 import { ShareCard } from '@components/campaign';
 import Section from '../../Section';
 import './QuickShare.scss';
 
 const QuickShare = (props) => {
-  const { title, brief } = props;
-
-  const TEST = 'TEST PAYLOAD';
-
-  const cardAll = (
-    <ShareCard overline="All Hashtags" payload={TEST}>
-      Body...
-    </ShareCard>
-  );
-
-  const cardMinimal = (
-    <ShareCard overline="Minimal Hashtags" payload={TEST}>
-      Body...
-    </ShareCard>
-  );
+  const { title, brief, tagsText } = props;
 
   return (
     <div styleName="frame">
-      <Section title={title} brief={brief}>
-        <div styleName="section-card">{cardAll}</div>
-        <div styleName="section-card">{cardMinimal}</div>
+      <Section title={title} brief={brief} wide>
+        <div styleName="main">
+          <div styleName="sections">
+            <div styleName="section">
+              <ShareCard overline="All Hashtags" payload={tagsText.all} />
+            </div>
+            <div styleName="section">
+              <ShareCard overline="Minimal Hashtags" payload={tagsText.minimal} />
+            </div>
+          </div>
+        </div>
       </Section>
     </div>
   );
@@ -34,6 +28,10 @@ const QuickShare = (props) => {
 QuickShare.propTypes = {
   title: PropTypes.string.isRequired,
   brief: PropTypes.string.isRequired,
+  tagsText: shape({
+    minimal: PropTypes.string.isRequired,
+    all: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default QuickShare;

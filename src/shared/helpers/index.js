@@ -6,4 +6,5 @@ export {
   combineClasses,
   userAgent,
   toCamelCase,
+  stringifyHashtags,
 } from './helpers';

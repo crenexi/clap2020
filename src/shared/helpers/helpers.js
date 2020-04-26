@@ -26,6 +26,11 @@ export const combineClasses = (set1, set2) => {
   }), set1);
 };
 
+/* Creates hashtags text out of hashtags array */
+export const stringifyHashtags = (arr) => {
+  return arr.reduce((a, v, i) => (i === 0 ? `#${v}` : `${a} #${v}`), '');
+};
+
 /* Determine if user is on a native (mobile) device */
 export const userAgent = (() => {
   const getUA = () => navigator.userAgent.replace(/\s/g, '').toLowerCase();
