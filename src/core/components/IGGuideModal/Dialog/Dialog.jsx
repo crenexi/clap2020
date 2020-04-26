@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
+import MuiDialog from '@material-ui/core/Dialog';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
 import { Button, IconButton } from '@components/ui';
-import './ShareIGGuide.scss';
+import './Dialog.scss';
 
-const ShareIGGuide = (props) => {
+const Dialog = (props) => {
   const { open, onShare, onDownload, onClose } = props;
 
   const option1Instructions = 'Share to your story using your device share menu';
@@ -69,23 +69,23 @@ const ShareIGGuide = (props) => {
   );
 
   return (
-    <Dialog classes={dialogClasses} open={open} onClose={onClose}>
-      <DialogTitle>{header}</DialogTitle>
-      <DialogContent>
+    <MuiDialog classes={dialogClasses} open={open} onClose={onClose}>
+      <MuiDialogTitle>{header}</MuiDialogTitle>
+      <MuiDialogContent>
         <div styleName="options">
           {option1}
           {option2}
         </div>
-      </DialogContent>
-    </Dialog>
+      </MuiDialogContent>
+    </MuiDialog>
   );
 };
 
-ShareIGGuide.propTypes = {
+Dialog.propTypes = {
   open: PropTypes.bool.isRequired,
   onShare: PropTypes.func.isRequired,
   onDownload: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
-export default ShareIGGuide;
+export default Dialog;

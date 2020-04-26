@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import useModal from '@hooks/use-modal';
-import ShareIGGuide from './ShareIGGuide';
+import Dialog from './Dialog';
 
 const IG_GUIDE_MODAL = 'IG_GUIDE_MODAL';
 
-const ShareIGGuideContainer = ({ payload }) => {
+const IGGuideModal = () => {
   // Modal state
-  const { activeModal, closeModal } = useModal();
+  const { activeModal, closeModal, payload } = useModal();
   const open = activeModal === IG_GUIDE_MODAL;
 
   // Watch for back presses to escape modal
@@ -25,7 +24,7 @@ const ShareIGGuideContainer = ({ payload }) => {
   };
 
   return (
-    <ShareIGGuide
+    <Dialog
       open={open}
       onShare={handleShare}
       onDownload={handleDownload}
@@ -34,8 +33,4 @@ const ShareIGGuideContainer = ({ payload }) => {
   );
 };
 
-ShareIGGuideContainer.propTypes = {
-  payload: PropTypes.string.isRequired,
-};
-
-export default ShareIGGuideContainer;
+export default IGGuideModal;

@@ -6,15 +6,21 @@ const ModalContext = React.createContext(null);
 export const ModalProvider = ({ children }) => {
   // Modal state
   const [activeModal, setActiveModal] = useState('');
+  const [payload, setPayload] = useState(null);
 
   // Open modal
-  const openModal = (modalId) => {
+  const openModal = (modalId, modalPayload) => {
+    if (typeof modalPayload === 'object') {
+      setPayload(modalPayload);
+    }
+
     setActiveModal(modalId);
   };
 
   // Close modal
   const closeModal = () => {
     setActiveModal('');
+    setPayload(null);
   };
 
   // Modal API
@@ -22,6 +28,7 @@ export const ModalProvider = ({ children }) => {
     activeModal,
     openModal,
     closeModal,
+    payload,
   };
 
   return (

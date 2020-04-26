@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import useModal from '@hooks/use-modal';
 import ShareCard from './ShareCard';
@@ -8,9 +8,22 @@ const IG_GUIDE_MODAL = 'IG_GUIDE_MODAL';
 const ShareCardContainer = ({ overline, payload }) => {
   const { openModal } = useModal();
 
+  // Poster selection state
+  const [posterSelection, setPosterSelection] = useState('square');
+
+  // Determine poster URL
+  const posterUrl = () => {
+    return 'https://www.google.com';
+  };
+
   const handleShare = ({ to }) => {
     if (to === 'instagram') {
-      openModal(IG_GUIDE_MODAL);
+      const modalData = {
+        payload,
+        url: posterUrl(),
+      };
+
+      openModal(IG_GUIDE_MODAL, modalData);
       // return;
     }
   };
@@ -22,6 +35,8 @@ const ShareCardContainer = ({ overline, payload }) => {
     <ShareCard
       overline={overline}
       payload={payload}
+      posterSelection={posterSelection}
+      onPosterSelect={setPosterSelection}
       onShare={handleShare}
       onCopy={handleCopy}
     />

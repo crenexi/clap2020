@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { userAgent } from '@helpers';
-import { ShareButtons, ShareIGGuide } from '@components/campaign';
+import { PosterSelect, ShareButtons } from '@components/campaign';
 import './ShareCard.scss';
 
 const ShareCard = (props) => {
-  const { overline, payload, onShare, onCopy } = props;
-
-  // const isMobile = userAgent.isMobile();
+  const {
+    overline,
+    payload,
+    posterSelection,
+    onPosterSelect,
+    onShare,
+    onCopy,
+  } = props;
 
   return (
     <div styleName="frame">
@@ -17,8 +21,6 @@ const ShareCard = (props) => {
         <div styleName="actions">
           <ShareButtons share={onShare} copy={onCopy} />
         </div>
-        {/* {isMobile && showIGGuide && <ShareIGGuide onClose={onReset} />}; */}
-        <ShareIGGuide payload={payload} />
       </div>
     </div>
   );
@@ -27,6 +29,8 @@ const ShareCard = (props) => {
 ShareCard.propTypes = {
   overline: PropTypes.string.isRequired,
   payload: PropTypes.string.isRequired,
+  posterSelection: PropTypes.string.isRequired,
+  onPosterSelect: PropTypes.func.isRequired,
   onShare: PropTypes.func.isRequired,
   onCopy: PropTypes.func.isRequired,
 };
