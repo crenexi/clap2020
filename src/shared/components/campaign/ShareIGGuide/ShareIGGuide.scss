@@ -1,0 +1,53 @@
+@import '~style-utils';
+
+.guide {
+  @include size(100%);
+  @include flex-column(center, center);
+  background: color(platform, instagram);
+  background: color(platformGradient, instagram);
+  color: #fff;
+}
+
+// Header
+
+.header {
+
+}
+
+.header__title {
+
+}
+
+.header__close {
+
+}
+
+// Brief
+
+.brief {
+
+}
+
+// Columns layout
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+@include breakpoint('gt-xs') {
+  .options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Columns content
+
+.option {
+  padding: spacing(md);
+}
+
+.option__preview {
+
+}

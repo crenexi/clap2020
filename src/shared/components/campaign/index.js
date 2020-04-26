@@ -8,6 +8,7 @@ export { default as PosterIcon } from './PosterIcon';
 export { default as ShareButtons } from './ShareButtons';
 export { default as ShareCard } from './ShareCard';
 export { default as ShareEditor } from './ShareEditor';
+export { default as ShareIGGuide } from './ShareIGGuide';
 export { default as ShareInviteButton } from './ShareInviteButton';
 export { default as ShareInviteCard } from './ShareInviteCard';
 export { default as ThankYouHeading } from './ThankYouHeading';

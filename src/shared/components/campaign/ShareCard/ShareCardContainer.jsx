@@ -1,30 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useModal from '@hooks/use-modal';
 import ShareCard from './ShareCard';
 
-const ShareCardContainer = ({ children, overline }) => {
-  const handleShare = () => {
-    console.log('Sharing!');
+const IG_GUIDE_MODAL = 'IG_GUIDE_MODAL';
+
+const ShareCardContainer = ({ overline, payload }) => {
+  const { openModal } = useModal();
+
+  const handleShare = ({ to }) => {
+    if (to === 'instagram') {
+      openModal(IG_GUIDE_MODAL);
+      // return;
+    }
   };
 
   const handleCopy = () => {
-    console.log('Copying!');
   };
 
   return (
     <ShareCard
       overline={overline}
+      payload={payload}
       onShare={handleShare}
       onCopy={handleCopy}
-    >
-      {children}
-    </ShareCard>
+    />
   );
 };
 
 ShareCardContainer.propTypes = {
-  children: PropTypes.node.isRequired,
   overline: PropTypes.string.isRequired,
+  payload: PropTypes.node.isRequired,
 };
 
 export default ShareCardContainer;

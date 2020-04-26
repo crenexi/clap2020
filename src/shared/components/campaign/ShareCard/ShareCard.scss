@@ -6,12 +6,13 @@
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   display: inline-block;
   width: 100%;
   background-color: #fff;
   border-radius: border-radius(round);
   box-shadow: shadow(12);
-  overflow: hidden;
   color: color(content, base);
 }
 
