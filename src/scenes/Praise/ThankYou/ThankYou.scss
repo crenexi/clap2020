@@ -1,0 +1,60 @@
+@import '~style-utils';
+
+.thanks {
+  width: 100%;
+  background-color: theme(cloud, base);
+}
+
+.main {
+  margin-top: -1px;
+}
+
+// Front Lines groups section
+
+.front-line-grid {
+  @include breakpoint('gt-xs') {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 30rem));
+    grid-gap: layout(sm);
+    place-content: start center;
+  }
+}
+
+// Response and essential groups sections
+
+.response-grid,
+.essential-grid {
+  @include flex-column(start, center);
+}
+
+.response-grid__card,
+.essential-grid__card {
+  width: 100%;
+  background-color: #fff;
+  border-radius: border-radius(round);
+  box-shadow: shadow(24);
+  overflow: hidden;
+
+  @include breakpoint('gt-xs') {
+    max-width: 30rem;
+  }
+}
+
+.response-grid__card {
+  @include breakpoint('gt-md') {
+    max-width: 94rem;
+  }
+}
+
+.essential-grid__card {
+  @include breakpoint('gt-sm') {
+    max-width: 60rem;
+  }
+}
+
+@include breakpoint('gt-md') {
+  .response-grid__card {
+    display: flex;
+    flex-direction: row;
+  }
+}

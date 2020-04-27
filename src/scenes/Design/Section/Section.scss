@@ -1,0 +1,26 @@
+@import '~style-utils';
+
+.section {
+  width: 100%;
+  max-width: 60rem;
+  padding: 2rem 1rem 5rem;
+
+  &:first-of-type {
+    padding-top: 1rem;
+  }
+}
+
+.title {
+  padding: 0 1rem 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: font-family(primary);
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  color: theme(ocean, base);
+}
+
+.main {
+  padding: 0 15px;
+  border-left: 1px solid rgba(0, 0, 0, .1);
+}

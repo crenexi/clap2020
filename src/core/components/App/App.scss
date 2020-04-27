@@ -1,0 +1,40 @@
+@import '~style-utils';
+@import '@core/styles';
+
+@keyframes fade-in-app {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.app {
+  min-height: -webkit-fill-available;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.app--loading {
+  max-height: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.app:not(.app--loading) {
+  animation: fade-in-app 350ms linear both 250ms;
+}
+
+// Loading view
+
+.app-loading {
+  @include position(fixed, 0 null null 0);
+  width: 100%;
+  height: -webkit-fill-available;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.app-loading__center {
+  @include position(absolute, 40% null null 50%);
+  padding: spacing(md);
+  transform: translate(-50%, -50%);
+}

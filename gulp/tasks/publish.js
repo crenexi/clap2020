@@ -59,6 +59,7 @@ const publishClient = (targetEnv, done) => {
   const publisher = awspublish.create(awsConfig);
 
   return gulp.src(config.dist)
+    .pipe(awspublish.gzip())
     .pipe(publisher.publish(config.awsS3.headers))
     .pipe(publisher.sync())
     .pipe(awspublish.reporter({

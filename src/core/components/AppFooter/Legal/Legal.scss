@@ -1,0 +1,93 @@
+@import '~style-utils';
+
+$border: 1px solid rgba(255, 255, 255, .1);
+
+.legal {
+  padding-top: layout(md);
+  @include flex-column(center, center);
+}
+
+.icon {
+  @include flex-column(center, center);
+  font-size: 1.3rem;
+}
+
+.cx-fav {
+  width: 1.5rem;
+  margin-left: 4px;
+  transform: translateY(1px);
+
+  img {
+    @include flex-column(center, center);
+    width: 100%;
+  }
+}
+
+// Messenger button
+
+.messenger {
+  @include flex-column(center, center);
+  padding-bottom: spacing(lg);
+}
+
+// Built by
+
+.built-by a,
+.copyright a {
+  @include simple-link;
+}
+
+.built-by {
+  @include flex-row(center, center);
+  padding: spacing(md) 0;
+  border-top: $border;
+  border-bottom: $border;
+  font-family: font-family(primary);
+  font-size: 1.3rem;
+}
+
+
+// Main content
+
+.main {
+  @include flex-column(center, center);
+  padding-top: spacing(lg);
+
+  small {
+    font-size: .85rem;
+  }
+
+  a {
+    @include simple-link;
+    line-height: 1.5em;
+  }
+}
+
+.detail:not(:first-child) {
+  margin: spacing(2xs) 0 0 0;
+}
+
+.copyright {
+  @include flex-row(center, center);
+}
+
+@include breakpoint('gt-xs') {
+  .main {
+    flex-direction: row;
+  }
+
+  .detail:not(:first-child) {
+    margin: 0 0 0 spacing(xs);
+    padding: 0 0 0 spacing(xs);
+
+    a::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: calc(-#{spacing(xs)} - 1px);
+      height: calc(100% - 7px);
+      border-left: 1px solid rgba(255, 255, 255, .15);
+      transform: rotate(20deg);
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import '~style-utils';
+
+.invite {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint('gt-xs') {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero {
+  min-height: 15rem;
+  @include bg-image(cover);
+  background-position: center center;
+
+  @include breakpoint('gt-xs') {
+    min-height: 50vh;
+  }
+}
+
+.main {
+  order: -1;
+  @include flex-column(center, center);
+  padding: layout(md) layout(2xs);
+  background-color: #fff;
+  min-height: 50vh;
+
+  @include breakpoint('gt-xs') {
+    order: unset;
+    padding: layout(lg) 0;
+  }
+}
+
+.icons {
+  @include flex-row(center, center);
+  font-size: 1.5rem;
+  color: theme(blueRose, dark2);
+
+  @include breakpoint('gt-xs') {
+    font-size: 1.8rem;
+  }
+}
+
+.icon:not(:first-child) {
+  margin-left: 10px;
+}
+
+.btn {
+  margin-top: layout(sm);
+  padding-top: layout(sm);
+  @include divider-top(theme(blueRose, dark2));
+
+  @include breakpoint('gt-xs') {
+    margin-top: layout(md);
+    padding-top: layout(md);
+  }
+}

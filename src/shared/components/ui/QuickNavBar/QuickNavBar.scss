@@ -1,0 +1,39 @@
+@import '~style-utils';
+
+$border: 1px solid theme(cloud, dark1);
+
+.bar {
+  position: relative;
+  z-index: z-index(quickNavBar);
+  padding: spacing(xs) spacing(sm);
+  @include gradient(theme(ocean, dark1), theme(blueRose, base));
+  border-top: $border;
+  border-bottom: $border;
+
+  @include breakpoint('gt-xs') {
+    padding: spacing(md) spacing(lg);
+  }
+}
+
+.bar--inverted {
+  @include gradient(theme(cloud, dark2), #fff);
+}
+
+.nav {
+  width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  grid-gap: spacing(xs);
+
+  @include breakpoint('gt-sm') {
+    justify-content: center;
+  }
+}
+
+.nav-item {
+  display: grid;
+  place-content: stretch;
+  place-items: stretch;
+}

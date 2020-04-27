@@ -1,0 +1,9 @@
+@import '~style-utils';
+
+.frame {
+  background-color: theme(cloud, dark1);
+}
+
+.main {
+  @include flex-column(center, center);
+}

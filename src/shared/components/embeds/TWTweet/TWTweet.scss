@@ -1,0 +1,16 @@
+@import '~style-utils';
+
+.tweet-frame {
+  margin: -10px;
+  padding: 10px;
+}
+
+.tweet-card {
+  @include flex-column(center, center);
+  border-radius: 5px;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.13);
+}
+
+.tweet {
+  margin: -10px 0;
+}

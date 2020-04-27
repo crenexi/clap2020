@@ -1,0 +1,49 @@
+// Universal properties
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+// Top-level elements
+
+html,
+html body {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: theme(cloud, dark1);
+  -webkit-overflow-scrolling: touch;
+}
+
+// Pseudo selection
+
+::selection {
+  background-color: theme(ocean, dark1);
+  color: #fff;
+}
+
+// Pseudo scrollbar
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e6eaf3;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9dadcf;
+  border: 2px solid #e6eaf3;
+  border-radius: 10px;
+}

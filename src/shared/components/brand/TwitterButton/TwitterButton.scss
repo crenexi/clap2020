@@ -1,0 +1,62 @@
+@import '~style-utils';
+
+.context {
+  @include flex-row();
+}
+
+.context__button,
+.context__icon {
+  transition-duration: 150ms;
+}
+
+.context__button {
+  position: relative;
+  z-index: 2;
+}
+
+.context__icon {
+  @include flex-column(center, flex-end);
+  width: 3.8rem;
+  margin-left: -1rem;
+  padding-right: .7rem;
+  background-color: theme(blueRose, dark2);
+  color: #fff;
+  @include border-right-radius(border-radius(round));
+  font-size: 1.35rem;
+}
+
+.context:hover {
+  .context__button {
+    transform: translateX(1.9rem);
+  }
+
+  .context__icon {
+    transform: translateX(-1.9rem);
+  }
+}
+
+:global {
+  .MuiButton-root.c2-twitter-button {
+    padding-left: 1rem;
+    background-color: color(platform, twitter);
+    border: 3px solid color(platform, twitter);
+    border-radius: border-radius(round);
+
+    .c2-twitter-button__label {
+      color: #fff;
+      font-family: font-family(primary);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px rgba(0, 0, 0, .15);
+    }
+
+    &:hover {
+      background: theme(blueRose, dark2);
+      border-color: color(platform, twitter);
+
+      .c2-twitter-button__label {
+        color: #fff;
+      }
+    }
+  }
+}

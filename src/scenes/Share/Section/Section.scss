@@ -1,0 +1,86 @@
+@import '~style-utils';
+
+// Layout
+
+.section {
+  padding: layout(md) layout(2xs);
+
+  @include breakpoint('gt-xs') {
+    padding: layout(md) layout(xs);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(lg) layout(sm);
+  }
+}
+
+.section__frame {
+  max-width: 60rem;
+  margin: 0 auto
+}
+
+.section--wide .section__frame {
+  max-width: unset;
+}
+
+.section--narrow .section__frame {
+  max-width: 40rem;
+}
+
+.section--inverted {
+  color: #fff;
+}
+
+// Title and brief
+
+.title,
+.brief {
+  text-align: center;
+}
+
+.title {
+  margin: -.5rem;
+  color: #000;
+  line-height: 1em;
+}
+
+.section--inverted .title {
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .08), -2px -2px 10px rgba(0, 0, 0, .08);
+}
+
+.brief {
+  color: theme(ocean, dark1);
+  font-family: font-family(primary);
+  font-size: 1.5rem;
+  line-height: 1.1em;
+
+  &:not(:first-child) {
+    margin-top: layout(2xs);
+  }
+}
+
+.section--inverted .brief {
+  color: lighten(theme(blueRose, light2), 25%);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .08), -2px -2px 10px rgba(0, 0, 0, .08);
+}
+
+// Content
+
+.main {
+  width: 100%;
+  @include margin(null auto);
+  margin-bottom: spacing(xs);
+
+  &:not(:first-child) {
+    margin-top: layout(sm);
+  }
+
+  @include breakpoint('gt-xs') {
+    margin-bottom: spacing(sm);
+
+    &:not(:first-child) {
+      margin-top: layout(md);
+    }
+  }
+}

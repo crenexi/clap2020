@@ -1,0 +1,54 @@
+@import '~style-utils';
+
+:global {
+  .MuiPaper-root.c2-share-modal__paper {
+    border-radius: border-radius(normal);
+  }
+}
+
+// Header
+
+.header {
+  display: grid;
+  grid-template-columns: auto min-content;
+  place-items: center start;
+  padding: spacing(xs);
+  background-color: #fff;
+  box-shadow: shadow(2);
+}
+
+.header__title-group {
+  padding-left: spacing(md);
+}
+
+.header__title {
+  color: theme(ocean, dark1);
+  text-transform: uppercase;
+  line-height: 1em;
+  font-weight: 700;
+}
+
+.header__subtitle {
+  font-family: font-family(primary);
+  color: theme(ocean, base);
+  line-height: 1.2em;
+  font-size: 1.2rem;
+}
+
+.header__close {
+  margin-top: 3px;
+}
+
+@include breakpoint('gt-sm') {
+  .header {
+    padding: spacing(md);
+  }
+}
+
+// Actions
+
+.actions {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid theme(cloud, dark2);
+}

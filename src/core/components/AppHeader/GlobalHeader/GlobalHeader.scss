@@ -1,0 +1,65 @@
+@import '~style-utils';
+@import '~@styles/keyframes/arrive-down';
+@import '~@styles/keyframes/depart-up';
+
+$header-easing: cubic-bezier(0.22, 1, 0.36, 1);
+$header-duration: 350ms;
+
+// Header position
+
+.header-frame {
+  @include position(fixed, 0 0 null 0);
+  z-index: z-index(header);
+}
+
+// Header visibility control
+
+.header-frame:not(.header-frame--hidden) {
+  animation: arrive-down $header-duration $header-easing both;
+}
+
+.header-frame--hidden {
+  pointer-events: none;
+  opacity: 0;
+  animation: depart-up $header-duration $header-easing both;
+}
+
+// Header layout
+
+.header,
+.brand,
+.countdown,
+.actions {
+  height: 100%;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+// Header left
+
+.left {
+  @include flex-row(start, center);
+}
+
+.brand {
+  @include flex-column(center, start);
+  width: 6rem;
+  padding-left: spacing(xs);
+
+  @include breakpoint('gt-sm') {
+    width: 8rem;
+  }
+}
+
+.countdown {
+  @include flex-column(center, center);
+}
+
+// Header right
+
+.actions {
+  @include flex-row(flex-end, center);
+}

@@ -1,0 +1,75 @@
+@import '~style-utils';
+
+.follow {
+  position: relative;
+  @include gradient(theme(ocean, dark1), theme(ocean, dark2));
+  color: #fff;
+}
+
+.main {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: layout(xs) layout(2xs) layout(2xs);
+
+  @include breakpoint('gt-sm') {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: spacing(md);
+    justify-content: center;
+    padding: layout(xs) layout(xs) layout(2xs);
+  }
+}
+
+.section {
+  padding: layout(2xs) layout(2xs) layout(sm);
+
+  &:last-child {
+    padding-bottom: layout(2xs);
+  }
+
+  @include breakpoint('gt-sm') {
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-row-gap: spacing(sm);
+    padding: layout(xs);
+
+    &:last-child {
+      padding-bottom: layout(xs);
+    }
+  }
+}
+
+.heading {
+  text-align: center;
+}
+
+.section-main {
+  margin-top: layout(2xs);
+  @include flex-column(center, center);
+
+  @include breakpoint('gt-sm') {
+    margin-top: 0;
+  }
+}
+
+// Facebook group section
+
+.group-btn-context {
+  @include flex-column(center, center);
+}
+
+.group-icon {
+  margin-bottom: spacing(sm);
+  font-size: 1.75rem;
+}
+
+@include breakpoint('gt-sm') {
+  .group-btn-context {
+    @include flex-row(center, center);
+  }
+
+  .group-icon {
+    margin-bottom: 0;
+    margin-right: spacing(sm);
+  }
+}

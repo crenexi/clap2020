@@ -1,0 +1,22 @@
+@import '~style-utils';
+
+.step {
+  width: 100%;
+}
+
+.event-invite {
+  @include flex-column(center, center);
+}
+
+.event-invite__btn {
+  display: grid;
+  place-items: stretch;
+}
+
+@include breakpoint('gt-sm') {
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: layout(sm);
+  }
+}

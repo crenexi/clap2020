@@ -1,0 +1,7 @@
+@import '~style-utils';
+
+.frame {
+  @include flex-column(center, center);
+  @include min-full-height();
+  padding: layout(xs) 0 layout(2xl);
+}

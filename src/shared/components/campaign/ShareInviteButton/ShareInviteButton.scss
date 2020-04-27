@@ -1,0 +1,54 @@
+@import '~style-utils';
+
+:global {
+  .MuiButton-root.c2-share-invite-btn {
+    position: relative;
+    border: none;
+    padding: spacing(xs) spacing(md);
+    background: theme(blueRose, base);
+    background: linear-gradient(
+      135deg,
+      theme(redRose, base),
+      theme(blueRose, base),
+    );
+    box-shadow: shadow(2);
+    transition-duration: 150ms;
+
+    &::before {
+      content: '';
+      @include position(absolute, -6px null null -6px);
+      width: calc(100% + 12px);
+      height: calc(100% + 12px);
+      border: 3px solid theme(ocean, light1);
+      border-radius: border-radius(normal);
+      transition-duration: 150ms;
+      opacity: 0;
+    }
+
+    &:hover {
+      border: none;
+      box-shadow: shadow-hover(24);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    .c2-share-invite-btn__label {
+      margin-top: -1px;
+      color: #fff;
+      font-family: font-family(primary);
+      font-size: 1.3rem;
+    }
+  }
+
+  @include breakpoint('gt-xs') {
+    .MuiButton-root.c2-share-invite-btn--large {
+      padding: spacing(md) spacing(lg) spacing(md) spacing(xl);
+
+      .c2-share-invite-btn__label {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

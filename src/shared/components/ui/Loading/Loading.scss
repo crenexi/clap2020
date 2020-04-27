@@ -1,0 +1,68 @@
+@import '~style-utils';
+
+.frame {
+  width: auto;
+
+  &--center {
+    @include position(absolute, 0 0 0 0);
+    @include flex-column(center, center);
+    @include size(100%);
+  }
+}
+
+.loading {
+  position: relative;
+  @include size(2rem);
+  line-height: 1em;
+}
+
+.loading__star,
+.loading__spinner {
+  @include position(absolute, 0 null null 0);
+  @include flex-column(center, center);
+  @include size(100%);
+}
+
+.loading__star {
+  color: theme(redRose, base);
+  font-size: 1.35rem;
+}
+
+.loading__spinner {
+  color: theme(blueRose, base);
+  font-size: 2.2rem;
+}
+
+// Tiny spinner
+
+.loading--tiny {
+  @include size(1.2rem);
+
+  .loading__spinner {
+    font-size: 1rem;
+  }
+}
+
+// Small spinner
+
+.loading--small {
+  @include size(2.3rem);
+
+  .loading__spinner {
+    font-size: 1.3rem;
+  }
+}
+
+// Large spinner
+
+.loading--large {
+  @include size(6rem);
+
+  .loading__star {
+    font-size: 2.75rem;
+  }
+
+  .loading__spinner {
+    font-size: 5rem;
+  }
+}

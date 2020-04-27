@@ -1,0 +1,42 @@
+@import '~style-utils';
+
+.frame,
+.card {
+  @include size(100%);
+}
+
+.frame {
+  @include flex-column(center, center);
+  max-width: 35rem;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  width: 100%;
+  background-color: #fff;
+  border-radius: border-radius(round);
+  box-shadow: shadow(12);
+  color: color(content, base);
+
+  @include breakpoint('gt-xs') {
+    min-width: 25rem;
+  }
+}
+
+// Content
+
+.overline {
+  padding: spacing(xs) spacing(md);
+  background-color: theme(cloud, base);
+  border-bottom: 1px solid theme(cloud, dark1);
+  color: rgba(theme(ocean, dark1), .65);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: .9rem;
+  line-height: 1em;
+}

@@ -1,0 +1,54 @@
+@import '~style-utils';
+
+.options {
+  padding: spacing(sm) spacing(md) spacing(lg);
+
+  @include breakpoint('gt-xs') {
+    padding: spacing(sm) 0 spacing(lg);
+  }
+}
+
+// Section layout & header
+
+.section {
+  &:not(:first-child) {
+    margin-top: spacing(md);
+  }
+}
+
+.section__heading {
+  padding: 3px 7px;
+  background-color: theme(cloud, dark1);
+  color: rgba(theme(ocean, dark2), .75);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .85rem;
+  line-height: 1.1rem;
+}
+
+.section__main {
+  margin-top: spacing(sm);
+}
+
+.section__row {
+  display: grid;
+  grid-gap: spacing(sm);
+}
+
+@include breakpoint('gt-xs') {
+  .section {
+    &:not(:first-child) {
+      margin-top: spacing(xl);
+    }
+  }
+
+  .section__main {
+    margin-top: spacing(md);
+  }
+
+  .section__row {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: spacing(xl);
+  }
+}

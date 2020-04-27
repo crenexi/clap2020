@@ -1,0 +1,47 @@
+@import '~style-utils';
+
+.heading {
+  flex: 1 1 0%;
+  @include flex-row(normal, center);
+  margin-bottom: spacing(md);
+  padding-bottom: spacing(xs);
+  border-bottom: 1px solid theme(cloud, dark1);
+
+  @include breakpoint('gt-xs') {
+    font-size: 2rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    margin-bottom: spacing(lg);
+  }
+
+  @include breakpoint('gt-sm') {
+    font-size: 2.25rem;
+  }
+
+  @include breakpoint('gt-md') {
+    font-size: 2.75rem;
+  }
+}
+
+.title {
+  flex: 1 1 0%;
+  font-weight: 700;
+}
+
+.icon {
+  padding: spacing(2xs);
+  font-size: 1.75rem;
+
+  @include breakpoint('gt-xs') {
+    font-size: 2rem;
+  }
+
+  @include breakpoint('gt-sm') {
+    font-size: 2.25rem;
+  }
+
+  @include breakpoint('gt-md') {
+    font-size: 2.75rem;
+  }
+}

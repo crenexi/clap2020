@@ -1,0 +1,42 @@
+@import '~style-utils';
+
+.alert {
+  @include flex-row(normal, center);
+  max-width: 95vw;
+  background-color: theme(ocean, base);
+  padding: 0 spacing(xs);
+  border-radius: 10px;
+  box-shadow: shadow(24);
+  color: #fff;
+}
+
+.alert--success {
+  background-color: theme(ocean, base);
+  color: #fff;
+}
+
+.alert--danger {
+  background-color: theme(redRose, dark1);
+}
+
+.icon {
+  display: flex;
+  min-width: 1.25rem;
+  font-size: 1.1rem;
+}
+
+.text {
+  margin: spacing(xs) spacing(2xs);
+  text-align: left;
+  font-size: .9rem;
+  line-height: 1.5rem;
+  @include truncate();
+  overflow: hidden;
+}
+
+.close-btn {
+  @include flex-column(center, center);
+  @include size(2rem);
+  min-width: 2rem;
+  margin: 0 -6px 0 -5px;
+}

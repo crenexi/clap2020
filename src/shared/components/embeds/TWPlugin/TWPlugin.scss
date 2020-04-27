@@ -1,0 +1,8 @@
+@import '~style-utils';
+@import '~@styles/keyframes/arrive-fade';
+
+.frame {
+  position: relative;
+  @include flex-column(center, center);
+  width: 100%;
+}

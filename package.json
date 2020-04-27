@@ -9,9 +9,12 @@
     "lint": "./node_modules/.bin/eslint --ext js,jsx src",
     "lint:fix": "./node_modules/.bin/eslint --fix --ext js,jsx src",
     "build": "webpack --config webpack.config.js",
-    "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js",
+    "build:prod": "npm run lint && cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js --progress",
     "publish:prod": "gulp publish:prod",
-    "deploy:prod": "npm run build:prod && npm run publish:prod"
+    "deploy:prod": "npm run build:prod && npm run publish:prod",
+    "stats:create": "cross-env NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js --profile --json > dist/stats.json",
+    "stats:analyze": "webpack-bundle-analyzer -s gzip dist/stats.json",
+    "scss-utils": "scss src/scss/utils/variables/_index.scss ./scss-utils.css"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",
@@ -27,6 +30,8 @@
     "bourbon": "^6.0.0",
     "calendar-link": "^1.2.5",
     "classnames": "^2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^3.1.0",
     "cross-env": "^7.0.2",
     "debug": "^4.1.1",
     "dotenv-webpack": "^1.7.0",
@@ -44,9 +49,12 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-ga": "^2.7.0",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.0",
     "react-scroll": "^1.7.16",
     "react-twitter-embed": "^3.0.3",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "save": "^2.4.0",
     "terser-webpack-plugin": "^2.3.5"
   },
@@ -89,6 +97,7 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
+    "webpack-bundle-analyzer": "^3.7.0",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
   }

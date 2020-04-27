@@ -1,0 +1,80 @@
+@import '~style-utils';
+
+$preview-height-xs: 3.5rem;
+$preview-height-sm: 5rem;
+$preview-height-md: 7.5rem;
+
+.preview {
+  display: grid;
+  min-height: $preview-height-xs;
+
+  &--has-thumb {
+    grid-template-columns: min-content auto;
+  }
+}
+
+.poster {
+  @include size($preview-height-xs);
+  @include flex-column(center, flex-start);
+  margin: 0 spacing(2xs) 0 2px;
+}
+
+.poster__thumb {
+  @include size(100%);
+  @include bg-image(cover);
+  border-radius: border-radius(sharp);
+}
+
+@include breakpoint('gt-xs') {
+  .preview {
+    place-items: center;
+    min-height: $preview-height-sm;
+  }
+
+  .poster {
+    @include size($preview-height-sm);
+  }
+}
+
+@include breakpoint('gt-sm') {
+  .preview {
+    min-height: $preview-height-md;
+  }
+
+  .poster {
+    @include size($preview-height-md);
+  }
+}
+
+// Tags styling
+
+.tags {
+  @include flex-column(center, flex-start);
+  padding: 0 spacing(2xs);
+  color: theme(ocean, dark2);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25em;
+}
+
+.preview:not(.preview--has-thumbs) .tags {
+  padding-left: spacing(md);
+}
+
+@include breakpoint('gt-xs') {
+  .tags {
+    text-align: center;
+    font-family: font-family(primary);
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.1em;
+  }
+
+  .tags__base {
+    color: theme(redRose, base);
+  }
+
+  .tags__end {
+    font-weight: 700;
+  }
+}

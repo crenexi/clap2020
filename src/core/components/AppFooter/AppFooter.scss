@@ -1,0 +1,75 @@
+@import '~style-utils';
+
+.footer {
+  position: relative;
+  @include flex-column();
+  width: 100%;
+  padding: layout(md) layout(2xs) calc(56px + 1.5rem);
+  @include gradient(theme(ocean, dark1), theme(blueRose, dark1));
+  color: #fff;
+
+  &--extra-space {
+    padding-bottom: calc(56px + 1.5rem + #{layout(md)})
+  }
+
+  @include breakpoint('gt-xs') {
+    padding: layout(md) layout(lg) layout(sm);
+
+    &--extra-space {
+      padding-bottom: calc(56px + 2rem + #{layout(md)})
+    }
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(lg) layout(xl) layout(md);
+
+    &--extra-space {
+      padding-bottom: calc(56px + 3rem + #{layout(md)})
+    }
+  }
+}
+
+// Main part layout
+
+.main {
+  display: grid;
+  grid-row-gap: layout(md);
+
+  @include breakpoint('gt-md') {
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: layout(lg);
+  }
+}
+
+.main__nav {
+  @include flex-column(normal, center);
+  @include size(100%);
+
+  @include breakpoint('gt-md') {
+    display: grid;
+    place-content: center;
+    padding-bottom: layout(sm);
+  }
+}
+
+.main__brand-frame {
+  @include flex-column(center, center);
+  @include size(100%);
+}
+
+// Brand and clap time
+
+.main__brand {
+  width: 60%;
+  max-width: 15rem;
+}
+
+.main__clap-time {
+  margin-top: layout(xs);
+  padding: layout(xs) 0 5px;
+  text-align: center;
+  font-family: font-family(primary);
+  font-weight: 700;
+  font-size: 1.7rem;
+  @include divider-top(theme(blueRose, light2));
+}

@@ -1,18 +1,18 @@
 const path = require('path');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DotenvWebpack = require('dotenv-webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
-// const APP_PATH = path.resolve(__dirname, '/src/app');
 const DIST_PATH = path.join(__dirname, '/dist');
 
-// Helper to get environment
-const getEnv = (defaultEnv = 'development') => {
-  return process.env.BABEL_ENV || process.env.NODE_ENV || defaultEnv;
-};
+const env = process.env.BABEL_ENV || process.env.NODE_ENV || 'development';
+const isProduction = env === 'production';
+const isDevelopment = env === 'development';
 
 /* #################
 #### Loaders #######
@@ -28,7 +28,7 @@ const jsLoaderRule = () => ({
 });
 
 const scssLoaderRule = () => {
-  const localIdentName = getEnv() === 'development'
+  const localIdentName = isDevelopment
     ? '[name]__[local]___[hash:base64:5]'
     : '[hash:base64:5]';
 
@@ -59,8 +59,8 @@ const scssLoaderRule = () => {
 ################# */
 
 // Environment variables loader plugin
-const createDotenvWebpackPlugin = () => new DotenvWebpack({
-  safe: true,
+const createDotenvPlugin = () => new DotenvWebpack({
+  path: path.resolve(__dirname, '.env'),
 });
 
 // Environment vars plugin
@@ -69,20 +69,23 @@ const createEnvironmentPlugin = () => new webpack.EnvironmentPlugin({
   DEBUG: false,
 });
 
+// Clean
+const createCleanPlugin = () => new CleanWebpackPlugin();
+
 // HTML plugin
-const createHtmlWebpackPlugin = () => new HtmlWebpackPlugin({
+const createHtmlPlugin = () => new HtmlPlugin({
   template: './public/index.html',
   filename: 'index.html',
 });
 
 // Copy plugin
-const createCopyWebpackPlugin = () => new CopyWebpackPlugin([
+const createCopyPlugin = () => new CopyPlugin([
   { from: './public' },
 ]);
 
 // Moment locals plugin
 const createMomentLocalesPlugin = () => new MomentLocalesPlugin({
-  localesToKeep: ['da', 'de-at', 'de-ch', 'el', 'en-au', 'en-ca', 'en-gb', 'en-ie', 'en-nz', 'es-do', 'es-us', 'es', 'fr-ca', 'fr-ch', 'fr', 'hi', 'it', 'ja', 'ko', 'nl-be', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'th', 'tl-ph', 'tr', 'uk'],
+  localesToKeep: ['en-au', 'en-ca', 'en-gb', 'es-us', 'es'],
 });
 
 // Minimizer plugin
@@ -106,6 +109,18 @@ const createTerserPlugin = () => new TerserPlugin({
   },
   parallel: true,
   cache: true,
+  sourceMap: true,
+});
+
+// Compression plugin
+const createCompressionPlugin = () => new CompressionPlugin({
+  filename: '[path].br[query]',
+  algorithm: 'brotliCompress',
+  test: /\.(js|css|html|svg)$/,
+  compressionOptions: { level: 11 },
+  threshold: 10240,
+  minRatio: 0.8,
+  deleteOriginalAssets: false,
 });
 
 /* #################
@@ -113,15 +128,20 @@ const createTerserPlugin = () => new TerserPlugin({
 ################# */
 
 const aliasRelativePaths = {
-  src: './src',
-  config: './src/config',
-  types: './src/types',
-  utils: './src/utils',
-  hooks: './src/hooks',
-  contexts: './src/contexts',
-  services: './src/services',
-  components: './src/components',
-  scss: './src/scss',
+  '@src': './src',
+  '@core': './src/core',
+  '@scenes': './src/scenes',
+  '@store': './src/store',
+  '@config': './src/shared/config',
+  '@constants': './src/shared/constants',
+  '@types': './src/shared/types',
+  '@contexts': './src/shared/contexts',
+  '@hooks': './src/shared/hooks',
+  '@helpers': './src/shared/helpers',
+  '@services': './src/shared/services',
+  '@components': './src/shared/components',
+  '@styles': './src/shared/styles',
+  'style-utils': './src/shared/helpers/scss',
 };
 
 /* #################
@@ -129,11 +149,12 @@ const aliasRelativePaths = {
 ################# */
 
 const config = {
-  mode: getEnv(),
+  mode: env,
   entry: './src/main.jsx',
   output: {
     path: DIST_PATH,
     filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
@@ -148,11 +169,15 @@ const config = {
     ],
   },
   plugins: [
-    createDotenvWebpackPlugin(),
+    createDotenvPlugin(),
     createEnvironmentPlugin(),
-    createHtmlWebpackPlugin(),
-    createCopyWebpackPlugin(),
+    createCleanPlugin(),
+    createHtmlPlugin(),
+    createCopyPlugin(),
     createMomentLocalesPlugin(),
+    ...(!isProduction ? [] : [
+      createCompressionPlugin(),
+    ]),
   ],
   devServer: {
     port: 4200,
@@ -161,7 +186,8 @@ const config = {
     inline: true,
     hot: true,
   },
-  performance: {
+  devtool: isProduction ? false : 'eval-cheap-source-map',
+  performance: isDevelopment && {
     hints: false,
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
@@ -173,21 +199,13 @@ const config = {
 ################# */
 
 // Optimize only if production build
-if (getEnv() === 'production') {
+if (isProduction) {
   config.optimization = {
     minimize: true,
-    minimizer: [createTerserPlugin],
+    minimizer: [createTerserPlugin()],
     runtimeChunk: false,
     splitChunks: {
-      cacheGroups: {
-        default: false,
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor_app',
-          chunks: 'all',
-          minChunks: 2,
-        },
-      },
+      chunks: 'all',
     },
   };
 }

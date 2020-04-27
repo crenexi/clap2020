@@ -1,0 +1,14 @@
+@import '~style-utils';
+
+.frame {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: spacing(xs);
+  width: 100%;
+  padding-right: 3px;
+  opacity: .75;
+
+  &:hover {
+    opacity: 1;
+  }
+}

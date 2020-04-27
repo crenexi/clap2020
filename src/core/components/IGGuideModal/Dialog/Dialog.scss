@@ -1,0 +1,91 @@
+@import '~style-utils';
+
+:global {
+  .MuiPaper-root.c2-ig-modal__paper {
+    width: 100%;
+    max-width: 45rem;
+    margin: 16px;
+    background: color(platform, instagram);
+    background: color(platformGradient, instagram);
+    border-radius: border-radius(normal);
+    color: #fff;
+  }
+}
+
+// Header
+
+.header {
+  @include flex-row(stretch, center);
+}
+
+.header__title {
+  flex: 1 1 0%;
+  font-family: font-family(primary);
+  letter-spacing: -.5px;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+.header__close {
+  margin: 0 -.5rem 0 .5rem;
+}
+
+// Columns layout
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-bottom: spacing(xs);
+}
+
+@include breakpoint('gt-xs') {
+  .options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Columns content
+
+.option {
+  padding: spacing(sm) spacing(lg) spacing(md);
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: border-radius(sharp);
+
+  &:not(:first-child) {
+    margin-top: spacing(sm);
+  }
+}
+
+.option__title {
+  padding: spacing(2xs);
+  font-family: font-family(primary);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.option__instruct {
+  margin-top: spacing(2xs);
+  color: rgba(255, 255, 255, .9);
+}
+
+.option__action {
+  display: grid;
+  width: 100%;
+  margin: spacing(md) auto 0;
+  max-width: 15rem;
+}
+
+@include breakpoint('gt-xs') {
+  .option {
+    padding: spacing(md) spacing(xl) spacing(lg);
+
+    &:not(:first-child) {
+      margin-top: 0;
+      margin-left: spacing(md);
+    }
+  }
+}

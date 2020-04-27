@@ -1,0 +1,47 @@
+@import '~style-utils';
+@import '~@styles/keyframes/arrive-fade';
+
+.frame {
+  width: 100%;
+}
+
+.switch {
+  margin: spacing(sm) 0 0;
+}
+
+.main {
+  width: 100%;
+  background-color: #fff;
+  border: solid 1px theme(cloud, dark1);
+  border-radius: border-radius(sharp);
+  overflow: hidden;
+  animation: arrive-fade 350ms linear both;
+}
+
+.title {
+  margin: spacing(xs) spacing(xs) 0;
+  text-align: center;
+}
+
+.current {
+  @include flex-row;
+  padding: spacing(xs) spacing(sm);
+}
+
+.current__prop {
+  flex: 1 1 0%;
+  padding: 4px 8px;
+  border-left: 3px solid theme(blueRose, dark1);
+  background-color: #fff;
+  box-shadow: shadow(2);
+  color: theme(blueRose, dark2);
+  text-align: center;
+  text-transform: capitalize;
+  font-size: .85rem;
+  line-height: 1.25;
+  font-weight: 700;
+
+  &:not(:first-child) {
+    margin-left: spacing(xs);
+  }
+}

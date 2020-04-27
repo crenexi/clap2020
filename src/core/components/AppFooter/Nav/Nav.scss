@@ -1,0 +1,55 @@
+@import '~style-utils';
+
+.nav {
+  line-height: 1em;
+}
+
+.section {
+  &:not(:first-child) {
+    margin-top: layout(sm);
+  }
+}
+
+@include breakpoint('gt-sm') {
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: layout(sm);
+    place-content: start;
+    place-items: start;
+  }
+
+  .section {
+    width: 100%;
+    max-width: 25rem;
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}
+
+@include breakpoint('gt-md') {
+  .nav {
+    grid-column-gap: layout(md);
+  }
+}
+
+// Nav section
+
+.section__heading {
+  margin-bottom: spacing(xs);
+  padding-bottom: spacing(2xs);
+  border-bottom: 2px solid theme(blueRose, dark1);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: font-family(primary);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.section__list {
+  @include flex-column(flex-start, flex-start);
+  width: 100%;
+}

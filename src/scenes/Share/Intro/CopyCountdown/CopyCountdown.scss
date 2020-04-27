@@ -1,0 +1,39 @@
+@import '~style-utils';
+
+.frame {
+  background-color: theme(blueRose, base);
+}
+
+.url {
+  @include truncate(1, 100%);
+  line-height: 1.2em;
+}
+
+.time-until {
+  margin-top: layout(sm);
+  color: rgba(255, 255, 255, .65);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: font-family(primary);
+  font-size: 1.8rem;
+  line-height: 1em;
+  font-weight: 300;
+
+  strong {
+    display: inline-block;
+    color: #fff;
+    font-weight: 400;
+  }
+}
+
+.invite {
+  @include flex-column(center, center);
+  margin-top: spacing(sm);
+}
+
+@include breakpoint('gt-xs') {
+  .time-until {
+    font-size: 2.5rem;
+    margin-top: layout(md);
+  }
+}

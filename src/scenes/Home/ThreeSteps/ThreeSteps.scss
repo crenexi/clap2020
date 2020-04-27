@@ -1,0 +1,31 @@
+@import '~style-utils';
+
+.three {
+  width: 100%;
+  padding: layout(xs) layout(2xs);
+  background: theme(ocean, dark2);
+  background: linear-gradient(
+    135deg,
+    theme(blueRose, dark2),
+    theme(blueRose, light1),
+  );
+
+  @include breakpoint('gt-xs') {
+    padding: layout(md) layout(sm);
+  }
+
+  @include breakpoint('gt-sm') {
+    padding: layout(lg) layout(md);
+  }
+}
+
+.main {
+  @include flex-column(start, center);
+}
+
+// Steps
+
+.steps {
+  width: 100%;
+  max-width: 70rem;
+}

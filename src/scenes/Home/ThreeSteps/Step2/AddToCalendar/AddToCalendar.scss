@@ -1,0 +1,45 @@
+@import '~style-utils';
+@import '~@styles/keyframes/arrive-grow';
+@import '~@styles/keyframes/depart-shrink';
+
+.frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: -(spacing(xs)) 0;
+  padding: spacing(sm);
+}
+
+.main {
+  width: 100%;
+}
+
+.main__section {
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-top: spacing(md);
+  }
+}
+
+// Overlay for download guide
+
+.guide {
+  @include position(absolute, .25rem null null .25rem);
+  width: 100%;
+  padding: spacing(xs);
+  opacity: 1;
+
+  &:not(.guide--open) {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &--open {
+    animation: arrive-grow 150ms ease;
+  }
+
+  &--closing {
+    animation: depart-shrink 150ms ease;
+  }
+}
