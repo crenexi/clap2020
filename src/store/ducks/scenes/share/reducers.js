@@ -31,6 +31,18 @@ const initialState = {
       title: 'Choose Size & State',
       brief: 'Support healthcare & essential lines today',
     },
+    tweetReel: [
+      { tweetId: '1254544787090235393', location: 'New York' },
+      { tweetId: '1252398714838106115', location: 'Florida' },
+      { tweetId: '1254176741519654913', location: 'Illinois' },
+      { tweetId: '1252012876912644096', location: 'Massachusetts' },
+      { tweetId: '1253687426603724800', location: 'Wisconsin' },
+      { tweetId: '1254100359947210760', location: 'California' },
+      { tweetId: '1254545869082431489', location: 'New York' },
+      { tweetId: '1253375785060257792', location: 'Louisiana' },
+      { tweetId: '1243358501981700097', location: 'New Jersey' },
+      { tweetId: '1253929785337589760', location: 'New York' },
+    ],
     featuredQuote: {
       text: 'The teamwork right now is inspiring. ICU nurses are tough; we fight for our patients; we have one another’s backs. Doctors may be the architects of what happens in the hospital. But we are the builders. And so we build, even amid chaos and disintegration. We build, even as a silent enemy attempts to undo everything we’ve done. We build and we build, shift after shift, as fast — and as best — as we can.',
       author: {

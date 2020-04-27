@@ -1,1 +1,1 @@
-export { default } from './TweetReel';
+export { default } from './TweetReelContainer';
