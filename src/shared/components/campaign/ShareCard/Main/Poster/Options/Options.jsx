@@ -41,7 +41,7 @@ const Options = (props) => {
   );
 
   return (
-    <div styleName="frame">
+    <div>
       {toggleButton}
       {open && (
         <div styleName="main">

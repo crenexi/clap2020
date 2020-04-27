@@ -13,7 +13,7 @@
           "webpackHotModuleReloading": true,
           "autoResolveMultipleImports": true,
           "generateScopedName": "[name]__[local]___[hash:base64:5]",
-          "handleMissingStyleName": "warn",
+          // "handleMissingStyleName": "warn",
           "filetypes": {
             ".scss": {
               "syntax": "postcss-scss",
