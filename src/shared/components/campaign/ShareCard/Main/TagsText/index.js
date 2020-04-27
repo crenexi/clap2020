@@ -1,1 +1,1 @@
-export { default } from './TagsText';
+export { default } from './TagsTextContainer';

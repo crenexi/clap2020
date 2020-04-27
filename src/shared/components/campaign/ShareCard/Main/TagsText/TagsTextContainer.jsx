@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import shareCardStateType from '@types/share-card-state-type';
@@ -13,19 +13,22 @@ const TagsTextContainer = (props) => {
     tagsExtended: s.campaign.tags.listExtended,
   }));
 
-  const textMap = {
-    all: stringifyHashtags(tagsExtended),
-    minimal: stringifyHashtags(tags),
+  const [hasAllTags, setHasAllTags] = useState(true);
+
+  const updateTagsText = (extended = true) => {
+    const tagsText = extended
+      ? stringifyHashtags(tagsExtended)
+      : stringifyHashtags(tags);
+
+    onSetShareState({ tagsText });
   };
 
-  const [hasAllTags, setHasAllTags] = useState(true);
+  useEffect(updateTagsText, []);
 
   const handleHasAllTagsChange = (event) => {
     const checked = event.target.checked;
-    const tagsText = checked ? textMap.all : textMap.minimal;
-
+    updateTagsText(checked);
     setHasAllTags(checked);
-    onSetShareState({ tagsText });
   };
 
   return (
