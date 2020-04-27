@@ -1,5 +1,4 @@
 @import '~style-utils';
-@import '~@styles/keyframes/arrive-fade';
 
 .frame,
 .card {
@@ -22,132 +21,22 @@
   border-radius: border-radius(round);
   box-shadow: shadow(12);
   color: color(content, base);
-}
 
-@include breakpoint('gt-xs') {
-  .card {
+  @include breakpoint('gt-xs') {
     min-width: 25rem;
   }
 }
 
 // Content
 
-.overline,
-.options__btn {
-  color: rgba(theme(ocean, dark1), .65);
-}
-
 .overline {
   padding: spacing(xs) spacing(md);
   background-color: theme(cloud, base);
   border-bottom: 1px solid theme(cloud, dark1);
+  color: rgba(theme(ocean, dark1), .65);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: .9rem;
   line-height: 1em;
-}
-
-.main {
-  @include flex-column(center, stretch);
-  overflow: auto;
-  padding: spacing(xs) spacing(md) spacing(xs);
-  font-size: .95rem;
-}
-
-.main__tags-switch {
-  margin: 0;
-}
-
-.main__poster-switch {
-  margin: spacing(sm) 0 0;
-}
-
-// Poster selection
-
-.options,
-.options__btn {
-  width: 100%;
-}
-
-.options {
-  background-color: #fff;
-  border: solid 1px theme(cloud, dark1);
-  border-radius: border-radius(sharp);
-  overflow: hidden;
-  animation: arrive-fade 350ms linear both;
-}
-
-.options__title {
-  margin: spacing(xs) spacing(xs) 0;
-  text-align: center;
-}
-
-.options__current {
-  @include flex-row;
-  padding: spacing(xs) spacing(sm);
-}
-
-.options__current-prop {
-  flex: 1 1 0%;
-  padding: 4px 8px;
-  border-left: 3px solid theme(blueRose, dark1);
-  background-color: #fff;
-  box-shadow: shadow(2);
-  color: theme(blueRose, dark2);
-  text-align: center;
-  text-transform: capitalize;
-  font-size: .85rem;
-  line-height: 1.25;
-  font-weight: 700;
-
-  &:not(:first-child) {
-    margin-left: spacing(xs);
-  }
-}
-
-.options__btn {
-  display: grid;
-  grid-template-columns: auto min-content;
-  align-items: center;
-  padding: .3rem spacing(sm);
-  background-color: theme(cloud, base);
-  border-top: 1px solid theme(cloud, dark1);
-}
-
-.options__btn-label {
-  margin-top: 2px;
-  @include truncate(1, 100%);
-  text-align: left;
-  font-size: .9rem;
-  text-transform: uppercase;
-}
-
-.options__btn-icon {
-  margin: 2px spacing(2xs) 0;
-  font-size: 1.15rem;
-  line-height: 1.25;
-}
-
-.options__main {
-  padding: spacing(sm);
-  border-top: 1px solid theme(cloud, dark1);
-  animation: arrive-fade 350ms linear both;
-}
-
-.options__close {
-  @include flex-column(center, center);
-  margin-top: spacing(xs);
-}
-
-@include breakpoint('gt-xs') {
-  .options__close {
-    margin-top: 0;
-  }
-}
-
-// Actions
-
-.actions {
-  padding: 0 spacing(2xs) spacing(2xs);
 }

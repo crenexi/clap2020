@@ -1,1 +1,12 @@
 @import '~style-utils';
+
+.main {
+  @include flex-column(center, stretch);
+  overflow: auto;
+  padding: spacing(xs) spacing(md) spacing(xs);
+  font-size: .95rem;
+}
+
+.actions {
+  padding: 0 spacing(2xs) spacing(2xs);
+}

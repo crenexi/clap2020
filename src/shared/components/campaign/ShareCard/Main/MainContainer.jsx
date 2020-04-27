@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import useModal from '@hooks/use-modal';
 import Main from './Main';
 
+const IG_GUIDE_MODAL = 'IG_GUIDE_MODAL';
+
 const MainContainer = () => {
+  const { openModal } = useModal();
+
+  // Share state
   const [shareState, setShareState] = useState({
-    hasAllTags: true,
     hasPoster: true,
     tagsText: '',
     poster: {
@@ -13,26 +17,39 @@ const MainContainer = () => {
     },
   });
 
-  const handleSetShareState = (updates) => {
+  // Determine text payload
+  const textPayload = () => {
+    return 'test';
   };
 
-  const handleShare = () => {
+  // Determine poster URL
+  const urlPayload = () => {
+    return 'https://www.google.com';
+  };
+
+  const handleSetShareState = (updates) => {
+    setShareState({ ...shareState, ...updates });
+  };
+
+  const handleShare = ({ to }) => {
+    const url = urlPayload();
+    const payload = textPayload();
+
+    if (to === 'instagram') {
+      openModal(IG_GUIDE_MODAL, { payload, url });
+      // return;
+    }
   };
 
   const handleCopy = () => {
   };
 
-  // Single point for actions
-  const shareActions = {
-    onSetShareState: handleSetShareState,
-    onShare: handleShare,
-    onCopy: handleCopy,
-  };
-
   return (
     <Main
       shareState={shareState}
-      shareActions={shareActions}
+      onSetShareState={handleSetShareState}
+      onShare={handleShare}
+      onCopy={handleCopy}
     />
   );
 };

@@ -1,0 +1,50 @@
+@import '~style-utils';
+@import '~@styles/keyframes/arrive-fade';
+
+// Toggle button
+
+.toggle-btn {
+  display: grid;
+  grid-template-columns: auto min-content;
+  align-items: center;
+  width: 100%;
+  padding: .3rem spacing(sm);
+  background-color: theme(cloud, base);
+  border-top: 1px solid theme(cloud, dark1);
+  color: rgba(theme(ocean, dark1), .65);
+}
+
+.toggle-btn__label {
+  margin-top: 2px;
+  @include truncate(1, 100%);
+  text-align: left;
+  font-size: .9rem;
+  text-transform: uppercase;
+}
+
+.toggle-btn__icon {
+  margin: 2px spacing(2xs) 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+// Options main
+
+.main {
+  padding: spacing(sm);
+  border-top: 1px solid theme(cloud, dark1);
+  animation: arrive-fade 350ms linear both;
+}
+
+// Close button
+
+.close-btn {
+  @include flex-column(center, center);
+  margin-top: spacing(xs);
+}
+
+@include breakpoint('gt-xs') {
+  .close-btn {
+    margin-top: 0;
+  }
+}
