@@ -7,9 +7,7 @@ const TweetReelContainer = () => {
     return s.scenes.share.social.tweetReel;
   });
 
-  return (
-    <TweetReel items={items} />
-  );
+  return <TweetReel items={items} />;
 };
 
 export default TweetReelContainer;

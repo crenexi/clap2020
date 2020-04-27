@@ -3,6 +3,47 @@
 .frame {
   position: relative;
   z-index: 2;
+  background: color(platform, twitter);
   background: color(platformGradient, twitter);
   box-shadow: shadow(12);
+  color: #fff;
+}
+
+.reel {
+  overflow-x: scroll;
+  background-color: color(platform, twitter);
+  padding: layout(xs) layout(2xs);
+}
+
+.reel__items {
+  @include flex-row(flex-start, flex-start);
+}
+
+.arrow {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  display: none;
+  width: 3rem;
+  height: 100%;
+  background-color: color(platform, twitter);
+  cursor: pointer;
+  opacity: .87;
+  transition-duration: 150ms;
+  font-size: 1.75rem;
+
+  &:hover {
+    opacity: 1;
+    box-shadow: shadow(4);
+  }
+
+  &:active {
+    background-color: darken(color(platform, twitter), 7%);
+  }
+}
+
+@include breakpoint('gt-xs') {
+  .reel {
+    padding: layout(xs) layout(xs) layout(2xs);
+  }
 }

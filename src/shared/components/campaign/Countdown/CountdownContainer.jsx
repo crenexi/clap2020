@@ -39,7 +39,7 @@ const CountdownContainer = ({ isActive, component }) => {
     const durationMoment = moment.duration(duration, 'millisecond');
 
     const updatedTicker = {
-      days: Math.abs(durationMoment.days()),
+      days: Math.abs(Math.floor(durationMoment.asDays())),
       hours: Math.abs(durationMoment.hours()),
       minutes: Math.abs(durationMoment.minutes()),
       seconds: Math.abs(durationMoment.seconds()),

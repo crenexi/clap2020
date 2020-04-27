@@ -9,10 +9,12 @@ const PreviewContainer = ({ tags, poster }) => {
     return s.campaign.posters.find(p => p.format === poster);
   });
 
+  const thumbUrl = !posterMatch ? '' : posterMatch.thumbUrl;
+
   return (
     <Preview
       tags={tags}
-      posterThumbUrl={posterMatch.thumbUrl}
+      posterThumbUrl={thumbUrl}
     />
   );
 };

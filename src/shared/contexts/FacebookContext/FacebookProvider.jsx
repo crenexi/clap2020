@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import logger from '@services/logger';
 import FacebookContext from './FacebookContext';
-import sdkLoad from './sdk-load';
+// import sdkLoad from './sdk-load';
 import sdkPlugins from './sdk-plugins';
 
 const FacebookProvider = ({ children }) => {
@@ -13,7 +13,7 @@ const FacebookProvider = ({ children }) => {
   const [scriptState, setScriptState] = useState({
     ready: false,
     loading: false,
-    error: false,
+    error: true,
   });
 
   /* Error handler */
@@ -23,6 +23,7 @@ const FacebookProvider = ({ children }) => {
   };
 
   /* Load the SDK script on the fly */
+  /*
   const initLoadScript = () => {
     // Signal the loading has begun
     setScriptState({ ...scriptState, loading: true });
@@ -51,6 +52,7 @@ const FacebookProvider = ({ children }) => {
     // Load script
     sdkLoad().then(onScriptReady).catch(handleErr);
   };
+  */
 
   /* Registers a plugin */
   const registerPlugin = (plugin) => {
@@ -60,7 +62,7 @@ const FacebookProvider = ({ children }) => {
 
       // Load script if it hasn't started
       if (!scriptState.loading) {
-        initLoadScript();
+        // initLoadScript();
         return;
       }
 

@@ -1,9 +1,37 @@
 @import '~style-utils';
 
 .frame {
+  margin: 0 spacing(2xs);
 
+  &:last-child {
+    padding-right: layout(xs);
+  }
 }
 
-.reel {
+.location {
+  @include flex-column(center, center);
+  margin-bottom: spacing(sm);
+  padding-bottom: spacing(xs);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
 
+.location__icon {
+  font-size: 1.5rem;
+}
+
+.location__text {
+  margin-top: -5px;
+  font-family: font-family(primary);
+  font-size: 1.7rem;
+  line-height: 1.25;
+}
+
+.embed {
+  width: 20rem;
+}
+
+@include breakpoint('gt-xs') {
+  .frame {
+    margin: 0 spacing(xs);
+  }
 }

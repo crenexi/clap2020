@@ -57,23 +57,23 @@ const initialState = {
     metaNav: [
       {
         title: 'Posters to Share',
-        url: 'https://www.facebook.com/pg/clap2020nation/photos/?tab=album&album_id=104599801212991',
+        url: 'https://www.google.com',
       },
       {
         title: 'Twitter Profile',
-        url: 'https://twitter.com/clap2020',
+        url: 'https://www.google.com',
       },
       {
         title: 'Facebook Event',
-        url: 'https://www.facebook.com/events/217497266335496/',
+        url: 'https://www.google.com',
       },
       {
         title: 'Facebook Group',
-        url: 'https://www.facebook.com/groups/clap2020',
+        url: 'https://www.google.com',
       },
       {
         title: 'Instagram Profile',
-        url: 'https://www.instagram.com/clap2020nation',
+        url: 'https://www.google.com',
       },
       {
         title: 'Style Guide',

@@ -6,7 +6,7 @@ const IG_GUIDE_MODAL = 'IG_GUIDE_MODAL';
 
 const IGGuideModal = () => {
   // Modal state
-  const { activeModal, closeModal, payload } = useModal();
+  const { activeModal, closeModal } = useModal();
   const open = activeModal === IG_GUIDE_MODAL;
 
   // Watch for back presses to escape modal
