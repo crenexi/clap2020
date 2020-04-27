@@ -1,7 +1,7 @@
 # clap2020
 [clap2020.com](https://clap2020.com)
 
-A website to market a simple campaign to clap for healthcare workers on April 23, 2020
+A website to market a simple campaign to clap for healthcare workers. **Note: this project is an excercise, not real campaign**.
 
 ## Installation
 
