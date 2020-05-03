@@ -6,6 +6,8 @@ export { default as Button } from './Button';
 export { default as CopyCard } from './CopyCard';
 export { default as DrawerToggle } from './DrawerToggle';
 export { default as Error404 } from './Error404';
+export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as ErrorFallback } from './ErrorFallback';
 export { default as ErrorText } from './ErrorText';
 export { default as FaIcon } from './FaIcon';
 export { default as IconButton } from './IconButton';

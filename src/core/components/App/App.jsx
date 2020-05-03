@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { userAgent } from '@helpers';
-import { Loading } from '@components/ui';
+import { Loading, ErrorBoundary, ErrorFallback } from '@components/ui';
 import AppHeader from '../AppHeader';
 import AppMain from '../AppMain';
 import AppFooter from '../AppFooter';
@@ -31,13 +31,15 @@ const AppView = ({ isLoading }) => {
     <Router>
       <ScrollToTop />
       {isLoading && appLoading}
-      <div styleName={className}>
-        <AppHeader />
-        <AppMain />
-        <AppFooter />
-        <ShareModal />
-        {isMobile && <IGGuideModal />}
-      </div>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <div styleName={className}>
+          <AppHeader />
+          <AppMain />
+          <AppFooter />
+          <ShareModal />
+          {isMobile && <IGGuideModal />}
+        </div>
+      </ErrorBoundary>
     </Router>
   );
 };
